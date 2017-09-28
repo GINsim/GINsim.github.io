@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<title>The main window</title>
+<link rel="stylesheet" type="text/css" href="C.css">
+<script type="text/javascript" src="jquery.js"></script><script type="text/javascript" src="jquery.syntax.js"></script><script type="text/javascript" src="yelp.js"></script>
+</head>
+<body>
+<div id="header">
+<div class="banner"></div>
+<ul>
+<li><a href="http://ginsim.org/home" title="Welcome to GINsim">Home</a></li>
+<li><a href="http://ginsim.org/documentation" title="User manual and tutorial">Documentation</a></li>
+<li><a href="http://ginsim.org/models_repository" title="Dynamic view of models in the repository">Model Repository</a></li>
+<li><a href="http://ginsim.org/downloads" title="Downloads">Downloads</a></li>
+<li><a href="http://ginsim.org/publications" title="Publications">Publications</a></li>
+<li><a href="http://ginsim.org/companion_tools" title="Tools associated with GINsim or making use of its ecosystem">Companion Tools</a></li>
+<li><a href="http://ginsim.org/contact" title="Contact Us">Contacts</a></li>
+</ul>
+</div>
+<div class="page" role="main">
+<div class="header"><div class="trails" role="navigation"><div class="trail">
+<a class="trail" href="index.html" title="User documentation for GINsim">Index</a> › <a class="trail" href="index.html#graphs" title="Generic Graphs">Graphs</a> » <a class="trail" href="graph-generic.html" title="All graphs">Graphs</a> › <a class="trail" href="graph-generic.html#gui" title="Handle Graphs">Handle Graphs</a> » </div></div></div>
+<div class="body">
+<div class="version">
+<div class="title">Outdated</div>
+<p class="version"> (2012-11-23)</p>
+</div>
+<div class="hgroup"><h1 class="title"><span class="title">The main window</span></h1></div>
+<div class="region">
+<div class="contents"></div>
+<div id="mainWindow" class="sect"><div class="inner">
+<div class="hgroup"><h2 class="title"><span class="title">The GINsim window</span></h2></div>
+<div class="region"><div class="contents">
+<p class="p">The main window allows to view a graph, edit its appareance and access to GINsim's main features. This window is divided into three parts:</p>
+<div class="list"><div class="inner"><div class="region"><ul class="list">
+<li class="list"><p class="p">the menu and toolbar on the top;</p></li>
+<li class="list"><p class="p">the graph panel, as the main central part;</p></li>
+<li class="list"><p class="p">the secondary panel on the bottom.</p></li>
+</ul></div></div></div>
+<div class="figure"><div class="inner">
+<a href="#" class="zoom" data-zoom-in-title="View images at normal size" data-zoom-out-title="Scale images down"></a><div class="title title-figure"><h3><span class="title">The main window of GINsim</span></h3></div>
+<div class="region">
+<div class="contents"><div class="media media-image"><div class="inner"><img src="figures/mainWindow.png" class="media media-block" alt=""></div></div></div>
+<div class="desc">The main window of GINsim, featuring an empty model.</div>
+</div>
+</div></div>
+</div></div>
+</div></div>
+<div id="view" class="sect"><div class="inner">
+<div class="hgroup"><h2 class="title"><span class="title">Graph view</span></h2></div>
+<div class="region"><div class="contents"><p class="p">see the <span class="link"><a href="gui-graph.html" title="Graph view">graph page</a></span> or merge its content here?</p></div></div>
+</div></div>
+<div id="fileMenu" class="sect"><div class="inner">
+<div class="hgroup"><h2 class="title"><span class="title">File menu</span></h2></div>
+<div class="region"><div class="contents">
+<div class="figure"><div class="inner">
+<a href="#" class="zoom" data-zoom-in-title="View images at normal size" data-zoom-out-title="Scale images down"></a><div class="title title-figure"><h3><span class="title">File menu</span></h3></div>
+<div class="region">
+<div class="contents"><div class="media media-image"><div class="inner"><img src="figures/fileMenu.png" class="media media-block" alt=""></div></div></div>
+<div class="desc">The File menu offers all the classical options to open/save a file, to
+				open/close a window, and to quit the application.</div>
+</div>
+</div></div>
+<p class="p"> The File menu provides the following options:</p>
+<div class="terms"><div class="inner"><div class="region"><dl class="terms">
+<dt class="terms">New</dt>
+<dd class="terms"><p class="p">to create a new graph. This opens a new window unless the
+					current graph is empty.</p></dd>
+<dt class="terms">Open</dt>
+<dd class="terms"><p class="p">to load a graph from a file. This opens a new window
+					unless the current graph is empty.</p></dd>
+<dt class="terms">Recent Files</dt>
+<dd class="terms"><p class="p">to open a recently used graph. This submenu lists the
+					last opened graphs.</p></dd>
+<dt class="terms">Merge graph</dt>
+<dd class="terms"><p class="p">to open a graph and merge it with the current one.
+					This option works only for regulatory graphs.</p></dd>
+<dt class="terms">Close</dt>
+<dd class="terms"><p class="p">to close the current graph. If other windows are opened, it
+					will simply close the current one, otherwise it will last with an empty
+					window.</p></dd>
+<dt class="terms">Save</dt>
+<dt class="terms">Save as</dt>
+<dd class="terms"><p class="p">to save the current graph. If the file is new orif the <span class="em">Save as</span> option has
+				been selected, a file selection dialog appears which allows to choose the graphical
+				attributes to save: it is possible to save only the structure of
+				the graph, ignoring all graphical attributes, or to save only the
+				position of nodes. The default is to save all graphical attributes
+				(position, size, color, shape...). The graph is saved in the (XML-based)
+				<span class="link"><a href="http://gin.univ-mrs.fr/GINsim/ginml.html" title="http://gin.univ-mrs.fr/GINsim/ginml.html"><span class="em">GINML</span></a></span> format.
+					
+				</p></dd>
+<dt class="terms">Save Subgraph</dt>
+<dd class="terms"><p class="p">save the current selection as a new graph.</p></dd>
+<dt class="terms">Export</dt>
+<dd class="terms">
+<p class="p">save the current graph in another format. GINsim
+					can export regulatory and state transition graphs using several generic visualisation formats.
+					These exports only retain the graph structure and
+					visual appearance. The following export formats are available under the
+					File/export submenu: </p>
+<p class="p">The regulatory graph can additionally be exported into different formats.</p>
+</dd>
+<dt class="terms">Quit</dt>
+<dd class="terms"><p class="p">close all graphs and exit the GINsim application.</p></dd>
+</dl></div></div></div>
+<p class="p">Some of these actions (<span class="em">New</span>, <span class="em">Open</span> and <span class="em">Save</span>) are also available from
+			the toolbar. </p>
+<div class="figure"><div class="inner">
+<a href="#" class="zoom" data-zoom-in-title="View images at normal size" data-zoom-out-title="Scale images down"></a><div class="title title-figure"><h3><span class="title">The save dialog</span></h3></div>
+<div class="region">
+<div class="contents"><div class="media media-image"><div class="inner"><img src="figures/saving.png" class="media media-block" alt=""></div></div></div>
+<div class="desc">
+				The Java <span class="em">Save</span> dialog allows to browse and create folders, as well as to choose their location.
+				By default, only folders and GINML files are shown; other files can be seen by removing the <span class="em">GINML Files</span> filter.
+				The drop-down list on the right side allows to select the graphical attributes to save. The	<span class="em">ExtendedSave</span> checkbox
+				allows to enable or disable extended save (which generates an archive containing the graph and related data).
+			</div>
+</div>
+</div></div>
+<div class="note note-tip" title="Tip"><div class="inner"><div class="region"><div class="contents"><p class="p">If the <span class="em">Extended Save</span> option is selected, the file is
+				saved in an archive (zip file with a .zginml extension) instead of a xml file
+				(with a .ginml extension). This allows to save related data, such as simulation
+				parameters or mutant definitions, along with the model. These files need GINsim
+				2.3 or later  to be opened.</p></div></div></div></div>
+</div></div>
+</div></div>
+<div id="editMenu" class="sect"><div class="inner">
+<div class="hgroup"><h2 class="title"><span class="title">Edit menu</span></h2></div>
+<div class="region">
+<div class="contents"><div class="figure"><div class="inner">
+<a href="#" class="zoom" data-zoom-in-title="View images at normal size" data-zoom-out-title="Scale images down"></a><div class="title title-figure"><h3><span class="title">The Edit menu</span></h3></div>
+<div class="region">
+<div class="contents"><div class="media media-image"><div class="inner"><img src="figures/editMenu.png" class="media media-block" alt=""></div></div></div>
+<div class="desc">The Edit menu allows the selection of some editing options. It is
+				composed of three sections: copy/paste, graph editing tools and selection
+				management.</div>
+</div>
+</div></div></div>
+<div id="copyPaste" class="sect"><div class="inner">
+<div class="hgroup"><h3 class="title"><span class="title">Copy/paste</span></h3></div>
+<div class="region"><div class="contents">
+<p class="p">The edit menu offers classical <span class="em">Copy</span> / <span class="em">Paste</span> entries.</p>
+<div class="note" title="Note"><div class="inner"><div class="region"><div class="contents"><p class="p"><span class="em">Copy</span> and <span class="em">Paste</span> actions are
+					specific to GINsim: copying the graph and pasting it into an external
+					application is not supported. These actions are only available for
+					regulatory graphs.</p></div></div></div></div>
+<div class="list"><div class="inner"><div class="region"><ul class="list">
+<li class="list"><p class="p">Regulatory graph elements can be copied and pasted from one GINsim window to
+						another.</p></li>
+<li class="list"><p class="p">Pasted elements are automatically selected to ease their move.</p></li>
+<li class="list"><p class="p">The <span class="em">Copy</span> action does not test selected
+						interactions, it will automatically select ALL interactions between
+						selected genes.</p></li>
+<li class="list"><p class="p">The identifiers of pasted genes are postfixed to avoid naming conflicts</p></li>
+<li class="list"><p class="p">Logical parameters are also copied and cleaned up: logical
+						parameters involving not-copied nodes are suppressed. The resulting graph
+						is consistent but the new parameters may need to be checked.</p></li>
+</ul></div></div></div>
+</div></div>
+</div></div>
+</div>
+</div></div>
+<div id="actionMenu" class="sect"><div class="inner">
+<div class="hgroup"><h2 class="title"><span class="title">Actions menu</span></h2></div>
+<div class="region"><div class="contents">
+<div class="note" title="Note"><div class="inner"><div class="region"><div class="contents"><p class="p">TODO: replace this all with a short note and point to the relevant index pages?</p></div></div></div></div>
+<div class="figure"><div class="inner">
+<a href="#" class="zoom" data-zoom-in-title="View images at normal size" data-zoom-out-title="Scale images down"></a><div class="title title-figure"><h3><span class="title">The Actions menu</span></h3></div>
+<div class="region">
+<div class="contents"><div class="media media-image"><div class="inner"><img src="figures/actionMenu.png" class="media media-block" alt=""></div></div></div>
+<div class="desc">The Action menu for a regulatory graph.</div>
+</div>
+</div></div>
+<p class="p">Different actions can be performed from this menu, depending on the type of graph.
+			Individual actions are detailed in the relevant part of this manual. Currently
+			available actions are:</p>
+<div class="list"><div class="inner"><div class="region"><ul class="list">
+<li class="list">
+<p class="p">for all graphs:</p>
+<div class="list"><div class="inner"><div class="region"><ul class="list">
+<li class="list"><p class="p"><span class="link"><a href="gui-layouts.html" title="Graph layouts">Graph layouts</a></span>;</p></li>
+<li class="list"><p class="p">determination of the <span class="link"><a href="tool-scc.html" title="Strongly connected components">Strongly
+							Connected Components (SCC)</a></span> of a graph;</p></li>
+</ul></div></div></div>
+</li>
+<li class="list">
+<p class="p">for regulatory graphs:</p>
+<div class="list"><div class="inner"><div class="region"><ul class="list">
+<li class="list"><p class="p"><span class="link"><a href="tool-simulation.html" title="The simulation">The simulation</a></span> (<span class="em">i.e.</span> computation of a state transition graph);</p></li>
+<li class="list"><p class="p">analyse of the <span class="link"><a href="tool-circuits.html" title="Circuit analysis">Circuit analysis</a></span>;</p></li>
+<li class="list"><p class="p">determination of <span class="link"><a href="tool-stable.html" title="Stable state search">Stable state search</a></span>;</p></li>
+</ul></div></div></div>
+</li>
+<li class="list">
+<p class="p">for state transition graphs:</p>
+<div class="list"><div class="inner"><div class="region"><ul class="list">
+<li class="list"><p class="p"><span class="link"><a href="tool-stg-pathfinder.html" title="Lookup a path in the STG">path search</a></span>;</p></li>
+<li class="list"><p class="p"><span class="link"><a href="tool-stg-animator.html" title="Animator for the State Transition Graphs">graphical path construction
+						(animation)</a></span>.</p></li>
+</ul></div></div></div>
+</li>
+</ul></div></div></div>
+</div></div>
+</div></div>
+<div id="secWindow" class="sect"><div class="inner">
+<div class="hgroup"><h2 class="title"><span class="title">The secondary panel</span></h2></div>
+<div class="region"><div class="contents">
+<p class="p">The bottom panel allows to edit the items selected in the graph view. It contains two tabs: </p>
+<div class="list"><div class="inner"><div class="region"><ol class="list" style="list-style-type:numbered">
+<li class="list"><p class="p">The first tab (called <span class="em">Modelling Attributes</span> for regulatory graphs)
+				will change with the type of graph. Panels for the various graph types are described
+				in the corresponding sections.</p></li>
+<li class="list"><p class="p">The <span class="em">Graphical Attributes</span> tab allows to edit the appareance of the selected items.
+				It is described in the <span class="link"><a href="gui-graph.html" title="Graph view">graph view page</a></span>.</p></li>
+</ol></div></div></div>
+</div></div>
+</div></div>
+<div class="sect sect-links" role="navigation">
+<div class="hgroup"></div>
+<div class="contents"><div class="links guidelinks"><div class="inner">
+<div class="title"><h2><span class="title">More Information</span></h2></div>
+<div class="region"><ul><li class="links ">
+<a href="graph-generic.html#gui" title="Handle Graphs">Handle Graphs</a> <span class="status status-review">Ready for review</span>
+</li></ul></div>
+</div></div></div>
+</div>
+</div>
+<div class="clear"></div>
+</div>
+<div class="footer"></div>
+</div>
+</body>
+</html>

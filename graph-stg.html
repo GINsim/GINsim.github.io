@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<title>State Transition Graphs</title>
+<link rel="stylesheet" type="text/css" href="C.css">
+<script type="text/javascript" src="jquery.js"></script><script type="text/javascript" src="jquery.syntax.js"></script><script type="text/javascript" src="yelp.js"></script>
+</head>
+<body>
+<div id="header">
+<div class="banner"></div>
+<ul>
+<li><a href="http://ginsim.org/home" title="Welcome to GINsim">Home</a></li>
+<li><a href="http://ginsim.org/documentation" title="User manual and tutorial">Documentation</a></li>
+<li><a href="http://ginsim.org/models_repository" title="Dynamic view of models in the repository">Model Repository</a></li>
+<li><a href="http://ginsim.org/downloads" title="Downloads">Downloads</a></li>
+<li><a href="http://ginsim.org/publications" title="Publications">Publications</a></li>
+<li><a href="http://ginsim.org/companion_tools" title="Tools associated with GINsim or making use of its ecosystem">Companion Tools</a></li>
+<li><a href="http://ginsim.org/contact" title="Contact Us">Contacts</a></li>
+</ul>
+</div>
+<div class="page" role="main">
+<div class="header"><div class="trails" role="navigation">
+<div class="trail">
+<a class="trail" href="index.html" title="User documentation for GINsim">Index</a> › <a class="trail" href="index.html#dynamics" title="Transition Graphs: dynamics">Dynamics</a> » </div>
+<div class="trail">
+<a class="trail" href="index.html" title="User documentation for GINsim">Index</a> › <a class="trail" href="index.html#graphs" title="Generic Graphs">Graphs</a> » <a class="trail" href="graph-generic.html" title="All graphs">Graphs</a> › <a class="trail" href="graph-generic.html#graph_types" title="Specialised graphs">Specialised graphs</a> » </div>
+</div></div>
+<div class="body">
+<div class="version">
+<div class="title">Ready for review</div>
+<p class="version"> (2013-05-27)</p>
+</div>
+<div class="hgroup"><h1 class="title"><span class="title">State Transition Graphs</span></h1></div>
+<div class="region">
+<div class="contents">
+<p class="p">
+	A State Transition Graph (STG) is a directed graph representing the dynamical behaviour
+	of a <span class="link"><a href="graph-lrg.html" title="Logical Regulatory Graphs">Regulatory Graph</a></span>.
+	Nodes of this graph represent possible states of the model, assigning a value to each component.
+	Arcs of the STG represent transitions from one state to another (i.e. change of value for one
+	or several components).
+	</p>
+<p class="p">For a more formal definition see 
+	<a class="gloss-term" href="biblio.html">Naldi 2011</a>.</p>
+</div>
+<div id="generate" class="sect"><div class="inner">
+<div class="hgroup"><h2 class="title"><span class="title">Generate State Transition Graphs</span></h2></div>
+<div class="region"><div class="contents"><div class="links topiclinks"><div class="inner"><div class="region">
+<div class="links-twocolumn"><div class="linkdiv "><a class="linkdiv" href="tool-simulation.html" title="The simulation"><span class="title">The simulation <span class="status status-draft">Draft</span></span><span class="linkdiv-dash"> — </span><span class="desc">Generate State Transition Graphs</span></a></div></div>
+<div class="links-twocolumn"><div class="linkdiv "><a class="linkdiv" href="tool-simulation-updating-mode.html" title="Updating mode"><span class="title">Updating mode <span class="status status-outdated">Outdated</span></span><span class="linkdiv-dash"> — </span><span class="desc">Updating mode for the simulation</span></a></div></div>
+</div></div></div></div></div>
+</div></div>
+<div id="tools" class="sect"><div class="inner">
+<div class="hgroup"><h2 class="title"><span class="title">Analyse State Transition Graphs</span></h2></div>
+<div class="region"><div class="contents"><div class="links topiclinks"><div class="inner"><div class="region">
+<div class="links-twocolumn">
+<div class="linkdiv "><a class="linkdiv" href="tool-stg-animator.html" title="Animator for the State Transition Graphs"><span class="title">Animator for the State Transition Graphs <span class="status status-outdated">Outdated</span></span><span class="linkdiv-dash"> — </span><span class="desc">Animate the model based on its dynamics</span></a></div>
+<div class="linkdiv "><a class="linkdiv" href="tool-stg-pathfinder.html" title="Lookup a path in the STG"><span class="title">Lookup a path in the STG <span class="status status-outdated">Outdated</span></span><span class="linkdiv-dash"> — </span><span class="desc">define and search for paths in State transition Graphs</span></a></div>
+</div>
+<div class="links-twocolumn"><div class="linkdiv "><a class="linkdiv" href="tool-scc.html" title="Strongly connected components"><span class="title">Strongly connected components <span class="status status-review">Ready for review</span></span><span class="linkdiv-dash"> — </span><span class="desc">Find strongly connected components</span></a></div></div>
+</div></div></div></div></div>
+</div></div>
+<div id="formats" class="sect"><div class="inner">
+<div class="hgroup"><h2 class="title"><span class="title">Formats</span></h2></div>
+<div class="region"><div class="contents"><p class="p">Like other <span class="link"><a href="graph-generic.html" title="All graphs">graphs</a></span>, STGs can be saved in the
+		<span class="link"><a href="format-ginml.html" title="The GINML format">GINML</a></span> or <span class="link"><a href="format-zginml.html" title="The Z-GINML format">Z-GINML</a></span> formats.
+		They can also be exported to the <span class="link"><a href="graph-generic.html#formats" title="File formats">common graph formats</a></span>.
+		</p></div></div>
+</div></div>
+<div class="sect sect-links" role="navigation">
+<div class="hgroup"></div>
+<div class="contents"><div class="links guidelinks"><div class="inner">
+<div class="title"><h2><span class="title">More Information</span></h2></div>
+<div class="region"><ul>
+<li class="links ">
+<a href="graph-generic.html#graph_types" title="Specialised graphs">Specialised graphs</a> <span class="status status-review">Ready for review</span>
+</li>
+<li class="links "><a href="index.html#dynamics" title="Transition Graphs: dynamics">Transition Graphs: dynamics</a></li>
+</ul></div>
+</div></div></div>
+</div>
+</div>
+<div class="clear"></div>
+</div>
+<div class="footer"></div>
+</div>
+</body>
+</html>

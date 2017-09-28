@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<title>Running a simulation</title>
+<link rel="stylesheet" type="text/css" href="C.css">
+<script type="text/javascript" src="jquery.js"></script><script type="text/javascript" src="jquery.syntax.js"></script><script type="text/javascript" src="yelp.js"></script>
+</head>
+<body>
+<div id="header">
+<div class="banner"></div>
+<ul>
+<li><a href="http://ginsim.org/home" title="Welcome to GINsim">Home</a></li>
+<li><a href="http://ginsim.org/documentation" title="User manual and tutorial">Documentation</a></li>
+<li><a href="http://ginsim.org/models_repository" title="Dynamic view of models in the repository">Model Repository</a></li>
+<li><a href="http://ginsim.org/downloads" title="Downloads">Downloads</a></li>
+<li><a href="http://ginsim.org/publications" title="Publications">Publications</a></li>
+<li><a href="http://ginsim.org/companion_tools" title="Tools associated with GINsim or making use of its ecosystem">Companion Tools</a></li>
+<li><a href="http://ginsim.org/contact" title="Contact Us">Contacts</a></li>
+</ul>
+</div>
+<div class="page" role="main">
+<div class="header"><div class="trails" role="navigation"><div class="trail">
+<a class="trail" href="index.html" title="User documentation for GINsim">Index</a> › <a class="trail" href="index.html#gettingstarted" title="Getting started">Getting started</a> » <a class="trail" href="tutorial.html" title="Tutorial">Tutorial</a> » </div></div></div>
+<div class="body">
+<div class="links nextlinks">
+<a class="nextlinks-prev" href="tutorial_lrg.html" title="Definition of a Logical Regulatory Graph">Previous</a><a class="nextlinks-next" href="tutorial_analysis.html" title="Analysis of a State Transition Graph">Next</a>
+</div>
+<div class="hgroup"><h1 class="title"><span class="title">Running a simulation</span></h1></div>
+<div class="region">
+<div class="contents"><div class="links serieslinks"><div class="inner"><div class="region"><ul>
+<li class="links"><a href="tutorial.html" title="Tutorial">Tutorial</a></li>
+<li class="links"><a href="tutorial_lrg.html" title="Definition of a Logical Regulatory Graph">Definition of a Logical Regulatory Graph</a></li>
+<li class="links">Running a simulation</li>
+<li class="links"><a href="tutorial_analysis.html" title="Analysis of a State Transition Graph">Analysis of a State Transition Graph</a></li>
+</ul></div></div></div></div>
+<div id="simulation" class="sect"><div class="inner">
+<div class="hgroup"><h2 class="title"><span class="title">Running a simulation</span></h2></div>
+<div class="region">
+<div class="contents">
+<p class="p">Once a regulatory model has been defined, a simulation can be launched through the option <span class="em">Run Simulation</span> option of the <span class="em">Tools</span> menu.</p>
+<p class="p">The simulation computes a <span class="em">state transition graph</span>, representing the dynamical behaviour of the model. The nodes of this graph, also called <span class="em">states</span> of the system, are vectors giving the expression levels of all genes of the model (ordered as defined in the <span class="em">Graph Attributes</span> tab of the regulatory graph).</p>
+<p class="p">At a given state, a speciﬁc logical parameter can be associated with each regulatory component. If the value of this parameter is smaller or greater than that of the current concentration/activity level of the corresponding component, this level tends to decrease or increase, respectively. Otherwise (when the parameter value and the component level are equal), the component keeps its current value.</p>
+<p class="p">Building a state transition graph involves the selection of a <span class="link"><a href="#updating" title="Construction strategy">Construction strategy</a></span> for its construction, the specification of <span class="link"><a href="#initStates" title="Initial state(s)">Initial state(s)</a></span> as well as  optional size constraints (not detailed here).</p>
+<div class="figure"><div class="inner">
+<a href="#" class="zoom" data-zoom-in-title="View images at normal size" data-zoom-out-title="Scale images down"></a><div class="title title-figure"><h3><span class="title">Dialog box to configure the simulation</span></h3></div>
+<div class="region">
+<div class="contents"><div class="media media-image"><div class="inner"><img src="figures/simulation_config.png" class="media media-block" alt=""></div></div></div>
+<div class="desc">The simulation dialog box. The left part of this dialog box allows to create several simulation parameters and to select which one is edited in the right part. The dialog box on the screenshot is ready to run an asynchronous depth first simulation, using a set of initial states. The set of initial states allows a single value for C1, three values (from 1 to 3) for Cro, and two values for C2 and N. 1*3*2*2 = 12 initial states will be considered. "M" before a value emphasizes the selection of the maximal value. "*" stands for all possible values within the associated range.</div>
+</div>
+</div></div>
+</div>
+<div id="initStates" class="sect"><div class="inner">
+<div class="hgroup"><h3 class="title"><span class="title">Initial state(s)</span></h3></div>
+<div class="region"><div class="contents">
+<p class="p">The bottom part of the dialog box is dedicated to the selection of the initial states of the simulation. The simulation will start with each of these initial states, unless they have already been reached by a previous simulation (i.e. from another initial states).</p>
+<p class="p">The simulation can consider all possible states as initial states (resulting to the <span class="em">full</span> state transition graph), or use only a specific subset, defined in the table. Each line of this table describes one or several initial states, by mean of a set of allowed values for each gene of the system. A line can be defined but not taken into account if its <span class="em">use</span> checkbox is unchecked.</p>
+</div></div>
+</div></div>
+<div id="updating" class="sect"><div class="inner">
+<div class="hgroup"><h3 class="title"><span class="title">Construction strategy</span></h3></div>
+<div class="region">
+<div class="contents">
+<p class="p">When several genes are called to update their expression levels at the same time, several strategies can be applied. In GINsim, the following construction strategies are implemented:</p>
+<div class="terms"><div class="inner"><div class="region"><dl class="terms">
+<dt class="terms">Synchronous</dt>
+<dd class="terms"><p class="p"> all the updating calls are executed simultaneously. This strategy is generally
+						    considered unrealistic, but it is still useful in some cases.</p></dd>
+<dt class="terms">Asynchronous</dt>
+<dd class="terms"><p class="p">only one updating call is executed at
+						each step, but all possible trajectories are generated in the
+						resulting state transition graph. This is the default
+						strategy.</p></dd>
+<dt class="terms">Priority classes</dt>
+<dd class="terms"><p class="p">fined-grained mode where a subset of updating calls are executed synchronously or asynchronously,
+					       according to user-defined priority classes (see below).</p></dd>
+</dl></div></div></div>
+<div class="note" title="Note"><div class="inner"><div class="region"><div class="contents"><p class="p">Stable (steady) states (i.e. states with no successor) are conserved whatever the selected updating assumption. However, their reachability may change.</p></div></div></div></div>
+<div class="figure"><div class="inner">
+<a href="#" class="zoom" data-zoom-in-title="View images at normal size" data-zoom-out-title="Scale images down"></a><div class="title title-figure"><h4><span class="title">Construction strategy: synchronous versus asynchronous</span></h4></div>
+<div class="region">
+<div class="contents"><div class="media media-image"><div class="inner"><img src="figures/a-sync.png" class="media media-block" alt=""></div></div></div>
+<div class="desc">Samples of simulation results for the lambda4 model, applying synchronous and asynchronous strategies to the same initial states (all states where C1=0 and Cro&gt;0). Dotted arcs denote transitions were several components are updated simultaneously.</div>
+</div>
+</div></div>
+</div>
+<div id="pclass" class="sect"><div class="inner">
+<div class="hgroup"><h4 class="title"><span class="title">Priority classes</span></h4></div>
+<div class="region"><div class="contents">
+<p class="p">GINsim allows the user to group components into different classes, and to assign a priority
+					level to each of these classes. In case of concurrent transition calls, GINsim ﬁrst updates the gene(s) belonging to the class with the highest ranking. For each priority class, the user can further specify the desired updating assumption, which then determines the treatment of concurrent transition calls inside that class. When several classes have the same ranking, concurrent transitions are treated under an asynchronous assumption (no priority).</p>
+<p class="p">By default, all transitions belong to the same asynchronous class. Running the simulation without further configuration is thus the same as using the asynchronous assumption.</p>
+<p class="p">The left part of the configuration dialog box shows a list of priority classes (see figure below). The name of a class can be edited and a checkbox allows to change its internal mode from asynchronous (unchecked) to synchronous (checked). Buttons enable to add (+), delete (X), order (using the arrows) and group/ungroup (G) them. Grouped classes have the same rank and the corresponding updating calls will be considered asynchronously.</p>
+<p class="p">The central column lists transitions that belong to the currently selected class, whereas the column on the right lists all other transitions (belonging to other classes). To add transitions to the current class, select these transitions in the right list an click on the "&lt;&lt;" button. The "&gt;&gt;" button removes the selected transitions in the central list from the current class (and add them to the first class of the list).</p>
+<p class="p">Finally, a choice list on the bottom left, allows to apply some predefined initial settings.</p>
+<div class="figure"><div class="inner">
+<a href="#" class="zoom" data-zoom-in-title="View images at normal size" data-zoom-out-title="Scale images down"></a><div class="title title-figure"><h5><span class="title">Definition of Priority classes</span></h5></div>
+<div class="region"><div class="contents"><div class="media media-image"><div class="inner"><img src="figures/priorityClass.png" class="media media-block" alt=""></div></div></div></div>
+</div></div>
+<div class="figure"><div class="inner">
+<a href="#" class="zoom" data-zoom-in-title="View images at normal size" data-zoom-out-title="Scale images down"></a><div class="title title-figure"><h5><span class="title">Priority Class: example result</span></h5></div>
+<div class="region">
+<div class="contents"><div class="media media-image"><div class="inner"><img src="figures/dyn_pclass.png" class="media media-block" alt=""></div></div></div>
+<div class="desc">Example of simulation using priority classes. Two priority classes have been created. The class with the highest rank is synchronous and contains C1, C2 and Cro. The other class contains only N. The resulting state transition graph is splitted into two parts: N expressed vs. N not expressed.</div>
+</div>
+</div></div>
+</div></div>
+</div></div>
+</div>
+</div></div>
+<div id="transitionBlocking" class="sect"><div class="inner">
+<div class="hgroup"><h3 class="title"><span class="title">Mutants</span></h3></div>
+<div class="region"><div class="contents">
+<p class="p">Simple or multiple mutations (knockouts or ectopic gene expression) can be defined. A mutant is defined as restrictions on the evolution of the expression level of some genes. The mutant configuration dialog box, allows the definition of mutants by assigning minimal and maximal expression level to the relevant gene(s).</p>
+<div class="note note-warning" title="Warning"><div class="inner"><div class="region"><div class="contents"><p class="p">Mutant definitions prevent the expression level of a gene from leaving a given range, but it does not affect transitions outside of this range. Completly locking the expression level requires to define initial states in the restricted range.</p></div></div></div></div>
+<div class="figure"><div class="inner">
+<a href="#" class="zoom" data-zoom-in-title="View images at normal size" data-zoom-out-title="Scale images down"></a><div class="title title-figure"><h4><span class="title">Mutant definition</span></h4></div>
+<div class="region">
+<div class="contents"><div class="media media-image"><div class="inner"><img src="figures/perturbations.png" class="media media-block" alt=""></div></div></div>
+<div class="desc">Dialog box for the definition of mutants.</div>
+</div>
+</div></div>
+<div class="figure"><div class="inner">
+<a href="#" class="zoom" data-zoom-in-title="View images at normal size" data-zoom-out-title="Scale images down"></a><div class="title title-figure"><h4><span class="title">Mutant simulation result</span></h4></div>
+<div class="region">
+<div class="contents"><div class="media media-image"><div class="inner"><img src="figures/blocking.png" class="media media-block" alt=""></div></div></div>
+<div class="desc">Result of an asynchronous simulation, where the expression level for Cro has been blocked at 1.
+				The state transition graph is the same as the original asynchronous one, but all transitions where Cro leaves
+				this value have been suppressed. This state transition graph is now composed of two disconnected parts,
+				with a new stable state.</div>
+</div>
+</div></div>
+</div></div>
+</div></div>
+</div>
+</div></div>
+<div class="links nextlinks">
+<a class="nextlinks-prev" href="tutorial_lrg.html" title="Definition of a Logical Regulatory Graph">Previous</a><a class="nextlinks-next" href="tutorial_analysis.html" title="Analysis of a State Transition Graph">Next</a>
+</div>
+<div class="sect sect-links" role="navigation">
+<div class="hgroup"></div>
+<div class="contents"><div class="links guidelinks"><div class="inner">
+<div class="title"><h2><span class="title">More Information</span></h2></div>
+<div class="region"><ul><li class="links ">
+<a href="tutorial.html" title="Tutorial">Tutorial</a> <span class="status status-draft">Draft</span><span class="desc"> — Overview of the main features through a simple example</span>
+</li></ul></div>
+</div></div></div>
+</div>
+</div>
+<div class="clear"></div>
+</div>
+<div class="footer"></div>
+</div>
+</body>
+</html>

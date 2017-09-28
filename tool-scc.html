@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<title>Strongly connected components</title>
+<link rel="stylesheet" type="text/css" href="C.css">
+<script type="text/javascript" src="jquery.js"></script><script type="text/javascript" src="jquery.syntax.js"></script><script type="text/javascript" src="yelp.js"></script>
+</head>
+<body>
+<div id="header">
+<div class="banner"></div>
+<ul>
+<li><a href="http://ginsim.org/home" title="Welcome to GINsim">Home</a></li>
+<li><a href="http://ginsim.org/documentation" title="User manual and tutorial">Documentation</a></li>
+<li><a href="http://ginsim.org/models_repository" title="Dynamic view of models in the repository">Model Repository</a></li>
+<li><a href="http://ginsim.org/downloads" title="Downloads">Downloads</a></li>
+<li><a href="http://ginsim.org/publications" title="Publications">Publications</a></li>
+<li><a href="http://ginsim.org/companion_tools" title="Tools associated with GINsim or making use of its ecosystem">Companion Tools</a></li>
+<li><a href="http://ginsim.org/contact" title="Contact Us">Contacts</a></li>
+</ul>
+</div>
+<div class="page" role="main">
+<div class="header"><div class="trails" role="navigation">
+<div class="trail">
+<a class="trail" href="index.html" title="User documentation for GINsim">Index</a> › <a class="trail" href="index.html#advanced" title="Going further">Advanced</a> » <a class="trail" href="tools.html" title="Available tools">Available tools</a> » </div>
+<div class="trail">
+<a class="trail" href="index.html" title="User documentation for GINsim">Index</a> › <a class="trail" href="index.html#dynamics" title="Transition Graphs: dynamics">Dynamics</a> » <a class="trail" href="graph-stg.html" title="State Transition Graphs">STG</a> › <a class="trail" href="graph-stg.html#tools" title="Analyse State Transition Graphs">Analyse STG</a> » </div>
+<div class="trail">
+<a class="trail" href="index.html" title="User documentation for GINsim">Index</a> › <a class="trail" href="index.html#graphs" title="Generic Graphs">Graphs</a> » <a class="trail" href="graph-scc.html" title="Graph of the Strongly Connected Components">SCC Graph</a> › <a class="trail" href="graph-scc.html#generate" title="Generate SCC Graphs">Generate SCC Graphs</a> » </div>
+<div class="trail">
+<a class="trail" href="index.html" title="User documentation for GINsim">Index</a> › <a class="trail" href="index.html#graphs" title="Generic Graphs">Graphs</a> » <a class="trail" href="graph-generic.html" title="All graphs">Graphs</a> › <a class="trail" href="graph-generic.html#graph_types" title="Specialised graphs">Specialised graphs</a> » <a class="trail" href="graph-stg.html" title="State Transition Graphs">STG</a> › <a class="trail" href="graph-stg.html#tools" title="Analyse State Transition Graphs">Analyse STG</a> » </div>
+<div class="trail">
+<a class="trail" href="index.html" title="User documentation for GINsim">Index</a> › <a class="trail" href="index.html#graphs" title="Generic Graphs">Graphs</a> » <a class="trail" href="graph-generic.html" title="All graphs">Graphs</a> › <a class="trail" href="graph-generic.html#graph_types" title="Specialised graphs">Specialised graphs</a> » <a class="trail" href="graph-scc.html" title="Graph of the Strongly Connected Components">SCC Graph</a> › <a class="trail" href="graph-scc.html#generate" title="Generate SCC Graphs">Generate SCC Graphs</a> » </div>
+<div class="trail">
+<a class="trail" href="index.html" title="User documentation for GINsim">Index</a> › <a class="trail" href="index.html#graphs" title="Generic Graphs">Graphs</a> » <a class="trail" href="graph-generic.html" title="All graphs">Graphs</a> › <a class="trail" href="graph-generic.html#tools" title="Tools">Tools</a> » </div>
+</div></div>
+<div class="body">
+<div class="version">
+<div class="title">Ready for review</div>
+<p class="version"> (2013-04-24)</p>
+</div>
+<div class="hgroup"><h1 class="title"><span class="title">Strongly connected components</span></h1></div>
+<div class="region">
+<div class="contents">
+<p class="p">
+	GINsim allows to compute the <span class="link"><a href="graph-scc.html" title="Graph of the Strongly Connected Components">graph of the Strongly Connected Components
+	(SCC graph)</a></span> of an existing graph, through the <span class="em">Construct SCC graph</span> option of the
+	<span class="em">Tools</span> menu.
+	</p>
+<div class="figure"><div class="inner">
+<a href="#" class="zoom" data-zoom-in-title="View images at normal size" data-zoom-out-title="Scale images down"></a><div class="title title-figure"><h2><span class="title">Strongly Connected Components graph</span></h2></div>
+<div class="region">
+<div class="contents"><div class="media media-image"><div class="inner"><img src="figures/scc.png" class="media media-block" alt=""></div></div></div>
+<div class="desc">
+			Example of Strongly Connected Component Graph (bottom right) and
+			the corresponding state transition graph (top left). 
+			The <span class="em">Selection Attribute</span> tab in the bottom panel shows
+			the content of the selected SCC (<span class="em">i.e.</span> the list of nodes
+			in the original graph).
+		</div>
+</div>
+</div></div>
+<p class="p">Note that the <span class="em">Construct SCC Graph</span> tool is often applied to <span class="link"><a href="graph-stg.html" title="State Transition Graphs">State Transition Graphs</a></span>
+	but that it can also be applied to <span class="link"><a href="graph-lrg.html" title="Logical Regulatory Graphs">Regulatory Graphs</a></span> (or more formally to any type of graphs).</p>
+</div>
+<div class="sect sect-links" role="navigation">
+<div class="hgroup"></div>
+<div class="contents"><div class="links guidelinks"><div class="inner">
+<div class="title"><h2><span class="title">More Information</span></h2></div>
+<div class="region"><ul>
+<li class="links ">
+<a href="graph-stg.html#tools" title="Analyse State Transition Graphs">Analyse State Transition Graphs</a> <span class="status status-review">Ready for review</span>
+</li>
+<li class="links ">
+<a href="tools.html" title="Available tools">Available tools</a><span class="desc"> — List of available tools</span>
+</li>
+<li class="links ">
+<a href="graph-scc.html#generate" title="Generate SCC Graphs">Generate SCC Graphs</a> <span class="status status-review">Ready for review</span>
+</li>
+<li class="links ">
+<a href="graph-generic.html#tools" title="Tools">Tools</a> <span class="status status-review">Ready for review</span>
+</li>
+</ul></div>
+</div></div></div>
+</div>
+</div>
+<div class="clear"></div>
+</div>
+<div class="footer"></div>
+</div>
+</body>
+</html>

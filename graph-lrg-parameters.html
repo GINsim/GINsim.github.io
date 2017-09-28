@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<title>Dynamical behaviour</title>
+<link rel="stylesheet" type="text/css" href="C.css">
+<script type="text/javascript" src="jquery.js"></script><script type="text/javascript" src="jquery.syntax.js"></script><script type="text/javascript" src="yelp.js"></script>
+</head>
+<body>
+<div id="header">
+<div class="banner"></div>
+<ul>
+<li><a href="http://ginsim.org/home" title="Welcome to GINsim">Home</a></li>
+<li><a href="http://ginsim.org/documentation" title="User manual and tutorial">Documentation</a></li>
+<li><a href="http://ginsim.org/models_repository" title="Dynamic view of models in the repository">Model Repository</a></li>
+<li><a href="http://ginsim.org/downloads" title="Downloads">Downloads</a></li>
+<li><a href="http://ginsim.org/publications" title="Publications">Publications</a></li>
+<li><a href="http://ginsim.org/companion_tools" title="Tools associated with GINsim or making use of its ecosystem">Companion Tools</a></li>
+<li><a href="http://ginsim.org/contact" title="Contact Us">Contacts</a></li>
+</ul>
+</div>
+<div class="page" role="main">
+<div class="header"><div class="trails" role="navigation">
+<div class="trail">
+<a class="trail" href="index.html" title="User documentation for GINsim">Index</a> › <a class="trail" href="index.html#graphs" title="Generic Graphs">Graphs</a> » <a class="trail" href="graph-generic.html" title="All graphs">Graphs</a> › <a class="trail" href="graph-generic.html#graph_types" title="Specialised graphs">Specialised graphs</a> » <a class="trail" href="graph-lrg.html" title="Logical Regulatory Graphs">LRG</a> › <a class="trail" href="graph-lrg.html#build" title="Build Regulatory Graphs">Build Regulatory Graphs</a> » </div>
+<div class="trail">
+<a class="trail" href="index.html" title="User documentation for GINsim">Index</a> › <a class="trail" href="index.html#model" title="Logical regulatory graph: model">Model</a> » </div>
+<div class="trail">
+<a class="trail" href="index.html" title="User documentation for GINsim">Index</a> › <a class="trail" href="index.html#model" title="Logical regulatory graph: model">Model</a> » <a class="trail" href="graph-lrg.html" title="Logical Regulatory Graphs">LRG</a> › <a class="trail" href="graph-lrg.html#build" title="Build Regulatory Graphs">Build Regulatory Graphs</a> » </div>
+</div></div>
+<div class="body">
+<div class="version">
+<div class="title">Incomplete</div>
+<p class="version"> (2012-12-05)</p>
+</div>
+<div class="hgroup"><h1 class="title"><span class="title">Dynamical behaviour</span></h1></div>
+<div class="region">
+<div class="contents"><p class="p">The dynamical behaviour of regulatory components depends on their regulators,
+	but the precise rules governing them must be explicitly defined.
+	In GINsim, these rules can be defined either as <span class="em">logical parameters</span>, or
+	as <span class="em">logical functions</span>. These two alternatives are described below.
+	</p></div>
+<div id="parameters" class="sect"><div class="inner">
+<div class="hgroup"><h2 class="title"><span class="title">Logical parameters</span></h2></div>
+<div class="region"><div class="contents">
+<p class="p">A logical parameter corresponds to a single entry (line) in the truthtable of a component. 
+	It is defined by a target activity level and a list of active interactions.
+	By default, interactions not present on the list are implicitly considered to be inactive.
+	This means that in order to a given parameter to be effective,
+	all interactions present on the list must be active, and all interactions not present on the 
+	list must be inactive.
+	</p>
+<p class="p">When a component is selected, <span class="em">logical parameters</span>
+		for this component can be defined in the right part of the
+		<span class="em">Modelling Attribute</span> tab. The panel dedicated to the
+		definition of logical parameters is divided into three parts:</p>
+<div class="list"><div class="inner"><div class="region"><ul class="list">
+<li class="list"><p class="p">On the left, a table lists all defined logical parameters,
+			showing their values and related interactions.</p></li>
+<li class="list"><p class="p">A central part containing buttons to edit the list of parameters</p></li>
+<li class="list"><p class="p">On the right, a list of all incoming interactions of the selected component.</p></li>
+</ul></div></div></div>
+<div class="figure"><div class="inner">
+<a href="#" class="zoom" data-zoom-in-title="View images at normal size" data-zoom-out-title="Scale images down"></a><div class="title title-figure"><h3><span class="title">Definition of non zero parameters for CI</span></h3></div>
+<div class="region">
+<div class="contents"><div class="media media-image"><div class="inner"><img src="figures/configuredInteraction.png" class="media media-block" alt=""></div></div></div>
+<div class="desc">The logical parameter panel, showing all parameters for component CI.</div>
+</div>
+</div></div>
+<p class="p">To <span class="em">add</span> a new logical parameter, select the empty line in the list of parameters (the last line),
+	select a combination of active interactions on the right part, and click on the <span class="gui">left arrow</span>.
+	The new logical parameter will be defined with the default value of 1, this value can be edited though.
+	The specification of logical parameters with target values set to 0 is not needed, since all non-specified logical parameters are implicitly considered to be 0.
+	Adding a parameter with a set of active interactions that is already defined is not permitted.
+	</p>
+<p class="p">The <span class="gui">Up/Down arrows</span> enable the reordering the existing parameters.</p>
+<p class="p">To <span class="em">remove</span> parameters from the list of active interactions, select them and click on the <span class="gui">-</span> button.</p>
+<p class="p">To <span class="em">modify</span> the active interactions for an exiting parameter, select the corresponding line, then select the correct set of active interactions in the right part, and finally click on the <span class="gui">left arrow</span> button to apply the changes.</p>
+<div class="note note-warning" title="Warning"><div class="inner"><div class="region"><div class="contents">
+<p class="p">It is not possible to select the <span class="em">Input</span> checkbox whenever a component has incoming interactions.</p>
+<p class="p">In the same vein, if the <span class="em">Input</span> checkbox is selected, it is not possible to to define logical parameters and the component is considered to have an implicit self-activation.</p>
+</div></div></div></div>
+</div></div>
+</div></div>
+<div id="functions" class="sect"><div class="inner">
+<div class="hgroup"><h2 class="title"><span class="title">Logical functions</span></h2></div>
+<div class="region"><div class="contents">
+<p class="p">The dynamical behaviour of a given compoenent can also be specified through the use of logical functions. These function are, for certain cases, a more convenient manner to define complex behaviours with many regulators.
+	The definition of a logical function will generate the corresponding logical parameters automatically.
+	</p>
+<div class="note note-warning" title="Warning"><div class="inner"><div class="region"><div class="contents"><p class="p">The automatically generated logical parameters may overlap with previously generated ones, automatically or manually.</p></div></div></div></div>
+<div class="figure"><div class="inner">
+<a href="#" class="zoom" data-zoom-in-title="View images at normal size" data-zoom-out-title="Scale images down"></a><div class="title title-figure"><h3><span class="title">Definition of a logical function for CI</span></h3></div>
+<div class="region">
+<div class="contents"><div class="media media-image"><div class="inner"><img src="figures/logical-functions.png" class="media media-block" alt=""></div></div></div>
+<div class="desc">The logical function panel, showing the definition of one logical function at target 1.</div>
+</div>
+</div></div>
+<p class="p">To define a new logical function, select the <span class="em">Down</span> arrow, specify a target value for the function, and select subsequent <span class="em">Down</span> arrow.
+	You can then press the <span class="em">E</span> button to start editing the logical function (line color changes to green).
+	The after insertion of the logical function press <span class="em">Enter</span> to validate the expression and automatically create the corresponding logical parameters.</p>
+<p class="p">The parser for logical functions accepts the logical AND and OR with the symbol &amp; and |, respectively. Additionally, you can add parentheses to prioritize logical operations.</p>
+</div></div>
+</div></div>
+<div class="sect sect-links" role="navigation">
+<div class="hgroup"></div>
+<div class="contents"><div class="links guidelinks"><div class="inner">
+<div class="title"><h2><span class="title">More Information</span></h2></div>
+<div class="region"><ul>
+<li class="links ">
+<a href="graph-lrg.html#build" title="Build Regulatory Graphs">Build Regulatory Graphs</a> <span class="status status-review">Ready for review</span>
+</li>
+<li class="links "><a href="index.html#model" title="Logical regulatory graph: model">Logical regulatory graph: model</a></li>
+</ul></div>
+</div></div></div>
+</div>
+</div>
+<div class="clear"></div>
+</div>
+<div class="footer"></div>
+</div>
+</body>
+</html>

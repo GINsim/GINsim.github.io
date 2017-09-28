@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<title>Composition of LRGs</title>
+<link rel="stylesheet" type="text/css" href="C.css">
+<script type="text/javascript" src="jquery.js"></script><script type="text/javascript" src="jquery.syntax.js"></script><script type="text/javascript" src="yelp.js"></script>
+</head>
+<body>
+<div id="header">
+<div class="banner"></div>
+<ul>
+<li><a href="http://ginsim.org/home" title="Welcome to GINsim">Home</a></li>
+<li><a href="http://ginsim.org/documentation" title="User manual and tutorial">Documentation</a></li>
+<li><a href="http://ginsim.org/models_repository" title="Dynamic view of models in the repository">Model Repository</a></li>
+<li><a href="http://ginsim.org/downloads" title="Downloads">Downloads</a></li>
+<li><a href="http://ginsim.org/publications" title="Publications">Publications</a></li>
+<li><a href="http://ginsim.org/companion_tools" title="Tools associated with GINsim or making use of its ecosystem">Companion Tools</a></li>
+<li><a href="http://ginsim.org/contact" title="Contact Us">Contacts</a></li>
+</ul>
+</div>
+<div class="page" role="main">
+<div class="header"><div class="trails" role="navigation">
+<div class="trail">
+<a class="trail" href="index.html" title="User documentation for GINsim">Index</a> › <a class="trail" href="index.html#advanced" title="Going further">Advanced</a> » <a class="trail" href="tools.html" title="Available tools">Available tools</a> » </div>
+<div class="trail">
+<a class="trail" href="index.html" title="User documentation for GINsim">Index</a> › <a class="trail" href="index.html#graphs" title="Generic Graphs">Graphs</a> » <a class="trail" href="graph-generic.html" title="All graphs">Graphs</a> › <a class="trail" href="graph-generic.html#graph_types" title="Specialised graphs">Specialised graphs</a> » <a class="trail" href="graph-lrg.html" title="Logical Regulatory Graphs">LRG</a> › <a class="trail" href="graph-lrg.html#transform" title="Transform Regulatory Graphs">Transform Regulatory Graphs</a> » </div>
+<div class="trail">
+<a class="trail" href="index.html" title="User documentation for GINsim">Index</a> › <a class="trail" href="index.html#model" title="Logical regulatory graph: model">Model</a> » <a class="trail" href="graph-lrg.html" title="Logical Regulatory Graphs">LRG</a> › <a class="trail" href="graph-lrg.html#transform" title="Transform Regulatory Graphs">Transform Regulatory Graphs</a> » </div>
+<div class="trail">
+<a class="trail" href="index.html" title="User documentation for GINsim">Index</a> › <a class="trail" href="index.html#lrgtransform" title="Transform LRGs">Transform LRGs</a> » </div>
+</div></div>
+<div class="body">
+<div class="version">
+<div class="title">Draft</div>
+<p class="version"> (2013-04-10)</p>
+</div>
+<div class="hgroup"><h1 class="title"><span class="title">Composition of LRGs</span></h1></div>
+<div class="region">
+<div class="contents"></div>
+<div id="motivation" class="sect"><div class="inner">
+<div class="hgroup"><h2 class="title"><span class="title">Motivation</span></h2></div>
+<div class="region"><div class="contents"><p class="p">Models of inter-cellular regulation can be viewed as the coordination between logical modules governing the intracellular regulatory interactions. This coordination is achieved by inter-cellular communication which is made operational by having external regulators influence the state of components in each intracellular module.
+		By making the inter-cellular regulatory relations explicit, it is possible to obtain a global logical model describing the whole system. This tool provides a generic method to obtain this global model from the composition of identical individual logical modules.
+		</p></div></div>
+</div></div>
+<div id="usage" class="sect"><div class="inner">
+<div class="hgroup"><h2 class="title"><span class="title">Usage</span></h2></div>
+<div class="region"><div class="contents">
+<p class="p">The composition tool is available in the <span class="em">Actions</span> menu. It opens a composition specification dialog in which the user can specify the parameters of the composition.</p>
+<p class="p">The LRG currently loaded will be used as the intracellular module of the composition. In order for the composition to be meaningful, it is necessary that the LRG contains at least one input component, which will integrate the signals originating from external modules.</p>
+<p class="p">In this composition specification dialog the user indicates:</p>
+<div class="list"><div class="inner"><div class="region"><ul class="list">
+<li class="list"><p class="p">The number of instances of the composition, which refers to the number of logical modules to be composed</p></li>
+<li class="list"><p class="p">The neighbourhood relation between instances, which is a non-reflexive relation establishing which instances are in the vicinity and, consequently, can influence each instance. In general, this relation is not symmetrical meaning that if module 1 has module 2 as its neighbour, the former is influenced by the latter, but the reverse is not true unless otherwise specified. The <span class="em">Symmetry</span> option makes all neighbourhood relations symmetrical automatically.</p></li>
+<li class="list">
+<p class="p">The logical integration function for each input the user wishes to map.</p>
+<p class="p">The available logical integration functions are <span class="em">OR</span>, <span class="em">AND</span> (for components taking Boolean values), <span class="em">MAX</span>, <span class="em">MIN</span> and <span class="em">THRESHOLD2</span> (for components taking other values). The <span class="em">THRESHOLD2</span> function has multi-valued arguments and produces a Boolean result, being <span class="code">true</span> only if at least one argument takes value 2 or above. The arguments of the logical integration function can be specified as any subset of proper components. Depending on the type of input component being mapped and the proper components selected as arguments, the list of available logical integration functions is automatically updated.</p>
+<p class="p">By selecting a logical integration function and a subset of proper components as arguments, the value of the mapped input component will be governed by the value of the integration function applied to the corresponding arguments in all the neighbouring instances. For example, if an input component <span class="em">U0</span> is mapped to an <span class="em">OR</span> of the proper components <span class="em">G1</span> and <span class="em">G2</span>, then, for the first instance <span class="em">1</span> (which, suppose,  has instances <span class="em">2</span> and <span class="em">3</span> as neighbours), the input component will be the disjunction of the values of <span class="em">G1</span> and <span class="em">G2</span> in instance <span class="em">2</span> and the values of the same components in instance <span class="em">3</span>. Consequently, all mapped input components rely on the same neighbouring relation.</p>
+</li>
+<li class="list">
+<p class="p">Whether the composed model should be reduced with respect to the mapped input components.</p>
+<p class="p">The reduction option will remove the mapped input components from the composed model and reflect the regulatory effects of components external to each module onto the components regulated by the mapped input component. The reduced composed model corresponds to the most natural dynamics expected from the composition, since the mapped input components in the composed model are "dummy" components for which no delays are associated to the corresponding value updates.</p>
+<p class="p">The option not to reduce the resulting composed model should only be used to elicit fine tuning of the integration functions for particular modules.</p>
+</li>
+</ul></div></div></div>
+</div></div>
+</div></div>
+<div id="script" class="sect"><div class="inner">
+<div class="hgroup"><h2 class="title"><span class="title">Script mode</span></h2></div>
+<div class="region"><div class="contents"></div></div>
+</div></div>
+<div id="availability" class="sect"><div class="inner">
+<div class="hgroup"><h2 class="title"><span class="title">Availability and further reading</span></h2></div>
+<div class="region"><div class="contents"><p class="p">This method was implemented in GINsim 3.0. Further information on the method is available in <a class="gloss-term" href="biblio.html">Mendes et al. Bioinformatics (2013)</a></p></div></div>
+</div></div>
+<div class="sect sect-links" role="navigation">
+<div class="hgroup"></div>
+<div class="contents"><div class="links guidelinks"><div class="inner">
+<div class="title"><h2><span class="title">More Information</span></h2></div>
+<div class="region"><ul>
+<li class="links ">
+<a href="tools.html" title="Available tools">Available tools</a><span class="desc"> — List of available tools</span>
+</li>
+<li class="links "><a href="index.html#lrgtransform" title="Transform LRGs">Transform LRGs</a></li>
+<li class="links ">
+<a href="graph-lrg.html#transform" title="Transform Regulatory Graphs">Transform Regulatory Graphs</a> <span class="status status-review">Ready for review</span>
+</li>
+</ul></div>
+</div></div></div>
+</div>
+</div>
+<div class="clear"></div>
+</div>
+<div class="footer"></div>
+</div>
+</body>
+</html>

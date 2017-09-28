@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<title>Logical Regulatory Graphs</title>
+<link rel="stylesheet" type="text/css" href="C.css">
+<script type="text/javascript" src="jquery.js"></script><script type="text/javascript" src="jquery.syntax.js"></script><script type="text/javascript" src="yelp.js"></script>
+</head>
+<body>
+<div id="header">
+<div class="banner"></div>
+<ul>
+<li><a href="http://ginsim.org/home" title="Welcome to GINsim">Home</a></li>
+<li><a href="http://ginsim.org/documentation" title="User manual and tutorial">Documentation</a></li>
+<li><a href="http://ginsim.org/models_repository" title="Dynamic view of models in the repository">Model Repository</a></li>
+<li><a href="http://ginsim.org/downloads" title="Downloads">Downloads</a></li>
+<li><a href="http://ginsim.org/publications" title="Publications">Publications</a></li>
+<li><a href="http://ginsim.org/companion_tools" title="Tools associated with GINsim or making use of its ecosystem">Companion Tools</a></li>
+<li><a href="http://ginsim.org/contact" title="Contact Us">Contacts</a></li>
+</ul>
+</div>
+<div class="page" role="main">
+<div class="header"><div class="trails" role="navigation">
+<div class="trail">
+<a class="trail" href="index.html" title="User documentation for GINsim">Index</a> › <a class="trail" href="index.html#graphs" title="Generic Graphs">Graphs</a> » <a class="trail" href="graph-generic.html" title="All graphs">Graphs</a> › <a class="trail" href="graph-generic.html#graph_types" title="Specialised graphs">Specialised graphs</a> » </div>
+<div class="trail">
+<a class="trail" href="index.html" title="User documentation for GINsim">Index</a> › <a class="trail" href="index.html#model" title="Logical regulatory graph: model">Model</a> » </div>
+</div></div>
+<div class="body">
+<div class="version">
+<div class="title">Ready for review</div>
+<p class="version"> (2013-04-24)</p>
+</div>
+<div class="hgroup"><h1 class="title"><span class="title">Logical Regulatory Graphs</span></h1></div>
+<div class="region">
+<div class="contents">
+<p class="p">Informally, a Logical Regulatory Graph (LRG) is a directed labelled multigraph 
+	representing interactions (the edges) between genes (the nodes).
+	Each interaction involves two genes, the source and the target, becoming active
+	whenever its source reaches a given level.
+	The activation level of each gene <span class="em">g</span> is defined by a regulatory function
+	comprising parameters relative to all the source genes of all interactions 
+	targeting <span class="em">g</span>.</p>
+<p class="p">For a more formal definition see 
+	<a class="gloss-term" href="biblio.html">Naldi 2011</a>
+	or <span class="link"><a href="biblio.html" title="References">dt 2007</a></span>.</p>
+</div>
+<div id="build" class="sect"><div class="inner">
+<div class="hgroup"><h2 class="title"><span class="title">Build Regulatory Graphs</span></h2></div>
+<div class="region"><div class="contents"><div class="links topiclinks"><div class="inner"><div class="region">
+<div class="links-twocolumn">
+<div class="linkdiv "><a class="linkdiv" href="graph-lrg-annotations.html" title="Annotations"><span class="title">Annotations <span class="status status-review">Ready for review</span></span><span class="linkdiv-dash"> — </span><span class="desc">Annotate regulatory graphs elements</span></a></div>
+<div class="linkdiv "><a class="linkdiv" href="graph-lrg-edit.html" title="Editing the regulatory graph"><span class="title">Editing the regulatory graph <span class="status status-review">Ready for review</span></span><span class="linkdiv-dash"> — </span><span class="desc">Edit logical regulatory graphs</span></a></div>
+</div>
+<div class="links-twocolumn"><div class="linkdiv "><a class="linkdiv" href="graph-lrg-parameters.html" title="Dynamical behaviour"><span class="title">Dynamical behaviour <span class="status status-incomplete">Incomplete</span></span><span class="linkdiv-dash"> — </span><span class="desc">Define the dynamical rules: parameters and functions</span></a></div></div>
+</div></div></div></div></div>
+</div></div>
+<div id="transform" class="sect"><div class="inner">
+<div class="hgroup"><h2 class="title"><span class="title">Transform Regulatory Graphs</span></h2></div>
+<div class="region"><div class="contents">
+<p class="p">Modifications of Regulatory Graphs that can be applied before running analysis</p>
+<div class="links topiclinks"><div class="inner"><div class="region">
+<div class="links-twocolumn">
+<div class="linkdiv "><a class="linkdiv" href="tool-composition.html" title="Composition of LRGs"><span class="title">Composition of LRGs <span class="status status-draft">Draft</span></span><span class="linkdiv-dash"> — </span><span class="desc">Composing multiple instances of an LRG, indicating logical integration functions mapping selected input components to proper components in neighbouring instances</span></a></div>
+<div class="linkdiv "><a class="linkdiv" href="tool-reduction.html" title="Reduction of regulatory graphs"><span class="title">Reduction of regulatory graphs <span class="status status-draft">Draft</span></span><span class="linkdiv-dash"> — </span><span class="desc">Removing components from a LRG, preserving dynamical properties</span></a></div>
+</div>
+<div class="links-twocolumn"><div class="linkdiv "><a class="linkdiv" href="data-perturbations.html" title="Perturbations"><span class="title">Perturbations <span class="status status-review">Ready for review</span></span><span class="linkdiv-dash"> — </span><span class="desc">Define perturbations of regulatory graphs</span></a></div></div>
+</div></div></div>
+</div></div>
+</div></div>
+<div id="tools" class="sect"><div class="inner">
+<div class="hgroup"><h2 class="title"><span class="title">Analyse Regulatory Graphs</span></h2></div>
+<div class="region"><div class="contents"><div class="links topiclinks"><div class="inner"><div class="region">
+<div class="links-twocolumn">
+<div class="linkdiv "><a class="linkdiv" href="tool-circuits.html" title="Circuit analysis"><span class="title">Circuit analysis <span class="status status-outdated">Outdated</span></span><span class="linkdiv-dash"> — </span><span class="desc">Lookup the Functionality of Regulatory Circuits</span></a></div>
+<div class="linkdiv "><a class="linkdiv" href="tool-lrg-interaction-functionality.html" title="Compute interaction functionality"><span class="title">Compute interaction functionality <span class="status status-draft">Draft</span></span><span class="linkdiv-dash"> — </span><span class="desc">Compute interaction functionality</span></a></div>
+<div class="linkdiv "><a class="linkdiv" href="tool-localgraph.html" title="Highlight local graph"><span class="title">Highlight local graph <span class="status status-draft">Draft</span></span><span class="linkdiv-dash"> — </span><span class="desc">Highlight the local graph</span></a></div>
+</div>
+<div class="links-twocolumn">
+<div class="linkdiv "><a class="linkdiv" href="data-initial-states.html" title="Initial states"><span class="title">Initial states <span class="status status-draft">Draft</span></span><span class="linkdiv-dash"> — </span><span class="desc">Define initial states for regulatory graph</span></a></div>
+<div class="linkdiv "><a class="linkdiv" href="tool-stable.html" title="Stable state search"><span class="title">Stable state search <span class="status status-review">Ready for review</span></span><span class="linkdiv-dash"> — </span><span class="desc">Finding stable states for a regulatory graph</span></a></div>
+<div class="linkdiv "><a class="linkdiv" href="tool-simulation.html" title="The simulation"><span class="title">The simulation <span class="status status-draft">Draft</span></span><span class="linkdiv-dash"> — </span><span class="desc">Generate State Transition Graphs</span></a></div>
+</div>
+</div></div></div></div></div>
+</div></div>
+<div id="formats" class="sect"><div class="inner">
+<div class="hgroup"><h2 class="title"><span class="title">Formats</span></h2></div>
+<div class="region"><div class="contents">
+<p class="p">Like other <span class="link"><a href="graph-generic.html" title="All graphs">graphs</a></span>, regulatory graphs can be saved in the
+		<span class="link"><a href="format-ginml.html" title="The GINML format">GINML</a></span> or <span class="link"><a href="format-zginml.html" title="The Z-GINML format">Z-GINML</a></span> formats.
+		They can also be exported to the <span class="link"><a href="graph-generic.html#formats" title="File formats">common graph formats</a></span>.
+		Additional specialised formats are listed below.
+		</p>
+<div class="links topiclinks"><div class="inner"><div class="region">
+<div class="links-twocolumn">
+<div class="linkdiv "><a class="linkdiv" href="format-boolsim.html" title="BoolSim"><span class="title">BoolSim <span class="status status-stub">Stub</span></span><span class="linkdiv-dash"> — </span><span class="desc">Import/Export BoolSim models</span></a></div>
+<div class="linkdiv "><a class="linkdiv" href="export-cytoscape.html" title="Cytoscape Export"><span class="title">Cytoscape Export <span class="status status-incomplete">Incomplete</span></span><span class="linkdiv-dash"> — </span><span class="desc">Export LRGs to the cytoscape visualisation software</span></a></div>
+<div class="linkdiv "><a class="linkdiv" href="export-documentation.html" title="Documentation export"><span class="title">Documentation export <span class="status status-stub">Stub</span></span><span class="linkdiv-dash"> — </span><span class="desc">Generate LRG documentation using annotations</span></a></div>
+<div class="linkdiv "><a class="linkdiv" href="export-nusmv.html" title="NuSMV export"><span class="title">NuSMV export <span class="status status-review">Ready for review</span></span><span class="linkdiv-dash"> — </span><span class="desc">Export regulatory graphs for the NuSMV model checker</span></a></div>
+</div>
+<div class="links-twocolumn">
+<div class="linkdiv "><a class="linkdiv" href="export-petri-net.html" title="Petri Net Export"><span class="title">Petri Net Export <span class="status status-incomplete">Incomplete</span></span><span class="linkdiv-dash"> — </span><span class="desc">Export LRG as Petri net</span></a></div>
+<div class="linkdiv "><a class="linkdiv" href="format-sbml.html" title="SBML-qual"><span class="title">SBML-qual <span class="status status-stub">Stub</span></span><span class="linkdiv-dash"> — </span><span class="desc">Import/Export regulatory graph to SBML-qual</span></a></div>
+<div class="linkdiv "><a class="linkdiv" href="format-truthtable.html" title="Truth table"><span class="title">Truth table <span class="status status-review">Ready for review</span></span><span class="linkdiv-dash"> — </span><span class="desc">Import regulatory graph from a truth table</span></a></div>
+</div>
+</div></div></div>
+</div></div>
+</div></div>
+<div class="sect sect-links" role="navigation">
+<div class="hgroup"></div>
+<div class="contents"><div class="links guidelinks"><div class="inner">
+<div class="title"><h2><span class="title">More Information</span></h2></div>
+<div class="region"><ul>
+<li class="links "><a href="index.html#model" title="Logical regulatory graph: model">Logical regulatory graph: model</a></li>
+<li class="links ">
+<a href="graph-generic.html#graph_types" title="Specialised graphs">Specialised graphs</a> <span class="status status-review">Ready for review</span>
+</li>
+</ul></div>
+</div></div></div>
+</div>
+</div>
+<div class="clear"></div>
+</div>
+<div class="footer"></div>
+</div>
+</body>
+</html>

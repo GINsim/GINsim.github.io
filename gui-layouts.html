@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<title>Graph layouts</title>
+<link rel="stylesheet" type="text/css" href="C.css">
+<script type="text/javascript" src="jquery.js"></script><script type="text/javascript" src="jquery.syntax.js"></script><script type="text/javascript" src="yelp.js"></script>
+</head>
+<body>
+<div id="header">
+<div class="banner"></div>
+<ul>
+<li><a href="http://ginsim.org/home" title="Welcome to GINsim">Home</a></li>
+<li><a href="http://ginsim.org/documentation" title="User manual and tutorial">Documentation</a></li>
+<li><a href="http://ginsim.org/models_repository" title="Dynamic view of models in the repository">Model Repository</a></li>
+<li><a href="http://ginsim.org/downloads" title="Downloads">Downloads</a></li>
+<li><a href="http://ginsim.org/publications" title="Publications">Publications</a></li>
+<li><a href="http://ginsim.org/companion_tools" title="Tools associated with GINsim or making use of its ecosystem">Companion Tools</a></li>
+<li><a href="http://ginsim.org/contact" title="Contact Us">Contacts</a></li>
+</ul>
+</div>
+<div class="page" role="main">
+<div class="header"><div class="trails" role="navigation">
+<div class="trail">
+<a class="trail" href="index.html" title="User documentation for GINsim">Index</a> › <a class="trail" href="index.html#graphs" title="Generic Graphs">Graphs</a> » </div>
+<div class="trail">
+<a class="trail" href="index.html" title="User documentation for GINsim">Index</a> › <a class="trail" href="index.html#graphs" title="Generic Graphs">Graphs</a> » <a class="trail" href="graph-generic.html" title="All graphs">Graphs</a> › <a class="trail" href="graph-generic.html#gui" title="Handle Graphs">Handle Graphs</a> » </div>
+</div></div>
+<div class="body">
+<div class="version">
+<div class="title">Ready for review</div>
+<p class="version"> (2013-06-05)</p>
+</div>
+<div class="hgroup"><h1 class="title"><span class="title">Graph layouts</span></h1></div>
+<div class="region">
+<div class="contents">
+<p class="p">The "layout submenu of the "view" menu provides some tools to place graph components automatically.
+	These layout tools are mostly useful for graphs computed by GINsim, such as  state transition graphs.
+	Note that GINsim only offers very simple layout tools. For complex cases,
+	dedicated tools such as graphviz or cytoscape can provide much better results.
+	The following layouts are available:</p>
+<div class="list"><div class="inner"><div class="region"><ul class="list">
+<li class="list">
+<p class="p">Level layout: nodes are placed on rows, nodes without any incoming
+				arc being placed at the top and nodes without any outgoing arc at the bottom.</p>
+<div class="figure"><div class="inner">
+<a href="#" class="zoom" data-zoom-in-title="View images at normal size" data-zoom-out-title="Scale images down"></a><div class="title title-figure"><h2><span class="title">Level layout example</span></h2></div>
+<div class="region"><div class="contents"><div class="media media-image"><div class="inner"><img src="figures/levelLayout.png" class="media media-block" alt=""></div></div></div></div>
+</div></div>
+</li>
+<li class="list">
+<p class="p">Ring layout: nodes are placed on three concentric rings, source
+				nodes at the center, terminal nodes at the periphery. </p>
+<div class="figure"><div class="inner">
+<a href="#" class="zoom" data-zoom-in-title="View images at normal size" data-zoom-out-title="Scale images down"></a><div class="title title-figure"><h2><span class="title">Ring layout example</span></h2></div>
+<div class="region"><div class="contents"><div class="media media-image"><div class="inner"><img src="figures/ringLayout.png" class="media media-block" alt=""></div></div></div></div>
+</div></div>
+</li>
+</ul></div></div></div>
+<p class="p">Both the level and ring layouts have an inversed counterpart. State transition graphs have
+	additional layout methods which place components on a grid based on the activity levels.</p>
+</div>
+<div class="sect sect-links" role="navigation">
+<div class="hgroup"></div>
+<div class="contents"><div class="links guidelinks"><div class="inner">
+<div class="title"><h2><span class="title">More Information</span></h2></div>
+<div class="region"><ul>
+<li class="links "><a href="index.html#graphs" title="Generic Graphs">Generic Graphs</a></li>
+<li class="links ">
+<a href="graph-generic.html#gui" title="Handle Graphs">Handle Graphs</a> <span class="status status-review">Ready for review</span>
+</li>
+</ul></div>
+</div></div></div>
+</div>
+</div>
+<div class="clear"></div>
+</div>
+<div class="footer"></div>
+</div>
+</body>
+</html>

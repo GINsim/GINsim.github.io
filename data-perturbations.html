@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<title>Perturbations</title>
+<link rel="stylesheet" type="text/css" href="C.css">
+<script type="text/javascript" src="jquery.js"></script><script type="text/javascript" src="jquery.syntax.js"></script><script type="text/javascript" src="yelp.js"></script>
+</head>
+<body>
+<div id="header">
+<div class="banner"></div>
+<ul>
+<li><a href="http://ginsim.org/home" title="Welcome to GINsim">Home</a></li>
+<li><a href="http://ginsim.org/documentation" title="User manual and tutorial">Documentation</a></li>
+<li><a href="http://ginsim.org/models_repository" title="Dynamic view of models in the repository">Model Repository</a></li>
+<li><a href="http://ginsim.org/downloads" title="Downloads">Downloads</a></li>
+<li><a href="http://ginsim.org/publications" title="Publications">Publications</a></li>
+<li><a href="http://ginsim.org/companion_tools" title="Tools associated with GINsim or making use of its ecosystem">Companion Tools</a></li>
+<li><a href="http://ginsim.org/contact" title="Contact Us">Contacts</a></li>
+</ul>
+</div>
+<div class="page" role="main">
+<div class="header"><div class="trails" role="navigation">
+<div class="trail">
+<a class="trail" href="index.html" title="User documentation for GINsim">Index</a> › <a class="trail" href="index.html#advanced" title="Going further">Advanced</a> » <a class="trail" href="data.html" title="Associated data">Associated data</a> » </div>
+<div class="trail">
+<a class="trail" href="index.html" title="User documentation for GINsim">Index</a> › <a class="trail" href="index.html#graphs" title="Generic Graphs">Graphs</a> » <a class="trail" href="graph-generic.html" title="All graphs">Graphs</a> › <a class="trail" href="graph-generic.html#graph_types" title="Specialised graphs">Specialised graphs</a> » <a class="trail" href="graph-lrg.html" title="Logical Regulatory Graphs">LRG</a> › <a class="trail" href="graph-lrg.html#transform" title="Transform Regulatory Graphs">Transform Regulatory Graphs</a> » </div>
+<div class="trail">
+<a class="trail" href="index.html" title="User documentation for GINsim">Index</a> › <a class="trail" href="index.html#model" title="Logical regulatory graph: model">Model</a> » <a class="trail" href="graph-lrg.html" title="Logical Regulatory Graphs">LRG</a> › <a class="trail" href="graph-lrg.html#transform" title="Transform Regulatory Graphs">Transform Regulatory Graphs</a> » </div>
+<div class="trail">
+<a class="trail" href="index.html" title="User documentation for GINsim">Index</a> › <a class="trail" href="index.html#lrgtransform" title="Transform LRGs">Transform LRGs</a> » </div>
+</div></div>
+<div class="body">
+<div class="version">
+<div class="title">Ready for review</div>
+<p class="version"> (2012-11-23)</p>
+</div>
+<div class="hgroup"><h1 class="title"><span class="title">Perturbations</span></h1></div>
+<div class="region">
+<div class="contents"><p class="p">GINsim facilitates the definition of <span class="em">perturbations</span> to define small changes to the regulation of components in regulatory graphs.
+	A perturbation is a set of restrictions on the evolution of the activity level of one or several components.
+	</p></div>
+<div id="usage" class="sect"><div class="inner">
+<div class="hgroup"><h2 class="title"><span class="title">Using Perturbations</span></h2></div>
+<div class="region"><div class="contents"><p class="p">Some tools, notably <span class="link"><a href="tool-simulation.html" title="The simulation">Simulation</a></span> and <span class="link"><a href="tool-stable.html" title="Stable state search">Stable state search</a></span>,
+		use the perturbation selection panel to apply a perturbation before running.</p></div></div>
+</div></div>
+<div id="definition" class="sect"><div class="inner">
+<div class="hgroup"><h2 class="title"><span class="title">Definition of Perturbations</span></h2></div>
+<div class="region">
+<div class="contents">
+<p class="p">Perturbation can be defined using the following configuration panel. The panel appears upon activation of the <span class="gui">configure</span> button in the perturbation selection panel.</p>
+<div class="figure"><div class="inner">
+<a href="#" class="zoom" data-zoom-in-title="View images at normal size" data-zoom-out-title="Scale images down"></a><div class="title title-figure"><h3><span class="title">Perturbation definition panel</span></h3></div>
+<div class="region"><div class="contents"><div class="media media-image"><div class="inner"><img src="figures/perturbations.png" class="media media-block" alt=""></div></div></div></div>
+</div></div>
+<p class="p">
+		This edition panel considers two types of perturbations: <span class="em">simple perturbations</span>
+		which only affect the activity of a single component, and <span class="em">multiple perturbations</span>
+		which group together a list of simple perturbations.
+		</p>
+</div>
+<div id="simple" class="sect"><div class="inner">
+<div class="hgroup"><h3 class="title"><span class="title">Simple Perturbations</span></h3></div>
+<div class="region"><div class="contents">
+<p class="p">The perturbation definition panel appears on the top-right part of the dialog above
+		when no simple perturbation is selected, or when clicking the <span class="gui">+</span> button.
+		To create a perturbation, one must first select the affected component using the combobox.
+		The restriction configuration panel will then appear, and the perturbation can be added using the <span class="gui">create</span> button.
+		</p>
+<p class="p">The activity level of Boolean components can be fixed at <span class="em">0</span> or at <span class="em">1</span>,
+		corresponding to the definition of a knockdown or ectopic activity respectively.
+		Radio buttons allows to choose between these two possibilities.
+		</p>
+<p class="p">Multi-valued components offer more possibilities, that can be configured using a range slider.
+		Their activity level will be restricted in the selected range,
+		or completely fixed if the range corresponds to a single value.
+		</p>
+<div class="figure"><div class="inner">
+<a href="#" class="zoom" data-zoom-in-title="View images at normal size" data-zoom-out-title="Scale images down"></a><div class="title title-figure"><h4><span class="title">Perturbation creation panels</span></h4></div>
+<div class="region"><div class="contents">
+<div class="media media-image"><div class="inner"><img src="figures/booleanperturbation.png" class="media media-block" alt=""></div></div>
+<div class="media media-image"><div class="inner"><img src="figures/mvaluedperturbation.png" class="media media-block" alt=""></div></div>
+</div></div>
+</div></div>
+<p class="p">This enables the definition of simple perturbations where the activity level of a component is restricted to the selected value(s).
+		</p>
+<div class="note" title="Note"><div class="inner"><div class="region"><div class="contents"><p class="p">The definition of more subtle perturbations (conditional knockouts...) still requires the modifications of the
+		logical parameters. We plan to add convenient means to define other types of perturbations in the future.</p></div></div></div></div>
+<div class="note note-warning" title="Warning"><div class="inner"><div class="region"><div class="contents"><p class="p">Simple perturbations can not be duplicated: when trying to add a simple perturbation that is already defined, nothing will happen.</p></div></div></div></div>
+</div></div>
+</div></div>
+<div id="multiple" class="sect"><div class="inner">
+<div class="hgroup"><h3 class="title"><span class="title">Multiple Perturbations</span></h3></div>
+<div class="region"><div class="contents">
+<p class="p">The bottom part of the panel lists multiple perturbations.
+		Multiple perturbations can be created by selecting several simple perturbation and clicking the button which appears in the information panel.
+		These perturbations can then be ordered and deleted using the buttons on the right side.
+		</p>
+<div class="note note-warning" title="Warning"><div class="inner"><div class="region"><div class="contents"><p class="p">Deleting a simple perturbation will also remove all the multiple perturbations using it.</p></div></div></div></div>
+</div></div>
+</div></div>
+</div>
+</div></div>
+<div class="sect sect-links" role="navigation">
+<div class="hgroup"></div>
+<div class="contents"><div class="links guidelinks"><div class="inner">
+<div class="title"><h2><span class="title">More Information</span></h2></div>
+<div class="region"><ul>
+<li class="links ">
+<a href="data.html" title="Associated data">Associated data</a><span class="desc"> — Extra data saved along with graphs</span>
+</li>
+<li class="links "><a href="index.html#lrgtransform" title="Transform LRGs">Transform LRGs</a></li>
+<li class="links ">
+<a href="graph-lrg.html#transform" title="Transform Regulatory Graphs">Transform Regulatory Graphs</a> <span class="status status-review">Ready for review</span>
+</li>
+</ul></div>
+</div></div></div>
+</div>
+</div>
+<div class="clear"></div>
+</div>
+<div class="footer"></div>
+</div>
+</body>
+</html>

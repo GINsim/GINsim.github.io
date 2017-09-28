@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<title>Compute interaction functionality</title>
+<link rel="stylesheet" type="text/css" href="C.css">
+<script type="text/javascript" src="jquery.js"></script><script type="text/javascript" src="jquery.syntax.js"></script><script type="text/javascript" src="yelp.js"></script>
+</head>
+<body>
+<div id="header">
+<div class="banner"></div>
+<ul>
+<li><a href="http://ginsim.org/home" title="Welcome to GINsim">Home</a></li>
+<li><a href="http://ginsim.org/documentation" title="User manual and tutorial">Documentation</a></li>
+<li><a href="http://ginsim.org/models_repository" title="Dynamic view of models in the repository">Model Repository</a></li>
+<li><a href="http://ginsim.org/downloads" title="Downloads">Downloads</a></li>
+<li><a href="http://ginsim.org/publications" title="Publications">Publications</a></li>
+<li><a href="http://ginsim.org/companion_tools" title="Tools associated with GINsim or making use of its ecosystem">Companion Tools</a></li>
+<li><a href="http://ginsim.org/contact" title="Contact Us">Contacts</a></li>
+</ul>
+</div>
+<div class="page" role="main">
+<div class="header"><div class="trails" role="navigation">
+<div class="trail">
+<a class="trail" href="index.html" title="User documentation for GINsim">Index</a> › <a class="trail" href="index.html#advanced" title="Going further">Advanced</a> » <a class="trail" href="tools.html" title="Available tools">Available tools</a> » </div>
+<div class="trail">
+<a class="trail" href="index.html" title="User documentation for GINsim">Index</a> › <a class="trail" href="index.html#graphs" title="Generic Graphs">Graphs</a> » <a class="trail" href="graph-generic.html" title="All graphs">Graphs</a> › <a class="trail" href="graph-generic.html#graph_types" title="Specialised graphs">Specialised graphs</a> » <a class="trail" href="graph-lrg.html" title="Logical Regulatory Graphs">LRG</a> › <a class="trail" href="graph-lrg.html#tools" title="Analyse Regulatory Graphs">Analyse LRG</a> » </div>
+<div class="trail">
+<a class="trail" href="index.html" title="User documentation for GINsim">Index</a> › <a class="trail" href="index.html#model" title="Logical regulatory graph: model">Model</a> » <a class="trail" href="graph-lrg.html" title="Logical Regulatory Graphs">LRG</a> › <a class="trail" href="graph-lrg.html#tools" title="Analyse Regulatory Graphs">Analyse LRG</a> » </div>
+<div class="trail">
+<a class="trail" href="index.html" title="User documentation for GINsim">Index</a> › <a class="trail" href="index.html#static" title="Static analysis of LRGs">Static Analysis</a> » </div>
+</div></div>
+<div class="body">
+<div class="version">
+<div class="title">Draft</div>
+<p class="version"> (2014-05-05)</p>
+</div>
+<div class="hgroup"><h1 class="title"><span class="title">Compute interaction functionality</span></h1></div>
+<div class="region">
+<div class="contents"></div>
+<div id="motivation" class="sect"><div class="inner">
+<div class="hgroup"><h2 class="title"><span class="title">Motivation</span></h2></div>
+<div class="region"><div class="contents"><p class="p">The <span class="gui">Compute interaction functionality</span> tool determines the correct sign of 
+				the interactions in a LRG according to the logical rules defined for each node.
+				These rules, are used to compute the conditions for which a given interaction has a dual, positive, negative or no effect.</p></div></div>
+</div></div>
+<div id="usage" class="sect"><div class="inner">
+<div class="hgroup"><h2 class="title"><span class="title">Usage</span></h2></div>
+<div class="region"><div class="contents">
+<p class="p">The <span class="gui">Compute interaction functionality</span> entry on the <span class="em">Tools</span> menu opens the interaction functionality dialog.
+        This dialog first provides the option to select a perturbation to be applied to the model before computing the interaction functionality, and it is divided into three main sections:</p>
+<div class="list"><div class="inner"><div class="region"><ul class="list">
+<li class="list"><p class="p">The <span class="em">perturbation selection</span>, where the user can select
+                     (and define new) perturbations.</p></li>
+<li class="list"><p class="p">The <span class="em">save report button</span>, where the user can export a summary table
+						of all the conditions of each interaction into a XHTML file, to be visualised in a browser.</p></li>
+<li class="list"><p class="p">The <span class="em">execution options</span>, where the user can run the computation
+						and visualise the colors computed by the method or restore the colors of the original graph.</p></li>
+</ul></div></div></div>
+<div class="figure"><div class="inner">
+<a href="#" class="zoom" data-zoom-in-title="View images at normal size" data-zoom-out-title="Scale images down"></a><div class="title title-figure"><h3><span class="title">Example of interaction functionality analysis</span></h3></div>
+<div class="region">
+<div class="contents"><div class="media media-image"><div class="inner"><img src="figures/interactionfunctionality.png" class="media media-block" alt=""></div></div></div>
+<div class="desc">Left: The interaction functionality dialog box.
+						Right: The logical regulatory graph, where the sign of the interactions are highlighted.
+            </div>
+</div>
+</div></div>
+<p class="p">After running the tool, the logical regulatory graph interactions will change colour
+        depending on their function. Their colour code representation will be:
+        <span class="em">green</span>, for interactions having an activatory effect;
+        <span class="em">red</span>, for interactions with an inhibitory effect;
+				<span class="em">blue</span>, for interactions having a dual effect;
+				and <span class="em">black</span>, for non-functional interactions.
+				Additionally, if the user correctly (incorrectly) defined the sign of the interaction,
+				this will be represented in normal (increased) thickness.</p>
+</div></div>
+</div></div>
+<div id="report" class="sect"><div class="inner">
+<div class="hgroup"><h2 class="title"><span class="title">Report</span></h2></div>
+<div class="region"><div class="contents">
+<p class="p">The interaction functionality report is saved to a XHTML file which contains:</p>
+<div class="list"><div class="inner"><div class="region"><ul class="list">
+<li class="list"><p class="p">A <span class="em">summary table</span>, where for every interaction, it shows the source and target node, the user defined sign and the computed sign.</p></li>
+<li class="list"><p class="p">A <span class="em">detailed table</span>, where for every interaction, and for all the valuations of the regulators of the target node, it shows the cases for which the specific interaction is functional.</p></li>
+</ul></div></div></div>
+<div class="figure"><div class="inner">
+<a href="#" class="zoom" data-zoom-in-title="View images at normal size" data-zoom-out-title="Scale images down"></a><div class="title title-figure"><h3><span class="title">Example of an functionality context of an interaction</span></h3></div>
+<div class="region">
+<div class="contents"><div class="media media-image"><div class="inner"><img src="figures/interactionfunctionality-context.png" class="media media-block" alt=""></div></div></div>
+<div class="desc">For all the valuations of all regulators of target node gB, the cases for which the interaction gA -&gt; gB is functional are shown.
+					</div>
+</div>
+</div></div>
+</div></div>
+</div></div>
+<div id="availability" class="sect"><div class="inner">
+<div class="hgroup"><h2 class="title"><span class="title">Availability</span></h2></div>
+<div class="region"><div class="contents"><p class="p">Highlight local graph was implemented in GINsim 3.0.</p></div></div>
+</div></div>
+<div class="sect sect-links" role="navigation">
+<div class="hgroup"></div>
+<div class="contents"><div class="links guidelinks"><div class="inner">
+<div class="title"><h2><span class="title">More Information</span></h2></div>
+<div class="region"><ul>
+<li class="links ">
+<a href="graph-lrg.html#tools" title="Analyse Regulatory Graphs">Analyse Regulatory Graphs</a> <span class="status status-review">Ready for review</span>
+</li>
+<li class="links ">
+<a href="tools.html" title="Available tools">Available tools</a><span class="desc"> — List of available tools</span>
+</li>
+<li class="links "><a href="index.html#static" title="Static analysis of LRGs">Static analysis of LRGs</a></li>
+</ul></div>
+</div></div></div>
+</div>
+</div>
+<div class="clear"></div>
+</div>
+<div class="footer"></div>
+</div>
+</body>
+</html>
