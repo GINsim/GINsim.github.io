@@ -1,4 +1,4 @@
-baseURL = "https://ginsim.github.io/ginsim.org/"
+baseURL = "https://ginsim.github.io/"
 languageCode = "en-us"
 title = "GINsim"
 theme = "ginsim"
