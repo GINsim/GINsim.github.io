@@ -1,0 +1,25 @@
+<!doctype html><html><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="ie=edge"><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><title>Interaction functionnality &#183; GINsim</title><meta name=description content><link rel=stylesheet href=https://ginsim.github.io/style.main.css></head><body><header><div class=title><a href=https://ginsim.github.io/><img src=https://ginsim.github.io/ginsim.svg class=logo alt=GINsim></a></div><nav><ul><li><a href=/>Home</a></li><li><a href=/doc/>Documentation</a></li><li><a href=/download/>Download</a></li><li><a href=/models/>Models</a></li></ul></nav></header><section><div class=content><h1>Interaction functionnality</h1><h1 id=motivation>Motivation</h1><p>The <code>Compute interaction functionality</code> tool determines the correct sign of
+the interactions in a LRG according to the logical rules defined for each node.
+These rules, are used to compute the conditions for which a given interaction
+has a dual, positive, negative or no effect.</p><h1 id=usage>Usage</h1><p>The <code>Compute interaction functionality</code> entry on the <code>Tools</code> menu opens
+the interaction functionality dialog.
+This dialog first provides the option to select a perturbation to be applied
+to the model before computing the interaction functionality, and it is divided
+into three main sections:</p><ul><li>The <strong>perturbation selection</strong>, where the user can select (and define) perturbations.</li><li>The <code>save report</code> button, where the user can export a summary table
+of all the conditions of each interaction into a XHTML file, to be visualised
+in a browser.</li><li>The <strong>execution options</strong>, where the user can run the computation
+and visualise the colors computed by the method or restore the colors
+of the original graph.</li></ul><figure><img src=interactionfunctionality.png><figcaption><h4>Example of interaction functionality analysis</h4><p><strong>Left:</strong> The interaction functionality dialog box.
+<strong>Right:</strong> The logical regulatory graph, where the sign of
+the interactions are highlighted.</p></figcaption></figure><p>After running the tool, the logical regulatory graph interactions will change colour
+depending on their function. Their colour code representation will be:
+<strong>green</strong>, for interactions having an activatory effect;
+<strong>red</strong>, for interactions with an inhibitory effect;
+<strong>blue</strong>, for interactions having a dual effect;
+and <strong>black</strong>, for non-functional interactions.
+Additionally, if the user correctly (incorrectly) defined the sign of the interaction,
+this will be represented in normal (increased) thickness.</p><h1 id=report>Report</h1><p>The interaction functionality report is saved to a XHTML file which contains:</p><ul><li>A <strong>summary table</strong>, where for every interaction, it shows the source and
+target node, the user defined sign and the computed sign.</li><li>A <strong>detailed table</strong>, where for every interaction, and for all the valuations
+of the regulators of the target node, it shows the cases for which the
+specific interaction is functional.</li></ul><figure><img src=interactionfunctionality-context.png><figcaption><h4>Example of an functionality context of an interaction</h4><p>For all the valuations of all regulators of target node gB,
+the cases for which the interaction gA -> gB is functional are shown.</p></figcaption></figure><h1 id=availability>Availability</h1><p>This feature was implemented in GINsim 3.0.</p></div></section></body></html>

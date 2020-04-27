@@ -1,0 +1,59 @@
+<!doctype html><html><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="ie=edge"><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><title>Drosophila eggshell patterning &#183; GINsim</title><meta name=description content><link rel=stylesheet href=https://ginsim.github.io/style.main.css></head><body><header><div class=title><a href=https://ginsim.github.io/><img src=https://ginsim.github.io/ginsim.svg class=logo alt=GINsim></a></div><nav><ul><li><a href=/>Home</a></li><li><a href=/doc/>Documentation</a></li><li><a href=/download/>Download</a></li><li><a href=/models/>Models</a></li></ul></nav></header><section><div class=content><h1>Drosophila eggshell patterning</h1><div class=notices>As of 2019, the prototype software described on this page has been
+superseded by the <a href=http://epilog-tool.org>Epilog tool</a>.</div><p>This prototype software has been developed mainly by Adrien Fauré (with some help from Oltman de Wiljes)
+to create and simulate logical models of epithelia, in the context of a research project on Drosophila
+oogenesis (project supported by the FCT, PTDC/EIA-CCO/099229/2008).
+It is made available to facilitate reproduction of all results described in the manuscript mentioned below.
+A user-friendly software is currently under development, based on the principles of this prototype.</p><p>Adrien Fauré, 2013-12-12</p><p>Reference:
+Adrien Fauré, Barbara M.I. Vreede, Elio Sucena, Claudine Chaouiya. A comprehensive model of EGF and BMP pathways reveals cell-autonomous and juxtacrine effects patterning the Drosophila eggshell.</p><h1 id=epithelial-models>EPITHELIAL MODELS</h1><p>An epithelial model is defined as a grid of hexagonal cells.
+Each cell has six direct neighbors, except along the left and
+right borders: the grid forms a cylinder.</p><p>Cells are assigned the same set of variables and associated logical rules,
+thus defining a cellular logical model. Rules specify each component&rsquo;s target
+level, depending on the levels of its regulators, including regulators from
+other cells within a radius specified by the user.</p><p>The values of the variables can be visualised on the grid according to a user-defined color code.</p><h1 id=logical-rules>LOGICAL RULES</h1><p>Rules are written with each cell as the reference point.
+One rule has to be specified for each non-0 value of each variable.
+The syntax used for logical rules is based on python code that is
+interpreted by the programme.</p><ul><li>To check the value of a cellular variable:
+self.parentcell.getspecies(&lsquo;species&rsquo;).value returns the value of the variable &ldquo;species&rdquo;.</li><li>To check the value of an extracellular variable:
+self.parentcell.haswith(species, distance, value) returns the number of cells within
+the distance = (min, max) interval where the specified variable (species) has the
+specified value. If distance is omitted, default is &ldquo;(1,1)"; if value is omitted,
+default is &ldquo;1&rdquo;.</li><li>Logical operators (&ldquo;and&rdquo;, &ldquo;or&rdquo; and &ldquo;not&rdquo;) can be used, as well as relational
+operators (&ldquo;==&rdquo;, &ldquo;&lt;&rdquo;,&ldquo;>&rdquo;,&ldquo;&lt;=&rdquo;, &ldquo;>=&rdquo;, &ldquo;!=&rdquo;).</li></ul><h2 id=example>Example:</h2><p>self.parentcell.getspecies(&lsquo;X&rsquo;).value==1 or self.parentcell.haswith(&lsquo;Y&rsquo;, value=2, distance=(0,3))>=10</p><p>will return true if variable X equals 1 in the cell, or if the cell has at least 10 neighbours having Y at level 2 within a [0,3] radius (thus including the cell itself in this case).</p><h1 id=states>STATES</h1><p>A &ldquo;state&rdquo; corresponds to the levels of all variables, in all cells of the model.
+In practice, a state can be saved as a list of cells where variables have a non-zero
+value (level 0 being treated as the default). The current state can be visualised on
+the grid, and specific states can be saved to be loaded later.</p><h1 id=simulation>SIMULATION</h1><p>Simulations are carried out synchronously, step by step, from the current state,
+for all variables in all cells. Whenever needed, some variables may be assigned
+a priority in the form of an integer, with 1 being the highest priority.</p><p>For example, in the Drosophila eggshell patterning mechanistic model, inputs
+(and the gene Midline that is downstream to only inputs) are given priority 1;
+integration variables that count the number of cells expressing Rho, Aos and Br
+in the neighbouring cells are given priority 2; EGFR, which rapidly integrates
+these signals, is given priority 3; other components are given priority 4.</p><h1 id=handling-mutations>HANDLING MUTATIONS</h1><p>There is no explicit way to define mutant cells.
+The simplest possibility is to define a &ldquo;mutant&rdquo; variable as a self-maintaining
+input to the component to be mutated. That component&rsquo;s rule can then be adjusted
+to define its behaviour in presence or absence of the mutation.</p><h1 id=gui>GUI</h1><ul><li>File menu:<ul><li>New: create a new grid. Specify the grid&rsquo;s dimensions and click &ldquo;Create&rdquo;.</li><li>Open: open an existing model</li><li>Save: save the current model. Model are saved as text files that include
+the list of species and their logical rules, and a list of states.</li></ul></li><li>Edit menu:
+Select or unselect all cells to visualise and change their parameters
+(the value of their variables) through the right panel.
+(&ldquo;Unselect&rdquo; actually selects all cells, only not showing the dark line around them, used for screen shots)</li><li>States menu: Save, load or delete states.</li><li>Simulation panel:
+Click to update the model, by one or up to ten steps. Upon the second choice, the simulation
+will stop either after ten steps or when a stable state is reached, in which case the number
+of steps will be displayed in the panel. The panel also displays the list of genes components
+that have been updated.</li><li>canvas:
+Displays the grid that represents the epithelial model.
+Click (left mouse button) on a cell to select it.
+Hold to select several cells.
+(For simplicity, clicks around the top to bottom parts of the cell are not taken into account.
+This actually permits to select discontinuous regions&mldr;)</li><li>right column:
+Top part shows the list of the variables along with their values in the selected cells.
+Select one or several variables and click &ldquo;Show&rdquo; to display their values on the grid in
+the user-defined color code.
+Lower part allows the user to select one variable and modify its value in the selected cells.</li><li>bottom panel:
+Left part lets the user select one variable (independently from the right column parameter panel)
+and visualise or modify its parameters (name, maximum value and color), along with the logical rules.
+To modify the name, max level or color, simply click on the corresponding field and enter a new value,
+then set the focus elsewhere (e.g. by clicking on an other field) to validate. White background
+indicates the value displayed in the field is the one stored in the model; yellow, that it&rsquo;s been
+modified but not yet validated; red, that the value entered is not acceptable (e.g., entering a
+variable name that already exists, or a negative max value, etc.).
+To modify the logical rule, click on the rule for one level and then click the &ldquo;edit rule&rdquo; button.
+Then in the new panel, edit the rule and click the set button to validate.</li></ul><h1 id=download>Download</h1><p>All files in a <a href=AllFiles.zip>single archive</a> containing:</p><ul><li>Python prototype implementing the simulation of the epithelial models.</li><li>Phenomenological cellular model: phenomenological_cellular.zginml (GINsim file)</li><li>Mechanistic cellular model: mechanistic_cellular.zginml(GINsim file)</li><li>Phenomenological epithelial model: phenomenologic_epithelium.txt (text file to be loaded from the python prototype)</li><li>Mechanistic epithelial model: mechanistic_epithelium.txt (text file to be loaded from the python prototype)</li></ul></div></section></body></html>

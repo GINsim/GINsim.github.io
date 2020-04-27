@@ -1,0 +1,87 @@
+<!doctype html><html><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="ie=edge"><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><title>Drosophila EGF Signalling pathway &#183; GINsim</title><meta name=description content><link rel=stylesheet href=https://ginsim.github.io/style.main.css></head><body><header><div class=title><a href=https://ginsim.github.io/><img src=https://ginsim.github.io/ginsim.svg class=logo alt=GINsim></a></div><nav><ul><li><a href=/>Home</a></li><li><a href=/doc/>Documentation</a></li><li><a href=/download/>Download</a></li><li><a href=/models/>Models</a></li></ul></nav></header><section><div class=content><h1>Drosophila EGF Signalling pathway</h1><div class=meta><dl><dt>Submitter</dt><dd>Abibatou MBODJ and Denis THIEFFRY</dd><dt>Taxon</dt><dd><span class=keyword>D. melanogaster</span></dd><dt>Process</dt><dd><span class=keyword>Signalling</span></dd><p class=ref><span class=title>Logical modelling of Drosophila signalling pathways..</span>
+<span class=authors>A. Mbodj, G. Junion, C. Brun, E. Furlong, D. Thieffry.</span>
+<span class=journal>Molecular bioSystems</span>
+<span class=position>9</span><span class=year> (2013 Sep)</span>.<br><span class=links>[
+<span class=doi><a href=http://dx.doi.org/10.1039/c3mb70187e>doi:10.1039/c3mb70187e</a></span>
+<span class=issn><a href=1742-2051>issn</a></span>
+]</span></p></div><p>Four activating ligands, Spitz, Keren, Gurken and Vein have been identified
+for drosophila EGF receptors, called DER. Spitz (SPI) is the major ligand and
+is involved in most situations where the pathway is activated. Keren plays a
+minor, redundant role, while Gurken is used exclusively during oogenesis.
+These ligands are produced as inactive transmembrane precursors, which are
+retained in the endoplasmic reticulum and needed to processed by the chaperone
+protein Star. Processed ligands are directed into another compartment where
+they encounter Rhomboid (RHO) serine proteases, which cleave the ligand
+precursors within the transmembrane domain to release the active, secreted
+ligand form. RHO also cleaves and inactivates Star, attenuating the level of
+cleaved ligand that is produced. The fourth ligand, Vein, is produced as a
+secreted molecule, which is a weaker activating ligand used either to enhance
+signalling by other ligands or in specific situations such as muscle
+patterning. Binding of ligands to DER leads to dimerization and triggering of
+the canonical DRK/SOS/RAS/RAF/DSOR1/Rolled pathway. DRK (SH2-domain-containing
+protein) recruits SOS (Son of sevenless, a guanine nucleotide exchange factor)
+to catalyze the exchange of RAS bound GDP for GTP exchange, thereby activating
+RAS. RAS then promotes the activation of RAF, leading to DSOR1 activation, and
+eventually to Rolled (RL) activation. RL inactivates transcriptional co-
+repressors, such as Aop, and activates transcription factors, such as Pointed
+(PNT) (<span class=cite>[1]</span>
+).
+The transcriptional activator PNT is the major effector of the pathway.
+The protein Anterior open (AOP) is a constitutive repressor,
+which competes for PNT binding sites and can be removed from the nucleus and
+degraded upon phosphorylation by MAP kinases. AOS (Argos), STY (Sprouty) and
+KEK (Kekkon) are inducible repressive elements involved in negative feedbacks.
+AOS is a secreted molecule, which sequesters the ligand SPI (Spitz). STY acts
+downstream of DER, but upstream of RAS and RAF, by recruiting GAP1 and
+blocking the ability of DRK to bind to its positive effector. KEK is a
+transmembrane protein forming a non-functional heterodimer with the receptor.
+Constitutively expressed, CBL (E3 ligase) modulates DER signalling by
+recognizing activated, internalized receptor molecules and inducing their
+ubiquitination and degradation. CBL may also enhance the endocytosis of DER,
+following ligand binding. Modulation of DER signalling by CBL has been
+reported only in the follicle cells, which receive the Gurken signal from the
+oocyte (<span class=cite>[
+2
+,
+3
+,
+4
+,
+5
+]</span>
+).</p><p>Our logical model represents a cell receiving different
+combinations of ligands binding (SPI or Vein or both) and express/receive
+different levels of inhibitory inputs (Aos, Sty, Cbl, Kek).
+The signalling pathway is characterized by no signalling, medium or high
+signalling process designed by multi-valued nodes. We consider five main wild-
+type cellular situations:</p><ol><li>Cells secreting ligands but lacking Der activation (inhibition of Der),
+leading to no signalling.</li><li>Cells receiving medium signal with SPI expressed at level 1 and/or Vein
+expressed also at level 1, leading to medium signalling.</li><li>Cells receiving SPI at level of expression 1 (and/or Vein expressed at level 1)
+and in presence of an inhibitor (e.g. STY, AOS, or KEK), leading to no signalling.</li><li>Cells receiving SPI at level of expression 2 in the absence of inhibitors,
+leading to high signalling.</li><li>Cells receiving SPI at level of expression 2 (and/or Vein expressed at level 1) in
+presence of an inhibitor (e.g. STY, AOS, or KEK,&mldr;), leading only to medium signalling.</li></ol><dl class=biblio><dt>1</dt><dd><p class=ref><span class=title>The activities of two Ets-related transcription factors required for Drosophila eye development are modulated by the Ras/MAPK pathway..</span>
+<span class=authors>E. O'Neill, I. Rebay, R. Tjian, G. Rubin.</span>
+<span class=journal>Cell</span>
+<span class=position>78</span><span class=year> (1994 Jul 15)</span>.<br><span class=links>[
+<span class=issn><a href=0092-8674>issn</a></span>
+]</span></p></dd><dt>2</dt><dd><p class=ref><span class=title>Ubiquitin ligase activity and tyrosine phosphorylation underlie suppression of growth factor signaling by c-Cbl/Sli-1..</span>
+<span class=authors>G. Levkowitz, H. Waterman, S. Ettenberg, M. Katz, A. Tsygankov, I. Alroy, S. Lavi, K. Iwai, Y. Reiss, A. Ciechanover, S. Lipkowitz, Y. Yarden.</span>
+<span class=journal>Molecular cell</span>
+<span class=position>4</span><span class=year> (1999 Dec)</span>.<br><span class=links>[
+<span class=issn><a href=1097-2765>issn</a></span>
+]</span></p></dd><dt>3</dt><dd><p class=ref><span class=title>Ligand-induced ubiquitination of the epidermal growth factor receptor involves the interaction of the c-Cbl RING finger and UbcH7..</span>
+<span class=authors>M. Yokouchi, T. Kondo, A. Houghton, M. Bartkiewicz, W. Horne, H. Zhang, A. Yoshimura, R. Baron.</span>
+<span class=journal>The Journal of biological chemistry</span>
+<span class=position>274</span><span class=year> (1999 Oct 29)</span>.<br><span class=links>[
+<span class=issn><a href=0021-9258>issn</a></span>
+]</span></p></dd><dt>4</dt><dd><p class=ref><span class=title>D-cbl, a negative regulator of the Egfr pathway, is required for dorsoventral patterning in Drosophila oogenesis..</span>
+<span class=authors>L. Pai, G. Barcelo, T. Schüpbach.</span>
+<span class=journal>Cell</span>
+<span class=position>103</span><span class=year> (2000 Sep 29)</span>.<br><span class=links>[
+<span class=issn><a href=0092-8674>issn</a></span>
+]</span></p></dd><dt>5</dt><dd><p class=ref><span class=title>The RING finger of c-Cbl mediates desensitization of the epidermal growth factor receptor..</span>
+<span class=authors>H. Waterman, G. Levkowitz, I. Alroy, Y. Yarden.</span>
+<span class=journal>The Journal of biological chemistry</span>
+<span class=position>274</span><span class=year> (1999 Aug 6)</span>.<br><span class=links>[
+<span class=issn><a href=0021-9258>issn</a></span>
+]</span></p></dd></dl><h3>Files</h3><ul><li><a href=EGF__Pathway_12Jun2013.zginml>EGF__Pathway_12Jun2013.zginml</a></li><li><a href=EGF_Pathway_Documentation_11May2013.pdf>EGF_Pathway_Documentation_11May2013.pdf</a></li></ul></div></section></body></html>

@@ -1,0 +1,83 @@
+<!doctype html><html><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="ie=edge"><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><title>Drosophila FGF Signalling pathway &#183; GINsim</title><meta name=description content><link rel=stylesheet href=https://ginsim.github.io/style.main.css></head><body><header><div class=title><a href=https://ginsim.github.io/><img src=https://ginsim.github.io/ginsim.svg class=logo alt=GINsim></a></div><nav><ul><li><a href=/>Home</a></li><li><a href=/doc/>Documentation</a></li><li><a href=/download/>Download</a></li><li><a href=/models/>Models</a></li></ul></nav></header><section><div class=content><h1>Drosophila FGF Signalling pathway</h1><div class=meta><dl><dt>Submitter</dt><dd>Abibatou MBODJ and Denis THIEFFRY</dd><dt>Taxon</dt><dd><span class=keyword>D. melanogaster</span></dd><dt>Process</dt><dd><span class=keyword>Signalling</span></dd><p class=ref><span class=title>Logical modelling of Drosophila signalling pathways..</span>
+<span class=authors>A. Mbodj, G. Junion, C. Brun, E. Furlong, D. Thieffry.</span>
+<span class=journal>Molecular bioSystems</span>
+<span class=position>9</span><span class=year> (2013 Sep)</span>.<br><span class=links>[
+<span class=doi><a href=http://dx.doi.org/10.1039/c3mb70187e>doi:10.1039/c3mb70187e</a></span>
+<span class=issn><a href=1742-2051>issn</a></span>
+]</span></p></div><p>Drosophila genome encodes two FGF receptors, HTL (Heartless) and BTL
+(Breathless), which are required for the morphogenesis of different tissues.
+BTL is expressed in the tracheae, while HTL is expressed in embryonic mesoderm
+and was first identified because of its essential role in heart development.
+BTL ligand, BNL is encoded by the branchless gene <span class=cite>[1]</span>
+.
+THS (Thisbe) and PYR (Pyramus) function in a partially redundant fashion to
+activate heartless (htl).
+Upon ligand binding receptor dimerization triggers the canonical
+DRK/SOS/RAS/RAF/DSOR1/RL pathway. In contrast with other RTKs, Stumps is
+needed to trigger signal transduction <span class=cite>[
+2
+,
+3
+]</span>
+.
+Stumps is a cytoplasmic protein expressed in cells also expressing the
+FGF receptors. The presence of an ankyrin repeat, a coiled-coil structure
+and many tyrosines suggests that Stumps could bind SH2 domains of proteins
+such as DRK or CSW <span class=cite>[
+4
+]</span>
+. As a
+result, DRK recruits the guanine nucleotide exchange factor SOS (Son of
+sevenless), which catalyzes the exchange of GDP bound to RAS for GTP.
+Activated RAS then promotes the activation of RAF (Pole hole), DSOR1, and
+eventually that of RL (Rolled). RL can activate transcription through the
+inactivation of transcriptional co-repressors such as Anterior Open (AOP), as
+well as through the activation of transcriptional activators such as PNT
+(Pointed, with two forms denote by suffixes P1 and P2) <span class=cite>[
+5
+,
+6
+]</span>
+.
+The negative regulator STY (Sprouty) acts downstream of SOS but upstream of RAS
+and RAF, by recruiting GAP1 and blocking the ability of DRK to bind to its
+positive effector. Our model enables the simulation of pathway responses to
+different ligand combinations. In this regard, we define four initial states
+to simulate different behavior of the pathway. The first initial state
+reproduces the signalling through the receptor HTL (bound by Pyr and Ths), the
+second initial state corresponds to the signalling through the receptor BTL,
+the third initial state corresponds to the involvement of the inhibitor
+Sprouty during signalling conditions and the fourth initial state corresponds
+to the absence of signalling (no ligands binding). Each of these initial
+states lead to a specific stable state representative of in vivo conditions.</p><dl class=biblio><dt>1</dt><dd><p class=ref><span class=title>branchless encodes a Drosophila FGF homolog that controls tracheal cell migration and the pattern of branching..</span>
+<span class=authors>D. Sutherland, C. Samakovlis, M. Krasnow.</span>
+<span class=journal>Cell</span>
+<span class=position>87</span><span class=year> (1996 Dec 13)</span>.<br><span class=links>[
+<span class=issn><a href=0092-8674>issn</a></span>
+]</span></p></dd><dt>2</dt><dd><p class=ref><span class=title>Shc and a novel 89-kDa component couple to the Grb2-Sos complex in fibroblast growth factor-2-stimulated cells..</span>
+<span class=authors>P. Klint, S. Kanda, L. Claesson-Welsh.</span>
+<span class=journal>The Journal of biological chemistry</span>
+<span class=position>270</span><span class=year> (1995 Oct 6)</span>.<br><span class=links>[
+<span class=issn><a href=0021-9258>issn</a></span>
+]</span></p></dd><dt>3</dt><dd><p class=ref><span class=title>A lipid-anchored Grb2-binding protein that links FGF-receptor activation to the Ras/MAPK signaling pathway..</span>
+<span class=authors>H. Kouhara, Y. Hadari, T. Spivak-Kroizman, J. Schilling, D. Bar-Sagi, I. Lax, J. Schlessinger.</span>
+<span class=journal>Cell</span>
+<span class=position>89</span><span class=year> (1997 May 30)</span>.<br><span class=links>[
+<span class=issn><a href=0092-8674>issn</a></span>
+]</span></p></dd><dt>4</dt><dd><p class=ref><span class=title>The Drosophila protein Dof is specifically required for FGF signaling..</span>
+<span class=authors>S. Vincent, R. Wilson, C. Coelho, M. Affolter, M. Leptin.</span>
+<span class=journal>Molecular cell</span>
+<span class=position>2</span><span class=year> (1998 Oct)</span>.<br><span class=links>[
+<span class=issn><a href=1097-2765>issn</a></span>
+]</span></p></dd><dt>5</dt><dd><p class=ref><span class=title>The ETS domain protein pointed-P2 is a target of MAP kinase in the sevenless signal transduction pathway..</span>
+<span class=authors>D. Brunner, K. Dücker, N. Oellers, E. Hafen, H. Scholz, C. Klämbt.</span>
+<span class=journal>Nature</span>
+<span class=position>370</span><span class=year> (1994 Aug 4)</span>.<br><span class=links>[
+<span class=doi><a href=http://dx.doi.org/10.1038/370386a0>doi:10.1038/370386a0</a></span>
+<span class=issn><a href=0028-0836>issn</a></span>
+]</span></p></dd><dt>6</dt><dd><p class=ref><span class=title>The activities of two Ets-related transcription factors required for Drosophila eye development are modulated by the Ras/MAPK pathway..</span>
+<span class=authors>E. O'Neill, I. Rebay, R. Tjian, G. Rubin.</span>
+<span class=journal>Cell</span>
+<span class=position>78</span><span class=year> (1994 Jul 15)</span>.<br><span class=links>[
+<span class=issn><a href=0092-8674>issn</a></span>
+]</span></p></dd></dl><h3>Files</h3><ul><li><a href=FGF_Pathway_12Jun2013.zginml>FGF_Pathway_12Jun2013.zginml</a></li><li><a href=FGF_Pathway_Documentation_11May2013.pdf>FGF_Pathway_Documentation_11May2013.pdf</a></li></ul></div></section></body></html>

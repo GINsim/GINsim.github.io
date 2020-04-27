@@ -1,0 +1,32 @@
+<!doctype html><html><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="ie=edge"><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><title>Qualitative modelling of the network controlling Trp biosynthesis &#183; GINsim</title><meta name=description content><link rel=stylesheet href=https://ginsim.github.io/style.main.css></head><body><header><div class=title><a href=https://ginsim.github.io/><img src=https://ginsim.github.io/ginsim.svg class=logo alt=GINsim></a></div><nav><ul><li><a href=/>Home</a></li><li><a href=/doc/>Documentation</a></li><li><a href=/download/>Download</a></li><li><a href=/models/>Models</a></li></ul></nav></header><section><div class=content><h1>Qualitative modelling of the network controlling Trp biosynthesis</h1><div class=meta><dl><dt>Submitter</dt><dd>C. Chaouiya</dd><dt>Taxon</dt><dd><span class=keyword>E. Coli</span> ; <span class=keyword>Bacterium</span></dd><dt>Process</dt><dd><span class=keyword>Tryptophan biosythesis</span></dd><p class=ref><span class=title>Qualitative modelling of regulated metabolic pathways: application to the tryptophan biosynthesis in E.coli..</span>
+<span class=authors>E. Simão, E. REMY, D. Thieffry, C. Chaouiya.</span>
+<span class=journal>Bioinformatics (Oxford, England)</span>
+<span class=position>21 Suppl 2</span><span class=year> (2005 Sep 1)</span>.<br><span class=links>[
+<span class=issn><a href=1367-4811>issn</a></span>
+]</span></p></div><p>Its central motivation is the definition of a generic approach to obtain
+an integrated modelling of the regulated Trp biosynthesis pathway.
+In this context, we refer to Petri net models <span class=cite>[1]</span>
+.
+First, we present the modelling of the regulatory control of the Trp
+biosynthesis in E.Coli (download Trp_reg.zginml). The following figure
+illustrates the simplified logical regulatory graph. Each node of the
+regulatory graph represents an active component: Trp, the active enzyme (i.e.
+not associated with Trp), and the active repressor (the dimmeric form of TrpR
+in association with Trp). The last node (Trpext) accounts for the import of
+Trp from the external medium (note the permeation process is considered as
+constitutive here, for sake of simplicity).</p><p><img src=lrg.png alt></p><p>All nodes are binary ( i.e. can take the value 0 or 1), except Trp, which is
+represented by a ternary variable (taking the values 0,1,2). The association
+of tryptophan (at high levels) with the inactive form of the repressor
+(aporepressor) gives rise to the active form of the repressor (holorepressor);
+active repressor inhibits the transcription and thus the production of the
+enzyme TrpE; this enzyme is needed to produce the aminoacid Trp; the
+association of Trp (at moderate or high levels) with this enzyme inhibits its
+activity.</p><p>The Petri nets for the biosynthetic pathway and the regulatory control are
+available below (two PN formats), as well as the model integrating both levels
+(see additional files and the supporting reference).</p><dl class=biblio><dt>1</dt><dd><p class=ref><span class=title>Petri net modelling of biological regulatory networks.</span>
+<span class=authors>C. Chaouiya, E. REMY, D. Thieffry.</span>
+<span class=journal>Journal of Discrete Algorithms</span>
+<span class=position>6</span><span class=year> (06/2008)</span>.<br><span class=links>[
+<span class=doi><a href=http://dx.doi.org/10.1016/j.jda.2007.06.003>doi:10.1016/j.jda.2007.06.003</a></span>
+<span class=issn><a href=15708667>issn</a></span>
+]</span></p></dd></dl><h3>Files</h3><ul><li><a href=Trp_reg.zginml>Trp_reg.zginml</a></li></ul></div></section></body></html>

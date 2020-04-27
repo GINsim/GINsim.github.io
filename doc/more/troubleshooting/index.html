@@ -1,0 +1,16 @@
+<!doctype html><html><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="ie=edge"><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><title>Troubleshooting &#183; GINsim</title><meta name=description content><link rel=stylesheet href=https://ginsim.github.io/style.main.css></head><body><header><div class=title><a href=https://ginsim.github.io/><img src=https://ginsim.github.io/ginsim.svg class=logo alt=GINsim></a></div><nav><ul><li><a href=/>Home</a></li><li><a href=/doc/>Documentation</a></li><li><a href=/download/>Download</a></li><li><a href=/models/>Models</a></li></ul></nav></header><section><div class=content><h1>Troubleshooting</h1><h1 id=get-in-touch>Get in touch</h1><p>Some common issues are listed below, if you can not find a solution, please contact the GINsim team
+or send a message to the <a href=http://ginsim.org/contact>user support forum</a>,
+describing your problem and steps to reproduce it.
+As some problems are difficult to reproduce, you may be asked to provide log traces (using the
+<code>GINsim/support/export log traces</code> menu entry) and to launch GINsim from the command
+line to catch additional error messages.</p><h1 id=common-quirks>Common quirks</h1><h2 id=input-nodes>Input nodes</h2><p>In GINsim, some nodes can be defined as input nodes using a checkbox in the node property panel.
+These input nodes can not have any incoming interaction or dynamical rule as they have an implicit rule
+allowing them to always maintain their current activity level.
+Before setting a node as input, the modeller must thus remove all existing regulator or rule.
+Likewise, the input status must be removed before adding any new regulator or rule.
+To delete a logical formula, select it (without editing it) and use the delete key or the contextual menu.</p><h2 id=unexpected-dynamical-results>Unexpected dynamical results</h2><p>If you obtain unexpected dynamical results (stable states or simulations results),
+verify successively the structure of the regulatory graph, the maximal activity levels of all components,
+the thresholds of interactions coming out of multi-valued components and then the dynamical rules.
+GINsim further provides a tool to compute interaction functionality, which facilitates the
+identification of inconsistencies between the structure of the regulatory graph and the dynamical rules.</p><h2 id=gui-refresh-issues>GUI refresh issues</h2><p>Some refreshing problems may appear after long or complex modeling sessions, saving and restarting
+GINsim can solve some issues.</p></div></section></body></html>

@@ -1,0 +1,44 @@
+<!doctype html><html><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="ie=edge"><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><title>The simulation &#183; GINsim</title><meta name=description content><link rel=stylesheet href=https://ginsim.github.io/style.main.css></head><body><header><div class=title><a href=https://ginsim.github.io/><img src=https://ginsim.github.io/ginsim.svg class=logo alt=GINsim></a></div><nav><ul><li><a href=/>Home</a></li><li><a href=/doc/>Documentation</a></li><li><a href=/download/>Download</a></li><li><a href=/models/>Models</a></li></ul></nav></header><section><div class=content><h1>The simulation</h1><p>Once a regulatory model has been defined, a simulation can be launched
+through the <code>Run Simulation</code> option of the <code>Action</code> menu.
+This option triggers a dialog box allowing to choose simulation settings.</p><figure><img src=simulation_config.png><figcaption><h4>Simulation settings</h4><p>This dialog box allows to configure and run the simulation.</p></figcaption></figure><p>This dialog box allows to define simulation settings.
+The top part of the dialog box enables the definition of transformations to apply to
+the regulatory graph before the simulation.
+The left part of the dialog box enables to manage (select, add or remove) simulations settings.
+The right part of the dialog box enables the definition of the current simulation setting.</p><h1 id=configure-the-simulation>Configure the simulation</h1><p>The top part of the simulation dialog enables the selection of a perturbation
+to be applied to the regulatory graph before running the simulation. The associated <code>Configure</code>
+button will show the :doc:<code>perturbation definition panel &lt;/modify/perturbation></code>.</p><p>The bottom part of the dialog box is dedicated to the definition of
+:doc:<code>initial_states</code> of the simulation.
+Each row defines a single state or a group of states, and the checkboxes allow
+to select the states used for the simulation. If no row is selected, all possible
+states are considered, generating a complete state transition graph.</p><p>In a given state of the system, one or several genes are called to update their
+values. When several changes are pending, different construction strategies lead to
+different successor states and thus to different state transition graphs.
+GINsim implements the classical synchronous and asynchronous
+updating, and enables the definition of ad hoc strategies using priority classes.
+These updating modes are described in detail in their documentation.</p><p>Simulation settings are saved and restored as associated data in ZGINML files.</p><h1 id=running-simulations-with-perturbation>Running simulations with perturbation</h1><figure><img src=blocking.png><figcaption><h4>Perturbation simulation result</h4><p>Result of an asynchronous simulation, where the expression level for
+Cro has been blocked at 1.
+The state transition graph is the same as the original asynchronous one,
+but all transitions where Cro leaves this value have been suppressed.
+This state transition graph is now composed of two disconnected parts,
+with a new stable state.</p></figcaption></figure><p>The &ldquo;strip output&rdquo; checkbox next to the perturbation selector enables to
+activate automatic removal of all output components from the simulation.
+Their value can be retrieved on demand when browsing the resulting
+State Transition Graph. See the reduction section for more details.</p><p>The &ldquo;Construction Strategy&rdquo; panel enables the selection of the type of graph computed
+by the simulation (the classical State Transition Graph,
+or the more compact Hierarchical Transition Graph).</p><p>State Transition Graphs can be computed breadth-first or depth-first.
+Both options lead to the same result, unless the simulation is interrupted by
+a size limit (see below).</p><h1 id=depth-and-size-limitations>Depth and size limitations</h1><p>An option is also offered to limit the search depth and/or the total number of
+states generated in a simulation.</p><div class="notices warning">When considering several initial states (or the full STG), some of
+them can be reached while running the simulation from an other state.
+In this case, no new search will be triggered for them and the depth
+counter will not be reinitialised (i.e. the depth limit for these
+initial states will be shorter).</div><figure><img src=stg_depth_limit.png><figcaption><h4>Limitation of the depth in the case of a depth first construction</h4><p>State transition graph with all reachable states from the state &ldquo;0111&rdquo;.
+The same simulation with a depth limit set to 2 keeps only the initial state
+and the nodes at a distance of two or less (i.e. the six white states).</p></figcaption></figure><p>The limit on the total number of states apply to all simulation modes. Under the
+asynchronous assumption, this limit has slightly different effects on depth first
+and breadth first search.</p><figure><img src=stg_size_limit.png></figure><h1 id=running-the-simulation>Running the simulation</h1><p>While the simulation is running, the bottom left corner indicates
+the size of the generated state transition graph. The simulation
+can be interrupted, using the <code>Cancel</code> button, without loosing
+the calculated part of the state transition graph.</p><p>At the end of a simulation, several options are available to save,
+display or analyse the resulting state transition graph
+(see ).</p></div></section></body></html>

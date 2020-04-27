@@ -1,0 +1,24 @@
+<!doctype html><html><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="ie=edge"><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><title>Strongly Connected Components &#183; GINsim</title><meta name=description content><link rel=stylesheet href=https://ginsim.github.io/style.main.css></head><body><header><div class=title><a href=https://ginsim.github.io/><img src=https://ginsim.github.io/ginsim.svg class=logo alt=GINsim></a></div><nav><ul><li><a href=/>Home</a></li><li><a href=/doc/>Documentation</a></li><li><a href=/download/>Download</a></li><li><a href=/models/>Models</a></li></ul></nav></header><section><div class=content><h1>Strongly Connected Components</h1><p>A <a href=http://en.wikipedia.org/wiki/Strongly_connected_component>Strongly Connected Component (SCC)</a>
+in a graph is a maximal subgraph such that all its components are strongly
+connected. Each SCC can either a single node or a set of intertwined cycles
+of the original graph.
+The SCC graph is a derived graph in which each node represent one of the SCC
+of the original graph. This acyclic graph provides a simplified representation
+of the organisation of the original graph. This graph is thus often much more compact.</p><p>In GINsim, the graph of the Strongly Connected Components (SCC graph) is often
+used to provide a better understanding of the organisation of the attractors in
+a <a href=/doc/simulation/transition_graphs>State Transition Graph</a>.
+The computation of the SCC graph can be launched through the <code>Construct SCC graph</code>
+option of the <code>Tools</code> menu.
+Note that GINsim also provides the <a href=/doc/simulation/transition_graphs>Hierarchical Transition Graph</a>
+dedicated to this problem.</p><figure><img src=scc.png><figcaption><h4>Strongly Connected Components graph</h4><p>Example of Strongly Connected Component Graph (bottom right) and
+the corresponding state transition graph (top left).
+The <code>Selection Attribute</code> tab in the bottom panel shows
+the content of the selected SCC (i.e. the list of nodes
+in the original graph).</p></figcaption></figure><p>Note that while the <code>Construct SCC Graph</code> tool is often applied to
+<a href=/doc/simulation/transition_graphs>State Transition Graph</a>, it can
+also be applied to Regulatory Graphs (or more formally to any type of graphs).</p><h1 id=extract-from-scc-graph>Extract from SCC graph</h1><p>After computing the SCC graph, another tool enables to recover the subgraph
+of the original graph corresponding to the selected nodes in the SCC graph.</p><p>To use it, select some nodes in a SCC graph and run the <code>Extract subgraph</code>
+action from the <code>Graph</code> menu.</p><p>This tool will open the original graph, and apply a filter to only keep the
+selected parts. To work properly it thus requires that the original graph
+had been saved to a file, and that the association between the SCC graph
+and the original graph (maintained by GINsim transparently) is still valid.</p></div></section></body></html>

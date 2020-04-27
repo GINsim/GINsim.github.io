@@ -1,0 +1,181 @@
+<!doctype html><html><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="ie=edge"><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><title>Drosophila Hh Signalling pathway &#183; GINsim</title><meta name=description content><link rel=stylesheet href=https://ginsim.github.io/style.main.css></head><body><header><div class=title><a href=https://ginsim.github.io/><img src=https://ginsim.github.io/ginsim.svg class=logo alt=GINsim></a></div><nav><ul><li><a href=/>Home</a></li><li><a href=/doc/>Documentation</a></li><li><a href=/download/>Download</a></li><li><a href=/models/>Models</a></li></ul></nav></header><section><div class=content><h1>Drosophila Hh Signalling pathway</h1><div class=meta><dl><dt>Submitter</dt><dd>Abibatou MBODJ and Denis THIEFFRY</dd><dt>Taxon</dt><dd><span class=keyword>D. melanogaster</span></dd><dt>Process</dt><dd><span class=keyword>Signalling</span></dd><p class=ref><span class=title>Logical modelling of Drosophila signalling pathways..</span>
+<span class=authors>A. Mbodj, G. Junion, C. Brun, E. Furlong, D. Thieffry.</span>
+<span class=journal>Molecular bioSystems</span>
+<span class=position>9</span><span class=year> (2013 Sep)</span>.<br><span class=links>[
+<span class=doi><a href=http://dx.doi.org/10.1039/c3mb70187e>doi:10.1039/c3mb70187e</a></span>
+<span class=issn><a href=1742-2051>issn</a></span>
+]</span></p></div><p>Processing of HH ligand The precursor of HH is auto-catalytically cleaved to produce an
+N-terminal (HH-N) and a C- terminal (HH-C) fragments <span class=cite>[1,
+2
+]</span>
+.
+A cholesterol moiety is covalently attached to the last amino acid of HH-N to create HH-Np,
+that is responsible for the biological activities of HH proteins
+<span class=cite>[
+1
+,
+2
+,
+3
+]</span>
+. The N-terminal region of HH-Np
+is further modified by addition of palmitate that is essential for its signalling activity
+<span class=cite>[
+4
+,
+5
+,
+6
+,
+7
+,
+8
+,
+9
+]</span>
+.
+We model these aspects by an AND rule (combining inputs
+from DLP, IHOG, Rasp, DISP, SHF, Lipophorin, BOI and DALLY) attached to the
+component representing the secreted HH molecule, denoted Hh in our model. HH
+Signalling Two integral membrane proteins are involved in HH signal reception:
+Patched and Smoothened. HH binding to its receptor Patched (PTC) relieves PTC-
+mediated repression of Smoothened (SMO), a serpentine-like membrane protein
+required for HH signalling <span class=cite>[
+10
+,
+11
+]</span>
+. This allows
+SMO stabilisation, activation, and phosphorylation by Shaggy (SGG), and downstream
+signalling through the formation of a protein complex including the serine threonine
+kinase Fused (FU), the kinesin-like protein Costa (COS), and the protein
+Suppressor of Fused (SUFU), ultimately controlling the post-translational
+processing of the protein Cubitus interruptus (CI) <span class=cite>[
+12
+]</span>
+.
+In the absence of HH, COS binds CI directly and sequesters it in the cytoplasm
+with the help of SUFU. The recruitment of different kinases (Casein kinase 1 alpha,
+Shaggy, Protein kinase A) then leads to the phosphorylation of CI and to its
+proteolysis by SLMB. The resulting truncated protein (CI_rep) is released and
+enters the nucleus, where it has a transcriptional repressing activity. Recent
+evidence further indicates that SMO is inhibited by TOW, which tentatively
+mediates the effect of PTC on SMO <span class=cite>[
+13
+,
+14
+]</span>
+.
+Following SMO activation, the transcription factor CI is phosphorylated and
+translocated into the nucleus in its entire form, which plays a transcriptional
+activatory role (CI_act). In the model, a cascade of inhibitions, from HH on PTC,
+and from PTC on SMO, implements the indirect positive action of HH on SMO. A protein
+complex including CI, COS, and FU, phosphorylates and thereby inhibits SU(FU),
+ultimately favouring the CI activatory form and its translocation into the
+nucleus. We model the roles of the kinases (SGG, PKA, and CK1a), COS and
+SU(FU) (both needed to recruit the kinases) in the processing of CI in terms
+of inhibitory interactions on CI_act and activatory interactions on CI_rep
+<span class=cite>[
+15
+,
+16
+]</span>
+. Complexes are represented implicitly
+(they are formed as soon as the components are synthesised or activated), while
+logical rules define component activity requirements to form CI_act versus CI_rep
+forms. To explore the dynamic of the pathway, we define two initial states to
+simulate the presence and the absence of signalling. On one hand, the non binding
+of HH (level expression 0) triggers a series of signalling cascades that lead to
+the activation of several kinases (for example SGG, PKA, CK1a, &mldr;) at level of
+expression 1, which will permit the formation of CI repressor (expressed at
+level 1), which in turn will inhibit the targets. On the other hand, the
+presence of HH (level of expression 1) leads to a stable state corresponding
+to the signalling conditions leading to the formation of CI activator that
+will activate the targets node (level of expression 1).</p><dl class=biblio><dt>1</dt><dd><p class=ref><span class=title>Autoproteolysis in hedgehog protein biogenesis..</span>
+<span class=authors>J. Lee, S. Ekker, K. von, J. Porter, B. Sun, P. Beachy.</span>
+<span class=journal>Science (New York, N.Y.)</span>
+<span class=position>266</span><span class=year> (1994 Dec 2)</span>.<br><span class=links>[
+<span class=issn><a href=0036-8075>issn</a></span>
+]</span></p></dd><dt>2</dt><dd><p class=ref><span class=title>Cholesterol modification of hedgehog signaling proteins in animal development..</span>
+<span class=authors>J. Porter, K. Young, P. Beachy.</span>
+<span class=journal>Science (New York, N.Y.)</span>
+<span class=position>274</span><span class=year> (1996 Oct 11)</span>.<br><span class=links>[
+<span class=issn><a href=0036-8075>issn</a></span>
+]</span></p></dd><dt>3</dt><dd><p class=ref><span class=title>Hedgehog signaling in animal development: paradigms and principles..</span>
+<span class=authors>P. Ingham, A. McMahon.</span>
+<span class=journal>Genes & development</span>
+<span class=position>15</span><span class=year> (2001 Dec 1)</span>.<br><span class=links>[
+<span class=doi><a href=http://dx.doi.org/10.1101/gad.938601>doi:10.1101/gad.938601</a></span>
+<span class=issn><a href=0890-9369>issn</a></span>
+]</span></p></dd><dt>4</dt><dd><p class=ref><span class=title>Identification of a palmitic acid-modified form of human Sonic hedgehog..</span>
+<span class=authors>R. Pepinsky, C. Zeng, D. Wen, P. Rayhorn, D. Baker, K. Williams, S. Bixler, C. Ambrose, E. Garber, K. Miatkowski, F. Taylor, E. Wang, A. Galdes.</span>
+<span class=journal>The Journal of biological chemistry</span>
+<span class=position>273</span><span class=year> (1998 May 29)</span>.<br><span class=links>[
+<span class=issn><a href=0021-9258>issn</a></span>
+]</span></p></dd><dt>5</dt><dd><p class=ref><span class=title>Interactions with Costal2 and suppressor of fused regulate nuclear translocation and activity of cubitus interruptus..</span>
+<span class=authors>G. Wang, K. Amanai, B. Wang, J. Jiang.</span>
+<span class=journal>Genes & development</span>
+<span class=position>14</span><span class=year> (2000 Nov 15)</span>.<br><span class=links>[
+<span class=issn><a href=0890-9369>issn</a></span>
+]</span></p></dd><dt>6</dt><dd><p class=ref><span class=title>Distinct roles of Central missing and Dispatched in sending the Hedgehog signal..</span>
+<span class=authors>K. Amanai, J. Jiang.</span>
+<span class=journal>Development (Cambridge, England)</span>
+<span class=position>128</span><span class=year> (2001 Dec)</span>.<br><span class=links>[
+<span class=issn><a href=0950-1991>issn</a></span>
+]</span></p></dd><dt>7</dt><dd><p class=ref><span class=title>Skinny hedgehog, an acyltransferase required for palmitoylation and activity of the hedgehog signal..</span>
+<span class=authors>Z. Chamoun, R. Mann, D. Nellen, K. von, M. Bellotto, P. Beachy, K. Basler.</span>
+<span class=journal>Science (New York, N.Y.)</span>
+<span class=position>293</span><span class=year> (2001 Sep 14)</span>.<br><span class=links>[
+<span class=doi><a href=http://dx.doi.org/10.1126/science.1064437>doi:10.1126/science.1064437</a></span>
+<span class=issn><a href=0036-8075>issn</a></span>
+]</span></p></dd><dt>8</dt><dd><p class=ref><span class=title>The role of Wingless signaling in establishing the anteroposterior and dorsoventral axes of the eye disc..</span>
+<span class=authors>J. Lee, J. Treisman.</span>
+<span class=journal>Development (Cambridge, England)</span>
+<span class=position>128</span><span class=year> (2001 May)</span>.<br><span class=links>[
+<span class=issn><a href=0950-1991>issn</a></span>
+]</span></p></dd><dt>9</dt><dd><p class=ref><span class=title>Rasp, a putative transmembrane acyltransferase, is required for Hedgehog signaling..</span>
+<span class=authors>C. Micchelli, I. The, E. Selva, V. Mogila, N. Perrimon.</span>
+<span class=journal>Development (Cambridge, England)</span>
+<span class=position>129</span><span class=year> (2002 Feb)</span>.<br><span class=links>[
+<span class=issn><a href=0950-1991>issn</a></span>
+]</span></p></dd><dt>10</dt><dd><p class=ref><span class=title>The Drosophila smoothened gene encodes a seven-pass membrane protein, a putative receptor for the hedgehog signal..</span>
+<span class=authors>J. Alcedo, M. Ayzenzon, O. Von, M. Noll, J. Hooper.</span>
+<span class=journal>Cell</span>
+<span class=position>86</span><span class=year> (1996 Jul 26)</span>.<br><span class=links>[
+<span class=issn><a href=0092-8674>issn</a></span>
+]</span></p></dd><dt>11</dt><dd><p class=ref><span class=title>Dual roles for patched in sequestering and transducing Hedgehog..</span>
+<span class=authors>Y. Chen, G. Struhl.</span>
+<span class=journal>Cell</span>
+<span class=position>87</span><span class=year> (1996 Nov 1)</span>.<br><span class=links>[
+<span class=issn><a href=0092-8674>issn</a></span>
+]</span></p></dd><dt>12</dt><dd><p class=ref><span class=title>Identification of Hedgehog pathway components by RNAi in Drosophila cultured cells..</span>
+<span class=authors>L. Lum, S. Yao, B. Mozer, A. Rovescalli, K. Von, M. Nirenberg, P. Beachy.</span>
+<span class=journal>Science (New York, N.Y.)</span>
+<span class=position>299</span><span class=year> (2003 Mar 28)</span>.<br><span class=links>[
+<span class=doi><a href=http://dx.doi.org/10.1126/science.1081403>doi:10.1126/science.1081403</a></span>
+<span class=issn><a href=1095-9203>issn</a></span>
+]</span></p></dd><dt>13</dt><dd><p class=ref><span class=title>Tow (Target of Wingless), a novel repressor of the Hedgehog pathway in Drosophila..</span>
+<span class=authors>K. Ayers, R. Rodriguez, A. Gallet, L. Ruel, P. Thérond.</span>
+<span class=journal>Developmental biology</span>
+<span class=position>329</span><span class=year> (2009 May 15)</span>.<br><span class=links>[
+<span class=doi><a href=http://dx.doi.org/10.1016/j.ydbio.2009.02.037>doi:10.1016/j.ydbio.2009.02.037</a></span>
+<span class=issn><a href=1095-564X>issn</a></span>
+]</span></p></dd><dt>14</dt><dd><p class=ref><span class=title>Evaluating Smoothened as a G-protein-coupled receptor for Hedgehog signalling..</span>
+<span class=authors>K. Ayers, P. Thérond.</span>
+<span class=journal>Trends in cell biology</span>
+<span class=position>20</span><span class=year> (2010 May)</span>.<br><span class=links>[
+<span class=doi><a href=http://dx.doi.org/10.1016/j.tcb.2010.02.002>doi:10.1016/j.tcb.2010.02.002</a></span>
+<span class=issn><a href=1879-3088>issn</a></span>
+]</span></p></dd><dt>15</dt><dd><p class=ref><span class=title>The role of kinases in the Hedgehog signalling pathway..</span>
+<span class=authors>R. Aikin, K. Ayers, P. Thérond.</span>
+<span class=journal>EMBO reports</span>
+<span class=position>9</span><span class=year> (2008 Apr)</span>.<br><span class=links>[
+<span class=doi><a href=http://dx.doi.org/10.1038/embor.2008.38>doi:10.1038/embor.2008.38</a></span>
+<span class=issn><a href=1469-221X>issn</a></span>
+]</span></p></dd><dt>16</dt><dd><p class=ref><span class=title>New "hogs" in Hedgehog transport and signal reception..</span>
+<span class=authors>C. Wilson, P. Chuang.</span>
+<span class=journal>Cell</span>
+<span class=position>125</span><span class=year> (2006 May 5)</span>.<br><span class=links>[
+<span class=doi><a href=http://dx.doi.org/10.1016/j.cell.2006.04.016>doi:10.1016/j.cell.2006.04.016</a></span>
+<span class=issn><a href=0092-8674>issn</a></span>
+]</span></p></dd></dl><h3>Files</h3><ul><li><a href=Hh__Pathway_11Jun2013.zginml>Hh__Pathway_11Jun2013.zginml</a></li><li><a href=Hh_Pathway_Documentation_11May013.pdf>Hh_Pathway_Documentation_11May013.pdf</a></li></ul></div></section></body></html>

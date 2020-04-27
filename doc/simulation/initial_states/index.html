@@ -1,0 +1,12 @@
+<!doctype html><html><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="ie=edge"><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><title>Initial states &#183; GINsim</title><meta name=description content><link rel=stylesheet href=https://ginsim.github.io/style.main.css></head><body><header><div class=title><a href=https://ginsim.github.io/><img src=https://ginsim.github.io/ginsim.svg class=logo alt=GINsim></a></div><nav><ul><li><a href=/>Home</a></li><li><a href=/doc/>Documentation</a></li><li><a href=/download/>Download</a></li><li><a href=/models/>Models</a></li></ul></nav></header><section><div class=content><h1>Initial states</h1><p>Named groups of states can be defined for the regulatory graph and used
+for example as starting point for the :doc:<code>simulation</code>.</p><figure><img src=initial_states.png><figcaption><h4>Initial state definition panel</h4><p>Each line in the table of intial states has a name and provides a value or a range for
+one or more components. Components which are not restricted are denoted by stars ("*")
+in the table.</p></figcaption></figure><p>Each row of the table corresponds to a set of states, where activity
+levels are specified for each component in the corresponding table cell.
+Each component can use all of its possible levels (denoted by a star ("<em>")),
+a single level or any subset of levels, separated by semicolons (;).
+Intervals can also be defined using a dash (&ldquo;0-2&rdquo; denotes all levels from 0 to 2, included).
+The special value &ldquo;m&rdquo; denotes the maximal level of the component.
+For example, &ldquo;0;2-4&rdquo; means &ldquo;0 or values between 2 and 4&rdquo; and is identical to &ldquo;0;2;3;4&rdquo;.
+&ldquo;1-m&rdquo; means &ldquo;any activity (from 1 to the max)".
+The default, denoted by a &ldquo;</em>", covers all possible values (it is thus the same as &ldquo;0-m&rdquo;).</p><p>Initial states can be reordered, deleted and duplicated using the buttons on top of the table.</p><div class="notices tip">A value can be entered in many cells at once using multiple selection.</div></div></section></body></html>

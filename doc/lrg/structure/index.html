@@ -1,0 +1,44 @@
+<!doctype html><html><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="ie=edge"><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><title>Struture of the LRG &#183; GINsim</title><meta name=description content><link rel=stylesheet href=https://ginsim.github.io/style.main.css></head><body><header><div class=title><a href=https://ginsim.github.io/><img src=https://ginsim.github.io/ginsim.svg class=logo alt=GINsim></a></div><nav><ul><li><a href=/>Home</a></li><li><a href=/doc/>Documentation</a></li><li><a href=/download/>Download</a></li><li><a href=/models/>Models</a></li></ul></nav></header><section><div class=content><h1>Struture of the LRG</h1><p>Regulatory graphs can be interactively modified: components and interactions
+can be added, edited and removed. The interaction with the graph view is
+controled by an editing mode selected through the following buttons available
+on the toolbar on the top:</p><p>Available editing modes for regulatory graphs:</p><ul><li><p><img src=/buttons/editmode.gif alt="Edit button"> Default editing mode: allows to select and move objects.</p></li><li><p><img src=/buttons/insertsquare.gif alt="Add Node button"> Component insertion mode: when selected, clicking on the graph panel adds a new component.</p></li><li><p><img src=/buttons/insertpositiveedge.gif alt="Add positive interaction button"> <img src=/buttons/insertnegativeedge.gif alt="Add negative interaction button"> <img src=/buttons/insertdualedge.gif alt="Add dual interaction button"> <img src=/buttons/insertunknownedge.gif alt="Add unknown interaction button"> Interaction insertion mode: when selected, interactions are added by first
+selecting one component and dragging the selection to (the same or) another
+component. The interactions must be complemented by the definition of the logical
+parameters for the target variable (see below). The four buttons allow to add
+different types of interactions: activation, inhibition, dual or undefined.</p></li><li><p><img src=/buttons/edit-delete.png alt="Delete button"> Deletion option: selected items (components or interactions) are deleted.</p></li></ul><h1 id=component-order>Component order</h1><p>In GINsim, components are internally ordered. This order has no effect on the regulatory
+graph itself, but it has a direct effect on the internal representation of the logical
+parameters, with possible effects on (partial) simulation.
+The default order follows the node addition chronology, which can be modified
+by selecting a (set of) node(s) and using the <code>Up/Down arrows</code> on the left
+side of the <code>Modelling Attributes</code> tab.
+This change of order will have an effect throughout GINsim, e.g. in the
+state transition graph, since the same order is used in the states names.</p><figure><img src=node_order.png><figcaption><h4>Changing component order</h4><p>The left part of the <code>Modelling Attributes</code> tab of a
+regulatory graph lists all components of the model and allows to modify their
+order. The &ldquo;up&rdquo; and &ldquo;down&rdquo; buttons move selected components in the list.</p></figcaption></figure><div class=notices>The selection of several components, can be achieved (like in all lists)
+by using the <code>Ctrl</code> key (<code>apple/Cmd</code> key on Mac OS X)
+or <code>Shift</code> key, while selecting the nodes.</div><h1 id=component-attributes>Component attributes</h1><p>When a single component is selected, the <code>Modelling Attributes</code>
+tab allows to define its properties:</p><ul><li><code>Id</code>: component&rsquo;s identifier. It appears in the graph and it must be unique.</li><li><code>Name</code>: component&rsquo;s long name (optional).</li><li><code>Input</code>: mark a component as an input node, i.e., cannot have regulators.</li><li><code>Max</code>: the maximal expression level of the component.
+The default value is 1 (Boolean case).
+It can be augmented to generate multi-valued components.</li><li><code>Logical parameters</code>: define the rules controlling the dynamical evolution
+of the expression level depending on the active incoming interactions.</li></ul><figure><img src=geneConfig.png><figcaption><h4>Attributes of a component</h4><p>Properties of the gene Cro, as defined in the <strong>lambda4</strong> model.</p></figcaption></figure><div class=notices>The <code>Modelling Attributes</code> tab is divided into three parts.
+The combobox selection list (bottom left) permits to select
+:doc:<code>annotations</code>, as well as :doc:<code>rules</code> .</div><h1 id=interactions>Interactions</h1><p>When a single interaction arc is selected, the <code>Modelling Attributes</code>
+tab allows to define its properties.</p><figure><img src=interactionConfig.png><figcaption><h4>Properties of an interaction arc</h4><p>Properties of the Cro-N interaction in the <strong>lambda4</strong> model.</p></figcaption></figure><p>Depending on a component&rsquo;s activity level, different effects might occur on another
+component. These different effects are controled by the definition of different
+ranges listed on the left.</p><ul><li><p>The &ldquo;+&rdquo; button creates an additional interaction range.</p></li><li><p>The &ldquo;-&rdquo; button deletes the selected interaction range.</p></li><li><p>Properties of the selected interaction range can be defined:</p><ul><li><strong>Threshold</strong> defines the lower bound of the selected interaction range.
+The interaction becomes <strong>active</strong> when
+the activity level of its source component is in this range.</li><li><strong>Sign</strong>: each interaction range can be labelled with activation,
+inhibition, dual or unknown.
+However, this is only a visual hint, as the real effects of interactions are defined
+through :doc:<code>rules</code>.</li></ul></li></ul><h1 id=model-integrity>Model integrity</h1><p>GINsim keeps the definition of regulatory graphs consistent, which means that:</p><ul><li>When an interaction is deleted, all :doc:<code>rules</code> in which it was involved
+are also deleted.</li><li>When the <code>max value</code> of a node is decreased, interactions and logical
+parameters are checked and, if necessary, updated accordingly and silently
+to avoid inconsistencies.</li></ul><p>Since such changes have automatic repercussions on the model parameters
+and interaction ranges to keep the model valid, keep in mind that you
+need to double-check parameters after performing such changes.</p><p>Checking activation intervals of interactions and the correctness
+of logical parameters is left to the user as adding more controls generates more
+annoyances than real help. Invalid logical parameters are highlighted to ease their
+detection. Keep in mind that a change in the activation-range of one of the
+interactions can turn a valid logical parameter into an ill-defined one. Parameters
+involving interactions from the same source with disjoint activity ranges
+are also ill-defined and thus highlighted for correction.</p></div></section></body></html>

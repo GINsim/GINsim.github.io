@@ -1,0 +1,24 @@
+<!doctype html><html><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="ie=edge"><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><title>Perturbations &#183; GINsim</title><meta name=description content><link rel=stylesheet href=https://ginsim.github.io/style.main.css></head><body><header><div class=title><a href=https://ginsim.github.io/><img src=https://ginsim.github.io/ginsim.svg class=logo alt=GINsim></a></div><nav><ul><li><a href=/>Home</a></li><li><a href=/doc/>Documentation</a></li><li><a href=/download/>Download</a></li><li><a href=/models/>Models</a></li></ul></nav></header><section><div class=content><h1>Perturbations</h1><p>GINsim facilitates the definition of <strong>perturbations</strong> to define small changes to
+the regulation of components in regulatory graphs. A perturbation is a set of
+restrictions on the evolution of the activity level of one or several components.</p><h1 id=using-perturbations>Using Perturbations</h1><p>Some tools, notably Simulation and Stable state search, include a
+perturbation selection panel to apply a perturbation before running.</p><h1 id=definition-of-perturbations>Definition of Perturbations</h1><p>Perturbation can be defined using the following configuration panel.
+The panel appears upon activation of the <code>configure</code> button in the
+perturbation selection panel.</p><figure><img src=perturbations.png><figcaption><h4>Perturbation definition panel</h4><p>This edition panel considers two types of perturbations: <strong>simple perturbations</strong>
+which only affect the activity of a single component, and <strong>multiple perturbations</strong>
+which group together a list of simple perturbations.</p></figcaption></figure><h2 id=simple-perturbations>Simple Perturbations</h2><p>The perturbation definition panel appears on the top-right part of the dialog above
+when no simple perturbation is selected, or when clicking the <code>+</code> button.
+To create a perturbation, one must first select the affected component using the combobox.
+The restriction configuration panel will then appear, and the perturbation can be added using the <code>create</code> button.</p><p>The activity level of Boolean components can be fixed at <code>0</code> or at <code>1</code>,
+corresponding to the definition of a knockdown or ectopic activity respectively.
+Radio buttons allows to choose between these two possibilities.</p><p>Multi-valued components offer more possibilities, that can be configured using
+a range slider. Their activity level will be restricted in the selected range,
+or completely fixed if the range corresponds to a single value.</p><figure><img src=booleanperturbation.png><figcaption><h4>Perturbation creation panels</h4><p>TODO: add multivalued figure figures/mvaluedperturbation.png</p></figcaption></figure><p>This enables the definition of simple perturbations where the activity level of a component is restricted to the selected value(s).</p><div class="notices note">The definition of more subtle perturbations (conditional knockouts&mldr;)
+still requires the modifications of the logical parameters. We plan to
+add convenient means to define other types of perturbations in the future.</div><div class="notices warning">Simple perturbations can not be duplicated: when trying to add a
+simple perturbation that is already defined, nothing will happen.</div><h2 id=multiple-perturbations>Multiple Perturbations</h2><p>The bottom part of the panel lists multiple perturbations.
+Multiple perturbations can be created by selecting several
+simple perturbation and clicking the button which appears
+in the information panel.
+These perturbations can then be ordered and deleted using
+the buttons on the right side.</p><div class="notices warning">Deleting a simple perturbation will also remove all the
+multiple perturbations using it.</div></div></section></body></html>

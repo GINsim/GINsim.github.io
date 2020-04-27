@@ -1,0 +1,16 @@
+<!doctype html><html><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="ie=edge"><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><title>Animate transition graphs &#183; GINsim</title><meta name=description content><link rel=stylesheet href=https://ginsim.github.io/style.main.css></head><body><header><div class=title><a href=https://ginsim.github.io/><img src=https://ginsim.github.io/ginsim.svg class=logo alt=GINsim></a></div><nav><ul><li><a href=/>Home</a></li><li><a href=/doc/>Documentation</a></li><li><a href=/download/>Download</a></li><li><a href=/models/>Models</a></li></ul></nav></header><section><div class=content><h1>Animate transition graphs</h1><p>The animation tool is launched through the <code>Animate</code> option of
+the <code>Action</code> menu of a state transition graph. It allows to
+interactively follow a trajectory in the state transition graph. Genes of the
+regulatory graph are highlighted, to display the corresponding activity levels.</p><figure><img src=animator.png><figcaption><h4>The animation plugin</h4><p></p></figcaption></figure><p>To follow a trajectory in the state transition graph, select a starting state. It
+is then colorized in blue and added to the trajectory (listed in the animation
+dialog box). Its successor states are highlited, and can be added to the
+trajectory upon selection, which in turns changes the available successor states.</p><p>To build another trajectory, select a state in the dialog and press the <code>&lt;&lt;</code>
+button to remove it and all of its successors.</p><p>To view the defined trajectory, select the starting state and press the <code>|></code> button.</p><h1 id=trajectory-visualisation-with-gnuplot>Trajectory visualisation with gnuplot</h1><p>A path created with the animation plugin or found by the path
+finder can be visualized using <a href=http://www.gnuplot.info>gnuplot</a>.
+The &ldquo;GP&rdquo; button (in the path finder and in the animator box) opens the gnuplot export box.</p><figure><img src=gnuplotExport.png><figcaption><h4>Gnuplot export box</h4><p>The gnuplot export box enables the selection of the kind
+of graph to create as well as the genes to display.</p></figcaption></figure><p>After selecting the kind of output and the genes to display, click &ldquo;export&rdquo; and choose a place to save the plot.
+Note that two files are created but only the first file name is prompted for.
+If this filename is &ldquo;myplot.gnuplot&rdquo;, the second file will then be named &ldquo;myplot.data&rdquo;.
+The actual graph can then be displayed using the command <code>load "mygraph.gnuplot"</code> at the gnuplot prompt.</p><figure><img src=gnuplot.png><figcaption><h4>gnuplot export examples</h4><p>Examples of the two kinds of gnuplot graphs. The first one
+uses arrows of different colors to show changes in the expression levels.
+The second one show separate subgraphs for each gene.</p></figcaption></figure></div></section></body></html>

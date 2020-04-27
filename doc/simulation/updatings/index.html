@@ -1,0 +1,36 @@
+<!doctype html><html><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="ie=edge"><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><title>Updating modes &#183; GINsim</title><meta name=description content><link rel=stylesheet href=https://ginsim.github.io/style.main.css></head><body><header><div class=title><a href=https://ginsim.github.io/><img src=https://ginsim.github.io/ginsim.svg class=logo alt=GINsim></a></div><nav><ul><li><a href=/>Home</a></li><li><a href=/doc/>Documentation</a></li><li><a href=/download/>Download</a></li><li><a href=/models/>Models</a></li></ul></nav></header><section><div class=content><h1>Updating modes</h1><p>In a given state of the system, one or several genes are called to update their
+values. When several changes are pending, different construction strategies lead to
+different successor states and thus to different state transition graphs.</p><h1 id=synchronous-mode>Synchronous mode</h1><p>In this mode, all updating calls are performed simultaneously.
+This simplification may generate artefacts in the state transition graph.</p><p>Each state has then at most one successor state, which encompasses fully
+updated gene levels.</p><h1 id=asynchronous-mode>Asynchronous mode</h1><p>In this mode, all changes are performed independantly. It will generate a
+state transition graph taking into account any possible trajectories. This mode
+is chosen by default.</p><p>A given state may have several successor states, each of them corresponding to a
+single updating of one gene level.</p><p>In this mode, the graph transition state can be generated &ldquo;depth first&rdquo; or
+&ldquo;breadth first&rdquo;. The same state transition graph will be built, except if
+interrupted (for illustration, see :doc:<code>depth and size limitation &lt;simulation></code>).</p><figure><img src=a-sync.png><figcaption><h4>Construction strategy: synchronous versus asynchronous</h4><p>Samples of simulation results for the lambda4 model, applying
+asynchronous and synchronous strategies to the same initial states (all
+states where C1=0 and Cro>0). Dotted arcs denote multiple,
+simultaneous transitions.</p></figcaption></figure><h1 id=priority-classes>Priority classes</h1><p>This strategy allows the user to group components into different classes, and
+to assign a priority level to each of these classes. In case of concurrent
+transition calls, GINsim first updates the gene(s) belonging to the class with
+the highest ranking. For each class, the user can further specify the desired
+updating assumption, which then determines the treatment of concurrent
+transition calls inside that class. When several classes have the same ranking,
+concurrent transitions are treated under an asynchronous assumption (no
+priority).</p><p>The creation of a new configuration, using the leftmost &ldquo;+&rdquo; button, starts wth some predefined settings:</p><ul><li>The definition of a single class contaning all components, equivalent to the (a)synchronous updating.</li><li>The definition of a fully-ordered updating using a separate class for each component.</li><li>The separation of the increasing and decreasing transition of each components for more fine-grained configurations.</li></ul><p>The left part of the configuration dialog box shows a list of priority classes
+(see figure below). The name of a class
+can be edited and a checkbox allows to change its internal mode from
+asynchronous (unchecked) to synchronous (checked). Buttons enable to add (+),
+delete (X), order (using the arrows) and group/ungroup priority classes.</p><p>The central column lists transitions that belong to the currently selected
+class, while the column on the right displays all other transitions (i.e. belonging to
+other classes). To add transitions to the selected class, choose them in the
+right list an click on the &ldquo;&lt;&lt;&rdquo; button. The <code>>></code> button removes the
+transition selected in the central list from the current class and add them to
+the next class in the list (to the first class when the last one is selected).</p><p>When multiple classes are selected, they can be assigned the same rank.
+Multiple classes with the same rank are treated asynchronously: if all classes
+are asynchronous, it is thus equivalent to a single larger class, but it allows
+the definition of asynchronous update of multiple synchronous classes as well.</p><figure><img src=priorityClass.png><figcaption><h4>Definition of Priority classes</h4></figcaption></figure><figure><img src=dyn_pclass.png><figcaption><h4>Priority Class: example result</h4><p>Example of simulation by priority classes. Two priority classes
+have been created. The highest ranked one is synchronous and
+contains C1, C2 and Cro. The other class contains only N. The
+resulting state transition graph is splited into two parts: N
+expressed <em>versus</em> N not expressed.</p></figcaption></figure></div></section></body></html>

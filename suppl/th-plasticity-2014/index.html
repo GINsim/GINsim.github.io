@@ -1,0 +1,24 @@
+<!doctype html><html><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="ie=edge"><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><title>T-helper cell plasticity &#183; GINsim</title><meta name=description content><link rel=stylesheet href=https://ginsim.github.io/style.main.css></head><body><header><div class=title><a href=https://ginsim.github.io/><img src=https://ginsim.github.io/ginsim.svg class=logo alt=GINsim></a></div><nav><ul><li><a href=/>Home</a></li><li><a href=/doc/>Documentation</a></li><li><a href=/download/>Download</a></li><li><a href=/models/>Models</a></li></ul></nav></header><section><div class=content><h1>T-helper cell plasticity</h1><p>This page describes the analysis of a
+<a href=/models/2014-mammal-th-differentiation/>model of Th differentiation and plasticity </a>.</p><p>The model encompasses 20 signaling pathways, a dozen of transcription factors,
+and about 30 cytokines, amounting to 101 components in total.</p><p>It is composed by several layers, namely:</p><ul><li>the cytokine inputs along with the Antigen Presenting Cells (APC);</li><li>the cytokine receptors and their subchains, along with the T cell receptor
+(TCR) and the co-stimulatory receptor CD28;</li><li>the intracellular signaling factors, including &ldquo;Stat&rdquo; family proteins
+(Stat1, Stat3, Stat4, Stat5, Stat6), the TCR and co-stimulatory signaling
+components (NFAT, IκB, NFκB), the master regulators (Tbet, Gata3, Rorγt,
+Foxp3, Bcl6), along with additional transcription factors involved in Th
+differentiation (cMaf, PU.1, Smad3, IRF1, Runx3);</li><li>the main cytokines secreted by Th cells;</li><li>a component modeling the proliferation of the cell.</li></ul><h1 id=model-analysis>Model analysis</h1><p>To reproduce the model analysis results:</p><ul><li>open the T-helper cell full model with GINsim, and perform the strict reduction
+using the already selected components to be reduced;</li><li>perform a stable state analysis to obtain the 82 context-dependent stable states;</li><li>export the reduced model to NuSMV format;</li><li>specify the properties, used in the manuscript, at the end of the NuSMV model
+specification file;</li><li>download the <a href=http://lvl.info.ucl.ac.be/Tools/NuSMV-ARCTL-TLACE>NuSMV-ARCTL model checker</a>
+(an extension of NuSMV which supports the verification of ARCTL temporal formulas);</li><li>perform the verification of the NuSMV model specification file.</li></ul><p>NuSMV only supports the simultaneous verification of multiple properties if and only if they all share the same (set of) initial state(s). It is therefore advisable to specify as many NuSMV model specification files, as the number of different (set of) initial state(s).</p><h1 id=nusmv-specification-file-example>NuSMV specification file example</h1><p>As an example, we provide a NuSMV specification file for the T-helper cell reduced model,
+containing properties specified as ARCTL formulas at the end.
+These ARCTL formulas correspond to instantiation of the generic property 1,
+specified in section 3.3 of the main manuscript:</p><p>INIT c1; EAF(e)(c2 ∧ AAG(e)(c2)),</p><p>where c1 corresponds to the definition of the cell type Th0,
+c2 (e) corresponds to all the possible Th patterns (input conditions)
+defined in Table 2 (Table 3) of the main manuscript.
+Meaning that it will test the reachability of all Th patterns under all
+input conditions from the Th0 cell type.</p><p>Download the <a href=2014-Frontiers-Th_reduced_INIT_Th0.smv>NuSMV specification file</a>.</p><h1 id=building-the-reprogramming-graph>Building the reprogramming graph</h1><p>Once the NuSMV specification files for all Th subtypes (Th0, Th1, Th2, Tfh, Th9,
+Th17, Th22 and Treg) are generated, with the corresponding ARCTL properties,
+one should run NuSMV-ARCTL for each of the Th subtypes file.</p><p>One can then build a reprogramming graph, where the Th subtypes represent the nodes,
+and the ARCTL properties that are evaluated as true represent the authorized transitions.</p><p>In Figure 3 of the manuscript, we represent this reprogramming graph with labels on the
+transitions, indicating which input conditions were present for the verification of each
+specific reachability property.</p><p>The representation of the graph in Figure 3 of the manuscript was done using Tikz.
+In alternative we could have used Graphviz or other similar software.</p></div></section></body></html>
