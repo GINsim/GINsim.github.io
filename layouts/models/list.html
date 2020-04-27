@@ -1,0 +1,28 @@
+{{ define "extra_head" }}
+{{ $code := resources.Get "js/repository.js" | resources.Minify | resources.Fingerprint }}
+<script src="{{ $code.Permalink }}"></script>
+{{- end }}
+
+{{ define "after_main" }}
+<section>
+<div class="content" id="repository">The model repository requires javascript...</div>
+
+<script>
+function matches_filter(entry, regexp) {
+    return  entry.title.search(regexp) >= 0 ||
+            array_matches_filter(entry.taxon, regexp) ||
+            array_matches_filter(entry.process, regexp);
+}
+
+function format_entry(entry) {
+        info = document.createElement("p")
+        info.innerHTML = '<a href="'+entry.link+'"><b>'+entry.title+"</b></a>"+
+            '<br/><!--<time datetime="'+entry.date+'">' + entry.date + '</time>-->' +
+             " <b>Taxon:</b> <span class='taxon'>"+entry.taxon+"</span>" +
+             " <b>Process:</b> <span class='process'>"+entry.process+"</span>";
+        return info;
+}
+load_repository('index.json', 'repository');
+</script>
+
+{{ end }}

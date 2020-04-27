@@ -1,0 +1,900 @@
+-- June 13, 2014 3:23:00 PM WEST
+-- NuSMV implicit representation of a logical model exported by GINsim
+-- Requires NuSMV v2.1+ for CTL properties
+-- Requires NuSMV-ARCTL for ARCTL properties
+-- http://lvl.info.ucl.ac.be/Tools/NuSMV-ARCTL-TLACE
+
+
+MODULE main
+
+IVAR
+-- Simulation mode declaration --
+-- Asynchronous
+  PCs : { PC_c22, PC_c23, PC_c24, PC_c25, PC_c26, PC_c27, PC_c28, PC_c29, PC_c30, PC_c31, PC_c32, PC_c33, PC_c34, PC_c35, PC_c36, PC_c37, PC_c38, PC_c39, PC_c40, PC_c41, PC_c42, PC_c43, PC_c44, PC_c45, PC_c46 };
+  PC_c22_vars : { PC_c22_TBET };
+  PC_c23_vars : { PC_c23_GATA3 };
+  PC_c24_vars : { PC_c24_RORGT };
+  PC_c25_vars : { PC_c25_FOXP3 };
+  PC_c26_vars : { PC_c26_BCL6 };
+  PC_c27_vars : { PC_c27_IFNG };
+  PC_c28_vars : { PC_c28_IL4 };
+  PC_c29_vars : { PC_c29_IL2 };
+  PC_c30_vars : { PC_c30_IL17 };
+  PC_c31_vars : { PC_c31_IL22 };
+  PC_c32_vars : { PC_c32_IL9 };
+  PC_c33_vars : { PC_c33_IL10 };
+  PC_c34_vars : { PC_c34_IL3 };
+  PC_c35_vars : { PC_c35_IL21 };
+  PC_c36_vars : { PC_c36_IL5 };
+  PC_c37_vars : { PC_c37_IL13 };
+  PC_c38_vars : { PC_c38_IL6 };
+  PC_c39_vars : { PC_c39_STAT3 };
+  PC_c40_vars : { PC_c40_PU1 };
+  PC_c41_vars : { PC_c41_TGFB };
+  PC_c42_vars : { PC_c42_proliferation };
+  PC_c43_vars : { PC_c43_IL31 };
+  PC_c44_vars : { PC_c44_IL25 };
+  PC_c45_vars : { PC_c45_IL35 };
+  PC_c46_vars : { PC_c46_IL24 };
+
+-- Input variables declaration
+  IL1B_e : { 0, 1};
+  IFNG_e : { 0, 1};
+  IL2_e : { 0, 1};
+  IL4_e : { 0, 1};
+  IL6_e : { 0, 1};
+  IL10_e : { 0, 1};
+  IL12_e : { 0, 1};
+  IL15_e : { 0, 1};
+  IL21_e : { 0, 1};
+  IL23_e : { 0, 1};
+  IL27_e : { 0, 1};
+  TGFB_e : { 0, 1};
+  IL36_e : { 0, 1};
+  IL33_e : { 0, 1};
+  IL18_e : { 0, 1};
+  IL25_e : { 0, 1};
+  IFNB_e : { 0, 1};
+  IFNA_e : { 0, 1};
+  IL1A_e : { 0, 1};
+  IL29_e : { 0, 1};
+  APC : { 0, 1};
+
+VAR
+
+-- State variables declaration
+  PU1 : {0, 1};
+  IL25 : {0, 1};
+  IL3 : {0, 1};
+  IL35 : {0, 1};
+  IL6 : {0, 1};
+  TGFB : {0, 1};
+  proliferation : {0, 1};
+  IL24 : {0, 1};
+  IL31 : {0, 1};
+  IL17 : {0, 1};
+  RORGT : {0, 1};
+  IL2 : {0, 1};
+  IL13 : {0, 1};
+  IL21 : {0, 1};
+  IL5 : {0, 1};
+  GATA3 : {0, 1};
+  IFNG : {0, 1};
+  TBET : {0, 1};
+  IL9 : {0, 1};
+  STAT3 : {0, 1};
+  IL22 : {0, 1};
+  BCL6 : {0, 1};
+  IL10 : {0, 1};
+  FOXP3 : {0, 1};
+  IL4 : {0, 1};
+
+ASSIGN
+-- Variable update if conditions are met
+next(TBET) := 
+  case
+    update_TBET_OK & (TBET_inc) : 1;
+    update_TBET_OK & (TBET_dec) : 0;
+    TRUE : TBET;
+  esac;
+next(GATA3) := 
+  case
+    update_GATA3_OK & (GATA3_inc) : 1;
+    update_GATA3_OK & (GATA3_dec) : 0;
+    TRUE : GATA3;
+  esac;
+next(RORGT) := 
+  case
+    update_RORGT_OK & (RORGT_inc) : 1;
+    update_RORGT_OK & (RORGT_dec) : 0;
+    TRUE : RORGT;
+  esac;
+next(FOXP3) := 
+  case
+    update_FOXP3_OK & (FOXP3_inc) : 1;
+    update_FOXP3_OK & (FOXP3_dec) : 0;
+    TRUE : FOXP3;
+  esac;
+next(BCL6) := 
+  case
+    update_BCL6_OK & (BCL6_inc) : 1;
+    update_BCL6_OK & (BCL6_dec) : 0;
+    TRUE : BCL6;
+  esac;
+next(IFNG) := 
+  case
+    update_IFNG_OK & (IFNG_inc) : 1;
+    update_IFNG_OK & (IFNG_dec) : 0;
+    TRUE : IFNG;
+  esac;
+next(IL4) := 
+  case
+    update_IL4_OK & (IL4_inc) : 1;
+    update_IL4_OK & (IL4_dec) : 0;
+    TRUE : IL4;
+  esac;
+next(IL2) := 
+  case
+    update_IL2_OK & (IL2_inc) : 1;
+    update_IL2_OK & (IL2_dec) : 0;
+    TRUE : IL2;
+  esac;
+next(IL17) := 
+  case
+    update_IL17_OK & (IL17_inc) : 1;
+    update_IL17_OK & (IL17_dec) : 0;
+    TRUE : IL17;
+  esac;
+next(IL22) := 
+  case
+    update_IL22_OK & (IL22_inc) : 1;
+    update_IL22_OK & (IL22_dec) : 0;
+    TRUE : IL22;
+  esac;
+next(IL9) := 
+  case
+    update_IL9_OK & (IL9_inc) : 1;
+    update_IL9_OK & (IL9_dec) : 0;
+    TRUE : IL9;
+  esac;
+next(IL10) := 
+  case
+    update_IL10_OK & (IL10_inc) : 1;
+    update_IL10_OK & (IL10_dec) : 0;
+    TRUE : IL10;
+  esac;
+next(IL3) := 
+  case
+    update_IL3_OK & (IL3_inc) : 1;
+    update_IL3_OK & (IL3_dec) : 0;
+    TRUE : IL3;
+  esac;
+next(IL21) := 
+  case
+    update_IL21_OK & (IL21_inc) : 1;
+    update_IL21_OK & (IL21_dec) : 0;
+    TRUE : IL21;
+  esac;
+next(IL5) := 
+  case
+    update_IL5_OK & (IL5_inc) : 1;
+    update_IL5_OK & (IL5_dec) : 0;
+    TRUE : IL5;
+  esac;
+next(IL13) := 
+  case
+    update_IL13_OK & (IL13_inc) : 1;
+    update_IL13_OK & (IL13_dec) : 0;
+    TRUE : IL13;
+  esac;
+next(IL6) := 
+  case
+    update_IL6_OK & (IL6_inc) : 1;
+    update_IL6_OK & (IL6_dec) : 0;
+    TRUE : IL6;
+  esac;
+next(STAT3) := 
+  case
+    update_STAT3_OK & (STAT3_inc) : 1;
+    update_STAT3_OK & (STAT3_dec) : 0;
+    TRUE : STAT3;
+  esac;
+next(PU1) := 
+  case
+    update_PU1_OK & (PU1_inc) : 1;
+    update_PU1_OK & (PU1_dec) : 0;
+    TRUE : PU1;
+  esac;
+next(TGFB) := 
+  case
+    update_TGFB_OK & (TGFB_inc) : 1;
+    update_TGFB_OK & (TGFB_dec) : 0;
+    TRUE : TGFB;
+  esac;
+next(proliferation) := 
+  case
+    update_proliferation_OK & (proliferation_inc) : 1;
+    update_proliferation_OK & (proliferation_dec) : 0;
+    TRUE : proliferation;
+  esac;
+next(IL31) := 
+  case
+    update_IL31_OK & (IL31_inc) : 1;
+    update_IL31_OK & (IL31_dec) : 0;
+    TRUE : IL31;
+  esac;
+next(IL25) := 
+  case
+    update_IL25_OK & (IL25_inc) : 1;
+    update_IL25_OK & (IL25_dec) : 0;
+    TRUE : IL25;
+  esac;
+next(IL35) := 
+  case
+    update_IL35_OK & (IL35_inc) : 1;
+    update_IL35_OK & (IL35_dec) : 0;
+    TRUE : IL35;
+  esac;
+next(IL24) := 
+  case
+    update_IL24_OK & (IL24_inc) : 1;
+    update_IL24_OK & (IL24_dec) : 0;
+    TRUE : IL24;
+  esac;
+
+DEFINE
+-- Variable next level regulation
+TBET_focal :=
+  case
+    (IFNG_e = 0) & (IL27_e = 0) & (IL36_e = 0) & (IFNB_e = 0) & (IFNA_e = 0) & (TBET = 0) & (RORGT = 0) & (BCL6 = 0) & (IFNG = 1) : 1;
+    (IFNG_e = 0) & (IL27_e = 0) & (IL36_e = 0) & (IFNB_e = 0) & (IFNA_e = 0) & (TBET = 1) & (RORGT = 0) & (BCL6 = 0) : 1;
+    (IFNG_e = 0) & (IL27_e = 0) & (IL36_e = 0) & (IFNB_e = 0) & (IFNA_e = 1) & (RORGT = 0) & (BCL6 = 0) : 1;
+    (IFNG_e = 0) & (IL27_e = 0) & (IL36_e = 0) & (IFNB_e = 1) & (RORGT = 0) & (BCL6 = 0) : 1;
+    (IFNG_e = 0) & (IL27_e = 0) & (IL36_e = 1) & (RORGT = 0) & (BCL6 = 0) : 1;
+    (IFNG_e = 0) & (IL27_e = 1) & (RORGT = 0) & (BCL6 = 0) : 1;
+    (IFNG_e = 1) & (RORGT = 0) & (BCL6 = 0) : 1;
+    TRUE : 0;
+  esac;
+GATA3_focal :=
+  case
+    (IL4_e = 0) & (IL25_e = 0) & (IL29_e = 0) & (TBET = 0) & (GATA3 = 0) & (BCL6 = 0) & (IL4 = 0) & (PU1 = 0) & (IL25 = 1) : 1;
+    (IL4_e = 0) & (IL25_e = 0) & (IL29_e = 0) & (TBET = 0) & (GATA3 = 0) & (BCL6 = 0) & (IL4 = 1) & (PU1 = 0) : 1;
+    (IL4_e = 0) & (IL25_e = 0) & (IL29_e = 0) & (TBET = 0) & (GATA3 = 1) & (BCL6 = 0) & (PU1 = 0) : 1;
+    (IL4_e = 0) & (IL25_e = 0) & (IL29_e = 0) & (TBET = 1) & (GATA3 = 1) & (BCL6 = 0) & (PU1 = 0) : 1;
+    (IL4_e = 0) & (IL25_e = 1) & (IL29_e = 0) & (TBET = 0) & (BCL6 = 0) & (PU1 = 0) : 1;
+    (IL4_e = 0) & (IL25_e = 1) & (IL29_e = 0) & (TBET = 1) & (GATA3 = 1) & (BCL6 = 0) & (PU1 = 0) : 1;
+    (IL4_e = 1) & (IL29_e = 0) & (TBET = 0) & (BCL6 = 0) & (PU1 = 0) : 1;
+    (IL4_e = 1) & (IL29_e = 0) & (TBET = 1) & (GATA3 = 1) & (BCL6 = 0) & (PU1 = 0) : 1;
+    TRUE : 0;
+  esac;
+RORGT_focal :=
+  case
+    (TGFB_e = 0) & (FOXP3 = 0) & (BCL6 = 0) & (STAT3 = 1) & (TGFB = 1) : 1;
+    (TGFB_e = 1) & (FOXP3 = 0) & (BCL6 = 0) & (STAT3 = 1) : 1;
+    TRUE : 0;
+  esac;
+FOXP3_focal :=
+  case
+    (IFNG_e = 0) & (IL2_e = 0) & (IL4_e = 0) & (IL15_e = 0) & (IL27_e = 0) & (TGFB_e = 0) & (IFNB_e = 0) & (IFNA_e = 0) & (APC = 1) & (RORGT = 0) & (FOXP3 = 0) & (IFNG = 0) & (IL4 = 0) & (IL2 = 1) & (TGFB = 1) : 1;
+    (IFNG_e = 0) & (IL2_e = 0) & (IL4_e = 0) & (IL15_e = 0) & (IL27_e = 0) & (TGFB_e = 0) & (IFNB_e = 0) & (IFNA_e = 0) & (APC = 1) & (RORGT = 0) & (FOXP3 = 1) & (IL4 = 0) & (IL2 = 1) : 1;
+    (IFNG_e = 0) & (IL2_e = 0) & (IL4_e = 0) & (IL15_e = 0) & (IL27_e = 0) & (TGFB_e = 0) & (IFNB_e = 0) & (IFNA_e = 0) & (APC = 1) & (RORGT = 1) & (FOXP3 = 0) & (IFNG = 0) & (IL4 = 0) & (IL2 = 1) & (STAT3 = 0) & (TGFB = 1) : 1;
+    (IFNG_e = 0) & (IL2_e = 0) & (IL4_e = 0) & (IL15_e = 0) & (IL27_e = 0) & (TGFB_e = 0) & (IFNB_e = 0) & (IFNA_e = 0) & (APC = 1) & (RORGT = 1) & (FOXP3 = 1) & (IL4 = 0) & (IL2 = 1) : 1;
+    (IFNG_e = 0) & (IL2_e = 0) & (IL4_e = 0) & (IL15_e = 0) & (IL27_e = 0) & (TGFB_e = 0) & (IFNB_e = 0) & (IFNA_e = 1) & (APC = 1) & (FOXP3 = 1) & (IL4 = 0) & (IL2 = 1) : 1;
+    (IFNG_e = 0) & (IL2_e = 0) & (IL4_e = 0) & (IL15_e = 0) & (IL27_e = 0) & (TGFB_e = 0) & (IFNB_e = 1) & (APC = 1) & (FOXP3 = 1) & (IL4 = 0) & (IL2 = 1) : 1;
+    (IFNG_e = 0) & (IL2_e = 0) & (IL4_e = 0) & (IL15_e = 0) & (IL27_e = 0) & (TGFB_e = 1) & (IFNB_e = 0) & (IFNA_e = 0) & (APC = 1) & (RORGT = 0) & (FOXP3 = 0) & (IFNG = 0) & (IL4 = 0) & (IL2 = 1) : 1;
+    (IFNG_e = 0) & (IL2_e = 0) & (IL4_e = 0) & (IL15_e = 0) & (IL27_e = 0) & (TGFB_e = 1) & (IFNB_e = 0) & (IFNA_e = 0) & (APC = 1) & (RORGT = 0) & (FOXP3 = 1) & (IL4 = 0) & (IL2 = 1) : 1;
+    (IFNG_e = 0) & (IL2_e = 0) & (IL4_e = 0) & (IL15_e = 0) & (IL27_e = 0) & (TGFB_e = 1) & (IFNB_e = 0) & (IFNA_e = 0) & (APC = 1) & (RORGT = 1) & (FOXP3 = 0) & (IFNG = 0) & (IL4 = 0) & (IL2 = 1) & (STAT3 = 0) : 1;
+    (IFNG_e = 0) & (IL2_e = 0) & (IL4_e = 0) & (IL15_e = 0) & (IL27_e = 0) & (TGFB_e = 1) & (IFNB_e = 0) & (IFNA_e = 0) & (APC = 1) & (RORGT = 1) & (FOXP3 = 1) & (IL4 = 0) & (IL2 = 1) : 1;
+    (IFNG_e = 0) & (IL2_e = 0) & (IL4_e = 0) & (IL15_e = 0) & (IL27_e = 0) & (TGFB_e = 1) & (IFNB_e = 0) & (IFNA_e = 1) & (APC = 1) & (FOXP3 = 1) & (IL4 = 0) & (IL2 = 1) : 1;
+    (IFNG_e = 0) & (IL2_e = 0) & (IL4_e = 0) & (IL15_e = 0) & (IL27_e = 0) & (TGFB_e = 1) & (IFNB_e = 1) & (APC = 1) & (FOXP3 = 1) & (IL4 = 0) & (IL2 = 1) : 1;
+    (IFNG_e = 0) & (IL2_e = 0) & (IL4_e = 0) & (IL15_e = 0) & (IL27_e = 1) & (APC = 1) & (FOXP3 = 1) & (IL4 = 0) & (IL2 = 1) : 1;
+    (IFNG_e = 0) & (IL2_e = 0) & (IL4_e = 0) & (IL15_e = 1) & (IL27_e = 0) & (TGFB_e = 0) & (IFNB_e = 0) & (IFNA_e = 0) & (APC = 1) & (RORGT = 0) & (FOXP3 = 0) & (IFNG = 0) & (IL4 = 0) & (TGFB = 1) : 1;
+    (IFNG_e = 0) & (IL2_e = 0) & (IL4_e = 0) & (IL15_e = 1) & (IL27_e = 0) & (TGFB_e = 0) & (IFNB_e = 0) & (IFNA_e = 0) & (APC = 1) & (RORGT = 0) & (FOXP3 = 1) & (IL4 = 0) : 1;
+    (IFNG_e = 0) & (IL2_e = 0) & (IL4_e = 0) & (IL15_e = 1) & (IL27_e = 0) & (TGFB_e = 0) & (IFNB_e = 0) & (IFNA_e = 0) & (APC = 1) & (RORGT = 1) & (FOXP3 = 0) & (IFNG = 0) & (IL4 = 0) & (STAT3 = 0) & (TGFB = 1) : 1;
+    (IFNG_e = 0) & (IL2_e = 0) & (IL4_e = 0) & (IL15_e = 1) & (IL27_e = 0) & (TGFB_e = 0) & (IFNB_e = 0) & (IFNA_e = 0) & (APC = 1) & (RORGT = 1) & (FOXP3 = 1) & (IL4 = 0) : 1;
+    (IFNG_e = 0) & (IL2_e = 0) & (IL4_e = 0) & (IL15_e = 1) & (IL27_e = 0) & (TGFB_e = 0) & (IFNB_e = 0) & (IFNA_e = 1) & (APC = 1) & (FOXP3 = 1) & (IL4 = 0) : 1;
+    (IFNG_e = 0) & (IL2_e = 0) & (IL4_e = 0) & (IL15_e = 1) & (IL27_e = 0) & (TGFB_e = 0) & (IFNB_e = 1) & (APC = 1) & (FOXP3 = 1) & (IL4 = 0) : 1;
+    (IFNG_e = 0) & (IL2_e = 0) & (IL4_e = 0) & (IL15_e = 1) & (IL27_e = 0) & (TGFB_e = 1) & (IFNB_e = 0) & (IFNA_e = 0) & (APC = 1) & (RORGT = 0) & (FOXP3 = 0) & (IFNG = 0) & (IL4 = 0) : 1;
+    (IFNG_e = 0) & (IL2_e = 0) & (IL4_e = 0) & (IL15_e = 1) & (IL27_e = 0) & (TGFB_e = 1) & (IFNB_e = 0) & (IFNA_e = 0) & (APC = 1) & (RORGT = 0) & (FOXP3 = 1) & (IL4 = 0) : 1;
+    (IFNG_e = 0) & (IL2_e = 0) & (IL4_e = 0) & (IL15_e = 1) & (IL27_e = 0) & (TGFB_e = 1) & (IFNB_e = 0) & (IFNA_e = 0) & (APC = 1) & (RORGT = 1) & (FOXP3 = 0) & (IFNG = 0) & (IL4 = 0) & (STAT3 = 0) : 1;
+    (IFNG_e = 0) & (IL2_e = 0) & (IL4_e = 0) & (IL15_e = 1) & (IL27_e = 0) & (TGFB_e = 1) & (IFNB_e = 0) & (IFNA_e = 0) & (APC = 1) & (RORGT = 1) & (FOXP3 = 1) & (IL4 = 0) : 1;
+    (IFNG_e = 0) & (IL2_e = 0) & (IL4_e = 0) & (IL15_e = 1) & (IL27_e = 0) & (TGFB_e = 1) & (IFNB_e = 0) & (IFNA_e = 1) & (APC = 1) & (FOXP3 = 1) & (IL4 = 0) : 1;
+    (IFNG_e = 0) & (IL2_e = 0) & (IL4_e = 0) & (IL15_e = 1) & (IL27_e = 0) & (TGFB_e = 1) & (IFNB_e = 1) & (APC = 1) & (FOXP3 = 1) & (IL4 = 0) : 1;
+    (IFNG_e = 0) & (IL2_e = 0) & (IL4_e = 0) & (IL15_e = 1) & (IL27_e = 1) & (APC = 1) & (FOXP3 = 1) & (IL4 = 0) : 1;
+    (IFNG_e = 0) & (IL2_e = 1) & (IL4_e = 0) & (IL27_e = 0) & (TGFB_e = 0) & (IFNB_e = 0) & (IFNA_e = 0) & (APC = 1) & (RORGT = 0) & (FOXP3 = 0) & (IFNG = 0) & (IL4 = 0) & (TGFB = 1) : 1;
+    (IFNG_e = 0) & (IL2_e = 1) & (IL4_e = 0) & (IL27_e = 0) & (TGFB_e = 0) & (IFNB_e = 0) & (IFNA_e = 0) & (APC = 1) & (RORGT = 0) & (FOXP3 = 1) & (IL4 = 0) : 1;
+    (IFNG_e = 0) & (IL2_e = 1) & (IL4_e = 0) & (IL27_e = 0) & (TGFB_e = 0) & (IFNB_e = 0) & (IFNA_e = 0) & (APC = 1) & (RORGT = 1) & (FOXP3 = 0) & (IFNG = 0) & (IL4 = 0) & (STAT3 = 0) & (TGFB = 1) : 1;
+    (IFNG_e = 0) & (IL2_e = 1) & (IL4_e = 0) & (IL27_e = 0) & (TGFB_e = 0) & (IFNB_e = 0) & (IFNA_e = 0) & (APC = 1) & (RORGT = 1) & (FOXP3 = 1) & (IL4 = 0) : 1;
+    (IFNG_e = 0) & (IL2_e = 1) & (IL4_e = 0) & (IL27_e = 0) & (TGFB_e = 0) & (IFNB_e = 0) & (IFNA_e = 1) & (APC = 1) & (FOXP3 = 1) & (IL4 = 0) : 1;
+    (IFNG_e = 0) & (IL2_e = 1) & (IL4_e = 0) & (IL27_e = 0) & (TGFB_e = 0) & (IFNB_e = 1) & (APC = 1) & (FOXP3 = 1) & (IL4 = 0) : 1;
+    (IFNG_e = 0) & (IL2_e = 1) & (IL4_e = 0) & (IL27_e = 0) & (TGFB_e = 1) & (IFNB_e = 0) & (IFNA_e = 0) & (APC = 1) & (RORGT = 0) & (FOXP3 = 0) & (IFNG = 0) & (IL4 = 0) : 1;
+    (IFNG_e = 0) & (IL2_e = 1) & (IL4_e = 0) & (IL27_e = 0) & (TGFB_e = 1) & (IFNB_e = 0) & (IFNA_e = 0) & (APC = 1) & (RORGT = 0) & (FOXP3 = 1) & (IL4 = 0) : 1;
+    (IFNG_e = 0) & (IL2_e = 1) & (IL4_e = 0) & (IL27_e = 0) & (TGFB_e = 1) & (IFNB_e = 0) & (IFNA_e = 0) & (APC = 1) & (RORGT = 1) & (FOXP3 = 0) & (IFNG = 0) & (IL4 = 0) & (STAT3 = 0) : 1;
+    (IFNG_e = 0) & (IL2_e = 1) & (IL4_e = 0) & (IL27_e = 0) & (TGFB_e = 1) & (IFNB_e = 0) & (IFNA_e = 0) & (APC = 1) & (RORGT = 1) & (FOXP3 = 1) & (IL4 = 0) : 1;
+    (IFNG_e = 0) & (IL2_e = 1) & (IL4_e = 0) & (IL27_e = 0) & (TGFB_e = 1) & (IFNB_e = 0) & (IFNA_e = 1) & (APC = 1) & (FOXP3 = 1) & (IL4 = 0) : 1;
+    (IFNG_e = 0) & (IL2_e = 1) & (IL4_e = 0) & (IL27_e = 0) & (TGFB_e = 1) & (IFNB_e = 1) & (APC = 1) & (FOXP3 = 1) & (IL4 = 0) : 1;
+    (IFNG_e = 0) & (IL2_e = 1) & (IL4_e = 0) & (IL27_e = 1) & (APC = 1) & (FOXP3 = 1) & (IL4 = 0) : 1;
+    (IFNG_e = 1) & (IL2_e = 0) & (IL4_e = 0) & (IL15_e = 0) & (APC = 1) & (FOXP3 = 1) & (IL4 = 0) & (IL2 = 1) : 1;
+    (IFNG_e = 1) & (IL2_e = 0) & (IL4_e = 0) & (IL15_e = 1) & (APC = 1) & (FOXP3 = 1) & (IL4 = 0) : 1;
+    (IFNG_e = 1) & (IL2_e = 1) & (IL4_e = 0) & (APC = 1) & (FOXP3 = 1) & (IL4 = 0) : 1;
+    TRUE : 0;
+  esac;
+BCL6_focal :=
+  case
+    (IFNG_e = 0) & (IL2_e = 0) & (IL4_e = 0) & (IL12_e = 0) & (IL15_e = 0) & (IL27_e = 0) & (IFNB_e = 0) & (IFNA_e = 0) & (TBET = 0) & (IFNG = 0) & (IL2 = 0) & (STAT3 = 1) : 1;
+    (IFNG_e = 0) & (IL2_e = 0) & (IL4_e = 0) & (IL12_e = 0) & (IL15_e = 0) & (IL27_e = 0) & (IFNB_e = 0) & (IFNA_e = 0) & (TBET = 0) & (IFNG = 1) & (IL2 = 0) : 1;
+    (IFNG_e = 0) & (IL2_e = 0) & (IL4_e = 0) & (IL12_e = 0) & (IL15_e = 0) & (IL27_e = 0) & (IFNB_e = 0) & (IFNA_e = 1) & (TBET = 0) & (IL2 = 0) : 1;
+    (IFNG_e = 0) & (IL2_e = 0) & (IL4_e = 0) & (IL12_e = 0) & (IL15_e = 0) & (IL27_e = 0) & (IFNB_e = 1) & (TBET = 0) & (IL2 = 0) : 1;
+    (IFNG_e = 0) & (IL2_e = 0) & (IL4_e = 0) & (IL12_e = 0) & (IL15_e = 0) & (IL27_e = 1) & (TBET = 0) & (IL2 = 0) : 1;
+    (IFNG_e = 0) & (IL2_e = 0) & (IL4_e = 0) & (IL12_e = 1) & (IL15_e = 0) & (IL27_e = 0) & (IFNB_e = 0) & (IFNA_e = 0) & (TBET = 0) & (GATA3 = 0) & (IFNG = 0) & (IL4 = 0) & (IL2 = 0) : 1;
+    (IFNG_e = 0) & (IL2_e = 0) & (IL4_e = 0) & (IL12_e = 1) & (IL15_e = 0) & (IL27_e = 0) & (IFNB_e = 0) & (IFNA_e = 0) & (TBET = 0) & (GATA3 = 0) & (IFNG = 0) & (IL4 = 0) & (IL2 = 1) & (STAT3 = 1) : 1;
+    (IFNG_e = 0) & (IL2_e = 0) & (IL4_e = 0) & (IL12_e = 1) & (IL15_e = 0) & (IL27_e = 0) & (IFNB_e = 0) & (IFNA_e = 0) & (TBET = 0) & (GATA3 = 0) & (IFNG = 0) & (IL4 = 1) & (IL2 = 0) & (STAT3 = 1) : 1;
+    (IFNG_e = 0) & (IL2_e = 0) & (IL4_e = 0) & (IL12_e = 1) & (IL15_e = 0) & (IL27_e = 0) & (IFNB_e = 0) & (IFNA_e = 0) & (TBET = 0) & (GATA3 = 0) & (IFNG = 1) & (IL4 = 0) & (IL2 = 0) : 1;
+    (IFNG_e = 0) & (IL2_e = 0) & (IL4_e = 0) & (IL12_e = 1) & (IL15_e = 0) & (IL27_e = 0) & (IFNB_e = 0) & (IFNA_e = 0) & (TBET = 0) & (GATA3 = 0) & (IFNG = 1) & (IL4 = 0) & (IL2 = 1) & (STAT3 = 1) : 1;
+    (IFNG_e = 0) & (IL2_e = 0) & (IL4_e = 0) & (IL12_e = 1) & (IL15_e = 0) & (IL27_e = 0) & (IFNB_e = 0) & (IFNA_e = 0) & (TBET = 0) & (GATA3 = 0) & (IFNG = 1) & (IL4 = 1) & (IL2 = 0) : 1;
+    (IFNG_e = 0) & (IL2_e = 0) & (IL4_e = 0) & (IL12_e = 1) & (IL15_e = 0) & (IL27_e = 0) & (IFNB_e = 0) & (IFNA_e = 0) & (TBET = 0) & (GATA3 = 1) & (IFNG = 0) & (IL2 = 0) & (STAT3 = 1) : 1;
+    (IFNG_e = 0) & (IL2_e = 0) & (IL4_e = 0) & (IL12_e = 1) & (IL15_e = 0) & (IL27_e = 0) & (IFNB_e = 0) & (IFNA_e = 0) & (TBET = 0) & (GATA3 = 1) & (IFNG = 1) & (IL2 = 0) : 1;
+    (IFNG_e = 0) & (IL2_e = 0) & (IL4_e = 0) & (IL12_e = 1) & (IL15_e = 0) & (IL27_e = 0) & (IFNB_e = 0) & (IFNA_e = 1) & (TBET = 0) & (GATA3 = 0) & (IL4 = 0) & (IL2 = 0) : 1;
+    (IFNG_e = 0) & (IL2_e = 0) & (IL4_e = 0) & (IL12_e = 1) & (IL15_e = 0) & (IL27_e = 0) & (IFNB_e = 0) & (IFNA_e = 1) & (TBET = 0) & (GATA3 = 0) & (IL4 = 0) & (IL2 = 1) & (STAT3 = 1) : 1;
+    (IFNG_e = 0) & (IL2_e = 0) & (IL4_e = 0) & (IL12_e = 1) & (IL15_e = 0) & (IL27_e = 0) & (IFNB_e = 0) & (IFNA_e = 1) & (TBET = 0) & (GATA3 = 0) & (IL4 = 1) & (IL2 = 0) : 1;
+    (IFNG_e = 0) & (IL2_e = 0) & (IL4_e = 0) & (IL12_e = 1) & (IL15_e = 0) & (IL27_e = 0) & (IFNB_e = 0) & (IFNA_e = 1) & (TBET = 0) & (GATA3 = 1) & (IL2 = 0) : 1;
+    (IFNG_e = 0) & (IL2_e = 0) & (IL4_e = 0) & (IL12_e = 1) & (IL15_e = 0) & (IL27_e = 0) & (IFNB_e = 1) & (TBET = 0) & (GATA3 = 0) & (IL4 = 0) & (IL2 = 0) : 1;
+    (IFNG_e = 0) & (IL2_e = 0) & (IL4_e = 0) & (IL12_e = 1) & (IL15_e = 0) & (IL27_e = 0) & (IFNB_e = 1) & (TBET = 0) & (GATA3 = 0) & (IL4 = 0) & (IL2 = 1) & (STAT3 = 1) : 1;
+    (IFNG_e = 0) & (IL2_e = 0) & (IL4_e = 0) & (IL12_e = 1) & (IL15_e = 0) & (IL27_e = 0) & (IFNB_e = 1) & (TBET = 0) & (GATA3 = 0) & (IL4 = 1) & (IL2 = 0) : 1;
+    (IFNG_e = 0) & (IL2_e = 0) & (IL4_e = 0) & (IL12_e = 1) & (IL15_e = 0) & (IL27_e = 0) & (IFNB_e = 1) & (TBET = 0) & (GATA3 = 1) & (IL2 = 0) : 1;
+    (IFNG_e = 0) & (IL2_e = 0) & (IL4_e = 0) & (IL12_e = 1) & (IL15_e = 0) & (IL27_e = 1) & (TBET = 0) & (GATA3 = 0) & (IL4 = 0) & (IL2 = 0) : 1;
+    (IFNG_e = 0) & (IL2_e = 0) & (IL4_e = 0) & (IL12_e = 1) & (IL15_e = 0) & (IL27_e = 1) & (TBET = 0) & (GATA3 = 0) & (IL4 = 0) & (IL2 = 1) & (STAT3 = 1) : 1;
+    (IFNG_e = 0) & (IL2_e = 0) & (IL4_e = 0) & (IL12_e = 1) & (IL15_e = 0) & (IL27_e = 1) & (TBET = 0) & (GATA3 = 0) & (IL4 = 1) & (IL2 = 0) : 1;
+    (IFNG_e = 0) & (IL2_e = 0) & (IL4_e = 0) & (IL12_e = 1) & (IL15_e = 0) & (IL27_e = 1) & (TBET = 0) & (GATA3 = 1) & (IL2 = 0) : 1;
+    (IFNG_e = 0) & (IL2_e = 0) & (IL4_e = 0) & (IL12_e = 1) & (IL15_e = 1) & (TBET = 0) & (GATA3 = 0) & (IL4 = 0) & (STAT3 = 1) : 1;
+    (IFNG_e = 0) & (IL2_e = 0) & (IL4_e = 1) & (IL15_e = 0) & (IL27_e = 0) & (IFNB_e = 0) & (IFNA_e = 0) & (TBET = 0) & (IFNG = 0) & (IL2 = 0) & (STAT3 = 1) : 1;
+    (IFNG_e = 0) & (IL2_e = 0) & (IL4_e = 1) & (IL15_e = 0) & (IL27_e = 0) & (IFNB_e = 0) & (IFNA_e = 0) & (TBET = 0) & (IFNG = 1) & (IL2 = 0) : 1;
+    (IFNG_e = 0) & (IL2_e = 0) & (IL4_e = 1) & (IL15_e = 0) & (IL27_e = 0) & (IFNB_e = 0) & (IFNA_e = 1) & (TBET = 0) & (IL2 = 0) : 1;
+    (IFNG_e = 0) & (IL2_e = 0) & (IL4_e = 1) & (IL15_e = 0) & (IL27_e = 0) & (IFNB_e = 1) & (TBET = 0) & (IL2 = 0) : 1;
+    (IFNG_e = 0) & (IL2_e = 0) & (IL4_e = 1) & (IL15_e = 0) & (IL27_e = 1) & (TBET = 0) & (IL2 = 0) : 1;
+    (IFNG_e = 0) & (IL2_e = 1) & (IL4_e = 0) & (IL12_e = 1) & (TBET = 0) & (GATA3 = 0) & (IL4 = 0) & (STAT3 = 1) : 1;
+    (IFNG_e = 1) & (IL2_e = 0) & (IL4_e = 0) & (IL12_e = 0) & (IL15_e = 0) & (TBET = 0) & (IL2 = 0) : 1;
+    (IFNG_e = 1) & (IL2_e = 0) & (IL4_e = 0) & (IL12_e = 1) & (IL15_e = 0) & (TBET = 0) & (GATA3 = 0) & (IL4 = 0) & (IL2 = 0) : 1;
+    (IFNG_e = 1) & (IL2_e = 0) & (IL4_e = 0) & (IL12_e = 1) & (IL15_e = 0) & (TBET = 0) & (GATA3 = 0) & (IL4 = 0) & (IL2 = 1) & (STAT3 = 1) : 1;
+    (IFNG_e = 1) & (IL2_e = 0) & (IL4_e = 0) & (IL12_e = 1) & (IL15_e = 0) & (TBET = 0) & (GATA3 = 0) & (IL4 = 1) & (IL2 = 0) : 1;
+    (IFNG_e = 1) & (IL2_e = 0) & (IL4_e = 0) & (IL12_e = 1) & (IL15_e = 0) & (TBET = 0) & (GATA3 = 1) & (IL2 = 0) : 1;
+    (IFNG_e = 1) & (IL2_e = 0) & (IL4_e = 0) & (IL12_e = 1) & (IL15_e = 1) & (TBET = 0) & (GATA3 = 0) & (IL4 = 0) & (STAT3 = 1) : 1;
+    (IFNG_e = 1) & (IL2_e = 0) & (IL4_e = 1) & (IL15_e = 0) & (TBET = 0) & (IL2 = 0) : 1;
+    (IFNG_e = 1) & (IL2_e = 1) & (IL4_e = 0) & (IL12_e = 1) & (TBET = 0) & (GATA3 = 0) & (IL4 = 0) & (STAT3 = 1) : 1;
+    TRUE : 0;
+  esac;
+IFNG_focal :=
+  case
+    (IL4_e = 0) & (IL12_e = 0) & (APC = 1) & (TBET = 1) & (FOXP3 = 0) & (proliferation = 1) : 1;
+    (IL4_e = 0) & (IL12_e = 1) & (APC = 1) & (TBET = 0) & (GATA3 = 0) & (FOXP3 = 0) & (IL4 = 0) & (proliferation = 1) : 1;
+    (IL4_e = 0) & (IL12_e = 1) & (APC = 1) & (TBET = 1) & (FOXP3 = 0) & (proliferation = 1) : 1;
+    (IL4_e = 1) & (APC = 1) & (TBET = 1) & (FOXP3 = 0) & (proliferation = 1) : 1;
+    TRUE : 0;
+  esac;
+IL4_focal :=
+  case
+    (IFNG_e = 0) & (IL2_e = 0) & (IL15_e = 0) & (IL27_e = 0) & (TGFB_e = 0) & (IFNB_e = 0) & (IFNA_e = 0) & (APC = 1) & (TBET = 0) & (GATA3 = 1) & (FOXP3 = 0) & (IFNG = 0) & (IL2 = 0) & (STAT3 = 1) & (TGFB = 1) & (proliferation = 1) : 1;
+    (IFNG_e = 0) & (IL2_e = 0) & (IL15_e = 0) & (IL27_e = 0) & (TGFB_e = 0) & (IFNB_e = 0) & (IFNA_e = 0) & (APC = 1) & (TBET = 0) & (GATA3 = 1) & (FOXP3 = 0) & (IFNG = 0) & (IL2 = 1) & (proliferation = 1) : 1;
+    (IFNG_e = 0) & (IL2_e = 0) & (IL15_e = 0) & (IL27_e = 0) & (TGFB_e = 1) & (IFNB_e = 0) & (IFNA_e = 0) & (APC = 1) & (TBET = 0) & (GATA3 = 1) & (FOXP3 = 0) & (IFNG = 0) & (IL2 = 0) & (STAT3 = 1) & (proliferation = 1) : 1;
+    (IFNG_e = 0) & (IL2_e = 0) & (IL15_e = 0) & (IL27_e = 0) & (TGFB_e = 1) & (IFNB_e = 0) & (IFNA_e = 0) & (APC = 1) & (TBET = 0) & (GATA3 = 1) & (FOXP3 = 0) & (IFNG = 0) & (IL2 = 1) & (proliferation = 1) : 1;
+    (IFNG_e = 0) & (IL2_e = 0) & (IL15_e = 1) & (IL27_e = 0) & (IFNB_e = 0) & (IFNA_e = 0) & (APC = 1) & (TBET = 0) & (GATA3 = 1) & (FOXP3 = 0) & (IFNG = 0) & (proliferation = 1) : 1;
+    (IFNG_e = 0) & (IL2_e = 1) & (IL27_e = 0) & (IFNB_e = 0) & (IFNA_e = 0) & (APC = 1) & (TBET = 0) & (GATA3 = 1) & (FOXP3 = 0) & (IFNG = 0) & (proliferation = 1) : 1;
+    TRUE : 0;
+  esac;
+IL2_focal :=
+  case
+    (IL2_e = 0) & (IL4_e = 0) & (IL15_e = 0) & (APC = 1) & (FOXP3 = 0) & (IL4 = 0) : 1;
+    (IL2_e = 0) & (IL4_e = 0) & (IL15_e = 0) & (APC = 1) & (FOXP3 = 0) & (IL4 = 1) & (IL2 = 0) : 1;
+    (IL2_e = 0) & (IL4_e = 0) & (IL15_e = 1) & (APC = 1) & (FOXP3 = 0) & (IL4 = 0) : 1;
+    (IL2_e = 0) & (IL4_e = 1) & (IL15_e = 0) & (APC = 1) & (FOXP3 = 0) & (IL2 = 0) : 1;
+    (IL2_e = 1) & (IL4_e = 0) & (APC = 1) & (FOXP3 = 0) & (IL4 = 0) : 1;
+    TRUE : 0;
+  esac;
+IL17_focal :=
+  case
+    (APC = 1) & (RORGT = 1) & (FOXP3 = 0) & (STAT3 = 1) & (proliferation = 1) : 1;
+    TRUE : 0;
+  esac;
+IL22_focal :=
+  case
+    (IFNG_e = 0) & (IL27_e = 0) & (TGFB_e = 0) & (IFNB_e = 0) & (IFNA_e = 0) & (APC = 1) & (IFNG = 0) & (STAT3 = 1) & (TGFB = 0) & (proliferation = 1) : 1;
+    (IFNG_e = 0) & (IL27_e = 0) & (TGFB_e = 0) & (IFNB_e = 0) & (IFNA_e = 0) & (APC = 1) & (IFNG = 1) & (STAT3 = 0) & (proliferation = 1) : 1;
+    (IFNG_e = 0) & (IL27_e = 0) & (TGFB_e = 0) & (IFNB_e = 0) & (IFNA_e = 0) & (APC = 1) & (IFNG = 1) & (STAT3 = 1) & (TGFB = 0) & (proliferation = 1) : 1;
+    (IFNG_e = 0) & (IL27_e = 0) & (TGFB_e = 0) & (IFNB_e = 0) & (IFNA_e = 1) & (APC = 1) & (STAT3 = 0) & (proliferation = 1) : 1;
+    (IFNG_e = 0) & (IL27_e = 0) & (TGFB_e = 0) & (IFNB_e = 0) & (IFNA_e = 1) & (APC = 1) & (STAT3 = 1) & (TGFB = 0) & (proliferation = 1) : 1;
+    (IFNG_e = 0) & (IL27_e = 0) & (TGFB_e = 0) & (IFNB_e = 1) & (APC = 1) & (STAT3 = 0) & (proliferation = 1) : 1;
+    (IFNG_e = 0) & (IL27_e = 0) & (TGFB_e = 0) & (IFNB_e = 1) & (APC = 1) & (STAT3 = 1) & (TGFB = 0) & (proliferation = 1) : 1;
+    (IFNG_e = 0) & (IL27_e = 0) & (TGFB_e = 1) & (IFNB_e = 0) & (IFNA_e = 0) & (APC = 1) & (IFNG = 1) & (STAT3 = 0) & (proliferation = 1) : 1;
+    (IFNG_e = 0) & (IL27_e = 0) & (TGFB_e = 1) & (IFNB_e = 0) & (IFNA_e = 1) & (APC = 1) & (STAT3 = 0) & (proliferation = 1) : 1;
+    (IFNG_e = 0) & (IL27_e = 0) & (TGFB_e = 1) & (IFNB_e = 1) & (APC = 1) & (STAT3 = 0) & (proliferation = 1) : 1;
+    (IFNG_e = 0) & (IL27_e = 1) & (TGFB_e = 0) & (APC = 1) & (STAT3 = 0) & (proliferation = 1) : 1;
+    (IFNG_e = 0) & (IL27_e = 1) & (TGFB_e = 0) & (APC = 1) & (STAT3 = 1) & (TGFB = 0) & (proliferation = 1) : 1;
+    (IFNG_e = 0) & (IL27_e = 1) & (TGFB_e = 1) & (APC = 1) & (STAT3 = 0) & (proliferation = 1) : 1;
+    (IFNG_e = 1) & (TGFB_e = 0) & (APC = 1) & (STAT3 = 0) & (proliferation = 1) : 1;
+    (IFNG_e = 1) & (TGFB_e = 0) & (APC = 1) & (STAT3 = 1) & (TGFB = 0) & (proliferation = 1) : 1;
+    (IFNG_e = 1) & (TGFB_e = 1) & (APC = 1) & (STAT3 = 0) & (proliferation = 1) : 1;
+    TRUE : 0;
+  esac;
+IL9_focal :=
+  case
+    (IL4_e = 0) & (TGFB_e = 0) & (IL33_e = 0) & (APC = 1) & (IL4 = 1) & (PU1 = 0) & (TGFB = 1) & (proliferation = 1) : 1;
+    (IL4_e = 0) & (TGFB_e = 0) & (IL33_e = 0) & (APC = 1) & (IL4 = 1) & (PU1 = 1) & (proliferation = 1) : 1;
+    (IL4_e = 0) & (TGFB_e = 0) & (IL33_e = 1) & (APC = 1) & (GATA3 = 0) & (IL4 = 1) & (PU1 = 0) & (TGFB = 1) & (proliferation = 1) : 1;
+    (IL4_e = 0) & (TGFB_e = 0) & (IL33_e = 1) & (APC = 1) & (GATA3 = 0) & (IL4 = 1) & (PU1 = 1) & (proliferation = 1) : 1;
+    (IL4_e = 0) & (TGFB_e = 0) & (IL33_e = 1) & (APC = 1) & (GATA3 = 1) & (IL4 = 1) & (proliferation = 1) : 1;
+    (IL4_e = 0) & (TGFB_e = 1) & (APC = 1) & (IL4 = 1) & (proliferation = 1) : 1;
+    (IL4_e = 1) & (TGFB_e = 0) & (IL33_e = 0) & (APC = 1) & (PU1 = 0) & (TGFB = 1) & (proliferation = 1) : 1;
+    (IL4_e = 1) & (TGFB_e = 0) & (IL33_e = 0) & (APC = 1) & (PU1 = 1) & (proliferation = 1) : 1;
+    (IL4_e = 1) & (TGFB_e = 0) & (IL33_e = 1) & (APC = 1) & (GATA3 = 0) & (PU1 = 0) & (TGFB = 1) & (proliferation = 1) : 1;
+    (IL4_e = 1) & (TGFB_e = 0) & (IL33_e = 1) & (APC = 1) & (GATA3 = 0) & (PU1 = 1) & (proliferation = 1) : 1;
+    (IL4_e = 1) & (TGFB_e = 0) & (IL33_e = 1) & (APC = 1) & (GATA3 = 1) & (proliferation = 1) : 1;
+    (IL4_e = 1) & (TGFB_e = 1) & (APC = 1) & (proliferation = 1) : 1;
+    TRUE : 0;
+  esac;
+IL10_focal :=
+  case
+    (IFNG_e = 0) & (IL4_e = 0) & (IL12_e = 0) & (IL27_e = 0) & (IL33_e = 0) & (IFNB_e = 0) & (IFNA_e = 0) & (APC = 1) & (GATA3 = 0) & (IFNG = 0) & (STAT3 = 1) & (proliferation = 1) : 1;
+    (IFNG_e = 0) & (IL4_e = 0) & (IL12_e = 0) & (IL27_e = 0) & (IL33_e = 0) & (IFNB_e = 0) & (IFNA_e = 0) & (APC = 1) & (GATA3 = 0) & (IFNG = 1) & (proliferation = 1) : 1;
+    (IFNG_e = 0) & (IL4_e = 0) & (IL12_e = 0) & (IL27_e = 0) & (IL33_e = 0) & (IFNB_e = 0) & (IFNA_e = 0) & (APC = 1) & (GATA3 = 1) & (proliferation = 1) : 1;
+    (IFNG_e = 0) & (IL4_e = 0) & (IL12_e = 0) & (IL27_e = 0) & (IL33_e = 0) & (IFNB_e = 0) & (IFNA_e = 1) & (APC = 1) & (proliferation = 1) : 1;
+    (IFNG_e = 0) & (IL4_e = 0) & (IL12_e = 0) & (IL27_e = 0) & (IL33_e = 0) & (IFNB_e = 1) & (APC = 1) & (proliferation = 1) : 1;
+    (IFNG_e = 0) & (IL4_e = 0) & (IL12_e = 0) & (IL27_e = 0) & (IL33_e = 1) & (IFNB_e = 0) & (IFNA_e = 0) & (APC = 1) & (GATA3 = 0) & (IFNG = 0) & (STAT3 = 1) & (proliferation = 1) : 1;
+    (IFNG_e = 0) & (IL4_e = 0) & (IL12_e = 0) & (IL27_e = 0) & (IL33_e = 1) & (IFNB_e = 0) & (IFNA_e = 0) & (APC = 1) & (GATA3 = 0) & (IFNG = 1) & (proliferation = 1) : 1;
+    (IFNG_e = 0) & (IL4_e = 0) & (IL12_e = 0) & (IL27_e = 0) & (IL33_e = 1) & (IFNB_e = 0) & (IFNA_e = 1) & (APC = 1) & (GATA3 = 0) & (proliferation = 1) : 1;
+    (IFNG_e = 0) & (IL4_e = 0) & (IL12_e = 0) & (IL27_e = 0) & (IL33_e = 1) & (IFNB_e = 1) & (APC = 1) & (GATA3 = 0) & (proliferation = 1) : 1;
+    (IFNG_e = 0) & (IL4_e = 0) & (IL12_e = 0) & (IL27_e = 1) & (IL33_e = 0) & (APC = 1) & (proliferation = 1) : 1;
+    (IFNG_e = 0) & (IL4_e = 0) & (IL12_e = 0) & (IL27_e = 1) & (IL33_e = 1) & (APC = 1) & (GATA3 = 0) & (proliferation = 1) : 1;
+    (IFNG_e = 0) & (IL4_e = 0) & (IL12_e = 1) & (IL27_e = 0) & (IL33_e = 0) & (IL18_e = 0) & (IFNB_e = 0) & (IFNA_e = 0) & (APC = 1) & (GATA3 = 0) & (IFNG = 0) & (IL4 = 0) & (proliferation = 1) : 1;
+    (IFNG_e = 0) & (IL4_e = 0) & (IL12_e = 1) & (IL27_e = 0) & (IL33_e = 0) & (IL18_e = 0) & (IFNB_e = 0) & (IFNA_e = 0) & (APC = 1) & (GATA3 = 0) & (IFNG = 0) & (IL4 = 1) & (STAT3 = 1) & (proliferation = 1) : 1;
+    (IFNG_e = 0) & (IL4_e = 0) & (IL12_e = 1) & (IL27_e = 0) & (IL33_e = 0) & (IL18_e = 0) & (IFNB_e = 0) & (IFNA_e = 0) & (APC = 1) & (GATA3 = 0) & (IFNG = 1) & (proliferation = 1) : 1;
+    (IFNG_e = 0) & (IL4_e = 0) & (IL12_e = 1) & (IL27_e = 0) & (IL33_e = 0) & (IL18_e = 0) & (IFNB_e = 0) & (IFNA_e = 0) & (APC = 1) & (GATA3 = 1) & (proliferation = 1) : 1;
+    (IFNG_e = 0) & (IL4_e = 0) & (IL12_e = 1) & (IL27_e = 0) & (IL33_e = 0) & (IL18_e = 0) & (IFNB_e = 0) & (IFNA_e = 1) & (APC = 1) & (proliferation = 1) : 1;
+    (IFNG_e = 0) & (IL4_e = 0) & (IL12_e = 1) & (IL27_e = 0) & (IL33_e = 0) & (IL18_e = 0) & (IFNB_e = 1) & (APC = 1) & (proliferation = 1) : 1;
+    (IFNG_e = 0) & (IL4_e = 0) & (IL12_e = 1) & (IL27_e = 0) & (IL33_e = 0) & (IL18_e = 1) & (IFNB_e = 0) & (IFNA_e = 0) & (APC = 1) & (GATA3 = 0) & (IFNG = 0) & (IL4 = 1) & (STAT3 = 1) & (proliferation = 1) : 1;
+    (IFNG_e = 0) & (IL4_e = 0) & (IL12_e = 1) & (IL27_e = 0) & (IL33_e = 0) & (IL18_e = 1) & (IFNB_e = 0) & (IFNA_e = 0) & (APC = 1) & (GATA3 = 0) & (IFNG = 1) & (IL4 = 1) & (proliferation = 1) : 1;
+    (IFNG_e = 0) & (IL4_e = 0) & (IL12_e = 1) & (IL27_e = 0) & (IL33_e = 0) & (IL18_e = 1) & (IFNB_e = 0) & (IFNA_e = 0) & (APC = 1) & (GATA3 = 1) & (proliferation = 1) : 1;
+    (IFNG_e = 0) & (IL4_e = 0) & (IL12_e = 1) & (IL27_e = 0) & (IL33_e = 0) & (IL18_e = 1) & (IFNB_e = 0) & (IFNA_e = 1) & (APC = 1) & (GATA3 = 0) & (IL4 = 1) & (proliferation = 1) : 1;
+    (IFNG_e = 0) & (IL4_e = 0) & (IL12_e = 1) & (IL27_e = 0) & (IL33_e = 0) & (IL18_e = 1) & (IFNB_e = 0) & (IFNA_e = 1) & (APC = 1) & (GATA3 = 1) & (proliferation = 1) : 1;
+    (IFNG_e = 0) & (IL4_e = 0) & (IL12_e = 1) & (IL27_e = 0) & (IL33_e = 0) & (IL18_e = 1) & (IFNB_e = 1) & (APC = 1) & (GATA3 = 0) & (IL4 = 1) & (proliferation = 1) : 1;
+    (IFNG_e = 0) & (IL4_e = 0) & (IL12_e = 1) & (IL27_e = 0) & (IL33_e = 0) & (IL18_e = 1) & (IFNB_e = 1) & (APC = 1) & (GATA3 = 1) & (proliferation = 1) : 1;
+    (IFNG_e = 0) & (IL4_e = 0) & (IL12_e = 1) & (IL27_e = 0) & (IL33_e = 1) & (IL18_e = 0) & (IFNB_e = 0) & (IFNA_e = 0) & (APC = 1) & (GATA3 = 0) & (IFNG = 0) & (IL4 = 0) & (proliferation = 1) : 1;
+    (IFNG_e = 0) & (IL4_e = 0) & (IL12_e = 1) & (IL27_e = 0) & (IL33_e = 1) & (IL18_e = 0) & (IFNB_e = 0) & (IFNA_e = 0) & (APC = 1) & (GATA3 = 0) & (IFNG = 0) & (IL4 = 1) & (STAT3 = 1) & (proliferation = 1) : 1;
+    (IFNG_e = 0) & (IL4_e = 0) & (IL12_e = 1) & (IL27_e = 0) & (IL33_e = 1) & (IL18_e = 0) & (IFNB_e = 0) & (IFNA_e = 0) & (APC = 1) & (GATA3 = 0) & (IFNG = 1) & (proliferation = 1) : 1;
+    (IFNG_e = 0) & (IL4_e = 0) & (IL12_e = 1) & (IL27_e = 0) & (IL33_e = 1) & (IL18_e = 0) & (IFNB_e = 0) & (IFNA_e = 1) & (APC = 1) & (GATA3 = 0) & (proliferation = 1) : 1;
+    (IFNG_e = 0) & (IL4_e = 0) & (IL12_e = 1) & (IL27_e = 0) & (IL33_e = 1) & (IL18_e = 0) & (IFNB_e = 1) & (APC = 1) & (GATA3 = 0) & (proliferation = 1) : 1;
+    (IFNG_e = 0) & (IL4_e = 0) & (IL12_e = 1) & (IL27_e = 0) & (IL33_e = 1) & (IL18_e = 1) & (IFNB_e = 0) & (IFNA_e = 0) & (APC = 1) & (GATA3 = 0) & (IFNG = 0) & (IL4 = 1) & (STAT3 = 1) & (proliferation = 1) : 1;
+    (IFNG_e = 0) & (IL4_e = 0) & (IL12_e = 1) & (IL27_e = 0) & (IL33_e = 1) & (IL18_e = 1) & (IFNB_e = 0) & (IFNA_e = 0) & (APC = 1) & (GATA3 = 0) & (IFNG = 1) & (IL4 = 1) & (proliferation = 1) : 1;
+    (IFNG_e = 0) & (IL4_e = 0) & (IL12_e = 1) & (IL27_e = 0) & (IL33_e = 1) & (IL18_e = 1) & (IFNB_e = 0) & (IFNA_e = 1) & (APC = 1) & (GATA3 = 0) & (IL4 = 1) & (proliferation = 1) : 1;
+    (IFNG_e = 0) & (IL4_e = 0) & (IL12_e = 1) & (IL27_e = 0) & (IL33_e = 1) & (IL18_e = 1) & (IFNB_e = 1) & (APC = 1) & (GATA3 = 0) & (IL4 = 1) & (proliferation = 1) : 1;
+    (IFNG_e = 0) & (IL4_e = 0) & (IL12_e = 1) & (IL27_e = 1) & (IL33_e = 0) & (IL18_e = 0) & (APC = 1) & (proliferation = 1) : 1;
+    (IFNG_e = 0) & (IL4_e = 0) & (IL12_e = 1) & (IL27_e = 1) & (IL33_e = 0) & (IL18_e = 1) & (APC = 1) & (GATA3 = 0) & (IL4 = 1) & (proliferation = 1) : 1;
+    (IFNG_e = 0) & (IL4_e = 0) & (IL12_e = 1) & (IL27_e = 1) & (IL33_e = 0) & (IL18_e = 1) & (APC = 1) & (GATA3 = 1) & (proliferation = 1) : 1;
+    (IFNG_e = 0) & (IL4_e = 0) & (IL12_e = 1) & (IL27_e = 1) & (IL33_e = 1) & (IL18_e = 0) & (APC = 1) & (GATA3 = 0) & (proliferation = 1) : 1;
+    (IFNG_e = 0) & (IL4_e = 0) & (IL12_e = 1) & (IL27_e = 1) & (IL33_e = 1) & (IL18_e = 1) & (APC = 1) & (GATA3 = 0) & (IL4 = 1) & (proliferation = 1) : 1;
+    (IFNG_e = 0) & (IL4_e = 1) & (IL27_e = 0) & (IL33_e = 0) & (IFNB_e = 0) & (IFNA_e = 0) & (APC = 1) & (GATA3 = 0) & (IFNG = 0) & (STAT3 = 1) & (proliferation = 1) : 1;
+    (IFNG_e = 0) & (IL4_e = 1) & (IL27_e = 0) & (IL33_e = 0) & (IFNB_e = 0) & (IFNA_e = 0) & (APC = 1) & (GATA3 = 0) & (IFNG = 1) & (proliferation = 1) : 1;
+    (IFNG_e = 0) & (IL4_e = 1) & (IL27_e = 0) & (IL33_e = 0) & (IFNB_e = 0) & (IFNA_e = 0) & (APC = 1) & (GATA3 = 1) & (proliferation = 1) : 1;
+    (IFNG_e = 0) & (IL4_e = 1) & (IL27_e = 0) & (IL33_e = 0) & (IFNB_e = 0) & (IFNA_e = 1) & (APC = 1) & (proliferation = 1) : 1;
+    (IFNG_e = 0) & (IL4_e = 1) & (IL27_e = 0) & (IL33_e = 0) & (IFNB_e = 1) & (APC = 1) & (proliferation = 1) : 1;
+    (IFNG_e = 0) & (IL4_e = 1) & (IL27_e = 0) & (IL33_e = 1) & (IFNB_e = 0) & (IFNA_e = 0) & (APC = 1) & (GATA3 = 0) & (IFNG = 0) & (STAT3 = 1) & (proliferation = 1) : 1;
+    (IFNG_e = 0) & (IL4_e = 1) & (IL27_e = 0) & (IL33_e = 1) & (IFNB_e = 0) & (IFNA_e = 0) & (APC = 1) & (GATA3 = 0) & (IFNG = 1) & (proliferation = 1) : 1;
+    (IFNG_e = 0) & (IL4_e = 1) & (IL27_e = 0) & (IL33_e = 1) & (IFNB_e = 0) & (IFNA_e = 1) & (APC = 1) & (GATA3 = 0) & (proliferation = 1) : 1;
+    (IFNG_e = 0) & (IL4_e = 1) & (IL27_e = 0) & (IL33_e = 1) & (IFNB_e = 1) & (APC = 1) & (GATA3 = 0) & (proliferation = 1) : 1;
+    (IFNG_e = 0) & (IL4_e = 1) & (IL27_e = 1) & (IL33_e = 0) & (APC = 1) & (proliferation = 1) : 1;
+    (IFNG_e = 0) & (IL4_e = 1) & (IL27_e = 1) & (IL33_e = 1) & (APC = 1) & (GATA3 = 0) & (proliferation = 1) : 1;
+    (IFNG_e = 1) & (IL4_e = 0) & (IL12_e = 0) & (IL33_e = 0) & (APC = 1) & (proliferation = 1) : 1;
+    (IFNG_e = 1) & (IL4_e = 0) & (IL12_e = 0) & (IL33_e = 1) & (APC = 1) & (GATA3 = 0) & (proliferation = 1) : 1;
+    (IFNG_e = 1) & (IL4_e = 0) & (IL12_e = 1) & (IL33_e = 0) & (IL18_e = 0) & (APC = 1) & (proliferation = 1) : 1;
+    (IFNG_e = 1) & (IL4_e = 0) & (IL12_e = 1) & (IL33_e = 0) & (IL18_e = 1) & (APC = 1) & (GATA3 = 0) & (IL4 = 1) & (proliferation = 1) : 1;
+    (IFNG_e = 1) & (IL4_e = 0) & (IL12_e = 1) & (IL33_e = 0) & (IL18_e = 1) & (APC = 1) & (GATA3 = 1) & (proliferation = 1) : 1;
+    (IFNG_e = 1) & (IL4_e = 0) & (IL12_e = 1) & (IL33_e = 1) & (IL18_e = 0) & (APC = 1) & (GATA3 = 0) & (proliferation = 1) : 1;
+    (IFNG_e = 1) & (IL4_e = 0) & (IL12_e = 1) & (IL33_e = 1) & (IL18_e = 1) & (APC = 1) & (GATA3 = 0) & (IL4 = 1) & (proliferation = 1) : 1;
+    (IFNG_e = 1) & (IL4_e = 1) & (IL33_e = 0) & (APC = 1) & (proliferation = 1) : 1;
+    (IFNG_e = 1) & (IL4_e = 1) & (IL33_e = 1) & (APC = 1) & (GATA3 = 0) & (proliferation = 1) : 1;
+    TRUE : 0;
+  esac;
+IL3_focal :=
+  case
+    (APC = 1) & (GATA3 = 1) & (proliferation = 1) : 1;
+    TRUE : 0;
+  esac;
+IL21_focal :=
+  case
+    (IL4_e = 0) & (IL12_e = 0) & (APC = 1) & (STAT3 = 1) & (proliferation = 1) : 1;
+    (IL4_e = 0) & (IL12_e = 1) & (APC = 1) & (GATA3 = 0) & (IL4 = 0) & (proliferation = 1) : 1;
+    (IL4_e = 0) & (IL12_e = 1) & (APC = 1) & (GATA3 = 0) & (IL4 = 1) & (STAT3 = 1) & (proliferation = 1) : 1;
+    (IL4_e = 0) & (IL12_e = 1) & (APC = 1) & (GATA3 = 1) & (STAT3 = 1) & (proliferation = 1) : 1;
+    (IL4_e = 1) & (APC = 1) & (STAT3 = 1) & (proliferation = 1) : 1;
+    TRUE : 0;
+  esac;
+IL5_focal :=
+  case
+    (TGFB_e = 0) & (APC = 1) & (GATA3 = 0) & (FOXP3 = 0) & (STAT3 = 1) & (TGFB = 1) & (proliferation = 1) : 1;
+    (TGFB_e = 0) & (APC = 1) & (GATA3 = 1) & (FOXP3 = 0) & (proliferation = 1) : 1;
+    (TGFB_e = 1) & (APC = 1) & (GATA3 = 0) & (FOXP3 = 0) & (STAT3 = 1) & (proliferation = 1) : 1;
+    (TGFB_e = 1) & (APC = 1) & (GATA3 = 1) & (FOXP3 = 0) & (proliferation = 1) : 1;
+    TRUE : 0;
+  esac;
+IL13_focal :=
+  case
+    (TGFB_e = 0) & (APC = 1) & (GATA3 = 0) & (FOXP3 = 0) & (STAT3 = 1) & (TGFB = 1) & (proliferation = 1) : 1;
+    (TGFB_e = 0) & (APC = 1) & (GATA3 = 1) & (FOXP3 = 0) & (proliferation = 1) : 1;
+    (TGFB_e = 1) & (APC = 1) & (GATA3 = 0) & (FOXP3 = 0) & (STAT3 = 1) & (proliferation = 1) : 1;
+    (TGFB_e = 1) & (APC = 1) & (GATA3 = 1) & (FOXP3 = 0) & (proliferation = 1) : 1;
+    TRUE : 0;
+  esac;
+IL6_focal :=
+  case
+    (APC = 1) & (STAT3 = 1) & (proliferation = 1) : 1;
+    TRUE : 0;
+  esac;
+STAT3_focal :=
+  case
+    (IL1B_e = 0) & (IL6_e = 0) & (IL21_e = 0) & (IL23_e = 0) & (IL27_e = 0) & (IL1A_e = 0) & (IL21 = 0) & (IL6 = 1) : 1;
+    (IL1B_e = 0) & (IL6_e = 0) & (IL21_e = 0) & (IL23_e = 0) & (IL27_e = 0) & (IL1A_e = 0) & (IL21 = 1) : 1;
+    (IL1B_e = 0) & (IL6_e = 0) & (IL21_e = 0) & (IL23_e = 0) & (IL27_e = 0) & (IL1A_e = 1) & (IL21 = 0) & (IL6 = 0) & (STAT3 = 1) : 1;
+    (IL1B_e = 0) & (IL6_e = 0) & (IL21_e = 0) & (IL23_e = 0) & (IL27_e = 0) & (IL1A_e = 1) & (IL21 = 0) & (IL6 = 1) : 1;
+    (IL1B_e = 0) & (IL6_e = 0) & (IL21_e = 0) & (IL23_e = 0) & (IL27_e = 0) & (IL1A_e = 1) & (IL21 = 1) : 1;
+    (IL1B_e = 0) & (IL6_e = 0) & (IL21_e = 0) & (IL23_e = 0) & (IL27_e = 1) : 1;
+    (IL1B_e = 0) & (IL6_e = 0) & (IL21_e = 0) & (IL23_e = 1) & (IL27_e = 0) & (IL1A_e = 0) & (RORGT = 0) & (IL21 = 0) & (IL6 = 1) : 1;
+    (IL1B_e = 0) & (IL6_e = 0) & (IL21_e = 0) & (IL23_e = 1) & (IL27_e = 0) & (IL1A_e = 0) & (RORGT = 0) & (IL21 = 1) : 1;
+    (IL1B_e = 0) & (IL6_e = 0) & (IL21_e = 0) & (IL23_e = 1) & (IL27_e = 0) & (IL1A_e = 0) & (RORGT = 1) & (IL21 = 0) & (IL6 = 0) & (STAT3 = 1) : 1;
+    (IL1B_e = 0) & (IL6_e = 0) & (IL21_e = 0) & (IL23_e = 1) & (IL27_e = 0) & (IL1A_e = 0) & (RORGT = 1) & (IL21 = 0) & (IL6 = 1) : 1;
+    (IL1B_e = 0) & (IL6_e = 0) & (IL21_e = 0) & (IL23_e = 1) & (IL27_e = 0) & (IL1A_e = 0) & (RORGT = 1) & (IL21 = 1) : 1;
+    (IL1B_e = 0) & (IL6_e = 0) & (IL21_e = 0) & (IL23_e = 1) & (IL27_e = 0) & (IL1A_e = 1) & (IL21 = 0) & (IL6 = 0) & (STAT3 = 1) : 1;
+    (IL1B_e = 0) & (IL6_e = 0) & (IL21_e = 0) & (IL23_e = 1) & (IL27_e = 0) & (IL1A_e = 1) & (IL21 = 0) & (IL6 = 1) : 1;
+    (IL1B_e = 0) & (IL6_e = 0) & (IL21_e = 0) & (IL23_e = 1) & (IL27_e = 0) & (IL1A_e = 1) & (IL21 = 1) : 1;
+    (IL1B_e = 0) & (IL6_e = 0) & (IL21_e = 0) & (IL23_e = 1) & (IL27_e = 1) : 1;
+    (IL1B_e = 0) & (IL6_e = 0) & (IL21_e = 1) : 1;
+    (IL1B_e = 0) & (IL6_e = 1) : 1;
+    (IL1B_e = 1) & (IL6_e = 0) & (IL21_e = 0) & (IL27_e = 0) & (IL21 = 0) & (IL6 = 0) & (STAT3 = 1) : 1;
+    (IL1B_e = 1) & (IL6_e = 0) & (IL21_e = 0) & (IL27_e = 0) & (IL21 = 0) & (IL6 = 1) : 1;
+    (IL1B_e = 1) & (IL6_e = 0) & (IL21_e = 0) & (IL27_e = 0) & (IL21 = 1) : 1;
+    (IL1B_e = 1) & (IL6_e = 0) & (IL21_e = 0) & (IL27_e = 1) : 1;
+    (IL1B_e = 1) & (IL6_e = 0) & (IL21_e = 1) : 1;
+    (IL1B_e = 1) & (IL6_e = 1) : 1;
+    TRUE : 0;
+  esac;
+PU1_focal :=
+  case
+    (TGFB_e = 0) & (TGFB = 1) : 1;
+    (TGFB_e = 1) : 1;
+    TRUE : 0;
+  esac;
+TGFB_focal :=
+  case
+    (APC = 1) & (FOXP3 = 1) & (proliferation = 1) : 1;
+    TRUE : 0;
+  esac;
+proliferation_focal :=
+  case
+    (IL2_e = 0) & (APC = 0) & (proliferation = 1) : 1;
+    (IL2_e = 0) & (APC = 1) & (IL2 = 0) & (proliferation = 1) : 1;
+    (IL2_e = 0) & (APC = 1) & (IL2 = 1) : 1;
+    (IL2_e = 1) & (APC = 0) & (proliferation = 1) : 1;
+    (IL2_e = 1) & (APC = 1) : 1;
+    TRUE : 0;
+  esac;
+IL31_focal :=
+  case
+    (IL4_e = 0) & (APC = 1) & (IL4 = 1) & (proliferation = 1) : 1;
+    (IL4_e = 1) & (APC = 1) & (proliferation = 1) : 1;
+    TRUE : 0;
+  esac;
+IL25_focal :=
+  case
+    (APC = 1) & (GATA3 = 1) & (proliferation = 1) : 1;
+    TRUE : 0;
+  esac;
+IL35_focal :=
+  case
+    (APC = 1) & (FOXP3 = 1) & (proliferation = 1) : 1;
+    TRUE : 0;
+  esac;
+IL24_focal :=
+  case
+    (IL4_e = 0) & (APC = 1) & (IL4 = 1) & (proliferation = 1) : 1;
+    (IL4_e = 1) & (APC = 1) & (proliferation = 1) : 1;
+    TRUE : 0;
+  esac;
+
+TBET_inc := TBET_focal > TBET;
+TBET_dec := TBET_focal < TBET;
+TBET_std := TBET_focal = TBET;
+
+GATA3_inc := GATA3_focal > GATA3;
+GATA3_dec := GATA3_focal < GATA3;
+GATA3_std := GATA3_focal = GATA3;
+
+RORGT_inc := RORGT_focal > RORGT;
+RORGT_dec := RORGT_focal < RORGT;
+RORGT_std := RORGT_focal = RORGT;
+
+FOXP3_inc := FOXP3_focal > FOXP3;
+FOXP3_dec := FOXP3_focal < FOXP3;
+FOXP3_std := FOXP3_focal = FOXP3;
+
+BCL6_inc := BCL6_focal > BCL6;
+BCL6_dec := BCL6_focal < BCL6;
+BCL6_std := BCL6_focal = BCL6;
+
+IFNG_inc := IFNG_focal > IFNG;
+IFNG_dec := IFNG_focal < IFNG;
+IFNG_std := IFNG_focal = IFNG;
+
+IL4_inc := IL4_focal > IL4;
+IL4_dec := IL4_focal < IL4;
+IL4_std := IL4_focal = IL4;
+
+IL2_inc := IL2_focal > IL2;
+IL2_dec := IL2_focal < IL2;
+IL2_std := IL2_focal = IL2;
+
+IL17_inc := IL17_focal > IL17;
+IL17_dec := IL17_focal < IL17;
+IL17_std := IL17_focal = IL17;
+
+IL22_inc := IL22_focal > IL22;
+IL22_dec := IL22_focal < IL22;
+IL22_std := IL22_focal = IL22;
+
+IL9_inc := IL9_focal > IL9;
+IL9_dec := IL9_focal < IL9;
+IL9_std := IL9_focal = IL9;
+
+IL10_inc := IL10_focal > IL10;
+IL10_dec := IL10_focal < IL10;
+IL10_std := IL10_focal = IL10;
+
+IL3_inc := IL3_focal > IL3;
+IL3_dec := IL3_focal < IL3;
+IL3_std := IL3_focal = IL3;
+
+IL21_inc := IL21_focal > IL21;
+IL21_dec := IL21_focal < IL21;
+IL21_std := IL21_focal = IL21;
+
+IL5_inc := IL5_focal > IL5;
+IL5_dec := IL5_focal < IL5;
+IL5_std := IL5_focal = IL5;
+
+IL13_inc := IL13_focal > IL13;
+IL13_dec := IL13_focal < IL13;
+IL13_std := IL13_focal = IL13;
+
+IL6_inc := IL6_focal > IL6;
+IL6_dec := IL6_focal < IL6;
+IL6_std := IL6_focal = IL6;
+
+STAT3_inc := STAT3_focal > STAT3;
+STAT3_dec := STAT3_focal < STAT3;
+STAT3_std := STAT3_focal = STAT3;
+
+PU1_inc := PU1_focal > PU1;
+PU1_dec := PU1_focal < PU1;
+PU1_std := PU1_focal = PU1;
+
+TGFB_inc := TGFB_focal > TGFB;
+TGFB_dec := TGFB_focal < TGFB;
+TGFB_std := TGFB_focal = TGFB;
+
+proliferation_inc := proliferation_focal > proliferation;
+proliferation_dec := proliferation_focal < proliferation;
+proliferation_std := proliferation_focal = proliferation;
+
+IL31_inc := IL31_focal > IL31;
+IL31_dec := IL31_focal < IL31;
+IL31_std := IL31_focal = IL31;
+
+IL25_inc := IL25_focal > IL25;
+IL25_dec := IL25_focal < IL25;
+IL25_std := IL25_focal = IL25;
+
+IL35_inc := IL35_focal > IL35;
+IL35_dec := IL35_focal < IL35;
+IL35_std := IL35_focal = IL35;
+
+IL24_inc := IL24_focal > IL24;
+IL24_dec := IL24_focal < IL24;
+IL24_std := IL24_focal = IL24;
+
+update_TBET_OK := (PCs = PC_c22) & (PC_c22_vars = PC_c22_TBET);
+update_GATA3_OK := (PCs = PC_c23) & (PC_c23_vars = PC_c23_GATA3);
+update_RORGT_OK := (PCs = PC_c24) & (PC_c24_vars = PC_c24_RORGT);
+update_FOXP3_OK := (PCs = PC_c25) & (PC_c25_vars = PC_c25_FOXP3);
+update_BCL6_OK := (PCs = PC_c26) & (PC_c26_vars = PC_c26_BCL6);
+update_IFNG_OK := (PCs = PC_c27) & (PC_c27_vars = PC_c27_IFNG);
+update_IL4_OK := (PCs = PC_c28) & (PC_c28_vars = PC_c28_IL4);
+update_IL2_OK := (PCs = PC_c29) & (PC_c29_vars = PC_c29_IL2);
+update_IL17_OK := (PCs = PC_c30) & (PC_c30_vars = PC_c30_IL17);
+update_IL22_OK := (PCs = PC_c31) & (PC_c31_vars = PC_c31_IL22);
+update_IL9_OK := (PCs = PC_c32) & (PC_c32_vars = PC_c32_IL9);
+update_IL10_OK := (PCs = PC_c33) & (PC_c33_vars = PC_c33_IL10);
+update_IL3_OK := (PCs = PC_c34) & (PC_c34_vars = PC_c34_IL3);
+update_IL21_OK := (PCs = PC_c35) & (PC_c35_vars = PC_c35_IL21);
+update_IL5_OK := (PCs = PC_c36) & (PC_c36_vars = PC_c36_IL5);
+update_IL13_OK := (PCs = PC_c37) & (PC_c37_vars = PC_c37_IL13);
+update_IL6_OK := (PCs = PC_c38) & (PC_c38_vars = PC_c38_IL6);
+update_STAT3_OK := (PCs = PC_c39) & (PC_c39_vars = PC_c39_STAT3);
+update_PU1_OK := (PCs = PC_c40) & (PC_c40_vars = PC_c40_PU1);
+update_TGFB_OK := (PCs = PC_c41) & (PC_c41_vars = PC_c41_TGFB);
+update_proliferation_OK := (PCs = PC_c42) & (PC_c42_vars = PC_c42_proliferation);
+update_IL31_OK := (PCs = PC_c43) & (PC_c43_vars = PC_c43_IL31);
+update_IL25_OK := (PCs = PC_c44) & (PC_c44_vars = PC_c44_IL25);
+update_IL35_OK := (PCs = PC_c45) & (PC_c45_vars = PC_c45_IL35);
+update_IL24_OK := (PCs = PC_c46) & (PC_c46_vars = PC_c46_IL24);
+
+-- DISCLAIMER: There are no INput nor OUTput variables in the weak/strong stable states description
+stableStates := weakSS | strongSS;
+
+-- ATTENTION: This export does not include the stable states enumeration
+weakSS := FALSE;
+strongSS := FALSE;
+
+-- Declaration of output variables
+-- Empty !
+
+-- Authorized NuSMV transitions
+TRANS
+next(TBET) != TBET |
+next(GATA3) != GATA3 |
+next(RORGT) != RORGT |
+next(FOXP3) != FOXP3 |
+next(BCL6) != BCL6 |
+next(IFNG) != IFNG |
+next(IL4) != IL4 |
+next(IL2) != IL2 |
+next(IL17) != IL17 |
+next(IL22) != IL22 |
+next(IL9) != IL9 |
+next(IL10) != IL10 |
+next(IL3) != IL3 |
+next(IL21) != IL21 |
+next(IL5) != IL5 |
+next(IL13) != IL13 |
+next(IL6) != IL6 |
+next(STAT3) != STAT3 |
+next(PU1) != PU1 |
+next(TGFB) != TGFB |
+next(proliferation) != proliferation |
+next(IL31) != IL31 |
+next(IL25) != IL25 |
+next(IL35) != IL35 |
+next(IL24) != IL24 |
+stableStates;
+
+DEFINE
+-- Declaration of core variables restriction list
+-- Empty !
+
+-- Declaration of input variables restriction list
+-- Empty !
+
+DEFINE
+-- Declaration of core variables restriction list
+
+Th0 := TBET=0 & GATA3=0 & RORGT=0 & FOXP3=0 & BCL6=0 & IFNG=0 & IL4=0 & IL2=0 & IL17=0 & IL22=0 & IL9=0 & IL10=0 & IL21=0 & IL5=0 & IL13=0 & IL6=0 & STAT3=0 & PU1=0 & TGFB=0 & proliferation=0 & IL3=0 & IL31=0 & IL25=0 & IL35=0 & IL24=0;
+
+Th1  := TBET=1 & GATA3=0 & RORGT=0 & FOXP3=0 & BCL6=0 &                   IFNG=1 & IL4=0 & IL17=0;
+Th2  := TBET=0 & GATA3=1 & RORGT=0 & FOXP3=0 & BCL6=0 &                   IFNG=0 & IL4=1 & IL17=0 & IL5=1 & IL13=1;
+Th17 := TBET=0 & GATA3=0 & RORGT=1 & FOXP3=0 & BCL6=0 &                   IFNG=0 & IL4=0 & IL17=1;
+Treg := TBET=0 & GATA3=0 & RORGT=0 & FOXP3=1 & BCL6=0 &                   IFNG=0 & IL4=0 & IL17=0 & TGFB=1;
+Tfh  := TBET=0 & GATA3=0 & RORGT=0 & FOXP3=0 & BCL6=1 &                            IL4=0 & IL17=0 & IL21=1;
+Th9  := TBET=0 & GATA3=0 & RORGT=0 & FOXP3=0 & BCL6=0 & PU1=1 &           IFNG=0 & IL4=0 & IL17=0 & IL9=1;
+Th22 := TBET=0 & GATA3=0 & RORGT=0 & FOXP3=0 & BCL6=0 &         STAT3=1 & IFNG=0 & IL4=0 & IL17=0 & IL22=1;
+TbetGata3      := TBET=1 & GATA3=1 & RORGT=0 & FOXP3=0 & BCL6=0;
+TbetGata3Foxp3 := TBET=1 & GATA3=1 & RORGT=0 & FOXP3=1 & BCL6=0;
+
+-- Declaration of input variables restriction list
+
+proTh1  := APC=1 & IL12_e=1 & IL4_e=0 & IL6_e=0 & TGFB_e=0 & IL1B_e=0 & IL23_e=0 & IL21_e=0 & IL2_e=0 &
+		IFNG_e=0 & IL10_e=0 & IL15_e=0 & IL27_e=0 & IL29_e=0 & IL36_e=0 & IL33_e=0 & IL18_e=0 & IL25_e=0 & IFNB_e=0 & IFNA_e=0 & IL1A_e=0;
+proTh2  := APC=1 & IL12_e=0 & IL4_e=1 & IL6_e=0 & TGFB_e=0 & IL1B_e=0 & IL23_e=0 & IL21_e=0 & IL2_e=1 &
+		IFNG_e=0 & IL10_e=0 & IL15_e=0 & IL27_e=0 & IL29_e=0 & IL36_e=0 & IL33_e=0 & IL18_e=0 & IL25_e=0 & IFNB_e=0 & IFNA_e=0 & IL1A_e=0;
+proTh17 := APC=1 & IL12_e=0 & IL4_e=0 & IL6_e=1 & TGFB_e=1 & IL1B_e=1 & IL23_e=1 & IL21_e=0 & IL2_e=0 &
+		IFNG_e=0 & IL10_e=0 & IL15_e=0 & IL27_e=0 & IL29_e=0 & IL36_e=0 & IL33_e=0 & IL18_e=0 & IL25_e=0 & IFNB_e=0 & IFNA_e=0 & IL1A_e=0;
+proTreg := APC=1 & IL12_e=0 & IL4_e=0 & IL6_e=0 & TGFB_e=1 & IL1B_e=0 & IL23_e=0 & IL21_e=0 & IL2_e=1 &
+		IFNG_e=0 & IL10_e=0 & IL15_e=0 & IL27_e=0 & IL29_e=0 & IL36_e=0 & IL33_e=0 & IL18_e=0 & IL25_e=0 & IFNB_e=0 & IFNA_e=0 & IL1A_e=0;
+proTfh  := APC=1 & IL12_e=1 & IL4_e=0 & IL6_e=0 & TGFB_e=0 & IL1B_e=0 & IL23_e=0 & IL21_e=1 & IL2_e=0 &
+		IFNG_e=0 & IL10_e=0 & IL15_e=0 & IL27_e=0 & IL29_e=0 & IL36_e=0 & IL33_e=0 & IL18_e=0 & IL25_e=0 & IFNB_e=0 & IFNA_e=0 & IL1A_e=0;
+proTh9  := APC=1 & IL12_e=0 & IL4_e=1 & IL6_e=0 & TGFB_e=1 & IL1B_e=0 & IL23_e=0 & IL21_e=0 & IL2_e=0 &
+		IFNG_e=0 & IL10_e=0 & IL15_e=0 & IL27_e=0 & IL29_e=0 & IL36_e=0 & IL33_e=0 & IL18_e=0 & IL25_e=0 & IFNB_e=0 & IFNA_e=0 & IL1A_e=0;
+proTh22 := APC=1 & IL12_e=0 & IL4_e=0 & IL6_e=1 & TGFB_e=0 & IL1B_e=0 & IL23_e=0 & IL21_e=0 & IL2_e=0 &
+		IFNG_e=0 & IL10_e=0 & IL15_e=0 & IL27_e=0 & IL29_e=0 & IL36_e=0 & IL33_e=0 & IL18_e=0 & IL25_e=0 & IFNB_e=0 & IFNA_e=0 & IL1A_e=0;
+onlyAPC := APC=1 & IL12_e=0 & IL4_e=0 & IL6_e=0 & TGFB_e=0 & IL1B_e=0 & IL23_e=0 & IL21_e=0 & IL2_e=0 &
+		IFNG_e=0 & IL10_e=0 & IL15_e=0 & IL27_e=0 & IL29_e=0 & IL36_e=0 & IL33_e=0 & IL18_e=0 & IL25_e=0 & IFNB_e=0 & IFNA_e=0 & IL1A_e=0;
+none    := APC=0 & IL12_e=0 & IL4_e=0 & IL6_e=0 & TGFB_e=0 & IL1B_e=0 & IL23_e=0 & IL21_e=0 & IL2_e=0 &
+		IFNG_e=0 & IL10_e=0 & IL15_e=0 & IL27_e=0 & IL29_e=0 & IL36_e=0 & IL33_e=0 & IL18_e=0 & IL25_e=0 & IFNB_e=0 & IFNA_e=0 & IL1A_e=0;
+
+
+INIT Th0
+--> Th1
+SPEC EAF( proTh1 )( Th1 & AAG( proTh1 )( Th1 ))
+SPEC EAF( proTh2 )( Th1 & AAG( proTh2 )( Th1 ))
+SPEC EAF( proTh17 )( Th1 & AAG( proTh17 )( Th1 ))
+SPEC EAF( proTreg )( Th1 & AAG( proTreg )( Th1 ))
+SPEC EAF( proTfh )( Th1 & AAG( proTfh )( Th1 ))
+SPEC EAF( proTh9 )( Th1 & AAG( proTh9 )( Th1 ))
+SPEC EAF( proTh22 )( Th1 & AAG( proTh22 )( Th1 ))
+SPEC EAF( onlyAPC )( Th1 & AAG( onlyAPC )( Th1 ))
+SPEC EAF( none )( Th1 & AAG( none )( Th1 ))
+--> Th2
+SPEC EAF( proTh1 )( Th2 & AAG( proTh1 )( Th2 ))
+SPEC EAF( proTh2 )( Th2 & AAG( proTh2 )( Th2 ))
+SPEC EAF( proTh17 )( Th2 & AAG( proTh17 )( Th2 ))
+SPEC EAF( proTreg )( Th2 & AAG( proTreg )( Th2 ))
+SPEC EAF( proTfh )( Th2 & AAG( proTfh )( Th2 ))
+SPEC EAF( proTh9 )( Th2 & AAG( proTh9 )( Th2 ))
+SPEC EAF( proTh22 )( Th2 & AAG( proTh22 )( Th2 ))
+SPEC EAF( onlyAPC )( Th2 & AAG( onlyAPC )( Th2 ))
+SPEC EAF( none )( Th2 & AAG( none )( Th2 ))
+--> Th17
+SPEC EAF( proTh1 )( Th17 & AAG( proTh1 )( Th17 ))
+SPEC EAF( proTh2 )( Th17 & AAG( proTh2 )( Th17 ))
+SPEC EAF( proTh17 )( Th17 & AAG( proTh17 )( Th17 ))
+SPEC EAF( proTreg )( Th17 & AAG( proTreg )( Th17 ))
+SPEC EAF( proTfh )( Th17 & AAG( proTfh )( Th17 ))
+SPEC EAF( proTh9 )( Th17 & AAG( proTh9 )( Th17 ))
+SPEC EAF( proTh22 )( Th17 & AAG( proTh22 )( Th17 ))
+SPEC EAF( onlyAPC )( Th17 & AAG( onlyAPC )( Th17 ))
+SPEC EAF( none )( Th17 & AAG( none )( Th17 ))
+--> Treg
+SPEC EAF( proTh1 )( Treg & AAG( proTh1 )( Treg ))
+SPEC EAF( proTh2 )( Treg & AAG( proTh2 )( Treg ))
+SPEC EAF( proTh17 )( Treg & AAG( proTh17 )( Treg ))
+SPEC EAF( proTreg )( Treg & AAG( proTreg )( Treg ))
+SPEC EAF( proTfh )( Treg & AAG( proTfh )( Treg ))
+SPEC EAF( proTh9 )( Treg & AAG( proTh9 )( Treg ))
+SPEC EAF( proTh22 )( Treg & AAG( proTh22 )( Treg ))
+SPEC EAF( onlyAPC )( Treg & AAG( onlyAPC )( Treg ))
+SPEC EAF( none )( Treg & AAG( none )( Treg ))
+--> Tfh
+SPEC EAF( proTh1 )( Tfh & AAG( proTh1 )( Tfh ))
+SPEC EAF( proTh2 )( Tfh & AAG( proTh2 )( Tfh ))
+SPEC EAF( proTh17 )( Tfh & AAG( proTh17 )( Tfh ))
+SPEC EAF( proTreg )( Tfh & AAG( proTreg )( Tfh ))
+SPEC EAF( proTfh )( Tfh & AAG( proTfh )( Tfh ))
+SPEC EAF( proTh9 )( Tfh & AAG( proTh9 )( Tfh ))
+SPEC EAF( proTh22 )( Tfh & AAG( proTh22 )( Tfh ))
+SPEC EAF( onlyAPC )( Tfh & AAG( onlyAPC )( Tfh ))
+SPEC EAF( none )( Tfh & AAG( none )( Tfh ))
+--> Th9
+SPEC EAF( proTh1 )( Th9 & AAG( proTh1 )( Th9 ))
+SPEC EAF( proTh2 )( Th9 & AAG( proTh2 )( Th9 ))
+SPEC EAF( proTh17 )( Th9 & AAG( proTh17 )( Th9 ))
+SPEC EAF( proTreg )( Th9 & AAG( proTreg )( Th9 ))
+SPEC EAF( proTfh )( Th9 & AAG( proTfh )( Th9 ))
+SPEC EAF( proTh9 )( Th9 & AAG( proTh9 )( Th9 ))
+SPEC EAF( proTh22 )( Th9 & AAG( proTh22 )( Th9 ))
+SPEC EAF( onlyAPC )( Th9 & AAG( onlyAPC )( Th9 ))
+SPEC EAF( none )( Th9 & AAG( none )( Th9 ))
+--> Th22
+SPEC EAF( proTh1 )( Th22 & AAG( proTh1 )( Th22 ))
+SPEC EAF( proTh2 )( Th22 & AAG( proTh2 )( Th22 ))
+SPEC EAF( proTh17 )( Th22 & AAG( proTh17 )( Th22 ))
+SPEC EAF( proTreg )( Th22 & AAG( proTreg )( Th22 ))
+SPEC EAF( proTfh )( Th22 & AAG( proTfh )( Th22 ))
+SPEC EAF( proTh9 )( Th22 & AAG( proTh9 )( Th22 ))
+SPEC EAF( proTh22 )( Th22 & AAG( proTh22 )( Th22 ))
+SPEC EAF( onlyAPC )( Th22 & AAG( onlyAPC )( Th22 ))
+SPEC EAF( none )( Th22 & AAG( none )( Th22 ))
+--> TbetGata3
+SPEC EAF( proTh1 )( TbetGata3 & AAG( proTh1 )( TbetGata3 ))
+SPEC EAF( proTh2 )( TbetGata3 & AAG( proTh2 )( TbetGata3 ))
+SPEC EAF( proTh17 )( TbetGata3 & AAG( proTh17 )( TbetGata3 ))
+SPEC EAF( proTreg )( TbetGata3 & AAG( proTreg )( TbetGata3 ))
+SPEC EAF( proTfh )( TbetGata3 & AAG( proTfh )( TbetGata3 ))
+SPEC EAF( proTh9 )( TbetGata3 & AAG( proTh9 )( TbetGata3 ))
+SPEC EAF( proTh22 )( TbetGata3 & AAG( proTh22 )( TbetGata3 ))
+SPEC EAF( onlyAPC )( TbetGata3 & AAG( onlyAPC )( TbetGata3 ))
+SPEC EAF( none )( TbetGata3 & AAG( none )( TbetGata3 ))
+--> TbetGata3Foxp3
+SPEC EAF( proTh1 )( TbetGata3Foxp3 & AAG( proTh1 )( TbetGata3Foxp3 ))
+SPEC EAF( proTh2 )( TbetGata3Foxp3 & AAG( proTh2 )( TbetGata3Foxp3 ))
+SPEC EAF( proTh17 )( TbetGata3Foxp3 & AAG( proTh17 )( TbetGata3Foxp3 ))
+SPEC EAF( proTreg )( TbetGata3Foxp3 & AAG( proTreg )( TbetGata3Foxp3 ))
+SPEC EAF( proTfh )( TbetGata3Foxp3 & AAG( proTfh )( TbetGata3Foxp3 ))
+SPEC EAF( proTh9 )( TbetGata3Foxp3 & AAG( proTh9 )( TbetGata3Foxp3 ))
+SPEC EAF( proTh22 )( TbetGata3Foxp3 & AAG( proTh22 )( TbetGata3Foxp3 ))
+SPEC EAF( onlyAPC )( TbetGata3Foxp3 & AAG( onlyAPC )( TbetGata3Foxp3 ))
+SPEC EAF( none )( TbetGata3Foxp3 & AAG( none )( TbetGata3Foxp3 ))

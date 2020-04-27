@@ -1,0 +1,10 @@
+{
+"title": "Symbolic Dynamics of Biochemical Pathways as Finite States Machines",
+"authors": [["Radulescu", "Ovidiu"], ["Samal", "Satya Swarup"], ["Naldi", "Aur\u00e9lien"], ["Grigoriev", "Dima"], ["Weber", "Andreas"]],
+"year": "2015",
+"series": "Lecture Notes in Computer Science",
+"booktitle": "Computational Methods in Systems Biology",
+"volume": "9308",
+"pages": "104-120",
+"links": {"doi": "10.1007/978-3-319-23401-4_10"}
+}

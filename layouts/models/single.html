@@ -1,0 +1,32 @@
+{{ define "main" }}
+<section{{ if .Params.style }} class="{{.Params.style}}"{{end}}>
+<div class="content">
+
+{{ if not .Params.notitle }}<h1>{{ .Title }}</h1>{{ end }}
+
+<div class="meta">
+<dl>
+  <dt>Submitter</dt><dd>{{ .Params.submitter }}</dd>
+  <dt>Taxon</dt><dd>{{range $i,$v := .Params.taxon }}{{if (gt $i 0)}} ; {{end}}<span class="keyword">{{ $v }}</span>{{end}}</dd>
+  <dt>Process</dt><dd>{{range $i,$v := .Params.process }}{{if (gt $i 0)}} ; {{end}}<span class="keyword">{{ $v }}</span>{{end}}</dd>
+{{ $bibid := .Params.supporting_paper }}
+{{ $bib :=  index .Site.Data.references "models" $bibid }}
+{{ $.Scratch.Set "_cur_ref_" $bib }}
+{{ partial "printref.html" $ }}
+</div>
+
+{{ .Content }}
+
+{{ partial "biblio.html" $ }}
+
+<h3>Files</h3>
+<ul>
+{{ range .Params.files }}
+    <li><a href="{{.}}">{{.}}</a></li>
+{{end}}
+</ul>
+
+</div>
+</section>
+{{ end }}
+

@@ -1,0 +1,10 @@
+{
+"title": "GOATOOLS: A Python library for Gene Ontology analyses",
+"authors": [["Klopfenstein", "D.V."], ["Zhang", "L."], ["Pedersen", "B.S."], ["Ramirez", "F."], ["Warwick Vesztrocy", "A"], ["Naldi", "A."], ["Mungall", "C.J."], ["Yunes", "J.M."], ["Botvinnik", "O."], ["Weigel", "M."], ["Dampier", "W."], ["Dessimoz", "C."], ["Flick", "P."], ["Tang", "H."]],
+"year": "2018",
+"journal": "Scientific Reports",
+"volume": "8",
+"pages": "10872",
+"keyword": "#Openaccess",
+"links": {"doi": "10.1038/s41598-018-28948-z"}
+}

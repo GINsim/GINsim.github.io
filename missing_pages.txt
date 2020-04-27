@@ -1,0 +1,13 @@
+212	Basins of attraction
+
+
+186	BC2 tutorial program        Official page is http://compbio.igc.gulbenkian.pt/nmd/node/63.
+--> Should mirror it on the CoLoMoTo website
+
+
+176	epilog ancestor             INCLUDED ; Added link to epilog
+181	Th diff NuSMV 		    INCLUDED as suppl for model 185
+199	HSPCs-MSCs model page       SKIP: Current page is better
+223	Suppl. Avatar               INCLUDED ; Has no attached files ???
+217	Superseeds ref 197          UPDATED as ref 197
+

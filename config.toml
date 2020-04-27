@@ -1,0 +1,11 @@
+baseURL = "https://ginsim.github.io/ginsim.org/"
+languageCode = "en-us"
+title = "GINsim"
+theme = "ginsim"
+summaryLength = 35
+
+enableEmoji = true
+
+[params]
+logo = "ginsim.svg"
+
