@@ -1,0 +1,24 @@
+authors:
+- - Flobak
+  - "\xC5"
+- - Baudot
+  - A
+- - Remy
+  - E
+- - Thommesen
+  - L
+- - Thieffry
+  - D
+- - Kuiper
+  - M
+- - "L\xE6greid"
+  - A
+issue: '8'
+journal: PLoS computational biology
+links:
+  doi: 10.1371/journal.pcbi.1004426
+  issn: 1553-7358
+page: e1004426
+title: Discovery of Drug Synergies in Gastric Cancer Cells Predicted by Logical Modeling.
+volume: '11'
+year: 2015 Aug

@@ -1,0 +1,23 @@
+authors:
+- - Grieco
+  - L
+- - Calzone
+  - L
+- - Bernard-Pierrot
+  - I
+- - Radvanyi
+  - F
+- - "Kahn-Perl\xE8s"
+  - B
+- - Thieffry
+  - D
+issue: '10'
+journal: PLoS computational biology
+links:
+  doi: 10.1371/journal.pcbi.1003286
+  issn: 1553-7358
+page: e1003286
+title: Integrative modelling of the influence of MAPK network on cancer cell fate
+  decision.
+volume: '9'
+year: 2013 Oct
