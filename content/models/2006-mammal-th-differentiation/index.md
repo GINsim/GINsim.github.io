@@ -7,7 +7,7 @@ taxon:
 process: 
 - Differentiation
 submitter: Claudine Chaouiya
-supporting_paper: "40"
+supporting_paper: Mendoza2006
 date: 2012/01
 files: 
 - Th_17.zginml

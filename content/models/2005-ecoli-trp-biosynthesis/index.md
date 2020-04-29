@@ -1,5 +1,5 @@
 ---
-title: "Qualitative modelling of the network controlling Trp biosynthesis"
+title: Controlling tryptophan biosynthesis
 aliases:
 - /node/50
 taxon: 
@@ -8,7 +8,7 @@ taxon:
 process: 
 - Tryptophan biosythesis
 submitter: C. Chaouiya
-supporting_paper: "49"
+supporting_paper: Simao2005
 files: 
 - Trp_reg.zginml
 file_descriptions: 

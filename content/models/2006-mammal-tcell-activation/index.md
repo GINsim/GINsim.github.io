@@ -1,14 +1,13 @@
 ---
-title: "TCR signalisation"
+title: TCR signalisation
 aliases:
 - /node/78
 taxon: 
 - Mammal
 process: 
 - Differentiation
-refs: 73 | 58
 submitter: Claudine Chaouiya
-supporting_paper: "73"
+supporting_paper: Klamt2006
 files: 
 - TCRsig40.zginml
 file_descriptions: 

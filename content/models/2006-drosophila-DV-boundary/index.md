@@ -1,5 +1,5 @@
 ---
-title: "DV boundary formation of the Wing imaginal disc (Gonzalez et al. 2006)"
+title: DV boundary formation of the Wing imaginal disc
 aliases:
 - /node/69
 taxon: 
@@ -8,7 +8,7 @@ process:
 - Wing Imaginal disk
 - Development
 submitter: D. Thieffry
-supporting_paper: "67"
+supporting_paper: Gonzalez2006
 files: 
 - dv_boundary_wing_disk_model.zginml
 - ap-1_else-0_wt.zginml

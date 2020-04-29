@@ -1,5 +1,5 @@
 ---
-title: "The pair-rule cross-regulatory module (Sánchez and Thieffry 2003)"
+title: The pair-rule cross-regulatory module
 aliases:
 - /node/63
 taxon: 
@@ -8,7 +8,7 @@ process:
 - Segmentation
 - Development
 submitter: D. Thieffry
-supporting_paper: "62"
+supporting_paper: Sanchez2003
 files: 
 - pairRule.zginml
 file_descriptions: 

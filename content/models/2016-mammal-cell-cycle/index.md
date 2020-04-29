@@ -19,8 +19,8 @@ files:
 
 
 This model is an extension of the seminal model of the G1/S restriction point
-control of mammalian cell cycle, published by Fauré et al (2006) [1]. We have
-used model-checking and computing tree logics (CTL) to progressively refine
+control of mammalian cell cycle, published by Fauré et al {{<cite "models/Faure2006">}}.
+We used model-checking and computing tree logics (CTL) to progressively refine
 Fauré's model in order to fit recent experimental observations. The resulting
 model accounts for the sequential activation of cyclins, the role of Skp2, and
 emphasizes a multifunctional role for the cell cycle inhibitor Rb.

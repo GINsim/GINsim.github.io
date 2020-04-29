@@ -8,7 +8,7 @@ process:
 - Segmentation
 - Development
 submitter: C. Chaouiya
-supporting_paper: "64"
+supporting_paper: Sanchez2001
 files: 
 - gapA.zginml
 - gapB.zginml

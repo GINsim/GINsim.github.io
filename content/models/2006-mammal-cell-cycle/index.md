@@ -1,14 +1,13 @@
 ---
-title: "Restriction point control of the mammalian cell cycle"
+title: Restriction point control of the mammalian cell cycle
 aliases:
 - /node/4
 taxon: 
 - Mammal
 process: 
 - Cell cycle
-refs: 2 | 3
-submitter: Adrien Fauré (C. Chaouiya)
-supporting_paper: "3"
+submitter: Adrien Fauré
+supporting_paper: Faure2006
 files: 
 - boolean_cell_cycle.zginml
 file_descriptions: 

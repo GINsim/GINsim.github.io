@@ -1,14 +1,13 @@
 ---
-title: "Controlling the lysis-lysogeny decision in the phage lambda"
+title: Lysis vs lysogeny decision in the phage lambda
 aliases:
 - /node/47
 taxon: 
 - Phage Lambda
 process: 
 - Lysis-lysogeny decision
-refs: 45 | 46
 submitter: C. Chaouiya
-supporting_paper: "44"
+supporting_paper: Thieffry1995
 related_references: /node/28
 files: 
 - phage2.zginml
