@@ -1,0 +1,22 @@
+authors:
+- - Mendes
+  - Nuno D.
+- - Lang
+  - "Fr\xE9d\xE9ric"
+- - Cornec
+  - Yves-Stan Le
+- - Mateescu
+  - Radu
+- - Batt
+  - Gregory
+- - Chaouiya
+  - Claudine
+issue: '6'
+journal: Bioinformatics
+links:
+  doi: 10.1093/bioinformatics/btt033
+pages: 749--757
+title: 'Composition and abstraction of logical regulatory modules: application to
+  multicellular systems'
+volume: '29'
+year: '2013'
