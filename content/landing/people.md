@@ -57,6 +57,7 @@ Specific questions can also be adressed to the GINsim team at support@ginsim.org
 * Biological applications: Adrien Fauré, Aitor Gonzalez
 * Software development: Duncan Berenguier, Fabrice Lopez, Kevin Mathieu, Nuno Mendes, Lionel Spinelli
 
+The GINsim logo was designed by [Mauricio Guzman](http://www.altamirastudio.com.mx/).
 
 ---
 
