@@ -12,11 +12,11 @@ authors:
 - - Thieffry
   - Denis
 journal: Frontiers in Physiology
-keyword: '#Openaccess'
+tags: ['OpenAccess']
+type: article
 links:
   doi: 10.3389/fphys.2018.00646
 pages: '646'
-title: Logical modelling and analysis of cellular regulatory networks with GINsim
-  3.0
+title: Logical modelling and analysis of cellular regulatory networks with GINsim 3.0
 volume: '9'
 year: '2018'
