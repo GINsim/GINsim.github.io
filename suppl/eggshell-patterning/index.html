@@ -16,9 +16,9 @@ interpreted by the programme.</p><ul><li>To check the value of a cellular variab
 self.parentcell.getspecies(&lsquo;species&rsquo;).value returns the value of the variable &ldquo;species&rdquo;.</li><li>To check the value of an extracellular variable:
 self.parentcell.haswith(species, distance, value) returns the number of cells within
 the distance = (min, max) interval where the specified variable (species) has the
-specified value. If distance is omitted, default is &ldquo;(1,1)"; if value is omitted,
+specified value. If distance is omitted, default is &ldquo;(1,1)&rdquo;; if value is omitted,
 default is &ldquo;1&rdquo;.</li><li>Logical operators (&ldquo;and&rdquo;, &ldquo;or&rdquo; and &ldquo;not&rdquo;) can be used, as well as relational
-operators (&ldquo;==&rdquo;, &ldquo;&lt;&rdquo;,&ldquo;>&rdquo;,&ldquo;&lt;=&rdquo;, &ldquo;>=&rdquo;, &ldquo;!=&rdquo;).</li></ul><h2 id=example>Example:</h2><p>self.parentcell.getspecies(&lsquo;X&rsquo;).value==1 or self.parentcell.haswith(&lsquo;Y&rsquo;, value=2, distance=(0,3))>=10</p><p>will return true if variable X equals 1 in the cell, or if the cell has at least 10 neighbours having Y at level 2 within a [0,3] radius (thus including the cell itself in this case).</p><h1 id=states>STATES</h1><p>A &ldquo;state&rdquo; corresponds to the levels of all variables, in all cells of the model.
+operators ("==", &ldquo;&lt;&rdquo;,">","&lt;=", &ldquo;>=&rdquo;, &ldquo;!=&rdquo;).</li></ul><h2 id=example>Example:</h2><p>self.parentcell.getspecies(&lsquo;X&rsquo;).value==1 or self.parentcell.haswith(&lsquo;Y&rsquo;, value=2, distance=(0,3))>=10</p><p>will return true if variable X equals 1 in the cell, or if the cell has at least 10 neighbours having Y at level 2 within a [0,3] radius (thus including the cell itself in this case).</p><h1 id=states>STATES</h1><p>A &ldquo;state&rdquo; corresponds to the levels of all variables, in all cells of the model.
 In practice, a state can be saved as a list of cells where variables have a non-zero
 value (level 0 being treated as the default). The current state can be visualised on
 the grid, and specific states can be saved to be loaded later.</p><h1 id=simulation>SIMULATION</h1><p>Simulations are carried out synchronously, step by step, from the current state,
