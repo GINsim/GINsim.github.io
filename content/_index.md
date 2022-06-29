@@ -15,8 +15,8 @@ extrasections: landing
 
 # ![Java](/logos/java.svg) Download
 
-* [Latest version (3.0 beta)](#download/current/GINsim.jar)
-* [Older versions, nightly builds](download)
+* [Latest version (3.0 beta2)](https://github.com/GINsim/GINsim-dev/releases/download/V3.0-beta2/GINsim-3.0-beta2.jar)
+* [All releases on github](https://github.com/GINsim/GINsim-dev/releases)
 
 {{</box>}}
 
