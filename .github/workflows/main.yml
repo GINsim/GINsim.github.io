@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - hugo
+  workflow_dispatch: # on manual trigger
 
 jobs:
   deploy:
