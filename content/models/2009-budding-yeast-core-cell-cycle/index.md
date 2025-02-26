@@ -10,7 +10,7 @@ process:
 - Core engine
 submitter: Adrien Fauré (C. Chaouiya)
 supporting_paper: "20"
-date: 2006/08
+date: 2006-08-01T00:00:00Z
 files: 
 - core_engine_budding_yeast_CC.zginml
 file_descriptions: 
@@ -18,7 +18,7 @@ file_descriptions:
 ---
 
 
-Leaning on the differential model published by Chen et al. in 2004 {{<cite "models/22">}},
+Leaning on the differential model published by Chen et al. in 2004 {{<cite "models/22" />}},
 we have delineated a discrete, logical model that reproduces the main qualitative
 results reported in this study, in terms of cycle viability or arrest in a
 particular stable state, for the wild type as well as over one hundred mutant
@@ -68,5 +68,5 @@ entries of our model repository. In conclusion, our core cell cycle model
 served as a benchmark to assess the power of logical modelling applied to a
 complex oscillatory system, as well as the first step towards the development
 of a more comprehensive model of the budding yeast cell cycle network
-{{<cite "models/23">}}.
+{{<cite "models/23" />}}.
 

@@ -21,7 +21,7 @@ file_descriptions:
 A number of bacterial and viral genes take part in the decision between lysis
 and lysogenisation in temperate bacteriophages. In the case of the
 bacteriophage lambda, at least 5 viral regulatory products (CI, Cro, CII, N
-and CIII) and several bacterial genes are involved (see {{<cite "models/45">}}
+and CIII) and several bacterial genes are involved (see {{<cite "models/45" />}}
 for an excellent overview).
 
 
@@ -34,7 +34,7 @@ In a second step, we propose a four element model
 the roles of the regulatory genes CII and N in addition of CI and Cro.
 
 
-Note that in {{<cite "models/46">}}, we considered a modified version of the four component
+Note that in {{<cite "models/46" />}}, we considered a modified version of the four component
 model: [phage4 (alternate).zginml](phage4_alternate.zginml).
 This paper deals with the Petri net representation of logical models. The versions
 of the two and four component models of the phage lambda switch are available in the

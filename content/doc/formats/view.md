@@ -1,7 +1,7 @@
 ---
 title: "Export graph view"
 summary: Export graph view as image
-date: 2019/07/24
+date: 2019-07-24T00:00:00Z
 ---
 
 The graph view can be exported as an image in the PNG format.

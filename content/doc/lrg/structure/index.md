@@ -1,6 +1,6 @@
 ---
 title: "Struture of the LRG"
-date: 2019/07/24 12:58
+date: 2019-07-24T12:58:00Z
 summary: The components and interactions composing the regulatory graph
 weight: 1
 ---

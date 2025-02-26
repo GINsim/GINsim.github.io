@@ -8,7 +8,7 @@ process:
 - Differentiation
 submitter: Claudine Chaouiya
 supporting_paper: Mendoza2006
-date: 2012/01
+date: 2012-01-01T00:00:00Z
 files: 
 - Th_17.zginml
 file_descriptions: 

@@ -1,6 +1,6 @@
 ---
 title: "Find path"
-date: 2019/07/24 12:58
+date: 2019-07-24T12:58:00Z
 summary: Define and search for paths in LRGs and STGs
 ---
 

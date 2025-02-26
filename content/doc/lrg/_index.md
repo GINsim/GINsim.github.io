@@ -1,6 +1,6 @@
 ---
 title: "Logical Regulatory Graphs"
-date: 2019/07/24 12:58
+date: 2019-07-24T12:58:00Z
 summary: Define regulatory graphs
 weight: 2
 ---
@@ -13,5 +13,5 @@ whenever its source reaches a given level.
 The activation level of each component is defined by a regulatory function
 comprising parameters relative to all regulators of this component.
 
-For a more formal definition see {{< cite Naldi2011 >}} or {{< cite Thieffry2007 >}}.
+For a more formal definition see {{< cite Naldi2011 />}} or {{< cite Thieffry2007 />}}.
 

@@ -1,6 +1,6 @@
 ---
 title: "Graph layouts"
-date: 2019/07/24 12:58
+date: 2019-07-24T12:58:00Z
 summary: Automatic positionning of graph elements
 ---
 

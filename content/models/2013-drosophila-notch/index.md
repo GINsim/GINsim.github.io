@@ -28,6 +28,6 @@ mesoderm specification. When Delta is ON (high or medium signaling), the level
 of Twist expression can decrease from 2 to 1 or 0. When Delta is OFF (no
 signaling), Twist is expressed at its maximal level 2. For more details on
 Notch signalling pathway and it's role on Twist expression regulation during
-Drosophila development {{<cite "models/113" "models/110" "models/112" "models/111" "models/114">}}.
+Drosophila development {{<cite "models/113" "models/110" "models/112" "models/111" "models/114" />}}.
 
 

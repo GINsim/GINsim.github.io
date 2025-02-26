@@ -1,6 +1,6 @@
 ---
 title: Transition graphs
-date: 2019/07/18 12:58
+date: 2019-07-18T12:58:00Z
 summary: Graphs representing the dynamical behaviour
 ---
 
@@ -14,7 +14,7 @@ Nodes of this graph represent possible states of the model, assigning
 a value to each component. Arcs of the STG represent transitions from
 one state to another (i.e. change of value for one or several components).
 
-For a more formal definition see {{<cite Naldi2011>}}.
+For a more formal definition see {{<cite Naldi2011 />}}.
 
 
 
@@ -27,6 +27,6 @@ the [graph of the Strongly Connected Components](TODO/../tools/scc) by merging
 linear chains of states (in addition to cycles) into single nodes.
 
 More information on this graph is available in
-{{<cite Berenguier2013>}}.
+{{<cite Berenguier2013 />}}.
 
 

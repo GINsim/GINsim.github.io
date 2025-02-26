@@ -1,6 +1,6 @@
 ---
 title: "The people behind GINsim"
-date: 2019/07/18 12:58
+date: 2019-07-18T12:58:00Z
 weight: 100
 style: hg3
 ---

@@ -1,6 +1,6 @@
 ---
 title: "The main window"
-date: 2019/07/24 12:58
+date: 2019-07-24T12:58:00Z
 summary: View and edit graphs, launch actions
 ---
 

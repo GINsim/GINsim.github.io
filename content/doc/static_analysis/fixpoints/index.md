@@ -1,6 +1,6 @@
 ---
 title: Fixed points
-date: 2019/07/18 12:58
+date: 2019-07-18T12:58:00Z
 summary: Identify fixed points (stable states)
 weight: 40
 ---
@@ -8,7 +8,7 @@ weight: 40
 
 This tool allows the analytic (i.e. without running a simulation) determination
 of stable states of the model. All stable states are determined, regardless of
-their reachability {{<cite Naldi2007>}}.
+their reachability {{<cite Naldi2007 />}}.
 
 This tool allows the analytic (i.e. without running a simulation) determination of
 trapspaces of the model. These trapspaces contain the stable states, as well as an

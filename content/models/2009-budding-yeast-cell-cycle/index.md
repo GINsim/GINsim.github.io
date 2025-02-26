@@ -9,7 +9,7 @@ process:
 - Cell cycle
 submitter: Adrien Fauré (C. Chaouiya)
 supporting_paper: "30"
-date: 2009/07
+date: 2009-07-01T00:00:00Z
 files: 
 - buddingYeastIrons2009.zginml
 file_descriptions: 
@@ -18,8 +18,8 @@ file_descriptions:
 
 
 This model is a direct transcription of the Boolean model published by Irons
-{{<cite "models/34">}}, except for the specific temporisation system.
+{{<cite "models/34" />}}, except for the specific temporisation system.
 Synchronous simulation of this model recovers the results obtained by Irons
-in absence of time delays (Fig. 3B in {{<cite "models/34">}} ), i.e. a single
+in absence of time delays (Fig. 3B in {{<cite "models/34" />}} ), i.e. a single
 cyclic attractor qualitatively consistent with available kinetic data.
 

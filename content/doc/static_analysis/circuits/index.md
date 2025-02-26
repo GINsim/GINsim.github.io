@@ -1,6 +1,6 @@
 ---
 title: Circuit analysis
-date: 2019/07/18 12:58
+date: 2019-07-18T12:58:00Z
 summary: Analyse regulatory circuits
 weight: 40
 ---
@@ -8,12 +8,12 @@ weight: 40
 
 Regulatory circuits play crucial roles in the dynamical behaviour of a system.
 Indeed, positive circuits are required for the existence of several attractors,
-whereas negative circuits may generate cyclic attractors {{<cite Thieffry2007>}}.
+whereas negative circuits may generate cyclic attractors {{<cite Thieffry2007 />}}.
 
 
 Many regulatory graphs currently under study contain a large number of circuits,
 but a relatively small number of them often plays a more important role.
-In {{<cite Naldi2007>}}, we describe a method to compute a **functionality context**
+In {{<cite Naldi2007 />}}, we describe a method to compute a **functionality context**
 for all circuits, to determine which circuits are more likely to affect the
 attractor configuration of the system.
 

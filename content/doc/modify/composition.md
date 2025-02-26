@@ -1,6 +1,6 @@
 ---
 title: "Composition"
-date: 2019/07/24 12:58
+date: 2019-07-24T12:58:00Z
 Summary: Composing multiple instances of an LRG, based on neighbour integration functions
 ---
 
@@ -12,7 +12,7 @@ operational by having external regulators influence the state of components
 in each intracellular module. By making the inter-cellular regulatory relations
 explicit, it is possible to obtain a global logical model describing the whole
 system. This tool provides a generic method to obtain this global model from
-the composition of identical individual logical modules {{<cite Mendes2013>}}.
+the composition of identical individual logical modules {{<cite Mendes2013 />}}.
 
 Usage
 =====

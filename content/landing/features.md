@@ -1,6 +1,6 @@
 ---
 title: "Main features"
-date: 2019/07/18 12:58
+date: 2019-07-18T12:58:00Z
 weight: 5
 style: hg2
 ---

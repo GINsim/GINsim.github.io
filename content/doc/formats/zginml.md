@@ -1,7 +1,7 @@
 ---
 title: "The Z-GINML format"
 summary: The native file format in GINsim
-date: 2019/07/24
+date: 2019-07-24T00:00:00Z
 ---
 
 The Z-GINML format (also denoted **extended save**), is a zip archive containing a ginml file along with

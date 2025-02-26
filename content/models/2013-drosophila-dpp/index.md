@@ -91,6 +91,6 @@ multi-valued because the high signalling is characterized by the binding of
 hetero dimers (DPP/SCW or DPP/GBB) signalling through TKV. Note that GBB and
 SCW don't have the same expression pattern.
 For more details on Dpp signalling pathway regulation see
-{{<cite "models/161" "models/162" "models/163" "models/164" "models/165">}}.
+{{<cite "models/161" "models/162" "models/163" "models/164" "models/165" />}}.
 
 

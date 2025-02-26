@@ -1,6 +1,6 @@
 ---
 title: "Animate transition graphs"
-date: 2019/07/24 12:58
+date: 2019-07-24T12:58:00Z
 Summary: Animate the model based on its dynamics
 ---
 

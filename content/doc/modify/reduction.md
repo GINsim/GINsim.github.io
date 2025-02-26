@@ -1,6 +1,6 @@
 ---
 title: "Model reduction"
-date: 2019/07/24 12:58
+date: 2019-07-24T12:58:00Z
 Summary: Removing components from a LRG, preserving dynamical properties
 ---
 
@@ -59,7 +59,7 @@ The reduction tool can also be used in script mode. It then relies on a previous
 Availability and further reading
 =================================
 
-This method was implemented in GINsim 2.4 {{<cite Naldi2011>}}.
-The support for output stripping was added in GINsim 3.0 {{<cite Naldi2012>}}.
+This method was implemented in GINsim 2.4 {{<cite Naldi2011 />}}.
+The support for output stripping was added in GINsim 3.0 {{<cite Naldi2012 />}}.
 
 

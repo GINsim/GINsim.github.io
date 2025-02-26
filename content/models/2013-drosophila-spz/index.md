@@ -21,7 +21,7 @@ file_descriptions:
 During DV patterning, a regulatory cascades composed by three dorsal group
 genes gastrulation-defective, snake and easter, encoding serine proteases,
 lead to the cleavage of Spatzle (SPZ), that in turn activates the Toll-dorsal
-signaling pathway {{<cite "models/116" "models/117">}}. Spatzle presumably forms
+signaling pathway {{<cite "models/116" "models/117" />}}. Spatzle presumably forms
 a gradient in the perivitelline fluid. Toll signaling is ultimately responsible
 for the formation of the embryonic dorsal nuclear gradient. In the nucleus, dorsal
 controls the expression of zygotic genes in a concentration-dependent manner
@@ -34,12 +34,12 @@ minded), expressed in the neurectoderm and repressed by Snail in the mesoderm.
 Natural or experimentally induced infections by fungi or bacteria elicit a
 specific response in both adult flies and larvae. The proteoglycans of Gram-positive
 and Gram-negative bacteria are sensed by distinct pattern recognition proteins
-called PGRPs (peptidoglycan recognition proteins {{<cite "models/118">}}.
+called PGRPs (peptidoglycan recognition proteins {{<cite "models/118" />}}.
 Different PRGPs cooperate to activate the Toll pathway. The activation of PGRP-SA
-by Gram- positive bacteria leads to Spatzle cleavage {{<cite "models/119">}}.
+by Gram- positive bacteria leads to Spatzle cleavage {{<cite "models/119" />}}.
 Fungal infection also leads to the cleavage of Spatzle, but the proteolytic
 cascade in this case involves the circulating serine protease Persephone and its
-serine protease inhibitor, Necrotic {{<cite "models/120" "models/122" "models/125">}}.
+serine protease inhibitor, Necrotic {{<cite "models/120" "models/122" "models/125" />}}.
 Circulating PGRP-SA receptor activates the Toll pathway upon detection of Lysine-type
 PGN which is a major component of the cell wall of many Gram-positive bacterial strains.
 GNBP1 (Gram-Negative Binding Protein 1) associates with PGRP-SA and this complex
@@ -51,7 +51,7 @@ and GNBP1 define a Gram-positive-specific branch of Toll receptor activation.
 PGRP-SD also belongs to this branch and is required for the detection of other
 Gram-positive and negative bacterial strains. In short, the maturation of SPZ
 activates Toll in both early embryo and immune response and is controlled by
-different sets of proteases {{<cite "models/123" "models/124">}}. To reproduce
+different sets of proteases {{<cite "models/123" "models/124" />}}. To reproduce
 biological data during SPZ processing, we define four initial states corresponding
 the biological process involved. All these initial state lead to the formation of
 the active form of SPZ.

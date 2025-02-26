@@ -1,7 +1,7 @@
 ---
 title: "Export graph structure"
 summary: Export the structure of a graph
-date: 2019/07/24
+date: 2019-07-24T00:00:00Z
 ---
 
 

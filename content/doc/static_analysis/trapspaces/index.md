@@ -1,12 +1,12 @@
 ---
 title: Trapspaces
-date: 2019/07/18 12:58
+date: 2019-07-18T12:58:00Z
 summary: Identify stable motifs containing complex attractors
 ---
 
 This tool allows the analytic (i.e. without running a simulation) determination of
 trapspaces of the model. These trapspaces contain the stable states, as well as an
-approximation for complex attractors {{<cite Klarner2014>}}.
+approximation for complex attractors {{<cite Klarner2014 />}}.
 
 
 Usage

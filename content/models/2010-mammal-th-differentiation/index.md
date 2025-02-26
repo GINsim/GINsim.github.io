@@ -32,8 +32,8 @@ This model accounts for the regulatory network and signalling pathways
 controlling Th cell differentiation.
 As most available data are qualitative, it is relied on a logical formalism to
 perform extensive dynamical analyses. To cope with the size and complexity of the
-resulting network, it is used an original model reduction approach {{<cite "models/75">}},
-together with a stable state identification algorithm {{<cite "models/58">}}. To assess the
+resulting network, it is used an original model reduction approach {{<cite "models/75" />}},
+together with a stable state identification algorithm {{<cite "models/58" />}}. To assess the
 effects of heterogeneous environments on Th cell differentiation, it is performed a
 systematic series of simulations, considering various prototypic environments.
 

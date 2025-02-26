@@ -18,7 +18,7 @@ file_descriptions:
 
 Its central motivation is the definition of a generic approach to obtain
 an integrated modelling of the regulated Trp biosynthesis pathway.
-In this context, we refer to Petri net models {{<cite "models/46">}}.
+In this context, we refer to Petri net models {{<cite "models/46" />}}.
 First, we present the modelling of the regulatory control of the Trp
 biosynthesis in E.Coli (download Trp_reg.zginml). The following figure
 illustrates the simplified logical regulatory graph. Each node of the

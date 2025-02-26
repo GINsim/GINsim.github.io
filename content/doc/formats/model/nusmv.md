@@ -1,7 +1,7 @@
 ---
 title: "NuSMV Export"
 summary: Export regulatory graphs for the NuSMV model checker
-date: 2019/07/24
+date: 2019-07-24T00:00:00Z
 ---
 
 The dynamics of logical regulatory graphs can be described using a NuSMV specification.
@@ -146,6 +146,6 @@ properties are added, as comments, at the end of each file.
 
 # Availability and further reading
 
-This export was implemented in GINsim 3.0. Further information is available in {{<cite Monteiro2012>}}.
+This export was implemented in GINsim 3.0. Further information is available in {{<cite Monteiro2012 />}}.
 
 
