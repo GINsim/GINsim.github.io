@@ -68,5 +68,5 @@ entries of our model repository. In conclusion, our core cell cycle model
 served as a benchmark to assess the power of logical modelling applied to a
 complex oscillatory system, as well as the first step towards the development
 of a more comprehensive model of the budding yeast cell cycle network
-{{<cite "models/23" />}}.
+{{<cite "models/23" >}}.
 

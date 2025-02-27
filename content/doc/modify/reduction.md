@@ -60,6 +60,6 @@ Availability and further reading
 =================================
 
 This method was implemented in GINsim 2.4 {{<cite Naldi2011 >}}.
-The support for output stripping was added in GINsim 3.0 {{<cite Naldi2012 />}}.
+The support for output stripping was added in GINsim 3.0 {{<cite Naldi2012 >}}.
 
 
