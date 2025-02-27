@@ -13,4 +13,4 @@ GINsim consists of a simulator of qualitative models of genetic regulatory netwo
 GINsim allows the user to specify a model of a genetic regulatory network in term of asynchronous, multivalued logical functions, and to simulate and/or analyse its qualitative dynamical behaviour {{ <cite Chaouiya2012> }}.
 
 
-{{ readFile "quickstart.md" }}
+{{ <readFile "quickstart.md"> }}
