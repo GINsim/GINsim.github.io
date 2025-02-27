@@ -9,8 +9,5 @@ menu:
 
 GINsim is a software tool implementing the **multilevel logical formalism**.
 It leans on two main types of graphs:
-[Logical Regulatory Graphs]({{< relref "lrg/_index.md" >}}),
-which model regulatory networks, and
-[transition graphs]({{< relref "simulation/transition_graphs.md" >}}),
 which represent their dynamical behaviour.
 
