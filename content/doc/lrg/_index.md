@@ -13,5 +13,5 @@ whenever its source reaches a given level.
 The activation level of each component is defined by a regulatory function
 comprising parameters relative to all regulators of this component.
 
-For a more formal definition see {{< cite Naldi2011 />}} or {{< cite Thieffry2007 />}}.
+For a more formal definition see {{< cite Naldi2011 >}} or {{< cite Thieffry2007 >}}.
 

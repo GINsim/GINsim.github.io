@@ -33,9 +33,9 @@ the simulation of more sophisticated experiments.
 
 
 
-Chen et al (2004) {{<cite "models/22" />}} discussed the possibility to graft 
+Chen et al (2004) {{<cite "models/22" >}} discussed the possibility to graft 
 the model of the morphogenesis checkpoint published in a "companion study"
-by Ciliberto et al (2003) {{<cite "models/23" />}} to their model of the cell
+by Ciliberto et al (2003) {{<cite "models/23" >}} to their model of the cell
 cycle, and to replace the hypothetical PPX by a more accurate version of the
 network controlling mitotic exit. We have adapted all three modules in the
 logical formalism, and coupled them together.
@@ -79,7 +79,7 @@ model](../25) for more details). The resulting model fits the more recent
 data used to built the exit module, and the behaviour of the core model is
 preserved. Still, one difficulty arose regarding mutant simulations for the
 exit module: the two mutants involving Cdk inhibition (see Queralt et
-al., supplementary figure S6.4 {{<cite "models/24" />}}) could not be simulated in
+al., supplementary figure S6.4 {{<cite "models/24" >}}) could not be simulated in
 the coupled model, as inhibition of Cdk1 / Clb2 is the signal for cytokinesis in
 this model. This points out towards the "TARGET model" hypothesis discussed in
 Chen et al, where the trigger for cytokinesis would involve both a decrease of

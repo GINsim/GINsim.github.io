@@ -8,7 +8,7 @@ weight: 40
 
 This tool allows the analytic (i.e. without running a simulation) determination
 of stable states of the model. All stable states are determined, regardless of
-their reachability {{<cite Naldi2007 />}}.
+their reachability {{<cite Naldi2007 >}}.
 
 This tool allows the analytic (i.e. without running a simulation) determination of
 trapspaces of the model. These trapspaces contain the stable states, as well as an

@@ -18,31 +18,31 @@ file_descriptions:
 
 
 Processing of HH ligand The precursor of HH is auto-catalytically cleaved to produce an
-N-terminal (HH-N) and a C- terminal (HH-C) fragments {{<cite "models/128" "models/133" />}}.
+N-terminal (HH-N) and a C- terminal (HH-C) fragments {{<cite "models/128" "models/133" >}}.
 A cholesterol moiety is covalently attached to the last amino acid of HH-N to create HH-Np,
 that is responsible for the biological activities of HH proteins
-{{<cite "models/128" "models/133" "models/129" />}}. The N-terminal region of HH-Np
+{{<cite "models/128" "models/133" "models/129" >}}. The N-terminal region of HH-Np
 is further modified by addition of palmitate that is essential for its signalling activity
-{{<cite "models/134" "models/135" "models/136" "models/137" "models/130" "models/138" />}}.
+{{<cite "models/134" "models/135" "models/136" "models/137" "models/130" "models/138" >}}.
 We model these aspects by an AND rule (combining inputs
 from DLP, IHOG, Rasp, DISP, SHF, Lipophorin, BOI and DALLY) attached to the
 component representing the secreted HH molecule, denoted Hh in our model. HH
 Signalling Two integral membrane proteins are involved in HH signal reception:
 Patched and Smoothened. HH binding to its receptor Patched (PTC) relieves PTC-
 mediated repression of Smoothened (SMO), a serpentine-like membrane protein
-required for HH signalling {{<cite "models/139" "models/140" />}}. This allows
+required for HH signalling {{<cite "models/139" "models/140" >}}. This allows
 SMO stabilisation, activation, and phosphorylation by Shaggy (SGG), and downstream
 signalling through the formation of a protein complex including the serine threonine
 kinase Fused (FU), the kinesin-like protein Costa (COS), and the protein
 Suppressor of Fused (SUFU), ultimately controlling the post-translational
-processing of the protein Cubitus interruptus (CI) {{<cite "models/141" />}}.
+processing of the protein Cubitus interruptus (CI) {{<cite "models/141" >}}.
 In the absence of HH, COS binds CI directly and sequesters it in the cytoplasm
 with the help of SUFU. The recruitment of different kinases (Casein kinase 1 alpha,
 Shaggy, Protein kinase A) then leads to the phosphorylation of CI and to its
 proteolysis by SLMB. The resulting truncated protein (CI_rep) is released and
 enters the nucleus, where it has a transcriptional repressing activity. Recent
 evidence further indicates that SMO is inhibited by TOW, which tentatively
-mediates the effect of PTC on SMO {{<cite "models/142" "models/143" />}}.
+mediates the effect of PTC on SMO {{<cite "models/142" "models/143" >}}.
 Following SMO activation, the transcription factor CI is phosphorylated and
 translocated into the nucleus in its entire form, which plays a transcriptional
 activatory role (CI_act). In the model, a cascade of inhibitions, from HH on PTC,
@@ -52,7 +52,7 @@ ultimately favouring the CI activatory form and its translocation into the
 nucleus. We model the roles of the kinases (SGG, PKA, and CK1a), COS and
 SU(FU) (both needed to recruit the kinases) in the processing of CI in terms
 of inhibitory interactions on CI_act and activatory interactions on CI_rep
-{{<cite "models/131" "models/127" />}}. Complexes are represented implicitly
+{{<cite "models/131" "models/127" >}}. Complexes are represented implicitly
 (they are formed as soon as the components are synthesised or activated), while
 logical rules define component activity requirements to form CI_act versus CI_rep
 forms. To explore the dynamic of the pathway, we define two initial states to

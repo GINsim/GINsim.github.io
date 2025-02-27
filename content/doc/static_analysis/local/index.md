@@ -6,7 +6,7 @@ summary: Highlight the interactions in the neighbourhood of a state
 
 
 The local graph is a subgraph of the full LRG encompassing only the interactions
-which are **active** in the neighbourhood of one specific state {{<cite Remy2008 />}}.
+which are **active** in the neighbourhood of one specific state {{<cite Remy2008 >}}.
 
 The ``highlight local graph`` tool determines these active interactions and highlights
 them in the graph view.

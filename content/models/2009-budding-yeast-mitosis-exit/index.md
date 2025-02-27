@@ -19,7 +19,7 @@ file_descriptions:
 
 
 This logical model focuses on the network controlling mitotic exit in 
-budding yeast. It is inspired by the work of Queralt et al. {{<cite "models/24" />}},
+budding yeast. It is inspired by the work of Queralt et al. {{<cite "models/24" >}},
 which emphasises the role of PP2A down-regulation by separase in the triggering
 of Cdc14 activation during anaphase. 
 These authors developed a quantitative model for mitotic exit, integrating evidence

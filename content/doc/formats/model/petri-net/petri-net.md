@@ -6,7 +6,7 @@ date: 2019-07-24T00:00:00Z
 
 
 Regulatory graphs can be exported into discrete <!-- TODO: check nomenclature with claudine -->
-Petri net using the rewriting method described in {{<cite Chaouiya2006 />}}.
+Petri net using the rewriting method described in {{<cite Chaouiya2006 >}}.
 
 In the "File -> Export" menu, a "Petri Net" submenu permits to choose one of three supported Petri net representations: INA, PNML and APNN.
 Choosing any of these representations, opens a configuration dialog box which presents a list of options to be considered in the export.

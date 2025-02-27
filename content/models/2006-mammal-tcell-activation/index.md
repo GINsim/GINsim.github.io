@@ -20,7 +20,7 @@ components, is based on the work of Klamt et al..
 In this version of the model, an auto-regulation has been added on each input.
 
 
-This model has been studied in {{<cite "models/58" />}}, using novel algorithms
+This model has been studied in {{<cite "models/58" >}}, using novel algorithms
 for the analysis of feedback circuits and the determination of stable states.
 The stable state analysis shows seven stable states, listed bellow.
 Each stable state corresponds to a different input combination, except "111".

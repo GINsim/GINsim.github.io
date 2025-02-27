@@ -37,7 +37,7 @@ to catalyze the exchange of RAS bound GDP for GTP exchange, thereby activating
 RAS. RAS then promotes the activation of RAF, leading to DSOR1 activation, and
 eventually to Rolled (RL) activation. RL inactivates transcriptional co-
 repressors, such as Aop, and activates transcription factors, such as Pointed
-(PNT) ({{<cite "models/90" />}}).
+(PNT) ({{<cite "models/90" >}}).
 The transcriptional activator PNT is the major effector of the pathway.
 The protein Anterior open (AOP) is a constitutive repressor,
 which competes for PNT binding sites and can be removed from the nucleus and
@@ -52,7 +52,7 @@ recognizing activated, internalized receptor molecules and inducing their
 ubiquitination and degradation. CBL may also enhance the endocytosis of DER,
 following ligand binding. Modulation of DER signalling by CBL has been
 reported only in the follicle cells, which receive the Gurken signal from the
-oocyte ({{<cite "models/92" "models/93" "models/94" "models/95" />}}).
+oocyte ({{<cite "models/92" "models/93" "models/94" "models/95" >}}).
 
 Our logical model represents a cell receiving different
 combinations of ligands binding (SPI or Vein or both) and express/receive

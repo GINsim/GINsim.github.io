@@ -20,10 +20,10 @@ file_descriptions:
 
 
 This model is a direct transcription of the Boolean model published by
-Davidich & Bornholdt {{<cite "models/36" />}}. Dynamical rules are defined
+Davidich & Bornholdt {{<cite "models/36" >}}. Dynamical rules are defined
 on the basis of the network structure, as the sum of the positive and
 negative influences exerted on each nodes by its regulators.
-(Fig. 1, bottom left in {{<cite "models/30" />}}; see text for more details).
+(Fig. 1, bottom left in {{<cite "models/30" >}}; see text for more details).
 
 
 The model yields a main stable state, corresponding to G0/G1, that gathers
@@ -47,7 +47,7 @@ these authors have been eliminated.
 
 Activation of Start leads to SK inactivation and then to inhibition of Ste9
 and Rum 1, launching a to a sequence of state transitions matching that
-defined by Davidich & Bornholdt {{<cite "models/36" />}}, as well as available
+defined by Davidich & Bornholdt {{<cite "models/36" >}}, as well as available
 kinetic data (see Model Documentation for proper setting of the logical simulation).
 
 

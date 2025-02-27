@@ -34,6 +34,6 @@ condition. From these two initial states, we compute the resulting stable
 states recapitulating the activation or the non activation of the pathway,
 respectively.
 For more details on Dpp signalling pathway regulation see 
-{{<cite "models/166" "models/167" "models/168" "models/169" "models/171" />}}.
+{{<cite "models/166" "models/167" "models/168" "models/169" "models/171" >}}.
 
 

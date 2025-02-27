@@ -18,7 +18,7 @@ file_descriptions:
 
 
 This model is a direct transcription of the Boolean model published by Orlando
-et al. {{<cite "models/32" />}}. Synchronous simulation of this model yields a
+et al. {{<cite "models/32" >}}. Synchronous simulation of this model yields a
 cyclic attractor gathering most trajectories in the state transition graph,
 which is robust to parameter choice. However, asynchronous simulations all
 lead to a stable state with all variables OFF, whatever the parameter set

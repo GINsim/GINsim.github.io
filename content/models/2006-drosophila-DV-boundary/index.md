@@ -25,7 +25,7 @@ second and early third instars and between the mid- and late third instar
 control the expression of Wingless in these boundary cells.
 
 
-A preliminary model (Apterous-dependent network) was presented in {{<cite "models/14" />}},
+A preliminary model (Apterous-dependent network) was presented in {{<cite "models/14" >}},
 for the inter-cellular regulatory network activating Notch at the
 dorsal–ventral boundary in the wing imaginal disc of Drosophila. This model
 focussed on the cross-regulations between five genes (within and between two

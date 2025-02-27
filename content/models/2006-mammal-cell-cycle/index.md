@@ -15,7 +15,7 @@ file_descriptions:
 ---
 
 
-On the basis of a previous modelling study by Novak and Tyson {{<cite "models/2" />}}, we have
+On the basis of a previous modelling study by Novak and Tyson {{<cite "models/2" >}}, we have
 recently proposed a generic Boolean model of the core network controlling the
 restriction point of the mammalian cell cycle.
 

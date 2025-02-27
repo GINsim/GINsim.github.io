@@ -18,7 +18,7 @@ file_descriptions:
 ---
 
 
-Leaning on the differential model published by Chen et al. in 2004 {{<cite "models/22" />}},
+Leaning on the differential model published by Chen et al. in 2004 {{<cite "models/22" >}},
 we have delineated a discrete, logical model that reproduces the main qualitative
 results reported in this study, in terms of cycle viability or arrest in a
 particular stable state, for the wild type as well as over one hundred mutant

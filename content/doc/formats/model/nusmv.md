@@ -146,6 +146,6 @@ properties are added, as comments, at the end of each file.
 
 # Availability and further reading
 
-This export was implemented in GINsim 3.0. Further information is available in {{<cite Monteiro2012 />}}.
+This export was implemented in GINsim 3.0. Further information is available in {{<cite Monteiro2012 >}}.
 
 
