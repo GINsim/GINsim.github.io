@@ -86,10 +86,200 @@ logical parameters can not be defined and the component
 is considered to have an implicit self-activation.</p></div><h4 id=logical-functions>Logical functions</h4><p>The dynamical behaviour of a given compoenent can also be specified through the use of logical functions. These function are, for certain cases, a more convenient manner to define complex behaviours with many regulators.
 The definition of a logical function will generate the corresponding logical parameters automatically.</p><div class="notices warning">The automatically generated logical parameters may overlap with previously generated ones, automatically or manually.</div><figure><img src=logical-functions.png><figcaption><h4>Definition of a logical function for CI</h4><p>The logical function panel, showing the definition of one logical function at target 1.</p></figcaption></figure><p>To define a new logical function, select the <code>Down arrow</code>, specify a target value for the function, and select subsequent <code>Down arrow</code>.
 You can then press the <code>E</code> button to start editing the logical function (line color changes to green).
-The after insertion of the logical function press <code>Enter</code> to validate the expression and automatically create the corresponding logical parameters.</p><p>The parser for logical functions accepts the logical AND and OR with the symbols <code>&</code> and <code>|</code>, respectively. Additionally, you can add parentheses to prioritize logical operations.</p><dl class=biblio><dt>1</dt><dd><div class=ref><div class=type></div><a href=http://dx.doi.org/10.1016/j.tcs.2010.10.021><span class=title>Dynamically consistent reduction of logical regulatory graphs.</span></a>
+The after insertion of the logical function press <code>Enter</code> to validate the expression and automatically create the corresponding logical parameters.</p><p>The parser for logical functions accepts the logical AND and OR with the symbols <code>&</code> and <code>|</code>, respectively. Additionally, you can add parentheses to prioritize logical operations.</p><h4 id=annotations>Annotations</h4><p>Annotations can be attached to the different components of the regulatory graph:</p><ul><li>the graph itself,</li><li>components,</li><li>interactions.</li></ul><p>An annotation is composed of a textual comment and a numbered list of URIs,
+which can be opened using the <code>[i]</code> buttons on the left side.</p><p><figure><img src=annotation.png><figcaption><h4>The annotation panel</h4></figcaption></figure>The same <strong>Annotation panel</strong> is used for all elements
+supporting notes. This screenshot shows the graph annotations,
+available when the selection is empty.</p><p>Some shortcuts are provided for linking to entries in online databases.
+For exemple, <code>pubmed:19426782</code> will open <a href=http://www.ncbi.nlm.nih.gov/pubmed/19426782>http://www.ncbi.nlm.nih.gov/pubmed/19426782</a>.
+This relies on the <a href=http://identifiers.org>identifiers.org webservice</a>.</p><h3 id=lrg-modifications>LRG modifications</h3><h4 id=perturbations>Perturbations</h4><p>GINsim facilitates the definition of <strong>perturbations</strong> to define small changes to
+the regulation of components in regulatory graphs. A perturbation is a set of
+restrictions on the evolution of the activity level of one or several components.</p><h5 id=using-perturbations>Using Perturbations</h5><p>Some tools, notably Simulation and Stable state search, include a
+perturbation selection panel to apply a perturbation before running.</p><h5 id=definition-of-perturbations>Definition of Perturbations</h5><p>Perturbation can be defined using the following configuration panel.
+The panel appears upon activation of the <code>configure</code> button in the
+perturbation selection panel.</p><figure><img src=perturbations.png><figcaption><h4>Perturbation definition panel</h4><p>This edition panel considers two types of perturbations: <strong>simple perturbations</strong>
+which only affect the activity of a single component, and <strong>multiple perturbations</strong>
+which group together a list of simple perturbations.</p></figcaption></figure><h5 id=simple-perturbations>Simple Perturbations</h5><p>The perturbation definition panel appears on the top-right part of the dialog above
+when no simple perturbation is selected, or when clicking the <code>+</code> button.
+To create a perturbation, one must first select the affected component using the combobox.
+The restriction configuration panel will then appear, and the perturbation can be added using the <code>create</code> button.</p><p>The activity level of Boolean components can be fixed at <code>0</code> or at <code>1</code>,
+corresponding to the definition of a knockdown or ectopic activity respectively.
+Radio buttons allows to choose between these two possibilities.</p><p>Multi-valued components offer more possibilities, that can be configured using
+a range slider. Their activity level will be restricted in the selected range,
+or completely fixed if the range corresponds to a single value.</p><figure><img src=booleanperturbation.png><figcaption><h4>Perturbation creation panels</h4><p>TODO: add multivalued figure figures/mvaluedperturbation.png</p></figcaption></figure><p>This enables the definition of simple perturbations where the activity level of a component is restricted to the selected value(s).</p><div class="notices note">The definition of more subtle perturbations (conditional knockouts&mldr;)
+still requires the modifications of the logical parameters. We plan to
+add convenient means to define other types of perturbations in the future.</div><div class="notices warning">Simple perturbations can not be duplicated: when trying to add a
+simple perturbation that is already defined, nothing will happen.</div><h5 id=multiple-perturbations>Multiple Perturbations</h5><p>The bottom part of the panel lists multiple perturbations.
+Multiple perturbations can be created by selecting several
+simple perturbation and clicking the button which appears
+in the information panel.
+These perturbations can then be ordered and deleted using
+the buttons on the right side.</p><div class="notices warning">Deleting a simple perturbation will also remove all the
+multiple perturbations using it.</div><h4 id=booleanization>Booleanization</h4><p>GINsim enables the definition of multi-valued models where some components can
+have several increasing activity levels. However, some other analysis tools only
+consider Boolean (on/off) models.
+Model booleanization allows to convert multi-valued models into Boolean models
+by mapping each multivalued component on a group of Boolean variables. The
+resulting Boolean model generates the same dynamical behaviour as the original
+multivalued model.</p><p>bioLQM uses the mapping originaly proposed by van Ham, in which a component
+associated with the maximal value <code>m</code> will be mapped on <code>m</code> Boolean components.
+For example, a component taking the values <code>0`, </code>1<code>, </code>2<code>, and </code>3<code>will be encoded as</code>000<code>, </code>100<code>, </code>110<code>, and </code>111``.</p><p>The booleanization introduces many non-admissible states, which may require special
+care depending on the analysis applied on the booleanized model. This modifier makes
+sure that a simulation which start with an admissible state will not explore
+non-admissible states. It also prevents the introduction of non-admissible attractors
+by making sure that at least one admissible state is reachable from any non-admissible.</p><h5 id=usage>Usage</h5><p>Exporting a multivalued model to a format limited to Boolean components triggers an implicit Booleanization step.
+This booleanization step can also be performed explicitely using the booleanization tool in the <code>Actions</code> menu.</p><h5 id=availability-and-further-reading>Availability and further reading</h5><p>This method was implemented in GINsim 3.0.
+The backend is implemented in the
+<a href=http://colomoto.org/biolqm>bioLQM toolkit</a>,
+enabling its programmatic use.</p><h4 id=model-reversal>Model reversal</h4><p>The model reversal tool constructs a model in which the asynchronous successors of a state
+correspond to it&rsquo;s predecessors in the original model.</p><p>Multivalued models are supported through model booleanization,
+with some further transformations to prevent the introduction
+of non-admissible successor states.</p><h5 id=usage-1>Usage</h5><p>The model reversal tool is available in the <code>Actions</code> menu.</p><h5 id=availability-and-further-reading-1>Availability and further reading</h5><p>This method was implemented in GINsim 3.0.
+The backend is implemented in <code>BioLQM &lt;http://colomoto.org/biolqm></code>_,
+enabling its programmatic use.</p><h4 id=model-reduction>Model reduction</h4><p>The reduction of regulatory graphs allows to extract a &ldquo;simplified&rdquo;
+regulatory graph where a set of components are hidden. To keep a
+consistent dynamical behaviour, the logical rules associated with the
+targets of each hidden component account for the (indirect) effects
+of its regulators. This construction of reduced models preserves
+crucial dynamical properties of the original model, including stable
+states and more complex attractors. Furthermore, the relationship
+between the attractor configuration of the original model and those
+of reduced models is formally established.</p><h5 id=usage-2>Usage</h5><p>The reduction tool is available in the <code>Actions</code> menu. It open a
+configuration dialog in which the user can select the components
+that will be hidden. Several configuration strategies can be defined.
+Running the tool leads to the construction of a reduced model where
+the selected components have been removed.</p><p>Some reductions are not possible (an auto-regulated component can not
+be hidden using this method), if a reduction fails, GINsim will show
+an error message, listing the components that could not be hidden and
+proposing to continue with the result of the partial reduction.</p><p>Note that in some cases, the reduction may only be possible in a precise
+order (but the result does not not change with the order). When blocked,
+GINsim will try alternate orders for the remaining components, but not
+for the components which have already been succesfully reduced. In such
+cases, it may be necessary to provide the list of components to reduce in
+several steps to force the use of the correct order.</p><h5 id=output-stripping>Output stripping</h5><p>Outputs are components which do not regulate others. As such, these
+components have no impact on the attractors that will be reached in
+a simulation. These output components can be automatically removed
+when performing a simulation or some other actions on a model.
+To instruct GINsim to remove outputs, use the <code>strip outputs</code>
+checkbox next to the perturbation selection box.</p><h5 id=script-mode>Script mode</h5><p>The reduction tool can also be used in script mode. It then relies on a previously defined reduction strategy.</p><h5 id=availability-and-further-reading-2>Availability and further reading</h5><p>This method was implemented in GINsim 2.4 <span class=cite>[
+1
+]</span>
+.
+The support for output stripping was added in GINsim 3.0 <span class=cite>[
+3
+]</span>
+.</p><h3 id=model-dynamics-and-properties>Model dynamics and properties</h3><h4 id=state-transition-graphs>State transition graphs</h4><p>A State Transition Graph (STG) is a directed graph representing the
+dynamical behaviour of a <a href>Logical Regulatory Graph</a>.
+Nodes of this graph represent possible states of the model, assigning
+a value to each component. Arcs of the STG represent transitions from
+one state to another (i.e. change of value for one or several components).</p><p>For a more formal definition see <span class=cite>[
+1
+]</span>
+.</p><h4 id=initial-states>Initial states</h4><p>Named groups of states can be defined for the regulatory graph and used
+for example as starting point for the :doc:<code>simulation</code>.</p><figure><img src=initial_states.png><figcaption><h4>Initial state definition panel</h4><p>Each line in the table of intial states has a name and provides a value or a range for
+one or more components. Components which are not restricted are denoted by stars ("*")
+in the table.</p></figcaption></figure><p>Each row of the table corresponds to a set of states, where activity
+levels are specified for each component in the corresponding table cell.
+Each component can use all of its possible levels (denoted by a star ("<em>")),
+a single level or any subset of levels, separated by semicolons (;).
+Intervals can also be defined using a dash (&ldquo;0-2&rdquo; denotes all levels from 0 to 2, included).
+The special value &ldquo;m&rdquo; denotes the maximal level of the component.
+For example, &ldquo;0;2-4&rdquo; means &ldquo;0 or values between 2 and 4&rdquo; and is identical to &ldquo;0;2;3;4&rdquo;.
+&ldquo;1-m&rdquo; means &ldquo;any activity (from 1 to the max)&rdquo;.
+The default, denoted by a &ldquo;</em>&rdquo;, covers all possible values (it is thus the same as &ldquo;0-m&rdquo;).</p><p>Initial states can be reordered, deleted and duplicated using the buttons on top of the table.</p><div class="notices tip">A value can be entered in many cells at once using multiple selection.</div><h4 id=simulation>Simulation</h4><p>Once a regulatory model has been defined, a simulation can be launched
+through the <code>Run Simulation</code> option of the <code>Action</code> menu.
+This option triggers a dialog box allowing to choose simulation settings.</p><figure><img src=simulation_config.png><figcaption><h4>Simulation settings</h4><p>This dialog box allows to configure and run the simulation.</p></figcaption></figure><p>This dialog box allows to define simulation settings.
+The top part of the dialog box enables the definition of transformations to apply to
+the regulatory graph before the simulation.
+The left part of the dialog box enables to manage (select, add or remove) simulations settings.
+The right part of the dialog box enables the definition of the current simulation setting.</p><h5 id=configure-the-simulation>Configure the simulation</h5><p>The top part of the simulation dialog enables the selection of a perturbation
+to be applied to the regulatory graph before running the simulation. The associated <code>Configure</code>
+button will show the :doc:<code>perturbation definition panel &lt;/modify/perturbation></code>.</p><p>The bottom part of the dialog box is dedicated to the definition of
+:doc:<code>initial_states</code> of the simulation.
+Each row defines a single state or a group of states, and the checkboxes allow
+to select the states used for the simulation. If no row is selected, all possible
+states are considered, generating a complete state transition graph.</p><p>In a given state of the system, one or several genes are called to update their
+values. When several changes are pending, different construction strategies lead to
+different successor states and thus to different state transition graphs.
+GINsim implements the classical synchronous and asynchronous
+updating, and enables the definition of ad hoc strategies using priority classes.
+These updating modes are described in detail in their documentation.</p><p>Simulation settings are saved and restored as associated data in ZGINML files.</p><h5 id=running-simulations-with-perturbation>Running simulations with perturbation</h5><figure><img src=blocking.png><figcaption><h4>Perturbation simulation result</h4><p>Result of an asynchronous simulation, where the expression level for
+Cro has been blocked at 1.
+The state transition graph is the same as the original asynchronous one,
+but all transitions where Cro leaves this value have been suppressed.
+This state transition graph is now composed of two disconnected parts,
+with a new stable state.</p></figcaption></figure><p>The &ldquo;strip output&rdquo; checkbox next to the perturbation selector enables to
+activate automatic removal of all output components from the simulation.
+Their value can be retrieved on demand when browsing the resulting
+State Transition Graph. See the reduction section for more details.</p><p>The &ldquo;Construction Strategy&rdquo; panel enables the selection of the type of graph computed
+by the simulation (the classical State Transition Graph,
+or the more compact Hierarchical Transition Graph).</p><p>State Transition Graphs can be computed breadth-first or depth-first.
+Both options lead to the same result, unless the simulation is interrupted by
+a size limit (see below).</p><h5 id=depth-and-size-limitations>Depth and size limitations</h5><p>An option is also offered to limit the search depth and/or the total number of
+states generated in a simulation.</p><div class="notices warning">When considering several initial states (or the full STG), some of
+them can be reached while running the simulation from an other state.
+In this case, no new search will be triggered for them and the depth
+counter will not be reinitialised (i.e. the depth limit for these
+initial states will be shorter).</div><figure><img src=stg_depth_limit.png><figcaption><h4>Limitation of the depth in the case of a depth first construction</h4><p>State transition graph with all reachable states from the state &ldquo;0111&rdquo;.
+The same simulation with a depth limit set to 2 keeps only the initial state
+and the nodes at a distance of two or less (i.e. the six white states).</p></figcaption></figure><p>The limit on the total number of states apply to all simulation modes. Under the
+asynchronous assumption, this limit has slightly different effects on depth first
+and breadth first search.</p><figure><img src=stg_size_limit.png></figure><h5 id=running-the-simulation>Running the simulation</h5><p>While the simulation is running, the bottom left corner indicates
+the size of the generated state transition graph. The simulation
+can be interrupted, using the <code>Cancel</code> button, without loosing
+the calculated part of the state transition graph.</p><p>At the end of a simulation, several options are available to save,
+display or analyse the resulting state transition graph
+(see ).</p><h4 id=updating-modes>Updating modes</h4><p>In a given state of the system, one or several genes are called to update their
+values. When several changes are pending, different construction strategies lead to
+different successor states and thus to different state transition graphs.</p><h5 id=synchronous-mode>Synchronous mode</h5><p>In this mode, all updating calls are performed simultaneously.
+This simplification may generate artefacts in the state transition graph.</p><p>Each state has then at most one successor state, which encompasses fully
+updated gene levels.</p><h5 id=asynchronous-mode>Asynchronous mode</h5><p>In this mode, all changes are performed independantly. It will generate a
+state transition graph taking into account any possible trajectories. This mode
+is chosen by default.</p><p>A given state may have several successor states, each of them corresponding to a
+single updating of one gene level.</p><p>In this mode, the graph transition state can be generated &ldquo;depth first&rdquo; or
+&ldquo;breadth first&rdquo;. The same state transition graph will be built, except if
+interrupted (for illustration, see :doc:<code>depth and size limitation &lt;simulation></code>).</p><figure><img src=a-sync.png><figcaption><h4>Construction strategy: synchronous versus asynchronous</h4><p>Samples of simulation results for the lambda4 model, applying
+asynchronous and synchronous strategies to the same initial states (all
+states where C1=0 and Cro>0). Dotted arcs denote multiple,
+simultaneous transitions.</p></figcaption></figure><h5 id=priority-classes>Priority classes</h5><p>This strategy allows the user to group components into different classes, and
+to assign a priority level to each of these classes. In case of concurrent
+transition calls, GINsim first updates the gene(s) belonging to the class with
+the highest ranking. For each class, the user can further specify the desired
+updating assumption, which then determines the treatment of concurrent
+transition calls inside that class. When several classes have the same ranking,
+concurrent transitions are treated under an asynchronous assumption (no
+priority).</p><p>The creation of a new configuration, using the leftmost &ldquo;+&rdquo; button, starts wth some predefined settings:</p><ul><li>The definition of a single class contaning all components, equivalent to the (a)synchronous updating.</li><li>The definition of a fully-ordered updating using a separate class for each component.</li><li>The separation of the increasing and decreasing transition of each components for more fine-grained configurations.</li></ul><p>The left part of the configuration dialog box shows a list of priority classes
+(see figure below). The name of a class
+can be edited and a checkbox allows to change its internal mode from
+asynchronous (unchecked) to synchronous (checked). Buttons enable to add (+),
+delete (X), order (using the arrows) and group/ungroup priority classes.</p><p>The central column lists transitions that belong to the currently selected
+class, while the column on the right displays all other transitions (i.e. belonging to
+other classes). To add transitions to the selected class, choose them in the
+right list an click on the &ldquo;&lt;&lt;&rdquo; button. The <code>>></code> button removes the
+transition selected in the central list from the current class and add them to
+the next class in the list (to the first class when the last one is selected).</p><p>When multiple classes are selected, they can be assigned the same rank.
+Multiple classes with the same rank are treated asynchronously: if all classes
+are asynchronous, it is thus equivalent to a single larger class, but it allows
+the definition of asynchronous update of multiple synchronous classes as well.</p><figure><img src=priorityClass.png><figcaption><h4>Definition of Priority classes</h4></figcaption></figure><figure><img src=dyn_pclass.png><figcaption><h4>Priority Class: example result</h4><p>Example of simulation by priority classes. Two priority classes
+have been created. The highest ranked one is synchronous and
+contains C1, C2 and Cro. The other class contains only N. The
+resulting state transition graph is splited into two parts: N
+expressed <em>versus</em> N not expressed.</p></figcaption></figure><h4 id=hierarchical-transition-graphs>Hierarchical Transition Graphs</h4><p>The Hierarchical Transition Graphs (HTG) is an acyclic graph, which provides
+a compact representation of the State Transition Graph. It improves on
+the <a href=TODO/../tools/scc>graph of the Strongly Connected Components</a> by merging
+linear chains of states (in addition to cycles) into single nodes.</p><p>More information on this graph is available in
+<span class=cite>[
+4
+]</span>
+.</p><h5 id=running-the-simulation-1>Running the simulation</h5><p>TODO</p><dl class=biblio><dt>1</dt><dd><div class=ref><div class=type></div><a href=http://dx.doi.org/10.1016/j.tcs.2010.10.021><span class=title>Dynamically consistent reduction of logical regulatory graphs.</span></a>
 <span class=authors>A. Naldi, E. Remy, D. Thieffry, C. Chaouiya.</span>
 <span class=journal>Theoretical Computer Science</span>
 <span class=position>412:2207--2218</span><span class=year> (2011)</span>.</div></dd><dt>2</dt><dd><div class=ref><div class=type></div><a href=http://dx.doi.org/10.1093/bib/bbm028><span class=title>Dynamical roles of biological regulatory circuits.</span></a>
 <span class=authors>D. Thieffry.</span>
 <span class=journal>Briefings in Bioinformatics</span>
-<span class=position>8:220--225</span><span class=year> (2007)</span>.</div></dd></dl></div></section><section class=children><div class=content></div></section></body></html>
+<span class=position>8:220--225</span><span class=year> (2007)</span>.</div></dd><dt>3</dt><dd><div class=ref><div class=type></div><a href=http://dx.doi.org/10.1007/978-3-642-33636-2_17><span class=title>Efficient Handling of Large Signalling-Regulatory Networks by Focusing on Their Core Control.</span></a>
+<span class=authors>A. Naldi, P. Monteiro, C. Chaouiya.</span>
+<span class=journal>Computational Methods in Systems Biology</span>
+<span class=position>:288--306</span><span class=year> (2012)</span>.</div></dd><dt>4</dt><dd><div class=ref><div class=type></div><a href=http://dx.doi.org/10.1063/1.4809783><span class=title>Dynamical modeling and analysis of large cellular regulatory networks.</span></a>
+<span class=authors>D. Bérenguier, C. Chaouiya, P. Monteiro, A. Naldi, E. Remy, D. Thieffry, L. Tichit.</span>
+<span class=journal>Chaos</span>
+<span class=position>23:025114</span><span class=year> (2013)</span>.</div></dd></dl></div></section><section class=children><div class=content></div></section></body></html>
