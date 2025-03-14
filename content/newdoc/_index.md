@@ -93,3 +93,17 @@ When running GINsim on the command line, it is possible to provide a file to ope
 ask for a new model. In this case, the welcome dialog will not be shown. See the [run options](#install-and-run-ginsim).
 {{</notice>}}
 
+
+### Logical Regulatory Graph
+
+#### Definition
+Informally, a Logical Regulatory Graph (LRG) is a directed labelled multigraph 
+representing interactions (the edges) between genes (the nodes).               
+Each interaction involves two genes, the source and the target, becoming active
+whenever its source reaches a given level.                                     
+                                                                               
+The activation level of each component is defined by a regulatory function     
+comprising parameters relative to all regulators of this component.            
+                                                                               
+For a more formal definition see {{< cite Naldi2011 >}} or {{< cite Thieffry2007 >}}.
+
