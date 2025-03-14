@@ -547,7 +547,7 @@ The support for output stripping was added in GINsim 3.0 {{<cite Naldi2012 >}}.
 
 
 A State Transition Graph (STG) is a directed graph representing the
-dynamical behaviour of a [Logical Regulatory Graph]({{< relref "../lrg/_index.md" >}}).
+dynamical behaviour of a [Logical Regulatory Graph]({{< ref "#lrg" >}}).
 Nodes of this graph represent possible states of the model, assigning
 a value to each component. Arcs of the STG represent transitions from
 one state to another (i.e. change of value for one or several components).
