@@ -1,5 +1,9 @@
 <!doctype html><html><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="ie=edge"><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><title>Documentation &#183; GINsim</title><meta name=description content><link rel=stylesheet href=https://ginsim.github.io/style.main.css><link rel=alternate type=application/rss+xml href=https://ginsim.github.io/newdoc/index.xml title=GINsim></head><body><header><div class=title><a href=https://ginsim.github.io/><img src=https://ginsim.github.io/ginsim.svg class=logo alt=GINsim></a></div><nav><ul><li><a href=/>Home</a></li><li><a href=/doc/>Documentation</a></li><li><a href=/models/>Models</a></li></ul></nav></header><section><div class=content><h1>Documentation</h1><p>GINsim (Gene Interaction Network simulation) is a computer tool for the modeling and simulation of genetic regulatory networks.</p><p>Recent developments in functional genomics have generated large amounts of data on gene expression and on the underlying regulatory mechanisms. This has resulted in the progressive mapping of complex regulatory networks. As these networks usually include numerous intertwined feedback circuits, gaining an understanding of their spatio-temporal behaviour defies the intuition of the biologists. In this respect, formal modelling and simulation tools become a necessary complement to experimental tools. As precise information on molecular mechanisms and the value of kinetic parameters are currently difficult to establish, qualitative methods offer a highly attractive approach to model and analyse essential properties of genetic regulatory networks.
-General information on modelling and analysis of genetic regulatory networks can be found in {{ }}.</p><p>GINsim consists of a simulator of qualitative models of genetic regulatory networks based on a discrete, logical formalism.</p><p>GINsim allows the user to specify a model of a genetic regulatory network in term of asynchronous, multivalued logical functions, and to simulate and/or analyse its qualitative dynamical behaviour {{ }}.</p><h3 id=install-and-run-ginsim>Install and Run GINsim</h3><h4 id=availability-and-requirements>Availability and Requirements</h4><p>GINsim 3.0 is freely available without guarantees.
+General information on modelling and analysis of genetic regulatory networks can be found in <span class=cite>[1]</span>
+.</p><p>GINsim consists of a simulator of qualitative models of genetic regulatory networks based on a discrete, logical formalism.</p><p>GINsim allows the user to specify a model of a genetic regulatory network in term of asynchronous, multivalued logical functions, and to simulate and/or analyse its qualitative dynamical behaviour <span class=cite>[
+2
+]</span>
+.</p><hr><h3 id=install-and-run-ginsim>Install and Run GINsim</h3><h4 id=availability-and-requirements>Availability and Requirements</h4><p>GINsim 3.0 is freely available without guarantees.
 Please contact us for training, other support or dedicated development.
 The GINsim website (<a href=https://ginsim.github.io>https://ginsim.github.io</a>)[https://ginsim.github.io] provides the latest official version of the software, documentation, as well as a model library.</p><p>GINsim requires Java 8.
 You can obtain Java for Linux, Windows, Mac OSX, and Solaris at java.com.
@@ -11,16 +15,18 @@ GINsim 2.9.10 is the last version supporting Java 6, and has the same features a
 * -s: run GINsim in script mode
 * -lm : Let the bioLQM library parse the command line arguments.
 * &ndash;dev : enables some experimental features still in under development.
-* -py : launch a server for the py4j python gateway (used for scripting in the Python Notebook).</p><p>The JAVA virtual machine provide many options, in particular GINsim can benefit from extending the amount of memory available, with the <code>-Xmx</code> option. For example, one can launch GINsim with 1000MB of memory using <code>java -Xmm1000M -jar GINsim-#version.jar</code>.</p><h3 id=contact>Contact</h3><p>Please send your comments, questions or suggestions to the public user group GINsim Users at <a href=mailto:ginsim-users@googlegroups.com>ginsim-users@googlegroups.com</a>, describing your problem and steps to reproduce it.
+* -py : launch a server for the py4j python gateway (used for scripting in the Python Notebook).</p><p>The JAVA virtual machine provide many options, in particular GINsim can benefit from extending the amount of memory available, with the <code>-Xmx</code> option. For example, one can launch GINsim with 1000MB of memory using <code>java -Xmm1000M -jar GINsim-#version.jar</code>.</p><hr><h3 id=contact>Contact</h3><p>Please send your comments, questions or suggestions to the public user group GINsim Users at <a href=mailto:ginsim-users@googlegroups.com>ginsim-users@googlegroups.com</a>, describing your problem and steps to reproduce it.
 As some problems are difficult to reproduce, you may be asked to provide log traces (using the GINsim/support/export log traces menu entry) and to launch GINsim from the command line to catch additional error messages.</p><p>Specific questions can also be adressed to the GINsim team at <a href=mailto:support@ginsim.org>support@ginsim.org</a>.
-o</p><h3 id=common-quirks>Common quirks</h3><h4 id=input-nodes>Input nodes</h4><p>In GINsim, some nodes can be defined as input nodes using a checkbox in the node property panel. These input nodes can not have any incoming interaction or dynamical rule as they have an implicit rule allowing them to always maintain their current activity level. Before setting a node as input, the modeller must thus remove all existing regulator or rule. Likewise, the input status must be removed before adding any new regulator or rule. To delete a logical formula, select it (without editing it) and use the delete key or the contextual menu.</p><h4 id=unexpected-dynamical-results>Unexpected dynamical results</h4><p>If you obtain unexpected dynamical results (stable states or simulations results), verify successively the structure of the regulatory graph, the maximal activity levels of all components, the thresholds of interactions coming out of multi-valued components and then the dynamical rules. GINsim further provides a tool to compute interaction functionality, which facilitates the identification of inconsistencies between the structure of the regulatory graph and the dynamical rules.</p><h4 id=gui-refresh-issues>GUI refresh issues</h4><p>Some refreshing problems may appear after long or complex modeling sessions, saving and restarting GINsim can solve some issues.</p><h3 id=gui>GUI</h3><h4 id=welcome-dialog>Welcome dialog</h4><p>Upon launch, GINsim will present the <code>Welcome</code> dialog box below.</p><figure><img src=welcome.png></figure><p>The <code>New model</code> action will create a new <a href=#regulatory-graph>Regulatory Graph</a>,<br>while the <code>Open</code> and <code>Import</code> buttons allow to select an existing file<br>in a <a href=#formats>supported format</a>.
+o</p><hr><h3 id=common-quirks>Common quirks</h3><h4 id=input-nodes>Input nodes</h4><p>In GINsim, some nodes can be defined as input nodes using a checkbox in the node property panel. These input nodes can not have any incoming interaction or dynamical rule as they have an implicit rule allowing them to always maintain their current activity level. Before setting a node as input, the modeller must thus remove all existing regulator or rule. Likewise, the input status must be removed before adding any new regulator or rule. To delete a logical formula, select it (without editing it) and use the delete key or the contextual menu.</p><h4 id=unexpected-dynamical-results>Unexpected dynamical results</h4><p>If you obtain unexpected dynamical results (stable states or simulations results), verify successively the structure of the regulatory graph, the maximal activity levels of all components, the thresholds of interactions coming out of multi-valued components and then the dynamical rules. GINsim further provides a tool to compute interaction functionality, which facilitates the identification of inconsistencies between the structure of the regulatory graph and the dynamical rules.</p><h4 id=gui-refresh-issues>GUI refresh issues</h4><p>Some refreshing problems may appear after long or complex modeling sessions, saving and restarting GINsim can solve some issues.</p><hr><h3 id=gui>GUI</h3><h4 id=welcome-dialog>Welcome dialog</h4><p>Upon launch, GINsim will present the <code>Welcome</code> dialog box below.</p><figure><img src=welcome.png></figure><p>The <code>New model</code> action will create a new <a href=#regulatory-graph>Regulatory Graph</a>,<br>while the <code>Open</code> and <code>Import</code> buttons allow to select an existing file<br>in a <a href=#formats>supported format</a>.
 The <code>Recent files</code> section allows the quick selection of a previously opened file.
 For all these actions, the selected graph will be opened in a <a href=#main-window>Main Window</a>.</p><p>Closing this dialog or activating the <code>quit</code> button will stop GINsim.</p><div class=notices>This dialog is also shown after closing the last window (<code>Ctrl/Cmd-W</code>). Use the <code>Quit</code> (<code>Ctrl/Cmd-Q</code>) action to skip it.</div><div class=notices>When running GINsim on the command line, it is possible to provide a file to open or to
-ask for a new model. In this case, the welcome dialog will not be shown. See the <a href=#install-and-run-ginsim>run options</a>.</div><h3 id=logical-regulatory-graph>Logical Regulatory Graph</h3><h4 id=definition>Definition</h4><p>Informally, a Logical Regulatory Graph (LRG) is a directed labelled multigraph
+ask for a new model. In this case, the welcome dialog will not be shown. See the <a href=#install-and-run-ginsim>run options</a>.</div><hr><h3 id=logical-regulatory-graph>Logical Regulatory Graph</h3><h4 id=definition>Definition</h4><p>Informally, a Logical Regulatory Graph (LRG) is a directed labelled multigraph
 representing interactions (the edges) between genes (the nodes).<br>Each interaction involves two genes, the source and the target, becoming active
-whenever its source reaches a given level.</p><p>The activation level of each component is defined by a regulatory function<br>comprising parameters relative to all regulators of this component.</p><p>For a more formal definition see <span class=cite>[1]</span>
+whenever its source reaches a given level.</p><p>The activation level of each component is defined by a regulatory function<br>comprising parameters relative to all regulators of this component.</p><p>For a more formal definition see <span class=cite>[
+3
+]</span>
 or <span class=cite>[
-2
+4
 ]</span>
 .</p><h4 id=structure-of-the-lrg>Structure of the LRG</h4><p>Regulatory graphs can be interactively modified: components and interactions
 can be added, edited and removed. The interaction with the graph view is
@@ -65,7 +71,7 @@ annoyances than real help. Invalid logical parameters are highlighted to ease th
 detection. Keep in mind that a change in the activation-range of one of the
 interactions can turn a valid logical parameter into an ill-defined one. Parameters
 involving interactions from the same source with disjoint activity ranges
-are also ill-defined and thus highlighted for correction.</p><h3 id=dynamica-rules>Dynamica rules</h3><p>The dynamical behaviour of regulatory components depends on their regulators,
+are also ill-defined and thus highlighted for correction.</p><hr><h3 id=dynamica-rules>Dynamica rules</h3><p>The dynamical behaviour of regulatory components depends on their regulators,
 but the precise rules governing them must be explicitly defined.
 In GINsim, these rules can be defined either as <strong>logical parameters</strong>, or
 as <strong>logical functions</strong>. These two alternatives are described below.</p><h4 id=logical-parameters>Logical parameters</h4><p>A logical parameter corresponds to a single entry (line) in the truthtable of a component.
@@ -91,7 +97,7 @@ which can be opened using the <code>[i]</code> buttons on the left side.</p><p><
 supporting notes. This screenshot shows the graph annotations,
 available when the selection is empty.</p><p>Some shortcuts are provided for linking to entries in online databases.
 For exemple, <code>pubmed:19426782</code> will open <a href=http://www.ncbi.nlm.nih.gov/pubmed/19426782>http://www.ncbi.nlm.nih.gov/pubmed/19426782</a>.
-This relies on the <a href=http://identifiers.org>identifiers.org webservice</a>.</p><h3 id=lrg-modifications>LRG modifications</h3><h4 id=perturbations>Perturbations</h4><p>GINsim facilitates the definition of <strong>perturbations</strong> to define small changes to
+This relies on the <a href=http://identifiers.org>identifiers.org webservice</a>.</p><hr><h3 id=lrg-modifications>LRG modifications</h3><h4 id=perturbations>Perturbations</h4><p>GINsim facilitates the definition of <strong>perturbations</strong> to define small changes to
 the regulation of components in regulatory graphs. A perturbation is a set of
 restrictions on the evolution of the activity level of one or several components.</p><h5 id=using-perturbations>Using Perturbations</h5><p>Some tools, notably Simulation and Stable state search, include a
 perturbation selection panel to apply a perturbation before running.</p><h5 id=definition-of-perturbations>Definition of Perturbations</h5><p>Perturbation can be defined using the following configuration panel.
@@ -161,18 +167,18 @@ a simulation. These output components can be automatically removed
 when performing a simulation or some other actions on a model.
 To instruct GINsim to remove outputs, use the <code>strip outputs</code>
 checkbox next to the perturbation selection box.</p><h5 id=script-mode>Script mode</h5><p>The reduction tool can also be used in script mode. It then relies on a previously defined reduction strategy.</p><h5 id=availability-and-further-reading-2>Availability and further reading</h5><p>This method was implemented in GINsim 2.4 <span class=cite>[
-1
+3
 ]</span>
 .
 The support for output stripping was added in GINsim 3.0 <span class=cite>[
-3
+5
 ]</span>
-.</p><h3 id=model-dynamics-and-properties>Model dynamics and properties</h3><h4 id=state-transition-graphs>State transition graphs</h4><p>A State Transition Graph (STG) is a directed graph representing the
+.</p><hr><h3 id=model-dynamics-and-properties>Model dynamics and properties</h3><h4 id=state-transition-graphs>State transition graphs</h4><p>A State Transition Graph (STG) is a directed graph representing the
 dynamical behaviour of a <a href>Logical Regulatory Graph</a>.
 Nodes of this graph represent possible states of the model, assigning
 a value to each component. Arcs of the STG represent transitions from
 one state to another (i.e. change of value for one or several components).</p><p>For a more formal definition see <span class=cite>[
-1
+3
 ]</span>
 .</p><h4 id=initial-states>Initial states</h4><p>Named groups of states can be defined for the regulatory graph and used
 for example as starting point for the :doc:<code>simulation</code>.</p><figure><img src=initial_states.png><figcaption><h4>Initial state definition panel</h4><p>Each line in the table of intial states has a name and provides a value or a range for
@@ -268,18 +274,221 @@ a compact representation of the State Transition Graph. It improves on
 the <a href=TODO/../tools/scc>graph of the Strongly Connected Components</a> by merging
 linear chains of states (in addition to cycles) into single nodes.</p><p>More information on this graph is available in
 <span class=cite>[
+6
+]</span>
+.</p><hr><h3 id=analyses--functionalities>Analyses / Functionalities</h3><h4 id=strongly-connected-components-graph>Strongly Connected Components graph</h4><p>A <a href=http://en.wikipedia.org/wiki/Strongly_connected_component>Strongly Connected Component (SCC)</a>
+in a graph is a maximal subgraph such that all its components are strongly
+connected. Each SCC can either a single node or a set of intertwined cycles
+of the original graph.
+The SCC graph is a derived graph in which each node represent one of the SCC
+of the original graph. This acyclic graph provides a simplified representation
+of the organisation of the original graph. This graph is thus often much more compact.</p><p>In GINsim, the graph of the Strongly Connected Components (SCC graph) is often
+used to provide a better understanding of the organisation of the attractors in
+a <a href=/doc/simulation/transition_graphs>State Transition Graph</a>.</p><h5 id=construct-an-scc-graph>Construct an SCC graph</h5><p>The computation of the SCC graph can be launched through the <code>Construct SCC graph</code>
+option of the <code>Tools</code> menu.
+Note that GINsim also provides the <a href=/doc/simulation/transition_graphs>Hierarchical Transition Graph</a>
+dedicated to this problem.</p><figure><img src=scc.png><figcaption><h4>Strongly Connected Components graph</h4><p>Example of Strongly Connected Component Graph (bottom right) and
+the corresponding state transition graph (top left).
+The <code>Selection Attribute</code> tab in the bottom panel shows
+the content of the selected SCC (i.e. the list of nodes
+in the original graph).</p></figcaption></figure><p>Note that while the <code>Construct SCC Graph</code> tool is often applied to
+<a href=/doc/simulation/transition_graphs>State Transition Graph</a>, it can
+also be applied to Regulatory Graphs (or more formally to any type of graphs).</p><h5 id=extract-from-scc-graph>Extract from SCC graph</h5><p>After computing the SCC graph, another tool enables to recover the subgraph
+of the original graph corresponding to the selected nodes in the SCC graph.</p><p>To use it, select some nodes in a SCC graph and run the <code>Extract subgraph</code>
+action from the <code>Graph</code> menu.</p><p>This tool will open the original graph, and apply a filter to only keep the
+selected parts. To work properly it thus requires that the original graph
+had been saved to a file, and that the association between the SCC graph
+and the original graph (maintained by GINsim transparently) is still valid.</p><h4 id=stable-state-search>Stable state search</h4><p>This tool allows the analytic (i.e. without running a simulation) determination
+of stable states of the model. All stable states are determined, regardless of
+their reachability <span class=cite>[
+7
+]</span>
+.</p><p>This tool allows the analytic (i.e. without running a simulation) determination of
+trapspaces of the model. These trapspaces contain the stable states, as well as an
+approximation for complex attractors.</p><h5 id=usage-3>Usage</h5><p>The stable state identification tool is available from the <code>Compute stable states</code>
+option of the <code>Tools</code> menu.
+The stable states dialog box allows to run the analysis after the optional
+selection of a perturbation. The result is shown in a table in the same dialog box, allowing
+to launch a novel analysis for another perturbation. A &ldquo;<em>&rdquo; in the table denotes that
+each of the values of this component gives rise to a stable state (or several if another
+&ldquo;</em>&rdquo; appears in the same row).</p><figure><img src=fixedpoints.png></figure><h5 id=availability>Availability</h5><p>Stable state search was first implemented in GINsim 2.3.
+The implementation is now part of the
+<a href=https://colomoto.org/biolqm>bioLQM toolkit</a>.</p><h4 id=trapspace-search>Trapspace search</h4><p>This tool allows the analytic (i.e. without running a simulation) determination of
+trapspaces of the model. These trapspaces contain the stable states, as well as an
+approximation for complex attractors <span class=cite>[
+8
+]</span>
+.</p><h5 id=usage-4>Usage</h5><p>This tool is available from the <code>Trapspace identification</code> option of the <code>Tools</code> menu.</p><figure><img src=trapspaces.png></figure><h5 id=availability-1>Availability</h5><p>Trapspace identification was first implemented in GINsim 3.0, relying on
+the <a href=http://www.colomoto.org/biolqm>bioLQM toolkit</a>.</p><h4 id=circuit-analysis>Circuit analysis</h4><p>Regulatory circuits play crucial roles in the dynamical behaviour of a system.
+Indeed, positive circuits are required for the existence of several attractors,
+whereas negative circuits may generate cyclic attractors <span class=cite>[
 4
 ]</span>
-.</p><h5 id=running-the-simulation-1>Running the simulation</h5><p>TODO</p><dl class=biblio><dt>1</dt><dd><div class=ref><div class=type></div><a href=http://dx.doi.org/10.1016/j.tcs.2010.10.021><span class=title>Dynamically consistent reduction of logical regulatory graphs.</span></a>
+.</p><p>Many regulatory graphs currently under study contain a large number of circuits,
+but a relatively small number of them often plays a more important role.
+In <span class=cite>[
+7
+]</span>
+, we describe a method to compute a <strong>functionality context</strong>
+for all circuits, to determine which circuits are more likely to affect the
+attractor configuration of the system.</p><p>Note that the functionality contexts identified here give the conditions on the
+immediate regulators of the circuits under which it is fully effective. These
+conditions may be impossible to maintain according to the dynamical rules of
+the model, especially in the case of model perturbations.</p><h5 id=usage-5>Usage</h5><p>The <code>Circuits Functionality</code> entry of the <code>Action</code> menu opens the circuit
+analysis dialog. This dialog provides a interface to lookup all circuits in the
+regulatory graph or a subset of circuits matching some filtering rules (length,
+involved components).</p><figure><img src=circuitsConfig.png><figcaption><h4>Select regulatory circuits for analysis</h4><p>A first dialog enables to select which circuits will be analysed, by specifying
+constraints on the length of the circuits or on the involved actors. By default all
+circuits are considered.</p></figcaption></figure><p>The dialog then allows to analyse the selected circuits, it will then show the
+circuit for which a <strong>functionality context</strong> was found. The analysis can be
+repeated for various perturbations.</p><figure><img src=circuits.png><figcaption><h4>Result of the functionality analysis</h4><p>When the analysis is completed, the dialog classifies the
+selected circuits, according to their computed sign.
+When a circuit is selected, its functionality context is
+shown at the bottom of the dialog box.</p></figcaption></figure><h5 id=availability-2>Availability</h5><p>Circuit analysis was implemented in GINsim 2.3</p><hr><h3 id=graph-layouts>Graph layouts</h3><p>The &ldquo;layout submenu of the &ldquo;view&rdquo; menu provides some tools to place graph components automatically.
+These layout tools are mostly useful for graphs computed by GINsim, such as state transition graphs.
+Note that GINsim only offers very simple layout tools. For complex cases,
+dedicated tools such as graphviz or cytoscape can provide much better results.
+The following layouts are available:</p><h4 id=level-layout>Level layout</h4><p>Nodes are placed on rows, nodes without any incoming
+arc being placed at the top and nodes without any outgoing arc at the bottom.</p><figure><img src=levelLayout.png><figcaption><h4>Level layout example</h4></figcaption></figure><h4 id=ring-layout>Ring layout</h4><p>Nodes are placed on three concentric rings, source
+nodes at the center, terminal nodes at the periphery.</p><figure><img src=ringLayout.png><figcaption><h4>Ring layout example</h4></figcaption></figure><h4 id=stg-layouts>STG layouts</h4><p>State transition graphs have additional layout methods which place
+components on a grid based on the activity levels.</p><hr><h3 id=formats-importsexports>Formats (imports/exports)</h3><h4 id=ginsim-format>GINsim format</h4><p>The Z-GINML format (also denoted <strong>extended save</strong>), is a zip archive containing a ginml file along with companion files to store associated data, especially initial states, perturbations, and simulation parameters. More generally, each plugin can provide a parser and file writer to store its associated data in a Z-GINML file.</p><p>The <strong>GINML</strong> format is an extension of the <a href=http://www.gupro.de/GXL>GXL (Graph eXchange Language)</a> format. This extension comprises new attributes and subelements for elements node and edge, and an additional element called parameter.</p><p>element node
+a new attribute basevalue corresponds to the &ldquo;based level of expression&rdquo; of the corresponding component (default value 0). In other words, it is the value of the logical parameter corresponding to the case where none of the incoming interactions if functional. New subelements within a node:</p><p>a list of elements parameter corresponding to the user defined logical parameters for this node</p><p>an element intdefining the maximum level of expression of this node</p><p>element edge
+a new attribute sign which gives the sign of the interaction (positive for an activation, negative for a repression, otherwise unknown) one or two subelements int (level or interval letting the interaction functional) element parameter, is empty and has two attributes : attribute idActiveInteractions gives the &ldquo;name&rdquo; of the parameter. It is the list of the functional interactions exerted upon the considered node, attribute val is the value of the logical parameter.</p><p>See the GINML&rsquo;s dtd or in pdf format.</p><p>See also the GINML description of the gap-gene network case A, or in pdf format.</p><p>(TODO: described stored associated data)</p><p>Some companion data can be associated to the graphs to store the configuration of various tools.
+Some of this extra data can be shared between several tools.
+This extra data is stored in its own entry inside ZGINML files.</p><h4 id=export-graph-view>Export graph view</h4><p>The graph view can be exported as an image in the PNG format.
+This export considers only the visual appareance of the graph,
+and can thus be applied to all types of graph in GINsim.</p><p>The view can also be exported in the
+<a href=http://www.w3.org/Graphics/SVG/>Scalable Vector Graphic (SVG)</a> format.
+Tools like <a href=http://inkscape.org>Inkscape</a>, can then be used to display,
+modify and export SVG files to virtually any image format.</p><h4 id=export-graph-structure>Export graph structure</h4><p>The following exports consider only the graph structure, and
+can thus be applied to all types of graph in GINsim.</p><p>The graph structure can be exported for use in dedicated graph visualization software,
+which can handle some graphs considered as too large for viewing in GINsim directly.
+These exports only consider the graph structure (graphical attributes are lost).
+The following formats are supported:</p><h5 id=graphviz>Graphviz</h5><p>Files in the <a href=http://www.graphviz.org/content/dot-language>DOT language</a>
+can be opened using the graph visualization software
+<a href=http://www.graphviz.org>Graphviz</a>.</p><h5 id=biolayout>BioLayout</h5><p><a href=http://www.biolayout.org>Biolayout</a>, is a graph visualization software focussing
+on biological networks.</p><h5 id=cytoscape>Cytoscape</h5><p><a href=http://www.cytoscape.org>Cytoscape</a>,
+is also used for the analysis of biological networks. While GINsim can export
+regulatory graphs for cytoscape, this format is not yet available for other types of graphs.</p><h5 id=nusmv-export>NuSMV export</h5><p>The dynamics of logical regulatory graphs can be described using a NuSMV specification.
+In GINsim, this specification is created through an export functionality capable of
+generating a symbolic description of the logical model specified in GINsim.</p><p>Additionally, it is capable of describing different updating policies for the
+generation of the successors, such as synchronous, asynchronous and priority classes.</p><p>Finally, it tries to address the space problem of the state representation by
+annotating the information regarding the input variables on edges instead of states
+(making use of ARCTL),
+and by (optionally) defining output variables as simple macro functions.</p><h6 id=symbolic-representation>Symbolic representation</h6><p>Each variable is declared under the VAR section together with
+the corresponding range of values (domain). The order of the declaration of
+variables is of extreme importance since it influences the construction of the
+internal BDD representing the whole dynamics.</p><p>The initialization of a set of variables is performed by using the
+INIT keyword followed by an assignment of a value to a given variable.
+Alternatively, a macro can be defined with a conjunction of variable valuations
+and simply use the macro name with the INIT keyword.</p><p>The rules concerning the computation of the target value of a given variable
+are described under the ASSIGN section, using the
+next(Var) := &mldr;; form.</p><p>The computation of the focal point is declared under the DEFINE
+section, where the actual logical rules referencing all the regulatory
+components are declared.</p><p>In this section it is also declared all the macros to be used in the property
+specifications, such as weak and strong stable states, the list of initial
+conditions defined by the user, or the output variables which (if specified)
+do not participate in the state characterization.</p><h6 id=updating-policies>Updating policies</h6><p>In this export, all of the possible updating policies synchronous/asynchronous are considered as being special cases of the priority classes:</p><ul><li>Asynchronous updating is represented as having one
+priority class per variable ([VarA] [VarB] &mldr; [VarZ]), with
+the restriction of a single class update per successor.</li><li>Synchronous updating is represented as having one
+single priority class containing all of the variables
+([VarA VarB &mldr; VarZ]), where all of the variables in the
+class are called to change their value in the (single)
+successor.</li></ul><h6 id=state-representation>State representation</h6><p>There are three main types of variables characterizing a state:
+state variables, which are declared under the VAR section;
+output variables, which (if specified by the &ldquo;Strip outputs&rdquo; option) are declared
+as macros under the DEFINE section;
+and the input variables, which are declared under the IVAR section.</p><p>State variables are the ones characterizing an internal state in NuSMV, so,
+whenever one of the state variables is called to change, a new successor is
+(might be) created.
+Output variables are the ones that are not critical for the state characterization,
+and whose values can be computed through state variables alone.
+Output variables can still be referenced with a temporal operator in a property
+specification though.
+Input variables are always projected over transitions rather then the state.
+Between a state and its successor, a transition contains all the valid input
+valuations, i.e., if a given input valuation does not permit to follow a given
+transition is will be not represented over that transition.</p><h6 id=macros-representing-state-restrictions>Macros representing state restrictions</h6><p>The NuSMV export will always automatically compute the model stable states and
+insert them in the NuSMV model description.
+Every stableState is either a weakSS or a strongSS,
+and each one of these can be composed by several ones, depending on the model.
+The user, can then use each of these macro names for the specification of
+properties, from a general one stableState to a more specific one
+strongSS.</p><p>Additionally, when exporting a model, the user can define and select state
+restrictions on the internal components or on the input components.
+Only the ones that are checked will be written on the NuSMV specification.
+Similarly, the names given to each of these state restrictions will correspond to
+macro names which can be used in the specification of properties.</p><h6 id=temporal-logic-property-specification>Temporal logic property specification</h6><p>This NuSMV specification of the logical model, does not include any
+property specifications.
+It is up to the user to encode them at the end of the NuSMV specification file.
+Again, in any given property, the user can always use the stableState
+or the initialStateList macros previously defined.
+In order to aid the user in such task, the following example reachability
+properties are added, as comments, at the end of each file.</p><pre tabindex=0><code>--------------------------------------------------
+-- Reachability Properties using VARYING INPUTS --
+-- i.e. there is NO CONTROL on the input change at each transition
+--
+-- 1. Between an initial state (pattern) and a stable state (pattern)
+--   a. Existence of at least one path connecting two state patterns
+-- INIT initState;
+-- SPEC EF ( stableState );
+--   b. Existence of all the paths connecting two state patterns
+-- INIT initState;
+-- SPEC AF ( stableState );
+--
+-- 2. Between all the weak/strong stable states
+-- INIT weakSS1;
+--  SPEC EF ( weakSS2 );
+--  ...
+--  SPEC EF ( weakSSn );
+--------------------------------------------------
+-- Reachability Properties using FIXED INPUTS --
+-- i.e. a VALUE RESTRICTION can be forced at each transition
+-- 
+-- 1. Between an initial state (pattern) and a stable state (pattern)
+--   a. Existence of at least one path connecting two state patterns
+-- INIT initState; SPEC EAF ( inpVar1=0 &amp;amp; inpVar3=1 )( stableState );
+--   b. Existence of all the paths
+-- INIT initState; SPEC AAF ( inpVar1=0 &amp;amp; inpVar3=1 )( stableState );
+--
+-- 2. Testing input combinations
+-- INIT weakSS1;
+--  SPEC EAF ( inpVar1=0 &amp;amp; inpVar2=0 )( weakSS2 );
+--  SPEC EAF ( inpVar1=0 &amp;amp; inpVar2=1 )( weakSS2 );
+--  SPEC EAF ( inpVar1=1 &amp;amp; inpVar2=0 )( weakSS2 );
+--  SPEC EAF ( inpVar1=1 &amp;amp; inpVar2=1 )( weakSS2 );
+--  ...
+</code></pre><h6 id=availability-and-further-reading-3>Availability and further reading</h6><p>This export was implemented in GINsim 3.0. Further information is available in <span class=cite>[
+9
+]</span>
+.</p><h5 id=petri-net-export>Petri net export</h5><p>Regulatory graphs can be exported into discrete
+Petri net using the rewriting method described in <span class=cite>[
+10
+]</span>
+.</p><p>In the &ldquo;File -> Export&rdquo; menu, a &ldquo;Petri Net&rdquo; submenu permits to choose one of three supported Petri net representations: INA, PNML and APNN.
+Choosing any of these representations, opens a configuration dialog box which presents a list of options to be considered in the export.
+These include modifications such as model perturbations or reductions, or the definition of a set of initial states.</p><figure><img src=pnexport.png><figcaption><h4>The Petri Net export dialog</h4><p>The Petri Net export dialog box allows to select the export format, the initial markup and the mutant to apply before exporting. The initial markup can be generated from an existing initial state of the model (modifications made in this dialog are also applied to the simulation settings); only the first selected state is used.</p></figcaption></figure><p>TODO: update figure!</p><dl class=biblio><dt>1</dt><dd></dd><dt>2</dt><dd></dd><dt>3</dt><dd><div class=ref><div class=type></div><a href=http://dx.doi.org/10.1016/j.tcs.2010.10.021><span class=title>Dynamically consistent reduction of logical regulatory graphs.</span></a>
 <span class=authors>A. Naldi, E. Remy, D. Thieffry, C. Chaouiya.</span>
 <span class=journal>Theoretical Computer Science</span>
-<span class=position>412:2207--2218</span><span class=year> (2011)</span>.</div></dd><dt>2</dt><dd><div class=ref><div class=type></div><a href=http://dx.doi.org/10.1093/bib/bbm028><span class=title>Dynamical roles of biological regulatory circuits.</span></a>
+<span class=position>412:2207--2218</span><span class=year> (2011)</span>.</div></dd><dt>4</dt><dd><div class=ref><div class=type></div><a href=http://dx.doi.org/10.1093/bib/bbm028><span class=title>Dynamical roles of biological regulatory circuits.</span></a>
 <span class=authors>D. Thieffry.</span>
 <span class=journal>Briefings in Bioinformatics</span>
-<span class=position>8:220--225</span><span class=year> (2007)</span>.</div></dd><dt>3</dt><dd><div class=ref><div class=type></div><a href=http://dx.doi.org/10.1007/978-3-642-33636-2_17><span class=title>Efficient Handling of Large Signalling-Regulatory Networks by Focusing on Their Core Control.</span></a>
+<span class=position>8:220--225</span><span class=year> (2007)</span>.</div></dd><dt>5</dt><dd><div class=ref><div class=type></div><a href=http://dx.doi.org/10.1007/978-3-642-33636-2_17><span class=title>Efficient Handling of Large Signalling-Regulatory Networks by Focusing on Their Core Control.</span></a>
 <span class=authors>A. Naldi, P. Monteiro, C. Chaouiya.</span>
 <span class=journal>Computational Methods in Systems Biology</span>
-<span class=position>:288--306</span><span class=year> (2012)</span>.</div></dd><dt>4</dt><dd><div class=ref><div class=type></div><a href=http://dx.doi.org/10.1063/1.4809783><span class=title>Dynamical modeling and analysis of large cellular regulatory networks.</span></a>
+<span class=position>:288--306</span><span class=year> (2012)</span>.</div></dd><dt>6</dt><dd><div class=ref><div class=type></div><a href=http://dx.doi.org/10.1063/1.4809783><span class=title>Dynamical modeling and analysis of large cellular regulatory networks.</span></a>
 <span class=authors>D. Bérenguier, C. Chaouiya, P. Monteiro, A. Naldi, E. Remy, D. Thieffry, L. Tichit.</span>
 <span class=journal>Chaos</span>
-<span class=position>23:025114</span><span class=year> (2013)</span>.</div></dd></dl></div></section><section class=children><div class=content></div></section></body></html>
+<span class=position>23:025114</span><span class=year> (2013)</span>.</div></dd><dt>7</dt><dd><div class=ref><div class=type></div><a href=http://dx.doi.org/10.1007/978-3-540-75140-3_16><span class=title>Decision Diagrams for the Representation and Analysis of Logical Models of Genetic Networks.</span></a>
+<span class=authors>A. Naldi, D. Thieffry, C. Chaouiya.</span>
+<span class=journal>Computational Methods in Systems Biology</span>
+<span class=position>:233--247</span><span class=year> (2007)</span>.</div></dd><dt>8</dt><dd><div class=ref><div class=type></div><a href=http://dx.doi.org/10.1007/978-3-319-11520-7_59><span class=title>Computing Symbolic Steady States of Boolean Networks.</span></a>
+<span class=authors>H. Klarner, A. Bockmayr, H. Siebert.</span>
+<span class=journal>Lecture Notes in Computer Science</span>
+<span class=position>:561--570</span><span class=year> (2014)</span>.</div></dd><dt>9</dt><dd><div class=ref><div class=type></div><a href=http://dx.doi.org/10.1007/978-3-642-28839-5_30><span class=title>Efficient Verification for Logical Models of Regulatory Networks.</span></a>
+<span class=authors>P. Monteiro, C. Chaouiya.</span>
+<span class=journal>Advances in Intelligent and Soft Computing</span>
+<span class=position>:259--267</span><span class=year> (2012)</span>.</div></dd><dt>10</dt><dd><div class=ref><div class=type></div><a href=http://dx.doi.org/10.1007/11880646_5><span class=title>Qualitative Petri Net Modelling of Genetic Networks.</span></a>
+<span class=authors>C. Chaouiya, E. Remy, D. Thieffry.</span>
+<span class=journal>Transactions on Computational Systems Biology VI</span>
+<span class=position>:95--112</span><span class=year> (2006)</span>.</div></dd></dl></div></section><section class=children><div class=content></div></section></body></html>
