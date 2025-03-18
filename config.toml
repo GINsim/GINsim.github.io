@@ -8,4 +8,5 @@ enableEmoji = true
 
 [params]
 logo = "ginsim.svg"
+custom_css = ["css/custom.css"]
 
