@@ -1,3 +1,7 @@
+{{ define "extra_head" }}
+    <!-- Add custom CSS link here -->
+    <link rel="stylesheet" href="{{ .Site.BaseURL }}css/custom.css">
+{{ end }}
 {{ define "main" }}
 <section{{ if .Params.style }} class="{{.Params.style}}"{{end}}>
 <div class="content">

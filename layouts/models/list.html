@@ -1,6 +1,7 @@
 {{ define "extra_head" }}
 {{ $code := resources.Get "js/repository.js" | resources.Minify | resources.Fingerprint }}
 <script src="{{ $code.Permalink }}"></script>
+ <link rel="stylesheet" href="{{ .Site.BaseURL }}css/custom.css">
 {{- end }}
 
 {{ define "after_main" }}
