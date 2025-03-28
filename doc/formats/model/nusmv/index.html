@@ -1,18 +1,18 @@
-<!doctype html><html><head><title>NuSMV Export</title></head><body><h1>NuSMV Export</h1><div class=content><p>The dynamics of logical regulatory graphs can be described using a NuSMV specification.
+html<!doctype html><html><head><title>NuSMV Export</title><style>.debug-info{background-color:#f0f0f0;padding:10px;margin-bottom:20px;border:1px solid #ccc}.table-of-contents{border:1px solid #e0e0e0;padding:15px;margin-bottom:20px;background-color:#f9f9f9}</style></head><body><div class=debug-info><h3>Debug Information</h3><p>Page Kind: page</p><p>Page Type: doc</p><p>TOC Param:</p><p>Content Length: 6872</p></div><h1>NuSMV Export</h1><div class=content><p>The dynamics of logical regulatory graphs can be described using a NuSMV specification.
 In GINsim, this specification is created through an export functionality capable of
 generating a symbolic description of the logical model specified in GINsim.</p><p>Additionally, it is capable of describing different updating policies for the
 generation of the successors, such as synchronous, asynchronous and priority classes.</p><p>Finally, it tries to address the space problem of the state representation by
 annotating the information regarding the input variables on edges instead of states
 (making use of ARCTL),
-and by (optionally) defining output variables as simple macro functions.</p><h1 id=symbolic-representation>Symbolic representation</h1><p>Each variable is declared under the VAR section together with
+and by (optionally) defining output variables as simple macro functions.</p><h1 id=symbolic-representation>Symbolic representation</h1><p>Each variable is declared under the <code>VAR</code> section together with
 the corresponding range of values (domain). The order of the declaration of
 variables is of extreme importance since it influences the construction of the
 internal BDD representing the whole dynamics.</p><p>The initialization of a set of variables is performed by using the
-INIT keyword followed by an assignment of a value to a given variable.
+<code>INIT</code> keyword followed by an assignment of a value to a given variable.
 Alternatively, a macro can be defined with a conjunction of variable valuations
-and simply use the macro name with the INIT keyword.</p><p>The rules concerning the computation of the target value of a given variable
-are described under the ASSIGN section, using the
-next(Var) := &mldr;; form.</p><p>The computation of the focal point is declared under the DEFINE
+and simply use the macro name with the <code>INIT</code> keyword.</p><p>The rules concerning the computation of the target value of a given variable
+are described under the <code>ASSIGN</code> section, using the
+<code>next(Var) := &mldr;;</code> form.</p><p>The computation of the focal point is declared under the <code>DEFINE</code>
 section, where the actual logical rules referencing all the regulatory
 components are declared.</p><p>In this section it is also declared all the macros to be used in the property
 specifications, such as weak and strong stable states, the list of initial
@@ -24,10 +24,10 @@ single priority class containing all of the variables
 ([VarA VarB &mldr; VarZ]), where all of the variables in the
 class are called to change their value in the (single)
 successor.</li></ul><h1 id=state-representation>State representation</h1><p>There are three main types of variables characterizing a state:
-state variables, which are declared under the VAR section;
+state variables, which are declared under the <code>VAR</code> section;
 output variables, which (if specified by the &ldquo;Strip outputs&rdquo; option) are declared
-as macros under the DEFINE section;
-and the input variables, which are declared under the IVAR section.</p><p>State variables are the ones characterizing an internal state in NuSMV, so,
+as macros under the <code>DEFINE</code> section;
+and the input variables, which are declared under the <code>IVAR</code> section.</p><p>State variables are the ones characterizing an internal state in NuSMV, so,
 whenever one of the state variables is called to change, a new successor is
 (might be) created.
 Output variables are the ones that are not critical for the state characterization,
@@ -39,19 +39,19 @@ Between a state and its successor, a transition contains all the valid input
 valuations, i.e., if a given input valuation does not permit to follow a given
 transition is will be not represented over that transition.</p><h1 id=macros-representing-state-restrictions>Macros representing state restrictions</h1><p>The NuSMV export will always automatically compute the model stable states and
 insert them in the NuSMV model description.
-Every stableState is either a weakSS or a strongSS,
+Every <em>stableState</em> is either a <em>weakSS</em> or a <em>strongSS</em>,
 and each one of these can be composed by several ones, depending on the model.
 The user, can then use each of these macro names for the specification of
-properties, from a general one stableState to a more specific one
-strongSS.</p><p>Additionally, when exporting a model, the user can define and select state
+properties, from a general one <em>stableState</em> to a more specific one
+<em>strongSS</em>.</p><p>Additionally, when exporting a model, the user can define and select state
 restrictions on the internal components or on the input components.
 Only the ones that are checked will be written on the NuSMV specification.
 Similarly, the names given to each of these state restrictions will correspond to
 macro names which can be used in the specification of properties.</p><h1 id=temporal-logic-property-specification>Temporal logic property specification</h1><p>This NuSMV specification of the logical model, does not include any
 property specifications.
-It is up to the user to encode them at the end of the NuSMV specification file.
-Again, in any given property, the user can always use the stableState
-or the initialStateList macros previously defined.
+It is <em>up to the user</em> to encode them at the end of the NuSMV specification file.
+Again, in any given property, the user can always use the <em>stableState</em>
+or the <em>initialStateList</em> macros previously defined.
 In order to aid the user in such task, the following example reachability
 properties are added, as comments, at the end of each file.</p><pre tabindex=0><code>--------------------------------------------------
 -- Reachability Properties using VARYING INPUTS --

@@ -1,11 +1,17 @@
-<!doctype html><html><head><title>Struture of the LRG</title></head><body><h1>Struture of the LRG</h1><div class=content><p>Regulatory graphs can be interactively modified: components and interactions
+html<!doctype html><html><head><title>Struture of the LRG</title><style>.debug-info{background-color:#f0f0f0;padding:10px;margin-bottom:20px;border:1px solid #ccc}.table-of-contents{border:1px solid #e0e0e0;padding:15px;margin-bottom:20px;background-color:#f9f9f9}</style></head><body><div class=debug-info><h3>Debug Information</h3><p>Page Kind: page</p><p>Page Type: doc</p><p>TOC Param:</p><p>Content Length: 7072</p></div><h1>Struture of the LRG</h1><div class=content><p>Regulatory graphs can be interactively modified: components and interactions
 can be added, edited and removed. The interaction with the graph view is
 controled by an editing mode selected through the following buttons available
 on the toolbar on the top:</p><p>Available editing modes for regulatory graphs:</p><ul><li><p><img src=/buttons/editmode.gif alt="Edit button"> Default editing mode: allows to select and move objects.</p></li><li><p><img src=/buttons/insertsquare.gif alt="Add Node button"> Component insertion mode: when selected, clicking on the graph panel adds a new component.</p></li><li><p><img src=/buttons/insertpositiveedge.gif alt="Add positive interaction button"> <img src=/buttons/insertnegativeedge.gif alt="Add negative interaction button"> <img src=/buttons/insertdualedge.gif alt="Add dual interaction button"> <img src=/buttons/insertunknownedge.gif alt="Add unknown interaction button"> Interaction insertion mode: when selected, interactions are added by first
 selecting one component and dragging the selection to (the same or) another
 component. The interactions must be complemented by the definition of the logical
 parameters for the target variable (see below). The four buttons allow to add
-different types of interactions: activation, inhibition, dual or undefined.</p></li><li><p><img src=/buttons/edit-delete.png alt="Delete button"> Deletion option: selected items (components or interactions) are deleted.</p></li></ul><h1 id=component-order>Component order</h1><p>In GINsim, components are internally ordered. This order has no effect on the regulatory
+different types of interactions: activation, inhibition, dual or undefined.</p></li><li><p><img src=/buttons/edit-delete.png alt="Delete button"> Deletion option: selected items (components or interactions) are deleted.</p></li></ul><div class=notices>The terms <strong>component</strong> and <strong>interaction</strong> are used throughout this document,
+but some other terms are sometimes used in their place.
+<strong>Regulatory components</strong> (also called nodes) can be of different types.
+They often denote <strong>genes</strong> but also <strong>proteins</strong>, or yet global cellular
+characteristics such as cell mass.
+Similarly, <strong>interactions</strong> often denote transcriptional regulations but can
+also denote protein phosphorylation, degradation, complex formation, &mldr;</div><h1 id=component-order>Component order</h1><p>In GINsim, components are internally ordered. This order has no effect on the regulatory
 graph itself, but it has a direct effect on the internal representation of the logical
 parameters, with possible effects on (partial) simulation.
 The default order follows the node addition chronology, which can be modified

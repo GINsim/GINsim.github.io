@@ -35,7 +35,13 @@ on the toolbar on the top:</p><p>Available editing modes for regulatory graphs:<
 selecting one component and dragging the selection to (the same or) another
 component. The interactions must be complemented by the definition of the logical
 parameters for the target variable (see below). The four buttons allow to add
-different types of interactions: activation, inhibition, dual or undefined.</p></li><li><p><img src=/buttons/edit-delete.png alt="Delete button"> Deletion option: selected items (components or interactions) are deleted.</p></li></ul><h4 id=component-order>Component order</h4><p>In GINsim, components are internally ordered. This order has no effect on the regulatory
+different types of interactions: activation, inhibition, dual or undefined.</p></li><li><p><img src=/buttons/edit-delete.png alt="Delete button"> Deletion option: selected items (components or interactions) are deleted.</p></li></ul><div class=notices>The terms <strong>component</strong> and <strong>interaction</strong> are used throughout this document,
+but some other terms are sometimes used in their place.
+<strong>Regulatory components</strong> (also called nodes) can be of different types.
+They often denote <strong>genes</strong> but also <strong>proteins</strong>, or yet global cellular
+characteristics such as cell mass.
+Similarly, <strong>interactions</strong> often denote transcriptional regulations but can
+also denote protein phosphorylation, degradation, complex formation, &mldr;</div><h4 id=component-order>Component order</h4><p>In GINsim, components are internally ordered. This order has no effect on the regulatory
 graph itself, but it has a direct effect on the internal representation of the logical
 parameters, with possible effects on (partial) simulation.
 The default order follows the node addition chronology, which can be modified
@@ -206,9 +212,9 @@ to select the states used for the simulation. If no row is selected, all possibl
 states are considered, generating a complete state transition graph.</p><p>In a given state of the system, one or several genes are called to update their
 values. When several changes are pending, different construction strategies lead to
 different successor states and thus to different state transition graphs.
-GINsim implements the classical synchronous and asynchronous
-updating, and enables the definition of ad hoc strategies using priority classes.
-These updating modes are described in detail in their documentation.</p><p>Simulation settings are saved and restored as associated data in ZGINML files.</p><h5 id=running-simulations-with-perturbation>Running simulations with perturbation</h5><figure><img src=blocking.png><figcaption><h4>Perturbation simulation result</h4><p>Result of an asynchronous simulation, where the expression level for
+GINsim implements the classical <em>synchronous</em> and <em>asynchronous</em>
+updating, and enables the definition of ad hoc strategies using <em>priority classes</em>.
+These updating modes are described in detail in <link xref=tool-simulation-updating-mode>their documentation</link>.</p><p>Simulation settings are saved and restored as associated data in <link xref=format-zginml>ZGINML files</link>.</p><h5 id=running-simulations-with-perturbation>Running simulations with perturbation</h5><figure><img src=blocking.png><figcaption><h4>Perturbation simulation result</h4><p>Result of an asynchronous simulation, where the expression level for
 Cro has been blocked at 1.
 The state transition graph is the same as the original asynchronous one,
 but all transitions where Cro leaves this value have been suppressed.
@@ -216,11 +222,11 @@ This state transition graph is now composed of two disconnected parts,
 with a new stable state.</p></figcaption></figure><p>The &ldquo;strip output&rdquo; checkbox next to the perturbation selector enables to
 activate automatic removal of all output components from the simulation.
 Their value can be retrieved on demand when browsing the resulting
-State Transition Graph. See the reduction section for more details.</p><p>The &ldquo;Construction Strategy&rdquo; panel enables the selection of the type of graph computed
-by the simulation (the classical State Transition Graph,
-or the more compact Hierarchical Transition Graph).</p><p>State Transition Graphs can be computed breadth-first or depth-first.
+State Transition Graph. See the <link xref=lrg-modifier-reduction>reduction</link> section for more details.</p><p>The &ldquo;Construction Strategy&rdquo; panel enables the selection of the type of graph computed
+by the simulation (the classical <link xref=transition-graphs#stg>State Transition Graph</link>,
+or the more compact <link xref=transition-graphs#htg>Hierarchical Transition Graph</link>).</p><p>State Transition Graphs can be computed breadth-first or depth-first.
 Both options lead to the same result, unless the simulation is interrupted by
-a size limit (see below).</p><h5 id=depth-and-size-limitations>Depth and size limitations</h5><p>An option is also offered to limit the search depth and/or the total number of
+a <link xref=#dslimit>size limit</link> (see below).</p><h5 id=depth-and-size-limitations>Depth and size limitations</h5><p>An option is also offered to limit the search depth and/or the total number of
 states generated in a simulation.</p><div class="notices warning">When considering several initial states (or the full STG), some of
 them can be reached while running the simulation from an other state.
 In this case, no new search will be triggered for them and the depth
@@ -234,7 +240,7 @@ the size of the generated state transition graph. The simulation
 can be interrupted, using the <code>Cancel</code> button, without loosing
 the calculated part of the state transition graph.</p><p>At the end of a simulation, several options are available to save,
 display or analyse the resulting state transition graph
-(see ).</p><h4 id=updating-modes>Updating modes</h4><p>In a given state of the system, one or several genes are called to update their
+(see <link xref=gui-whattodo>).</p><h4 id=updating-modes>Updating modes</h4><p>In a given state of the system, one or several genes are called to update their
 values. When several changes are pending, different construction strategies lead to
 different successor states and thus to different state transition graphs.</p><h5 id=synchronous-mode>Synchronous mode</h5><p>In this mode, all updating calls are performed simultaneously.
 This simplification may generate artefacts in the state transition graph.</p><p>Each state has then at most one successor state, which encompasses fully
@@ -375,15 +381,15 @@ generating a symbolic description of the logical model specified in GINsim.</p><
 generation of the successors, such as synchronous, asynchronous and priority classes.</p><p>Finally, it tries to address the space problem of the state representation by
 annotating the information regarding the input variables on edges instead of states
 (making use of ARCTL),
-and by (optionally) defining output variables as simple macro functions.</p><h6 id=symbolic-representation>Symbolic representation</h6><p>Each variable is declared under the VAR section together with
+and by (optionally) defining output variables as simple macro functions.</p><h6 id=symbolic-representation>Symbolic representation</h6><p>Each variable is declared under the <code>VAR</code> section together with
 the corresponding range of values (domain). The order of the declaration of
 variables is of extreme importance since it influences the construction of the
 internal BDD representing the whole dynamics.</p><p>The initialization of a set of variables is performed by using the
-INIT keyword followed by an assignment of a value to a given variable.
+<code>INIT</code> keyword followed by an assignment of a value to a given variable.
 Alternatively, a macro can be defined with a conjunction of variable valuations
-and simply use the macro name with the INIT keyword.</p><p>The rules concerning the computation of the target value of a given variable
-are described under the ASSIGN section, using the
-next(Var) := &mldr;; form.</p><p>The computation of the focal point is declared under the DEFINE
+and simply use the macro name with the <code>INIT</code> keyword.</p><p>The rules concerning the computation of the target value of a given variable
+are described under the <code>ASSIGN</code> section, using the
+<code>next(Var) := &mldr;;</code> form.</p><p>The computation of the focal point is declared under the <code>DEFINE</code>
 section, where the actual logical rules referencing all the regulatory
 components are declared.</p><p>In this section it is also declared all the macros to be used in the property
 specifications, such as weak and strong stable states, the list of initial
@@ -395,10 +401,10 @@ single priority class containing all of the variables
 ([VarA VarB &mldr; VarZ]), where all of the variables in the
 class are called to change their value in the (single)
 successor.</li></ul><h6 id=state-representation>State representation</h6><p>There are three main types of variables characterizing a state:
-state variables, which are declared under the VAR section;
+state variables, which are declared under the <code>VAR</code> section;
 output variables, which (if specified by the &ldquo;Strip outputs&rdquo; option) are declared
-as macros under the DEFINE section;
-and the input variables, which are declared under the IVAR section.</p><p>State variables are the ones characterizing an internal state in NuSMV, so,
+as macros under the <code>DEFINE</code> section;
+and the input variables, which are declared under the <code>IVAR</code> section.</p><p>State variables are the ones characterizing an internal state in NuSMV, so,
 whenever one of the state variables is called to change, a new successor is
 (might be) created.
 Output variables are the ones that are not critical for the state characterization,
@@ -410,19 +416,19 @@ Between a state and its successor, a transition contains all the valid input
 valuations, i.e., if a given input valuation does not permit to follow a given
 transition is will be not represented over that transition.</p><h6 id=macros-representing-state-restrictions>Macros representing state restrictions</h6><p>The NuSMV export will always automatically compute the model stable states and
 insert them in the NuSMV model description.
-Every stableState is either a weakSS or a strongSS,
+Every <em>stableState</em> is either a <em>weakSS</em> or a <em>strongSS</em>,
 and each one of these can be composed by several ones, depending on the model.
 The user, can then use each of these macro names for the specification of
-properties, from a general one stableState to a more specific one
-strongSS.</p><p>Additionally, when exporting a model, the user can define and select state
+properties, from a general one <em>stableState</em> to a more specific one
+<em>strongSS</em>.</p><p>Additionally, when exporting a model, the user can define and select state
 restrictions on the internal components or on the input components.
 Only the ones that are checked will be written on the NuSMV specification.
 Similarly, the names given to each of these state restrictions will correspond to
 macro names which can be used in the specification of properties.</p><h6 id=temporal-logic-property-specification>Temporal logic property specification</h6><p>This NuSMV specification of the logical model, does not include any
 property specifications.
-It is up to the user to encode them at the end of the NuSMV specification file.
-Again, in any given property, the user can always use the stableState
-or the initialStateList macros previously defined.
+It is <em>up to the user</em> to encode them at the end of the NuSMV specification file.
+Again, in any given property, the user can always use the <em>stableState</em>
+or the <em>initialStateList</em> macros previously defined.
 In order to aid the user in such task, the following example reachability
 properties are added, as comments, at the end of each file.</p><pre tabindex=0><code>--------------------------------------------------
 -- Reachability Properties using VARYING INPUTS --
