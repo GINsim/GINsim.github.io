@@ -3,15 +3,18 @@ languageCode = "en-us"
 title = "GINsim"
 theme = "ginsim"
 summaryLength = 35
-
 enableEmoji = true
 
 [params]
 logo = "ginsim.svg"
 
 [markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true  # Permet le HTML personnalisé
+  
   [markup.tableOfContents]
-    startLevel = 2
-    endLevel = 4
-    ordered = false
+    startLevel = 2   # Commence aux titres H2
+    endLevel = 4     # Termine aux titres H4
+    ordered = false  # Liste non numérotée
 

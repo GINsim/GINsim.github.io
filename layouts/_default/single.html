@@ -2,30 +2,47 @@
 <html>
 <head>
     <title>{{ .Title }}</title>
-    {{ if .Params.toc }}
     <style>
+        .debug-info {
+            background-color: #f0f0f0;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+        }
         .table-of-contents {
             border: 1px solid #e0e0e0;
             padding: 15px;
             margin-bottom: 20px;
             background-color: #f9f9f9;
         }
-        .table-of-contents h2 {
-            margin-top: 0;
-            border-bottom: 1px solid #e0e0e0;
-            padding-bottom: 10px;
-        }
     </style>
-    {{ end }}
 </head>
 <body>
+    <div class="debug-info">
+        <h3>Debug Information</h3>
+        <p>Page Kind: {{ .Kind }}</p>
+        <p>Page Type: {{ .Type }}</p>
+        <p>TOC Param: {{ .Params.toc }}</p>
+        <p>Has Headings: {{ gt (len .HeadingsWithoutPage) 0 }}</p>
+    </div>
+
     <h1>{{ .Title }}</h1>
     
     {{ if .Params.toc }}
-    <div class="table-of-contents">
-        <h2>Table des matières</h2>
-        {{ .TableOfContents }}
-    </div>
+        {{ if gt (len .TableOfContents) 0 }}
+        <div class="table-of-contents">
+            <h2>Table des matières</h2>
+            {{ .TableOfContents }}
+        </div>
+        {{ else }}
+        <div class="debug-info">
+            <p>No table of contents generated. Possible reasons:</p>
+            <ul>
+                <li>No headings found</li>
+                <li>Headings not in correct range (H2-H4)</li>
+            </ul>
+        </div>
+        {{ end }}
     {{ end }}
 
     <div class="content">
