@@ -1,6 +1,7 @@
 ---
 title: "Documentation"
 date: 2025-02-27T00:00:00Z
+toc: true
 ---
 
 GINsim (Gene Interaction Network simulation) is a computer tool for the modeling and simulation of genetic regulatory networks.

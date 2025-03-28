@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ .Title }}</title>
+    {{ if .Params.toc }}
+    <style>
+        .table-of-contents {
+            border: 1px solid #e0e0e0;
+            padding: 15px;
+            margin-bottom: 20px;
+            background-color: #f9f9f9;
+        }
+        .table-of-contents h2 {
+            margin-top: 0;
+            border-bottom: 1px solid #e0e0e0;
+            padding-bottom: 10px;
+        }
+    </style>
+    {{ end }}
+</head>
+<body>
+    <h1>{{ .Title }}</h1>
+    
+    {{ if .Params.toc }}
+    <div class="table-of-contents">
+        <h2>Table des matières</h2>
+        {{ .TableOfContents }}
+    </div>
+    {{ end }}
+
+    <div class="content">
+        {{ .Content }}
+    </div>
+</body>
+</html>
+

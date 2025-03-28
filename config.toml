@@ -9,3 +9,9 @@ enableEmoji = true
 [params]
 logo = "ginsim.svg"
 
+[markup]
+  [markup.tableOfContents]
+    startLevel = 2
+    endLevel = 4
+    ordered = false
+
