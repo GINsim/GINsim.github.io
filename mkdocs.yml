@@ -1,0 +1,68 @@
+# Project information
+site_name: Gene Interaction Network simulation
+use_directory_urls: true
+
+# Repository
+repo_name: GINsim @ GitHub
+repo_url: https://github.com/GINsim/GINsim
+
+# Configuration
+theme:
+  name: material
+  logo: ginsim.svg  # logo on the top left corner
+  palette:          # to be able to change light/dark mode
+    # Palette toggle for automatic mode
+    - media: "(prefers-color-scheme)"
+      toggle:
+        icon: material/brightness-auto
+        name: Switch to light mode
+    # Palette toggle for light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default 
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    # Palette toggle for dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      toggle:
+        icon: material/brightness-4
+        name: Switch to system preference
+  features:
+    - navigation.sections
+
+# Additional configuration
+extra:
+  social:   # bottom right icon
+    - icon: fontawesome/brands/github
+      link: https://github.com/GINsim
+extra_css:
+  - css/custom.css
+  - https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css
+extra_javascript:
+  - https://code.jquery.com/jquery-3.7.1.min.js
+  - https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js
+
+# Plugins
+plugins:
+  - search 
+  - macros # for section includes
+  - bibtex:
+      bib_file: "bibliography.bib"
+
+# Extensions
+markdown_extensions:
+  - toc:
+      toc_depth: 4
+      permalink: true
+  - admonition
+  - footnotes # needed by bibtex plugin
+
+# Page tree
+nav:
+  - Home: index.md
+  - Installation: install/index.md
+  - Documentation: documentation/index.md
+  - Model Repository: models/index.md
+  - Contact: contact/index.md
+
