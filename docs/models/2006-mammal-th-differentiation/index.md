@@ -1,7 +1,5 @@
 ---
 title: "Control of Th1/Th2 cell differentiation"
-aliases:
-- /node/41
 taxon: 
 - Mammal
 process: 

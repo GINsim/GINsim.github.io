@@ -1,7 +1,5 @@
 ---
 title: "Core engine controlling the budding yeast cell cycle"
-aliases:
-- /node/25
 taxon: 
 - Yeast
 - Budding yeast
@@ -18,15 +16,16 @@ file_descriptions:
 ---
 
 
-Leaning on the differential model published by Chen et al. in 2004 {{<cite "models/22" >}},
+Leaning on the differential model published by Chen et al. in 2004 [@Chen2004],
 we have delineated a discrete, logical model that reproduces the main qualitative
 results reported in this study, in terms of cycle viability or arrest in a
 particular stable state, for the wild type as well as over one hundred mutant
-conditions.
+conditions [@Faure2009b].
 
 In a first step, we have defined a regulatory graph encompassing the main
 documented interactions between core regulators of the cell cycle (Cdk/cyclins,
 APC, Cdk inhibitors).
+
 For proper logical rules, in the wild type situation, our model accounts for
 the following sequence of events: firing of the origins of replication (ORI
 goes up), spindle alignment (SPN goes up), inhibition of the securin (Pds1
@@ -67,6 +66,7 @@ more recent evidence. The resulting logical models are presented as separate
 entries of our model repository. In conclusion, our core cell cycle model
 served as a benchmark to assess the power of logical modelling applied to a
 complex oscillatory system, as well as the first step towards the development
-of a more comprehensive model of the budding yeast cell cycle network
-{{<cite "models/23" >}}.
+of a more comprehensive model of the budding yeast cell cycle network [@Faure2009b].
+
+TODO
 

@@ -1,7 +1,5 @@
 ---
 title: "The Anterior-Posterior Boundary (Gonzalez et al. 2008)"
-aliases:
-- /node/71
 taxon: 
 - D. melanogaster
 process: 

@@ -1,7 +1,5 @@
 ---
 title: "Control of proliferation by oncogenes and tumor suppressors"
-aliases:
-- /node/240
 taxon: 
 - Mammal
 process: 

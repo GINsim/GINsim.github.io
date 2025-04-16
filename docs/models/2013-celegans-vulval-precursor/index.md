@@ -1,7 +1,5 @@
 ---
 title: "Specification of vulval precursor cells and cell fusion control in C. elegans"
-aliases:
-- /node/178
 taxon: 
 - C. elegans
 process: 

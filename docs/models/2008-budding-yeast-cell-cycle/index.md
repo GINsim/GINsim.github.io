@@ -1,7 +1,5 @@
 ---
 title: "Budding yeast cell cycle (Orlando et al. 2008)"
-aliases:
-- /node/33
 taxon: 
 - Yeast
 - Budding yeast
@@ -18,10 +16,14 @@ file_descriptions:
 
 
 This model is a direct transcription of the Boolean model published by Orlando
-et al. {{<cite "models/32" >}}. Synchronous simulation of this model yields a
-cyclic attractor gathering most trajectories in the state transition graph,
-which is robust to parameter choice. However, asynchronous simulations all
-lead to a stable state with all variables OFF, whatever the parameter set
-proposed by the authors, indicating that the oscillations observed in the
-synchronous simulations may not be sustained.
+et al. [@Orlando2008].
+Synchronous simulation of this model yields a cyclic attractor gathering 
+most trajectories in the state transition graph, which is robust to 
+parameter choice, as reported in [@Orlando2008]. 
+However, asynchronous simulations all lead to a stable state with all 
+variables OFF, whatever the parameter set proposed by the authors, 
+indicating that the oscillations observed in the synchronous 
+simulations may not be sustained.
+See [@Faure2009] for more details.
 
+TODO

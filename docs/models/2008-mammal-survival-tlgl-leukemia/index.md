@@ -1,7 +1,5 @@
 ---
 title: "Network model of survival signaling in large granular lymphocyte leukemia (Zhang et al 2008)"
-aliases:
-- /node/87
 taxon: 
 - Mammal
 - Blood cells

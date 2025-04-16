@@ -1,7 +1,5 @@
 ---
 title: "Budding yeast cell cycle (adapted from Irons, 2009)"
-aliases:
-- /node/35
 taxon: 
 - Yeast
 - Budding yeast
@@ -18,8 +16,9 @@ file_descriptions:
 
 
 This model is a direct transcription of the Boolean model published by Irons
-{{<cite "models/34" >}}, except for the specific temporisation system.
+[@Irons2009], except for the specific temporisation system.
 Synchronous simulation of this model recovers the results obtained by Irons
-in absence of time delays (Fig. 3B in {{<cite "models/34" >}} ), i.e. a single
+in absence of time delays (Fig. 3B in [@Irons2009]), i.e. a single
 cyclic attractor qualitatively consistent with available kinetic data.
+
 

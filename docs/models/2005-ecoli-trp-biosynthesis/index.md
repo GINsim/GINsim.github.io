@@ -1,7 +1,5 @@
 ---
 title: Controlling tryptophan biosynthesis
-aliases:
-- /node/50
 taxon: 
 - E. Coli
 - Bacterium

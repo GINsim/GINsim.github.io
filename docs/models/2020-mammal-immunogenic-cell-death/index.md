@@ -1,8 +1,5 @@
 ---
 title: "Immunogenic Cell Death"
-aliases:
-- /node/242
-- /model/ICD
 taxon: 
 - Mammal
 process: 

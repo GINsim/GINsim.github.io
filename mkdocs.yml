@@ -46,9 +46,85 @@ extra_javascript:
 # Plugins
 plugins:
   - search 
-  - macros # for section includes
-  - bibtex:
+  - macros     # for section includes
+  - bibtex:    # references in model pages
       bib_file: "bibliography.bib"
+  - redirects: # URL aliases support for legacy ginsim.org pages
+      redirect_maps:
+        node/47.md: models/1995-lambda-lysis-lysogeny/index.md
+        node/82.md: models/2001-drosophila-gap/index.md
+        node/63.md: models/2003-drosophila-pair-rule/index.md
+        node/50.md: models/2005-ecoli-trp-biosynthesis/index.md
+        node/69.md: models/2006-drosophila-DV-boundary/index.md
+        node/4.md: models/2006-mammal-cell-cycle/index.md
+        node/78.md: models/2006-mammal-tcell-activation/index.md
+        node/41.md: models/2006-mammal-th-differentiation/index.md
+        node/33.md: models/2008-budding-yeast-cell-cycle/index.md
+        node/71.md: models/2008-drosophila-AP-boundary/index.md
+        node/43.md: models/2008-drosophila-segment-polarity/index.md
+        model/SP.md: models/2008-drosophila-segment-polarity/index.md
+        node/37.md: models/2008-fission-yeast-cell-cycle/index.md
+        node/87.md: models/2008-mammal-survival-tlgl-leukemia/index.md
+        node/35.md: models/2009-budding-yeast-cell-cycle/index.md
+        node/25.md: models/2009-budding-yeast-core-cell-cycle/index.md
+        node/21.md: models/2009-budding-yeast-full-cell-cycle/index.md
+        node/29.md: models/2009-budding-yeast-mitosis-exit/index.md
+        node/26.md: models/2009-budding-yeast-morphogenetic-checkpoint/index.md
+        node/39.md: models/2009-human-erbb-g1s-transition/index.md
+        node/222.md: models/2009-mammal-p53-mdm2/index.md
+        model/p53-Mdm2.md: models/2009-mammal-p53-mdm2/index.md
+        node/227.md: models/2010-mammal-cell-fate/index.md
+        node/79.md: models/2010-mammal-th-differentiation/index.md
+        node/31.md: models/2011-drosophila-cell-cycle/index.md
+        node/214.md: models/2012-zebrafish-mir9-neurogenesis/index.md
+        node/178.md: models/2013-celegans-vulval-precursor/index.md
+        node/89.md: models/2013-drosophila-dpp/index.md
+        node/96.md: models/2013-drosophila-egf/index.md
+        node/102.md: models/2013-drosophila-FGF/index.md
+        node/144.md: models/2013-drosophila-hh/index.md
+        node/109.md: models/2013-drosophila-JAK-STAT/index.md
+        node/115.md: models/2013-drosophila-notch/index.md
+        node/126.md: models/2013-drosophila-spz/index.md
+        node/152.md: models/2013-drosophila-toll/index.md
+        node/160.md: models/2013-drosophila-vegf/index.md
+        node/97.md: models/2013-drosophila-wg/index.md
+        node/173.md: models/2013-mammal-mapk/index.md
+        node/175.md: models/2014-drosophila-eggshell-patterning/index.md
+        model/eggshell_patterning.md: models/2014-drosophila-eggshell-patterning/index.md
+        node/180.md: models/2014-mammal-mast-cell-activation/index.md
+        node/183.md: models/2014-mammal-senescence/index.md
+        node/185.md: models/2014-mammal-th-differentiation/index.md
+        node/188.md: models/2015-mammal-bladder-tumorigenesis/index.md
+        node/194.md: models/2015-mammal-cell-fate-gastric-cancer/index.md
+        node/191.md: models/2015-mammal-tumor-invasion-migration/index.md
+        node/206.md: models/2016-drosophila-mesoderm-specification/index.md
+        model/drosophila_mesoderm: models/2016-drosophila-mesoderm-specification/index.md
+        node/189.md: models/2016-mammal-cell-cycle/index.md
+        node/211.md: models/2016-mammal-geroconversion/index.md
+        model/T2DM.md: models/2016-mammal-geroconversion/index.md
+        node/204.md: models/2016-mammal-hspc-msc-communication/index.md
+        model/HSPC_MSC.md: models/2016-mammal-hspc-msc-communication/index.md
+        node/196.md: models/2016-mammal-sex-determination/index.md
+        model/sex_determination_mammals.md: models/2016-mammal-sex-determination/index.md
+        node/218.md: models/2017-bacterium-asymetric-division/index.md
+        model/C_crescentus.md: models/2017-bacterium-asymetric-division/index.md
+        node/216.md: models/2017-mammal-lymphoid-myeloid-transdifferentiation/index.md
+        node/219.md: models/2018-bird-sex-determination/index.md
+        model/sex_determination_chicken.md: models/2018-bird-sex-determination/index.md
+        node/225.md: models/2018-mammal-tcr-tlr5/index.md
+        node/229.md: models/2019-mammal-neonatal-tcell-metabolism/index.md
+        node/232.md: models/2019-mammal-neonatal-tcell-metabolism/index.md
+        node/234.md: models/2019-mammal-tcell-specification/index.md
+        node/231.md: models/2020-mammal-emt-microenvironment/index.md
+        model/EMT_Selvaggio_etal.md: models/2020-mammal-emt-microenvironment/index.md
+        node/242.md: models/2020-mammal-immunogenic-cell-death/index.md
+        model/ICD.md: models/2020-mammal-immunogenic-cell-death/index.md
+        node/240.md: models/2020-mammal-oncogenic-signaling/index.md
+        node/238.md: models/2020-mammal-tcell-checkpoint-inhibitors/index.md
+        model/tcell-checkpoint-inhibitors-tcla4-pd1.md: models/2020-mammal-tcell-checkpoint-inhibitors/index.md
+        node/244.md: models/2020-mammal-Th-il17-differential-expression/index.md
+        model/ThIL17diff.md: models/2020-mammal-Th-il17-differential-expression/index.md
+        node/236.md: models/2020-seaurchin-dv-axis/index.md
 
 # Extensions
 markdown_extensions:

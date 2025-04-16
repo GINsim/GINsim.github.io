@@ -1,8 +1,5 @@
 ---
 title: "Primary sex determination of placental mammals"
-aliases:
-- /model/sex_determination_mammals
-- /node/196
 taxon: 
 - Mammal
 process: 

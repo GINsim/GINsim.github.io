@@ -1,7 +1,5 @@
 ---
 title: Restriction point control of the mammalian cell cycle
-aliases:
-- /node/4
 taxon: 
 - Mammal
 process: 
@@ -15,9 +13,9 @@ file_descriptions:
 ---
 
 
-On the basis of a previous modelling study by Novak and Tyson {{<cite "models/2" >}}, we have
-recently proposed a generic Boolean model of the core network controlling the
-restriction point of the mammalian cell cycle.
+On the basis of a previous modelling study by Novak and Tyson [@Novak2004], 
+we have recently proposed a generic Boolean model of the core network 
+controlling the restriction point of the mammalian cell cycle [@Faure2006].
 
 
 For proper logical parameter values, the simulation of this Boolean model
@@ -43,6 +41,7 @@ each node represents the activity of a key regulatory element, whereas the
 edges represent functional interactions between these elements. Blunt arrows
 stand for inhibitory effects, whereas normal arrows stand for activations.
 
+TODO
 
 ![](lrg.png)  
 Figure 1: Regulatory graph

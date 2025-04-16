@@ -1,7 +1,5 @@
 ---
 title: "Drosophila Wg Signalling pathway"
-aliases:
-- /node/97
 taxon: 
 - D. melanogaster
 process: 
@@ -34,6 +32,5 @@ condition. From these two initial states, we compute the resulting stable
 states recapitulating the activation or the non activation of the pathway,
 respectively.
 For more details on Dpp signalling pathway regulation see 
-{{<cite "models/166" "models/167" "models/168" "models/169" "models/171" >}}.
-
+[@Klingensmith1994] [@Michelson2003] [@Perrimon2012] [@Swarup2012] [@Tauc2012].
 

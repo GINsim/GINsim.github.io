@@ -1,7 +1,5 @@
 ---
 title: "Mast cell activation"
-aliases:
-- /node/180
 taxon: 
 - Mammal
 - Blood cells

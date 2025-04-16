@@ -1,7 +1,5 @@
 ---
 title: "Budding yeast cell cycle (Fauré et al. 2009)"
-aliases:
-- /node/21
 taxon: 
 - Yeast
 - Budding yeast
@@ -23,24 +21,28 @@ controlling the exit from mitosis. Consistency with available data has been
 assessed through a systematic analysis of model behaviours for various genetic
 backgrounds and other perturbations.
 
+- Logical modelling of the [core engine](/node/25)
+- Logical modelling of the budding yeast [morphogenetic checkpoint](/node/25)
+- Logical modelling of the budding yeast [exit module](/node/26)
 
+TODO: verify links
 
 Here, we take advantage of compositional facilities of the logical formalism
 to combine these three models in order to generate a single comprehensive
 model involving over thirty regulatory components. The resulting logical model
 preserves all relevant characteristics of the original modules, while enabling
-the simulation of more sophisticated experiments.
+the simulation of more sophisticated experiments (cf. [@Faure2009b]).
 
 
-
-Chen et al (2004) {{<cite "models/22" >}} discussed the possibility to graft 
+Chen et al (2004) [@Chen2004] discussed the possibility to graft 
 the model of the morphogenesis checkpoint published in a "companion study"
-by Ciliberto et al (2003) {{<cite "models/23" >}} to their model of the cell
+by Ciliberto et al (2003) [@Ciliberto2003] to their model of the cell
 cycle, and to replace the hypothetical PPX by a more accurate version of the
 network controlling mitotic exit. We have adapted all three modules in the
 logical formalism, and coupled them together.
 
 
+**Coupling of the MCP module to the core cycling engine model**
 
 We have kept and left unchanged all components that were specific of the MCP
 module (Mih1, Swe1, Mpk1 and Hsl1), and similarly, all components specific of
@@ -61,6 +63,7 @@ original modules are conserved in the coupled model, in the case of the
 wild-type as for the different mutations simulated.
 
 
+**Coupling of the exit module to the core cycling engine model**
 
 The next step was to fuse the exit module to the core cycling engine. We
 followed the same method as with the coupling of the MCP. The first step was
@@ -75,11 +78,11 @@ their counterparts in the core model, so we kept the core model wiring and
 regulation in the coupled model for these components. Last but not least, we
 added regulation from Sic1 and Cdc6 towards Clb2 new targets to represent
 sequestration of the cyclins by the CKI (see the [core cycling engine
-model](../25) for more details). The resulting model fits the more recent
+model](/node/25) for more details). The resulting model fits the more recent
 data used to built the exit module, and the behaviour of the core model is
 preserved. Still, one difficulty arose regarding mutant simulations for the
 exit module: the two mutants involving Cdk inhibition (see Queralt et
-al., supplementary figure S6.4 {{<cite "models/24" >}}) could not be simulated in
+al., supplementary figure S6.4 [@Queralt2006]) could not be simulated in
 the coupled model, as inhibition of Cdk1 / Clb2 is the signal for cytokinesis in
 this model. This points out towards the "TARGET model" hypothesis discussed in
 Chen et al, where the trigger for cytokinesis would involve both a decrease of

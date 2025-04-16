@@ -1,8 +1,5 @@
 ---
 title: "Boolean model of geroconversion"
-aliases:
-- /model/T2DM
-- /node/211
 taxon: 
 - Mammal
 process: 

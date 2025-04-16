@@ -1,7 +1,5 @@
 ---
 title: "Drosophila EGF Signalling pathway"
-aliases:
-- /node/96
 taxon: 
 - D. melanogaster
 process: 
@@ -37,7 +35,8 @@ to catalyze the exchange of RAS bound GDP for GTP exchange, thereby activating
 RAS. RAS then promotes the activation of RAF, leading to DSOR1 activation, and
 eventually to Rolled (RL) activation. RL inactivates transcriptional co-
 repressors, such as Aop, and activates transcription factors, such as Pointed
-(PNT) ({{<cite "models/90" >}}).
+(PNT) [@ONeill1994].
+
 The transcriptional activator PNT is the major effector of the pathway.
 The protein Anterior open (AOP) is a constitutive repressor,
 which competes for PNT binding sites and can be removed from the nucleus and
@@ -52,14 +51,14 @@ recognizing activated, internalized receptor molecules and inducing their
 ubiquitination and degradation. CBL may also enhance the endocytosis of DER,
 following ligand binding. Modulation of DER signalling by CBL has been
 reported only in the follicle cells, which receive the Gurken signal from the
-oocyte ({{<cite "models/92" "models/93" "models/94" "models/95" >}}).
+oocyte [@Yokouchi1999] [@Levkowitz1999] [@Waterman1999] [@Pai2000].
 
 Our logical model represents a cell receiving different
 combinations of ligands binding (SPI or Vein or both) and express/receive
 different levels of inhibitory inputs (Aos, Sty, Cbl, Kek).
 The signalling pathway is characterized by no signalling, medium or high
-signalling process designed by multi-valued nodes. We consider five main wild-
-type cellular situations:
+signalling process designed by multi-valued nodes. We consider five main 
+wild-type cellular situations:
 
 1. Cells secreting ligands but lacking Der activation (inhibition of Der),
    leading to no signalling.

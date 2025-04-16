@@ -1,7 +1,5 @@
 ---
 title: The pair-rule cross-regulatory module
-aliases:
-- /node/63
 taxon: 
 - D. melanogaster
 process: 

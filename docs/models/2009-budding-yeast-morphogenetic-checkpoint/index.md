@@ -1,7 +1,5 @@
 ---
 title: "Morphogenetic checkpoint of the budding yeast cell cycle"
-aliases:
-- /node/26
 taxon: 
 - Yeast
 - Budding yeast

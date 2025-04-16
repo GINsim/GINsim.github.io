@@ -1,7 +1,5 @@
 ---
 title: "Control of Th1/Th2/Th17/Treg/Tfh/Th9/Th22 cell differentiation"
-aliases:
-- /node/185
 taxon: 
 - Mammal
 - Blood cells

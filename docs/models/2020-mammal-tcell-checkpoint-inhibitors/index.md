@@ -1,8 +1,5 @@
 ---
 title: "T cells response to CTLA4 and PD-1 checkpoint inhibitors"
-aliases:
-- /node/238
-- /model/tcell-checkpoint-inhibitors-tcla4-pd1
 taxon: 
 - Mammal
 process: 

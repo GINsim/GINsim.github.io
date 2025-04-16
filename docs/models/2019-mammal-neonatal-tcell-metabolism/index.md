@@ -1,8 +1,5 @@
 ---
 title: "Contribution of ROS and metabolic status to neonatal and adult CD8+ T cell activation"
-aliases:
-- /node/229
-- /node/232
 taxon: 
 - Mammal
 - Human

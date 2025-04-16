@@ -1,7 +1,5 @@
 ---
 title: "Drosophila Dpp Signalling pathway"
-aliases:
-- /node/89
 taxon: 
 - D. melanogaster
 process: 
@@ -46,7 +44,9 @@ the wing. GBB or SCW form heterodimeric complexes with DPP. These heterodimers
 can only signal through TKV, while SCW/SCW and GBB/GBB signals trough SAX, and
 DPP/DPP trough TKV and SAX. To model DPP signalling and the formation of the
 gradient, we have considered three different levels for the TKV receptor (0,
-1, 2) and the MADMED effector (0, 1, 2). The regulatory graph also accounts
+1, 2) and the MADMED effector (0, 1, 2).
+
+The regulatory graph also accounts
 for the potentiation of responding cells due to association of DPP and SCW, or
 of DPP and GBB. Activated by MADMED, DAD is a pathway inhibitor that can
 modulate the pathway activity from high to low signalling. DAD works by
@@ -54,7 +54,9 @@ abrogating the phosphorylation of the MADMED complex by TKV or SAX, thus
 involving a negative circuit between DAD and the MADMED complex. In addition,
 BRK another inhibitor of the DPP pathway can block the transcription of dad.
 Our model reproduces the formation of the DPP signalling gradient and accounts
-for the role of the heterodimers signalling in cell potentiation. To simulate
+for the role of the heterodimers signalling in cell potentiation.
+
+To simulate
 DPP signalling, we start from an initial state corresponding to non
 differentiated cell, that can receives high or low level of DPP signal. The
 use of ternary nodes enables us to account for differential effects of
@@ -70,7 +72,9 @@ signalling. This leads to a higher signal transduction. ii) in cells
 potentiated by GBB, the situation is similar but involve a different
 heterodimer (GBB/DPP). These situations correspond to two different stable
 states with high TKV and MADMED (level 2), denoting that more receptors are
-required to enable a higher level of nuclear MADMED. We consider five
+required to enable a higher level of nuclear MADMED.
+
+We consider five
 different initial states: i) the first one corresponds to the absence of
 signalling, i.e. absence of DPP; ii) the second one corresponds to medium
 signalling, characterized by the presence of Dpp at level 1 and of SCW; iii)
@@ -79,7 +83,9 @@ of Dpp at level 1 and of GBB); iv) the fourth one corresponds to the presence
 of DPP at level 2 and of SCW; v) the last one corresponds to the presence of
 DPP at level 2 and of GBB. These set of initial states enable the simulation
 of five situations. No signalling, two medium and two high signalling that
-characterize the behavior of the pathway. The stable state obtained with the
+characterize the behavior of the pathway. 
+
+The stable state obtained with the
 no signalling simulation shows the absence of binding of the ligands to the
 receptors TKV and Punt (level of expression 0) and the non activation of
 target nodes. These medium signals simulations in presence of DPP, show the
@@ -90,7 +96,8 @@ high signalling sets, these nodes are expressed at level 2. The node Tkv is
 multi-valued because the high signalling is characterized by the binding of
 hetero dimers (DPP/SCW or DPP/GBB) signalling through TKV. Note that GBB and
 SCW don't have the same expression pattern.
+
 For more details on Dpp signalling pathway regulation see
-{{<cite "models/161" "models/162" "models/163" "models/164" "models/165" >}}.
+[@Eldar2002] [@Kamiya2008] [@Wartlick2011] [@BaenaLopez2012] [@Brooks2012].
 
 

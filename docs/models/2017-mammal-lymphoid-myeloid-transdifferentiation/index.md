@@ -1,7 +1,5 @@
 ---
 title: "Lymphoid and myeloid cell specification and transdifferentiation"
-aliases:
-- /node/216
 taxon: 
 - Mammal
 - Blood cells

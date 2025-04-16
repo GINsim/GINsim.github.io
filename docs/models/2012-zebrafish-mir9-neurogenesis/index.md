@@ -1,7 +1,5 @@
 ---
 title: "miR-9 and timing of neurogenesis (Coolen 2012)"
-aliases:
-- /node/214
 taxon: 
 - Zebrafish
 process: 

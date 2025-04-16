@@ -1,8 +1,5 @@
 ---
 title: "Asymmetric Cell Division in Caulobacter Crescentus"
-aliases:
-- /node/218 
-- /model/C_crescentus
 taxon: 
 - C. Crescentus
 - Bacterium

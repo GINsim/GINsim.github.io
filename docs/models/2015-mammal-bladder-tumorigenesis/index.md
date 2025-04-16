@@ -1,7 +1,5 @@
 ---
 title: "Mutually exclusive and co-occurring genetic alterations in bladder tumorigenesis"
-aliases:
-- /node/188
 taxon: 
 - Mammal
 - Human

@@ -1,7 +1,5 @@
 ---
 title: "ERBB receptor-regulated G1/S transition"
-aliases:
-- /node/39
 taxon: 
 - Human
 process: 

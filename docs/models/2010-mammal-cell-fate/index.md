@@ -1,7 +1,5 @@
 ---
 title: "Cell-Fate Decision in Response to Death Receptor Engagement"
-aliases:
-- /node/227
 taxon: 
 - Mammal
 process: 
@@ -41,6 +39,6 @@ The original model focuses on the interplay between three pathways activated
 in response to the same signal.
 
 
-This model has then been adapted for multiscale analysis {{<cite "models/226" >}}.
+This model has then been adapted for multiscale analysis [@Letort2018].
 
 

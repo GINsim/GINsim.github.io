@@ -1,7 +1,5 @@
 ---
 title: "T-lymphocyte specification"
-aliases:
-- /node/234
 terms: Mouse
 taxon: 
 - Mammal

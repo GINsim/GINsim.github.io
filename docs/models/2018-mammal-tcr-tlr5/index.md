@@ -1,7 +1,5 @@
 ---
 title: "TCR and TLR5 merged Boolean model"
-aliases:
-- /node/225
 taxon: 
 - Mammal
 process: 

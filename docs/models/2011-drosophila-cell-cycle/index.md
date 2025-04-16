@@ -1,7 +1,5 @@
 ---
 title: "Drosophila cell cycle"
-aliases:
-- /node/31
 taxon: 
 - D. melanogaster
 process: 

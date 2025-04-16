@@ -1,7 +1,5 @@
 ---
 title: "Cell fate decision network in the AGS gastric cancer cell line (Flobak et al 2015)"
-aliases:
-- /node/194
 taxon: 
 - Mammal
 process: 

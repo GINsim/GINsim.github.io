@@ -1,8 +1,5 @@
 ---
 title: "Communication  pathways between Hematopoietic Stem Progenitor Cells (HSPCs) and Mesenchymal Stromal Cells (MSCs)"
-aliases:
-- /model/HSPC_MSC
-- /node/204
 taxon: 
 - Mammal
 - Blood cells

@@ -1,8 +1,5 @@
 ---
 title: "Microenvironment control of hybrid Epithelial-Mesenchymal phenotypes"
-aliases:
-- /node/231
-- /model/EMT_Selvaggio_etal
 taxon: 
 - Mammal
 process: 

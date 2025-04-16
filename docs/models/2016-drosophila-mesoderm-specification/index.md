@@ -1,8 +1,5 @@
 ---
 title: "Drosophila mesoderm specification"
-aliases:
-- /model/drosophila_mesoderm
-- /node/206
 taxon: 
 - D. melanogaster
 process: 

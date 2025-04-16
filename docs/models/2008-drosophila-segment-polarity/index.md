@@ -1,8 +1,5 @@
 ---
 title: "Segment polarity module (Sánchez et al. 2008)"
-aliases:
-- /model/SP
-- /node/43
 taxon: 
 - D. melanogaster
 process: 

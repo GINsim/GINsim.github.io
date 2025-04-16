@@ -1,7 +1,5 @@
 ---
 title: "Drosophila JAK/STAT Signalling pathway"
-aliases:
-- /node/109
 taxon: 
 - D. melanogaster
 process: 
@@ -23,13 +21,12 @@ dimerization, enabling hop to phosphorylate specific tyrosine residues of the
 receptor. Consequently, STAT92E is also phosphorylated by HOP, leading to his
 homo-dimerization and nuclear translocation. In the nucleus, STAT92E binds to
 target DNA sequences and acts as an activator of transcription of several
-target genes {{<cite "models/103" >}}. During Drosophila development, the JAK/STAT
+target genes [@Hou1997]. During Drosophila development, the JAK/STAT
 pathway is involved in embryonic segmentation, eye development, cell growth,
-haematopoiesis, and sex determination {{<cite "models/104" "models/105" >}}.
+haematopoiesis, and sex determination [@Luo2001] [@Johnson2011].
 JAK/STAT signalling also plays important roles during spermatogenesis
-{{<cite "models/106" >}} and oogenesis
-{{<cite "models/105" "models/107" "models/108" >}}. To study the
-dynamic of the pathway, we define a set of initial states
+[@Kiger2001] and oogenesis [@Denef2003] [@Xi2003] [@Johnson2011].
+To study the dynamic of the pathway, we define a set of initial states
 representative of in vivo situations during JAK/STAT signalling. More
 precisely, we define a three initial states corresponding to pathway
 signalling (binding of OS or UPD2 or UPD3) and two initial states

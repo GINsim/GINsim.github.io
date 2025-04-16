@@ -1,7 +1,5 @@
 ---
 title: "MAPK network"
-aliases:
-- /node/173
 taxon: 
 - Mammal
 process: 

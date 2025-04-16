@@ -1,7 +1,5 @@
 ---
 title: Lysis vs lysogeny decision in the phage lambda
-aliases:
-- /node/47
 taxon: 
 - Phage Lambda
 process: 

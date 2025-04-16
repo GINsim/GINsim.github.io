@@ -1,7 +1,5 @@
 ---
 title: "Molecular Pathways Enabling Tumour Cell Invasion and Migration"
-aliases:
-- /node/191
 taxon: 
 - Mammal
 - Human

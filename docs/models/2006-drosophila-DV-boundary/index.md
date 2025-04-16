@@ -1,7 +1,5 @@
 ---
 title: DV boundary formation of the Wing imaginal disc
-aliases:
-- /node/69
 taxon: 
 - D. melanogaster
 process: 

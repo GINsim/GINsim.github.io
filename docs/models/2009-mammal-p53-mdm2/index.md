@@ -1,8 +1,5 @@
 ---
 title: "p53-Mdm2 network involved in DNA repair"
-aliases:
-- /node/222
-- /model/p53-Mdm2
 taxon: 
 - Mammal
 process: 

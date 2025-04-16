@@ -1,7 +1,5 @@
 ---
 title: "Logical model of the regulatory network controlling dorsal-ventral axis specification in the sea urchin P. lividius"
-aliases:
-- /node/236
 terms: Sea urchin | Echinoderms
 taxon:
 - Sea Urchin

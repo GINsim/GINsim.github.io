@@ -1,8 +1,5 @@
 ---
 title: "Drosophila eggshell patterning"
-aliases:
-- /node/175
-- /model/eggshell_patterning
 taxon: 
 - D. melanogaster
 process: 

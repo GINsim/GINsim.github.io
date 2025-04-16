@@ -1,7 +1,5 @@
 ---
 title: "Budding yeast exit module"
-aliases:
-- /node/29
 taxon: 
 - Yeast
 - Budding yeast
@@ -19,7 +17,7 @@ file_descriptions:
 
 
 This logical model focuses on the network controlling mitotic exit in 
-budding yeast. It is inspired by the work of Queralt et al. {{<cite "models/24" >}},
+budding yeast. It is inspired by the work of Queralt et al. [@Queralt2006],
 which emphasises the role of PP2A down-regulation by separase in the triggering
 of Cdc14 activation during anaphase. 
 These authors developed a quantitative model for mitotic exit, integrating evidence
@@ -33,4 +31,10 @@ activated by Pds1, in place of the FEAR reaction. Our logical model
 qualitatively accounts for available data on the wild-type cell cycle, as well
 as for nine different cycle perturbations described in Queralt et al, in terms
 of Cdc14 activation.
+
+See also:
+
+- [Core engine](/node/25)
+- [Morphogenetic checkpoint](/node/26)
+- [Coupled model](/node/23) combining the budding yeast core cycling engine with the morphogenetic checkpoint and a detailed exit module.
 

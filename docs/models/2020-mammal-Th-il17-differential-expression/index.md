@@ -1,8 +1,5 @@
 ---
 title: "Differential expression of IL17 isoforms A and F in helper T Lymphocytes"
-aliases:
-- /node/244
-- /model/ThIL17diff
 taxon: 
 - Mammal
 process: 

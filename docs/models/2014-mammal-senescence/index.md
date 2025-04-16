@@ -1,7 +1,5 @@
 ---
 title: "Senescence onset at the G1/S cell cycle checkpoint"
-aliases:
-- /node/183
 taxon: 
 - Mammal
 process: 

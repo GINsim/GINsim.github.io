@@ -1,7 +1,5 @@
 ---
 title: "Control of Th1/Th2/Th17/Treg cells differentiation"
-aliases:
-- /node/79
 taxon: 
 - Mammal
 process: 
@@ -27,15 +25,15 @@ system, with its many branching differentiation pathways and cell types, is a
 compelling case study.
 
 
-
 This model accounts for the regulatory network and signalling pathways
 controlling Th cell differentiation.
 As most available data are qualitative, it is relied on a logical formalism to
 perform extensive dynamical analyses. To cope with the size and complexity of the
-resulting network, it is used an original model reduction approach {{<cite "models/75" >}},
-together with a stable state identification algorithm {{<cite "models/58" >}}. To assess the
-effects of heterogeneous environments on Th cell differentiation, it is performed a
-systematic series of simulations, considering various prototypic environments.
+resulting network, it is used an original model reduction approach [@Naldi2011],
+together with a stable state identification algorithm [@Naldi2007].
+To assess the effects of heterogeneous environments on Th cell differentiation,
+it is performed a systematic series of simulations, considering various 
+prototypic environments.
 
 
 Consequently, it is identified stable states corresponding to canonical Th1,

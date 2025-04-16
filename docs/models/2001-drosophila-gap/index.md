@@ -1,7 +1,5 @@
 ---
 title: "Gap Model"
-aliases:
-- /node/82
 taxon: 
 - D. melanogaster
 process: 

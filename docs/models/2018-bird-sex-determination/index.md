@@ -1,8 +1,5 @@
 ---
 title: "Primary sex determination of chicken gonads"
-aliases:
-- /node/219
-- /model/sex_determination_chicken
 taxon: 
 - Mammal
 - Bird
