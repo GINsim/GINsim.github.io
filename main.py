@@ -5,7 +5,7 @@ def define_env(env):
     @env.macro
     def model_table():
         model_root = os.path.join(env.project_dir, "docs", "models")
-        table = "| Title | Taxon - all terms | Process - all terms |\n|-------|-------|---------|\n"
+        table = "| Model name | Taxon - all terms | Process - all terms |\n|-------|-------|---------|\n"
 
         for model_name in sorted(os.listdir(model_root)):
             model_dir = os.path.join(model_root, model_name)
