@@ -50,7 +50,7 @@ GINsim allows the user to specify a model of a genetic regulatory network in ter
 !!! example "Interoperability"
     ![CoLoMoTo](colomoto.png){: style="float: left; margin-right: 10px;"}
 
-    GINsim can load and export models from the [SBML qual](https://sbml.org/documents/specifications/level-3/version-1/qual/) format, enabling to share them with other software tools. Its integration in the [CoLoMoTo notebook](http://colomoto.org/notebook) enables the definition of complex, reproducible anlysis workflows.
+    GINsim can load and export models from the [SBML qual](https://sbml.org/documents/specifications/level-3/version-1/qual/) format, enabling to share them with other software tools. Its integration in the [CoLoMoTo notebook](https://colomoto.github.io/colomoto-docker/) enables the definition of complex, reproducible anlysis workflows.
 
     - Efficient reachability analysis using [pint](http://loicpauleve.name/pint);
     - Complex reachability analysis using the [NuSMV model checker](https://nusmv.fbk.eu);

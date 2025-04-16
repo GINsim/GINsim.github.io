@@ -19,9 +19,9 @@ file_descriptions:
 In budding yeast, the morphogenetic checkpoint (MCP) relies upon inhibitory
 phosphorylation of Cdc2/Cyclin B by Swe1 to condition entry into mitosis to
 the formation of a bud. Taking inspiration in the ODE model published by
-Ciliberto et al. (2003) [1], we have developed a logical model of the MCP,
-with the aim to plug it to our [core engine](25) of the budding yeast cell
-cycle (cf. [2]).
+Ciliberto et al. (2003) [@Ciliberto2003], we have developed a logical model of the MCP,
+with the aim to plug it to our [core engine](/node/25) of the budding yeast cell
+cycle (cf. [@Faure2009b]).
 
 
 
@@ -45,8 +45,8 @@ details). Here, we have introduced a second threshold for the MASS variable,
 to represent the idea that increased CycB synthesis can yield enough CycB
 activity to overcome inhibition by Swe1. Our model accounts for the wild-type
 as well as 14 mutants phenotypes described by Ciliberto et al. and in Harrison
-et al (2001) [3] in terms of entry into mitosis – monitored by Clb2
+et al (2001) [@Harrison2001] in terms of entry into mitosis – monitored by Clb2
 activation. This model has then been to our model of the core cell cycle
-engine of the budding yeast (see [coupled model](21)).
+engine of the budding yeast (see [coupled model](/node/21)).
 
 

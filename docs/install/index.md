@@ -12,7 +12,7 @@ The GINsim website [https://ginsim.github.io](https://ginsim.github.io) provides
     - **All releases** on GitHub: [https://github.com/GINsim/GINsim/releases](https://github.com/GINsim/GINsim/releases)
 
 
-GINsim requires Java 8.
+GINsim requires Java >=8.
 You can obtain Java for Linux, Windows, Mac OSX, and Solaris at java.com.
 Note that Apple used to provide its own Java version, newer versions are not supported on OSX 10.6 and older.
 GINsim 2.9.10 is the last version supporting Java 6, and has the same features as GINsim 3.0.

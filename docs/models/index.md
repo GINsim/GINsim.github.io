@@ -1,4 +1,4 @@
-# 📦 Model Repository
+# Model Repository
 
 {{ model_table() }}
 

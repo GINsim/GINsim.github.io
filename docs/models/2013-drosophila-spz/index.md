@@ -50,7 +50,7 @@ and GNBP1 define a Gram-positive-specific branch of Toll receptor activation.
 PGRP-SD also belongs to this branch and is required for the detection of other
 Gram-positive and negative bacterial strains. In short, the maturation of SPZ
 activates Toll in both early embryo and immune response and is controlled by
-different sets of proteases [@Bischoff2004] [@Valanne].
+different sets of proteases [@Bischoff2004] [@Valanne2011].
 To reproduce biological data during SPZ processing, we define four initial 
 states corresponding the biological process involved. 
 All these initial state lead to the formation of the active form of SPZ.

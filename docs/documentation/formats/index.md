@@ -225,7 +225,7 @@ These include modifications such as model perturbations or reductions, or the de
 
 
 !!! example "The Petri Net export dialog"
-    ![The Petri Net export dialog](/documentation/formats/pnexport.png)
+    ![The Petri Net export dialog](formats/pnexport.png)
 
     The Petri Net export dialog box allows to select the export format, the initial markup and the mutant to apply before exporting. The initial markup can be generated from an existing initial state of the model  (modifications made in this dialog are also applied to the simulation settings); only the first selected state is used.
 

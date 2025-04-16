@@ -61,7 +61,7 @@ before being allowed to reach level 2. Our model simulations qualitatively
 agree with the behaviour reported for the wild-type Yeast, as well as for over
 one hundred mutant conditions. This led us to further develop this model by
 defining additional regulatory modules such as the [morphogenetic
-checkpoint](../26). We also developed a model for [mitotic exit](../29) based on
+checkpoint](/node/26). We also developed a model for [mitotic exit](/node/29) based on
 more recent evidence. The resulting logical models are presented as separate
 entries of our model repository. In conclusion, our core cell cycle model
 served as a benchmark to assess the power of logical modelling applied to a

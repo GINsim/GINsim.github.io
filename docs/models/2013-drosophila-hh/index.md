@@ -19,10 +19,10 @@ Processing of HH ligand The precursor of HH is auto-catalytically cleaved to pro
 N-terminal (HH-N) and a C- terminal (HH-C) fragments [@Lee1994] [@Porter1996].
 A cholesterol moiety is covalently attached to the last amino acid of HH-N to create HH-Np,
 that is responsible for the biological activities of HH proteins
-[@Lee1994] [@Porter1996] [@Inghan2001].
+[@Lee1994] [@Porter1996] [@Ingham2001].
 The N-terminal region of HH-Np
 is further modified by addition of palmitate that is essential for its 
-signalling activity [@Pepinsky1998] [@Wang200] [@Amanai2001] [@Chamoun2001] [@Lee2001] [@Micchelli2002].
+signalling activity [@Pepinsky1998] [@Wang2000] [@Amanai2001] [@Chamoun2001] [@Lee2001] [@Micchelli2002].
 We model these aspects by an AND rule (combining inputs
 from DLP, IHOG, Rasp, DISP, SHF, Lipophorin, BOI and DALLY) attached to the
 component representing the secreted HH molecule, denoted Hh in our model. HH

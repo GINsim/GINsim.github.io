@@ -20,7 +20,7 @@ Note that GINsim also provides the [Hierarchical Transition Graph](index.md#hier
 
 
 !!! example "Strongly Connected Components graph"
-    ![Strongly Connected Components graph](/documentation/analyses/scc.png)
+    ![Strongly Connected Components graph](analyses/scc.png)
 
     Example of Strongly Connected Component Graph (bottom right) and the corresponding state transition graph (top left).
     The ``Selection Attribute`` tab in the bottom panel shows the content of the selected SCC (i.e. the list of nodes in the original graph).
@@ -64,7 +64,7 @@ A "\*" in the table denotes that each of the values of this component gives rise
 
 
 !!! example "Stable states search"
-    ![](/documentation/analyses/fixedpoints.png)
+    ![](analyses/fixedpoints.png)
 
     The stable states dialog box, showing the result of the analysis.
 
@@ -90,7 +90,7 @@ This tool is available from the ``Trapspace identification`` option of the ``Too
 
 
 !!! example "The trapspace dialog box"
-    ![](/documentation/analyses/trapspaces.png)
+    ![](analyses/trapspaces.png)
     
     The trapspace dialog box, showing the result of the analysis.
 
@@ -130,7 +130,7 @@ involved components).
 
 
 !!! example "Select regulatory circuits for analysis"
-    ![Select regulatory circuits for analysis](/documentation/analyses/circuitsConfig.png)
+    ![Select regulatory circuits for analysis](analyses/circuitsConfig.png)
 
     A first dialog enables to select which circuits will be analysed, by specifying constraints on the length of the circuits or on the involved actors. By default all circuits are considered.
 
@@ -140,7 +140,7 @@ The analysis can be repeated for various perturbations.
 
 
 !!! example "Result of the functionality analysis"
-    ![Result of the functionality analysis](/documentation/analyses/circuits.png)
+    ![Result of the functionality analysis](analyses/circuits.png)
 
     When the analysis is completed, the dialog classifies the selected circuits, according to their computed sign.
     When a circuit is selected, its functionality context is shown at the bottom of the dialog box.

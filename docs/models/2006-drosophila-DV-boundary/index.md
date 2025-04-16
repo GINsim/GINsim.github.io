@@ -6,7 +6,7 @@ process:
 - Wing Imaginal disk
 - Development
 submitter: D. Thieffry
-supporting_paper: Gonzalez2006
+supporting_paper: Gonzalez2006b
 files: 
 - dv_boundary_wing_disk_model.zginml
 - ap-1_else-0_wt.zginml

@@ -19,7 +19,7 @@ file_descriptions:
 A number of bacterial and viral genes take part in the decision between lysis
 and lysogenisation in temperate bacteriophages. In the case of the
 bacteriophage lambda, at least 5 viral regulatory products (CI, Cro, CII, N
-and CIII) and several bacterial genes are involved (see [@Ptachne1992]
+and CIII) and several bacterial genes are involved (see [@Ptashne1992]
 for an excellent overview).
 
 
@@ -28,7 +28,7 @@ As in this paper, for the sake of explanation clarity, we proceed in two steps. 
 of the core of the lambda regulatory network, constituted by the cross-regulation
 between the regulatory genes CI (encoding the repressor) and Cro
 (see [phage2.zginml](phage2.zginml)).
-In a second step, we propose a four element model 
+In a second step, we propose a four element model
 (see [phageLambda4.zginml](phageLambda4.zginml)), encompassing
 the roles of the regulatory genes CII and N in addition of CI and Cro.
 
