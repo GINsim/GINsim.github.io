@@ -12,6 +12,9 @@ supporting_paper: "187"
 files: 
 - Bladder_Model.zginml
 - Bladder_Model.sbml
+file_descriptions:
+- GINsim model
+- SBMLqual model
 ---
 
 

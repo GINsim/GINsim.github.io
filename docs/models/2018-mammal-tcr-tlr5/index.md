@@ -12,6 +12,8 @@ files:
 - RodriguezJorge_TCR_Signalling_BooleanModel_17Jul2018.zginml
 file_descriptions: 
 - Boolean model resulting from the merging of the two Boolean models for TCR and TLR5 signalling as listed above. This comprehensive Boolean model encompasses 128 nodes, including three externally controlled inputs (TLR5, TCR, and CD28 ) and six phenotypic nodes
+- TLR5 Boolean model 
+- TCR Boolean model 
 ---
 
 

@@ -10,8 +10,9 @@ related_references: /node/226
 files: 
 - Calzone__Cell_Fate.zginml
 - CellFate_multiscale.zginml
-file_descriptions: 
-- The original cell fate model and a variant adapted for multiscale analysis
+file_descriptions:
+- The original cell fate model
+- Model variant adapted for multiscale analysis
 ---
 
 This model provides a generic high-level view of the interplays between NFκB

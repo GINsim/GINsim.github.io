@@ -8,9 +8,7 @@ submitter: C. Chaouiya
 supporting_paper: Thieffry1995
 related_references: /node/28
 files: 
-- phage2.zginml
 - phageLambda4.zginml
-- phage4_alternate.zginml
 file_descriptions: 
 - Four components logical model
 ---

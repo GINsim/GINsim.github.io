@@ -10,7 +10,8 @@ files:
 - Flobak_FullModel_S2_Dataset.zginml
 - Flobak_ReducedModel_S3_Dataset.zginml
 file_descriptions: 
-- Full and reduced models (Ginsim format)
+- Full GINsim model
+- Reduced GINsim model
 ---
 
 

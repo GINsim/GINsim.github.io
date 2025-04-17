@@ -13,6 +13,12 @@ files:
 - Traynard_Boolean_MamCC_Apr2016.zginml
 - Traynard_Boolean_MamCC_Apr2016.sbml
 - Traynard_MultiLevel_MamCC_Apr2016_specsSMV.smv
+file_descriptions:
+- Multilevel GINsim model
+- Multilevel SBMLqual model
+- Boolean GINsim model
+- Boolean SBMLqual model
+- NuSMV specification for multilevel model
 ---
 
 

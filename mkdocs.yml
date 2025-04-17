@@ -38,10 +38,6 @@ extra:
       link: https://github.com/GINsim
 extra_css:
   - css/custom.css
-  - https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css
-extra_javascript:
-  - https://code.jquery.com/jquery-3.7.1.min.js
-  - https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js
 
 # Plugins
 plugins:

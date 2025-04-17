@@ -7,8 +7,10 @@ process:
 - Signalling
 submitter: Denis Thieffry
 supporting_paper: "179"
-files: 
+files:
 - Mast_cell_activation_Annotated_19oct2014.zginml
+file_descriptions:
+- GINsim model
 ---
 
 

@@ -14,7 +14,10 @@ files:
 - full_network.sbml
 - reduced_network.sbml
 file_descriptions: 
-- GINsim and SBML qual files for the full and reduced networks (Fig S1 and Fig1)
+- Full network GINsim format
+- Reduced network GINsim format
+- Full network SBMLqual format
+- Reduced network SBMLqual format
 ---
 
 
