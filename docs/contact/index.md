@@ -7,7 +7,7 @@ As some problems might be difficult to reproduce, try to include a description o
 Specific questions can also be adressed to the GINsim team at [support@ginsim.org](mailto:support@ginsim.org).
 
 
-## Meet the team
+## Meet the current team
 
 <div style="display: table; border-spacing: 10px;">
     <div style="display: table-row;">
@@ -35,7 +35,7 @@ Specific questions can also be adressed to the GINsim team at [support@ginsim.or
     </div>
 </div>
 
-### Former contributors
+## Former contributors
 
 - Prototype development: Frederic Cordeil, Thomas Marcq, Cecile Menahem, Romain Muti
 - Biological applications: Adrien Fauré, Aitor Gonzalez
