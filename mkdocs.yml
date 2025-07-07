@@ -38,6 +38,8 @@ extra:
       link: https://github.com/GINsim
 extra_css:
   - css/custom.css
+extra_javascript:
+  - assets/numbered-documentation.js
 
 # Plugins
 plugins:
@@ -142,8 +144,9 @@ markdown_extensions:
 # Page tree
 nav:
   - Home: index.md
-  - Installation: install/index.md
-  - Documentation: documentation/index.md
   - Model Repository: models/index.md
+  - Documentation: documentation/index.md
+  - Companion Tools: companion-tools/index.md
+  - Installation: install/index.md
   - Contact: contact/index.md
 

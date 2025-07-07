@@ -23,34 +23,34 @@
 /*********************************************************************/
 /* Auto-numbering for headings using CSS */
 /* Skip numbering for h1 (page title) */
-.md-typeset h1 {
+.numbered-sections .md-typeset h1 {
   counter-reset: h2 h3 h4;  /* Reset all counters */
 }
 
-.md-typeset h1:before {
+.numbered-sections .md-typeset h1:before {
   content: "" !important;    /* Disable h1 numbering */
 }
 
 /* Number h2-h4 */
-.md-typeset h2 {
+.numbered-sections .md-typeset h2 {
   counter-reset: h3 h4;
 }
 
-.md-typeset h2:before {
+.numbered-sections .md-typeset h2:before {
   counter-increment: h2;
   content: counter(h2) ". ";
 }
 
-.md-typeset h3 {
+.numbered-sections .md-typeset h3 {
   counter-reset: h4;
 }
 
-.md-typeset h3:before {
+.numbered-sections .md-typeset h3:before {
   counter-increment: h3;
   content: counter(h2) "." counter(h3) ". ";
 }
 
-.md-typeset h4:before {
+.numbered-sections .md-typeset h4:before {
   counter-increment: h4;
   content: counter(h2) "." counter(h3) "." counter(h4) ". ";
 }

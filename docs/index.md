@@ -2,58 +2,78 @@
 
 ![GINsim logo](ginsim.svg){: style="width: 120px; float: left; margin-right: 10px;"}
 
-GINsim (Gene Interaction Network simulation) is a software tool for the design and analysis of qualitative dynamical models of genetic regulatory networks.
+_GINsim_ (**G**ene **I**nteraction **N**etwork **sim**ulation) is a graphical application to ease the design and the dynamical analysis of Boolean and multilevel logical models of cellular regulatory networks.
 
-Recent developments in functional genomics have generated large amounts of data on gene expression and on the underlying regulatory mechanisms. 
-This has resulted in the progressive mapping of complex regulatory networks. As these networks usually include numerous intertwined feedback circuits, gaining an understanding of their spatio-temporal behaviour defies the intuition. 
-Formal modelling approaches become a necessary complement to experimental tools. 
-As precise information on molecular mechanisms and the value of kinetic parameters are currently difficult to establish, qualitative methods offer a highly attractive approach to model and analyse essential properties of genetic regulatory networks.
+GINsim relies on a graph-based representation of regulatory networks, called _logical regulatory graph_, as well as on a graph-based representation of the dynamics, called _state transition graph_.
 
+## Model definition, alteration and analysis
 
-## Logical modelling formalism
+The _GINsim_ graphical interface facilitates the definition of a _logical regulatory graph_ (LRG) with the insertion and deletion of nodes, as well as of various kinds of directed arcs (activations, inhibitions, dual or unknown arcs). The user can further associate textual and hyperlink annotations to keep track of supporting data. 
 
-GINsim consists of a simulator of qualitative models of genetic regulatory networks based on a discrete, logical formalism.
+The logical rules defining the responses of a target node to the levels of their regulators can be encoded as classical Boolean expressions (using the AND, OR and Not operators), or in terms of combinations of interactions enabling the activation of the target node to a specified level (equivalent to Snoussi & Thomas’ logical parameters). Internally, these logical rules are encoded as multilevel decision diagrams, which are used for the computation of various dynamical properties.
 
-GINsim allows the user to specify a model of a genetic regulatory network in term of asynchronous, multivalued logical functions, and to simulate and/or analyse its qualitative dynamical behaviour.
+A _GINsim_ model can be associated with a series of perturbations (e.g. loss-of-function or ectopic activity of a node, or any combination thereof), as well as with a set of reference states (e.g. initial states), which can all be defined through graphical panels.
 
-## Citing GINsim
+GINsim further includes:
 
-!!! info "If you use GINsim, please cite it using the following publication"
-    Aurélien Naldi, Céline Hernandez, Wassim Abou-Jaoudé, Pedro T. Monteiro, Claudine Chaouiya, and Denis Thieffry. **Logical modeling and analysis of cellular regulatory networks with GINsim 3.0**. _Frontiers in Physiology_, June 2018. [doi:10.3389/fphys.2018.00646](https://doi.org/10.3389/fphys.2018.00646)
-
-
-## Main features
-
-!!! example "Model editor"
-    ![GINsim](edit.svg){: style="float: left; margin-right: 10px;"}
-
-    - Build qualitative models in a graphical interface.
-    - The [regulatory graph](documentation/index.md#logical-regulatory-graph) represent interactions between biological entities.
-    - [Logical rules](documentation/index.md#dynamical-rules) define the dynamical behaviour of each component.
-    - [Annotations](documentation/index.md#annotations) keep track of the underlying knowledge.
-    - Apply [perturbations](documentation/index.md#perturbations) to account for mutants or alternative hypothesis.
-    - [Reduce](documentation/index.md#model-reduction) complex models by hiding intermediate components.
+- the verification of the consistency between the model graphical representation (arc occurrences and signs) with the logical rules associated with its nodes;
+- the efficient computation of the stable states of a model;
+- the identification of all regulatory circuits, evaluation of  their signs based on the logical rules associated with their nodes, and assessment of their functionality sub-spaces;
+- the colouring of the regulatory graph on stable states (displaying active nodes and interactions) or on user defined states;
+- a multiple graph functionalities, also applicable to state transition graphs, and listed below;
+- the possibility to reduce a model, by removing specific components;
+- the conversion of a multivalued model into a Boolean one;
+- the reversion of a model resulting in a model that produces a reverse (asynchronous) dynamics;
+- the functionalities to import models encoded in a variety of formats, primarily _sbml-qual_, ensuring interoperability with other logical modelling tools (truth tables, BoolNet, BoolSim and Bnet formats);
+- the functionalities to export models in different formats used by complementary tools (e.g. the model checker NuSMV or the stochastic simulation tool MaBoSS), including _sbml-qual_.
 
 
+## Model simulation
 
-!!! example "Dynamical analysis"
-    ![STG](simulation.svg){: style="float: left; margin-right: 10px;"}
+![STG](simulation.svg){: style="float: right; margin-right: 5px;"}
 
-    - Visualize simulation results as [state transition graphs](documentation/index.md#state-transition-graphs).
-    - The non-deterministic trajectories represent alternative cell fates.
-    - Efficient identification of some dynamical properties, up to complex models.
-    - [Fixed points](documentation/index.md#stable-state-search) and [trap spaces](documentation/index.md#trapspace-search) are attractors of the system.
-    - [Functional circuits](documentation/index.md#circuit-analysis) highlight key interactions in the model.
+GINsim includes a comprehensive panel of functionalities to simulate logical models:
+
+- several simulation tools using different state updating policies (synchronous, asynchronous, sequential, ...);
+- simulation settings for model perturbations (constraining components values as well as interactions functionalities);
+- construction of the dynamics in terms of State Transition Graphs (STG) or compacted form of the STGs (Strongly Connected Components graph (SCC) and Hierarchical Transition Graph (HTG));
+- estimation of attractors reachability;
+- n algorithm to compute the trap spaces of a model, which encompass stable states and subspace approximations of cyclic attractors.
 
 
+## Functionalities for the different graphs
 
-!!! example "Interoperability"
-    ![CoLoMoTo](colomoto.png){: style="float: left; margin-right: 10px;"}
+![GINsim](edit.svg){: style="float: right; margin-right: 5px;"}
 
-    GINsim can load and export models from the [SBML qual](https://sbml.org/documents/specifications/level-3/version-1/qual/) format, enabling to share them with other software tools. Its integration in the [CoLoMoTo notebook](https://colomoto.github.io/colomoto-docker/) enables the definition of complex, reproducible anlysis workflows.
+GINsim offers various operations on graphs (LRG, STG, SCC or HTG):
 
-    - Efficient reachability analysis using [pint](http://loicpauleve.name/pint);
-    - Complex reachability analysis using the [NuSMV model checker](https://nusmv.fbk.eu);
-    - Quantification of reachability probabilities using [MaBoSS](https://maboss.curie.fr);
-    - 2D modelling of a cellular tissue using [Epilog](http://epilog-tool.org). 
+- export in graphical formats (PNG, SVG);
+- various graph layout and graph exploration algorithms;
+- construction of the SCC graph for LRG and STG;
+- saving in different formats.
+
+
+## Interoperability and CoLoMoTo
+
+![CoLoMoTo](colomoto.png){: style="float: right; margin-right: 5px;"}
+
+GINsim can load and export models from the [SBML qual](https://sbml.org/documents/specifications/level-3/version-1/qual/) format, easing their sharing with other software tools.
+Its integration in the [CoLoMoTo notebook](https://colomoto.github.io/colomoto-docker/) enables the definition of complex, reproducible analysis workflows, for example:
+
+- Efficient reachability analysis using [pint](http://loicpauleve.name/pint);
+- Complex reachability analysis using the [NuSMV model checker](https://nusmv.fbk.eu);
+- Quantification of reachability probabilities using [MaBoSS](https://maboss.curie.fr);
+- 2D modelling of a cellular tissue using [Epilog](http://epilog-tool.org). 
+<!--
+## Availability and terms of use
+
+_GINsim_ is encoded in the cross-platform programming language Java and is distributed as Jar files (see [Install page](install/)), while its source code is shared on [GitHub](https://github.com/GINsim/GINsim), under the licence GPL v3.0.
+
+By browsing this web site, you acknowledge and accept its general terms of use described below.
+
+**Personal data**: GINsim and this web site do not collect any personal data beyond access logs.
+
+**Content**: The content of this website is available under [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International](https://creativecommons.org/licenses/by-nc-sa/4.0/), unless stated otherwise on specific pages.
+
+-->
 
