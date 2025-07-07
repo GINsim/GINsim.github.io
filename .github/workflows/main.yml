@@ -1,0 +1,30 @@
+name: github pages - mkdocs site
+
+on:
+  push:              # upon commit
+    branches:
+      - mkdocs
+  workflow_dispatch: # or with manual trigger
+
+jobs:
+  deploy:
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          python-version: '3.11'
+
+      - name: python dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install mkdocs mkdocs-material mkdocs-bibtex mkdocs-macros-plugin bibtexparser
+
+      - name: Build mkdocs site
+        run: mkdocs build --clean
+
+      - name: Deploy to github pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./site
+          publish_branch: master
