@@ -1,2 +1,858 @@
-<!doctype html><html><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="ie=edge"><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><title>Model repository &#183; GINsim</title><meta name=description content><link rel=stylesheet href=https://ginsim.github.io/style.main.css><link rel=alternate type=application/json href=https://ginsim.github.io/models/index.json title=GINsim><script src=https://ginsim.github.io/js/repository.min.6407ab9e1b873ca2f1bc7569a22b59e8bd53e5eca7388e161c36f815039f60f8.js></script>
-<link rel=stylesheet href=https://ginsim.github.io/css/custom.css></head><body><header><div class=title><a href=https://ginsim.github.io/><img src=https://ginsim.github.io/ginsim.svg class=logo alt=GINsim></a></div><nav><ul><li><a href=/>Home</a></li><li><a href=/doc/>Documentation</a></li><li><a href=/models/>Models</a></li></ul></nav></header><section><div class=content><h1>Model repository</h1></div></section><section><div class=content id=repository>The model repository requires javascript...</div><script>function matches_filter(e,t){return e.title.search(t)>=0||array_matches_filter(e.taxon,t)||array_matches_filter(e.process,t)}function format_entry(e){return info=document.createElement("p"),info.innerHTML='<a href="'+e.link+'"><b>'+e.title+'</b></a><br/><!--<time datetime="'+e.date+'">'+e.date+"</time>--> <b>Taxon:</b> <span class='taxon'>"+e.taxon+"</span> <b>Process:</b> <span class='process'>"+e.process+"</span>",info}load_repository("index.json","repository")</script></body></html>
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="..">
+      
+      
+        <link rel="next" href="../documentation/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.15">
+    
+    
+      
+        <title>Model Repository - Gene Interaction Network simulation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.342714a4.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../css/custom.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#model-repository" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Gene Interaction Network simulation" class="md-header__button md-logo" aria-label="Gene Interaction Network simulation" data-md-component="logo">
+      
+  <img src="../ginsim.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Gene Interaction Network simulation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Model Repository
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14.3 16-.7-2h-3.2l-.7 2H7.8L11 7h2l3.2 9zM20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12zm-9.15 3.96h2.3L12 9z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to system preference"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Switch to system preference" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/GINsim/GINsim" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GINsim @ GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Gene Interaction Network simulation" class="md-nav__button md-logo" aria-label="Gene Interaction Network simulation" data-md-component="logo">
+      
+  <img src="../ginsim.svg" alt="logo">
+
+    </a>
+    Gene Interaction Network simulation
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/GINsim/GINsim" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GINsim @ GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Model Repository
+    
+  </span>
+  
+
+      </a>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../documentation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Documentation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../companion-tools/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Companion Tools
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../install/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Installation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../contact/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Contact
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="model-repository">Model Repository<a class="headerlink" href="#model-repository" title="Permanent link">&para;</a></h1>
+<table>
+<thead>
+<tr>
+<th>Model name</th>
+<th>Taxon - all terms</th>
+<th>Process - all terms</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="1995-lambda-lysis-lysogeny/">Lysis vs lysogeny decision in the phage lambda</a></td>
+<td>Phage Lambda</td>
+<td>Lysis-lysogeny decision</td>
+</tr>
+<tr>
+<td><a href="2001-drosophila-gap/">Gap Model</a></td>
+<td>D. melanogaster</td>
+<td>Segmentation, Development</td>
+</tr>
+<tr>
+<td><a href="2003-drosophila-pair-rule/">The pair-rule cross-regulatory module</a></td>
+<td>D. melanogaster</td>
+<td>Segmentation, Development</td>
+</tr>
+<tr>
+<td><a href="2005-ecoli-trp-biosynthesis/">Controlling tryptophan biosynthesis</a></td>
+<td>E. Coli, Bacterium</td>
+<td>Tryptophan biosythesis</td>
+</tr>
+<tr>
+<td><a href="2006-drosophila-DV-boundary/">DV boundary formation of the Wing imaginal disc</a></td>
+<td>D. melanogaster</td>
+<td>Wing Imaginal disk, Development</td>
+</tr>
+<tr>
+<td><a href="2006-mammal-cell-cycle/">Restriction point control of the mammalian cell cycle</a></td>
+<td>Mammal</td>
+<td>Cell cycle</td>
+</tr>
+<tr>
+<td><a href="2006-mammal-tcell-activation/">TCR signalisation</a></td>
+<td>Mammal</td>
+<td>Differentiation</td>
+</tr>
+<tr>
+<td><a href="2006-mammal-th-differentiation/">Control of Th1/Th2 cell differentiation</a></td>
+<td>Mammal</td>
+<td>Differentiation</td>
+</tr>
+<tr>
+<td><a href="2008-budding-yeast-cell-cycle/">Budding yeast cell cycle (Orlando et al. 2008)</a></td>
+<td>Yeast, Budding yeast</td>
+<td>Cell cycle</td>
+</tr>
+<tr>
+<td><a href="2008-drosophila-AP-boundary/">The Anterior-Posterior Boundary (Gonzalez et al. 2008)</a></td>
+<td>D. melanogaster</td>
+<td>Wing Imaginal disk, Development</td>
+</tr>
+<tr>
+<td><a href="2008-drosophila-segment-polarity/">Segment polarity module (Sánchez et al. 2008)</a></td>
+<td>D. melanogaster</td>
+<td>Segmentation, Development</td>
+</tr>
+<tr>
+<td><a href="2008-fission-yeast-cell-cycle/">Fission Yeast Cell Cycle (Davidich and Bornholdt, 2008)</a></td>
+<td>Yeast, Fission yeast</td>
+<td>Cell cycle</td>
+</tr>
+<tr>
+<td><a href="2008-mammal-survival-tlgl-leukemia/">Network model of survival signaling in large granular lymphocyte leukemia (Zhang et al 2008)</a></td>
+<td>Mammal, Blood cells, T lymphocytes</td>
+<td>Cell fate decision</td>
+</tr>
+<tr>
+<td><a href="2009-budding-yeast-cell-cycle/">Budding yeast cell cycle (adapted from Irons, 2009)</a></td>
+<td>Yeast, Budding yeast</td>
+<td>Cell cycle</td>
+</tr>
+<tr>
+<td><a href="2009-budding-yeast-core-cell-cycle/">Core engine controlling the budding yeast cell cycle</a></td>
+<td>Yeast, Budding yeast</td>
+<td>Cell cycle, Core engine</td>
+</tr>
+<tr>
+<td><a href="2009-budding-yeast-full-cell-cycle/">Budding yeast cell cycle (Fauré et al. 2009)</a></td>
+<td>Yeast, Budding yeast</td>
+<td>Cell cycle</td>
+</tr>
+<tr>
+<td><a href="2009-budding-yeast-mitosis-exit/">Budding yeast exit module</a></td>
+<td>Yeast, Budding yeast</td>
+<td>Mitosis exit control, Cell cycle</td>
+</tr>
+<tr>
+<td><a href="2009-budding-yeast-morphogenetic-checkpoint/">Morphogenetic checkpoint of the budding yeast cell cycle</a></td>
+<td>Yeast, Budding yeast</td>
+<td>Cell cycle, Morphogenetic checkpoint</td>
+</tr>
+<tr>
+<td><a href="2009-human-erbb-g1s-transition/">ERBB receptor-regulated G1/S transition</a></td>
+<td>Human</td>
+<td>Cell cycle</td>
+</tr>
+<tr>
+<td><a href="2009-mammal-p53-mdm2/">p53-Mdm2 network involved in DNA repair</a></td>
+<td>Mammal</td>
+<td>Cancer, DNA repair</td>
+</tr>
+<tr>
+<td><a href="2010-mammal-cell-fate/">Cell-Fate Decision in Response to Death Receptor Engagement</a></td>
+<td>Mammal</td>
+<td>Cell fate decision</td>
+</tr>
+<tr>
+<td><a href="2010-mammal-th-differentiation/">Control of Th1/Th2/Th17/Treg cells differentiation</a></td>
+<td>Mammal</td>
+<td>Differentiation</td>
+</tr>
+<tr>
+<td><a href="2011-drosophila-cell-cycle/">Drosophila cell cycle</a></td>
+<td>D. melanogaster</td>
+<td>Cell cycle</td>
+</tr>
+<tr>
+<td><a href="2012-zebrafish-mir9-neurogenesis/">miR-9 and timing of neurogenesis (Coolen 2012)</a></td>
+<td>Zebrafish</td>
+<td>Development, Differentiation</td>
+</tr>
+<tr>
+<td><a href="2013-celegans-vulval-precursor/">Specification of vulval precursor cells and cell fusion control in C. elegans</a></td>
+<td>C. elegans</td>
+<td>Differentiation</td>
+</tr>
+<tr>
+<td><a href="2013-drosophila-FGF/">Drosophila FGF Signalling pathway</a></td>
+<td>D. melanogaster</td>
+<td>Signalling</td>
+</tr>
+<tr>
+<td><a href="2013-drosophila-JAK-STAT/">Drosophila JAK/STAT Signalling pathway</a></td>
+<td>D. melanogaster</td>
+<td>Signalling</td>
+</tr>
+<tr>
+<td><a href="2013-drosophila-dpp/">Drosophila Dpp Signalling pathway</a></td>
+<td>D. melanogaster</td>
+<td>Wing Imaginal disk, Development, Signalling</td>
+</tr>
+<tr>
+<td><a href="2013-drosophila-egf/">Drosophila EGF Signalling pathway</a></td>
+<td>D. melanogaster</td>
+<td>Signalling</td>
+</tr>
+<tr>
+<td><a href="2013-drosophila-hh/">Drosophila Hh Signalling pathway</a></td>
+<td>D. melanogaster</td>
+<td>Signalling</td>
+</tr>
+<tr>
+<td><a href="2013-drosophila-notch/">Drosophila Notch Signalling pathway</a></td>
+<td>D. melanogaster</td>
+<td>Signalling</td>
+</tr>
+<tr>
+<td><a href="2013-drosophila-spz/">Drosophila SPATZLE Processing pathway</a></td>
+<td>D. melanogaster</td>
+<td>Signalling</td>
+</tr>
+<tr>
+<td><a href="2013-drosophila-toll/">Drosophila Toll Signalling pathway</a></td>
+<td>D. melanogaster</td>
+<td>Signalling</td>
+</tr>
+<tr>
+<td><a href="2013-drosophila-vegf/">Drosophila VEGF Signalling pathway</a></td>
+<td>D. melanogaster</td>
+<td>Signalling</td>
+</tr>
+<tr>
+<td><a href="2013-drosophila-wg/">Drosophila Wg Signalling pathway</a></td>
+<td>D. melanogaster</td>
+<td>Signalling</td>
+</tr>
+<tr>
+<td><a href="2013-mammal-mapk/">MAPK network</a></td>
+<td>Mammal</td>
+<td>Signalling</td>
+</tr>
+<tr>
+<td><a href="2014-drosophila-eggshell-patterning/">Drosophila eggshell patterning</a></td>
+<td>D. melanogaster</td>
+<td>Development</td>
+</tr>
+<tr>
+<td><a href="2014-mammal-mast-cell-activation/">Mast cell activation</a></td>
+<td>Mammal, Blood cells</td>
+<td>Signalling</td>
+</tr>
+<tr>
+<td><a href="2014-mammal-senescence/">Senescence onset at the G1/S cell cycle checkpoint</a></td>
+<td>Mammal</td>
+<td>Senescence, Cell cycle, Cell fate decision</td>
+</tr>
+<tr>
+<td><a href="2014-mammal-th-differentiation/">Control of Th1/Th2/Th17/Treg/Tfh/Th9/Th22 cell differentiation</a></td>
+<td>Mammal, Blood cells, T lymphocytes</td>
+<td>Differentiation</td>
+</tr>
+<tr>
+<td><a href="2015-mammal-bladder-tumorigenesis/">Mutually exclusive and co-occurring genetic alterations in bladder tumorigenesis</a></td>
+<td>Mammal, Human</td>
+<td>Cancer, Signalling, Cell fate decision</td>
+</tr>
+<tr>
+<td><a href="2015-mammal-cell-fate-gastric-cancer/">Cell fate decision network in the AGS gastric cancer cell line (Flobak et al 2015)</a></td>
+<td>Mammal</td>
+<td>Cancer</td>
+</tr>
+<tr>
+<td><a href="2015-mammal-tumor-invasion-migration/">Molecular Pathways Enabling Tumour Cell Invasion and Migration</a></td>
+<td>Mammal, Human</td>
+<td>Cancer, Signalling</td>
+</tr>
+<tr>
+<td><a href="2015-stem-cells-myelofibrosis/">Logical modelling of myelofibrotic microenvironment predicts dysregulated progenitor stem cell crosstalk</a></td>
+<td>Mammal, Stem cells, Haematopoietic stem cells, Mesenchymal stem cells</td>
+<td>Cell fate decision</td>
+</tr>
+<tr>
+<td><a href="2016-drosophila-mesoderm-specification/">Drosophila mesoderm specification</a></td>
+<td>D. melanogaster</td>
+<td>Development, Signalling</td>
+</tr>
+<tr>
+<td><a href="2016-mammal-cell-cycle/">Multilevel mammalian cell cycle model</a></td>
+<td>Mammal</td>
+<td>Cell cycle</td>
+</tr>
+<tr>
+<td><a href="2016-mammal-geroconversion/">Boolean model of geroconversion</a></td>
+<td>Mammal</td>
+<td>Senescence</td>
+</tr>
+<tr>
+<td><a href="2016-mammal-hspc-msc-communication/">Communication  pathways between Hematopoietic Stem Progenitor Cells (HSPCs) and Mesenchymal Stromal Cells (MSCs)</a></td>
+<td>Mammal, Blood cells</td>
+<td>Cell fate decision</td>
+</tr>
+<tr>
+<td><a href="2016-mammal-sex-determination/">Primary sex determination of placental mammals</a></td>
+<td>Mammal</td>
+<td>Development, Sex determination</td>
+</tr>
+<tr>
+<td><a href="2017-bacterium-asymetric-division/">Asymmetric Cell Division in Caulobacter Crescentus</a></td>
+<td>C. Crescentus, Bacterium</td>
+<td>Asymmetric cell division, Cell cycle</td>
+</tr>
+<tr>
+<td><a href="2017-mammal-lymphoid-myeloid-transdifferentiation/">Lymphoid and myeloid cell specification and transdifferentiation</a></td>
+<td>Mammal, Blood cells</td>
+<td>Differentiation</td>
+</tr>
+<tr>
+<td><a href="2018-bird-sex-determination/">Primary sex determination of chicken gonads</a></td>
+<td>Mammal, Bird</td>
+<td>Development, Sex determination</td>
+</tr>
+<tr>
+<td><a href="2018-mammal-tcr-tlr5/">TCR and TLR5 merged Boolean model</a></td>
+<td>Mammal</td>
+<td>T-cell activation</td>
+</tr>
+<tr>
+<td><a href="2019-mammal-cell-cycle-control/">Comprehensive Boolean model of the mammalian cell cyle control network</a></td>
+<td>Mammal, Human</td>
+<td>Cell cycle, Signalling</td>
+</tr>
+<tr>
+<td><a href="2019-mammal-neonatal-tcell-metabolism/">Contribution of ROS and metabolic status to neonatal and adult CD8+ T cell activation</a></td>
+<td>Mammal, Human</td>
+<td>T-cell activation</td>
+</tr>
+<tr>
+<td><a href="2019-mammal-tcell-specification/">T-lymphocyte specification</a></td>
+<td>Mammal</td>
+<td>Differentiation, Signalling, Development</td>
+</tr>
+<tr>
+<td><a href="2020-mammal-Th-il17-differential-expression/">Differential expression of IL17 isoforms A and F in helper T Lymphocytes</a></td>
+<td>Mammal</td>
+<td>differentiation</td>
+</tr>
+<tr>
+<td><a href="2020-mammal-emt-microenvironment/">Microenvironment control of hybrid Epithelial-Mesenchymal phenotypes</a></td>
+<td>Mammal</td>
+<td>Cancer</td>
+</tr>
+<tr>
+<td><a href="2020-mammal-immune-checkpoints/">Immune checkpoints</a></td>
+<td>Mammal, Human</td>
+<td>T-cell activation</td>
+</tr>
+<tr>
+<td><a href="2020-mammal-immunogenic-cell-death/">Immunogenic Cell Death</a></td>
+<td>Mammal</td>
+<td>Cancer</td>
+</tr>
+<tr>
+<td><a href="2020-mammal-oncogenic-signaling/">Control of proliferation by oncogenes and tumor suppressors</a></td>
+<td>Mammal</td>
+<td>Cancer</td>
+</tr>
+<tr>
+<td><a href="2020-mammal-tcell-checkpoint-inhibitors/">T cells response to CTLA4 and PD-1 checkpoint inhibitors</a></td>
+<td>Mammal</td>
+<td>Differentiation</td>
+</tr>
+<tr>
+<td><a href="2020-seaurchin-dv-axis/">Logical model of the regulatory network controlling dorsal-ventral axis specification in the sea urchin P. lividius</a></td>
+<td>Sea Urchin</td>
+<td>Development</td>
+</tr>
+<tr>
+<td><a href="2021-mammal-braf-treatment/">Response to BRAF treatment in melanoma and colorectal cancer</a></td>
+<td>Mammal, Human</td>
+<td>Cancer</td>
+</tr>
+<tr>
+<td><a href="2021-mammal-monocytes-dendritic-cells/">Differentiation of Monocytes to Dendritic Cells</a></td>
+<td>Mammal, Human</td>
+<td>Differentiation</td>
+</tr>
+<tr>
+<td><a href="2022-mammal-signalling-prostate-cancer/">Signalling in prostate cancer</a></td>
+<td>Mammal, Human</td>
+<td>Cancer</td>
+</tr>
+<tr>
+<td><a href="2024-mammal-promyelocytic-leukaemia/">Logical model of the regulatory network underlying Retinoic Acid resistance in Acute Promyelocytic Leukaemia</a></td>
+<td>Mammal</td>
+<td>Cancer</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/GINsim" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "..", "features": ["navigation.sections"], "search": "../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.56ea9cef.min.js"></script>
+      
+        <script src="../assets/numbered-documentation.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,2836 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../models/">
+      
+      
+        <link rel="next" href="../companion-tools/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.15">
+    
+    
+      
+        <title>Documentation - Gene Interaction Network simulation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.342714a4.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../css/custom.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#ginsim-documentation" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Gene Interaction Network simulation" class="md-header__button md-logo" aria-label="Gene Interaction Network simulation" data-md-component="logo">
+      
+  <img src="../ginsim.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Gene Interaction Network simulation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Documentation
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14.3 16-.7-2h-3.2l-.7 2H7.8L11 7h2l3.2 9zM20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12zm-9.15 3.96h2.3L12 9z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to system preference"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Switch to system preference" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/GINsim/GINsim" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GINsim @ GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Gene Interaction Network simulation" class="md-nav__button md-logo" aria-label="Gene Interaction Network simulation" data-md-component="logo">
+      
+  <img src="../ginsim.svg" alt="logo">
+
+    </a>
+    Gene Interaction Network simulation
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/GINsim/GINsim" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GINsim @ GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../models/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Model Repository
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Documentation
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Documentation
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introduction
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gui" class="md-nav__link">
+    <span class="md-ellipsis">
+      GUI
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="GUI">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#welcome-dialog" class="md-nav__link">
+    <span class="md-ellipsis">
+      Welcome dialog
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#common-quirks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Common quirks
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Common quirks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#input-nodes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Input nodes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#unexpected-dynamical-results" class="md-nav__link">
+    <span class="md-ellipsis">
+      Unexpected dynamical results
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gui-refresh-issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      GUI refresh issues
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#main-window" class="md-nav__link">
+    <span class="md-ellipsis">
+      Main window
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Main window">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-ginsim-window" class="md-nav__link">
+    <span class="md-ellipsis">
+      The GINsim window
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#graph-view" class="md-nav__link">
+    <span class="md-ellipsis">
+      Graph view
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#file-menu" class="md-nav__link">
+    <span class="md-ellipsis">
+      File menu
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#edit-menu" class="md-nav__link">
+    <span class="md-ellipsis">
+      Edit menu
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#actions-menu" class="md-nav__link">
+    <span class="md-ellipsis">
+      Actions menu
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-secondary-panel" class="md-nav__link">
+    <span class="md-ellipsis">
+      The secondary panel
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#logical-regulatory-graph" class="md-nav__link">
+    <span class="md-ellipsis">
+      Logical Regulatory Graph
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Logical Regulatory Graph">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#definition" class="md-nav__link">
+    <span class="md-ellipsis">
+      Definition
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#structure-of-the-lrg" class="md-nav__link">
+    <span class="md-ellipsis">
+      Structure of the LRG
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#component-order" class="md-nav__link">
+    <span class="md-ellipsis">
+      Component order
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#component-attributes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Component attributes
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#interactions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Interactions
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Interactions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#model-integrity" class="md-nav__link">
+    <span class="md-ellipsis">
+      Model integrity
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dynamical-rules" class="md-nav__link">
+    <span class="md-ellipsis">
+      Dynamical rules
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Dynamical rules">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#logical-parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Logical parameters
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#logical-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Logical functions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#annotations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Annotations
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lrg-modifications" class="md-nav__link">
+    <span class="md-ellipsis">
+      LRG modifications
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="LRG modifications">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#perturbations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Perturbations
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#booleanization" class="md-nav__link">
+    <span class="md-ellipsis">
+      Booleanization
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#model-reversal" class="md-nav__link">
+    <span class="md-ellipsis">
+      Model reversal
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#model-reduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      Model reduction
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#model-dynamics-and-properties" class="md-nav__link">
+    <span class="md-ellipsis">
+      Model dynamics and properties
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Model dynamics and properties">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#state-transition-graphs" class="md-nav__link">
+    <span class="md-ellipsis">
+      State transition graphs
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#initial-states" class="md-nav__link">
+    <span class="md-ellipsis">
+      Initial states
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#simulation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Simulation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Simulation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#updating-modes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Updating modes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hierarchical-transition-graphs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Hierarchical Transition Graphs
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#analyses-functionalities" class="md-nav__link">
+    <span class="md-ellipsis">
+      Analyses / Functionalities
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Analyses / Functionalities">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#strongly-connected-components-graph" class="md-nav__link">
+    <span class="md-ellipsis">
+      Strongly Connected Components graph
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Strongly Connected Components graph">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#construct-an-scc-graph" class="md-nav__link">
+    <span class="md-ellipsis">
+      Construct an SCC graph
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#extract-from-scc-graph" class="md-nav__link">
+    <span class="md-ellipsis">
+      Extract from SCC graph
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stable-state-search" class="md-nav__link">
+    <span class="md-ellipsis">
+      Stable state search
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Stable state search">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#usage_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Usage
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#availability" class="md-nav__link">
+    <span class="md-ellipsis">
+      Availability
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#trapspace-search" class="md-nav__link">
+    <span class="md-ellipsis">
+      Trapspace search
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Trapspace search">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#usage_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Usage
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#availability_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Availability
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#circuit-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      Circuit analysis
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Circuit analysis">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#usage_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      Usage
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#availability_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Availability
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#graph-layouts" class="md-nav__link">
+    <span class="md-ellipsis">
+      Graph layouts
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Graph layouts">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#level-layout" class="md-nav__link">
+    <span class="md-ellipsis">
+      Level layout
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ring-layout" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ring layout
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stg-layouts" class="md-nav__link">
+    <span class="md-ellipsis">
+      STG layouts
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#formats-importsexports" class="md-nav__link">
+    <span class="md-ellipsis">
+      Formats (imports/exports)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Formats (imports/exports)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ginsim-format" class="md-nav__link">
+    <span class="md-ellipsis">
+      GINsim format
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#export-graph-view" class="md-nav__link">
+    <span class="md-ellipsis">
+      Export graph view
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#export-graph-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      Export graph structure
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Export graph structure">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#graphviz" class="md-nav__link">
+    <span class="md-ellipsis">
+      Graphviz
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#biolayout" class="md-nav__link">
+    <span class="md-ellipsis">
+      BioLayout
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cytoscape" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cytoscape
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nusmv-export" class="md-nav__link">
+    <span class="md-ellipsis">
+      NuSMV export
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#petri-net-export" class="md-nav__link">
+    <span class="md-ellipsis">
+      Petri net export
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../companion-tools/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Companion Tools
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../install/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Installation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../contact/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Contact
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introduction
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gui" class="md-nav__link">
+    <span class="md-ellipsis">
+      GUI
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="GUI">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#welcome-dialog" class="md-nav__link">
+    <span class="md-ellipsis">
+      Welcome dialog
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#common-quirks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Common quirks
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Common quirks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#input-nodes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Input nodes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#unexpected-dynamical-results" class="md-nav__link">
+    <span class="md-ellipsis">
+      Unexpected dynamical results
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gui-refresh-issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      GUI refresh issues
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#main-window" class="md-nav__link">
+    <span class="md-ellipsis">
+      Main window
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Main window">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-ginsim-window" class="md-nav__link">
+    <span class="md-ellipsis">
+      The GINsim window
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#graph-view" class="md-nav__link">
+    <span class="md-ellipsis">
+      Graph view
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#file-menu" class="md-nav__link">
+    <span class="md-ellipsis">
+      File menu
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#edit-menu" class="md-nav__link">
+    <span class="md-ellipsis">
+      Edit menu
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#actions-menu" class="md-nav__link">
+    <span class="md-ellipsis">
+      Actions menu
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-secondary-panel" class="md-nav__link">
+    <span class="md-ellipsis">
+      The secondary panel
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#logical-regulatory-graph" class="md-nav__link">
+    <span class="md-ellipsis">
+      Logical Regulatory Graph
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Logical Regulatory Graph">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#definition" class="md-nav__link">
+    <span class="md-ellipsis">
+      Definition
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#structure-of-the-lrg" class="md-nav__link">
+    <span class="md-ellipsis">
+      Structure of the LRG
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#component-order" class="md-nav__link">
+    <span class="md-ellipsis">
+      Component order
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#component-attributes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Component attributes
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#interactions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Interactions
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Interactions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#model-integrity" class="md-nav__link">
+    <span class="md-ellipsis">
+      Model integrity
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dynamical-rules" class="md-nav__link">
+    <span class="md-ellipsis">
+      Dynamical rules
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Dynamical rules">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#logical-parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Logical parameters
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#logical-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Logical functions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#annotations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Annotations
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lrg-modifications" class="md-nav__link">
+    <span class="md-ellipsis">
+      LRG modifications
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="LRG modifications">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#perturbations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Perturbations
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#booleanization" class="md-nav__link">
+    <span class="md-ellipsis">
+      Booleanization
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#model-reversal" class="md-nav__link">
+    <span class="md-ellipsis">
+      Model reversal
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#model-reduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      Model reduction
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#model-dynamics-and-properties" class="md-nav__link">
+    <span class="md-ellipsis">
+      Model dynamics and properties
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Model dynamics and properties">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#state-transition-graphs" class="md-nav__link">
+    <span class="md-ellipsis">
+      State transition graphs
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#initial-states" class="md-nav__link">
+    <span class="md-ellipsis">
+      Initial states
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#simulation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Simulation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Simulation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#updating-modes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Updating modes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hierarchical-transition-graphs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Hierarchical Transition Graphs
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#analyses-functionalities" class="md-nav__link">
+    <span class="md-ellipsis">
+      Analyses / Functionalities
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Analyses / Functionalities">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#strongly-connected-components-graph" class="md-nav__link">
+    <span class="md-ellipsis">
+      Strongly Connected Components graph
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Strongly Connected Components graph">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#construct-an-scc-graph" class="md-nav__link">
+    <span class="md-ellipsis">
+      Construct an SCC graph
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#extract-from-scc-graph" class="md-nav__link">
+    <span class="md-ellipsis">
+      Extract from SCC graph
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stable-state-search" class="md-nav__link">
+    <span class="md-ellipsis">
+      Stable state search
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Stable state search">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#usage_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Usage
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#availability" class="md-nav__link">
+    <span class="md-ellipsis">
+      Availability
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#trapspace-search" class="md-nav__link">
+    <span class="md-ellipsis">
+      Trapspace search
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Trapspace search">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#usage_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Usage
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#availability_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Availability
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#circuit-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      Circuit analysis
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Circuit analysis">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#usage_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      Usage
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#availability_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Availability
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#graph-layouts" class="md-nav__link">
+    <span class="md-ellipsis">
+      Graph layouts
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Graph layouts">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#level-layout" class="md-nav__link">
+    <span class="md-ellipsis">
+      Level layout
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ring-layout" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ring layout
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stg-layouts" class="md-nav__link">
+    <span class="md-ellipsis">
+      STG layouts
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#formats-importsexports" class="md-nav__link">
+    <span class="md-ellipsis">
+      Formats (imports/exports)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Formats (imports/exports)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ginsim-format" class="md-nav__link">
+    <span class="md-ellipsis">
+      GINsim format
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#export-graph-view" class="md-nav__link">
+    <span class="md-ellipsis">
+      Export graph view
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#export-graph-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      Export graph structure
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Export graph structure">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#graphviz" class="md-nav__link">
+    <span class="md-ellipsis">
+      Graphviz
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#biolayout" class="md-nav__link">
+    <span class="md-ellipsis">
+      BioLayout
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cytoscape" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cytoscape
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nusmv-export" class="md-nav__link">
+    <span class="md-ellipsis">
+      NuSMV export
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#petri-net-export" class="md-nav__link">
+    <span class="md-ellipsis">
+      Petri net export
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="ginsim-documentation">GINsim Documentation<a class="headerlink" href="#ginsim-documentation" title="Permanent link">&para;</a></h1>
+<hr />
+<h2 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">&para;</a></h2>
+<p>GINsim (<strong>G</strong>ene <strong>I</strong>nteraction <strong>N</strong>etwork <strong>sim</strong>ulation) is a computer tool for the modeling and simulation of genetic regulatory networks.</p>
+<p>Recent developments in functional genomics have generated large amounts of data on gene expression and on the underlying regulatory mechanisms. This has resulted in the progressive mapping of complex regulatory networks. As these networks usually include numerous intertwined feedback circuits, gaining an understanding of their spatio-temporal behaviour defies the intuition of the biologists. In this respect, formal modelling and simulation tools become a necessary complement to experimental tools. As precise information on molecular mechanisms and the value of kinetic parameters are currently difficult to establish, qualitative methods offer a highly attractive approach to model and analyse essential properties of genetic regulatory networks.
+General information on modelling and analysis of genetic regulatory networks can be found in the following review <sup id="fnref:deJong2002"><a class="footnote-ref" href="#fn:deJong2002">1</a></sup>.</p>
+<p>GINsim consists of a simulator of qualitative models of genetic regulatory networks based on a discrete, logical formalism.</p>
+<p>GINsim allows the user to specify a model of a genetic regulatory network in term of asynchronous, multivalued logical functions, and to simulate and/or analyse its qualitative dynamical behaviour <sup id="fnref:Chaouiya2012"><a class="footnote-ref" href="#fn:Chaouiya2012">2</a></sup>.</p>
+<hr />
+<h2 id="gui">GUI<a class="headerlink" href="#gui" title="Permanent link">&para;</a></h2>
+<h3 id="welcome-dialog">Welcome dialog<a class="headerlink" href="#welcome-dialog" title="Permanent link">&para;</a></h3>
+<p>Upon launch, GINsim will present the <code>Welcome</code> dialog box below.</p>
+<p><img alt="Welcome" src="gui/welcome.png" /></p>
+<p>The <code>New model</code> action will create a new <a href="./#logical-regulatory-graph">Regulatory Graph</a>,
+while the <code>Open</code> and <code>Import</code> buttons allow to select an existing file
+in a <a href="./#formats-importsexports">supported format</a>.
+The <code>Recent files</code> section allows the quick selection of a previously opened file.
+For all these actions, the selected graph will be opened in a <a href="./#main-window">Main Window</a>.</p>
+<p>Closing this dialog or activating the <code>quit</code> button will stop GINsim.</p>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>This dialog is also shown after closing the last window (<code>Ctrl/Cmd-W</code>). Use the <code>Quit</code> (<code>Ctrl/Cmd-Q</code>) action to skip it.</p>
+</div>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>When running GINsim on the command line, it is possible to provide a file to open or to ask for a new model. In this case, the welcome dialog will not be shown. See the <a href="../install/">run options</a>.</p>
+</div>
+<h3 id="common-quirks">Common quirks<a class="headerlink" href="#common-quirks" title="Permanent link">&para;</a></h3>
+<h4 id="input-nodes">Input nodes<a class="headerlink" href="#input-nodes" title="Permanent link">&para;</a></h4>
+<p>In GINsim, some nodes can be defined as input nodes using a checkbox in the node property panel. These input nodes can not have any incoming interaction or dynamical rule as they have an implicit rule allowing them to always maintain their current activity level. Before setting a node as input, the modeller must thus remove all existing regulator or rule. Likewise, the input status must be removed before adding any new regulator or rule. To delete a logical formula, select it (without editing it) and use the delete key or the contextual menu.</p>
+<h4 id="unexpected-dynamical-results">Unexpected dynamical results<a class="headerlink" href="#unexpected-dynamical-results" title="Permanent link">&para;</a></h4>
+<p>If you obtain unexpected dynamical results (stable states or simulations results), verify successively the structure of the regulatory graph, the maximal activity levels of all components, the thresholds of interactions coming out of multi-valued components and then the dynamical rules. GINsim further provides a tool to compute interaction functionality, which facilitates the identification of inconsistencies between the structure of the regulatory graph and the dynamical rules.</p>
+<h4 id="gui-refresh-issues">GUI refresh issues<a class="headerlink" href="#gui-refresh-issues" title="Permanent link">&para;</a></h4>
+<p>Some refreshing problems may appear after long or complex modeling sessions, saving and restarting GINsim can solve some issues.</p>
+<h3 id="main-window">Main window<a class="headerlink" href="#main-window" title="Permanent link">&para;</a></h3>
+<h4 id="the-ginsim-window">The GINsim window<a class="headerlink" href="#the-ginsim-window" title="Permanent link">&para;</a></h4>
+<p>The main window allows to view a graph, edit its appareance and access to GINsim's main features. This window is divided into three parts:</p>
+<ul>
+<li>the menu and toolbar on the top;</li>
+<li>the graph panel, as the main central part; </li>
+<li>the secondary panel on the bottom.</li>
+</ul>
+<div class="admonition example">
+<p class="admonition-title">The main window of GINsim</p>
+<p><img alt="The main window of GINsim" src="gui/mainWindow.png" /></p>
+<p>The main window of GINsim, featuring an empty model.</p>
+</div>
+<h4 id="graph-view">Graph view<a class="headerlink" href="#graph-view" title="Permanent link">&para;</a></h4>
+<p>see the <a href="./#state-transition-graphs">graph page</a> or merge its content here?</p>
+<h4 id="file-menu">File menu<a class="headerlink" href="#file-menu" title="Permanent link">&para;</a></h4>
+<div class="admonition example">
+<p class="admonition-title">File menu</p>
+<p><img alt="File menu" src="gui/fileMenu.png" /></p>
+<p>The File menu offers all the classical options to open/save a file, to open/close a window, and to quit the application.</p>
+</div>
+<p>The File menu provides the following options:</p>
+<ul>
+<li><strong>New</strong> to create a new graph. This opens a new window unless the current graph is empty.</li>
+<li><strong>Open</strong> to load a graph from a file. This opens a new window unless the current graph is empty.</li>
+<li><strong>Recent Files</strong> to open a recently used graph. This submenu lists the last opened graphs.</li>
+<li><strong>Merge graph</strong> to open a graph and merge it with the current one. This option works only for regulatory graphs.</li>
+<li><strong>Close</strong> to close the current graph. If other windows are opened, it will simply close the current one, otherwise it will last with an empty window.</li>
+<li><strong>Save/Save as</strong> to save the current graph. If the file is new or if the <strong>Save as</strong> option has been selected, a file selection dialog appears which allows to choose the graphical attributes to save: it is possible to save only the structure of the graph, ignoring all graphical attributes, or to save only the position of nodes. The default is to save all graphical attributes (position, size, color, shape...). The graph is saved in the (XML-based) <a href="./#ginsim-format">GINML</a>.</li>
+<li><strong>Save Subgraph</strong> save the current selection as a new graph.</li>
+<li><strong>Export</strong> save the current graph in another format. GINsim can export regulatory and state transition graphs using several generic visualisation formats. These exports only retain the graph structure and visual appearance. The following export formats are available under the File/export submenu: TODO
+The regulatory graph can additionally be exported into different formats.</li>
+<li><strong>Quit</strong> close all graphs and exit the GINsim application.</li>
+</ul>
+<p>Some of these actions <strong>New</strong>, <strong>Open</strong> and <strong>Save</strong> are also available from the toolbar.</p>
+<div class="admonition example">
+<p class="admonition-title">The Save dialog</p>
+<p><img alt="The save dialog" src="gui/saving.png" /></p>
+<p>The Java <strong>Save</strong> dialog allows to browse and create folders, as well as to choose their location.
+By default, only folders and GINML files are shown; other files can be seen by removing the <strong>GINML Files</strong> filter.
+The drop-down list on the right side allows to select the graphical attributes to save. The <strong>ExtendedSave</strong> checkbox allows to enable or disable extended save (which generates an archive containing the graph and related data).</p>
+</div>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>If the <strong>extended save</strong> option is selected, the file is saved in an archive (zip file with a .zginml extension) instead of a xml file (with a .ginml extension). This allows to save related data, such as simulation parameters or mutant definitions, along with the model. These files need GINsim 2.3 or later to be opened.</p>
+</div>
+<h4 id="edit-menu">Edit menu<a class="headerlink" href="#edit-menu" title="Permanent link">&para;</a></h4>
+<div class="admonition example">
+<p class="admonition-title">The Edit menu</p>
+<p><img alt="The Edit menu" src="gui/editMenu.png" /></p>
+<p>The Edit menu allows the selection of some editing options. It is composed of three sections: copy/paste, graph editing tools and selection management.</p>
+</div>
+<h5 id="copypaste">Copy/paste<a class="headerlink" href="#copypaste" title="Permanent link">&para;</a></h5>
+<p>The edit menu offers classical <strong>Copy</strong>/<strong>Paste</strong> entries.</p>
+<ul>
+<li>Regulatory graph elements can be copied and pasted from one GINsim window to another.</li>
+<li>Pasted elements are automatically selected to ease their move.</li>
+<li>The <strong>Copy</strong> action does not test selected interactions, it will automatically select ALL interactions between selected genes.</li>
+<li>The identifiers of pasted genes are postfixed to avoid naming conflicts.</li>
+<li>Logical parameters are also copied and cleaned up: logical parameters involving not-copied nodes are suppressed. The resulting graph is consistent but the new parameters may need to be checked.</li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p><strong>Copy</strong>/<strong>Paste</strong> actions are specific to GINsim: copying the graph and pasting it into an external application is not supported. These actions are only available for regulatory graphs.</p>
+</div>
+<h4 id="actions-menu">Actions menu<a class="headerlink" href="#actions-menu" title="Permanent link">&para;</a></h4>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>TODO: replace this all with a short note and point to the relevant index pages?</p>
+</div>
+<div class="admonition example">
+<p class="admonition-title">The Actions menu</p>
+<p><img alt="The Actions menu" src="gui/actionMenu.png" /></p>
+<p>The Action menu for a regulatory graph.</p>
+</div>
+<p>Different actions can be performed from this menu, depending on the type of graph.
+Individual actions are detailed in the relevant part of this manual.
+Currently available actions are:</p>
+<ul>
+<li>for all graphs:<ul>
+<li><a href="./#graph-layouts">Graph layouts</a>;</li>
+<li>determination of the <a href="./#strongly-connected-components-graph">Strongly Connected Components (SCC)</a> of a graph;</li>
+</ul>
+</li>
+<li>for regulatory graphs:<ul>
+<li><a href="./#simulation">The simulation</a> (i.e. computation of a state transition graph);</li>
+<li>analyse of the <a href="./#circuit-analysis">Circuit analysis</a>;</li>
+<li>determination of <a href="./#stable-state-search">Stable states</a>;</li>
+</ul>
+</li>
+<li>for state transition graphs:<ul>
+<li><a href="./#find-path">path search</a>;</li>
+<li><a href="./#the-stg-animator">stg animator</a> graphical path construction (animation);</li>
+</ul>
+</li>
+</ul>
+<h4 id="the-secondary-panel">The secondary panel<a class="headerlink" href="#the-secondary-panel" title="Permanent link">&para;</a></h4>
+<p>The bottom panel allows to edit the items selected in the graph view. It contains two tabs:</p>
+<ul>
+<li>The first tab (called <code>Modelling Attributes</code> for regulatory graphs) will change with the type of graph.
+Panels for the various graph types are described in the corresponding sections.</li>
+<li>The <code>Graphical Attributes</code> tab allows to edit the appareance of the selected items.
+It is described in the <a href="./#graph-view">graph view page</a>.</li>
+</ul>
+<hr />
+<h2 id="logical-regulatory-graph">Logical Regulatory Graph<a class="headerlink" href="#logical-regulatory-graph" title="Permanent link">&para;</a></h2>
+<h3 id="definition">Definition<a class="headerlink" href="#definition" title="Permanent link">&para;</a></h3>
+<p>Informally, a Logical Regulatory Graph (LRG) is a directed labelled multigraph
+representing interactions (the edges) between genes (the nodes).
+Each interaction involves two genes, the source and the target, becoming active
+whenever its source reaches a given level.</p>
+<p>The activation level of each component is defined by a regulatory function
+comprising parameters relative to all regulators of this component.</p>
+<p>For a more formal definition see <sup id="fnref:Naldi2011"><a class="footnote-ref" href="#fn:Naldi2011">3</a></sup> or <sup id="fnref:Thieffry2007"><a class="footnote-ref" href="#fn:Thieffry2007">4</a></sup>.</p>
+<h3 id="structure-of-the-lrg">Structure of the LRG<a class="headerlink" href="#structure-of-the-lrg" title="Permanent link">&para;</a></h3>
+<p>Regulatory graphs can be interactively modified: components and interactions
+can be added, edited and removed. The interaction with the graph view is 
+controled by an editing mode selected through the following buttons available
+on the toolbar on the top:</p>
+<p>Available editing modes for regulatory graphs:</p>
+<ul>
+<li><img alt="Edit button" src="lrg/editmode.gif" /> Default editing mode: allows to select and move objects.</li>
+<li>
+<p><img alt="Add Node button" src="lrg/insertsquare.gif" />  Component insertion mode: when selected, clicking on the graph panel adds a new component.</p>
+</li>
+<li>
+<p><img alt="Add positive interaction button" src="lrg/insertpositiveedge.gif" /> <img alt="Add negative interaction button" src="lrg/insertnegativeedge.gif" /> <img alt="Add dual interaction button" src="lrg/insertdualedge.gif" /> <img alt="Add unknown interaction button" src="lrg/insertunknownedge.gif" />  Interaction insertion mode: when selected, interactions are added by first
+  selecting one component and dragging the selection to (the same or) another
+  component. The interactions must be complemented by the definition of the logical
+  parameters for the target variable (see below). The four buttons allow to add
+  different types of interactions: activation, inhibition, dual or undefined.</p>
+</li>
+<li><img alt="Delete button" src="lrg/edit-delete.png" /> Deletion option: selected items (components or interactions) are deleted.</li>
+</ul>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>The terms <strong>component</strong> and <strong>interaction</strong> are used throughout this document, but some other terms are sometimes used in their place.
+<strong>Regulatory components</strong> (also called nodes) can be of different types.
+They often denote <strong>genes</strong> but also <strong>proteins</strong>, or yet global cellular characteristics such as cell mass.
+Similarly, <strong>interactions</strong> often denote transcriptional regulations but can also denote protein phosphorylation, degradation, complex formation, ...</p>
+</div>
+<h3 id="component-order">Component order<a class="headerlink" href="#component-order" title="Permanent link">&para;</a></h3>
+<p>In GINsim, components are internally ordered. This order has no effect on the regulatory 
+graph itself, but it has a direct effect on the internal representation of the logical 
+parameters, with possible effects on (partial) simulation.
+The default order follows the node addition chronology, which can be modified
+by selecting a (set of) node(s) and using the <code>Up/Down arrows</code> on the left
+side of the <code>Modelling Attributes</code> tab.
+This change of order will have an effect throughout GINsim, e.g. in the 
+state transition graph, since the same order is used in the states names.</p>
+<div class="admonition example">
+<p class="admonition-title">Changing component order</p>
+<p><img alt="Changing component order" src="lrg/node_order.png" /></p>
+<p>The left part of the <code>Modelling Attributes</code> tab of a regulatory graph lists all components of the model and allows to modify their order. The "up" and "down" buttons move selected components in the list.</p>
+</div>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>The selection of several components, can be achieved (like in all lists) by using the <code>Ctrl</code> key (<code>apple/Cmd</code> key on Mac OS X) or <code>Shift</code> key, while selecting the nodes.</p>
+</div>
+<h3 id="component-attributes">Component attributes<a class="headerlink" href="#component-attributes" title="Permanent link">&para;</a></h3>
+<p>When a single component is selected, the <code>Modelling Attributes</code>
+tab allows to define its properties:</p>
+<ul>
+<li><code>Id</code>: component's identifier. It appears in the graph   and it must be unique.</li>
+<li><code>Name</code>: component's long name (optional).</li>
+<li><code>Input</code>: mark a component as an input node, i.e., cannot have regulators.</li>
+<li><code>Max</code>: the maximal expression level of the component.
+  The default value is 1 (Boolean case).
+  It can be augmented to generate multi-valued components.</li>
+<li><code>Logical parameters</code>: define the rules controlling the dynamical evolution
+  of the expression level depending on the active incoming interactions.</li>
+</ul>
+<div class="admonition example">
+<p class="admonition-title">Attributes of a component</p>
+<p><img alt="Attributes of a component" src="lrg/geneConfig.png" /></p>
+<p>Properties of the gene Cro, as defined in the <strong>lambda4</strong> model.</p>
+</div>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>The <code>Modelling Attributes</code> tab is divided into three parts.
+The combobox selection list (bottom left) permits to select :doc:<code>annotations</code>, as well as <a href="#dynamical-rules">Dynamical rules</a>.</p>
+</div>
+<h2 id="interactions">Interactions<a class="headerlink" href="#interactions" title="Permanent link">&para;</a></h2>
+<p>When a single interaction arc is selected, the <code>Modelling Attributes</code> tab allows to define its properties.</p>
+<div class="admonition example">
+<p class="admonition-title">Properties of an interaction arc</p>
+<p><img alt="Properties of an interaction arc" src="lrg/interactionConfig.png" /></p>
+<p>Properties of the Cro-N interaction in the <strong>lambda4</strong> model.</p>
+</div>
+<p>Depending on a component's activity level, different effects might occur on another
+component. These different effects are controled by the definition of different 
+ranges listed on the left.</p>
+<ul>
+<li>The "+" button creates an additional interaction range.</li>
+<li>The "-" button deletes the selected interaction range.</li>
+<li>Properties of the selected interaction range can be defined:</li>
+<li><strong>Threshold</strong> defines the lower bound of the selected interaction range.
+The interaction becomes <strong>active</strong> when the activity level of its source component is in this range.</li>
+<li><strong>Sign</strong>: each interaction range can be labelled with activation, inhibition, dual or unknown.
+However, this is only a visual hint, as the real effects of interactions are defined through <a href="#dynamical-rules">Dynamical rules</a>.</li>
+</ul>
+<h4 id="model-integrity">Model integrity<a class="headerlink" href="#model-integrity" title="Permanent link">&para;</a></h4>
+<p>GINsim keeps the definition of regulatory graphs consistent, which means that:</p>
+<ul>
+<li>When an interaction is deleted, all <a href="#dynamical-rules">Dynamical rules</a> in which it was involved are also deleted.</li>
+<li>When the <code>max value</code> of a node is decreased, interactions and logical
+  parameters are checked and, if necessary, updated accordingly and silently
+  to avoid inconsistencies.</li>
+</ul>
+<p>Since such changes have automatic repercussions on the model parameters
+and interaction ranges to keep the model valid, keep in mind that you
+need to double-check parameters after performing such changes.</p>
+<p>Checking activation intervals of interactions and the correctness
+of logical parameters is left to the user as adding more controls generates more
+annoyances than real help. Invalid logical parameters are highlighted to ease their
+detection. Keep in mind that a change in the activation-range of one of the
+interactions can turn a valid logical parameter into an ill-defined one. Parameters
+involving interactions from the same source with disjoint activity ranges 
+are also ill-defined and thus highlighted for correction.</p>
+<hr />
+<h3 id="dynamical-rules">Dynamical rules<a class="headerlink" href="#dynamical-rules" title="Permanent link">&para;</a></h3>
+<p>The dynamical behaviour of regulatory components depends on their regulators,
+but the precise rules governing them must be explicitly defined.
+In GINsim, these rules can be defined either as <strong>logical parameters</strong>, or
+as <strong>logical functions</strong>. These two alternatives are described below.</p>
+<h4 id="logical-parameters">Logical parameters<a class="headerlink" href="#logical-parameters" title="Permanent link">&para;</a></h4>
+<p>A logical parameter corresponds to a single entry (line) in the truthtable of a component.
+It is defined by a target activity level and a list of active interactions.
+By default, interactions not present on the list are implicitly considered to be inactive.
+This means that in order to a given parameter to be effective,
+all interactions present on the list must be active, and all interactions not
+present on the list must be inactive.</p>
+<p>When a component is selected, <strong>logical parameters</strong> for this component can be
+defined in the right part of the <code>Modelling Attribute</code> tab. The panel dedicated
+to the definition of logical parameters is divided into three parts:</p>
+<ul>
+<li>On the left, a table lists all defined logical parameters,
+  showing their values and related interactions.</li>
+<li>A central part containing buttons to edit the list of parameters.</li>
+<li>On the right, a list of all incoming interactions of the selected component.</li>
+</ul>
+<div class="admonition example">
+<p class="admonition-title">Definition of non zero parameters for CI</p>
+<p><img alt="Definition of non zero parameters for CI" src="lrg/configuredInteraction.png" /></p>
+<p>The logical parameter panel, showing all parameters for component CI.</p>
+</div>
+<p>To <strong>add</strong> a new logical parameter, select the empty line in the list of parameters (the last line),
+select a combination of active interactions on the right part, and click on the <code>left arrow</code>.
+The new logical parameter will be defined with the default value of 1, this value can be edited though.
+The specification of logical parameters with target values set to 0 is not needed, since all non-specified logical parameters are implicitly considered to be 0.
+Adding a parameter with a set of active interactions that is already defined is not permitted.</p>
+<p>The <code>Up/Down arrows</code> enable the reordering the existing parameters.</p>
+<p>To <strong>remove</strong> parameters from the list of active interactions, select them and click on the <code>-</code> button.</p>
+<p>To <strong>modify</strong> the active interactions for an exiting parameter, select the corresponding line, then select the correct set of active interactions in the right part, and finally click on the <code>left arrow</code> button to apply the changes.</p>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>It is not possible to select the <code>Input</code> checkbox whenever a component has incoming interactions.</p>
+<p>Similarly, if the <code>Input</code> checkbox is selected, logical parameters can not be defined and the component is considered to have an implicit self-activation.</p>
+</div>
+<h4 id="logical-functions">Logical functions<a class="headerlink" href="#logical-functions" title="Permanent link">&para;</a></h4>
+<p>The dynamical behaviour of a given compoenent can also be specified through the use of logical functions. These function are, for certain cases, a more convenient manner to define complex behaviours with many regulators.
+The definition of a logical function will generate the corresponding logical parameters automatically.</p>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>The automatically generated logical parameters may overlap with previously generated ones, automatically or manually.</p>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Definition of a logical function for CI</p>
+<p><img alt="Definition of a logical function for CI" src="lrg/logical-functions.png" /></p>
+<p>The logical function panel, showing the definition of one logical function at target 1.</p>
+</div>
+<p>To define a new logical function, select the <code>Down arrow</code>, specify a target value for the function, and select subsequent <code>Down arrow</code>.
+You can then press the <code>E</code> button to start editing the logical function (line color changes to green).
+The after insertion of the logical function press <code>Enter</code> to validate the expression and automatically create the corresponding logical parameters.</p>
+<p>The parser for logical functions accepts the logical AND and OR with the symbols <code>&amp;</code> and <code>|</code>, respectively. Additionally, you can add parentheses to prioritize logical operations.</p>
+<h4 id="annotations">Annotations<a class="headerlink" href="#annotations" title="Permanent link">&para;</a></h4>
+<p>Annotations can be attached to the different components of the regulatory graph:</p>
+<ul>
+<li>the graph itself,</li>
+<li>components,</li>
+<li>interactions.</li>
+</ul>
+<p>An annotation is composed of a textual comment and a numbered list of URIs,
+which can be opened using the <code>[i]</code> buttons on the left side.</p>
+<div class="admonition example">
+<p class="admonition-title">The annotation panel</p>
+<p><img alt="The annotation panel" src="lrg/annotation.png" /></p>
+<p>The same <strong>Annotation panel</strong> is used for all elements</p>
+</div>
+<p>supporting notes. This screenshot shows the graph annotations,
+available when the selection is empty.</p>
+<p>Some shortcuts are provided for linking to entries in online databases.
+For exemple, <code>pubmed:19426782</code> will open http://www.ncbi.nlm.nih.gov/pubmed/19426782.
+This relies on the <a href="http://identifiers.org">identifiers.org webservice</a>.</p>
+<hr />
+<h3 id="lrg-modifications">LRG modifications<a class="headerlink" href="#lrg-modifications" title="Permanent link">&para;</a></h3>
+<h4 id="perturbations">Perturbations<a class="headerlink" href="#perturbations" title="Permanent link">&para;</a></h4>
+<p>GINsim facilitates the definition of <strong>perturbations</strong> to define small changes to
+the regulation of components in regulatory graphs. A perturbation is a set of
+restrictions on the evolution of the activity level of one or several components.</p>
+<h5 id="using-perturbations">Using Perturbations<a class="headerlink" href="#using-perturbations" title="Permanent link">&para;</a></h5>
+<p>Some tools, notably Simulation and Stable state search, include a
+perturbation selection panel to apply a perturbation before running.</p>
+<h5 id="definition-of-perturbations">Definition of Perturbations<a class="headerlink" href="#definition-of-perturbations" title="Permanent link">&para;</a></h5>
+<p>Perturbation can be defined using the following configuration panel.
+The panel appears upon activation of the <code>configure</code> button in the
+perturbation selection panel.</p>
+<div class="admonition example">
+<p class="admonition-title">Perturbation definition panel</p>
+<p><img alt="Perturbation definition panel" src="lrg/perturbations.png" /></p>
+<p>This edition panel considers two types of perturbations: <strong>simple perturbations</strong> which only affect the activity of a single component, and <strong>multiple perturbations</strong> which group together a list of simple perturbations.</p>
+</div>
+<h5 id="simple-perturbations">Simple Perturbations<a class="headerlink" href="#simple-perturbations" title="Permanent link">&para;</a></h5>
+<p>The perturbation definition panel appears on the top-right part of the dialog above
+when no simple perturbation is selected, or when clicking the <code>+</code> button.
+To create a perturbation, one must first select the affected component using the combobox.
+The restriction configuration panel will then appear, and the perturbation can be added using the <code>create</code> button.</p>
+<p>The activity level of Boolean components can be fixed at <code>0</code> or at <code>1</code>,
+corresponding to the definition of a knockdown or ectopic activity respectively.
+Radio buttons allows to choose between these two possibilities.</p>
+<p>Multi-valued components offer more possibilities, that can be configured using
+a range slider. Their activity level will be restricted in the selected range,
+or completely fixed if the range corresponds to a single value.</p>
+<div class="admonition example">
+<p class="admonition-title">Perturbation creation panels</p>
+<p><img alt="Perturbation creation panels" src="lrg/booleanperturbation.png" /></p>
+<p>TODO: add multivalued figure figures/mvaluedperturbation.png</p>
+</div>
+<p>This enables the definition of simple perturbations where the activity level of a component is restricted to the selected value(s).</p>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>The definition of more subtle perturbations (conditional knockouts...) still requires the modifications of the logical parameters. We plan to add convenient means to define other types of perturbations in the future.</p>
+</div>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>Simple perturbations can not be duplicated: when trying to add a simple perturbation that is already defined, nothing will happen.</p>
+</div>
+<h5 id="multiple-perturbations">Multiple Perturbations<a class="headerlink" href="#multiple-perturbations" title="Permanent link">&para;</a></h5>
+<p>The bottom part of the panel lists multiple perturbations.
+Multiple perturbations can be created by selecting several
+simple perturbation and clicking the button which appears
+in the information panel.
+These perturbations can then be ordered and deleted using 
+the buttons on the right side.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Deleting a simple perturbation will also remove all the multiple perturbations using it.</p>
+</div>
+<h4 id="booleanization">Booleanization<a class="headerlink" href="#booleanization" title="Permanent link">&para;</a></h4>
+<p>GINsim enables the definition of multi-valued models where some components can
+have several increasing activity levels. However, some other analysis tools only
+consider Boolean (on/off) models.
+Model booleanization allows to convert multi-valued models into Boolean models
+by mapping each multivalued component on a group of Boolean variables. The
+resulting Boolean model generates the same dynamical behaviour as the original
+multivalued model.</p>
+<p>bioLQM uses the mapping originaly proposed by van Ham, in which a component
+associated with the maximal value <code>m</code> will be mapped on <code>m</code> Boolean components.
+For example, a component taking the values <code>0`,</code>1<code>,</code>2<code>, and</code>3<code>will be
+encoded as</code>000<code>,</code>100<code>,</code>110<code>, and</code>111``.</p>
+<p>The booleanization introduces many non-admissible states, which may require special
+care depending on the analysis applied on the booleanized model. This modifier makes
+sure that a simulation which start with an admissible state will not explore 
+non-admissible states. It also prevents the introduction of non-admissible attractors
+by making sure that at least one admissible state is reachable from any non-admissible.</p>
+<h5 id="usage">Usage<a class="headerlink" href="#usage" title="Permanent link">&para;</a></h5>
+<p>Exporting a multivalued model to a format limited to Boolean components triggers an implicit Booleanization step.
+This booleanization step can also be performed explicitely using the booleanization tool in the <code>Actions</code> menu.</p>
+<h5 id="availability-and-further-reading">Availability and further reading<a class="headerlink" href="#availability-and-further-reading" title="Permanent link">&para;</a></h5>
+<p>This method was implemented in GINsim 3.0.
+The backend is implemented in the 
+<a href="http://colomoto.org/biolqm">bioLQM toolkit</a>,
+enabling its programmatic use.</p>
+<h4 id="model-reversal">Model reversal<a class="headerlink" href="#model-reversal" title="Permanent link">&para;</a></h4>
+<p>The model reversal tool constructs a model in which the asynchronous successors of a state
+correspond to it's predecessors in the original model.</p>
+<p>Multivalued models are supported through model booleanization,
+with some further transformations to prevent the introduction
+of non-admissible successor states.</p>
+<h5 id="usage_1">Usage<a class="headerlink" href="#usage_1" title="Permanent link">&para;</a></h5>
+<p>The model reversal tool is available in the <code>Actions</code> menu.</p>
+<h5 id="availability-and-further-reading_1">Availability and further reading<a class="headerlink" href="#availability-and-further-reading_1" title="Permanent link">&para;</a></h5>
+<p>This method was implemented in GINsim 3.0.
+The backend is implemented in <code>BioLQM &lt;http://colomoto.org/biolqm&gt;</code>_,
+enabling its programmatic use.</p>
+<h4 id="model-reduction">Model reduction<a class="headerlink" href="#model-reduction" title="Permanent link">&para;</a></h4>
+<p>The reduction of regulatory graphs allows to extract a "simplified"
+regulatory graph where a set of components are hidden. To keep a
+consistent dynamical behaviour, the logical rules associated with the
+targets of each hidden component account for the (indirect) effects
+of its regulators. This construction of reduced models preserves
+crucial dynamical properties of the original model, including stable
+states and more complex attractors. Furthermore, the relationship
+between the attractor configuration of the original model and those
+of reduced models is formally established.</p>
+<h5 id="usage_2">Usage<a class="headerlink" href="#usage_2" title="Permanent link">&para;</a></h5>
+<p>The reduction tool is available in the <code>Actions</code> menu. It open a
+configuration dialog in which the user can select the components
+that will be hidden. Several configuration strategies can be defined.
+Running the tool leads to the construction of a reduced model where
+the selected components have been removed.</p>
+<p>Some reductions are not possible (an auto-regulated component can not
+be hidden using this method), if a reduction fails, GINsim will show
+an error message, listing the components that could not be hidden and
+proposing to continue with the result of the partial reduction.</p>
+<p>Note that in some cases, the reduction may only be possible in a precise
+order (but the result does not not change with the order). When blocked,
+GINsim will try alternate orders for the remaining components, but not 
+for the components which have already been succesfully reduced. In such
+cases, it may be necessary to provide the list of components to reduce in
+several steps to force the use of the correct order.</p>
+<h5 id="output-stripping">Output stripping<a class="headerlink" href="#output-stripping" title="Permanent link">&para;</a></h5>
+<p>Outputs are components which do not regulate others. As such, these
+components have no impact on the attractors that will be reached in
+a simulation. These output components can be automatically removed
+when performing a simulation or some other actions on a model.
+To instruct GINsim to remove outputs, use the <code>strip outputs</code> 
+checkbox next to the perturbation selection box.</p>
+<h5 id="script-mode">Script mode<a class="headerlink" href="#script-mode" title="Permanent link">&para;</a></h5>
+<p>The reduction tool can also be used in script mode. It then relies on a previously defined reduction strategy.</p>
+<h5 id="availability-and-further-reading_2">Availability and further reading<a class="headerlink" href="#availability-and-further-reading_2" title="Permanent link">&para;</a></h5>
+<p>This method was implemented in GINsim 2.4 (see <sup id="fnref2:Naldi2011"><a class="footnote-ref" href="#fn:Naldi2011">3</a></sup>).
+The support for output stripping was added in GINsim 3.0 (see <sup id="fnref:Naldi2012"><a class="footnote-ref" href="#fn:Naldi2012">5</a></sup>).</p>
+<hr />
+<h2 id="model-dynamics-and-properties">Model dynamics and properties<a class="headerlink" href="#model-dynamics-and-properties" title="Permanent link">&para;</a></h2>
+<h3 id="state-transition-graphs">State transition graphs<a class="headerlink" href="#state-transition-graphs" title="Permanent link">&para;</a></h3>
+<p>A State Transition Graph (STG) is a directed graph representing the
+dynamical behaviour of a <a href="./#logical-regulatory-graph">Logical Regulatory Graph</a>.
+Nodes of this graph represent possible states of the model, assigning
+a value to each component. Arcs of the STG represent transitions from
+one state to another (i.e. change of value for one or several components).</p>
+<p>For a more formal definition see <sup id="fnref3:Naldi2011"><a class="footnote-ref" href="#fn:Naldi2011">3</a></sup>.</p>
+<h3 id="initial-states">Initial states<a class="headerlink" href="#initial-states" title="Permanent link">&para;</a></h3>
+<p>Named groups of states can be defined for the regulatory graph and used
+for example as starting point for the <a href="./#simulation">Simulation</a>.</p>
+<div class="admonition example">
+<p class="admonition-title">Initial state definition panel</p>
+<p><img alt="Initial state definition panel" src="dyn/initial_states.png" /></p>
+<p>Each line in the table of intial states has a name and provides a value or a range for one or more components. Components which are not restricted are denoted by stars ("*") in the table.</p>
+</div>
+<p>Each row of the table corresponds to a set of states, where activity
+levels are specified for each component in the corresponding table cell.
+Each component can use all of its possible levels (denoted by a star ("*")), a single level or any subset of levels, separated by semicolons (;).
+Intervals can also be defined using a dash ("0-2" denotes all levels from 0 to 2, included).
+The special value "m" denotes the maximal level of the component.
+For example, "0;2-4" means "0 or values between 2 and 4" and is identical to "0;2;3;4".
+"1-m" means "any activity (from 1 to the max)".
+The default, denoted by a "*", covers all possible values (it is thus the same as "0-m").</p>
+<p>Initial states can be reordered, deleted and duplicated using the buttons on top of the table.</p>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>A value can be entered in many cells at once using multiple selection.</p>
+</div>
+<h3 id="simulation">Simulation<a class="headerlink" href="#simulation" title="Permanent link">&para;</a></h3>
+<p>Once a regulatory model has been defined, a simulation can be launched
+through the <code>Run Simulation</code> option of the <code>Action</code> menu.
+This option triggers a dialog box allowing to choose simulation settings.</p>
+<div class="admonition example">
+<p class="admonition-title">Simulation settings</p>
+<p><img alt="Simulation settings" src="dyn/simulation_config.png" /></p>
+<p>This dialog box allows to configure and run the simulation.</p>
+</div>
+<p>This dialog box allows to define simulation settings.
+The top part of the dialog box enables the definition of transformations to apply to
+the regulatory graph before the simulation.
+The left part of the dialog box enables to manage (select, add or remove) simulations settings.
+The right part of the dialog box enables the definition of the current simulation setting.</p>
+<h5 id="configure-the-simulation">Configure the simulation<a class="headerlink" href="#configure-the-simulation" title="Permanent link">&para;</a></h5>
+<p>The top part of the simulation dialog enables the selection of a perturbation
+to be applied to the regulatory graph before running the simulation. The associated <code>Configure</code>
+button will show the :doc:<code>perturbation definition panel &lt;/modify/perturbation&gt;</code>.</p>
+<p>The bottom part of the dialog box is dedicated to the definition of
+:doc:<code>initial_states</code> of the simulation.
+Each row defines a single state or a group of states, and the checkboxes allow
+to select the states used for the simulation. If no row is selected, all possible
+states are considered, generating a complete state transition graph.</p>
+<p>In a given state of the system, one or several genes are called to update their
+values. When several changes are pending, different construction strategies lead to
+different successor states and thus to different state transition graphs.
+GINsim implements the classical <em>synchronous</em> and <em>asynchronous</em>
+updating, and enables the definition of ad hoc strategies using <em>priority classes</em>.
+These updating modes are described in detail in <link xref="tool-simulation-updating-mode">their documentation</link>.</p>
+<p>Simulation settings are saved and restored as associated data in <link xref="format-zginml">ZGINML files</link>.</p>
+<h5 id="running-simulations-with-perturbation">Running simulations with perturbation<a class="headerlink" href="#running-simulations-with-perturbation" title="Permanent link">&para;</a></h5>
+<div class="admonition example">
+<p class="admonition-title">Perturbation simulation result</p>
+<p><img alt="Perturbation simulation result" src="dyn/blocking.png" /></p>
+<p>Result of an asynchronous simulation, where the expression level for Cro has been blocked at 1.
+The state transition graph is the same as the original asynchronous one, but all transitions where Cro leaves this value have been suppressed.
+This state transition graph is now composed of two disconnected parts, with a new stable state.</p>
+</div>
+<p>The "strip output" checkbox next to the perturbation selector enables to
+activate automatic removal of all output components from the simulation.
+Their value can be retrieved on demand when browsing the resulting 
+State Transition Graph. See the <link xref="lrg-modifier-reduction">reduction</link> section for more details.</p>
+<p>The "Construction Strategy" panel enables the selection of the type of graph computed
+by the simulation (the classical <link xref="transition-graphs#stg">State Transition Graph</link>,
+or the more compact <link xref="transition-graphs#htg">Hierarchical Transition Graph</link>).</p>
+<p>State Transition Graphs can be computed breadth-first or depth-first.
+Both options lead to the same result, unless the simulation is interrupted by
+a <link xref="#dslimit">size limit</link> (see below).</p>
+<h5 id="depth-and-size-limitations">Depth and size limitations<a class="headerlink" href="#depth-and-size-limitations" title="Permanent link">&para;</a></h5>
+<p>An option is also offered to limit the search depth and/or the total number of
+states generated in a simulation.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>When considering several initial states (or the full STG), some of them can be reached while running the simulation from an other state.
+In this case, no new search will be triggered for them and the depth counter will not be reinitialised (i.e. the depth limit for these initial states will be shorter).</p>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Limitation of the depth in the case of a depth first construction</p>
+<p><img alt="Limitation of the depth in the case of a depth first construction" src="dyn/stg_depth_limit.png" /></p>
+<p>State transition graph with all reachable states from the state "0111".
+The same simulation with a depth limit set to 2 keeps only the initial state and the nodes at a distance of two or less (i.e. the six white states).</p>
+</div>
+<p>The limit on the total number of states apply to all simulation modes. Under the asynchronous assumption, this limit has slightly different effects on depth first and breadth first search.</p>
+<div class="admonition example">
+<p class="admonition-title">Limitation of STG size</p>
+<p><img alt="Limitation of STG size" src="dyn/stg_size_limit.png" /></p>
+<p>Limitation of the size (depth first and breadth first search construction).
+The limit on the total number of nodes has different effects on depth first and breadth first state transition graphs. These examples show the graph of the figure above [TODO: figure link] limited to 6 states. The first state transition graph was obtained using the depth first construction, whereas the second results from the breadth first one.</p>
+</div>
+<h5 id="running-the-simulation">Running the simulation<a class="headerlink" href="#running-the-simulation" title="Permanent link">&para;</a></h5>
+<p>While the simulation is running, the bottom left corner indicates
+the size of the generated state transition graph. The simulation
+can be interrupted, using the <code>Cancel</code> button, without loosing
+the calculated part of the state transition graph.</p>
+<p>At the end of a simulation, several options are available to save,
+display or analyse the resulting state transition graph
+(see <link xref="gui-whattodo" />).</p>
+<h4 id="updating-modes">Updating modes<a class="headerlink" href="#updating-modes" title="Permanent link">&para;</a></h4>
+<p>In a given state of the system, one or several genes are called to update their
+values. When several changes are pending, different construction strategies lead to
+different successor states and thus to different state transition graphs.</p>
+<h5 id="synchronous-mode">Synchronous mode<a class="headerlink" href="#synchronous-mode" title="Permanent link">&para;</a></h5>
+<p>In this mode, all updating calls are performed simultaneously.
+This simplification may generate artefacts in the state transition graph.</p>
+<p>Each state has then at most one successor state, which encompasses fully
+updated gene levels.</p>
+<h5 id="asynchronous-mode">Asynchronous mode<a class="headerlink" href="#asynchronous-mode" title="Permanent link">&para;</a></h5>
+<p>In this mode, all changes are performed independantly. It will generate a
+state transition graph taking into account any possible trajectories. This mode
+is chosen by default.</p>
+<p>A given state may have several successor states, each of them corresponding to a
+single updating of one gene level.</p>
+<p>In this mode, the graph transition state can be generated "depth first" or
+"breadth first". The same state transition graph will be built, except if
+interrupted (for illustration, see :doc:<code>depth and size limitation &lt;simulation&gt;</code>).</p>
+<div class="admonition example">
+<p class="admonition-title">Construction strategy: synchronous versus asynchronous</p>
+<p><img alt="Construction strategy: synchronous versus asynchronous" src="dyn/a-sync.png" /></p>
+<p>Samples of simulation results for the lambda4 model, applying asynchronous and synchronous strategies to the same initial states (all states where C1=0 and Cro&gt;0). Dotted arcs denote multiple, simultaneous transitions.</p>
+</div>
+<h5 id="priority-classes">Priority classes<a class="headerlink" href="#priority-classes" title="Permanent link">&para;</a></h5>
+<p>This strategy allows the user to group components into different classes, and
+to assign a priority level to each of these classes. In case of concurrent
+transition calls, GINsim first updates the gene(s) belonging to the class with
+the highest ranking. For each class, the user can further specify the desired
+updating assumption, which then determines the treatment of concurrent
+transition calls inside that class. When several classes have the same ranking,
+concurrent transitions are treated under an asynchronous assumption (no
+priority).</p>
+<p>The creation of a new configuration, using the leftmost "+" button, starts wth some predefined settings:</p>
+<ul>
+<li>The definition of a single class contaning all components, equivalent to the (a)synchronous updating.</li>
+<li>The definition of a fully-ordered updating using a separate class for each component.</li>
+<li>The separation of the increasing and decreasing transition of each components for more fine-grained configurations.</li>
+</ul>
+<p>The left part of the configuration dialog box shows a list of priority classes
+(see figure below). The name of a class
+can be edited and a checkbox allows to change its internal mode from
+asynchronous (unchecked) to synchronous (checked). Buttons enable to add (+),
+delete (X), order (using the arrows) and group/ungroup priority classes.</p>
+<p>The central column lists transitions that belong to the currently selected
+class, while the column on the right displays all other transitions (i.e. belonging to
+other classes). To add transitions to the selected class, choose them in the
+right list an click on the "&lt;&lt;" button. The <code>&gt;&gt;</code> button removes the
+transition selected in the central list from the current class and add them to
+the next class in the list (to the first class when the last one is selected).</p>
+<p>When multiple classes are selected, they can be assigned the same rank.
+Multiple classes with the same rank are treated asynchronously: if all classes
+are asynchronous, it is thus equivalent to a single larger class, but it allows
+the definition of asynchronous update of multiple synchronous classes as well.</p>
+<div class="admonition example">
+<p class="admonition-title">Definition of Priority classes</p>
+<p><img alt="Definition of Priority classes" src="dyn/priorityClass.png" /></p>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Priority Class: example result</p>
+<p><img alt="Priority Class: example result" src="dyn/dyn_pclass.png" /></p>
+<p>Example of simulation by priority classes.
+Two priority classes have been created.
+The highest ranked one is synchronous and contains C1, C2 and Cro.
+The other class contains only N.
+The resulting state transition graph is splited into two parts: N expressed <em>versus</em> N not expressed.</p>
+</div>
+<h4 id="hierarchical-transition-graphs">Hierarchical Transition Graphs<a class="headerlink" href="#hierarchical-transition-graphs" title="Permanent link">&para;</a></h4>
+<p>The Hierarchical Transition Graphs (HTG) is an acyclic graph, which provides
+a compact representation of the State Transition Graph. It improves on
+the <a href="./#strongly-connected-components-graph">graph of the Strongly Connected Components</a> by merging
+linear chains of states (in addition to cycles) into single nodes.</p>
+<p>More information on this graph is available in Berenguier <em>et al</em><sup id="fnref:Berenguier2013"><a class="footnote-ref" href="#fn:Berenguier2013">6</a></sup>.</p>
+<hr />
+<h2 id="analyses-functionalities">Analyses / Functionalities<a class="headerlink" href="#analyses-functionalities" title="Permanent link">&para;</a></h2>
+<h3 id="strongly-connected-components-graph">Strongly Connected Components graph<a class="headerlink" href="#strongly-connected-components-graph" title="Permanent link">&para;</a></h3>
+<p>A <a href="http://en.wikipedia.org/wiki/Strongly_connected_component">Strongly Connected Component (SCC)</a>
+in a graph is a maximal subgraph such that all its components are strongly
+connected. Each SCC can either a single node or a set of intertwined cycles
+of the original graph.
+The SCC graph is a derived graph in which each node represent one of the SCC
+of the original graph.  This acyclic graph provides a simplified representation
+of the organisation of the original graph. This graph is thus often much more compact.</p>
+<p>In GINsim, the graph of the Strongly Connected Components (SCC graph) is often
+used to provide a better understanding of the organisation of the attractors in
+a <a href="./#state-transition-graphs">State Transition Graph</a>.</p>
+<h4 id="construct-an-scc-graph">Construct an SCC graph<a class="headerlink" href="#construct-an-scc-graph" title="Permanent link">&para;</a></h4>
+<p>The computation of the SCC graph can be launched through the <code>Construct SCC graph</code>
+option of the <code>Tools</code> menu.
+Note that GINsim also provides the <a href="./#hierarchical-transition-graphs">Hierarchical Transition Graph</a> dedicated to this problem.</p>
+<div class="admonition example">
+<p class="admonition-title">Strongly Connected Components graph</p>
+<p><img alt="Strongly Connected Components graph" src="analyses/scc.png" /></p>
+<p>Example of Strongly Connected Component Graph (bottom right) and the corresponding state transition graph (top left).
+The <code>Selection Attribute</code> tab in the bottom panel shows the content of the selected SCC (i.e. the list of nodes in the original graph).</p>
+</div>
+<p>Note that while the <code>Construct SCC Graph</code> tool is often applied to <a href="./#state-transition-graphs">State Transition Graph</a>, it can
+also be applied to Regulatory Graphs (or more formally to any type of graphs).</p>
+<h4 id="extract-from-scc-graph">Extract from SCC graph<a class="headerlink" href="#extract-from-scc-graph" title="Permanent link">&para;</a></h4>
+<p>After computing the SCC graph, another tool enables to recover the subgraph
+of the original graph corresponding to the selected nodes in the SCC graph.</p>
+<p>To use it, select some nodes in a SCC graph and run the <code>Extract subgraph</code>
+action from the <code>Graph</code> menu.</p>
+<p>This tool will open the original graph, and apply a filter to only keep the
+selected parts. To work properly it thus requires that the original graph 
+had been saved to a file, and that the association between the SCC graph 
+and the original graph (maintained by GINsim transparently) is still valid.</p>
+<h3 id="stable-state-search">Stable state search<a class="headerlink" href="#stable-state-search" title="Permanent link">&para;</a></h3>
+<p>This tool allows the analytic (i.e. without running a simulation) determination
+of stable states of the model. All stable states are determined, regardless of
+their reachability<sup id="fnref:Naldi2007"><a class="footnote-ref" href="#fn:Naldi2007">7</a></sup>.</p>
+<p>This tool allows the analytic (i.e. without running a simulation) determination of
+trapspaces of the model. These trapspaces contain the stable states, as well as an
+approximation for complex attractors.</p>
+<h4 id="usage_3">Usage<a class="headerlink" href="#usage_3" title="Permanent link">&para;</a></h4>
+<p>The stable state identification tool is available from the <code>Compute stable states</code> option of the <code>Tools</code> menu.
+The stable states dialog box allows to run the analysis after the optional
+selection of a perturbation. The result is shown in a table in the same dialog box, allowing to launch a novel analysis for another perturbation. 
+A "*" in the table denotes that each of the values of this component gives rise to a stable state (or several if another "*" appears in the same row).</p>
+<div class="admonition example">
+<p class="admonition-title">Stable states search</p>
+<p><img alt="" src="analyses/fixedpoints.png" /></p>
+<p>The stable states dialog box, showing the result of the analysis.</p>
+</div>
+<h4 id="availability">Availability<a class="headerlink" href="#availability" title="Permanent link">&para;</a></h4>
+<p>Stable state search was first implemented in GINsim 2.3.
+The implementation is now part of the 
+<a href="https://colomoto.org/biolqm">bioLQM toolkit</a>.</p>
+<h3 id="trapspace-search">Trapspace search<a class="headerlink" href="#trapspace-search" title="Permanent link">&para;</a></h3>
+<p>This tool allows the analytic (i.e. without running a simulation) determination of
+trapspaces of the model. These trapspaces contain the stable states, as well as an
+approximation for complex attractors <strong>cite Klarner2014</strong>.</p>
+<h4 id="usage_4">Usage<a class="headerlink" href="#usage_4" title="Permanent link">&para;</a></h4>
+<p>This tool is available from the <code>Trapspace identification</code> option of the <code>Tools</code> menu.</p>
+<div class="admonition example">
+<p class="admonition-title">The trapspace dialog box</p>
+<p><img alt="" src="analyses/trapspaces.png" /></p>
+<p>The trapspace dialog box, showing the result of the analysis.</p>
+</div>
+<h4 id="availability_1">Availability<a class="headerlink" href="#availability_1" title="Permanent link">&para;</a></h4>
+<p>Trapspace identification was first implemented in GINsim 3.0, relying on 
+the <a href="http://www.colomoto.org/biolqm">bioLQM toolkit</a>.</p>
+<h3 id="circuit-analysis">Circuit analysis<a class="headerlink" href="#circuit-analysis" title="Permanent link">&para;</a></h3>
+<p>Regulatory circuits play crucial roles in the dynamical behaviour of a system.
+Indeed, positive circuits are required for the existence of several attractors,
+whereas negative circuits may generate cyclic attractors<sup id="fnref2:Thieffry2007"><a class="footnote-ref" href="#fn:Thieffry2007">4</a></sup>.</p>
+<p>Many regulatory graphs currently under study contain a large number of circuits,
+but a relatively small number of them often plays a more important role.
+In <sup id="fnref2:Naldi2007"><a class="footnote-ref" href="#fn:Naldi2007">7</a></sup>, we describe a method to compute a <strong>functionality context</strong>
+for all circuits, to determine which circuits are more likely to affect the
+attractor configuration of the system.</p>
+<p>Note that the functionality contexts identified here give the conditions on the
+immediate regulators of the circuits under which it is fully effective. These
+conditions may be impossible to maintain according to the dynamical rules of
+the model, especially in the case of model perturbations.</p>
+<h4 id="usage_5">Usage<a class="headerlink" href="#usage_5" title="Permanent link">&para;</a></h4>
+<p>The <code>Circuits Functionality</code> entry of the <code>Action</code> menu opens the circuit
+analysis dialog. This dialog provides a interface to lookup all circuits in the
+regulatory graph or a subset of circuits matching some filtering rules (length,
+involved components).</p>
+<div class="admonition example">
+<p class="admonition-title">Select regulatory circuits for analysis</p>
+<p><img alt="Select regulatory circuits for analysis" src="analyses/circuitsConfig.png" /></p>
+<p>A first dialog enables to select which circuits will be analysed, by specifying constraints on the length of the circuits or on the involved actors. By default all circuits are considered.</p>
+</div>
+<p>The dialog then allows to analyse the selected circuits, it will then show the circuit for which a <strong>functionality context</strong> was found.
+The analysis can be repeated for various perturbations.</p>
+<div class="admonition example">
+<p class="admonition-title">Result of the functionality analysis</p>
+<p><img alt="Result of the functionality analysis" src="analyses/circuits.png" /></p>
+<p>When the analysis is completed, the dialog classifies the selected circuits, according to their computed sign.
+When a circuit is selected, its functionality context is shown at the bottom of the dialog box.</p>
+</div>
+<h4 id="availability_2">Availability<a class="headerlink" href="#availability_2" title="Permanent link">&para;</a></h4>
+<p>Circuit analysis was implemented in GINsim 2.3.</p>
+<hr />
+<h2 id="graph-layouts">Graph layouts<a class="headerlink" href="#graph-layouts" title="Permanent link">&para;</a></h2>
+<p>The "layout submenu of the "view" menu provides some tools to place graph components automatically.
+These layout tools are mostly useful for graphs computed by GINsim, such as  state transition graphs.
+Note that GINsim only offers very simple layout tools. For complex cases,
+dedicated tools such as graphviz or cytoscape can provide much better results.
+The following layouts are available:</p>
+<h3 id="level-layout">Level layout<a class="headerlink" href="#level-layout" title="Permanent link">&para;</a></h3>
+<p>Nodes are placed on rows, nodes without any incoming
+arc being placed at the top and nodes without any outgoing arc at the bottom.</p>
+<div class="admonition example">
+<p class="admonition-title">Level layout example</p>
+<p><img alt="Level layout example" src="layouts/levelLayout.png" /></p>
+</div>
+<h3 id="ring-layout">Ring layout<a class="headerlink" href="#ring-layout" title="Permanent link">&para;</a></h3>
+<p>Nodes are placed on three concentric rings, source
+nodes at the center, terminal nodes at the periphery.</p>
+<div class="admonition example">
+<p class="admonition-title">Ring layout example</p>
+<p><img alt="Ring layout example" src="layouts/ringLayout.png" /></p>
+</div>
+<h3 id="stg-layouts">STG layouts<a class="headerlink" href="#stg-layouts" title="Permanent link">&para;</a></h3>
+<p>State transition graphs have additional layout methods which place
+components on a grid based on the activity levels.</p>
+<hr />
+<h2 id="formats-importsexports">Formats (imports/exports)<a class="headerlink" href="#formats-importsexports" title="Permanent link">&para;</a></h2>
+<h3 id="ginsim-format">GINsim format<a class="headerlink" href="#ginsim-format" title="Permanent link">&para;</a></h3>
+<p>The Z-GINML format (also denoted <strong>extended save</strong>), is a zip archive containing a ginml file along with companion files to store associated data, especially initial states, perturbations, and simulation parameters. More generally, each plugin can provide a parser and file writer to store its associated data in a Z-GINML file.</p>
+<p>The <strong>GINML</strong> format is an extension of the <a href="http://www.gupro.de/GXL">GXL (Graph eXchange Language)</a> format. This extension comprises new attributes and subelements for elements node and edge, and an additional element called parameter.</p>
+<p>element node
+a new attribute basevalue corresponds to the "based level of expression" of the corresponding component (default value 0). In other words, it is the value of the logical parameter corresponding to the case where none of the incoming interactions if functional. New subelements within a node:</p>
+<p>a list of elements parameter corresponding to the user defined logical parameters for this node</p>
+<p>an element intdefining the maximum level of expression of this node</p>
+<p>element edge
+a new attribute sign which gives the sign of the interaction (positive for an activation, negative for a repression, otherwise unknown) one or two subelements int (level or interval letting the interaction functional) element parameter, is empty and has two attributes : attribute idActiveInteractions gives the "name" of the parameter. It is the list of the functional interactions exerted upon the considered node, attribute val is the value of the logical parameter.</p>
+<p>See the GINML's dtd or in pdf format.</p>
+<p>See also the GINML description of the gap-gene network case A, or in pdf format.</p>
+<p>(TODO: described stored associated data)</p>
+<p>Some companion data can be associated to the graphs to store the configuration of various tools.
+Some of this extra data can be shared between several tools.
+This extra data is stored in its own entry inside ZGINML files.</p>
+<h3 id="export-graph-view">Export graph view<a class="headerlink" href="#export-graph-view" title="Permanent link">&para;</a></h3>
+<p>The graph view can be exported as an image in the PNG format.
+This export considers only the visual appareance of the graph,
+and can thus be applied to all types of graph in GINsim.</p>
+<p>The view can also be exported in the 
+<a href="http://www.w3.org/Graphics/SVG/">Scalable Vector Graphic (SVG)</a> format.
+Tools like <a href="http://inkscape.org">Inkscape</a>, can then be used to display,
+modify and export SVG files to virtually any image format.</p>
+<h3 id="export-graph-structure">Export graph structure<a class="headerlink" href="#export-graph-structure" title="Permanent link">&para;</a></h3>
+<p>The following exports consider only the graph structure, and
+can thus be applied to all types of graph in GINsim.</p>
+<p>The graph structure can be exported for use in dedicated graph visualization software,
+which can handle some graphs considered as too large for viewing in GINsim directly.
+These exports only consider the graph structure (graphical attributes are lost).
+The following formats are supported:</p>
+<h4 id="graphviz">Graphviz<a class="headerlink" href="#graphviz" title="Permanent link">&para;</a></h4>
+<p>Files in the <a href="http://www.graphviz.org/content/dot-language">DOT language</a>
+can be opened using the graph visualization software
+<a href="http://www.graphviz.org">Graphviz</a>.</p>
+<h4 id="biolayout">BioLayout<a class="headerlink" href="#biolayout" title="Permanent link">&para;</a></h4>
+<p><a href="http://www.biolayout.org">Biolayout</a>, is a graph visualization software focussing
+on biological networks.</p>
+<h4 id="cytoscape">Cytoscape<a class="headerlink" href="#cytoscape" title="Permanent link">&para;</a></h4>
+<p><a href="http://www.cytoscape.org">Cytoscape</a>,
+is also used for the analysis of biological networks. While GINsim can export 
+regulatory graphs for cytoscape, this format is not yet available for other types of graphs.</p>
+<h4 id="nusmv-export">NuSMV export<a class="headerlink" href="#nusmv-export" title="Permanent link">&para;</a></h4>
+<p>The dynamics of logical regulatory graphs can be described using a NuSMV specification.
+In GINsim, this specification is created through an export functionality capable of 
+generating a symbolic description of the logical model specified in GINsim.</p>
+<p>Additionally, it is capable of describing different updating policies for the 
+generation of the successors, such as synchronous, asynchronous and priority classes.</p>
+<p>Finally, it tries to address the space problem of the state representation by 
+annotating the information regarding the input variables on edges instead of states 
+(making use of ARCTL), 
+and by (optionally) defining output variables as simple macro functions.</p>
+<h6 id="symbolic-representation">Symbolic representation<a class="headerlink" href="#symbolic-representation" title="Permanent link">&para;</a></h6>
+<p>Each variable is declared under the <code>VAR</code> section together with 
+the corresponding range of values (domain). The order of the declaration of 
+variables is of extreme importance since it influences the construction of the 
+internal BDD representing the whole dynamics.</p>
+<p>The initialization of a set of variables is performed by using the 
+<code>INIT</code> keyword followed by an assignment of a value to a given variable.
+Alternatively, a macro can be defined with a conjunction of variable valuations 
+and simply use the macro name with the <code>INIT</code> keyword.</p>
+<p>The rules concerning the computation of the target value of a given variable 
+are described under the <code>ASSIGN</code> section, using the 
+<code>next(Var) := ...;</code> form.</p>
+<p>The computation of the focal point is declared under the <code>DEFINE</code>
+section, where the actual logical rules referencing all the regulatory 
+components are declared.</p>
+<p>In this section it is also declared all the macros to be used in the property 
+specifications, such as weak and strong stable states, the list of initial
+conditions defined by the user, or the output variables which (if specified)
+do not participate in the state characterization.</p>
+<h5 id="updating-policies">Updating policies<a class="headerlink" href="#updating-policies" title="Permanent link">&para;</a></h5>
+<p>In this export, all of the possible updating policies synchronous/asynchronous are considered as being special cases of the priority classes:</p>
+<ul>
+<li>Asynchronous updating is represented as having one 
+    priority class per variable ([VarA] [VarB] ... [VarZ]), with 
+    the restriction of a single class update per successor.</li>
+<li>Synchronous updating is represented as having one 
+    single priority class containing all of the variables 
+    ([VarA VarB ... VarZ]), where all of the variables in the 
+    class are called to change their value in the (single) 
+    successor.</li>
+</ul>
+<h5 id="state-representation">State representation<a class="headerlink" href="#state-representation" title="Permanent link">&para;</a></h5>
+<p>There are three main types of variables characterizing a state: 
+state variables, which are declared under the <code>VAR</code> section;
+output variables, which (if specified by the "Strip outputs" option) are declared 
+as macros under the <code>DEFINE</code> section;
+and the input variables, which are declared under the <code>IVAR</code> section.</p>
+<p>State variables are the ones characterizing an internal state in NuSMV, so,
+whenever one of the state variables is called to change, a new successor is 
+(might be) created.
+Output variables are the ones that are not critical for the state characterization,
+and whose values can be computed through state variables alone. 
+Output variables can still be referenced with a temporal operator in a property 
+specification though.
+Input variables are always projected over transitions rather then the state.
+Between a state and its successor, a transition contains all the valid input 
+valuations, i.e., if a given input valuation does not permit to follow a given 
+transition is will be not represented over that transition.</p>
+<h6 id="macros-representing-state-restrictions">Macros representing state restrictions<a class="headerlink" href="#macros-representing-state-restrictions" title="Permanent link">&para;</a></h6>
+<p>The NuSMV export will always automatically compute the model stable states and
+insert them in the NuSMV model description.
+Every <em>stableState</em> is either a <em>weakSS</em> or a <em>strongSS</em>, 
+and each one of these can be composed by several ones, depending on the model.
+The user, can then use each of these macro names for the specification of 
+properties, from a general one <em>stableState</em> to a more specific one 
+<em>strongSS</em>.</p>
+<p>Additionally, when exporting a model, the user can define and select state 
+restrictions on the internal components or on the input components.
+Only the ones that are checked will be written on the NuSMV specification.
+Similarly, the names given to each of these state restrictions will correspond to 
+macro names which can be used in the specification of properties.</p>
+<h6 id="temporal-logic-property-specification">Temporal logic property specification<a class="headerlink" href="#temporal-logic-property-specification" title="Permanent link">&para;</a></h6>
+<p>This NuSMV specification of the logical model, does not include any 
+property specifications.
+It is <em>up to the user</em> to encode them at the end of the NuSMV specification file.
+Again, in any given property, the user can always use the <em>stableState</em> 
+or the <em>initialStateList</em> macros previously defined.
+In order to aid the user in such task, the following example reachability 
+properties are added, as comments, at the end of each file.</p>
+<pre><code>--------------------------------------------------
+-- Reachability Properties using VARYING INPUTS --
+-- i.e. there is NO CONTROL on the input change at each transition
+--
+-- 1. Between an initial state (pattern) and a stable state (pattern)
+--   a. Existence of at least one path connecting two state patterns
+-- INIT initState;
+-- SPEC EF ( stableState );
+--   b. Existence of all the paths connecting two state patterns
+-- INIT initState;
+-- SPEC AF ( stableState );
+--
+-- 2. Between all the weak/strong stable states
+-- INIT weakSS1;
+--  SPEC EF ( weakSS2 );
+--  ...
+--  SPEC EF ( weakSSn );
+--------------------------------------------------
+-- Reachability Properties using FIXED INPUTS --
+-- i.e. a VALUE RESTRICTION can be forced at each transition
+-- 
+-- 1. Between an initial state (pattern) and a stable state (pattern)
+--   a. Existence of at least one path connecting two state patterns
+-- INIT initState; SPEC EAF ( inpVar1=0 &amp;amp; inpVar3=1 )( stableState );
+--   b. Existence of all the paths
+-- INIT initState; SPEC AAF ( inpVar1=0 &amp;amp; inpVar3=1 )( stableState );
+--
+-- 2. Testing input combinations
+-- INIT weakSS1;
+--  SPEC EAF ( inpVar1=0 &amp;amp; inpVar2=0 )( weakSS2 );
+--  SPEC EAF ( inpVar1=0 &amp;amp; inpVar2=1 )( weakSS2 );
+--  SPEC EAF ( inpVar1=1 &amp;amp; inpVar2=0 )( weakSS2 );
+--  SPEC EAF ( inpVar1=1 &amp;amp; inpVar2=1 )( weakSS2 );
+--  ...
+</code></pre>
+<h5 id="availability-and-further-reading_3">Availability and further reading<a class="headerlink" href="#availability-and-further-reading_3" title="Permanent link">&para;</a></h5>
+<p>This export was implemented in GINsim 3.0. Further information is available in <sup id="fnref:Monteiro2012"><a class="footnote-ref" href="#fn:Monteiro2012">8</a></sup>.</p>
+<h4 id="petri-net-export">Petri net export<a class="headerlink" href="#petri-net-export" title="Permanent link">&para;</a></h4>
+<p>Regulatory graphs can be exported into discrete <!-- TODO: check nomenclature with claudine -->
+Petri net using the rewriting method described in <sup id="fnref:Chaouiya2006"><a class="footnote-ref" href="#fn:Chaouiya2006">9</a></sup>.</p>
+<p>In the "File -&gt; Export" menu, a "Petri Net" submenu permits to choose one of three supported Petri net representations: INA, PNML and APNN.
+Choosing any of these representations, opens a configuration dialog box which presents a list of options to be considered in the export.
+These include modifications such as model perturbations or reductions, or the definition of a set of initial states.</p>
+<div class="admonition example">
+<p class="admonition-title">The Petri Net export dialog</p>
+<p><img alt="The Petri Net export dialog" src="formats/pnexport.png" /></p>
+<p>The Petri Net export dialog box allows to select the export format, the initial markup and the mutant to apply before exporting. The initial markup can be generated from an existing initial state of the model  (modifications made in this dialog are also applied to the simulation settings); only the first selected state is used.</p>
+</div>
+<p>TODO: update figure!</p>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:deJong2002">
+<p>Hidde de Jong. Modeling and simulation of genetic regulatory systems: a literature review. <em>Journal of Computational Biology</em>, 9(1):67–103, January 2002. <a href="https://doi.org/10.1089/10665270252833208">doi:10.1089/10665270252833208</a>.&#160;<a class="footnote-backref" href="#fnref:deJong2002" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn:Chaouiya2012">
+<p>Claudine Chaouiya, Aurélien Naldi, and Denis Thieffry. <em>Logical Modelling of Gene Regulatory Networks with GINsim</em>, pages 463–479. Springer New York, October 2012. <a href="https://doi.org/10.1007/978-1-61779-361-5_23">doi:10.1007/978-1-61779-361-5_23</a>.&#160;<a class="footnote-backref" href="#fnref:Chaouiya2012" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
+<li id="fn:Naldi2011">
+<p>Aurélien Naldi, Elisabeth Remy, Denis Thieffry, and Claudine Chaouiya. Dynamically consistent reduction of logical regulatory graphs. <em>Theoretical Computer Science</em>, 412(21):2207–2218, May 2011. <a href="https://doi.org/10.1016/j.tcs.2010.10.021">doi:10.1016/j.tcs.2010.10.021</a>.&#160;<a class="footnote-backref" href="#fnref:Naldi2011" title="Jump back to footnote 3 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:Naldi2011" title="Jump back to footnote 3 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:Naldi2011" title="Jump back to footnote 3 in the text">&#8617;</a></p>
+</li>
+<li id="fn:Thieffry2007">
+<p>D. Thieffry. Dynamical roles of biological regulatory circuits. <em>Briefings in Bioinformatics</em>, 8(4):220–225, March 2007. <a href="https://doi.org/10.1093/bib/bbm028">doi:10.1093/bib/bbm028</a>.&#160;<a class="footnote-backref" href="#fnref:Thieffry2007" title="Jump back to footnote 4 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:Thieffry2007" title="Jump back to footnote 4 in the text">&#8617;</a></p>
+</li>
+<li id="fn:Naldi2012">
+<p>Aurélien Naldi, Pedro T. Monteiro, and Claudine Chaouiya. <em>Efficient Handling of Large Signalling-Regulatory Networks by Focusing on Their Core Control</em>, pages 288–306. Springer Berlin Heidelberg, 2012. <a href="https://doi.org/10.1007/978-3-642-33636-2_17">doi:10.1007/978-3-642-33636-2_17</a>.&#160;<a class="footnote-backref" href="#fnref:Naldi2012" title="Jump back to footnote 5 in the text">&#8617;</a></p>
+</li>
+<li id="fn:Berenguier2013">
+<p>D. Bérenguier, C. Chaouiya, P. T. Monteiro, A. Naldi, E. Remy, D. Thieffry, and L. Tichit. Dynamical modeling and analysis of large cellular regulatory networks. <em>Chaos: An Interdisciplinary Journal of Nonlinear Science</em>, June 2013. <a href="https://doi.org/10.1063/1.4809783">doi:10.1063/1.4809783</a>.&#160;<a class="footnote-backref" href="#fnref:Berenguier2013" title="Jump back to footnote 6 in the text">&#8617;</a></p>
+</li>
+<li id="fn:Naldi2007">
+<p>Aurélien Naldi, Denis Thieffry, and Claudine Chaouiya. <em>Decision Diagrams for the Representation and Analysis of Logical Models of Genetic Networks</em>, pages 233–247. Springer Berlin Heidelberg, 2007. <a href="https://doi.org/10.1007/978-3-540-75140-3_16">doi:10.1007/978-3-540-75140-3_16</a>.&#160;<a class="footnote-backref" href="#fnref:Naldi2007" title="Jump back to footnote 7 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:Naldi2007" title="Jump back to footnote 7 in the text">&#8617;</a></p>
+</li>
+<li id="fn:Monteiro2012">
+<p>Pedro T. Monteiro and Claudine Chaouiya. <em>Efficient Verification for Logical Models of Regulatory Networks</em>, pages 259–267. Springer Berlin Heidelberg, 2012. <a href="https://doi.org/10.1007/978-3-642-28839-5_30">doi:10.1007/978-3-642-28839-5_30</a>.&#160;<a class="footnote-backref" href="#fnref:Monteiro2012" title="Jump back to footnote 8 in the text">&#8617;</a></p>
+</li>
+<li id="fn:Chaouiya2006">
+<p>Claudine Chaouiya, Elisabeth Remy, and Denis Thieffry. <em>Qualitative Petri Net Modelling of Genetic Networks</em>, pages 95–112. Springer Berlin Heidelberg, 2006. <a href="https://doi.org/10.1007/11880646_5">doi:10.1007/11880646_5</a>.&#160;<a class="footnote-backref" href="#fnref:Chaouiya2006" title="Jump back to footnote 9 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/GINsim" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "..", "features": ["navigation.sections"], "search": "../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.56ea9cef.min.js"></script>
+      
+        <script src="../assets/numbered-documentation.js"></script>
+      
+    
+  </body>
+</html>

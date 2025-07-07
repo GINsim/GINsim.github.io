@@ -1,53 +1,71 @@
-/* Reset counters for the main content */
-body {
-  counter-reset: h2counter;
+.md-typeset h1 {
+    text-align: center;
+    font-weight: bold;
 }
 
-/* Style for H2 headings with counters in main content */
-.post-content h2::before,
-.nested-copy-line-height h2::before,
-article h2::before {
-  counter-increment: h2counter;
-  content: counter(h2counter) " - ";
+/* https://squidfunk.github.io/mkdocs-material/setup/changing-the-colors/#custom-colors */
+:root > * {
+  --md-primary-fg-color:        #880000;
+  --md-primary-fg-color--light: #880000;
+  --md-primary-fg-color--dark:  #121212;
 }
 
-/* Reset H3 counter after each H2 */
-.post-content h2,
-.nested-copy-line-height h2,
-article h2 {
-  counter-reset: h3counter;
+[data-md-color-scheme="slate"] {
+  /* Deep black theme */
+  --md-default-bg-color:        #000000;
+  --md-default-bg-color--light: #111111;
+  --md-default-bg-color--dark:  #000000;
+  /* Text/UI adjustments */
+  --md-typeset-color:           #ffffff;  /* Light text */
+  --md-code-bg-color:           #0a0a0a;  /* Dark code blocks */
 }
 
-/* Style for H3 headings with nested counters in main content */
-.post-content h3::before,
-.nested-copy-line-height h3::before,
-article h3::before {
-  counter-increment: h3counter;
-  content: counter(h2counter) "." counter(h3counter) " - ";
+/*********************************************************************/
+/* Auto-numbering for headings using CSS */
+/* Skip numbering for h1 (page title) */
+.numbered-sections .md-typeset h1 {
+  counter-reset: h2 h3 h4;  /* Reset all counters */
 }
 
-/* Style for the TOC - top level */
-#TableOfContents > ul {
-  counter-reset: toc-h2;
+.numbered-sections .md-typeset h1:before {
+  content: "" !important;    /* Disable h1 numbering */
 }
 
-#TableOfContents > ul > li {
-  counter-increment: toc-h2;
+/* Number h2-h4 */
+.numbered-sections .md-typeset h2 {
+  counter-reset: h3 h4;
 }
 
-#TableOfContents > ul > li > a::before {
-  content: counter(toc-h2) " - ";
+.numbered-sections .md-typeset h2:before {
+  counter-increment: h2;
+  content: counter(h2) ". ";
 }
 
-/* Style for the TOC - second level */
-#TableOfContents > ul > li {
-  counter-reset: toc-h3;
+.numbered-sections .md-typeset h3 {
+  counter-reset: h4;
 }
 
-#TableOfContents > ul > li > ul > li {
-  counter-increment: toc-h3;
+.numbered-sections .md-typeset h3:before {
+  counter-increment: h3;
+  content: counter(h2) "." counter(h3) ". ";
 }
 
-#TableOfContents > ul > li > ul > li > a::before {
-  content: counter(toc-h2) "." counter(toc-h3) " - ";
+.numbered-sections .md-typeset h4:before {
+  counter-increment: h4;
+  content: counter(h2) "." counter(h3) "." counter(h4) ". ";
+}
+
+/****************************************************************************/
+/* Citations without footnotes */
+.md-content sup{
+  vertical-align: baseline;
+  font-size: 100%;
+}
+
+.md-content sup:before {
+  content: " [";
+}
+
+.md-content sup:after {
+  content: "]";
 }

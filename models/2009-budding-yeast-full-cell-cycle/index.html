@@ -1,25 +1,465 @@
-<!doctype html><html><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="ie=edge"><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><title>Budding yeast cell cycle (Fauré et al. 2009) &#183; GINsim</title><meta name=description content><link rel=stylesheet href=https://ginsim.github.io/style.main.css><link rel=stylesheet href=https://ginsim.github.io/css/custom.css></head><body><header><div class=title><a href=https://ginsim.github.io/><img src=https://ginsim.github.io/ginsim.svg class=logo alt=GINsim></a></div><nav><ul><li><a href=/>Home</a></li><li><a href=/doc/>Documentation</a></li><li><a href=/models/>Models</a></li></ul></nav></header><section><div class=content><h1>Budding yeast cell cycle (Fauré et al. 2009)</h1><div class=meta><dl><dt>Submitter</dt><dd>Adrien Fauré (C. Chaouiya)</dd><dt>Taxon</dt><dd><span class=keyword>Yeast</span> ; <span class=keyword>Budding yeast</span></dd><dt>Process</dt><dd><span class=keyword>Cell cycle</span></dd><div class=ref><div class=type></div><a href><span class=title>Modular logical modelling of the budding yeast cell cycle..</span></a>
-<span class=authors>A. Fauré, A. Naldi, F. Lopez, C. Chaouiya, A. Ciliberto, D. Thieffry.</span>
-<span class=journal>Molecular bioSystems</span>
-<span class=position>5</span><span class=year> (2009 Dec)</span>.</div></div><p>Leaning on former models, we have defined a logical model for three regulatory
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.15">
+    
+    
+      
+        <title>Budding yeast cell cycle (Fauré et al. 2009) - Gene Interaction Network simulation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.342714a4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/custom.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Gene Interaction Network simulation" class="md-header__button md-logo" aria-label="Gene Interaction Network simulation" data-md-component="logo">
+      
+  <img src="../../ginsim.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Gene Interaction Network simulation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Budding yeast cell cycle (Fauré et al. 2009)
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14.3 16-.7-2h-3.2l-.7 2H7.8L11 7h2l3.2 9zM20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12zm-9.15 3.96h2.3L12 9z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to system preference"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Switch to system preference" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/GINsim/GINsim" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GINsim @ GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Gene Interaction Network simulation" class="md-nav__button md-logo" aria-label="Gene Interaction Network simulation" data-md-component="logo">
+      
+  <img src="../../ginsim.svg" alt="logo">
+
+    </a>
+    Gene Interaction Network simulation
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/GINsim/GINsim" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GINsim @ GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Model Repository
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../documentation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Documentation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../companion-tools/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Companion Tools
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../install/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Installation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contact/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Contact
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+  <h1>Budding yeast cell cycle (Fauré et al. 2009)</h1>
+
+<p><small>Taxon: Yeast | Budding yeast</small></p>
+<p><small>Process: Cell cycle</small></p>
+<p><small>Submitter: Adrien Fauré (C. Chaouiya)</small></p>
+<table>
+<thead>
+<tr>
+<th>Model file(s)</th>
+<th>Description(s)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="coupled_budding_yeast_CC.zginml">coupled_budding_yeast_CC.zginml</a></td>
+<td>Logical model combining the budding yeast core cycling engine with the morphogenetic checkpoint and a detailed exit module</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Summary:</strong></p>
+<p>Leaning on former models, we have defined a logical model for three regulatory
 modules involved in the control of the mitotic cell cycle in budding yeast,
 namely the core cell cycle module, the morphogenetic checkpoint, and a module
 controlling the exit from mitosis. Consistency with available data has been
 assessed through a systematic analysis of model behaviours for various genetic
-backgrounds and other perturbations.</p><p>Here, we take advantage of compositional facilities of the logical formalism
+backgrounds and other perturbations.</p>
+<ul>
+<li>Logical modelling of the <a href="/node/25">core engine</a></li>
+<li>Logical modelling of the budding yeast <a href="/node/25">morphogenetic checkpoint</a></li>
+<li>Logical modelling of the budding yeast <a href="/node/26">exit module</a></li>
+</ul>
+<p>TODO: verify links</p>
+<p>Here, we take advantage of compositional facilities of the logical formalism
 to combine these three models in order to generate a single comprehensive
 model involving over thirty regulatory components. The resulting logical model
 preserves all relevant characteristics of the original modules, while enabling
-the simulation of more sophisticated experiments.</p><p>Chen et al (2004) <span class=cite>[1]</span>
-discussed the possibility to graft
-the model of the morphogenesis checkpoint published in a &ldquo;companion study&rdquo;
-by Ciliberto et al (2003) <span class=cite>[
-2
-]</span>
-to their model of the cell
+the simulation of more sophisticated experiments (cf. <sup id="fnref:Faure2009b"><a class="footnote-ref" href="#fn:Faure2009b">1</a></sup>).</p>
+<p>Chen et al (2004) <sup id="fnref:Chen2004"><a class="footnote-ref" href="#fn:Chen2004">2</a></sup> discussed the possibility to graft 
+the model of the morphogenesis checkpoint published in a "companion study"
+by Ciliberto et al (2003) <sup id="fnref:Ciliberto2003"><a class="footnote-ref" href="#fn:Ciliberto2003">3</a></sup> to their model of the cell
 cycle, and to replace the hypothetical PPX by a more accurate version of the
 network controlling mitotic exit. We have adapted all three modules in the
-logical formalism, and coupled them together.</p><p>We have kept and left unchanged all components that were specific of the MCP
+logical formalism, and coupled them together.</p>
+<p><strong>Coupling of the MCP module to the core cycling engine model</strong></p>
+<p>We have kept and left unchanged all components that were specific of the MCP
 module (Mih1, Swe1, Mpk1 and Hsl1), and similarly, all components specific of
 the core model. Among the components that were shared by both modules, MASS,
 MBF and the BUD received no input from the variables specific of the MCP,
@@ -35,7 +475,9 @@ formula giving the conditions of activation of CycB in the coupled model
 amounts to a logical AND between its formulas in the core cycling engine and
 in the MCP module. The main characteristics of the behaviour of the two
 original modules are conserved in the coupled model, in the case of the
-wild-type as for the different mutations simulated.</p><p>The next step was to fuse the exit module to the core cycling engine. We
+wild-type as for the different mutations simulated.</p>
+<p><strong>Coupling of the exit module to the core cycling engine model</strong></p>
+<p>The next step was to fuse the exit module to the core cycling engine. We
 followed the same method as with the coupling of the MCP. The first step was
 to identify which components and interactions were to be kept in the coupled
 model. Obviously, we chose to discard the hypothetical PPX, along with the
@@ -47,25 +489,106 @@ rules for Clb2, Cdh1 and Cdc20 in the exit module amount to simplifications of
 their counterparts in the core model, so we kept the core model wiring and
 regulation in the coupled model for these components. Last but not least, we
 added regulation from Sic1 and Cdc6 towards Clb2 new targets to represent
-sequestration of the cyclins by the CKI (see the <a href=../25>core cycling engine
+sequestration of the cyclins by the CKI (see the <a href="/node/25">core cycling engine
 model</a> for more details). The resulting model fits the more recent
 data used to built the exit module, and the behaviour of the core model is
 preserved. Still, one difficulty arose regarding mutant simulations for the
 exit module: the two mutants involving Cdk inhibition (see Queralt et
-al., supplementary figure S6.4 <span class=cite>[
-3
-]</span>
-) could not be simulated in
+al., supplementary figure S6.4 <sup id="fnref:Queralt2006"><a class="footnote-ref" href="#fn:Queralt2006">4</a></sup>) could not be simulated in
 the coupled model, as inhibition of Cdk1 / Clb2 is the signal for cytokinesis in
-this model. This points out towards the &ldquo;TARGET model&rdquo; hypothesis discussed in
+this model. This points out towards the "TARGET model" hypothesis discussed in
 Chen et al, where the trigger for cytokinesis would involve both a decrease of
-Cdk1/Clb2 kinase activity and an increase in Cdc14 phosphatase activity.</p><dl class=biblio><dt>1</dt><dd><div class=ref><div class=type></div><a href><span class=title>Integrative analysis of cell cycle control in budding yeast..</span></a>
-<span class=authors>K. Chen, L. Calzone, A. Csikasz-Nagy, F. Cross, B. Novak, J. Tyson.</span>
-<span class=journal>Molecular biology of the cell</span>
-<span class=position>15</span><span class=year> (2004 Aug)</span>.</div></dd><dt>2</dt><dd><div class=ref><div class=type></div><a href><span class=title>Mathematical model of the morphogenesis checkpoint in budding yeast..</span></a>
-<span class=authors>A. Ciliberto, B. Novak, J. Tyson.</span>
-<span class=journal>The Journal of cell biology</span>
-<span class=position>163</span><span class=year> (2003 Dec 22)</span>.</div></dd><dt>3</dt><dd><div class=ref><div class=type></div><a href><span class=title>Downregulation of PP2A(Cdc55) phosphatase by separase initiates mitotic exit in budding yeast..</span></a>
-<span class=authors>E. Queralt, C. Lehane, B. Novak, F. Uhlmann.</span>
-<span class=journal>Cell</span>
-<span class=position>125</span><span class=year> (2006 May 19)</span>.</div></dd></dl><h3>Files</h3><ul><li><a href=coupled_budding_yeast_CC.zginml>coupled_budding_yeast_CC.zginml</a></li></ul></div></section></body></html>
+Cdk1/Clb2 kinase activity and an increase in Cdc14 phosphatase activity.</p>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:Faure2009b">
+<p>Adrien Fauré, Aurélien Naldi, Fabrice Lopez, Claudine Chaouiya, Andrea Ciliberto, and Denis Thieffry. Modular logical modelling of the budding yeast cell cycle. <em>Molecular BioSystems</em>, 5(12):1787, 2009. <a href="https://doi.org/10.1039/b910101m">doi:10.1039/b910101m</a>.&#160;<a class="footnote-backref" href="#fnref:Faure2009b" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn:Chen2004">
+<p>Katherine C. Chen, Laurence Calzone, Attila Csikasz-Nagy, Frederick R. Cross, Bela Novak, and John J. Tyson. Integrative analysis of cell cycle control in budding yeast. <em>Molecular Biology of the Cell</em>, 15(8):3841–3862, August 2004. <a href="https://doi.org/10.1091/mbc.e03-11-0794">doi:10.1091/mbc.e03-11-0794</a>.&#160;<a class="footnote-backref" href="#fnref:Chen2004" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
+<li id="fn:Ciliberto2003">
+<p>Andrea Ciliberto, Bela Novak, and John J. Tyson. Mathematical model of the morphogenesis checkpoint in budding yeast. <em>The Journal of Cell Biology</em>, 163(6):1243–1254, December 2003. <a href="https://doi.org/10.1083/jcb.200306139">doi:10.1083/jcb.200306139</a>.&#160;<a class="footnote-backref" href="#fnref:Ciliberto2003" title="Jump back to footnote 3 in the text">&#8617;</a></p>
+</li>
+<li id="fn:Queralt2006">
+<p>Ethel Queralt, Chris Lehane, Bela Novak, and Frank Uhlmann. Downregulation of pp2acdc55 phosphatase by separase initiates mitotic exit in budding yeast. <em>Cell</em>, 125(4):719–732, May 2006. <a href="https://doi.org/10.1016/j.cell.2006.03.038">doi:10.1016/j.cell.2006.03.038</a>.&#160;<a class="footnote-backref" href="#fnref:Queralt2006" title="Jump back to footnote 4 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/GINsim" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.sections"], "search": "../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.56ea9cef.min.js"></script>
+      
+        <script src="../../assets/numbered-documentation.js"></script>
+      
+    
+  </body>
+</html>

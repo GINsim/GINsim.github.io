@@ -1,0 +1,763 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.15">
+    
+    
+      
+        <title>Index - Gene Interaction Network simulation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.342714a4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/custom.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#ginsim-format" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Gene Interaction Network simulation" class="md-header__button md-logo" aria-label="Gene Interaction Network simulation" data-md-component="logo">
+      
+  <img src="../../ginsim.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Gene Interaction Network simulation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Index
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14.3 16-.7-2h-3.2l-.7 2H7.8L11 7h2l3.2 9zM20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12zm-9.15 3.96h2.3L12 9z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to system preference"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Switch to system preference" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/GINsim/GINsim" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GINsim @ GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Gene Interaction Network simulation" class="md-nav__button md-logo" aria-label="Gene Interaction Network simulation" data-md-component="logo">
+      
+  <img src="../../ginsim.svg" alt="logo">
+
+    </a>
+    Gene Interaction Network simulation
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/GINsim/GINsim" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GINsim @ GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../models/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Model Repository
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Documentation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../companion-tools/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Companion Tools
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../install/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Installation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contact/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Contact
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#ginsim-format" class="md-nav__link">
+    <span class="md-ellipsis">
+      GINsim format
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#export-graph-view" class="md-nav__link">
+    <span class="md-ellipsis">
+      Export graph view
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#export-graph-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      Export graph structure
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Export graph structure">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#graphviz" class="md-nav__link">
+    <span class="md-ellipsis">
+      Graphviz
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#biolayout" class="md-nav__link">
+    <span class="md-ellipsis">
+      BioLayout
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cytoscape" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cytoscape
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nusmv-export" class="md-nav__link">
+    <span class="md-ellipsis">
+      NuSMV export
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#petri-net-export" class="md-nav__link">
+    <span class="md-ellipsis">
+      Petri net export
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+  <h1>Index</h1>
+
+<h3 id="ginsim-format">GINsim format<a class="headerlink" href="#ginsim-format" title="Permanent link">&para;</a></h3>
+<p>The Z-GINML format (also denoted <strong>extended save</strong>), is a zip archive containing a ginml file along with companion files to store associated data, especially initial states, perturbations, and simulation parameters. More generally, each plugin can provide a parser and file writer to store its associated data in a Z-GINML file.</p>
+<p>The <strong>GINML</strong> format is an extension of the <a href="http://www.gupro.de/GXL">GXL (Graph eXchange Language)</a> format. This extension comprises new attributes and subelements for elements node and edge, and an additional element called parameter.</p>
+<p>element node
+a new attribute basevalue corresponds to the "based level of expression" of the corresponding component (default value 0). In other words, it is the value of the logical parameter corresponding to the case where none of the incoming interactions if functional. New subelements within a node:</p>
+<p>a list of elements parameter corresponding to the user defined logical parameters for this node</p>
+<p>an element intdefining the maximum level of expression of this node</p>
+<p>element edge
+a new attribute sign which gives the sign of the interaction (positive for an activation, negative for a repression, otherwise unknown) one or two subelements int (level or interval letting the interaction functional) element parameter, is empty and has two attributes : attribute idActiveInteractions gives the "name" of the parameter. It is the list of the functional interactions exerted upon the considered node, attribute val is the value of the logical parameter.</p>
+<p>See the GINML's dtd or in pdf format.</p>
+<p>See also the GINML description of the gap-gene network case A, or in pdf format.</p>
+<p>(TODO: described stored associated data)</p>
+<p>Some companion data can be associated to the graphs to store the configuration of various tools.
+Some of this extra data can be shared between several tools.
+This extra data is stored in its own entry inside ZGINML files.</p>
+<h3 id="export-graph-view">Export graph view<a class="headerlink" href="#export-graph-view" title="Permanent link">&para;</a></h3>
+<p>The graph view can be exported as an image in the PNG format.
+This export considers only the visual appareance of the graph,
+and can thus be applied to all types of graph in GINsim.</p>
+<p>The view can also be exported in the 
+<a href="http://www.w3.org/Graphics/SVG/">Scalable Vector Graphic (SVG)</a> format.
+Tools like <a href="http://inkscape.org">Inkscape</a>, can then be used to display,
+modify and export SVG files to virtually any image format.</p>
+<h3 id="export-graph-structure">Export graph structure<a class="headerlink" href="#export-graph-structure" title="Permanent link">&para;</a></h3>
+<p>The following exports consider only the graph structure, and
+can thus be applied to all types of graph in GINsim.</p>
+<p>The graph structure can be exported for use in dedicated graph visualization software,
+which can handle some graphs considered as too large for viewing in GINsim directly.
+These exports only consider the graph structure (graphical attributes are lost).
+The following formats are supported:</p>
+<h4 id="graphviz">Graphviz<a class="headerlink" href="#graphviz" title="Permanent link">&para;</a></h4>
+<p>Files in the <a href="http://www.graphviz.org/content/dot-language">DOT language</a>
+can be opened using the graph visualization software
+<a href="http://www.graphviz.org">Graphviz</a>.</p>
+<h4 id="biolayout">BioLayout<a class="headerlink" href="#biolayout" title="Permanent link">&para;</a></h4>
+<p><a href="http://www.biolayout.org">Biolayout</a>, is a graph visualization software focussing
+on biological networks.</p>
+<h4 id="cytoscape">Cytoscape<a class="headerlink" href="#cytoscape" title="Permanent link">&para;</a></h4>
+<p><a href="http://www.cytoscape.org">Cytoscape</a>,
+is also used for the analysis of biological networks. While GINsim can export 
+regulatory graphs for cytoscape, this format is not yet available for other types of graphs.</p>
+<h4 id="nusmv-export">NuSMV export<a class="headerlink" href="#nusmv-export" title="Permanent link">&para;</a></h4>
+<p>The dynamics of logical regulatory graphs can be described using a NuSMV specification.
+In GINsim, this specification is created through an export functionality capable of 
+generating a symbolic description of the logical model specified in GINsim.</p>
+<p>Additionally, it is capable of describing different updating policies for the 
+generation of the successors, such as synchronous, asynchronous and priority classes.</p>
+<p>Finally, it tries to address the space problem of the state representation by 
+annotating the information regarding the input variables on edges instead of states 
+(making use of ARCTL), 
+and by (optionally) defining output variables as simple macro functions.</p>
+<h6 id="symbolic-representation">Symbolic representation<a class="headerlink" href="#symbolic-representation" title="Permanent link">&para;</a></h6>
+<p>Each variable is declared under the <code>VAR</code> section together with 
+the corresponding range of values (domain). The order of the declaration of 
+variables is of extreme importance since it influences the construction of the 
+internal BDD representing the whole dynamics.</p>
+<p>The initialization of a set of variables is performed by using the 
+<code>INIT</code> keyword followed by an assignment of a value to a given variable.
+Alternatively, a macro can be defined with a conjunction of variable valuations 
+and simply use the macro name with the <code>INIT</code> keyword.</p>
+<p>The rules concerning the computation of the target value of a given variable 
+are described under the <code>ASSIGN</code> section, using the 
+<code>next(Var) := ...;</code> form.</p>
+<p>The computation of the focal point is declared under the <code>DEFINE</code>
+section, where the actual logical rules referencing all the regulatory 
+components are declared.</p>
+<p>In this section it is also declared all the macros to be used in the property 
+specifications, such as weak and strong stable states, the list of initial
+conditions defined by the user, or the output variables which (if specified)
+do not participate in the state characterization.</p>
+<h5 id="updating-policies">Updating policies<a class="headerlink" href="#updating-policies" title="Permanent link">&para;</a></h5>
+<p>In this export, all of the possible updating policies synchronous/asynchronous are considered as being special cases of the priority classes:</p>
+<ul>
+<li>Asynchronous updating is represented as having one 
+    priority class per variable ([VarA] [VarB] ... [VarZ]), with 
+    the restriction of a single class update per successor.</li>
+<li>Synchronous updating is represented as having one 
+    single priority class containing all of the variables 
+    ([VarA VarB ... VarZ]), where all of the variables in the 
+    class are called to change their value in the (single) 
+    successor.</li>
+</ul>
+<h5 id="state-representation">State representation<a class="headerlink" href="#state-representation" title="Permanent link">&para;</a></h5>
+<p>There are three main types of variables characterizing a state: 
+state variables, which are declared under the <code>VAR</code> section;
+output variables, which (if specified by the "Strip outputs" option) are declared 
+as macros under the <code>DEFINE</code> section;
+and the input variables, which are declared under the <code>IVAR</code> section.</p>
+<p>State variables are the ones characterizing an internal state in NuSMV, so,
+whenever one of the state variables is called to change, a new successor is 
+(might be) created.
+Output variables are the ones that are not critical for the state characterization,
+and whose values can be computed through state variables alone. 
+Output variables can still be referenced with a temporal operator in a property 
+specification though.
+Input variables are always projected over transitions rather then the state.
+Between a state and its successor, a transition contains all the valid input 
+valuations, i.e., if a given input valuation does not permit to follow a given 
+transition is will be not represented over that transition.</p>
+<h6 id="macros-representing-state-restrictions">Macros representing state restrictions<a class="headerlink" href="#macros-representing-state-restrictions" title="Permanent link">&para;</a></h6>
+<p>The NuSMV export will always automatically compute the model stable states and
+insert them in the NuSMV model description.
+Every <em>stableState</em> is either a <em>weakSS</em> or a <em>strongSS</em>, 
+and each one of these can be composed by several ones, depending on the model.
+The user, can then use each of these macro names for the specification of 
+properties, from a general one <em>stableState</em> to a more specific one 
+<em>strongSS</em>.</p>
+<p>Additionally, when exporting a model, the user can define and select state 
+restrictions on the internal components or on the input components.
+Only the ones that are checked will be written on the NuSMV specification.
+Similarly, the names given to each of these state restrictions will correspond to 
+macro names which can be used in the specification of properties.</p>
+<h6 id="temporal-logic-property-specification">Temporal logic property specification<a class="headerlink" href="#temporal-logic-property-specification" title="Permanent link">&para;</a></h6>
+<p>This NuSMV specification of the logical model, does not include any 
+property specifications.
+It is <em>up to the user</em> to encode them at the end of the NuSMV specification file.
+Again, in any given property, the user can always use the <em>stableState</em> 
+or the <em>initialStateList</em> macros previously defined.
+In order to aid the user in such task, the following example reachability 
+properties are added, as comments, at the end of each file.</p>
+<pre><code>--------------------------------------------------
+-- Reachability Properties using VARYING INPUTS --
+-- i.e. there is NO CONTROL on the input change at each transition
+--
+-- 1. Between an initial state (pattern) and a stable state (pattern)
+--   a. Existence of at least one path connecting two state patterns
+-- INIT initState;
+-- SPEC EF ( stableState );
+--   b. Existence of all the paths connecting two state patterns
+-- INIT initState;
+-- SPEC AF ( stableState );
+--
+-- 2. Between all the weak/strong stable states
+-- INIT weakSS1;
+--  SPEC EF ( weakSS2 );
+--  ...
+--  SPEC EF ( weakSSn );
+--------------------------------------------------
+-- Reachability Properties using FIXED INPUTS --
+-- i.e. a VALUE RESTRICTION can be forced at each transition
+-- 
+-- 1. Between an initial state (pattern) and a stable state (pattern)
+--   a. Existence of at least one path connecting two state patterns
+-- INIT initState; SPEC EAF ( inpVar1=0 &amp;amp; inpVar3=1 )( stableState );
+--   b. Existence of all the paths
+-- INIT initState; SPEC AAF ( inpVar1=0 &amp;amp; inpVar3=1 )( stableState );
+--
+-- 2. Testing input combinations
+-- INIT weakSS1;
+--  SPEC EAF ( inpVar1=0 &amp;amp; inpVar2=0 )( weakSS2 );
+--  SPEC EAF ( inpVar1=0 &amp;amp; inpVar2=1 )( weakSS2 );
+--  SPEC EAF ( inpVar1=1 &amp;amp; inpVar2=0 )( weakSS2 );
+--  SPEC EAF ( inpVar1=1 &amp;amp; inpVar2=1 )( weakSS2 );
+--  ...
+</code></pre>
+<h5 id="availability-and-further-reading">Availability and further reading<a class="headerlink" href="#availability-and-further-reading" title="Permanent link">&para;</a></h5>
+<p>This export was implemented in GINsim 3.0. Further information is available in <sup id="fnref:Monteiro2012"><a class="footnote-ref" href="#fn:Monteiro2012">1</a></sup>.</p>
+<h4 id="petri-net-export">Petri net export<a class="headerlink" href="#petri-net-export" title="Permanent link">&para;</a></h4>
+<p>Regulatory graphs can be exported into discrete <!-- TODO: check nomenclature with claudine -->
+Petri net using the rewriting method described in <sup id="fnref:Chaouiya2006"><a class="footnote-ref" href="#fn:Chaouiya2006">2</a></sup>.</p>
+<p>In the "File -&gt; Export" menu, a "Petri Net" submenu permits to choose one of three supported Petri net representations: INA, PNML and APNN.
+Choosing any of these representations, opens a configuration dialog box which presents a list of options to be considered in the export.
+These include modifications such as model perturbations or reductions, or the definition of a set of initial states.</p>
+<div class="admonition example">
+<p class="admonition-title">The Petri Net export dialog</p>
+<p><img alt="The Petri Net export dialog" src="formats/pnexport.png" /></p>
+<p>The Petri Net export dialog box allows to select the export format, the initial markup and the mutant to apply before exporting. The initial markup can be generated from an existing initial state of the model  (modifications made in this dialog are also applied to the simulation settings); only the first selected state is used.</p>
+</div>
+<p>TODO: update figure!</p>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:Monteiro2012">
+<p>Pedro T. Monteiro and Claudine Chaouiya. <em>Efficient Verification for Logical Models of Regulatory Networks</em>, pages 259–267. Springer Berlin Heidelberg, 2012. <a href="https://doi.org/10.1007/978-3-642-28839-5_30">doi:10.1007/978-3-642-28839-5_30</a>.&#160;<a class="footnote-backref" href="#fnref:Monteiro2012" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn:Chaouiya2006">
+<p>Claudine Chaouiya, Elisabeth Remy, and Denis Thieffry. <em>Qualitative Petri Net Modelling of Genetic Networks</em>, pages 95–112. Springer Berlin Heidelberg, 2006. <a href="https://doi.org/10.1007/11880646_5">doi:10.1007/11880646_5</a>.&#160;<a class="footnote-backref" href="#fnref:Chaouiya2006" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/GINsim" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.sections"], "search": "../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.56ea9cef.min.js"></script>
+      
+        <script src="../../assets/numbered-documentation.js"></script>
+      
+    
+  </body>
+</html>

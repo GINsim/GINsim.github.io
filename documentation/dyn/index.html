@@ -1,0 +1,744 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.15">
+    
+    
+      
+        <title>Index - Gene Interaction Network simulation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.342714a4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/custom.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#state-transition-graphs" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Gene Interaction Network simulation" class="md-header__button md-logo" aria-label="Gene Interaction Network simulation" data-md-component="logo">
+      
+  <img src="../../ginsim.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Gene Interaction Network simulation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Index
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14.3 16-.7-2h-3.2l-.7 2H7.8L11 7h2l3.2 9zM20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12zm-9.15 3.96h2.3L12 9z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to system preference"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Switch to system preference" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/GINsim/GINsim" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GINsim @ GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Gene Interaction Network simulation" class="md-nav__button md-logo" aria-label="Gene Interaction Network simulation" data-md-component="logo">
+      
+  <img src="../../ginsim.svg" alt="logo">
+
+    </a>
+    Gene Interaction Network simulation
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/GINsim/GINsim" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GINsim @ GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../models/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Model Repository
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Documentation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../companion-tools/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Companion Tools
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../install/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Installation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contact/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Contact
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#state-transition-graphs" class="md-nav__link">
+    <span class="md-ellipsis">
+      State transition graphs
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#initial-states" class="md-nav__link">
+    <span class="md-ellipsis">
+      Initial states
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#simulation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Simulation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Simulation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#updating-modes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Updating modes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hierarchical-transition-graphs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Hierarchical Transition Graphs
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+  <h1>Index</h1>
+
+<h3 id="state-transition-graphs">State transition graphs<a class="headerlink" href="#state-transition-graphs" title="Permanent link">&para;</a></h3>
+<p>A State Transition Graph (STG) is a directed graph representing the
+dynamical behaviour of a <a href="./#logical-regulatory-graph">Logical Regulatory Graph</a>.
+Nodes of this graph represent possible states of the model, assigning
+a value to each component. Arcs of the STG represent transitions from
+one state to another (i.e. change of value for one or several components).</p>
+<p>For a more formal definition see <sup id="fnref:Naldi2011"><a class="footnote-ref" href="#fn:Naldi2011">1</a></sup>.</p>
+<h3 id="initial-states">Initial states<a class="headerlink" href="#initial-states" title="Permanent link">&para;</a></h3>
+<p>Named groups of states can be defined for the regulatory graph and used
+for example as starting point for the <a href="./#simulation">Simulation</a>.</p>
+<div class="admonition example">
+<p class="admonition-title">Initial state definition panel</p>
+<p><img alt="Initial state definition panel" src="dyn/initial_states.png" /></p>
+<p>Each line in the table of intial states has a name and provides a value or a range for one or more components. Components which are not restricted are denoted by stars ("*") in the table.</p>
+</div>
+<p>Each row of the table corresponds to a set of states, where activity
+levels are specified for each component in the corresponding table cell.
+Each component can use all of its possible levels (denoted by a star ("*")), a single level or any subset of levels, separated by semicolons (;).
+Intervals can also be defined using a dash ("0-2" denotes all levels from 0 to 2, included).
+The special value "m" denotes the maximal level of the component.
+For example, "0;2-4" means "0 or values between 2 and 4" and is identical to "0;2;3;4".
+"1-m" means "any activity (from 1 to the max)".
+The default, denoted by a "*", covers all possible values (it is thus the same as "0-m").</p>
+<p>Initial states can be reordered, deleted and duplicated using the buttons on top of the table.</p>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>A value can be entered in many cells at once using multiple selection.</p>
+</div>
+<h3 id="simulation">Simulation<a class="headerlink" href="#simulation" title="Permanent link">&para;</a></h3>
+<p>Once a regulatory model has been defined, a simulation can be launched
+through the <code>Run Simulation</code> option of the <code>Action</code> menu.
+This option triggers a dialog box allowing to choose simulation settings.</p>
+<div class="admonition example">
+<p class="admonition-title">Simulation settings</p>
+<p><img alt="Simulation settings" src="dyn/simulation_config.png" /></p>
+<p>This dialog box allows to configure and run the simulation.</p>
+</div>
+<p>This dialog box allows to define simulation settings.
+The top part of the dialog box enables the definition of transformations to apply to
+the regulatory graph before the simulation.
+The left part of the dialog box enables to manage (select, add or remove) simulations settings.
+The right part of the dialog box enables the definition of the current simulation setting.</p>
+<h5 id="configure-the-simulation">Configure the simulation<a class="headerlink" href="#configure-the-simulation" title="Permanent link">&para;</a></h5>
+<p>The top part of the simulation dialog enables the selection of a perturbation
+to be applied to the regulatory graph before running the simulation. The associated <code>Configure</code>
+button will show the :doc:<code>perturbation definition panel &lt;/modify/perturbation&gt;</code>.</p>
+<p>The bottom part of the dialog box is dedicated to the definition of
+:doc:<code>initial_states</code> of the simulation.
+Each row defines a single state or a group of states, and the checkboxes allow
+to select the states used for the simulation. If no row is selected, all possible
+states are considered, generating a complete state transition graph.</p>
+<p>In a given state of the system, one or several genes are called to update their
+values. When several changes are pending, different construction strategies lead to
+different successor states and thus to different state transition graphs.
+GINsim implements the classical <em>synchronous</em> and <em>asynchronous</em>
+updating, and enables the definition of ad hoc strategies using <em>priority classes</em>.
+These updating modes are described in detail in <link xref="tool-simulation-updating-mode">their documentation</link>.</p>
+<p>Simulation settings are saved and restored as associated data in <link xref="format-zginml">ZGINML files</link>.</p>
+<h5 id="running-simulations-with-perturbation">Running simulations with perturbation<a class="headerlink" href="#running-simulations-with-perturbation" title="Permanent link">&para;</a></h5>
+<div class="admonition example">
+<p class="admonition-title">Perturbation simulation result</p>
+<p><img alt="Perturbation simulation result" src="dyn/blocking.png" /></p>
+<p>Result of an asynchronous simulation, where the expression level for Cro has been blocked at 1.
+The state transition graph is the same as the original asynchronous one, but all transitions where Cro leaves this value have been suppressed.
+This state transition graph is now composed of two disconnected parts, with a new stable state.</p>
+</div>
+<p>The "strip output" checkbox next to the perturbation selector enables to
+activate automatic removal of all output components from the simulation.
+Their value can be retrieved on demand when browsing the resulting 
+State Transition Graph. See the <link xref="lrg-modifier-reduction">reduction</link> section for more details.</p>
+<p>The "Construction Strategy" panel enables the selection of the type of graph computed
+by the simulation (the classical <link xref="transition-graphs#stg">State Transition Graph</link>,
+or the more compact <link xref="transition-graphs#htg">Hierarchical Transition Graph</link>).</p>
+<p>State Transition Graphs can be computed breadth-first or depth-first.
+Both options lead to the same result, unless the simulation is interrupted by
+a <link xref="#dslimit">size limit</link> (see below).</p>
+<h5 id="depth-and-size-limitations">Depth and size limitations<a class="headerlink" href="#depth-and-size-limitations" title="Permanent link">&para;</a></h5>
+<p>An option is also offered to limit the search depth and/or the total number of
+states generated in a simulation.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>When considering several initial states (or the full STG), some of them can be reached while running the simulation from an other state.
+In this case, no new search will be triggered for them and the depth counter will not be reinitialised (i.e. the depth limit for these initial states will be shorter).</p>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Limitation of the depth in the case of a depth first construction</p>
+<p><img alt="Limitation of the depth in the case of a depth first construction" src="dyn/stg_depth_limit.png" /></p>
+<p>State transition graph with all reachable states from the state "0111".
+The same simulation with a depth limit set to 2 keeps only the initial state and the nodes at a distance of two or less (i.e. the six white states).</p>
+</div>
+<p>The limit on the total number of states apply to all simulation modes. Under the asynchronous assumption, this limit has slightly different effects on depth first and breadth first search.</p>
+<div class="admonition example">
+<p class="admonition-title">Limitation of STG size</p>
+<p><img alt="Limitation of STG size" src="dyn/stg_size_limit.png" /></p>
+<p>Limitation of the size (depth first and breadth first search construction).
+The limit on the total number of nodes has different effects on depth first and breadth first state transition graphs. These examples show the graph of the figure above [TODO: figure link] limited to 6 states. The first state transition graph was obtained using the depth first construction, whereas the second results from the breadth first one.</p>
+</div>
+<h5 id="running-the-simulation">Running the simulation<a class="headerlink" href="#running-the-simulation" title="Permanent link">&para;</a></h5>
+<p>While the simulation is running, the bottom left corner indicates
+the size of the generated state transition graph. The simulation
+can be interrupted, using the <code>Cancel</code> button, without loosing
+the calculated part of the state transition graph.</p>
+<p>At the end of a simulation, several options are available to save,
+display or analyse the resulting state transition graph
+(see <link xref="gui-whattodo" />).</p>
+<h4 id="updating-modes">Updating modes<a class="headerlink" href="#updating-modes" title="Permanent link">&para;</a></h4>
+<p>In a given state of the system, one or several genes are called to update their
+values. When several changes are pending, different construction strategies lead to
+different successor states and thus to different state transition graphs.</p>
+<h5 id="synchronous-mode">Synchronous mode<a class="headerlink" href="#synchronous-mode" title="Permanent link">&para;</a></h5>
+<p>In this mode, all updating calls are performed simultaneously.
+This simplification may generate artefacts in the state transition graph.</p>
+<p>Each state has then at most one successor state, which encompasses fully
+updated gene levels.</p>
+<h5 id="asynchronous-mode">Asynchronous mode<a class="headerlink" href="#asynchronous-mode" title="Permanent link">&para;</a></h5>
+<p>In this mode, all changes are performed independantly. It will generate a
+state transition graph taking into account any possible trajectories. This mode
+is chosen by default.</p>
+<p>A given state may have several successor states, each of them corresponding to a
+single updating of one gene level.</p>
+<p>In this mode, the graph transition state can be generated "depth first" or
+"breadth first". The same state transition graph will be built, except if
+interrupted (for illustration, see :doc:<code>depth and size limitation &lt;simulation&gt;</code>).</p>
+<div class="admonition example">
+<p class="admonition-title">Construction strategy: synchronous versus asynchronous</p>
+<p><img alt="Construction strategy: synchronous versus asynchronous" src="dyn/a-sync.png" /></p>
+<p>Samples of simulation results for the lambda4 model, applying asynchronous and synchronous strategies to the same initial states (all states where C1=0 and Cro&gt;0). Dotted arcs denote multiple, simultaneous transitions.</p>
+</div>
+<h5 id="priority-classes">Priority classes<a class="headerlink" href="#priority-classes" title="Permanent link">&para;</a></h5>
+<p>This strategy allows the user to group components into different classes, and
+to assign a priority level to each of these classes. In case of concurrent
+transition calls, GINsim first updates the gene(s) belonging to the class with
+the highest ranking. For each class, the user can further specify the desired
+updating assumption, which then determines the treatment of concurrent
+transition calls inside that class. When several classes have the same ranking,
+concurrent transitions are treated under an asynchronous assumption (no
+priority).</p>
+<p>The creation of a new configuration, using the leftmost "+" button, starts wth some predefined settings:</p>
+<ul>
+<li>The definition of a single class contaning all components, equivalent to the (a)synchronous updating.</li>
+<li>The definition of a fully-ordered updating using a separate class for each component.</li>
+<li>The separation of the increasing and decreasing transition of each components for more fine-grained configurations.</li>
+</ul>
+<p>The left part of the configuration dialog box shows a list of priority classes
+(see figure below). The name of a class
+can be edited and a checkbox allows to change its internal mode from
+asynchronous (unchecked) to synchronous (checked). Buttons enable to add (+),
+delete (X), order (using the arrows) and group/ungroup priority classes.</p>
+<p>The central column lists transitions that belong to the currently selected
+class, while the column on the right displays all other transitions (i.e. belonging to
+other classes). To add transitions to the selected class, choose them in the
+right list an click on the "&lt;&lt;" button. The <code>&gt;&gt;</code> button removes the
+transition selected in the central list from the current class and add them to
+the next class in the list (to the first class when the last one is selected).</p>
+<p>When multiple classes are selected, they can be assigned the same rank.
+Multiple classes with the same rank are treated asynchronously: if all classes
+are asynchronous, it is thus equivalent to a single larger class, but it allows
+the definition of asynchronous update of multiple synchronous classes as well.</p>
+<div class="admonition example">
+<p class="admonition-title">Definition of Priority classes</p>
+<p><img alt="Definition of Priority classes" src="dyn/priorityClass.png" /></p>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Priority Class: example result</p>
+<p><img alt="Priority Class: example result" src="dyn/dyn_pclass.png" /></p>
+<p>Example of simulation by priority classes.
+Two priority classes have been created.
+The highest ranked one is synchronous and contains C1, C2 and Cro.
+The other class contains only N.
+The resulting state transition graph is splited into two parts: N expressed <em>versus</em> N not expressed.</p>
+</div>
+<h4 id="hierarchical-transition-graphs">Hierarchical Transition Graphs<a class="headerlink" href="#hierarchical-transition-graphs" title="Permanent link">&para;</a></h4>
+<p>The Hierarchical Transition Graphs (HTG) is an acyclic graph, which provides
+a compact representation of the State Transition Graph. It improves on
+the <a href="./#strongly-connected-components-graph">graph of the Strongly Connected Components</a> by merging
+linear chains of states (in addition to cycles) into single nodes.</p>
+<p>More information on this graph is available in Berenguier <em>et al</em><sup id="fnref:Berenguier2013"><a class="footnote-ref" href="#fn:Berenguier2013">2</a></sup>.</p>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:Naldi2011">
+<p>Aurélien Naldi, Elisabeth Remy, Denis Thieffry, and Claudine Chaouiya. Dynamically consistent reduction of logical regulatory graphs. <em>Theoretical Computer Science</em>, 412(21):2207–2218, May 2011. <a href="https://doi.org/10.1016/j.tcs.2010.10.021">doi:10.1016/j.tcs.2010.10.021</a>.&#160;<a class="footnote-backref" href="#fnref:Naldi2011" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn:Berenguier2013">
+<p>D. Bérenguier, C. Chaouiya, P. T. Monteiro, A. Naldi, E. Remy, D. Thieffry, and L. Tichit. Dynamical modeling and analysis of large cellular regulatory networks. <em>Chaos: An Interdisciplinary Journal of Nonlinear Science</em>, June 2013. <a href="https://doi.org/10.1063/1.4809783">doi:10.1063/1.4809783</a>.&#160;<a class="footnote-backref" href="#fnref:Berenguier2013" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/GINsim" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.sections"], "search": "../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.56ea9cef.min.js"></script>
+      
+        <script src="../../assets/numbered-documentation.js"></script>
+      
+    
+  </body>
+</html>
