@@ -16,7 +16,7 @@
 
 !!! tip "Basins of attraction"
     Using bioLQM in combination with BoolSim a set of Python scripts enable the computation of: attractors, basins of attraction and frontiers between attractors/basins of attraction.
-    You can get more information and get the code at http://ginsim.org/node/212.
+    You can get more information and get the code at [basins-attraction](../basins-attraction/).
 
 
 !!! tip "pyFunctionHood"

@@ -131,6 +131,7 @@ plugins:
         node/253.md: models/2015-stem-cells-myelofibrosis/index.md
         node/256.md: models/2024-mammal-promyelocytic-leukaemia/index.md
         node/258.md: models/2019-mammal-cell-cycle-control/index.md
+        node/212.md: basins-attraction/index.md
 
 # Extensions
 markdown_extensions:

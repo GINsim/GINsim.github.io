@@ -5,10 +5,14 @@ GINsim 3.0 is freely available without guarantees.
 Please contact us for training, other support or dedicated development.
 The GINsim website [https://ginsim.github.io](https://ginsim.github.io) provides the latest official version of the software, [documentation](../documentation/index.md), as well as a [model library](../models/index.md).
 
-!!! tip "Download versions"
-    - **Latest version 3.0 beta2** on GitHub: [GINsim-3.0-beta2.jar](https://github.com/GINsim/GINsim/releases/download/V3.0-beta2/GINsim-3.0-beta2.jar)
-    - **Development version** on GitHub: [GINsim-SNAPSHOT-jar-with-dependencies.jar](https://github.com/GINsim/GINsim/releases/tag/latest)
-    - **All releases** on GitHub: [https://github.com/GINsim/GINsim/releases](https://github.com/GINsim/GINsim/releases)
+!!! info "Download"
+    | Version   | Date        | Download file     | See changelog |
+    |-----------|-------------|---------------|-----------|
+    | 3.0.0b    | Mar 2018    | [GINsim-3.0.0b-with-deps.jar](GINsim-3.0.0b-with-deps.jar) | [ChangeLog-3.0.0b.txt](ChangeLog-3.0.0b.txt) |
+    | 2.4alpha  | Mar 2010    | [GINsim-2.4.jar](GINsim-2.4.jar) | [ChangeLog-2.4.txt](ChangeLog-2.4.txt) |
+    | 2.3.1     | Sep 2010    | [GINsim-2.3.1.jar](GINsim-2.3.1.jar) | [ChangeLog-2.3.1.txt](ChangeLog-2.3.1.txt) |
+
+    Or grab the **development version** on GitHub: [GINsim-SNAPSHOT-jar-with-dependencies.jar](https://github.com/GINsim/GINsim/releases/tag/latest)
 
 
 GINsim requires Java >=8.
@@ -52,7 +56,9 @@ By browsing this web site, you acknowledge and accept its general terms of use d
 
 ## License
 
-This software is licensed under the [GNU General Public License v3.0](https://github.com/GINsim/GINsim/blob/main/LICENSE).
 
+Since version 2.9.3, this software is licensed under the [GNU General Public License v3.0](https://github.com/GINsim/GINsim/blob/main/LICENSE).
+
+Older versions are freely available for academic use.
 
 
