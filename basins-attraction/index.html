@@ -9,10 +9,6 @@
       
       
       
-        <link rel="prev" href="../companion-tools/">
-      
-      
-        <link rel="next" href="../contact/">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -20,7 +16,7 @@
     
     
       
-        <title>Installation - Gene Interaction Network simulation</title>
+        <title>Basins of attraction - Gene Interaction Network simulation</title>
       
     
     
@@ -74,7 +70,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#availability-and-requirements" class="md-skip">
+        <a href="#basins-of-attraction" class="md-skip">
           Skip to content
         </a>
       
@@ -109,7 +105,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Installation
+              Basins of attraction
             
           </span>
         </div>
@@ -349,30 +345,10 @@
       
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    Installation
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../install/" class="md-nav__link">
         
   
   
@@ -383,66 +359,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#availability-and-requirements" class="md-nav__link">
-    <span class="md-ellipsis">
-      Availability and Requirements
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Availability and Requirements">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#running-ginsim" class="md-nav__link">
-    <span class="md-ellipsis">
-      Running GINsim
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#terms-of-use" class="md-nav__link">
-    <span class="md-ellipsis">
-      Terms of use
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#license" class="md-nav__link">
-    <span class="md-ellipsis">
-      License
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -486,6 +402,8 @@
   
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -494,19 +412,64 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#availability-and-requirements" class="md-nav__link">
+  <a href="#download" class="md-nav__link">
     <span class="md-ellipsis">
-      Availability and Requirements
+      Download
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Availability and Requirements">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#computing-basins-of-attraction" class="md-nav__link">
+    <span class="md-ellipsis">
+      Computing basins of attraction
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Computing basins of attraction">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#running-ginsim" class="md-nav__link">
+  <a href="#a-booleanreverse-models" class="md-nav__link">
     <span class="md-ellipsis">
-      Running GINsim
+      a) Boolean/reverse models
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b-attractors" class="md-nav__link">
+    <span class="md-ellipsis">
+      b) Attractors
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c-basins-of-attraction" class="md-nav__link">
+    <span class="md-ellipsis">
+      c) Basins of attraction
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#d-strict-basins-of-attraction" class="md-nav__link">
+    <span class="md-ellipsis">
+      d) Strict basins of attraction
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#usage" class="md-nav__link">
+    <span class="md-ellipsis">
+      Usage
     </span>
   </a>
   
@@ -518,20 +481,62 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#terms-of-use" class="md-nav__link">
+  <a href="#minimising-patterns" class="md-nav__link">
     <span class="md-ellipsis">
-      Terms of use
+      Minimising patterns
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Minimising patterns">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#input-formats" class="md-nav__link">
+    <span class="md-ellipsis">
+      Input formats
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#license" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#boolsim-output-file" class="md-nav__link">
     <span class="md-ellipsis">
-      License
+      BoolSim output file
     </span>
   </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#espresso-output-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      ESPRESSO output file
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#output-format" class="md-nav__link">
+    <span class="md-ellipsis">
+      Output format
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#usage_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Usage
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -554,74 +559,121 @@
   
 
 
-  <h1>Installation</h1>
-
-<h2 id="availability-and-requirements">Availability and Requirements<a class="headerlink" href="#availability-and-requirements" title="Permanent link">&para;</a></h2>
-<p>GINsim 3.0 is freely available without guarantees.
-Please contact us for training, other support or dedicated development.
-The GINsim website <a href="https://ginsim.github.io">https://ginsim.github.io</a> provides the latest official version of the software, <a href="../documentation/">documentation</a>, as well as a <a href="../models/">model library</a>.</p>
-<div class="admonition info">
-<p class="admonition-title">Download</p>
-<table>
-<thead>
-<tr>
-<th>Version</th>
-<th>Date</th>
-<th>Download file</th>
-<th>See changelog</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>3.0.0b</td>
-<td>Mar 2018</td>
-<td><a href="GINsim-3.0.0b-with-deps.jar">GINsim-3.0.0b-with-deps.jar</a></td>
-<td><a href="ChangeLog-3.0.0b.txt">ChangeLog-3.0.0b.txt</a></td>
-</tr>
-<tr>
-<td>2.4alpha</td>
-<td>Mar 2010</td>
-<td><a href="GINsim-2.4.jar">GINsim-2.4.jar</a></td>
-<td><a href="ChangeLog-2.4.txt">ChangeLog-2.4.txt</a></td>
-</tr>
-<tr>
-<td>2.3.1</td>
-<td>Sep 2010</td>
-<td><a href="GINsim-2.3.1.jar">GINsim-2.3.1.jar</a></td>
-<td><a href="ChangeLog-2.3.1.txt">ChangeLog-2.3.1.txt</a></td>
-</tr>
-</tbody>
-</table>
-<p>Or grab the <strong>development version</strong> on GitHub: <a href="https://github.com/GINsim/GINsim/releases/tag/latest">GINsim-SNAPSHOT-jar-with-dependencies.jar</a></p>
-</div>
-<p>GINsim requires Java &gt;=8.
-You can obtain Java for Linux, Windows, Mac OSX, and Solaris at java.com.
-Note that Apple used to provide its own Java version, newer versions are not supported on OSX 10.6 and older.
-GINsim 2.9.10 is the last version supporting Java 6, and has the same features as GINsim 3.0.</p>
-<p>Some features of GINsim rely on external tools, such as the NuSMV model checker.</p>
-<h3 id="running-ginsim">Running GINsim<a class="headerlink" href="#running-ginsim" title="Permanent link">&para;</a></h3>
-<p>Once you have obtained GINsim, you can launch it by double-click or with the command:</p>
-<pre><code class="language-bash">$ java -jar GINsim-#version.jar
+<h1 id="basins-of-attraction">Basins of attraction<a class="headerlink" href="#basins-of-attraction" title="Permanent link">&para;</a></h1>
+<p>The study of attractors (stable states and/or cyclic attractors) of biological regulatory systems relates to its asymptotic behaviours. The identification of such attractors has received some attention from the logical modelling community, yielding several methodologies for its identification.
+However, the identification of the corresponding basins of attraction has received less attention, due to the need to explicitly generate the associated dynamics (which is computationally heavy).</p>
+<p>Here, we present a methodology to compute the basins of attraction of a given logical model, based on the computation of the reverse dynamics starting from each attractor of interest.</p>
+<p>For this, it relies on a set of Python scripts to control the calls to the <a href="https://www.sib.swiss/vital-it/research-software">boolSim/genYsis</a> simulation tool and the <a href="https://github.com/colomoto/biolqm">bioLQM</a> Logical Qualitative Models library.</p>
+<hr />
+<h2 id="download">Download<a class="headerlink" href="#download" title="Permanent link">&para;</a></h2>
+<p>You can get all the necessary code containing the scripts and tools (for MacOSX and Linux) here: <a href="2017-ReverseModels-Code.tgz">2017-ReverseModels-Code.tgz</a>.</p>
+<pre><code>├── examples
+│   ├── calzone2010
+│   │   ├── Calzone_2010_reduced.sbml
+│   │   └── Calzone_2010.sbml
+│   └── toy_multivalued
+│       └── toymultivalued.sbml
+├── get_pattern.py
+├── README_pattern.txt
+├── README.txt
+├── reverse_study.py
+├── TODO_aurelien.txt
+└── tools
+    ├── bioLQM
+    │   ├── bioLQM-0.4-SNAPSHOT-jar-with-dependencies.jar
+    │   └── reverse.js
+    ├── boolSim
+    │   ├── Linux
+    │   │   ├── boolSim
+    │   │   └── boolSim_setutils
+    │   ├── MacOSX
+    │   │   ├── boolSim
+    │   │   └── boolSim_setutils
+    │   └── README.txt
+    └── espresso
+        ├── Linux
+        │   └── espresso-64bit
+        └── MacOSX
+            └── espresso-64bit
 </code></pre>
-<p>The following options are available for GINsim:</p>
-<pre><code>file: open file on startup (skip the Welcome dialog).
--n: start with a new regulatory graph (skip the Welcome dialog).
--h: help message.
--s: run GINsim in script mode
--lm : Let the bioLQM library parse the command line arguments.
---dev : enables some experimental features still in under development.
--py : launch a server for the py4j python gateway (used for scripting in the Python Notebook).
+<p>(Please ensure that you have execution permission on the <code>boolSim</code>, <code>boolSim_setutils</code> and <code>espresso-64bit</code> binaries on your filesystem).</p>
+<hr />
+<h2 id="computing-basins-of-attraction">Computing basins of attraction<a class="headerlink" href="#computing-basins-of-attraction" title="Permanent link">&para;</a></h2>
+<p>The Python script <code>reverse_study.py</code> from an initial logical model, in the .sbml format, performs the following steps to obtain the basins of attraction.</p>
+<h3 id="a-booleanreverse-models">a) Boolean/reverse models<a class="headerlink" href="#a-booleanreverse-models" title="Permanent link">&para;</a></h3>
+<p>Given a logical model <code>model.sbml</code>, using the bioLQM Logical Qualitative Models library, it computes:</p>
+<ol>
+<li>the corresponding Boolean model (it will be the same if all model variables are Boolean the corresponding Boolean), saving it at <code>model_bool.sbml</code>;</li>
+<li>then it takes the Boolean model and computes its corresponding reverse model, saving it at <code>model_bool_reversed.sbml</code>.</li>
+</ol>
+<h3 id="b-attractors">b) Attractors<a class="headerlink" href="#b-attractors" title="Permanent link">&para;</a></h3>
+<p>Using the <a href="https://www.sib.swiss/vital-it/research-software">BoolSim</a> simulation tool, it takes the Boolean model <code>model_bool.sbml</code> and computes all reachable attractors, saving them with the following filenames:</p>
+<pre><code>model_attractor_1.txt
+...
+model_attractor_2.txt
 </code></pre>
-<p>The JAVA virtual machine provide many options, in particular GINsim can benefit from extending the amount of memory available, with the <code>-Xmx</code> option. For example, one can launch GINsim with 1000MB of memory using <code>java -Xmm1000M -jar GINsim-#version.jar</code>.</p>
-<h2 id="terms-of-use">Terms of use<a class="headerlink" href="#terms-of-use" title="Permanent link">&para;</a></h2>
-<p>By browsing this web site, you acknowledge and accept its general terms of use described below.</p>
-<p><strong>Personal data</strong>: GINsim and this web site do not collect any personal data beyond access logs.</p>
-<p><strong>Content</strong>: The content of this website is available under Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International, unless stated otherwise on specific pages.</p>
-<p><strong>Hyperlinks</strong>: The editors do not take responsibility for the content of external web sites accessible by hyperlinks from this web site. Hyperlinks by third parties to pages of this web site are authorized as long as this web site can be duly identified.</p>
-<p><strong>Modification</strong>: The editors might change these terms of use without prior warning.</p>
-<h2 id="license">License<a class="headerlink" href="#license" title="Permanent link">&para;</a></h2>
-<p>Since version 2.9.3, this software is licensed under the <a href="https://github.com/GINsim/GINsim/blob/main/LICENSE">GNU General Public License v3.0</a>.</p>
-<p>Older versions are freely available for academic use.</p>
+<h3 id="c-basins-of-attraction">c) Basins of attraction<a class="headerlink" href="#c-basins-of-attraction" title="Permanent link">&para;</a></h3>
+<p>Using the reverse Boolean model <code>model_bool_reversed.sbml</code>, for each of the attractors found at step b), it computes all the reachable states. The states reachable from the attractor using the reverse Boolean model, will correspond to the states defining the basin of attraction in the original Boolean model. Each of these sets of states are saved with the following filenames:</p>
+<pre><code>model_reached_1.txt
+...
+model_reached_n.txt
+</code></pre>
+<h3 id="d-strict-basins-of-attraction">d) Strict basins of attraction<a class="headerlink" href="#d-strict-basins-of-attraction" title="Permanent link">&para;</a></h3>
+<p>In the case of more than one attractor (and basin of attraction), it uses the <code>boolSim_setutils</code> to compute differences between all basins of attraction and obtain the strict basin of attraction of each attractor.
+Each of these sets of states are saved with the following filenames:</p>
+<pre><code>model_reached_strict_1.txt
+...
+model_reached_strict_n.txt
+</code></pre>
+<h3 id="usage">Usage<a class="headerlink" href="#usage" title="Permanent link">&para;</a></h3>
+<p>You can launch the <code>reverse_study.py</code> Python script to obtain to compute the (strict) basins of attraction for more than one model file, in the following manner:</p>
+<pre><code>$ python reverse_study.py model1.sbml model2.sbml
+</code></pre>
+<hr />
+<h2 id="minimising-patterns">Minimising patterns<a class="headerlink" href="#minimising-patterns" title="Permanent link">&para;</a></h2>
+<p>The Python script <code>get_pattern.py</code> permits to take a set of input files, containing a set of patterns/states, and obtain a minimal set of patterns (if possible) representing the initial set of patterns/states.</p>
+<p>In order to do this, it relies on the tool <code>ESPRESSO</code> heuristic logic minimizer (Brayton et al., 1984, Logic Minimization Algorithms for VLSI Synthesis, Kluwer Academic Publishers).</p>
+<h3 id="input-formats">Input formats<a class="headerlink" href="#input-formats" title="Permanent link">&para;</a></h3>
+<p>Each input file must have a .txt extension, and must be either an output file from BoolSim or an output file from <code>ESPRESSO</code>.
+The script takes the filename <code>&lt;some_file.txt&gt;</code> and writes the output in a filename <code>&lt;some_file_pattern.txt&gt;</code>.</p>
+<h3 id="boolsim-output-file">BoolSim output file<a class="headerlink" href="#boolsim-output-file" title="Permanent link">&para;</a></h3>
+<p>BoolSim output files describe a set of states/patterns as a matrix, where each line represent a state/pattern and each column represents the values of a given component throughout all states/patterns. This is the transposed output representation (<code>--transpose</code> option enabled). Without it, columns describe states/patterns and lines describe components.
+Value <strong>2</strong> is used to represent both values 0 and 1.</p>
+<pre><code>GeneA GeneB GeneC GeneD
+1     0     2     0
+0     2     1     0
+1     1     1     0
+</code></pre>
+<h3 id="espresso-output-file">ESPRESSO output file<a class="headerlink" href="#espresso-output-file" title="Permanent link">&para;</a></h3>
+<p>ESPRESSO output files also describe a set of states/patterns as a matrix, where each line represent a state/pattern and each column represents the values of a given component throughout all states/patterns (following the transposed BoolSim representation). It contains some additional information, like the number of variables and the number of patterns found.
+Here, symbol <strong>-</strong> is used to represent both values 0 and 1.</p>
+<pre><code>.i 4
+.o 1
+.p 2
+--10 1
+10-0 1
+.e
+</code></pre>
+<h3 id="output-format">Output format<a class="headerlink" href="#output-format" title="Permanent link">&para;</a></h3>
+<p>The <code>get_pattern.py</code> produces a possibly minimal representation of a set of states/patterns as a file with <a href="https://web.archive.org/web/20250124073127/https://en.wikipedia.org/wiki/Tab-separated_values">tab-separated values</a>, having a .tsv extension.
+This file can be easily imported in a spreadsheet software (e.g., Excel or Libreoffice).
+Symbol <strong>*</strong> is used to represent both values 0 and 1.</p>
+<pre><code>GeneA GeneB GeneC GeneD
+*     0     1     0
+1     0     *     0
+</code></pre>
+<p>The first line containing the information regarding the name of each variable, is only generated if the input file is a BoolSim output file, since ESPRESSO does not keep that information.</p>
+<h3 id="usage_1">Usage<a class="headerlink" href="#usage_1" title="Permanent link">&para;</a></h3>
+<p>You can launch the <code>get_pattern.py</code> Python script to obtain the patterns of more than one file, in the following manner:</p>
+<pre><code>$ python get_pattern.py file1.txt subdir/file2.txt 
+In: file1.txt
+    is_espresso
+    Pattern: file1_pattern.txt
+In: subdir/file2.txt
+    is_boolsim
+    has_espresso
+    Pattern: subdir/file2_pattern.txt
+</code></pre>
 
 
 
