@@ -1,3 +1,4 @@
+.DS_Store
 public/**
 _gen
 .hugo_build.lock
