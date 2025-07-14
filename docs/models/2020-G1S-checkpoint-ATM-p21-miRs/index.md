@@ -13,6 +13,6 @@ file_descriptions:
 - GINsim model
 ---
 
-Published by Gupta et al in FEBS Letters in 2020 [Gupta2020], this Boolean model focuses on the regulation of a p21-dependent senescence-apoptosis switch in non-small cell lung cancer, emphasising the roles of two micro-RNAs, as well as of the histone deacetylase HDAC1. 
+Published by Gupta et al in FEBS Letters in 2020 [@Gupta2020], this Boolean model focuses on the regulation of a p21-dependent senescence-apoptosis switch in non-small cell lung cancer, emphasising the roles of two micro-RNAs, as well as of the histone deacetylase HDAC1. 
 
 
