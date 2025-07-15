@@ -5,7 +5,7 @@ taxon:
 process: 
 - Signalling
 submitter: Abibatou MBODJ and Denis THIEFFRY
-supporting_paper: "88"
+supporting_paper: "Mbodj2013"
 files: 
 - Notch__Pathway_12Jun2013.zginml
 - Notch_Pathway_Documentation_12May2013.pdf

@@ -6,7 +6,7 @@ taxon:
 process: 
 - Cell fate decision
 submitter: C. Chaouiya (with J. Enciso)
-supporting_paper: "203"
+supporting_paper: "Enciso2016"
 files: 
 - GINsim_HSPC_MSC.zginml
 file_descriptions: 

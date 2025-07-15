@@ -5,7 +5,7 @@ taxon:
 process: 
 - Development
 submitter: C. Chaouiya
-supporting_paper: "174"
+supporting_paper: "Faure2014"
 files: 
 - phenomenological_cellular.zginml
 - mechanistic_cellular.zginml

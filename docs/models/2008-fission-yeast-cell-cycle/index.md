@@ -7,7 +7,7 @@ process:
 - Cell cycle
 refs: 36 | 30
 submitter: Adrien Fauré (C. Chaouiya)
-supporting_paper: "30"
+supporting_paper: "Faure2009"
 files: 
 - fissionYeastDavidich2008.zginml
 - fissionYeastDavidich2008Modified.zginml

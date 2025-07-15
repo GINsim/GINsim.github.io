@@ -5,7 +5,7 @@ taxon:
 process: 
 - Cancer
 submitter: Pedro Monteiro
-supporting_paper: "255"
+supporting_paper: "Villanueva2024"
 files: 
 - SanchezVillanueva_RA_APL_model_19Nov2024.zginml
 - SanchezVillanueva_RA_APL_model_19Nov2024.sbml

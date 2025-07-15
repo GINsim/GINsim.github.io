@@ -5,7 +5,7 @@ taxon:
 process: 
 - Cancer
 submitter: Aurelien Naldi
-supporting_paper: "239"
+supporting_paper: "Zanudo2018"
 files: 
 - 2018_zanudo_proliferation.zginml
 file_descriptions: 

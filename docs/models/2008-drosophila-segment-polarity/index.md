@@ -6,7 +6,7 @@ process:
 - Segmentation
 - Development
 submitter: C. Chaouiya
-supporting_paper: "42"
+supporting_paper: "Sanchez2008"
 files: 
 - SP_6cells.zginml
 - SP_1cell.zginml

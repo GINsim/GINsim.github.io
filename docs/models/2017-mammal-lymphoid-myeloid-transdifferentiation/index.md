@@ -6,7 +6,7 @@ taxon:
 process: 
 - Differentiation
 submitter: C. Chaouiya (D. Thieffry)
-supporting_paper: "215"
+supporting_paper: "Collombet2017"
 files: 
 - Collombet_model_Bcell_Macrophages_PNAS_170215.zginml
 file_descriptions: 

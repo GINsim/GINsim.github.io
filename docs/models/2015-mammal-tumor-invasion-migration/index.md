@@ -7,7 +7,7 @@ process:
 - Cancer
 - Signalling
 submitter: L. Calzone / C. Chaouiya
-supporting_paper: "192"
+supporting_paper: "Cohen2015"
 files: 
 - SuppMat_Model_Master_Model.zginml
 - SuppMat_Model_ModNet.zginml

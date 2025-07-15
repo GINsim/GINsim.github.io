@@ -7,7 +7,7 @@ process:
 - Development
 - Sex determination
 submitter: C. Chaouiya
-supporting_paper: "220"
+supporting_paper: "Sanchez2018"
 files: 
 - full_network.zginml
 - reduced_network.zginml

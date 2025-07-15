@@ -7,7 +7,7 @@ taxon:
 process: 
 - Differentiation
 submitter: Pedro Monteiro
-supporting_paper: "184"
+supporting_paper: "AbouJaoude2015"
 files: 
 - Frontiers-Th-Full-model-annotated.zginml
 file_descriptions: 

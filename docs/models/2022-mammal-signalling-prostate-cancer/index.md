@@ -6,7 +6,7 @@ taxon:
 process: 
 - Cancer
 submitter: Aurelien Naldi
-supporting_paper: "251"
+supporting_paper: "Montagud2022"
 files: 
 - Montagud2021_Prostate_Cancer.zginml
 file_descriptions: 

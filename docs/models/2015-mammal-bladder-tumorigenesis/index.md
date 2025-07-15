@@ -8,7 +8,7 @@ process:
 - Signalling
 - Cell fate decision
 submitter: Claudine Chaouiya
-supporting_paper: "187"
+supporting_paper: "Remy2015"
 files: 
 - Bladder_Model.zginml
 - Bladder_Model.sbml

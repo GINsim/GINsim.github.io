@@ -4,9 +4,8 @@ taxon:
 - Mammal
 process: 
 - Differentiation
-refs: 74 | 75 | 58
 submitter: C. Chaouiya
-supporting_paper: "74"
+supporting_paper: "Naldi2010"
 files: 
 - Th_differentiation_full_annotated_model.zginml
 - Th_differentiation_reduced_model.zginml

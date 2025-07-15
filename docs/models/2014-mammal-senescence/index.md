@@ -7,7 +7,7 @@ process:
 - Cell cycle
 - Cell fate decision
 submitter: C. Chaouiya
-supporting_paper: "182"
+supporting_paper: "Mombach2014"
 files: 
 - Senescence_Onset_G1-S.zginml
 file_descriptions: 

@@ -7,7 +7,7 @@ process:
 - Cell cycle
 - Core engine
 submitter: Adrien Fauré (C. Chaouiya)
-supporting_paper: "20"
+supporting_paper: "Faure2009b"
 date: 2006-08-01T00:00:00Z
 files: 
 - core_engine_budding_yeast_CC.zginml

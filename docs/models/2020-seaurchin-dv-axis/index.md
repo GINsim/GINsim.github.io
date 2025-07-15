@@ -6,7 +6,7 @@ taxon:
 process: 
 - Development
 submitter: Pedro Monteiro
-supporting_paper: "235"
+supporting_paper: "Flochlay2020"
 files: 
 - SeaUrchin_model_ginsim.zginml
 - Flochlay_SeaUrchin_DV_model.sbml

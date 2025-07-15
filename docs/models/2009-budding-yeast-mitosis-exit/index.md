@@ -7,7 +7,7 @@ process:
 - Mitosis exit control
 - Cell cycle
 submitter: Adrien Fauré (C. Chaouiya)
-supporting_paper: "20"
+supporting_paper: "Faure2009b"
 date: 2011-07-01T00:00:00Z
 files: 
 - exit.zginml

@@ -6,7 +6,7 @@ process:
 - Development
 - Differentiation
 submitter: Chaouiya (Thieffry)
-supporting_paper: "213"
+supporting_paper: "Coolen2012"
 files: 
 - zebra_miR9_22jul2011.zginml
 file_descriptions: 

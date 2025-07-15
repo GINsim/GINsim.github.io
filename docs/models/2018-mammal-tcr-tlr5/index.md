@@ -5,7 +5,7 @@ taxon:
 process: 
 - T-cell activation
 submitter: Pedro Monteiro
-supporting_paper: "224"
+supporting_paper: "RodriguezJorge2019"
 files: 
 - RodriguezJorge_Merged_TCR_TLR5_Signalling_BooleanModel_15Jul2018.zginml
 - RodriguezJorge_TLR5_Signalling_BooleanModel_17Jul2018.zginml

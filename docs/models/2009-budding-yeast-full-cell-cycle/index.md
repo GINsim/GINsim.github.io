@@ -6,7 +6,7 @@ taxon:
 process: 
 - Cell cycle
 submitter: Adrien Fauré (C. Chaouiya)
-supporting_paper: "20"
+supporting_paper: "Faure2009b"
 files: 
 - coupled_budding_yeast_CC.zginml
 file_descriptions: 

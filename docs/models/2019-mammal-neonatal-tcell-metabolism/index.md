@@ -6,7 +6,7 @@ taxon:
 process: 
 - T-cell activation
 submitter: Aurelien Naldi
-supporting_paper: "228"
+supporting_paper: "Villanueva2019"
 files: 
 - TCR-REDOX-METABOLISM_2019-07-26.zginml
 - TCR-REDOX-METABOLISM_2019-07-26_reduced.zginml

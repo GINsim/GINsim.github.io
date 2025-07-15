@@ -5,7 +5,7 @@ taxon:
 process: 
 - Signalling
 submitter: Denis Thieffry (P.T. Monteiro)
-supporting_paper: "172"
+supporting_paper: "Grieco2013"
 files: 
 - MAPK_large_19june2013.zginml
 - MAPK_red1_19062013.zginml

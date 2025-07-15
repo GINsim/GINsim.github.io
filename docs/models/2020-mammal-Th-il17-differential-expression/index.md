@@ -5,7 +5,7 @@ taxon:
 process: 
 - differentiation
 submitter: Aurélien Naldi
-supporting_paper: "243"
+supporting_paper: "CorralJara2021"
 files: 
 - ThIL17diff_29nov2020.zginml
 file_descriptions: 

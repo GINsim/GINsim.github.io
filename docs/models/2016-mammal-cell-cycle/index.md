@@ -6,7 +6,7 @@ process:
 - Cell cycle
 refs: 3
 submitter: Pedro T. Monteiro
-supporting_paper: "208"
+supporting_paper: "Traynard2016"
 files: 
 - Traynard_MultiLevel_MamCC_Apr2016.zginml
 - Traynard_MultiLevel_MamCC_Apr2016.sbml

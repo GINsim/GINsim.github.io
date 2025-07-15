@@ -8,7 +8,7 @@ process:
 - Signalling
 - Development
 submitter: Pedro Monteiro
-supporting_paper: "233"
+supporting_paper: "Cacace2020"
 files: 
 - Cacace_Tdev_2nov2019.zginml
 - Cacace_TdevModel_SBML_2nov2019.sbml

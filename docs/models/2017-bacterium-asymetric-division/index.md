@@ -7,7 +7,7 @@ process:
 - Asymmetric cell division 
 - Cell cycle
 submitter: C. Chaouiya
-supporting_paper: "197"
+supporting_paper: "SanchezOsorio2017"
 files: 
 - g2a.zginml
 - g2b.zginml

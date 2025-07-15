@@ -5,8 +5,7 @@ taxon:
 process: 
 - Cell fate decision
 submitter: Laurence Calzone
-supporting_paper: "16"
-related_references: /node/226
+supporting_paper: "Calzone2010"
 files: 
 - Calzone__Cell_Fate.zginml
 - CellFate_multiscale.zginml

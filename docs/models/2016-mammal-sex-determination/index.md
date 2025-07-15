@@ -6,7 +6,7 @@ process:
 - Development
 - Sex determination
 submitter: C. Chaouiya
-supporting_paper: "195"
+supporting_paper: "Sanchez2016"
 files: 
 - primary_sex_determination_1.zginml
 - primary_sex_determination_2.zginml

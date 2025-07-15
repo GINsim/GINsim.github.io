@@ -6,7 +6,7 @@ taxon:
 process: 
 - Signalling
 submitter: Denis Thieffry
-supporting_paper: "179"
+supporting_paper: "Niarakis2014"
 files:
 - Mast_cell_activation_Annotated_19oct2014.zginml
 file_descriptions:

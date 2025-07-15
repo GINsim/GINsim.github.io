@@ -5,7 +5,7 @@ taxon:
 process: 
 - Signalling
 submitter: Abibatou MBODJ and Denis THIEFFRY
-supporting_paper: "88"
+supporting_paper: "Mbodj2013"
 files: 
 - JakStat__Pathway_12Jun2013.zginml
 - JAK_STAT_Pathway_Documentation_11May2013.pdf

@@ -5,7 +5,7 @@ taxon:
 process: 
 - Signalling
 submitter: Abibatou MBODJ and Denis THIEFFRY
-supporting_paper: "88"
+supporting_paper: "Mbodj2013"
 files: 
 - EGF__Pathway_12Jun2013.zginml
 - EGF_Pathway_Documentation_11May2013.pdf

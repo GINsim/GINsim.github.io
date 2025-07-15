@@ -8,7 +8,7 @@ taxon:
 process: 
 - Cell fate decision
 submitter: Pedro Monteiro
-supporting_paper: "254"
+supporting_paper: "Desterke2015"
 files: 
 - HSC_MSC_MK.zginml
 file_descriptions: 

@@ -5,7 +5,7 @@ taxon:
 process: 
 - Cancer
 submitter: D. Thieffry / C. Chaouiya
-supporting_paper: "193"
+supporting_paper: "Flobak2015"
 files: 
 - Flobak_FullModel_S2_Dataset.zginml
 - Flobak_ReducedModel_S3_Dataset.zginml

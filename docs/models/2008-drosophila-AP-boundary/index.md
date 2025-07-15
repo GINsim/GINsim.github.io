@@ -6,7 +6,7 @@ process:
 - Wing Imaginal disk
 - Development
 submitter: C. Chaouiya
-supporting_paper: "65"
+supporting_paper: "Gonzalez2008"
 files: 
 - ap_boundary.zginml
 file_descriptions: 

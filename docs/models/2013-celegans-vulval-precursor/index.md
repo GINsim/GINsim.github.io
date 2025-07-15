@@ -5,7 +5,7 @@ taxon:
 process: 
 - Differentiation
 submitter: Claudine (Nathan Weinstein)
-supporting_paper: "177"
+supporting_paper: "Weinstein2013"
 files: 
 - vpcwt23h.ginml
 file_descriptions: 

@@ -6,7 +6,7 @@ taxon:
 process: 
 - T-cell activation
 submitter: Aurelien Naldi
-supporting_paper: "245"
+supporting_paper: "Kondratova2020"
 files: 
 - ImmuneCheckpointInhibitors.zginml
 file_descriptions: 

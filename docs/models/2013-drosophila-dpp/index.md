@@ -7,7 +7,7 @@ process:
 - Development
 - Signalling
 submitter: Abibatou MBODJ & Denis THIEFFRY
-supporting_paper: "88"
+supporting_paper: "Mbodj2013"
 files: 
 - Dpp__Pathway_11Jun2013.zginml
 - Dpp_Pathway_Documentation_17June2013.pdf

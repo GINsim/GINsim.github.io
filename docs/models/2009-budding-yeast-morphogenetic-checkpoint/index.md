@@ -6,9 +6,8 @@ taxon:
 process: 
 - Cell cycle
 - Morphogenetic checkpoint
-refs: 23 | 20 | 27
 submitter: Adrien Fauré (C. Chaouiya)
-supporting_paper: "20"
+supporting_paper: "Faure2009b"
 files: 
 - MCP_budding_yeast_CC.zginml
 file_descriptions: 

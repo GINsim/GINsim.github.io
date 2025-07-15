@@ -7,7 +7,7 @@ process:
 - Cell cycle
 - Signalling
 submitter: Pedro Monteiro
-supporting_paper: "255"
+supporting_paper: "Villanueva2024"
 files: 
 - CellCycleControl_Sizek_PCB_2019.zginml
 - CellCycleControl_Sizek_PCB_2019.sbml

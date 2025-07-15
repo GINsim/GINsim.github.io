@@ -6,7 +6,7 @@ taxon:
 process: 
 - Differentiation
 submitter: Aurelien Naldi
-supporting_paper: "249"
+supporting_paper: "NunezReza2021"
 files: 
 - Karen_MoDC_27Jan2021.zginml
 file_descriptions: 

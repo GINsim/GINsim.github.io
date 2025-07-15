@@ -5,7 +5,7 @@ taxon:
 process: 
 - Cancer
 submitter: Claudine Chaouiya
-supporting_paper: "230"
+supporting_paper: "Selvaggio2020"
 files: 
 - Selvaggio_etal_2019.zginml
 file_descriptions: 

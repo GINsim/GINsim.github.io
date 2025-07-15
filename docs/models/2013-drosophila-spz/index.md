@@ -4,9 +4,8 @@ taxon:
 - D. melanogaster
 process: 
 - Signalling
-refs: 116 | 117 | 118 | 119 | 120 | 122 | 125 | 123 | 124
 submitter: Abibatou MBODJ and Denis THIEFFRY
-supporting_paper: "88"
+supporting_paper: "Mbodj2013"
 files: 
 - Spz__Processing_12Jun2013.zginml
 - Spz_Pathway_Documentation_11May2013.pdf

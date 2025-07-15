@@ -4,8 +4,8 @@ taxon:
 - Human
 process: 
 - Cell cycle
-submitter: Claudine Chaouiya
-supporting_paper: "38"
+submitter: C. Chaouiya
+supporting_paper: "Sahin2009"
 files: 
 - ErbB2_model.zginml
 - AdditionalFile.pdf

@@ -5,7 +5,7 @@ taxon:
 process: 
 - Cell cycle
 submitter: Adrien Fauré (C. Chaouiya)
-supporting_paper: "30"
+supporting_paper: "Faure2009"
 date: 2011-07-01T00:00:00Z
 files: 
 - drosophilaCellCycleVariants.zginml

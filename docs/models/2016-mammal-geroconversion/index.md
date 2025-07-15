@@ -5,7 +5,7 @@ taxon:
 process: 
 - Senescence
 submitter: Claudine Chaouiya (with Laurence Calzone)
-supporting_paper: "210"
+supporting_paper: "Verlingue2016"
 files: 
 - ModelT2DM.zginml
 file_descriptions: 

@@ -6,7 +6,7 @@ process:
 - Cancer
 - DNA repair
 submitter: Pedro T. Monteiro
-supporting_paper: "221"
+supporting_paper: "AbouJaoude2009"
 files: 
 - p53Mdm2_tutorial_5march2018.zginml
 file_descriptions: 

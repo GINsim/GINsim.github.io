@@ -6,7 +6,7 @@ taxon:
 process: 
 - Cancer
 submitter: Aurelien Naldi
-supporting_paper: "247"
+supporting_paper: "Beal2021"
 files: 
 - BRAF_Model.zginml
 file_descriptions: 

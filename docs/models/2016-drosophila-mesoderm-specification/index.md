@@ -6,7 +6,7 @@ process:
 - Development
 - Signalling
 submitter: Denis Thieffry
-supporting_paper: "209"
+supporting_paper: "Mbodj2016"
 files: 
 - DrosoMesoLogModel.zginml
 file_descriptions: 
