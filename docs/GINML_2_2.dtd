@@ -102,6 +102,7 @@ copyright by
 <!ATTLIST graph
 	id ID #REQUIRED
 	role NMTOKEN #IMPLIED
+  type NMTOKEN #IMPLIED
 	edgeids (true | false) "false"
 	hypergraph (true | false) "false"
 	edgemode (directed | undirected | defaultdirected | defaultundirected) "directed"
