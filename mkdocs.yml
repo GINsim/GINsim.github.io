@@ -133,7 +133,7 @@ plugins:
         node/258.md: models/2019-mammal-cell-cycle-control/index.md
         node/212.md: basins-attraction/index.md
         models_repository.md: models/index.md
-
+  
 # Extensions
 markdown_extensions:
   - toc:

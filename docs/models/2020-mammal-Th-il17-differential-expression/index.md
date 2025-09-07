@@ -8,8 +8,10 @@ submitter: Aurélien Naldi
 supporting_paper: "CorralJara2021"
 files: 
 - ThIL17diff_29nov2020.zginml
+- Th1-Th17_Model_Notebook_10_December.ipynb
 file_descriptions: 
 - GINsim file
+- CoLoMoTo Notebook
 ---
 
 
