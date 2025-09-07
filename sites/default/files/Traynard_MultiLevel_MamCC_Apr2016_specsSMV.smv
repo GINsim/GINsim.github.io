@@ -1,0 +1,416 @@
+-- 30 mars 2016 02:27:04 CEST
+--
+-- NuSMV implicit representation of a logical model exported by GINsim
+--
+-- Requires NuSMV v2.1+ for CTL properties
+--
+-- Requires NuSMV-ARCTL for ARCTL properties
+-- http://lvl.info.ucl.ac.be/Tools/NuSMV-ARCTL-TLACE
+
+MODULE main
+
+IVAR
+-- Simulation mode declaration --
+-- Asynchronous
+  PCs : { PC_c2, PC_c3, PC_c4, PC_c5, PC_c6, PC_c7, PC_c8, PC_c9, PC_c10, PC_c11 };
+  PC_c2_vars : { PC_c2_Rb };
+  PC_c3_vars : { PC_c3_E2F };
+  PC_c4_vars : { PC_c4_CycE };
+  PC_c5_vars : { PC_c5_CycA };
+  PC_c6_vars : { PC_c6_CycB };
+  PC_c7_vars : { PC_c7_p27 };
+  PC_c8_vars : { PC_c8_Cdc20 };
+  PC_c9_vars : { PC_c9_Cdh1 };
+  PC_c10_vars : { PC_c10_UbcH10 };
+  PC_c11_vars : { PC_c11_Skp2 };
+
+-- Input variables declaration
+
+VAR
+  CycD : { 0, 1};
+
+
+-- State variables declaration
+  Cdc20 : {0, 1};
+  CycE : {0, 1};
+  Skp2 : {0, 1};
+  CycB : {0, 1};
+  Cdh1 : {0, 1};
+  UbcH10 : {0, 1};
+  CycA : {0, 1};
+  Rb : {0, 1, 2};
+  p27 : {0, 1, 2};
+  E2F : {0, 1};
+
+ASSIGN
+next(CycD) := 
+  case
+    TRUE: CycD;
+  esac;
+-- Variable update if conditions are met
+next(Rb) := 
+  case
+    update_Rb_OK & (Rb_inc) : Rb + 1;
+    update_Rb_OK & (Rb_dec) : Rb - 1;
+    TRUE : Rb;
+  esac;
+next(E2F) := 
+  case
+    update_E2F_OK & (E2F_inc) : 1;
+    update_E2F_OK & (E2F_dec) : 0;
+    TRUE : E2F;
+  esac;
+next(CycE) := 
+  case
+    update_CycE_OK & (CycE_inc) : 1;
+    update_CycE_OK & (CycE_dec) : 0;
+    TRUE : CycE;
+  esac;
+next(CycA) := 
+  case
+    update_CycA_OK & (CycA_inc) : 1;
+    update_CycA_OK & (CycA_dec) : 0;
+    TRUE : CycA;
+  esac;
+next(CycB) := 
+  case
+    update_CycB_OK & (CycB_inc) : 1;
+    update_CycB_OK & (CycB_dec) : 0;
+    TRUE : CycB;
+  esac;
+next(p27) := 
+  case
+    update_p27_OK & (p27_inc) : p27 + 1;
+    update_p27_OK & (p27_dec) : p27 - 1;
+    TRUE : p27;
+  esac;
+next(Cdc20) := 
+  case
+    update_Cdc20_OK & (Cdc20_inc) : 1;
+    update_Cdc20_OK & (Cdc20_dec) : 0;
+    TRUE : Cdc20;
+  esac;
+next(Cdh1) := 
+  case
+    update_Cdh1_OK & (Cdh1_inc) : 1;
+    update_Cdh1_OK & (Cdh1_dec) : 0;
+    TRUE : Cdh1;
+  esac;
+next(UbcH10) := 
+  case
+    update_UbcH10_OK & (UbcH10_inc) : 1;
+    update_UbcH10_OK & (UbcH10_dec) : 0;
+    TRUE : UbcH10;
+  esac;
+next(Skp2) := 
+  case
+    update_Skp2_OK & (Skp2_inc) : 1;
+    update_Skp2_OK & (Skp2_dec) : 0;
+    TRUE : Skp2;
+  esac;
+
+DEFINE
+-- Variable next level regulation
+Rb_focal :=
+  case
+    (CycD = 0) & (CycE = 0) & (CycA = 0) & (CycB = 0) : 2;
+    (CycD = 0) & (CycE = 0) & (CycA = 0) & (CycB = 1) & (p27 = 1) : 2;
+    (CycD = 0) & (CycE = 0) & (CycA = 0) & (CycB = 1) & (p27 = 2) : 2;
+    (CycD = 0) & (CycE = 0) & (CycA = 1) & (p27 = 1) : 2;
+    (CycD = 0) & (CycE = 0) & (CycA = 1) & (p27 = 2) : 2;
+    (CycD = 0) & (CycE = 1) & (CycA = 0) & (p27 = 1) : 2;
+    (CycD = 0) & (CycE = 1) & (CycA = 0) & (p27 = 2) : 2;
+    (CycD = 0) & (CycE = 1) & (CycA = 1) & (CycB = 0) & (p27 = 1) : 2;
+    (CycD = 0) & (CycE = 1) & (CycA = 1) & (CycB = 0) & (p27 = 2) : 2;
+    (CycD = 0) & (CycE = 1) & (CycA = 1) & (CycB = 1) & (p27 = 1) : 1;
+    (CycD = 0) & (CycE = 1) & (CycA = 1) & (CycB = 1) & (p27 = 2) : 1;
+    (CycD = 1) & (CycE = 0) & (CycA = 0) & (CycB = 0) : 1;
+    (CycD = 1) & (CycE = 0) & (CycA = 0) & (CycB = 1) & (p27 = 1) : 1;
+    (CycD = 1) & (CycE = 0) & (CycA = 0) & (CycB = 1) & (p27 = 2) : 1;
+    (CycD = 1) & (CycE = 0) & (CycA = 1) & (p27 = 1) : 1;
+    (CycD = 1) & (CycE = 0) & (CycA = 1) & (p27 = 2) : 1;
+    (CycD = 1) & (CycE = 1) & (p27 = 1) : 1;
+    (CycD = 1) & (CycE = 1) & (p27 = 2) : 1;
+    TRUE : 0;
+  esac;
+E2F_focal :=
+  case
+    (Rb = 0) & (CycA = 0) & (CycB = 0) : 1;
+    (Rb = 0) & (CycA = 0) & (CycB = 1) & (Cdc20 = 0) : 1;
+    (Rb = 0) & (CycA = 1) & (CycB = 0) & (p27 = 1) & (Skp2 = 0) : 1;
+    (Rb = 0) & (CycA = 1) & (CycB = 0) & (p27 = 2) : 1;
+    (Rb = 0) & (CycA = 1) & (CycB = 1) & (p27 = 1) & (Cdc20 = 0) & (Skp2 = 0) : 1;
+    (Rb = 0) & (CycA = 1) & (CycB = 1) & (p27 = 2) & (Cdc20 = 0) : 1;
+    (Rb = 1) & (CycA = 0) & (CycB = 0) : 1;
+    (Rb = 1) & (CycA = 0) & (CycB = 1) & (Cdc20 = 0) : 1;
+    (Rb = 1) & (CycA = 1) & (CycB = 0) & (p27 = 1) & (Skp2 = 0) : 1;
+    (Rb = 1) & (CycA = 1) & (CycB = 0) & (p27 = 2) : 1;
+    (Rb = 1) & (CycA = 1) & (CycB = 1) & (p27 = 1) & (Cdc20 = 0) & (Skp2 = 0) : 1;
+    (Rb = 1) & (CycA = 1) & (CycB = 1) & (p27 = 2) & (Cdc20 = 0) : 1;
+    TRUE : 0;
+  esac;
+CycE_focal :=
+  case
+    (Rb = 0) & (E2F = 1) : 1;
+    (Rb = 1) & (E2F = 1) : 1;
+    TRUE : 0;
+  esac;
+CycA_focal :=
+  case
+    (Rb = 0) & (E2F = 0) & (CycA = 1) & (Cdc20 = 0) & (Cdh1 = 0) : 1;
+    (Rb = 0) & (E2F = 0) & (CycA = 1) & (Cdc20 = 0) & (Cdh1 = 1) & (UbcH10 = 0) : 1;
+    (Rb = 0) & (E2F = 0) & (CycA = 1) & (Cdc20 = 1) & (UbcH10 = 0) : 1;
+    (Rb = 0) & (E2F = 1) & (Cdc20 = 0) & (Cdh1 = 0) : 1;
+    (Rb = 0) & (E2F = 1) & (Cdc20 = 0) & (Cdh1 = 1) & (UbcH10 = 0) : 1;
+    (Rb = 0) & (E2F = 1) & (Cdc20 = 1) & (UbcH10 = 0) : 1;
+    (Rb = 1) & (CycA = 1) & (Cdc20 = 0) & (Cdh1 = 0) : 1;
+    (Rb = 1) & (CycA = 1) & (Cdc20 = 0) & (Cdh1 = 1) & (UbcH10 = 0) : 1;
+    (Rb = 1) & (CycA = 1) & (Cdc20 = 1) & (UbcH10 = 0) : 1;
+    (Rb = 2) & (CycA = 1) & (Cdc20 = 0) & (Cdh1 = 0) : 1;
+    (Rb = 2) & (CycA = 1) & (Cdc20 = 0) & (Cdh1 = 1) & (UbcH10 = 0) : 1;
+    (Rb = 2) & (CycA = 1) & (Cdc20 = 1) & (UbcH10 = 0) : 1;
+    TRUE : 0;
+  esac;
+CycB_focal :=
+  case
+    (Cdc20 = 0) & (Cdh1 = 0) : 1;
+    (Cdc20 = 1) & (Cdh1 = 0) & (UbcH10 = 0) : 1;
+    TRUE : 0;
+  esac;
+p27_focal :=
+  case
+    (CycD = 0) & (CycE = 0) & (CycA = 0) & (CycB = 0) : 2;
+    (CycD = 0) & (CycE = 0) & (CycA = 0) & (CycB = 1) & (Skp2 = 0) : 2;
+    (CycD = 0) & (CycE = 0) & (CycA = 1) & (CycB = 0) & (p27 = 0) & (Skp2 = 0) : 2;
+    (CycD = 0) & (CycE = 0) & (CycA = 1) & (CycB = 0) & (p27 = 1) : 2;
+    (CycD = 0) & (CycE = 0) & (CycA = 1) & (CycB = 0) & (p27 = 2) : 2;
+    (CycD = 0) & (CycE = 0) & (CycA = 1) & (CycB = 1) & (Skp2 = 0) : 2;
+    (CycD = 0) & (CycE = 1) & (CycA = 0) & (CycB = 0) & (p27 = 0) & (Skp2 = 0) : 2;
+    (CycD = 0) & (CycE = 1) & (CycA = 0) & (CycB = 0) & (p27 = 1) & (Skp2 = 0) : 2;
+    (CycD = 0) & (CycE = 1) & (CycA = 0) & (CycB = 0) & (p27 = 2) : 2;
+    (CycD = 0) & (CycE = 1) & (CycA = 0) & (CycB = 1) & (Skp2 = 0) : 2;
+    (CycD = 0) & (CycE = 1) & (CycA = 1) & (Skp2 = 0) : 2;
+    (CycD = 1) & (CycE = 0) & (CycA = 0) & (CycB = 0) : 1;
+    (CycD = 1) & (CycE = 0) & (CycA = 0) & (CycB = 1) & (Skp2 = 0) : 1;
+    (CycD = 1) & (CycE = 0) & (CycA = 1) & (CycB = 0) & (p27 = 0) & (Skp2 = 0) : 1;
+    (CycD = 1) & (CycE = 0) & (CycA = 1) & (CycB = 0) & (p27 = 1) : 1;
+    (CycD = 1) & (CycE = 0) & (CycA = 1) & (CycB = 0) & (p27 = 2) : 1;
+    (CycD = 1) & (CycE = 0) & (CycA = 1) & (CycB = 1) & (Skp2 = 0) : 1;
+    (CycD = 1) & (CycE = 1) & (CycA = 0) & (CycB = 0) & (p27 = 0) & (Skp2 = 0) : 1;
+    (CycD = 1) & (CycE = 1) & (CycA = 0) & (CycB = 0) & (p27 = 1) & (Skp2 = 0) : 1;
+    (CycD = 1) & (CycE = 1) & (CycA = 0) & (CycB = 0) & (p27 = 2) : 1;
+    (CycD = 1) & (CycE = 1) & (CycA = 0) & (CycB = 1) & (Skp2 = 0) : 1;
+    (CycD = 1) & (CycE = 1) & (CycA = 1) & (Skp2 = 0) : 1;
+    TRUE : 0;
+  esac;
+Cdc20_focal :=
+  case
+    (CycB = 1) : 1;
+    TRUE : 0;
+  esac;
+Cdh1_focal :=
+  case
+    (CycA = 0) & (CycB = 0) : 1;
+    (CycA = 0) & (CycB = 1) & (p27 = 1) : 1;
+    (CycA = 0) & (CycB = 1) & (p27 = 2) : 1;
+    (CycA = 1) & (p27 = 1) & (Skp2 = 0) : 1;
+    (CycA = 1) & (p27 = 2) : 1;
+    TRUE : 0;
+  esac;
+UbcH10_focal :=
+  case
+    (CycA = 0) & (CycB = 0) & (Cdc20 = 0) & (Cdh1 = 0) : 1;
+    (CycA = 0) & (CycB = 0) & (Cdc20 = 1) & (Cdh1 = 0) : 1;
+    (CycA = 0) & (CycB = 0) & (Cdc20 = 1) & (Cdh1 = 1) & (UbcH10 = 1) : 1;
+    (CycA = 0) & (CycB = 1) & (Cdh1 = 0) : 1;
+    (CycA = 0) & (CycB = 1) & (Cdh1 = 1) & (UbcH10 = 1) : 1;
+    (CycA = 1) & (Cdh1 = 0) : 1;
+    (CycA = 1) & (Cdh1 = 1) & (UbcH10 = 1) : 1;
+    TRUE : 0;
+  esac;
+Skp2_focal :=
+  case
+    (Rb = 0) : 1;
+    (Rb = 1) : 1;
+    (Rb = 2) & (Cdh1 = 0) : 1;
+    TRUE : 0;
+  esac;
+
+Rb_inc := Rb_focal > Rb;
+Rb_dec := Rb_focal < Rb;
+Rb_std := Rb_focal = Rb;
+
+E2F_inc := E2F_focal > E2F;
+E2F_dec := E2F_focal < E2F;
+E2F_std := E2F_focal = E2F;
+
+CycE_inc := CycE_focal > CycE;
+CycE_dec := CycE_focal < CycE;
+CycE_std := CycE_focal = CycE;
+
+CycA_inc := CycA_focal > CycA;
+CycA_dec := CycA_focal < CycA;
+CycA_std := CycA_focal = CycA;
+
+CycB_inc := CycB_focal > CycB;
+CycB_dec := CycB_focal < CycB;
+CycB_std := CycB_focal = CycB;
+
+p27_inc := p27_focal > p27;
+p27_dec := p27_focal < p27;
+p27_std := p27_focal = p27;
+
+Cdc20_inc := Cdc20_focal > Cdc20;
+Cdc20_dec := Cdc20_focal < Cdc20;
+Cdc20_std := Cdc20_focal = Cdc20;
+
+Cdh1_inc := Cdh1_focal > Cdh1;
+Cdh1_dec := Cdh1_focal < Cdh1;
+Cdh1_std := Cdh1_focal = Cdh1;
+
+UbcH10_inc := UbcH10_focal > UbcH10;
+UbcH10_dec := UbcH10_focal < UbcH10;
+UbcH10_std := UbcH10_focal = UbcH10;
+
+Skp2_inc := Skp2_focal > Skp2;
+Skp2_dec := Skp2_focal < Skp2;
+Skp2_std := Skp2_focal = Skp2;
+
+update_Rb_OK := (PCs = PC_c2) & (PC_c2_vars = PC_c2_Rb);
+update_E2F_OK := (PCs = PC_c3) & (PC_c3_vars = PC_c3_E2F);
+update_CycE_OK := (PCs = PC_c4) & (PC_c4_vars = PC_c4_CycE);
+update_CycA_OK := (PCs = PC_c5) & (PC_c5_vars = PC_c5_CycA);
+update_CycB_OK := (PCs = PC_c6) & (PC_c6_vars = PC_c6_CycB);
+update_p27_OK := (PCs = PC_c7) & (PC_c7_vars = PC_c7_p27);
+update_Cdc20_OK := (PCs = PC_c8) & (PC_c8_vars = PC_c8_Cdc20);
+update_Cdh1_OK := (PCs = PC_c9) & (PC_c9_vars = PC_c9_Cdh1);
+update_UbcH10_OK := (PCs = PC_c10) & (PC_c10_vars = PC_c10_UbcH10);
+update_Skp2_OK := (PCs = PC_c11) & (PC_c11_vars = PC_c11_Skp2);
+
+-- DISCLAIMER: There are no INput nor OUTput variables in the weak/strong stable states description
+stableStates := weakSS | strongSS;
+
+-- Weak stable states differing only on input variables will not be distinguished !!
+weakSS := weakSS1;
+weakSS1 := Rb=2 & E2F=0 & CycE=0 & CycB=0 & p27=2 & Cdc20=0 & Cdh1=1 & UbcH10=0 & Skp2=0;
+
+-- Strong stable states - for every valuation of input variables
+strongSS := FALSE;
+
+-- Declaration of output variables
+-- Empty !
+
+-- Authorized NuSMV transitions
+TRANS
+next(Rb) != Rb |
+next(E2F) != E2F |
+next(CycE) != CycE |
+next(CycA) != CycA |
+next(CycB) != CycB |
+next(p27) != p27 |
+next(Cdc20) != Cdc20 |
+next(Cdh1) != Cdh1 |
+next(UbcH10) != UbcH10 |
+next(Skp2) != Skp2 |
+(Rb_std & E2F_std & CycE_std & CycA_std & CycB_std & p27_std & Cdc20_std & Cdh1_std & UbcH10_std & Skp2_std); -- or it is a steady state
+
+DEFINE
+-- Declaration of core variables restriction list
+-- Empty !
+
+-- Declaration of input variables restriction list
+-- Empty !
+
+--------------------------------------------------
+-- Reachability Properties using VARYING INPUTS --
+-- i.e. there is NO CONTROL on the input change at each transition
+--
+-- EXAMPLES --
+-- 1. Between an initial state (pattern) and a stable state (pattern)
+--   a. Existence of at least one path connecting two state patterns
+-- INIT initState;
+-- SPEC EF ( stableState );
+--   b. Existence of all the paths connecting two state patterns
+-- INIT initState;
+-- SPEC AF ( stableState );
+--
+-- 2. Between all the weak/strong stable states
+-- INIT weakSS1;
+--  SPEC EF ( weakSS2 );
+--  ...
+--  SPEC EF ( weakSSn );
+--------------------------------------------------
+-- Reachability Properties using FIXED INPUTS --
+-- i.e. a VALUE RESTRICTION can be forced at each transition
+-- 
+-- 1. Between an initial state (pattern) and a stable state (pattern)
+--   a. Existence of at least one path connecting two state patterns
+-- INIT initState; SPEC EAF ( inpVar1=0 & inpVar3=1 )( stableState );
+--   b. Existence of all the paths
+-- INIT initState; SPEC AAF ( inpVar1=0 & inpVar3=1 )( stableState );
+--
+-- 2. Testing input combinations
+-- INIT weakSS1;
+--  SPEC EAF ( inpVar1=0 & inpVar2=0 )( weakSS2 );
+--  SPEC EAF ( inpVar1=0 & inpVar2=1 )( weakSS2 );
+--  SPEC EAF ( inpVar1=1 & inpVar2=0 )( weakSS2 );
+--  SPEC EAF ( inpVar1=1 & inpVar2=1 )( weakSS2 );
+--  ...
+
+StableState1 := (CycD=0 & Rb=2 & E2F=0 & CycE=0 & CycA=0 & CycB=0 & p27=2 & Cdc20=0 & Cdh1=1 & UbcH10=0 & Skp2=0);
+
+Cycle1 := (CycD=1 & Rb=0 & E2F=0 & CycE=0 & CycA=1 & CycB=0 & p27=0 & Cdc20=0 & Cdh1=0 & UbcH10=0 & Skp2=1) | (CycD=1 & Rb=1 & E2F=0 & CycE=0 & CycA=1 & CycB=0 & p27=0 & Cdc20=0 & Cdh1=0 & UbcH10=0 & Skp2=1) | (CycD=1 & Rb=0 & E2F=1 & CycE=0 & CycA=1 & CycB=0 & p27=0 & Cdc20=0 & Cdh1=0 & UbcH10=0 & Skp2=1) | (CycD=1 & Rb=0 & E2F=0 & CycE=1 & CycA=1 & CycB=0 & p27=0 & Cdc20=0 & Cdh1=0 & UbcH10=0 & Skp2=1) | (CycD=1 & Rb=1 & E2F=0 & CycE=1 & CycA=1 & CycB=0 & p27=0 & Cdc20=0 & Cdh1=0 & UbcH10=0 & Skp2=1) | (CycD=1 & Rb=0 & E2F=1 & CycE=1 & CycA=1 & CycB=0 & p27=0 & Cdc20=0 & Cdh1=0 & UbcH10=0 & Skp2=1) | (CycD=1 & Rb=1 & E2F=1 & CycE=1 & CycA=1 & CycB=0 & p27=0 & Cdc20=0 & Cdh1=0 & UbcH10=0 & Skp2=1) | (CycD=1 & Rb=0 & E2F=0 & CycE=0 & CycA=1 & CycB=1 & p27=0 & Cdc20=0 & Cdh1=0 & UbcH10=0 & Skp2=1) | (CycD=1 & Rb=1 & E2F=0 & CycE=0 & CycA=1 & CycB=1 & p27=0 & Cdc20=0 & Cdh1=0 & UbcH10=0 & Skp2=1) | (CycD=1 & Rb=0 & E2F=1 & CycE=0 & CycA=1 & CycB=1 & p27=0 & Cdc20=0 & Cdh1=0 & UbcH10=0 & Skp2=1) | (CycD=1 & Rb=1 & E2F=1 & CycE=0 & CycA=1 & CycB=1 & p27=0 & Cdc20=0 & Cdh1=0 & UbcH10=0 & Skp2=1) | (CycD=1 & Rb=0 & E2F=0 & CycE=1 & CycA=1 & CycB=1 & p27=0 & Cdc20=0 & Cdh1=0 & UbcH10=0 & Skp2=1) | (CycD=1 & Rb=1 & E2F=0 & CycE=1 & CycA=1 & CycB=1 & p27=0 & Cdc20=0 & Cdh1=0 & UbcH10=0 & Skp2=1) | (CycD=1 & Rb=0 & E2F=0 & CycE=0 & CycA=1 & CycB=0 & p27=1 & Cdc20=0 & Cdh1=0 & UbcH10=0 & Skp2=1) | (CycD=1 & Rb=1 & E2F=0 & CycE=0 & CycA=1 & CycB=0 & p27=1 & Cdc20=0 & Cdh1=0 & UbcH10=0 & Skp2=1) | (CycD=1 & Rb=0 & E2F=1 & CycE=1 & CycA=1 & CycB=1 & p27=0 & Cdc20=0 & Cdh1=0 & UbcH10=0 & Skp2=1) | (CycD=1 & Rb=1 & E2F=1 & CycE=1 & CycA=1 & CycB=1 & p27=0 & Cdc20=0 & Cdh1=0 & UbcH10=0 & Skp2=1) | (CycD=1 & Rb=0 & E2F=1 & CycE=0 & CycA=1 & CycB=0 & p27=1 & Cdc20=0 & Cdh1=0 & UbcH10=0 & Skp2=1) | (CycD=1 & Rb=1 & E2F=1 & CycE=0 & CycA=1 & CycB=0 & p27=1 & Cdc20=0 & Cdh1=0 & UbcH10=0 & Skp2=1) | (CycD=1 & Rb=0 & E2F=0 & CycE=1 & CycA=1 & CycB=0 & p27=1 & Cdc20=0 & Cdh1=0 & UbcH10=0 & Skp2=1) | (CycD=1 & Rb=1 & E2F=0 & CycE=1 & CycA=1 & CycB=0 & p27=1 & Cdc20=0 & Cdh1=0 & UbcH10=0 & Skp2=1) | (CycD=1 & Rb=0 & E2F=0 & CycE=0 & CycA=0 & CycB=0 & p27=0 & Cdc20=0 & Cdh1=1 & UbcH10=0 & Skp2=1) | (CycD=1 & Rb=0 & E2F=1 & CycE=1 & CycA=1 & CycB=0 & p27=1 & Cdc20=0 & Cdh1=0 & UbcH10=0 & Skp2=1) | (CycD=1 & Rb=1 & E2F=0 & CycE=0 & CycA=0 & CycB=0 & p27=0 & Cdc20=0 & Cdh1=1 & UbcH10=0 & Skp2=1) | (CycD=1 & Rb=1 & E2F=1 & CycE=1 & CycA=1 & CycB=0 & p27=1 & Cdc20=0 & Cdh1=0 & UbcH10=0 & Skp2=1) | (CycD=1 & Rb=0 & E2F=1 & CycE=0 & CycA=0 & CycB=0 & p27=0 & Cdc20=0 & Cdh1=1 & UbcH10=0 & Skp2=1) | (CycD=1 & Rb=1 & E2F=1 & CycE=0 & CycA=0 & CycB=0 & p27=0 & Cdc20=0 & Cdh1=1 & UbcH10=0 & Skp2=1) | (CycD=1 & Rb=0 & E2F=0 & CycE=1 & CycA=0 & CycB=0 & p27=0 & Cdc20=0 & Cdh1=1 & UbcH10=0 & Skp2=1) | (CycD=1 & Rb=1 & E2F=0 & CycE=1 & CycA=0 & CycB=0 & p27=0 & Cdc20=0 & Cdh1=1 & UbcH10=0 & Skp2=1) | (CycD=1 & Rb=0 & E2F=0 & CycE=0 & CycA=1 & CycB=1 & p27=1 & Cdc20=0 & Cdh1=0 & UbcH10=0 & Skp2=1) | (CycD=1 & Rb=0 & E2F=1 & CycE=1 & CycA=0 & CycB=0 & p27=0 & Cdc20=0 & Cdh1=1 & UbcH10=0 & Skp2=1) | (CycD=1 & Rb=1 & E2F=0 & CycE=0 & CycA=1 & CycB=1 & p27=1 & Cdc20=0 & Cdh1=0 & UbcH10=0 & Skp2=1) | (CycD=1 & Rb=1 & E2F=1 & CycE=1 & CycA=0 & CycB=0 & p27=0 & Cdc20=0 & Cdh1=1 & UbcH10=0 & Skp2=1) | (CycD=1 & Rb=0 & E2F=0 & CycE=0 & CycA=1 & CycB=0 & p27=0 & Cdc20=0 & Cdh1=1 & UbcH10=0 & Skp2=1) | (CycD=1 & Rb=0 & E2F=0 & CycE=0 & CycA=0 & CycB=0 & p27=0 & Cdc20=0 & Cdh1=0 & UbcH10=1 & Skp2=1) | (CycD=1 & Rb=0 & E2F=1 & CycE=0 & CycA=1 & CycB=1 & p27=1 & Cdc20=0 & Cdh1=0 & UbcH10=0 & Skp2=1) | (CycD=1 & Rb=1 & E2F=0 & CycE=0 & CycA=1 & CycB=0 & p27=0 & Cdc20=0 & Cdh1=1 & UbcH10=0 & Skp2=1) | (CycD=1 & Rb=1 & E2F=1 & CycE=0 & CycA=1 & CycB=1 & p27=1 & Cdc20=0 & Cdh1=0 & UbcH10=0 & Skp2=1) | (CycD=1 & Rb=1 & E2F=0 & CycE=0 & CycA=0 & CycB=0 & p27=0 & Cdc20=0 & Cdh1=0 & UbcH10=1 & Skp2=1) | (CycD=1 & Rb=0 & E2F=1 & CycE=0 & CycA=1 & CycB=0 & p27=0 & Cdc20=0 & Cdh1=1 & UbcH10=0 & Skp2=1) | (CycD=1 & Rb=0 & E2F=1 & CycE=0 & CycA=0 & CycB=0 & p27=0 & Cdc20=0 & Cdh1=0 & UbcH10=1 & Skp2=1) | (CycD=1 & Rb=0 & E2F=0 & CycE=1 & CycA=1 & CycB=1 & p27=1 & Cdc20=0 & Cdh1=0 & UbcH10=0 & Skp2=1) | (CycD=1 & Rb=1 & E2F=1 & CycE=0 & CycA=0 & CycB=0 & p27=0 & Cdc20=0 & Cdh1=0 & UbcH10=1 & Skp2=1) | (CycD=1 & Rb=1 & E2F=0 & CycE=1 & CycA=1 & CycB=1 & p27=1 & Cdc20=0 & Cdh1=0 & UbcH10=0 & Skp2=1) | (CycD=1 & Rb=0 & E2F=0 & CycE=1 & CycA=1 & CycB=0 & p27=0 & Cdc20=0 & Cdh1=1 & UbcH10=0 & Skp2=1) | (CycD=1 & Rb=0 & E2F=1 & CycE=1 & CycA=1 & CycB=1 & p27=1 & Cdc20=0 & Cdh1=0 & UbcH10=0 & Skp2=1) | (CycD=1 & Rb=1 & E2F=0 & CycE=1 & CycA=1 & CycB=0 & p27=0 & Cdc20=0 & Cdh1=1 & UbcH10=0 & Skp2=1) | (CycD=1 & Rb=0 & E2F=0 & CycE=1 & CycA=0 & CycB=0 & p27=0 & Cdc20=0 & Cdh1=0 & UbcH10=1 & Skp2=1) | (CycD=1 & Rb=0 & E2F=0 & CycE=0 & CycA=1 & CycB=1 & p27=0 & Cdc20=1 & Cdh1=0 & UbcH10=0 & Skp2=1) | (CycD=1 & Rb=1 & E2F=1 & CycE=1 & CycA=1 & CycB=1 & p27=1 & Cdc20=0 & Cdh1=0 & UbcH10=0 & Skp2=1) | (CycD=1 & Rb=1 & E2F=0 & CycE=1 & CycA=0 & CycB=0 & p27=0 & Cdc20=0 & Cdh1=0 & UbcH10=1 & Skp2=1) | (CycD=1 & Rb=1 & E2F=0 & CycE=0 & CycA=1 & CycB=1 & p27=0 & Cdc20=1 & Cdh1=0 & UbcH10=0 & Skp2=1) | (CycD=1 & Rb=0 & E2F=1 & CycE=1 & CycA=1 & CycB=0 & p27=0 & Cdc20=0 & Cdh1=1 & UbcH10=0 & Skp2=1) | (CycD=1 & Rb=1 & E2F=1 & CycE=1 & CycA=1 & CycB=0 & p27=0 & Cdc20=0 & Cdh1=1 & UbcH10=0 & Skp2=1) | (CycD=1 & Rb=0 & E2F=1 & CycE=0 & CycA=1 & CycB=1 & p27=0 & Cdc20=1 & Cdh1=0 & UbcH10=0 & Skp2=1) | (CycD=1 & Rb=0 & E2F=1 & CycE=1 & CycA=0 & CycB=0 & p27=0 & Cdc20=0 & Cdh1=0 & UbcH10=1 & Skp2=1) | (CycD=1 & Rb=1 & E2F=1 & CycE=0 & CycA=1 & CycB=1 & p27=0 & Cdc20=1 & Cdh1=0 & UbcH10=0 & Skp2=1) | (CycD=1 & Rb=1 & E2F=1 & CycE=1 & CycA=0 & CycB=0 & p27=0 & Cdc20=0 & Cdh1=0 & UbcH10=1 & Skp2=1) | (CycD=1 & Rb=0 & E2F=0 & CycE=0 & CycA=1 & CycB=0 & p27=0 & Cdc20=0 & Cdh1=0 & UbcH10=1 & Skp2=1) | (CycD=1 & Rb=1 & E2F=0 & CycE=0 & CycA=1 & CycB=0 & p27=0 & Cdc20=0 & Cdh1=0 & UbcH10=1 & Skp2=1) | (CycD=1 & Rb=0 & E2F=0 & CycE=1 & CycA=1 & CycB=1 & p27=0 & Cdc20=1 & Cdh1=0 & UbcH10=0 & Skp2=1) | (CycD=1 & Rb=1 & E2F=0 & CycE=1 & CycA=1 & CycB=1 & p27=0 & Cdc20=1 & Cdh1=0 & UbcH10=0 & Skp2=1) | (CycD=1 & Rb=0 & E2F=0 & CycE=0 & CycA=0 & CycB=0 & p27=1 & Cdc20=0 & Cdh1=1 & UbcH10=0 & Skp2=1) | (CycD=1 & Rb=0 & E2F=1 & CycE=0 & CycA=1 & CycB=0 & p27=0 & Cdc20=0 & Cdh1=0 & UbcH10=1 & Skp2=1) | (CycD=1 & Rb=1 & E2F=0 & CycE=0 & CycA=0 & CycB=0 & p27=1 & Cdc20=0 & Cdh1=1 & UbcH10=0 & Skp2=1) | (CycD=1 & Rb=1 & E2F=1 & CycE=0 & CycA=1 & CycB=0 & p27=0 & Cdc20=0 & Cdh1=0 & UbcH10=1 & Skp2=1) | (CycD=1 & Rb=0 & E2F=1 & CycE=1 & CycA=1 & CycB=1 & p27=0 & Cdc20=1 & Cdh1=0 & UbcH10=0 & Skp2=1) | (CycD=1 & Rb=0 & E2F=1 & CycE=0 & CycA=0 & CycB=0 & p27=1 & Cdc20=0 & Cdh1=1 & UbcH10=0 & Skp2=1) | (CycD=1 & Rb=1 & E2F=1 & CycE=1 & CycA=1 & CycB=1 & p27=0 & Cdc20=1 & Cdh1=0 & UbcH10=0 & Skp2=1) | (CycD=1 & Rb=1 & E2F=1 & CycE=0 & CycA=0 & CycB=0 & p27=1 & Cdc20=0 & Cdh1=1 & UbcH10=0 & Skp2=1) | (CycD=1 & Rb=0 & E2F=0 & CycE=0 & CycA=0 & CycB=1 & p27=0 & Cdc20=0 & Cdh1=0 & UbcH10=1 & Skp2=1) | (CycD=1 & Rb=0 & E2F=0 & CycE=1 & CycA=1 & CycB=0 & p27=0 & Cdc20=0 & Cdh1=0 & UbcH10=1 & Skp2=1) | (CycD=1 & Rb=1 & E2F=0 & CycE=1 & CycA=1 & CycB=0 & p27=0 & Cdc20=0 & Cdh1=0 & UbcH10=1 & Skp2=1) | (CycD=1 & Rb=1 & E2F=0 & CycE=0 & CycA=0 & CycB=1 & p27=0 & Cdc20=0 & Cdh1=0 & UbcH10=1 & Skp2=1) | (CycD=1 & Rb=0 & E2F=0 & CycE=1 & CycA=0 & CycB=0 & p27=1 & Cdc20=0 & Cdh1=1 & UbcH10=0 & Skp2=1) | (CycD=1 & Rb=0 & E2F=1 & CycE=0 & CycA=0 & CycB=1 & p27=0 & Cdc20=0 & Cdh1=0 & UbcH10=1 & Skp2=1) | (CycD=1 & Rb=1 & E2F=0 & CycE=1 & CycA=0 & CycB=0 & p27=1 & Cdc20=0 & Cdh1=1 & UbcH10=0 & Skp2=1) | (CycD=1 & Rb=0 & E2F=1 & CycE=1 & CycA=1 & CycB=0 & p27=0 & Cdc20=0 & Cdh1=0 & UbcH10=1 & Skp2=1) | (CycD=1 & Rb=1 & E2F=1 & CycE=1 & CycA=1 & CycB=0 & p27=0 & Cdc20=0 & Cdh1=0 & UbcH10=1 & Skp2=1) | (CycD=1 & Rb=1 & E2F=1 & CycE=0 & CycA=0 & CycB=1 & p27=0 & Cdc20=0 & Cdh1=0 & UbcH10=1 & Skp2=1) | (CycD=1 & Rb=0 & E2F=1 & CycE=1 & CycA=0 & CycB=0 & p27=1 & Cdc20=0 & Cdh1=1 & UbcH10=0 & Skp2=1) | (CycD=1 & Rb=1 & E2F=1 & CycE=1 & CycA=0 & CycB=0 & p27=1 & Cdc20=0 & Cdh1=1 & UbcH10=0 & Skp2=1) | (CycD=1 & Rb=0 & E2F=0 & CycE=1 & CycA=0 & CycB=1 & p27=0 & Cdc20=0 & Cdh1=0 & UbcH10=1 & Skp2=1) | (CycD=1 & Rb=1 & E2F=0 & CycE=1 & CycA=0 & CycB=1 & p27=0 & Cdc20=0 & Cdh1=0 & UbcH10=1 & Skp2=1) | (CycD=1 & Rb=0 & E2F=0 & CycE=0 & CycA=1 & CycB=0 & p27=1 & Cdc20=0 & Cdh1=1 & UbcH10=0 & Skp2=1) | (CycD=1 & Rb=0 & E2F=0 & CycE=0 & CycA=0 & CycB=0 & p27=1 & Cdc20=0 & Cdh1=0 & UbcH10=1 & Skp2=1) | (CycD=1 & Rb=1 & E2F=0 & CycE=0 & CycA=1 & CycB=0 & p27=1 & Cdc20=0 & Cdh1=1 & UbcH10=0 & Skp2=1) | (CycD=1 & Rb=1 & E2F=0 & CycE=0 & CycA=0 & CycB=0 & p27=1 & Cdc20=0 & Cdh1=0 & UbcH10=1 & Skp2=1) | (CycD=1 & Rb=0 & E2F=1 & CycE=1 & CycA=0 & CycB=1 & p27=0 & Cdc20=0 & Cdh1=0 & UbcH10=1 & Skp2=1) | (CycD=1 & Rb=0 & E2F=1 & CycE=0 & CycA=1 & CycB=0 & p27=1 & Cdc20=0 & Cdh1=1 & UbcH10=0 & Skp2=1) | (CycD=1 & Rb=1 & E2F=1 & CycE=1 & CycA=0 & CycB=1 & p27=0 & Cdc20=0 & Cdh1=0 & UbcH10=1 & Skp2=1) | (CycD=1 & Rb=0 & E2F=1 & CycE=0 & CycA=0 & CycB=0 & p27=1 & Cdc20=0 & Cdh1=0 & UbcH10=1 & Skp2=1) | (CycD=1 & Rb=1 & E2F=1 & CycE=0 & CycA=1 & CycB=0 & p27=1 & Cdc20=0 & Cdh1=1 & UbcH10=0 & Skp2=1) | (CycD=1 & Rb=1 & E2F=1 & CycE=0 & CycA=0 & CycB=0 & p27=1 & Cdc20=0 & Cdh1=0 & UbcH10=1 & Skp2=1) | (CycD=1 & Rb=0 & E2F=0 & CycE=0 & CycA=1 & CycB=1 & p27=0 & Cdc20=0 & Cdh1=0 & UbcH10=1 & Skp2=1) | (CycD=1 & Rb=1 & E2F=0 & CycE=0 & CycA=1 & CycB=1 & p27=0 & Cdc20=0 & Cdh1=0 & UbcH10=1 & Skp2=1) | (CycD=1 & Rb=0 & E2F=0 & CycE=1 & CycA=1 & CycB=0 & p27=1 & Cdc20=0 & Cdh1=1 & UbcH10=0 & Skp2=1) | (CycD=1 & Rb=0 & E2F=0 & CycE=1 & CycA=0 & CycB=0 & p27=1 & Cdc20=0 & Cdh1=0 & UbcH10=1 & Skp2=1) | (CycD=1 & Rb=1 & E2F=0 & CycE=1 & CycA=1 & CycB=0 & p27=1 & Cdc20=0 & Cdh1=1 & UbcH10=0 & Skp2=1) | (CycD=1 & Rb=0 & E2F=0 & CycE=0 & CycA=1 & CycB=1 & p27=1 & Cdc20=1 & Cdh1=0 & UbcH10=0 & Skp2=1) | (CycD=1 & Rb=0 & E2F=1 & CycE=0 & CycA=1 & CycB=1 & p27=0 & Cdc20=0 & Cdh1=0 & UbcH10=1 & Skp2=1) | (CycD=1 & Rb=1 & E2F=0 & CycE=1 & CycA=0 & CycB=0 & p27=1 & Cdc20=0 & Cdh1=0 & UbcH10=1 & Skp2=1) | (CycD=1 & Rb=1 & E2F=1 & CycE=0 & CycA=1 & CycB=1 & p27=0 & Cdc20=0 & Cdh1=0 & UbcH10=1 & Skp2=1) | (CycD=1 & Rb=1 & E2F=0 & CycE=0 & CycA=1 & CycB=1 & p27=1 & Cdc20=1 & Cdh1=0 & UbcH10=0 & Skp2=1) | (CycD=1 & Rb=0 & E2F=1 & CycE=1 & CycA=1 & CycB=0 & p27=1 & Cdc20=0 & Cdh1=1 & UbcH10=0 & Skp2=1) | (CycD=1 & Rb=0 & E2F=1 & CycE=1 & CycA=0 & CycB=0 & p27=1 & Cdc20=0 & Cdh1=0 & UbcH10=1 & Skp2=1) | (CycD=1 & Rb=0 & E2F=0 & CycE=0 & CycA=0 & CycB=0 & p27=0 & Cdc20=1 & Cdh1=0 & UbcH10=1 & Skp2=1) | (CycD=1 & Rb=0 & E2F=1 & CycE=0 & CycA=1 & CycB=1 & p27=1 & Cdc20=1 & Cdh1=0 & UbcH10=0 & Skp2=1) | (CycD=1 & Rb=1 & E2F=1 & CycE=1 & CycA=1 & CycB=0 & p27=1 & Cdc20=0 & Cdh1=1 & UbcH10=0 & Skp2=1) | (CycD=1 & Rb=1 & E2F=1 & CycE=0 & CycA=1 & CycB=1 & p27=1 & Cdc20=1 & Cdh1=0 & UbcH10=0 & Skp2=1) | (CycD=1 & Rb=1 & E2F=0 & CycE=0 & CycA=0 & CycB=0 & p27=0 & Cdc20=1 & Cdh1=0 & UbcH10=1 & Skp2=1) | (CycD=1 & Rb=1 & E2F=1 & CycE=1 & CycA=0 & CycB=0 & p27=1 & Cdc20=0 & Cdh1=0 & UbcH10=1 & Skp2=1) | (CycD=1 & Rb=0 & E2F=0 & CycE=1 & CycA=1 & CycB=1 & p27=0 & Cdc20=0 & Cdh1=0 & UbcH10=1 & Skp2=1) | (CycD=1 & Rb=1 & E2F=0 & CycE=1 & CycA=1 & CycB=1 & p27=0 & Cdc20=0 & Cdh1=0 & UbcH10=1 & Skp2=1) | (CycD=1 & Rb=0 & E2F=0 & CycE=0 & CycA=1 & CycB=0 & p27=1 & Cdc20=0 & Cdh1=0 & UbcH10=1 & Skp2=1) | (CycD=1 & Rb=0 & E2F=1 & CycE=0 & CycA=0 & CycB=0 & p27=0 & Cdc20=1 & Cdh1=0 & UbcH10=1 & Skp2=1) | (CycD=1 & Rb=1 & E2F=0 & CycE=0 & CycA=1 & CycB=0 & p27=1 & Cdc20=0 & Cdh1=0 & UbcH10=1 & Skp2=1) | (CycD=1 & Rb=0 & E2F=0 & CycE=1 & CycA=1 & CycB=1 & p27=1 & Cdc20=1 & Cdh1=0 & UbcH10=0 & Skp2=1) | (CycD=1 & Rb=1 & E2F=1 & CycE=0 & CycA=0 & CycB=0 & p27=0 & Cdc20=1 & Cdh1=0 & UbcH10=1 & Skp2=1) | (CycD=1 & Rb=0 & E2F=1 & CycE=1 & CycA=1 & CycB=1 & p27=0 & Cdc20=0 & Cdh1=0 & UbcH10=1 & Skp2=1) | (CycD=1 & Rb=1 & E2F=1 & CycE=1 & CycA=1 & CycB=1 & p27=0 & Cdc20=0 & Cdh1=0 & UbcH10=1 & Skp2=1) | (CycD=1 & Rb=1 & E2F=0 & CycE=1 & CycA=1 & CycB=1 & p27=1 & Cdc20=1 & Cdh1=0 & UbcH10=0 & Skp2=1) | (CycD=1 & Rb=0 & E2F=1 & CycE=0 & CycA=1 & CycB=0 & p27=1 & Cdc20=0 & Cdh1=0 & UbcH10=1 & Skp2=1) | (CycD=1 & Rb=1 & E2F=1 & CycE=0 & CycA=1 & CycB=0 & p27=1 & Cdc20=0 & Cdh1=0 & UbcH10=1 & Skp2=1) | (CycD=1 & Rb=0 & E2F=1 & CycE=1 & CycA=1 & CycB=1 & p27=1 & Cdc20=1 & Cdh1=0 & UbcH10=0 & Skp2=1) | (CycD=1 & Rb=0 & E2F=0 & CycE=1 & CycA=0 & CycB=0 & p27=0 & Cdc20=1 & Cdh1=0 & UbcH10=1 & Skp2=1) | (CycD=1 & Rb=1 & E2F=0 & CycE=1 & CycA=0 & CycB=0 & p27=0 & Cdc20=1 & Cdh1=0 & UbcH10=1 & Skp2=1) | (CycD=1 & Rb=1 & E2F=1 & CycE=1 & CycA=1 & CycB=1 & p27=1 & Cdc20=1 & Cdh1=0 & UbcH10=0 & Skp2=1) | (CycD=1 & Rb=0 & E2F=0 & CycE=0 & CycA=0 & CycB=1 & p27=1 & Cdc20=0 & Cdh1=0 & UbcH10=1 & Skp2=1) | (CycD=1 & Rb=0 & E2F=0 & CycE=1 & CycA=1 & CycB=0 & p27=1 & Cdc20=0 & Cdh1=0 & UbcH10=1 & Skp2=1) | (CycD=1 & Rb=1 & E2F=0 & CycE=0 & CycA=0 & CycB=1 & p27=1 & Cdc20=0 & Cdh1=0 & UbcH10=1 & Skp2=1) | (CycD=1 & Rb=1 & E2F=0 & CycE=1 & CycA=1 & CycB=0 & p27=1 & Cdc20=0 & Cdh1=0 & UbcH10=1 & Skp2=1) | (CycD=1 & Rb=0 & E2F=1 & CycE=1 & CycA=0 & CycB=0 & p27=0 & Cdc20=1 & Cdh1=0 & UbcH10=1 & Skp2=1) | (CycD=1 & Rb=1 & E2F=1 & CycE=1 & CycA=0 & CycB=0 & p27=0 & Cdc20=1 & Cdh1=0 & UbcH10=1 & Skp2=1) | (CycD=1 & Rb=0 & E2F=0 & CycE=0 & CycA=0 & CycB=0 & p27=0 & Cdc20=0 & Cdh1=1 & UbcH10=1 & Skp2=1) | (CycD=1 & Rb=0 & E2F=1 & CycE=0 & CycA=0 & CycB=1 & p27=1 & Cdc20=0 & Cdh1=0 & UbcH10=1 & Skp2=1) | (CycD=1 & Rb=0 & E2F=1 & CycE=1 & CycA=1 & CycB=0 & p27=1 & Cdc20=0 & Cdh1=0 & UbcH10=1 & Skp2=1) | (CycD=1 & Rb=1 & E2F=0 & CycE=0 & CycA=0 & CycB=0 & p27=0 & Cdc20=0 & Cdh1=1 & UbcH10=1 & Skp2=1) | (CycD=1 & Rb=0 & E2F=0 & CycE=0 & CycA=1 & CycB=0 & p27=0 & Cdc20=1 & Cdh1=0 & UbcH10=1 & Skp2=1) | (CycD=1 & Rb=1 & E2F=1 & CycE=0 & CycA=0 & CycB=1 & p27=1 & Cdc20=0 & Cdh1=0 & UbcH10=1 & Skp2=1) | (CycD=1 & Rb=1 & E2F=1 & CycE=1 & CycA=1 & CycB=0 & p27=1 & Cdc20=0 & Cdh1=0 & UbcH10=1 & Skp2=1) | (CycD=1 & Rb=1 & E2F=0 & CycE=0 & CycA=1 & CycB=0 & p27=0 & Cdc20=1 & Cdh1=0 & UbcH10=1 & Skp2=1) | (CycD=1 & Rb=0 & E2F=1 & CycE=0 & CycA=0 & CycB=0 & p27=0 & Cdc20=0 & Cdh1=1 & UbcH10=1 & Skp2=1) | (CycD=1 & Rb=0 & E2F=1 & CycE=0 & CycA=1 & CycB=0 & p27=0 & Cdc20=1 & Cdh1=0 & UbcH10=1 & Skp2=1) | (CycD=1 & Rb=1 & E2F=1 & CycE=0 & CycA=0 & CycB=0 & p27=0 & Cdc20=0 & Cdh1=1 & UbcH10=1 & Skp2=1) | (CycD=1 & Rb=0 & E2F=0 & CycE=1 & CycA=0 & CycB=1 & p27=1 & Cdc20=0 & Cdh1=0 & UbcH10=1 & Skp2=1) | (CycD=1 & Rb=1 & E2F=1 & CycE=0 & CycA=1 & CycB=0 & p27=0 & Cdc20=1 & Cdh1=0 & UbcH10=1 & Skp2=1) | (CycD=1 & Rb=1 & E2F=0 & CycE=1 & CycA=0 & CycB=1 & p27=1 & Cdc20=0 & Cdh1=0 & UbcH10=1 & Skp2=1) | (CycD=1 & Rb=0 & E2F=0 & CycE=1 & CycA=0 & CycB=0 & p27=0 & Cdc20=0 & Cdh1=1 & UbcH10=1 & Skp2=1) | (CycD=1 & Rb=0 & E2F=1 & CycE=1 & CycA=0 & CycB=1 & p27=1 & Cdc20=0 & Cdh1=0 & UbcH10=1 & Skp2=1) | (CycD=1 & Rb=0 & E2F=0 & CycE=0 & CycA=0 & CycB=1 & p27=0 & Cdc20=1 & Cdh1=0 & UbcH10=1 & Skp2=1) | (CycD=1 & Rb=1 & E2F=0 & CycE=1 & CycA=0 & CycB=0 & p27=0 & Cdc20=0 & Cdh1=1 & UbcH10=1 & Skp2=1) | (CycD=1 & Rb=0 & E2F=0 & CycE=1 & CycA=1 & CycB=0 & p27=0 & Cdc20=1 & Cdh1=0 & UbcH10=1 & Skp2=1) | (CycD=1 & Rb=1 & E2F=1 & CycE=1 & CycA=0 & CycB=1 & p27=1 & Cdc20=0 & Cdh1=0 & UbcH10=1 & Skp2=1) | (CycD=1 & Rb=1 & E2F=0 & CycE=1 & CycA=1 & CycB=0 & p27=0 & Cdc20=1 & Cdh1=0 & UbcH10=1 & Skp2=1) | (CycD=1 & Rb=1 & E2F=0 & CycE=0 & CycA=0 & CycB=1 & p27=0 & Cdc20=1 & Cdh1=0 & UbcH10=1 & Skp2=1) | (CycD=1 & Rb=0 & E2F=0 & CycE=0 & CycA=1 & CycB=1 & p27=1 & Cdc20=0 & Cdh1=0 & UbcH10=1 & Skp2=1) | (CycD=1 & Rb=0 & E2F=1 & CycE=1 & CycA=0 & CycB=0 & p27=0 & Cdc20=0 & Cdh1=1 & UbcH10=1 & Skp2=1) | (CycD=1 & Rb=0 & E2F=1 & CycE=0 & CycA=0 & CycB=1 & p27=0 & Cdc20=1 & Cdh1=0 & UbcH10=1 & Skp2=1) | (CycD=1 & Rb=1 & E2F=0 & CycE=0 & CycA=1 & CycB=1 & p27=1 & Cdc20=0 & Cdh1=0 & UbcH10=1 & Skp2=1) | (CycD=1 & Rb=0 & E2F=1 & CycE=1 & CycA=1 & CycB=0 & p27=0 & Cdc20=1 & Cdh1=0 & UbcH10=1 & Skp2=1) | (CycD=1 & Rb=1 & E2F=1 & CycE=1 & CycA=0 & CycB=0 & p27=0 & Cdc20=0 & Cdh1=1 & UbcH10=1 & Skp2=1) | (CycD=1 & Rb=1 & E2F=1 & CycE=1 & CycA=1 & CycB=0 & p27=0 & Cdc20=1 & Cdh1=0 & UbcH10=1 & Skp2=1) | (CycD=1 & Rb=1 & E2F=1 & CycE=0 & CycA=0 & CycB=1 & p27=0 & Cdc20=1 & Cdh1=0 & UbcH10=1 & Skp2=1) | (CycD=1 & Rb=0 & E2F=1 & CycE=0 & CycA=1 & CycB=1 & p27=1 & Cdc20=0 & Cdh1=0 & UbcH10=1 & Skp2=1) | (CycD=1 & Rb=1 & E2F=1 & CycE=0 & CycA=1 & CycB=1 & p27=1 & Cdc20=0 & Cdh1=0 & UbcH10=1 & Skp2=1) | (CycD=1 & Rb=0 & E2F=0 & CycE=1 & CycA=0 & CycB=1 & p27=0 & Cdc20=1 & Cdh1=0 & UbcH10=1 & Skp2=1) | (CycD=1 & Rb=1 & E2F=0 & CycE=1 & CycA=0 & CycB=1 & p27=0 & Cdc20=1 & Cdh1=0 & UbcH10=1 & Skp2=1) | (CycD=1 & Rb=0 & E2F=0 & CycE=0 & CycA=0 & CycB=0 & p27=1 & Cdc20=1 & Cdh1=0 & UbcH10=1 & Skp2=1) | (CycD=1 & Rb=0 & E2F=0 & CycE=1 & CycA=1 & CycB=1 & p27=1 & Cdc20=0 & Cdh1=0 & UbcH10=1 & Skp2=1) | (CycD=1 & Rb=1 & E2F=0 & CycE=0 & CycA=0 & CycB=0 & p27=1 & Cdc20=1 & Cdh1=0 & UbcH10=1 & Skp2=1) | (CycD=1 & Rb=1 & E2F=0 & CycE=1 & CycA=1 & CycB=1 & p27=1 & Cdc20=0 & Cdh1=0 & UbcH10=1 & Skp2=1) | (CycD=1 & Rb=0 & E2F=1 & CycE=1 & CycA=0 & CycB=1 & p27=0 & Cdc20=1 & Cdh1=0 & UbcH10=1 & Skp2=1) | (CycD=1 & Rb=1 & E2F=1 & CycE=1 & CycA=0 & CycB=1 & p27=0 & Cdc20=1 & Cdh1=0 & UbcH10=1 & Skp2=1) | (CycD=1 & Rb=0 & E2F=1 & CycE=0 & CycA=0 & CycB=0 & p27=1 & Cdc20=1 & Cdh1=0 & UbcH10=1 & Skp2=1) | (CycD=1 & Rb=0 & E2F=0 & CycE=0 & CycA=0 & CycB=1 & p27=0 & Cdc20=0 & Cdh1=1 & UbcH10=1 & Skp2=1) | (CycD=1 & Rb=0 & E2F=1 & CycE=1 & CycA=1 & CycB=1 & p27=1 & Cdc20=0 & Cdh1=0 & UbcH10=1 & Skp2=1) | (CycD=1 & Rb=1 & E2F=0 & CycE=0 & CycA=0 & CycB=1 & p27=0 & Cdc20=0 & Cdh1=1 & UbcH10=1 & Skp2=1) | (CycD=1 & Rb=1 & E2F=1 & CycE=0 & CycA=0 & CycB=0 & p27=1 & Cdc20=1 & Cdh1=0 & UbcH10=1 & Skp2=1) | (CycD=1 & Rb=0 & E2F=0 & CycE=0 & CycA=1 & CycB=1 & p27=0 & Cdc20=1 & Cdh1=0 & UbcH10=1 & Skp2=1) | (CycD=1 & Rb=1 & E2F=1 & CycE=1 & CycA=1 & CycB=1 & p27=1 & Cdc20=0 & Cdh1=0 & UbcH10=1 & Skp2=1) | (CycD=1 & Rb=1 & E2F=0 & CycE=0 & CycA=1 & CycB=1 & p27=0 & Cdc20=1 & Cdh1=0 & UbcH10=1 & Skp2=1) | (CycD=1 & Rb=0 & E2F=1 & CycE=0 & CycA=0 & CycB=1 & p27=0 & Cdc20=0 & Cdh1=1 & UbcH10=1 & Skp2=1) | (CycD=1 & Rb=0 & E2F=0 & CycE=1 & CycA=0 & CycB=0 & p27=1 & Cdc20=1 & Cdh1=0 & UbcH10=1 & Skp2=1) | (CycD=1 & Rb=1 & E2F=1 & CycE=0 & CycA=0 & CycB=1 & p27=0 & Cdc20=0 & Cdh1=1 & UbcH10=1 & Skp2=1) | (CycD=1 & Rb=0 & E2F=1 & CycE=0 & CycA=1 & CycB=1 & p27=0 & Cdc20=1 & Cdh1=0 & UbcH10=1 & Skp2=1) | (CycD=1 & Rb=1 & E2F=0 & CycE=1 & CycA=0 & CycB=0 & p27=1 & Cdc20=1 & Cdh1=0 & UbcH10=1 & Skp2=1) | (CycD=1 & Rb=1 & E2F=1 & CycE=0 & CycA=1 & CycB=1 & p27=0 & Cdc20=1 & Cdh1=0 & UbcH10=1 & Skp2=1) | (CycD=1 & Rb=0 & E2F=1 & CycE=1 & CycA=0 & CycB=0 & p27=1 & Cdc20=1 & Cdh1=0 & UbcH10=1 & Skp2=1) | (CycD=1 & Rb=0 & E2F=0 & CycE=1 & CycA=0 & CycB=1 & p27=0 & Cdc20=0 & Cdh1=1 & UbcH10=1 & Skp2=1) | (CycD=1 & Rb=1 & E2F=0 & CycE=1 & CycA=0 & CycB=1 & p27=0 & Cdc20=0 & Cdh1=1 & UbcH10=1 & Skp2=1) | (CycD=1 & Rb=1 & E2F=1 & CycE=1 & CycA=0 & CycB=0 & p27=1 & Cdc20=1 & Cdh1=0 & UbcH10=1 & Skp2=1) | (CycD=1 & Rb=0 & E2F=0 & CycE=1 & CycA=1 & CycB=1 & p27=0 & Cdc20=1 & Cdh1=0 & UbcH10=1 & Skp2=1) | (CycD=1 & Rb=1 & E2F=0 & CycE=1 & CycA=1 & CycB=1 & p27=0 & Cdc20=1 & Cdh1=0 & UbcH10=1 & Skp2=1) | (CycD=1 & Rb=0 & E2F=0 & CycE=0 & CycA=0 & CycB=0 & p27=1 & Cdc20=0 & Cdh1=1 & UbcH10=1 & Skp2=1) | (CycD=1 & Rb=0 & E2F=0 & CycE=0 & CycA=1 & CycB=0 & p27=1 & Cdc20=1 & Cdh1=0 & UbcH10=1 & Skp2=1) | (CycD=1 & Rb=1 & E2F=0 & CycE=0 & CycA=0 & CycB=0 & p27=1 & Cdc20=0 & Cdh1=1 & UbcH10=1 & Skp2=1) | (CycD=1 & Rb=0 & E2F=1 & CycE=1 & CycA=0 & CycB=1 & p27=0 & Cdc20=0 & Cdh1=1 & UbcH10=1 & Skp2=1) | (CycD=1 & Rb=1 & E2F=0 & CycE=0 & CycA=1 & CycB=0 & p27=1 & Cdc20=1 & Cdh1=0 & UbcH10=1 & Skp2=1) | (CycD=1 & Rb=1 & E2F=1 & CycE=1 & CycA=0 & CycB=1 & p27=0 & Cdc20=0 & Cdh1=1 & UbcH10=1 & Skp2=1) | (CycD=1 & Rb=0 & E2F=1 & CycE=1 & CycA=1 & CycB=1 & p27=0 & Cdc20=1 & Cdh1=0 & UbcH10=1 & Skp2=1) | (CycD=1 & Rb=0 & E2F=1 & CycE=0 & CycA=0 & CycB=0 & p27=1 & Cdc20=0 & Cdh1=1 & UbcH10=1 & Skp2=1) | (CycD=1 & Rb=1 & E2F=1 & CycE=1 & CycA=1 & CycB=1 & p27=0 & Cdc20=1 & Cdh1=0 & UbcH10=1 & Skp2=1) | (CycD=1 & Rb=0 & E2F=1 & CycE=0 & CycA=1 & CycB=0 & p27=1 & Cdc20=1 & Cdh1=0 & UbcH10=1 & Skp2=1) | (CycD=1 & Rb=1 & E2F=1 & CycE=0 & CycA=0 & CycB=0 & p27=1 & Cdc20=0 & Cdh1=1 & UbcH10=1 & Skp2=1) | (CycD=1 & Rb=1 & E2F=1 & CycE=0 & CycA=1 & CycB=0 & p27=1 & Cdc20=1 & Cdh1=0 & UbcH10=1 & Skp2=1) | (CycD=1 & Rb=0 & E2F=0 & CycE=1 & CycA=0 & CycB=0 & p27=1 & Cdc20=0 & Cdh1=1 & UbcH10=1 & Skp2=1) | (CycD=1 & Rb=0 & E2F=0 & CycE=0 & CycA=0 & CycB=1 & p27=1 & Cdc20=1 & Cdh1=0 & UbcH10=1 & Skp2=1) | (CycD=1 & Rb=0 & E2F=0 & CycE=1 & CycA=1 & CycB=0 & p27=1 & Cdc20=1 & Cdh1=0 & UbcH10=1 & Skp2=1) | (CycD=1 & Rb=1 & E2F=0 & CycE=1 & CycA=0 & CycB=0 & p27=1 & Cdc20=0 & Cdh1=1 & UbcH10=1 & Skp2=1) | (CycD=1 & Rb=1 & E2F=0 & CycE=0 & CycA=0 & CycB=1 & p27=1 & Cdc20=1 & Cdh1=0 & UbcH10=1 & Skp2=1) | (CycD=1 & Rb=1 & E2F=0 & CycE=1 & CycA=1 & CycB=0 & p27=1 & Cdc20=1 & Cdh1=0 & UbcH10=1 & Skp2=1) | (CycD=1 & Rb=0 & E2F=0 & CycE=0 & CycA=0 & CycB=0 & p27=0 & Cdc20=1 & Cdh1=1 & UbcH10=1 & Skp2=1) | (CycD=1 & Rb=0 & E2F=1 & CycE=1 & CycA=0 & CycB=0 & p27=1 & Cdc20=0 & Cdh1=1 & UbcH10=1 & Skp2=1) | (CycD=1 & Rb=1 & E2F=1 & CycE=1 & CycA=0 & CycB=0 & p27=1 & Cdc20=0 & Cdh1=1 & UbcH10=1 & Skp2=1) | (CycD=1 & Rb=0 & E2F=1 & CycE=0 & CycA=0 & CycB=1 & p27=1 & Cdc20=1 & Cdh1=0 & UbcH10=1 & Skp2=1) | (CycD=1 & Rb=0 & E2F=1 & CycE=1 & CycA=1 & CycB=0 & p27=1 & Cdc20=1 & Cdh1=0 & UbcH10=1 & Skp2=1) | (CycD=1 & Rb=1 & E2F=0 & CycE=0 & CycA=0 & CycB=0 & p27=0 & Cdc20=1 & Cdh1=1 & UbcH10=1 & Skp2=1) | (CycD=1 & Rb=1 & E2F=1 & CycE=1 & CycA=1 & CycB=0 & p27=1 & Cdc20=1 & Cdh1=0 & UbcH10=1 & Skp2=1) | (CycD=1 & Rb=1 & E2F=1 & CycE=0 & CycA=0 & CycB=1 & p27=1 & Cdc20=1 & Cdh1=0 & UbcH10=1 & Skp2=1) | (CycD=1 & Rb=0 & E2F=1 & CycE=0 & CycA=0 & CycB=0 & p27=0 & Cdc20=1 & Cdh1=1 & UbcH10=1 & Skp2=1) | (CycD=1 & Rb=1 & E2F=1 & CycE=0 & CycA=0 & CycB=0 & p27=0 & Cdc20=1 & Cdh1=1 & UbcH10=1 & Skp2=1) | (CycD=1 & Rb=0 & E2F=0 & CycE=1 & CycA=0 & CycB=1 & p27=1 & Cdc20=1 & Cdh1=0 & UbcH10=1 & Skp2=1) | (CycD=1 & Rb=1 & E2F=0 & CycE=1 & CycA=0 & CycB=1 & p27=1 & Cdc20=1 & Cdh1=0 & UbcH10=1 & Skp2=1) | (CycD=1 & Rb=0 & E2F=0 & CycE=1 & CycA=0 & CycB=0 & p27=0 & Cdc20=1 & Cdh1=1 & UbcH10=1 & Skp2=1) | (CycD=1 & Rb=0 & E2F=1 & CycE=1 & CycA=0 & CycB=1 & p27=1 & Cdc20=1 & Cdh1=0 & UbcH10=1 & Skp2=1) | (CycD=1 & Rb=1 & E2F=0 & CycE=1 & CycA=0 & CycB=0 & p27=0 & Cdc20=1 & Cdh1=1 & UbcH10=1 & Skp2=1) | (CycD=1 & Rb=1 & E2F=1 & CycE=1 & CycA=0 & CycB=1 & p27=1 & Cdc20=1 & Cdh1=0 & UbcH10=1 & Skp2=1) | (CycD=1 & Rb=0 & E2F=0 & CycE=0 & CycA=0 & CycB=1 & p27=1 & Cdc20=0 & Cdh1=1 & UbcH10=1 & Skp2=1) | (CycD=1 & Rb=0 & E2F=0 & CycE=0 & CycA=1 & CycB=1 & p27=1 & Cdc20=1 & Cdh1=0 & UbcH10=1 & Skp2=1) | (CycD=1 & Rb=1 & E2F=0 & CycE=0 & CycA=0 & CycB=1 & p27=1 & Cdc20=0 & Cdh1=1 & UbcH10=1 & Skp2=1) | (CycD=1 & Rb=0 & E2F=1 & CycE=1 & CycA=0 & CycB=0 & p27=0 & Cdc20=1 & Cdh1=1 & UbcH10=1 & Skp2=1) | (CycD=1 & Rb=1 & E2F=0 & CycE=0 & CycA=1 & CycB=1 & p27=1 & Cdc20=1 & Cdh1=0 & UbcH10=1 & Skp2=1) | (CycD=1 & Rb=1 & E2F=1 & CycE=1 & CycA=0 & CycB=0 & p27=0 & Cdc20=1 & Cdh1=1 & UbcH10=1 & Skp2=1) | (CycD=1 & Rb=0 & E2F=1 & CycE=0 & CycA=0 & CycB=1 & p27=1 & Cdc20=0 & Cdh1=1 & UbcH10=1 & Skp2=1) | (CycD=1 & Rb=0 & E2F=1 & CycE=0 & CycA=1 & CycB=1 & p27=1 & Cdc20=1 & Cdh1=0 & UbcH10=1 & Skp2=1) | (CycD=1 & Rb=1 & E2F=1 & CycE=0 & CycA=0 & CycB=1 & p27=1 & Cdc20=0 & Cdh1=1 & UbcH10=1 & Skp2=1) | (CycD=1 & Rb=1 & E2F=1 & CycE=0 & CycA=1 & CycB=1 & p27=1 & Cdc20=1 & Cdh1=0 & UbcH10=1 & Skp2=1) | (CycD=1 & Rb=0 & E2F=0 & CycE=1 & CycA=0 & CycB=1 & p27=1 & Cdc20=0 & Cdh1=1 & UbcH10=1 & Skp2=1) | (CycD=1 & Rb=0 & E2F=0 & CycE=1 & CycA=1 & CycB=1 & p27=1 & Cdc20=1 & Cdh1=0 & UbcH10=1 & Skp2=1) | (CycD=1 & Rb=1 & E2F=0 & CycE=1 & CycA=0 & CycB=1 & p27=1 & Cdc20=0 & Cdh1=1 & UbcH10=1 & Skp2=1) | (CycD=1 & Rb=1 & E2F=0 & CycE=1 & CycA=1 & CycB=1 & p27=1 & Cdc20=1 & Cdh1=0 & UbcH10=1 & Skp2=1) | (CycD=1 & Rb=0 & E2F=0 & CycE=0 & CycA=0 & CycB=1 & p27=0 & Cdc20=1 & Cdh1=1 & UbcH10=1 & Skp2=1) | (CycD=1 & Rb=0 & E2F=1 & CycE=1 & CycA=0 & CycB=1 & p27=1 & Cdc20=0 & Cdh1=1 & UbcH10=1 & Skp2=1) | (CycD=1 & Rb=0 & E2F=1 & CycE=1 & CycA=1 & CycB=1 & p27=1 & Cdc20=1 & Cdh1=0 & UbcH10=1 & Skp2=1) | (CycD=1 & Rb=1 & E2F=1 & CycE=1 & CycA=0 & CycB=1 & p27=1 & Cdc20=0 & Cdh1=1 & UbcH10=1 & Skp2=1) | (CycD=1 & Rb=1 & E2F=0 & CycE=0 & CycA=0 & CycB=1 & p27=0 & Cdc20=1 & Cdh1=1 & UbcH10=1 & Skp2=1) | (CycD=1 & Rb=1 & E2F=1 & CycE=1 & CycA=1 & CycB=1 & p27=1 & Cdc20=1 & Cdh1=0 & UbcH10=1 & Skp2=1) | (CycD=1 & Rb=0 & E2F=1 & CycE=0 & CycA=0 & CycB=1 & p27=0 & Cdc20=1 & Cdh1=1 & UbcH10=1 & Skp2=1) | (CycD=1 & Rb=1 & E2F=1 & CycE=0 & CycA=0 & CycB=1 & p27=0 & Cdc20=1 & Cdh1=1 & UbcH10=1 & Skp2=1) | (CycD=1 & Rb=0 & E2F=0 & CycE=1 & CycA=0 & CycB=1 & p27=0 & Cdc20=1 & Cdh1=1 & UbcH10=1 & Skp2=1) | (CycD=1 & Rb=1 & E2F=0 & CycE=1 & CycA=0 & CycB=1 & p27=0 & Cdc20=1 & Cdh1=1 & UbcH10=1 & Skp2=1) | (CycD=1 & Rb=0 & E2F=0 & CycE=0 & CycA=0 & CycB=0 & p27=1 & Cdc20=1 & Cdh1=1 & UbcH10=1 & Skp2=1) | (CycD=1 & Rb=1 & E2F=0 & CycE=0 & CycA=0 & CycB=0 & p27=1 & Cdc20=1 & Cdh1=1 & UbcH10=1 & Skp2=1) | (CycD=1 & Rb=0 & E2F=1 & CycE=1 & CycA=0 & CycB=1 & p27=0 & Cdc20=1 & Cdh1=1 & UbcH10=1 & Skp2=1) | (CycD=1 & Rb=1 & E2F=1 & CycE=1 & CycA=0 & CycB=1 & p27=0 & Cdc20=1 & Cdh1=1 & UbcH10=1 & Skp2=1) | (CycD=1 & Rb=0 & E2F=1 & CycE=0 & CycA=0 & CycB=0 & p27=1 & Cdc20=1 & Cdh1=1 & UbcH10=1 & Skp2=1) | (CycD=1 & Rb=1 & E2F=1 & CycE=0 & CycA=0 & CycB=0 & p27=1 & Cdc20=1 & Cdh1=1 & UbcH10=1 & Skp2=1) | (CycD=1 & Rb=0 & E2F=0 & CycE=1 & CycA=0 & CycB=0 & p27=1 & Cdc20=1 & Cdh1=1 & UbcH10=1 & Skp2=1) | (CycD=1 & Rb=1 & E2F=0 & CycE=1 & CycA=0 & CycB=0 & p27=1 & Cdc20=1 & Cdh1=1 & UbcH10=1 & Skp2=1) | (CycD=1 & Rb=0 & E2F=1 & CycE=1 & CycA=0 & CycB=0 & p27=1 & Cdc20=1 & Cdh1=1 & UbcH10=1 & Skp2=1) | (CycD=1 & Rb=1 & E2F=1 & CycE=1 & CycA=0 & CycB=0 & p27=1 & Cdc20=1 & Cdh1=1 & UbcH10=1 & Skp2=1) | (CycD=1 & Rb=0 & E2F=0 & CycE=0 & CycA=0 & CycB=1 & p27=1 & Cdc20=1 & Cdh1=1 & UbcH10=1 & Skp2=1) | (CycD=1 & Rb=1 & E2F=0 & CycE=0 & CycA=0 & CycB=1 & p27=1 & Cdc20=1 & Cdh1=1 & UbcH10=1 & Skp2=1) | (CycD=1 & Rb=0 & E2F=1 & CycE=0 & CycA=0 & CycB=1 & p27=1 & Cdc20=1 & Cdh1=1 & UbcH10=1 & Skp2=1) | (CycD=1 & Rb=1 & E2F=1 & CycE=0 & CycA=0 & CycB=1 & p27=1 & Cdc20=1 & Cdh1=1 & UbcH10=1 & Skp2=1) | (CycD=1 & Rb=0 & E2F=0 & CycE=1 & CycA=0 & CycB=1 & p27=1 & Cdc20=1 & Cdh1=1 & UbcH10=1 & Skp2=1) | (CycD=1 & Rb=1 & E2F=0 & CycE=1 & CycA=0 & CycB=1 & p27=1 & Cdc20=1 & Cdh1=1 & UbcH10=1 & Skp2=1) | (CycD=1 & Rb=0 & E2F=1 & CycE=1 & CycA=0 & CycB=1 & p27=1 & Cdc20=1 & Cdh1=1 & UbcH10=1 & Skp2=1) | (CycD=1 & Rb=1 & E2F=1 & CycE=1 & CycA=0 & CycB=1 & p27=1 & Cdc20=1 & Cdh1=1 & UbcH10=1 & Skp2=1);
+
+-- Sequence 1
+--INIT CycE=0 & CycA=0 & CycB=0  & Cycle1 & Rb=1 & p27=1 & Cdh1=1 & Cdc20=0 & UbcH10=0 & Cdc20=0 & E2F=0; SPEC !E[(CycE=0 & CycA=0 & CycB=0  & Cycle1) U ( CycE=1 & CycA=0 & CycB=0  & Cycle1 & E[( CycE=1 & CycA=0 & CycB=0  & Cycle1) U ( CycE=1 & CycA=1 & CycB=0  & Cycle1 & E[( CycE=1 & CycA=1 & CycB=0  & Cycle1) U ( CycE=0 & CycA=1 & CycB=0  & Cycle1 & E[( CycE=0 & CycA=1 & CycB=0  & Cycle1) U ( CycE=0 & CycA=1 & CycB=1  & Cycle1 & E[( CycE=0 & CycA=1 & CycB=1  & Cycle1) U ( CycE=0 & CycA=0 & CycB=1  & Cycle1 & E[( CycE=0 & CycA=0 & CycB=1  & Cycle1) U ( CycE=0 & CycA=0 & CycB=0  & Cycle1)])])])])])];
+
+-- Sequence 2
+--INIT CycD=1 & Rb=1 & E2F=0 & CycE=0 & CycA=0 & CycB=0 & Cdh1=1 & Cdc20=0 & UbcH10=0 & p27=1 & Skp2=1  & Cycle1; SPEC !E[(CycD=1 & Rb=1 & E2F=0 & CycE=0 & CycA=0 & CycB=0 & Cdh1=1 & Cdc20=0 & UbcH10=0 & p27=1 & Skp2=1  & Cycle1) U ( CycD=1 & Rb=1 & E2F=1 & CycE=0 & CycA=0 & CycB=0 & Cdh1=1 & Cdc20=0 & UbcH10=0 & p27=1 & Skp2=1  & Cycle1 & E[( CycD=1 & Rb=1 & E2F=1 & CycE=0 & CycA=0 & CycB=0 & Cdh1=1 & Cdc20=0 & UbcH10=0 & p27=1 & Skp2=1  & Cycle1) U ( CycD=1 & Rb=1 & E2F=1 & CycE=1 & CycA=0 & CycB=0 & Cdh1=1 & Cdc20=0 & UbcH10=0 & p27=1 & Skp2=1  & Cycle1 & E[( CycD=1 & Rb=1 & E2F=1 & CycE=1 & CycA=0 & CycB=0 & Cdh1=1 & Cdc20=0 & UbcH10=0 & p27=1 & Skp2=1  & Cycle1) U ( CycD=1 & Rb=1 & E2F=1 & CycE=1 & CycA=0 & CycB=0 & Cdh1=1 & Cdc20=0 & UbcH10=0 & p27=0 & Skp2=1  & Cycle1 & E[( CycD=1 & Rb=1 & E2F=1 & CycE=1 & CycA=0 & CycB=0 & Cdh1=1 & Cdc20=0 & UbcH10=0 & p27=0 & Skp2=1  & Cycle1) U ( CycD=1 & Rb=0 & E2F=1 & CycE=1 & CycA=0 & CycB=0 & Cdh1=1 & Cdc20=0 & UbcH10=0 & p27=0 & Skp2=1  & Cycle1 & E[( CycD=1 & Rb=0 & E2F=1 & CycE=1 & CycA=0 & CycB=0 & Cdh1=1 & Cdc20=0 & UbcH10=0 & p27=0 & Skp2=1  & Cycle1) U ( CycD=1 & Rb=0 & E2F=1 & CycE=1 & CycA=1 & CycB=0 & Cdh1=1 & Cdc20=0 & UbcH10=0 & p27=0 & Skp2=1  & Cycle1 & E[( CycD=1 & Rb=0 & E2F=1 & CycE=1 & CycA=1 & CycB=0 & Cdh1=1 & Cdc20=0 & UbcH10=0 & p27=0 & Skp2=1  & Cycle1) U ( CycD=1 & Rb=0 & E2F=1 & CycE=1 & CycA=1 & CycB=0 & Cdh1=0 & Cdc20=0 & UbcH10=0 & p27=0 & Skp2=1  & Cycle1 & E[( CycD=1 & Rb=0 & E2F=1 & CycE=1 & CycA=1 & CycB=0 & Cdh1=0 & Cdc20=0 & UbcH10=0 & p27=0 & Skp2=1  & Cycle1) U ( CycD=1 & Rb=0 & E2F=0 & CycE=1 & CycA=1 & CycB=0 & Cdh1=0 & Cdc20=0 & UbcH10=0 & p27=0 & Skp2=1  & Cycle1 & E[( CycD=1 & Rb=0 & E2F=0 & CycE=1 & CycA=1 & CycB=0 & Cdh1=0 & Cdc20=0 & UbcH10=0 & p27=0 & Skp2=1  & Cycle1) U ( CycD=1 & Rb=0 & E2F=0 & CycE=0 & CycA=1 & CycB=0 & Cdh1=0 & Cdc20=0 & UbcH10=0 & p27=0 & Skp2=1  & Cycle1 & E[( CycD=1 & Rb=0 & E2F=0 & CycE=0 & CycA=1 & CycB=0 & Cdh1=0 & Cdc20=0 & UbcH10=0 & p27=0 & Skp2=1  & Cycle1) U ( CycD=1 & Rb=0 & E2F=0 & CycE=0 & CycA=1 & CycB=1 & Cdh1=0 & Cdc20=0 & UbcH10=0 & p27=0 & Skp2=1  & Cycle1 & E[( CycD=1 & Rb=0 & E2F=0 & CycE=0 & CycA=1 & CycB=1 & Cdh1=0 & Cdc20=0 & UbcH10=0 & p27=0 & Skp2=1  & Cycle1) U ( CycD=1 & Rb=0 & E2F=0 & CycE=0 & CycA=1 & CycB=1 & Cdh1=0 & Cdc20=0 & UbcH10=1 & p27=0 & Skp2=1  & Cycle1 & E[( CycD=1 & Rb=0 & E2F=0 & CycE=0 & CycA=1 & CycB=1 & Cdh1=0 & Cdc20=0 & UbcH10=1 & p27=0 & Skp2=1  & Cycle1) U ( CycD=1 & Rb=0 & E2F=0 & CycE=0 & CycA=1 & CycB=1 & Cdh1=0 & Cdc20=1 & UbcH10=1 & p27=0 & Skp2=1  & Cycle1 & E[( CycD=1 & Rb=0 & E2F=0 & CycE=0 & CycA=1 & CycB=1 & Cdh1=0 & Cdc20=1 & UbcH10=1 & p27=0 & Skp2=1  & Cycle1) U ( CycD=1 & Rb=0 & E2F=0 & CycE=0 & CycA=0 & CycB=1 & Cdh1=0 & Cdc20=1 & UbcH10=1 & p27=0 & Skp2=1  & Cycle1 & E[( CycD=1 & Rb=0 & E2F=0 & CycE=0 & CycA=0 & CycB=1 & Cdh1=0 & Cdc20=1 & UbcH10=1 & p27=0 & Skp2=1  & Cycle1) U ( CycD=1 & Rb=0 & E2F=0 & CycE=0 & CycA=0 & CycB=0 & Cdh1=0 & Cdc20=1 & UbcH10=1 & p27=0 & Skp2=1  & Cycle1 & E[( CycD=1 & Rb=0 & E2F=0 & CycE=0 & CycA=0 & CycB=0 & Cdh1=0 & Cdc20=1 & UbcH10=1 & p27=0 & Skp2=1  & Cycle1) U ( CycD=1 & Rb=0 & E2F=0 & CycE=0 & CycA=0 & CycB=0 & Cdh1=0 & Cdc20=0 & UbcH10=1 & p27=0 & Skp2=1  & Cycle1 & E[( CycD=1 & Rb=0 & E2F=0 & CycE=0 & CycA=0 & CycB=0 & Cdh1=0 & Cdc20=0 & UbcH10=1 & p27=0 & Skp2=1  & Cycle1) U ( CycD=1 & Rb=0 & E2F=0 & CycE=0 & CycA=0 & CycB=0 & Cdh1=0 & Cdc20=0 & UbcH10=1 & p27=1 & Skp2=1  & Cycle1 & E[( CycD=1 & Rb=0 & E2F=0 & CycE=0 & CycA=0 & CycB=0 & Cdh1=0 & Cdc20=0 & UbcH10=1 & p27=1 & Skp2=1  & Cycle1) U ( CycD=1 & Rb=1 & E2F=0 & CycE=0 & CycA=0 & CycB=0 & Cdh1=0 & Cdc20=0 & UbcH10=1 & p27=1 & Skp2=1  & Cycle1 & E[( CycD=1 & Rb=1 & E2F=0 & CycE=0 & CycA=0 & CycB=0 & Cdh1=0 & Cdc20=0 & UbcH10=1 & p27=1 & Skp2=1  & Cycle1) U ( CycD=1 & Rb=1 & E2F=0 & CycE=0 & CycA=0 & CycB=0 & Cdh1=1 & Cdc20=0 & UbcH10=1 & p27=1 & Skp2=1 & Cycle1)])])])])])])])])])])])])])])])])];
+
+-- Sequence 3
+--INIT CycE=0 & CycA=0 & CycB=0  & Cycle1 & Rb=1 & p27=1 & Cdh1=1 & Cdc20=0 & UbcH10=0 & Cdc20=0 & E2F=0; SPEC !E[(CycE=0 & CycA=0 & CycB=0  & Cycle1) U ( CycE=1 & CycA=0 & CycB=0  & Cycle1 & E[( CycE=1 & CycA=0 & CycB=0  & Cycle1) U ( CycE=1 & CycA=1 & CycB=0  & Cycle1 & E[( CycE=1 & CycA=1 & CycB=0  & Cycle1) U ( CycE=0 & CycA=1 & CycB=0  & Cycle1 & E[( CycE=0 & CycA=1 & CycB=0  & Cycle1) U ( CycE=1 & CycA=1 & CycB=0  & Cycle1)])])])];
+
+-- Sequence 4
+--INIT CycE=0 & CycA=0 & CycB=0  & Cycle1 & Rb=1 & p27=1 & Cdh1=1 & Cdc20=0 & UbcH10=0 & Cdc20=0 & E2F=0; SPEC !E[(CycE=0 & CycA=0 & CycB=0  & Cycle1) U ( CycE=1 & CycA=0 & CycB=0  & Cycle1 & E[( CycE=1 & CycA=0 & CycB=0  & Cycle1) U ( CycE=1 & CycA=1 & CycB=0  & Cycle1 & E[( CycE=1 & CycA=1 & CycB=0  & Cycle1) U ( CycE=0 & CycA=1 & CycB=0  & Cycle1 & E[( CycE=0 & CycA=1 & CycB=0  & Cycle1) U ( CycE=0 & CycA=1 & CycB=1  & Cycle1 & E[( CycE=0 & CycA=1 & CycB=1  & Cycle1) U ( CycE=0 & CycA=0 & CycB=1  & Cycle1 & E[( CycE=0 & CycA=0 & CycB=1  & Cycle1) U ( CycE=0 & CycA=1 & CycB=1  & Cycle1)])])])])])];
+
+-- Sequence 5
+--INIT CycE=0 & CycA=0 & CycB=0  & Cycle1 & Rb=1 & p27=1 & Cdh1=1 & Cdc20=0 & UbcH10=0 & Cdc20=0 & E2F=0; SPEC !E[(CycE=0 & CycA=0 & CycB=0  & Cycle1) U ( CycE=1 & CycA=0 & CycB=0  & Cycle1 & E[( CycE=1 & CycA=0 & CycB=0  & Cycle1) U ( CycE=1 & CycA=1 & CycB=0  & Cycle1 & E[( CycE=1 & CycA=1 & CycB=0  & Cycle1) U ( CycE=0 & CycA=1 & CycB=0  & Cycle1 & E[( CycE=0 & CycA=1 & CycB=0  & Cycle1) U ( CycE=0 & CycA=1 & CycB=1  & Cycle1 & E[( CycE=0 & CycA=1 & CycB=1  & Cycle1) U ( CycE=0 & CycA=0 & CycB=1  & Cycle1 & E[( CycE=0 & CycA=0 & CycB=1  & Cycle1) U ( CycE=0 & CycA=0 & CycB=0  & Cycle1 & E[( CycE=0 & CycA=0 & CycB=0  & Cycle1) U ( CycE=0 & CycA=0 & CycB=1 & Cycle1)])])])])])])];
+
+-- Sequence 6
+--INIT CycE=0 & CycA=0 & CycB=0  & Cycle1 & Rb=1 & p27=1 & Cdh1=1 & Cdc20=0 & UbcH10=0 & Cdc20=0 & E2F=0; SPEC !E[(CycE=0 & CycA=0 & Cycle1) U ( CycE=0 & CycA=1 & Cycle1 & E[( CycE=0 & CycA=1 & Cycle1) U ( CycE=1 & CycA=1 & Cycle1)])];
+
+-- Sequence 7
+--INIT CycE=0 & CycA=0 & CycB=0  & Cycle1 & Rb=1 & p27=1 & Cdh1=1 & Cdc20=0 & UbcH10=0 & Cdc20=0 & E2F=0; SPEC !E[(CycE=0 & CycA=0 & CycB=0  & Cycle1) U ( CycE=1 & CycA=0 & CycB=0 & Cycle1 & E[( CycE=1 & CycA=0 & CycB=0  & Cycle1) U ( CycE=1 & CycA=1 & CycB=0 & Cycle1 & E[( CycE=1 & CycA=1 & CycB=0  & Cycle1) U ( CycE=1 & CycA=1 & CycB=1 & Cycle1 & E[( CycE=1 & CycA=1 & CycB=1  & Cycle1) U ( CycE=0 & CycA=1 & CycB=1 & Cycle1 & E[( CycE=0 & CycA=1 & CycB=1  & Cycle1) U ( CycE=0 & CycA=0 & CycB=1 & Cycle1 & E[( CycE=0 & CycA=0 & CycB=1  & Cycle1) U ( CycE=0 & CycA=0 & CycB=0 & Cycle1)])])])])])];
+
+-- Sequence 8
+--INIT CycE=0 & CycA=0 & CycB=0  & Cycle1 & Rb=1 & p27=1 & Cdh1=1 & Cdc20=0 & UbcH10=0 & Cdc20=0 & E2F=0; SPEC !E[(CycE=0 & CycA=0 & CycB=0  & Cycle1) U ( CycE=1 & CycA=0 & CycB=0 & Cycle1 & E[( CycE=1 & CycA=0 & CycB=0  & Cycle1) U ( CycE=1 & CycA=0 & CycB=1 & Cycle1 & E[( CycE=1 & CycA=0 & CycB=1  & Cycle1) U ( CycE=1 & CycA=1 & CycB=1 & Cycle1)])])];
+
+-- Sequence 9
+--INIT CycE=0 & CycA=0 & CycB=0  & Cycle1 & Rb=1 & p27=1 & Cdh1=1 & Cdc20=0 & UbcH10=0 & Cdc20=0 & E2F=0; SPEC !E[(CycE=0 & CycA=0 & CycB=0  & Cycle1) U ( CycE=1 & CycA=0 & CycB=0  & Cycle1 & E[( CycE=1 & CycA=0 & CycB=0  & Cycle1) U ( CycE=1 & CycA=1 & CycB=0  & Cycle1 & E[( CycE=1 & CycA=1 & CycB=0  & Cycle1) U ( CycE=0 & CycA=1 & CycB=0  & Cycle1 & E[( CycE=0 & CycA=1 & CycB=0  & Cycle1) U ( CycE=0 & CycA=1 & CycB=1  & Cycle1 & E[( CycE=0 & CycA=1 & CycB=1  & Cycle1) U ( CycE=0 & CycA=1 & CycB=0  & Cycle1 & E[( CycE=0 & CycA=1 & CycB=0  & Cycle1) U ( CycE=0 & CycA=0 & CycB=0  & Cycle1)])])])])])];
+
+-- Sequence 10
+--INIT CycE=0 & CycA=0 & CycB=0  & Cycle1 & Rb=1 & p27=1 & Cdh1=1 & Cdc20=0 & UbcH10=0 & Cdc20=0 & E2F=0; SPEC !E[(CycE=0 & CycA=0 & CycB=0  & Cycle1) U ( CycE=1 & CycA=0 & CycB=0  & Cycle1 & E[( CycE=1 & CycA=0 & CycB=0  & Cycle1) U ( CycE=1 & CycA=1 & CycB=0  & Cycle1 & E[( CycE=1 & CycA=1 & CycB=0  & Cycle1) U ( CycE=0 & CycA=1 & CycB=0  & Cycle1 & E[( CycE=0 & CycA=1 & CycB=0  & Cycle1) U ( CycE=0 & CycA=1 & CycB=1  & Cycle1 & E[( CycE=0 & CycA=1 & CycB=1  & Cycle1) U ( CycE=0 & CycA=0 & CycB=1  & Cycle1 & E[( CycE=0 & CycA=0 & CycB=1  & Cycle1) U ( CycE=1 & CycA=0 & CycB=1  & Cycle1)])])])])])];
+
+-- Sequence 11
+---INIT CycE=0 & CycA=0 & p27=1  & Cycle1 & Rb=1 & CycB=0 & Cdh1=1; SPEC !E[(CycE=0 & CycA=0 & p27=1  & Cycle1) U ( CycE=1 & CycA=0 & p27=1  & Cycle1 & E[( CycE=1 & CycA=0 & p27=1  & Cycle1) U ( CycE=1 & CycA=0 & p27=0  & Cycle1 & E[( CycE=1 & CycA=0 & p27=0  & Cycle1) U ( CycE=1 & CycA=1 & p27=0  & Cycle1 & E[( CycE=1 & CycA=1 & p27=0  & Cycle1) U ( CycE=0 & CycA=1 & p27=0 & Cycle1)])])])];
+
+-- Sequence 12
+---INIT CycE=0 & CycA=0 & p27=1  & Cycle1 & Rb=1 & CycB=0 & Cdh1=1; SPEC !E[(CycE=0 & CycA=0 & p27=1  & Cycle1) U ( CycE=0 & CycA=0 & p27=0  & Cycle1 & E[( CycE=0 & CycA=0 & p27=0  & Cycle1) U ( CycE=1 & CycA=0 & p27=0  & Cycle1 & E[( CycE=1 & CycA=0 & p27=0  & Cycle1) U ( CycE=1 & CycA=1 & p27=0  & Cycle1 & E[( CycE=1 & CycA=1 & p27=0  & Cycle1) U ( CycE=0 & CycA=1 & p27=0 & Cycle1)])])])];
+
+-- Sequence 13
+---INIT CycE=0 & CycA=0 & p27=1  & Cycle1 & Rb=1 & CycB=0 & Cdh1=1; SPEC !E[(CycE=0 & CycA=0 & p27=1  & Cycle1) U ( CycE=1 & CycA=0 & p27=1  & Cycle1 & E[( CycE=1 & CycA=0 & p27=1  & Cycle1) U ( CycE=1 & CycA=1 & p27=1  & Cycle1 & E[( CycE=1 & CycA=1 & p27=1  & Cycle1) U ( CycE=1 & CycA=1 & p27=0  & Cycle1 & E[( CycE=1 & CycA=1 & p27=0  & Cycle1) U ( CycE=0 & CycA=1 & p27=0 & Cycle1)])])])];
+
+-- Sequence 14
+---INIT CycA=1 & CycB=0 & Cdc20=0  & Cycle1 & Rb=0 & Cdh1=0 & p27=0 & Skp2=1 & CycE=0; SPEC !E[(CycA=1 & CycB=0 & Cdc20=0  & Cycle1) U ( CycA=1 & CycB=1 & Cdc20=0  & Cycle1 & E[( CycA=1 & CycB=1 & Cdc20=0  & Cycle1) U ( CycA=1 & CycB=1 & Cdc20=1  & Cycle1 & E[( CycA=1 & CycB=1 & Cdc20=1  & Cycle1) U ( CycA=0 & CycB=1 & Cdc20=1  & Cycle1 & E[( CycA=0 & CycB=1 & Cdc20=1  & Cycle1) U ( CycA=0 & CycB=0 & Cdc20=1  & Cycle1 & E[( CycA=0 & CycB=0 & Cdc20=1  & Cycle1) U ( CycA=0 & CycB=0 & Cdc20=0 & Cycle1)])])])])];
+
+-- Sequence 15
+---INIT CycA=1 & CycB=0 & Cdc20=0  & Cycle1 & Rb=0 & Cdh1=0 & p27=0 & Skp2=1 & CycE=0; SPEC !E[(CycA=1 & CycB=0 & Cdc20=0  & Cycle1) U ( CycA=1 & CycB=1 & Cdc20=0  & Cycle1 & E[( CycA=1 & CycB=1 & Cdc20=0  & Cycle1) U ( CycA=1 & CycB=1 & Cdc20=1  & Cycle1 & E[( CycA=1 & CycB=1 & Cdc20=1  & Cycle1) U ( CycA=0 & CycB=1 & Cdc20=1  & Cycle1 & E[( CycA=0 & CycB=1 & Cdc20=1  & Cycle1) U ( CycA=0 & CycB=1 & Cdc20=0  & Cycle1 & E[( CycA=0 & CycB=1 & Cdc20=0  & Cycle1) U ( CycA=0 & CycB=0 & Cdc20=0 & Cycle1)])])])])];
+
+-- Sequence 16
+---INIT CycA=1 & CycB=0 & Cdc20=0  & Cycle1 & Rb=0 & Cdh1=0 & p27=0 & Skp2=1 & CycE=0; SPEC !E[(CycA=1 & CycB=0 & Cdc20=0  & Cycle1) U ( CycA=1 & CycB=1 & Cdc20=0  & Cycle1 & E[( CycA=1 & CycB=1 & Cdc20=0  & Cycle1) U (CycA=0 & CycB=1 & Cdc20=0  & Cycle1 & E[(CycA=0 & CycB=1 & Cdc20=0  & Cycle1) U ( CycA=0 & CycB=0 & Cdc20=0 & Cycle1)])])];
+
+-- Sequence 17
+---INIT CycA=1 & CycB=0 & Cdc20=0 & Cdh1=0  & Cycle1 & Rb=0 & Cdh1=0 & p27=0 & Skp2=1 & CycE=0; SPEC !E[(CycA=1 & CycB=0 & Cdc20=0 & Cdh1=0  & Cycle1) U ( CycA=1 & CycB=1 & Cdc20=0 & Cdh1=0  & Cycle1 & E[( CycA=1 & CycB=1 & Cdc20=0 & Cdh1=0  & Cycle1) U ( CycA=1 & CycB=1 & Cdc20=1& Cdh1=0   & Cycle1 & E[( CycA=1 & CycB=1 & Cdc20=1& Cdh1=0   & Cycle1) U ( CycA=0 & CycB=1 & Cdc20=1& Cdh1=0   & Cycle1 & E[( CycA=0 & CycB=1 & Cdc20=1& Cdh1=0   & Cycle1) U ( CycA=0 & CycB=0 & Cdc20=1 & Cdh1=0  & Cycle1 & E[( CycA=0 & CycB=0 & Cdc20=1 & Cdh1=0  & Cycle1) U ( CycA=0 & CycB=0 & Cdc20=0 & Cdh1=0 & Cycle1)])])])])];
+
+-- Sequence 18
+---INIT CycA=1 & CycB=0 & Cdc20=0 & UbcH10=0  & Cycle1 & Rb=0 & Cdh1=0 & p27=0 & Skp2=1 & CycE=0; SPEC !E[(CycA=1 & CycB=0 & Cdc20=0 & UbcH10=0  & Cycle1) U ( CycA=1 & CycB=1 & Cdc20=0 & UbcH10=0  & Cycle1 & E[( CycA=1 & CycB=1 & Cdc20=0 & UbcH10=0  & Cycle1) U ( CycA=1 & CycB=1 & Cdc20=1& UbcH10=0   & Cycle1 & E[( CycA=1 & CycB=1 & Cdc20=1& UbcH10=0   & Cycle1) U ( CycA=0 & CycB=1 & Cdc20=1& UbcH10=0   & Cycle1 & E[( CycA=0 & CycB=1 & Cdc20=1& UbcH10=0   & Cycle1) U ( CycA=0 & CycB=0 & Cdc20=1 & UbcH10=0  & Cycle1 & E[( CycA=0 & CycB=0 & Cdc20=1 & UbcH10=0  & Cycle1) U ( CycA=0 & CycB=0 & Cdc20=0 & UbcH10=0 & Cycle1)])])])])];
