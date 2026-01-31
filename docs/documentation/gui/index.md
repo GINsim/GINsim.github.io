@@ -28,7 +28,7 @@ Closing this dialog or activating the ``quit`` button will stop GINsim.
 ### Common quirks
 
 #### Input nodes
-In GINsim, some nodes can be defined as input nodes using a checkbox in the node property panel. These input nodes can not have any incoming interaction or dynamical rule as they have an implicit rule allowing them to always maintain their current activity level. Before setting a node as input, the modeller must thus remove all existing regulator or rule. Likewise, the input status must be removed before adding any new regulator or rule. To delete a logical formula, select it (without editing it) and use the delete key or the contextual menu.
+In GINsim, some nodes can be defined as input nodes using a checkbox in the node property panel. These input nodes cannot have any incoming interaction or dynamical rule as they have an implicit rule allowing them to always maintain their current activity level. Before setting a node as input, the modeller must thus remove all existing regulators or rules. Likewise, the input status must be removed before adding any new regulator or rule. To delete a logical formula, select it (without editing it) and use the delete key or the contextual menu.
 
 
 #### Unexpected dynamical results
@@ -42,7 +42,7 @@ Some refreshing problems may appear after long or complex modeling sessions, sav
 ### Main window
 
 #### The GINsim window
-The main window allows to view a graph, edit its appareance and access to GINsim's main features. This window is divided into three parts:
+The main window allows to view a graph, edit its appearance and access to GINsim's main features. This window is divided into three parts:
 
 - the menu and toolbar on the top;
 - the graph panel, as the main central part; 
@@ -71,12 +71,12 @@ The File menu provides the following options:
 - **Open** to load a graph from a file. This opens a new window unless the current graph is empty.
 - **Recent Files** to open a recently used graph. This submenu lists the last opened graphs.
 - **Merge graph** to open a graph and merge it with the current one. This option works only for regulatory graphs.
-- **Close** to close the current graph. If other windows are opened, it will simply close the current one, otherwise it will last with an empty window.
+- **Close** to close the current graph. If other windows are opened, it will simply close the current one, otherwise it will leave you with an empty window.
 - **Save/Save as** to save the current graph. If the file is new or if the **Save as** option has been selected, a file selection dialog appears which allows to choose the graphical attributes to save: it is possible to save only the structure of the graph, ignoring all graphical attributes, or to save only the position of nodes. The default is to save all graphical attributes (position, size, color, shape...). The graph is saved in the (XML-based) [GINML](index.md#ginsim-format).
-- **Save Subgraph** save the current selection as a new graph.
-- **Export** save the current graph in another format. GINsim can export regulatory and state transition graphs using several generic visualisation formats. These exports only retain the graph structure and visual appearance. The following export formats are available under the File/export submenu: TODO
+- **Save Subgraph** to save the current selection as a new graph.
+- **Export** to save the current graph in another format. GINsim can export regulatory and state transition graphs using several generic visualisation formats. These exports only retain the graph structure and visual appearance. The following export formats are available under the File/export submenu: TODO
 The regulatory graph can additionally be exported into different formats.
-- **Quit** close all graphs and exit the GINsim application.
+- **Quit** to close all graphs and exit the GINsim application.
 
 Some of these actions **New**, **Open** and **Save** are also available from the toolbar.
 
@@ -89,7 +89,7 @@ Some of these actions **New**, **Open** and **Save** are also available from the
 	The drop-down list on the right side allows to select the graphical attributes to save. The **ExtendedSave** checkbox allows to enable or disable extended save (which generates an archive containing the graph and related data).
 
 !!! info
-	If the **extended save** option is selected, the file is saved in an archive (zip file with a .zginml extension) instead of a xml file (with a .ginml extension). This allows to save related data, such as simulation parameters or mutant definitions, along with the model. These files need GINsim 2.3 or later to be opened.
+	If the **extended save** option is selected, the file is saved in an archive (zip file with a .zginml extension) instead of a XML file (with a .ginml extension). This allows to save related data, such as simulation parameters or mutant definitions, along with the model. These files need GINsim 2.3 or later to be opened.
 
 
 #### Edit menu
@@ -104,10 +104,10 @@ Some of these actions **New**, **Open** and **Save** are also available from the
 The edit menu offers classical **Copy**/**Paste** entries.
 
 - Regulatory graph elements can be copied and pasted from one GINsim window to another.
-- Pasted elements are automatically selected to ease their move.
+- Pasted elements are automatically selected to ease their movement.
 - The **Copy** action does not test selected interactions, it will automatically select ALL interactions between selected genes.
 - The identifiers of pasted genes are postfixed to avoid naming conflicts.
-- Logical parameters are also copied and cleaned up: logical parameters involving not-copied nodes are suppressed. The resulting graph is consistent but the new parameters may need to be checked.
+- Logical parameters are also copied and cleaned up: logical parameters involving non-copied nodes are suppressed. The resulting graph is consistent but the new parameters may need to be checked.
 
 !!! warning
 	**Copy**/**Paste** actions are specific to GINsim: copying the graph and pasting it into an external application is not supported. These actions are only available for regulatory graphs.
@@ -132,8 +132,8 @@ Currently available actions are:
 	- [Graph layouts](index.md#graph-layouts);
 	- determination of the [Strongly Connected Components (SCC)](index.md#strongly-connected-components-graph) of a graph;
 - for regulatory graphs:
-	- [The simulation](index.md#simulation) (i.e. computation of a state transition graph);
-	- analyse of the [Circuit analysis](index.md#circuit-analysis);
+	- [The simulation](index.md#simulation) (i.e., computation of a state transition graph);
+	- analysis of the [Circuit analysis](index.md#circuit-analysis);
 	- determination of [Stable states](index.md#stable-state-search);
 - for state transition graphs:
 	- [path search](index.md#find-path);
