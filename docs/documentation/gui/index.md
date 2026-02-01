@@ -49,19 +49,37 @@ The main window allows to view a graph, edit its appearance and access to GINsim
 - the secondary panel on the bottom.
 
 !!! example "The main window of GINsim"
-	![The main window of GINsim](gui/mainWindow.png)
+	![The main window of GINsim](gui/mainWindow2026.png)
 
 	The main window of GINsim, featuring an empty model.
+
 
 #### Graph view
 
 see the [graph page](index.md#state-transition-graphs) or merge its content here?
 
 
+#### Edit toolbar
+
+!!! example "The Edit toolbar"
+	![The Edit menu](gui/editToolbar2026.png)
+	
+	The edit toolbar is composed of a few buttons enabling the user to create a new model.
+
+
+#### GINsim menu
+
+!!! example "GINsim menu"
+	![File menu](gui/GINsimMenu2026.png)
+	
+!!! warning
+	TODO: check and complete	
+
+
 #### File menu
 
 !!! example "File menu"
-	![File menu](gui/fileMenu.png)
+	![File menu](gui/fileMenu2026.png)
 
 	The File menu offers all the classical options to open/save a file, to open/close a window, and to quit the application.
 
@@ -82,7 +100,7 @@ Some of these actions **New**, **Open** and **Save** are also available from the
 
 
 !!! example "The Save dialog"
-	![The save dialog](gui/saving.png)
+	![The save dialog](gui/saving2026.png)
 
 	The Java **Save** dialog allows to browse and create folders, as well as to choose their location.
 	By default, only folders and GINML files are shown; other files can be seen by removing the **GINML Files** filter.
@@ -92,14 +110,31 @@ Some of these actions **New**, **Open** and **Save** are also available from the
 	If the **extended save** option is selected, the file is saved in an archive (zip file with a .zginml extension) instead of a XML file (with a .ginml extension). This allows to save related data, such as simulation parameters or mutant definitions, along with the model. These files need GINsim 2.3 or later to be opened.
 
 
-#### Edit menu
+#### View menu
 
-!!! example "The Edit menu"
-	![The Edit menu](gui/editMenu.png)
+!!! warning
+	TODO: check and complete
+	
+!!! example "The View menu"
+	![The View menu](gui/viewMenu2026.png)
 
-	The Edit menu allows the selection of some editing options. It is composed of three sections: copy/paste, graph editing tools and selection management.
+Different actions can be performed from this menu on all types of graph.
+- [Graph layouts](index.md#graph-layouts);
+	- Level Layout (with or without inversion)
+	- Ring Layout (with or without inversion)
+- Zoom in/out/reset/fit in window
 
-##### Copy/paste
+#### Graph menu
+
+!!! warning
+	TODO: check and complete
+	
+!!! example "The Graph menu"
+	![The Edit menu](gui/graphMenu2026.png)
+	
+	The Graph menu allows --the selection of some editing options-- (NOT ACCURATE ANYMORE). It is composed of three sections: copy/paste, selection management and other actions on the logical regulatory graph.
+
+##### Copy/paste menu section
 
 The edit menu offers classical **Copy**/**Paste** entries.
 
@@ -111,26 +146,41 @@ The edit menu offers classical **Copy**/**Paste** entries.
 
 !!! warning
 	**Copy**/**Paste** actions are specific to GINsim: copying the graph and pasting it into an external application is not supported. These actions are only available for regulatory graphs.
-
-
-#### Actions menu
+	
+##### Selection and search menu section
 
 !!! warning
-	TODO: replace this all with a short note and point to the relevant index pages?
+	TODO: check and complete
 
-!!! example "The Actions menu"
-	![The Actions menu](gui/actionMenu.png)
+##### Actions menu section
 
-	The Action menu for a regulatory graph.
-
-	
 Different actions can be performed from this menu, depending on the type of graph.
 Individual actions are detailed in the relevant part of this manual.
 Currently available actions are:
 
 - for all graphs:
-	- [Graph layouts](index.md#graph-layouts);
 	- determination of the [Strongly Connected Components (SCC)](index.md#strongly-connected-components-graph) of a graph;
+	- coputation of the local graph;
+	- colouring the regulatory graph, depending on the state of each regulator;
+	- colouring of the Strongly Connected Components graph.
+
+!!! warning
+	TODO: check and complete, is it true for all graphs ?
+
+#### Tools menu
+
+!!! warning
+	TODO: replace this all with a short note and point to the relevant index pages?
+
+!!! example "The Actions menu"
+	![The Actions menu](gui/toolsMenu2026.png)
+
+	The Action menu for a regulatory graph.
+	
+Different actions can be performed from this menu, depending on the type of graph.
+Individual actions are detailed in the relevant part of this manual.
+Currently available actions are:
+
 - for regulatory graphs:
 	- [The simulation](index.md#simulation) (i.e., computation of a state transition graph);
 	- analysis of the [Circuit analysis](index.md#circuit-analysis);
@@ -139,6 +189,8 @@ Currently available actions are:
 	- [path search](index.md#find-path);
 	- [stg animator](index.md#the-stg-animator) graphical path construction (animation);
 
+!!! warning
+	TODO: check and complete
 
 #### The secondary panel
 
