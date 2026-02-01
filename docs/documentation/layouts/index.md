@@ -1,6 +1,6 @@
 
-The "layout submenu of the "view" menu provides some tools to place graph components automatically.
-These layout tools are mostly useful for graphs computed by GINsim, such as  state transition graphs.
+The "Layout submenu of the "View" menu provides some tools to place graph components automatically.
+These layout tools are mostly useful for graphs computed by GINsim, such as state transition graphs.
 Note that GINsim only offers very simple layout tools. For complex cases,
 dedicated tools such as graphviz or cytoscape can provide much better results.
 The following layouts are available:
