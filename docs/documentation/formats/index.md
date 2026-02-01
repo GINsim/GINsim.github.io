@@ -6,7 +6,7 @@ The Z-GINML format (also denoted **extended save**), is a zip archive containing
 The **GINML** format is an extension of the [GXL (Graph eXchange Language)](http://www.gupro.de/GXL) format. This extension comprises new attributes and subelements for elements node and edge, and an additional element called parameter.
 
 element node
-a new attribute basevalue corresponds to the "based level of expression" of the corresponding component (default value 0). In other words, it is the value of the logical parameter corresponding to the case where none of the incoming interactions if functional. New subelements within a node:
+a new attribute basevalue corresponds to the "base level of expression" of the corresponding component (default value 0). In other words, it is the value of the logical parameter corresponding to the case where none of the incoming interactions is functional. New subelements within a node:
 
 a list of elements parameter corresponding to the user defined logical parameters for this node
 
@@ -30,7 +30,7 @@ This extra data is stored in its own entry inside ZGINML files.
 ### Export graph view
 
 The graph view can be exported as an image in the PNG format.
-This export considers only the visual appareance of the graph,
+This export considers only the visual appearance of the graph,
 and can thus be applied to all types of graph in GINsim.
 
 The view can also be exported in the 
@@ -219,7 +219,7 @@ This export was implemented in GINsim 3.0. Further information is available in [
 Regulatory graphs can be exported into discrete <!-- TODO: check nomenclature with claudine -->
 Petri net using the rewriting method described in [@Chaouiya2006].
 
-In the "File -> Export" menu, a "Petri Net" submenu permits to choose one of three supported Petri net representations: INA, PNML and APNN.
+In the "File -> Export" menu, a "Petri Net" submenu allows to choose one of three supported Petri net representations: INA, PNML and APNN.
 Choosing any of these representations, opens a configuration dialog box which presents a list of options to be considered in the export.
 These include modifications such as model perturbations or reductions, or the definition of a set of initial states.
 
