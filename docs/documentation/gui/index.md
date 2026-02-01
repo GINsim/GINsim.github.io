@@ -160,7 +160,7 @@ Currently available actions are:
 
 - for all graphs:
 	- determination of the [Strongly Connected Components (SCC)](index.md#strongly-connected-components-graph) of a graph;
-	- coputation of the local graph;
+	- computation of the local graph; (MISMATCH between tooltip "Compute the local graphs" and menu item "Highlight local graph")
 	- colouring the regulatory graph, depending on the state of each regulator;
 	- colouring of the Strongly Connected Components graph.
 
