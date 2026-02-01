@@ -3,9 +3,9 @@
 
 A [Strongly Connected Component (SCC)](http://en.wikipedia.org/wiki/Strongly_connected_component)
 in a graph is a maximal subgraph such that all its components are strongly
-connected. Each SCC can either a single node or a set of intertwined cycles
+connected. Each SCC can be either a single node or a set of intertwined cycles
 of the original graph.
-The SCC graph is a derived graph in which each node represent one of the SCC
+The SCC graph is a derived graph in which each node represents one of the SCC
 of the original graph.	This acyclic graph provides a simplified representation
 of the organisation of the original graph. This graph is thus often much more compact.
 
@@ -32,7 +32,7 @@ also be applied to Regulatory Graphs (or more formally to any type of graphs).
 
 #### Extract from SCC graph
 
-After computing the SCC graph, another tool enables to recover the subgraph
+After computing the SCC graph, another tool allows to recover the subgraph
 of the original graph corresponding to the selected nodes in the SCC graph.
 
 To use it, select some nodes in a SCC graph and run the ``Extract subgraph``
@@ -124,7 +124,7 @@ the model, especially in the case of model perturbations.
 #### Usage
 
 The ``Circuits Functionality`` entry of the ``Action`` menu opens the circuit
-analysis dialog. This dialog provides a interface to lookup all circuits in the
+analysis dialog. This dialog provides an interface to lookup all circuits in the
 regulatory graph or a subset of circuits matching some filtering rules (length,
 involved components).
 
@@ -132,7 +132,7 @@ involved components).
 !!! example "Select regulatory circuits for analysis"
     ![Select regulatory circuits for analysis](analyses/circuitsConfig.png)
 
-    A first dialog enables to select which circuits will be analysed, by specifying constraints on the length of the circuits or on the involved actors. By default all circuits are considered.
+    A first dialog allows to select which circuits will be analysed, by specifying constraints on the length of the circuits or on the involved actors. By default all circuits are considered.
 
 
 The dialog then allows to analyse the selected circuits, it will then show the circuit for which a **functionality context** was found.
