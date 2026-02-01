@@ -2,7 +2,7 @@
 ### Welcome dialog
 Upon launch, GINsim will present the ``Welcome`` dialog box below.
 
-![Welcome](gui/welcome.png)
+![Welcome](gui/welcome2025.png)
 
 
 The ``New model`` action will create a new [Regulatory Graph](index.md#logical-regulatory-graph),
