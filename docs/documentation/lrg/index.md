@@ -14,7 +14,7 @@ For a more formal definition see [@Naldi2011] or [@Thieffry2007].
 ### Structure of the LRG
 Regulatory graphs can be interactively modified: components and interactions
 can be added, edited and removed. The interaction with the graph view is 
-controled by an editing mode selected through the following buttons available
+controlled by an editing mode selected through the following buttons available
 on the toolbar on the top:
 
 
@@ -97,7 +97,7 @@ When a single interaction arc is selected, the ``Modelling Attributes`` tab allo
 
 
 Depending on a component's activity level, different effects might occur on another
-component. These different effects are controled by the definition of different 
+component. These different effects are controlled by the definition of different 
 ranges listed on the left.
 
 * The "+" button creates an additional interaction range.
@@ -182,14 +182,14 @@ To **modify** the active interactions for an exiting parameter, select the corre
 !!! info
     It is not possible to select the ``Input`` checkbox whenever a component has incoming interactions.
     
-    Similarly, if the ``Input`` checkbox is selected, logical parameters can not be defined and the component is considered to have an implicit self-activation.
+    Similarly, if the ``Input`` checkbox is selected, logical parameters cannot be defined and the component is considered to have an implicit self-activation.
 
 
 
 #### Logical functions
 
 
-The dynamical behaviour of a given compoenent can also be specified through the use of logical functions. These function are, for certain cases, a more convenient manner to define complex behaviours with many regulators.
+The dynamical behaviour of a given component can also be specified through the use of logical functions. These function are, for certain cases, a more convenient manner to define complex behaviours with many regulators.
 The definition of a logical function will generate the corresponding logical parameters automatically.
 
 !!! info
@@ -204,7 +204,7 @@ The definition of a logical function will generate the corresponding logical par
 
 To define a new logical function, select the ``Down arrow``, specify a target value for the function, and select subsequent ``Down arrow``.
 You can then press the ``E`` button to start editing the logical function (line color changes to green).
-The after insertion of the logical function press ``Enter`` to validate the expression and automatically create the corresponding logical parameters.
+After insertion of the logical function press ``Enter`` to validate the expression and automatically create the corresponding logical parameters.
 
 The parser for logical functions accepts the logical AND and OR with the symbols ``&`` and ``|``, respectively. Additionally, you can add parentheses to prioritize logical operations.
 
@@ -230,7 +230,7 @@ available when the selection is empty.
 
 
 Some shortcuts are provided for linking to entries in online databases.
-For exemple, ``pubmed:19426782`` will open http://www.ncbi.nlm.nih.gov/pubmed/19426782.
+For example, ``pubmed:19426782`` will open http://www.ncbi.nlm.nih.gov/pubmed/19426782.
 This relies on the [identifiers.org webservice](http://identifiers.org).
 
 
@@ -291,7 +291,7 @@ This enables the definition of simple perturbations where the activity level of 
     The definition of more subtle perturbations (conditional knockouts...) still requires the modifications of the logical parameters. We plan to add convenient means to define other types of perturbations in the future.
 
 !!! info
-    Simple perturbations can not be duplicated: when trying to add a simple perturbation that is already defined, nothing will happen.
+    Simple perturbations cannot be duplicated: when trying to add a simple perturbation that is already defined, nothing will happen.
 
 
 
@@ -320,7 +320,7 @@ by mapping each multivalued component on a group of Boolean variables. The
 resulting Boolean model generates the same dynamical behaviour as the original
 multivalued model.
 
-bioLQM uses the mapping originaly proposed by van Ham, in which a component
+bioLQM uses the mapping originally proposed by van Ham, in which a component
 associated with the maximal value ``m`` will be mapped on ``m`` Boolean components.
 For example, a component taking the values ``0`, ``1``, ``2``, and ``3`` will be
 encoded as ``000``, ``100``, ``110``, and ``111``.
@@ -348,7 +348,7 @@ enabling its programmatic use.
 #### Model reversal
 
 The model reversal tool constructs a model in which the asynchronous successors of a state
-correspond to it's predecessors in the original model.
+correspond to its predecessors in the original model.
 
 Multivalued models are supported through model booleanization,
 with some further transformations to prevent the introduction
@@ -389,14 +389,14 @@ Running the tool leads to the construction of a reduced model where
 the selected components have been removed.
 
 
-Some reductions are not possible (an auto-regulated component can not
+Some reductions are not possible (an auto-regulated component cannot
 be hidden using this method), if a reduction fails, GINsim will show
 an error message, listing the components that could not be hidden and
 proposing to continue with the result of the partial reduction.
 
 
 Note that in some cases, the reduction may only be possible in a precise
-order (but the result does not not change with the order). When blocked,
+order (but the result does not change with the order). When blocked,
 GINsim will try alternate orders for the remaining components, but not 
 for the components which have already been succesfully reduced. In such
 cases, it may be necessary to provide the list of components to reduce in
