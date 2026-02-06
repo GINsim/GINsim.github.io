@@ -50,7 +50,7 @@ This change of order will have an effect throughout GINsim, e.g. in the
 state transition graph, since the same order is used in the states names.
 
 !!! example "Changing component order"
-    ![Changing component order](lrg/node_order.png)
+    ![Changing component order](lrg/node_order2026.png)
 
     The left part of the ``Modelling Attributes`` tab of a regulatory graph lists all components of the model and allows to modify their order. The "up" and "down" buttons move selected components in the list.
 
@@ -75,7 +75,7 @@ tab allows to define its properties:
 
 
 !!! example "Attributes of a component"
-    ![Attributes of a component](lrg/geneConfig.png)
+    ![Attributes of a component](lrg/geneConfig2026.png)
     
     Properties of the gene Cro, as defined in the **lambda4** model.
 
@@ -91,7 +91,7 @@ When a single interaction arc is selected, the ``Modelling Attributes`` tab allo
 
 
 !!! example "Properties of an interaction arc"
-    ![Properties of an interaction arc](lrg/interactionConfig.png)
+    ![Properties of an interaction arc](lrg/interactionConfig2026.png)
 
     Properties of the Cro-N interaction in the **lambda4** model.
 
@@ -162,7 +162,7 @@ to the definition of logical parameters is divided into three parts:
 
 
 !!! example "Definition of non zero parameters for CI"
-    ![Definition of non zero parameters for CI](lrg/configuredInteraction.png)
+    ![Definition of non zero parameters for CI](lrg/configuredInteraction2026.png)
 
     The logical parameter panel, showing all parameters for component CI.
 
@@ -197,7 +197,7 @@ The definition of a logical function will generate the corresponding logical par
 
 
 !!! example "Definition of a logical function for CI"
-    ![Definition of a logical function for CI](lrg/logical-functions.png)
+    ![Definition of a logical function for CI](lrg/logical-functions2026.png)
 
     The logical function panel, showing the definition of one logical function at target 1.
 
@@ -221,7 +221,7 @@ An annotation is composed of a textual comment and a numbered list of URIs,
 which can be opened using the ``[i]`` buttons on the left side.
 
 !!! example "The annotation panel"
-    ![The annotation panel](lrg/annotation.png)
+    ![The annotation panel](lrg/annotation2026.png)
     
     The same **Annotation panel** is used for all elements
 supporting notes. This screenshot shows the graph annotations,
@@ -258,7 +258,7 @@ perturbation selection panel.
 
 
 !!! example "Perturbation definition panel"
-    ![Perturbation definition panel](lrg/perturbations.png)
+    ![Perturbation definition panel](lrg/perturbations2026.png)
 
     This edition panel considers two types of perturbations: **simple perturbations** which only affect the activity of a single component, and **multiple perturbations** which group together a list of simple perturbations.
 
@@ -280,7 +280,7 @@ or completely fixed if the range corresponds to a single value.
 
 
 !!! example "Perturbation creation panels"
-    ![Perturbation creation panels](lrg/booleanperturbation.png)
+    ![Perturbation creation panels](lrg/booleanperturbation2026.png)
 
     TODO: add multivalued figure figures/mvaluedperturbation.png
 
