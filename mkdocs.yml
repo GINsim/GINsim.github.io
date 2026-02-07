@@ -104,7 +104,7 @@ plugins:
         node/194.md: models/2015-mammal-cell-fate-gastric-cancer/index.md
         node/191.md: models/2015-mammal-tumor-invasion-migration/index.md
         node/206.md: models/2016-drosophila-mesoderm-specification/index.md
-        model/drosophila_mesoderm: models/2016-drosophila-mesoderm-specification/index.md
+        model/drosophila_mesoderm.md: models/2016-drosophila-mesoderm-specification/index.md
         node/216.md: models/2017-mammal-lymphoid-myeloid-transdifferentiation/index.md
         node/218.md: models/2017-bacterium-asymetric-division/index.md
         model/C_crescentus.md: models/2017-bacterium-asymetric-division/index.md

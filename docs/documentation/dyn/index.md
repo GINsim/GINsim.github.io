@@ -17,7 +17,7 @@ for example as starting point for the [Simulation](index.md#simulation).
 
 
 !!! example "Initial state definition panel"
-    ![Initial state definition panel](dyn/initial_states.png)
+    ![Initial state definition panel](/documentation/dyn/initial_states.png)
 
     Each line in the table of intial states has a name and provides a value or a range for one or more components. Components which are not restricted are denoted by stars ("*") in the table.
 
@@ -47,7 +47,7 @@ This option triggers a dialog box allowing to choose simulation settings.
 
 
 !!! example "Simulation settings"
-    ![Simulation settings](dyn/simulation_config.png)
+    ![Simulation settings](/documentation/dyn/simulation_config.png)
 
     This dialog box allows to configure and run the simulation.
 
@@ -85,7 +85,7 @@ Simulation settings are saved and restored as associated data in <link xref="for
 
 
 !!! example "Perturbation simulation result"
-    ![Perturbation simulation result](dyn/blocking.png)
+    ![Perturbation simulation result](/documentation/dyn/blocking.png)
 
     Result of an asynchronous simulation, where the expression level for Cro has been blocked at 1.
     The state transition graph is the same as the original asynchronous one, but all transitions where Cro leaves this value have been suppressed.
@@ -120,7 +120,7 @@ states generated in a simulation.
 
 
 !!! example "Limitation of the depth in the case of a depth first construction"
-    ![Limitation of the depth in the case of a depth first construction](dyn/stg_depth_limit.png)
+    ![Limitation of the depth in the case of a depth first construction](/documentation/dyn/stg_depth_limit.png)
 
     State transition graph with all reachable states from the state "0111".
     The same simulation with a depth limit set to 2 keeps only the initial state and the nodes at a distance of two or less (i.e. the six white states).
@@ -131,7 +131,7 @@ The limit on the total number of states apply to all simulation modes. Under the
 
 
 !!! example "Limitation of STG size"
-    ![Limitation of STG size](dyn/stg_size_limit.png)
+    ![Limitation of STG size](/documentation/dyn/stg_size_limit.png)
 
     Limitation of the size (depth first and breadth first search construction).
     The limit on the total number of nodes has different effects on depth first and breadth first state transition graphs. These examples show the graph of the figure above [TODO: figure link] limited to 6 states. The first state transition graph was obtained using the depth first construction, whereas the second results from the breadth first one.
@@ -179,7 +179,7 @@ interrupted (for illustration, see :doc:`depth and size limitation <simulation>`
 
 
 !!! example "Construction strategy: synchronous versus asynchronous"
-    ![Construction strategy: synchronous versus asynchronous](dyn/a-sync.png)
+    ![Construction strategy: synchronous versus asynchronous](/documentation/dyn/a-sync.png)
 
     Samples of simulation results for the lambda4 model, applying asynchronous and synchronous strategies to the same initial states (all states where C1=0 and Cro&gt;0). Dotted arcs denote multiple, simultaneous transitions.
 
@@ -222,11 +222,11 @@ the definition of asynchronous update of multiple synchronous classes as well.
 
 
 !!! example "Definition of Priority classes"
-    ![Definition of Priority classes](dyn/priorityClass.png)
+    ![Definition of Priority classes](/documentation/dyn/priorityClass.png)
 
 
 !!! example "Priority Class: example result"
-    ![Priority Class: example result](dyn/dyn_pclass.png)
+    ![Priority Class: example result](/documentation/dyn/dyn_pclass.png)
 
     Example of simulation by priority classes.
     Two priority classes have been created.

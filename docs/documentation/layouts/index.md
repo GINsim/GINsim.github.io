@@ -13,7 +13,7 @@ arc being placed at the top and nodes without any outgoing arc at the bottom.
 
 
 !!! example "Level layout example"
-    ![Level layout example](layouts/levelLayout.png)
+    ![Level layout example](/documentation/layouts/levelLayout.png)
 
 
 ### Ring layout
@@ -22,7 +22,7 @@ Nodes are placed on three concentric rings, source
 nodes at the center, terminal nodes at the periphery.
 
 !!! example "Ring layout example"
-    ![Ring layout example](layouts/ringLayout.png)
+    ![Ring layout example](/documentation/layouts/ringLayout.png)
 
 
 ### STG layouts

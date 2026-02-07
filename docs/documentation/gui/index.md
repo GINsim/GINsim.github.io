@@ -2,7 +2,7 @@
 ### Welcome dialog
 Upon launch, GINsim will present the ``Welcome`` dialog box below.
 
-![Welcome](gui/welcome2026.png)
+![Welcome](/documentation/gui/welcome2026.png)
 
 
 The ``New model`` action will create a new [Regulatory Graph](index.md#logical-regulatory-graph),
@@ -21,7 +21,7 @@ Closing this dialog or activating the ``quit`` button will stop GINsim.
 
 !!! info
 
-    When running GINsim on the command line, it is possible to provide a file to open or to ask for a new model. In this case, the welcome dialog will not be shown. See the [run options](../install/index.md).
+    When running GINsim on the command line, it is possible to provide a file to open or to ask for a new model. In this case, the welcome dialog will not be shown. See the [run options](/install/).
 
 
 
@@ -49,7 +49,7 @@ The main window allows to view a graph, edit its appearance and access to GINsim
 - the secondary panel on the bottom.
 
 !!! example "The main window of GINsim"
-	![The main window of GINsim](gui/mainWindow2026.png)
+	![The main window of GINsim](/documentation/gui/mainWindow2026.png)
 
 	The main window of GINsim, featuring an empty model.
 
@@ -62,7 +62,7 @@ see the [graph page](index.md#state-transition-graphs) or merge its content here
 #### Edit toolbar
 
 !!! example "The Edit toolbar"
-	![The Edit menu](gui/editToolbar2026.png)
+	![The Edit menu](/documentation/gui/editToolbar2026.png)
 	
 	The edit toolbar is composed of a few buttons enabling the user to create a new model.
 
@@ -70,7 +70,7 @@ see the [graph page](index.md#state-transition-graphs) or merge its content here
 #### GINsim menu
 
 !!! example "GINsim menu"
-	![File menu](gui/GINsimMenu2026.png)
+	![File menu](/documentation/gui/GINsimMenu2026.png)
 	
 !!! warning
 	TODO: check and complete	
@@ -79,7 +79,7 @@ see the [graph page](index.md#state-transition-graphs) or merge its content here
 #### File menu
 
 !!! example "File menu"
-	![File menu](gui/fileMenu2026.png)
+	![File menu](/documentation/gui/fileMenu2026.png)
 
 	The File menu offers all the classical options to open/save a file, to open/close a window, and to quit the application.
 
@@ -100,7 +100,7 @@ Some of these actions **New**, **Open** and **Save** are also available from the
 
 
 !!! example "The Save dialog"
-	![The save dialog](gui/saving2026.png)
+	![The save dialog](/documentation/gui/saving2026.png)
 
 	The Java **Save** dialog allows to browse and create folders, as well as to choose their location.
 	By default, only folders and GINML files are shown; other files can be seen by removing the **GINML Files** filter.
@@ -116,7 +116,7 @@ Some of these actions **New**, **Open** and **Save** are also available from the
 	TODO: check and complete
 	
 !!! example "The View menu"
-	![The View menu](gui/viewMenu2026.png)
+	![The View menu](/documentation/gui/viewMenu2026.png)
 
 Different actions can be performed from this menu on all types of graph.
 - [Graph layouts](index.md#graph-layouts);
@@ -130,7 +130,7 @@ Different actions can be performed from this menu on all types of graph.
 	TODO: check and complete
 	
 !!! example "The Graph menu"
-	![The Edit menu](gui/graphMenu2026.png)
+	![The Edit menu](/documentation/gui/graphMenu2026.png)
 	
 	The Graph menu allows --the selection of some editing options-- (NOT ACCURATE ANYMORE). It is composed of three sections: copy/paste, selection management and other actions on the logical regulatory graph.
 
@@ -173,7 +173,7 @@ Currently available actions are:
 	TODO: replace this all with a short note and point to the relevant index pages?
 
 !!! example "The Actions menu"
-	![The Actions menu](gui/toolsMenu2026.png)
+	![The Actions menu](/documentation/gui/toolsMenu2026.png)
 
 	The Action menu for a regulatory graph.
 	
