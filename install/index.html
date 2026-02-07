@@ -611,7 +611,7 @@
   <h1>Installation</h1>
 
 <h2 id="availability-and-requirements">Availability and Requirements<a class="headerlink" href="#availability-and-requirements" title="Permanent link">&para;</a></h2>
-<p>GINsim 3.0 is freely available without guarantees.
+<p>GINsim 3.1 is freely available without guarantees.
 Please contact us for training, other support or dedicated development.
 The GINsim website <a href="https://ginsim.github.io">https://ginsim.github.io</a> provides the latest official version of the software, <a href="../documentation/">documentation</a>, as well as a <a href="../models/">model library</a>.</p>
 <div class="admonition info">
@@ -626,6 +626,12 @@ The GINsim website <a href="https://ginsim.github.io">https://ginsim.github.io</
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>3.1</td>
+<td>Jan 2026</td>
+<td><a href="GINsim-3.1-with-deps.jar">GINsim-3.1-with-deps.jar</a></td>
+<td><a href="ChangeLog-3.1.txt">ChangeLog-3.1.txt</a></td>
+</tr>
 <tr>
 <td>3.0.0b</td>
 <td>Mar 2018</td>
@@ -648,11 +654,10 @@ The GINsim website <a href="https://ginsim.github.io">https://ginsim.github.io</
 </table>
 <p>Or grab the <strong>development version</strong> on GitHub: <a href="https://github.com/GINsim/GINsim/releases/tag/latest">GINsim-SNAPSHOT-jar-with-dependencies.jar</a></p>
 </div>
-<p>GINsim requires Java &gt;=8.
+<p>GINsim 3.1 requires Java &gt;=11.
 You can obtain Java for Linux, Windows, Mac OSX, and Solaris at java.com.
-Note that Apple used to provide its own Java version, newer versions are not supported on OSX 10.6 and older.
-GINsim 2.9.10 is the last version supporting Java 6, and has the same features as GINsim 3.0.</p>
-<p>Some features of GINsim rely on external tools, such as the NuSMV model checker.</p>
+Note that Apple used to provide its own Java version, newer versions are not supported on OSX 10.6 and older.</p>
+<p>Some features of GINsim rely on external tools, such as <code>gnuplot</code> to plot Avatar probabilities.</p>
 <h3 id="running-ginsim">Running GINsim<a class="headerlink" href="#running-ginsim" title="Permanent link">&para;</a></h3>
 <p>Once you have obtained GINsim, you can launch it by double-click or with the command:</p>
 <pre><code class="language-bash">$ java -jar GINsim-#version.jar
