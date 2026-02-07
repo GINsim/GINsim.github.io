@@ -2,6 +2,7 @@ import os
 import yaml
 
 # for processing supporting paper
+from bibtexparser.bparser import BibTexParser
 import bibtexparser
 import latexcodec
 import re
@@ -18,7 +19,8 @@ def decode_latex(s):
 
 # Read the bibliography file on load
 with open('bibliography.bib') as bibfile:
-    bib_database = bibtexparser.load(bibfile)
+    parser = BibTexParser(common_strings=True)
+    bib_database = bibtexparser.load(bibfile, parser=parser)
 bib_entries = {entry["ID"]: entry for entry in bib_database.entries}
 
 def define_env(env):
