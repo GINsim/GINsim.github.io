@@ -1,13 +1,14 @@
 
 ## Availability and Requirements
 
-GINsim 3.0 is freely available without guarantees.
+GINsim 3.1 is freely available without guarantees.
 Please contact us for training, other support or dedicated development.
 The GINsim website [https://ginsim.github.io](https://ginsim.github.io) provides the latest official version of the software, [documentation](../documentation/index.md), as well as a [model library](../models/index.md).
 
 !!! info "Download"
     | Version   | Date        | Download file     | See changelog |
     |-----------|-------------|---------------|-----------|
+    | 3.1    | Jan 2026    | [GINsim-3.1-with-deps.jar](GINsim-3.1-with-deps.jar) | [ChangeLog-3.1.txt](ChangeLog-3.1.txt) |
     | 3.0.0b    | Mar 2018    | [GINsim-3.0.0b-with-deps.jar](GINsim-3.0.0b-with-deps.jar) | [ChangeLog-3.0.0b.txt](ChangeLog-3.0.0b.txt) |
     | 2.4alpha  | Mar 2010    | [GINsim-2.4.jar](GINsim-2.4.jar) | [ChangeLog-2.4.txt](ChangeLog-2.4.txt) |
     | 2.3.1     | Sep 2010    | [GINsim-2.3.1.jar](GINsim-2.3.1.jar) | [ChangeLog-2.3.1.txt](ChangeLog-2.3.1.txt) |
@@ -15,12 +16,11 @@ The GINsim website [https://ginsim.github.io](https://ginsim.github.io) provides
     Or grab the **development version** on GitHub: [GINsim-SNAPSHOT-jar-with-dependencies.jar](https://github.com/GINsim/GINsim/releases/tag/latest)
 
 
-GINsim requires Java >=8.
+GINsim 3.1 requires Java >=11.
 You can obtain Java for Linux, Windows, Mac OSX, and Solaris at java.com.
 Note that Apple used to provide its own Java version, newer versions are not supported on OSX 10.6 and older.
-GINsim 2.9.10 is the last version supporting Java 6, and has the same features as GINsim 3.0.
 
-Some features of GINsim rely on external tools, such as the NuSMV model checker.
+Some features of GINsim rely on external tools, such as `gnuplot` to plot Avatar probabilities.
 
 ### Running GINsim
 Once you have obtained GINsim, you can launch it by double-click or with the command:

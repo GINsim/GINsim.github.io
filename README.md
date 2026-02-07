@@ -33,7 +33,9 @@ Please install the necessary `Python` dependencies:
 pip install mkdocs               # the website static generator
 pip install mkdocs-material      # the site theme
 pip install mkdocs-bibtex        # for bibliography support 
+pip install mkdocs-redirects     # page redirects to support old GINsim website links
 pip install mkdocs-macros-plugin # automatic generation of model repository
+pip install bibtexparser
 ```
 
 ## Running mkdocs
@@ -102,6 +104,6 @@ Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deseru
 
 ### Updating the [https://ginsim.github.io/](https://ginsim.github.io) website
 
-Just commit your files, and the github pages workflow will run `mkdocs` and update the site in a few minutes.
+Just commit your files on the `mkdocs` branch, and the github pages workflow will deploy the website in a couple of minutes.
 You can check the status of the page build and deployment in the [Actions tab](https://github.com/GINsim/GINsim.github.io/actions) of github repository.
 
