@@ -16,11 +16,10 @@ The GINsim website [https://ginsim.github.io](https://ginsim.github.io) provides
     Or grab the **development version** on GitHub: [GINsim-SNAPSHOT-jar-with-dependencies.jar](https://github.com/GINsim/GINsim/releases/tag/latest)
 
 
-GINsim 3.1 requires Java >=11.
-You can obtain Java for Linux, Windows, Mac OSX, and Solaris at java.com.
-Note that Apple used to provide its own Java version, newer versions are not supported on OSX 10.6 and older.
+GINsim 3.1 requires Java >=11 to run.
 
-Some features of GINsim rely on external tools, such as `gnuplot` to plot Avatar probabilities.
+You can obtain Java for Linux, Windows, and Mac OSX, you can download it at [https://adoptium.net/temurin/releases](https://adoptium.net/temurin/releases). If you have an Oracle account, you can also use Java from Oracle.
+
 
 ### Running GINsim
 Once you have obtained GINsim, you can launch it by double-click or with the command:
