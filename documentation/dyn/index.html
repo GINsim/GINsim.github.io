@@ -15,7 +15,7 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
     
     
       
@@ -23,7 +23,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.618322db.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -536,7 +536,7 @@ one state to another (i.e. change of value for one or several components).</p>
 for example as starting point for the <a href="./#simulation">Simulation</a>.</p>
 <div class="admonition example">
 <p class="admonition-title">Initial state definition panel</p>
-<p><img alt="Initial state definition panel" src="dyn/initial_states.png" /></p>
+<p><img alt="Initial state definition panel" src="/documentation/dyn/initial_states.png" /></p>
 <p>Each line in the table of intial states has a name and provides a value or a range for one or more components. Components which are not restricted are denoted by stars ("*") in the table.</p>
 </div>
 <p>Each row of the table corresponds to a set of states, where activity
@@ -558,7 +558,7 @@ through the <code>Run Simulation</code> option of the <code>Action</code> menu.
 This option triggers a dialog box allowing to choose simulation settings.</p>
 <div class="admonition example">
 <p class="admonition-title">Simulation settings</p>
-<p><img alt="Simulation settings" src="dyn/simulation_config.png" /></p>
+<p><img alt="Simulation settings" src="/documentation/dyn/simulation_config.png" /></p>
 <p>This dialog box allows to configure and run the simulation.</p>
 </div>
 <p>This dialog box allows to define simulation settings.
@@ -585,7 +585,7 @@ These updating modes are described in detail in <link xref="tool-simulation-upda
 <h5 id="running-simulations-with-perturbation">Running simulations with perturbation<a class="headerlink" href="#running-simulations-with-perturbation" title="Permanent link">&para;</a></h5>
 <div class="admonition example">
 <p class="admonition-title">Perturbation simulation result</p>
-<p><img alt="Perturbation simulation result" src="dyn/blocking.png" /></p>
+<p><img alt="Perturbation simulation result" src="/documentation/dyn/blocking.png" /></p>
 <p>Result of an asynchronous simulation, where the expression level for Cro has been blocked at 1.
 The state transition graph is the same as the original asynchronous one, but all transitions where Cro leaves this value have been suppressed.
 This state transition graph is now composed of two disconnected parts, with a new stable state.</p>
@@ -610,14 +610,14 @@ In this case, no new search will be triggered for them and the depth counter wil
 </div>
 <div class="admonition example">
 <p class="admonition-title">Limitation of the depth in the case of a depth first construction</p>
-<p><img alt="Limitation of the depth in the case of a depth first construction" src="dyn/stg_depth_limit.png" /></p>
+<p><img alt="Limitation of the depth in the case of a depth first construction" src="/documentation/dyn/stg_depth_limit.png" /></p>
 <p>State transition graph with all reachable states from the state "0111".
 The same simulation with a depth limit set to 2 keeps only the initial state and the nodes at a distance of two or less (i.e. the six white states).</p>
 </div>
 <p>The limit on the total number of states apply to all simulation modes. Under the asynchronous assumption, this limit has slightly different effects on depth first and breadth first search.</p>
 <div class="admonition example">
 <p class="admonition-title">Limitation of STG size</p>
-<p><img alt="Limitation of STG size" src="dyn/stg_size_limit.png" /></p>
+<p><img alt="Limitation of STG size" src="/documentation/dyn/stg_size_limit.png" /></p>
 <p>Limitation of the size (depth first and breadth first search construction).
 The limit on the total number of nodes has different effects on depth first and breadth first state transition graphs. These examples show the graph of the figure above [TODO: figure link] limited to 6 states. The first state transition graph was obtained using the depth first construction, whereas the second results from the breadth first one.</p>
 </div>
@@ -649,7 +649,7 @@ single updating of one gene level.</p>
 interrupted (for illustration, see :doc:<code>depth and size limitation &lt;simulation&gt;</code>).</p>
 <div class="admonition example">
 <p class="admonition-title">Construction strategy: synchronous versus asynchronous</p>
-<p><img alt="Construction strategy: synchronous versus asynchronous" src="dyn/a-sync.png" /></p>
+<p><img alt="Construction strategy: synchronous versus asynchronous" src="/documentation/dyn/a-sync.png" /></p>
 <p>Samples of simulation results for the lambda4 model, applying asynchronous and synchronous strategies to the same initial states (all states where C1=0 and Cro&gt;0). Dotted arcs denote multiple, simultaneous transitions.</p>
 </div>
 <h5 id="priority-classes">Priority classes<a class="headerlink" href="#priority-classes" title="Permanent link">&para;</a></h5>
@@ -684,11 +684,11 @@ are asynchronous, it is thus equivalent to a single larger class, but it allows
 the definition of asynchronous update of multiple synchronous classes as well.</p>
 <div class="admonition example">
 <p class="admonition-title">Definition of Priority classes</p>
-<p><img alt="Definition of Priority classes" src="dyn/priorityClass.png" /></p>
+<p><img alt="Definition of Priority classes" src="/documentation/dyn/priorityClass.png" /></p>
 </div>
 <div class="admonition example">
 <p class="admonition-title">Priority Class: example result</p>
-<p><img alt="Priority Class: example result" src="dyn/dyn_pclass.png" /></p>
+<p><img alt="Priority Class: example result" src="/documentation/dyn/dyn_pclass.png" /></p>
 <p>Example of simulation by priority classes.
 Two priority classes have been created.
 The highest ranked one is synchronous and contains C1, C2 and Cro.
@@ -777,10 +777,10 @@ linear chains of states (in addition to cycles) into single nodes.</p>
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.sections"], "search": "../../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.sections"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
       
         <script src="../../assets/numbered-documentation.js"></script>
       

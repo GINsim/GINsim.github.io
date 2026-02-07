@@ -15,7 +15,7 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
     
     
       
@@ -23,7 +23,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.618322db.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -657,22 +657,22 @@ comprising parameters relative to all regulators of this component.</p>
 <h3 id="structure-of-the-lrg">Structure of the LRG<a class="headerlink" href="#structure-of-the-lrg" title="Permanent link">&para;</a></h3>
 <p>Regulatory graphs can be interactively modified: components and interactions
 can be added, edited and removed. The interaction with the graph view is 
-controled by an editing mode selected through the following buttons available
+controlled by an editing mode selected through the following buttons available
 on the toolbar on the top:</p>
 <p>Available editing modes for regulatory graphs:</p>
 <ul>
-<li><img alt="Edit button" src="lrg/editmode.gif" /> Default editing mode: allows to select and move objects.</li>
+<li><img alt="Edit button" src="/documentation/lrg/editmode.gif" /> Default editing mode: allows to select and move objects.</li>
 <li>
-<p><img alt="Add Node button" src="lrg/insertsquare.gif" />  Component insertion mode: when selected, clicking on the graph panel adds a new component.</p>
+<p><img alt="Add Node button" src="/documentation/lrg/insertsquare.gif" />  Component insertion mode: when selected, clicking on the graph panel adds a new component.</p>
 </li>
 <li>
-<p><img alt="Add positive interaction button" src="lrg/insertpositiveedge.gif" /> <img alt="Add negative interaction button" src="lrg/insertnegativeedge.gif" /> <img alt="Add dual interaction button" src="lrg/insertdualedge.gif" /> <img alt="Add unknown interaction button" src="lrg/insertunknownedge.gif" />  Interaction insertion mode: when selected, interactions are added by first
+<p><img alt="Add positive interaction button" src="/documentation/lrg/insertpositiveedge.gif" /> <img alt="Add negative interaction button" src="/documentation/lrg/insertnegativeedge.gif" /> <img alt="Add dual interaction button" src="/documentation/lrg/insertdualedge.gif" /> <img alt="Add unknown interaction button" src="/documentation/lrg/insertunknownedge.gif" />  Interaction insertion mode: when selected, interactions are added by first
   selecting one component and dragging the selection to (the same or) another
   component. The interactions must be complemented by the definition of the logical
   parameters for the target variable (see below). The four buttons allow to add
   different types of interactions: activation, inhibition, dual or undefined.</p>
 </li>
-<li><img alt="Delete button" src="lrg/edit-delete.png" /> Deletion option: selected items (components or interactions) are deleted.</li>
+<li><img alt="Delete button" src="/documentation/lrg/edit-delete.png" /> Deletion option: selected items (components or interactions) are deleted.</li>
 </ul>
 <div class="admonition info">
 <p class="admonition-title">Info</p>
@@ -692,7 +692,7 @@ This change of order will have an effect throughout GINsim, e.g. in the
 state transition graph, since the same order is used in the states names.</p>
 <div class="admonition example">
 <p class="admonition-title">Changing component order</p>
-<p><img alt="Changing component order" src="lrg/node_order.png" /></p>
+<p><img alt="Changing component order" src="/documentation/lrg/node_order2026.png" /></p>
 <p>The left part of the <code>Modelling Attributes</code> tab of a regulatory graph lists all components of the model and allows to modify their order. The "up" and "down" buttons move selected components in the list.</p>
 </div>
 <div class="admonition info">
@@ -714,7 +714,7 @@ tab allows to define its properties:</p>
 </ul>
 <div class="admonition example">
 <p class="admonition-title">Attributes of a component</p>
-<p><img alt="Attributes of a component" src="lrg/geneConfig.png" /></p>
+<p><img alt="Attributes of a component" src="/documentation/lrg/geneConfig2026.png" /></p>
 <p>Properties of the gene Cro, as defined in the <strong>lambda4</strong> model.</p>
 </div>
 <div class="admonition info">
@@ -726,11 +726,11 @@ The combobox selection list (bottom left) permits to select :doc:<code>annotatio
 <p>When a single interaction arc is selected, the <code>Modelling Attributes</code> tab allows to define its properties.</p>
 <div class="admonition example">
 <p class="admonition-title">Properties of an interaction arc</p>
-<p><img alt="Properties of an interaction arc" src="lrg/interactionConfig.png" /></p>
+<p><img alt="Properties of an interaction arc" src="/documentation/lrg/interactionConfig2026.png" /></p>
 <p>Properties of the Cro-N interaction in the <strong>lambda4</strong> model.</p>
 </div>
 <p>Depending on a component's activity level, different effects might occur on another
-component. These different effects are controled by the definition of different 
+component. These different effects are controlled by the definition of different 
 ranges listed on the left.</p>
 <ul>
 <li>The "+" button creates an additional interaction range.</li>
@@ -783,7 +783,7 @@ to the definition of logical parameters is divided into three parts:</p>
 </ul>
 <div class="admonition example">
 <p class="admonition-title">Definition of non zero parameters for CI</p>
-<p><img alt="Definition of non zero parameters for CI" src="lrg/configuredInteraction.png" /></p>
+<p><img alt="Definition of non zero parameters for CI" src="/documentation/lrg/configuredInteraction2026.png" /></p>
 <p>The logical parameter panel, showing all parameters for component CI.</p>
 </div>
 <p>To <strong>add</strong> a new logical parameter, select the empty line in the list of parameters (the last line),
@@ -797,10 +797,10 @@ Adding a parameter with a set of active interactions that is already defined is 
 <div class="admonition info">
 <p class="admonition-title">Info</p>
 <p>It is not possible to select the <code>Input</code> checkbox whenever a component has incoming interactions.</p>
-<p>Similarly, if the <code>Input</code> checkbox is selected, logical parameters can not be defined and the component is considered to have an implicit self-activation.</p>
+<p>Similarly, if the <code>Input</code> checkbox is selected, logical parameters cannot be defined and the component is considered to have an implicit self-activation.</p>
 </div>
 <h4 id="logical-functions">Logical functions<a class="headerlink" href="#logical-functions" title="Permanent link">&para;</a></h4>
-<p>The dynamical behaviour of a given compoenent can also be specified through the use of logical functions. These function are, for certain cases, a more convenient manner to define complex behaviours with many regulators.
+<p>The dynamical behaviour of a given component can also be specified through the use of logical functions. These function are, for certain cases, a more convenient manner to define complex behaviours with many regulators.
 The definition of a logical function will generate the corresponding logical parameters automatically.</p>
 <div class="admonition info">
 <p class="admonition-title">Info</p>
@@ -808,12 +808,12 @@ The definition of a logical function will generate the corresponding logical par
 </div>
 <div class="admonition example">
 <p class="admonition-title">Definition of a logical function for CI</p>
-<p><img alt="Definition of a logical function for CI" src="lrg/logical-functions.png" /></p>
+<p><img alt="Definition of a logical function for CI" src="/documentation/lrg/logical-functions2026.png" /></p>
 <p>The logical function panel, showing the definition of one logical function at target 1.</p>
 </div>
 <p>To define a new logical function, select the <code>Down arrow</code>, specify a target value for the function, and select subsequent <code>Down arrow</code>.
 You can then press the <code>E</code> button to start editing the logical function (line color changes to green).
-The after insertion of the logical function press <code>Enter</code> to validate the expression and automatically create the corresponding logical parameters.</p>
+After insertion of the logical function press <code>Enter</code> to validate the expression and automatically create the corresponding logical parameters.</p>
 <p>The parser for logical functions accepts the logical AND and OR with the symbols <code>&amp;</code> and <code>|</code>, respectively. Additionally, you can add parentheses to prioritize logical operations.</p>
 <h4 id="annotations">Annotations<a class="headerlink" href="#annotations" title="Permanent link">&para;</a></h4>
 <p>Annotations can be attached to the different components of the regulatory graph:</p>
@@ -826,13 +826,13 @@ The after insertion of the logical function press <code>Enter</code> to validate
 which can be opened using the <code>[i]</code> buttons on the left side.</p>
 <div class="admonition example">
 <p class="admonition-title">The annotation panel</p>
-<p><img alt="The annotation panel" src="lrg/annotation.png" /></p>
+<p><img alt="The annotation panel" src="/documentation/lrg/annotation2026.png" /></p>
 <p>The same <strong>Annotation panel</strong> is used for all elements</p>
 </div>
 <p>supporting notes. This screenshot shows the graph annotations,
 available when the selection is empty.</p>
 <p>Some shortcuts are provided for linking to entries in online databases.
-For exemple, <code>pubmed:19426782</code> will open http://www.ncbi.nlm.nih.gov/pubmed/19426782.
+For example, <code>pubmed:19426782</code> will open http://www.ncbi.nlm.nih.gov/pubmed/19426782.
 This relies on the <a href="http://identifiers.org">identifiers.org webservice</a>.</p>
 <hr />
 <h3 id="lrg-modifications">LRG modifications<a class="headerlink" href="#lrg-modifications" title="Permanent link">&para;</a></h3>
@@ -849,7 +849,7 @@ The panel appears upon activation of the <code>configure</code> button in the
 perturbation selection panel.</p>
 <div class="admonition example">
 <p class="admonition-title">Perturbation definition panel</p>
-<p><img alt="Perturbation definition panel" src="lrg/perturbations.png" /></p>
+<p><img alt="Perturbation definition panel" src="/documentation/lrg/perturbations2026.png" /></p>
 <p>This edition panel considers two types of perturbations: <strong>simple perturbations</strong> which only affect the activity of a single component, and <strong>multiple perturbations</strong> which group together a list of simple perturbations.</p>
 </div>
 <h5 id="simple-perturbations">Simple Perturbations<a class="headerlink" href="#simple-perturbations" title="Permanent link">&para;</a></h5>
@@ -865,7 +865,7 @@ a range slider. Their activity level will be restricted in the selected range,
 or completely fixed if the range corresponds to a single value.</p>
 <div class="admonition example">
 <p class="admonition-title">Perturbation creation panels</p>
-<p><img alt="Perturbation creation panels" src="lrg/booleanperturbation.png" /></p>
+<p><img alt="Perturbation creation panels" src="/documentation/lrg/booleanperturbation2026.png" /></p>
 <p>TODO: add multivalued figure figures/mvaluedperturbation.png</p>
 </div>
 <p>This enables the definition of simple perturbations where the activity level of a component is restricted to the selected value(s).</p>
@@ -875,7 +875,7 @@ or completely fixed if the range corresponds to a single value.</p>
 </div>
 <div class="admonition info">
 <p class="admonition-title">Info</p>
-<p>Simple perturbations can not be duplicated: when trying to add a simple perturbation that is already defined, nothing will happen.</p>
+<p>Simple perturbations cannot be duplicated: when trying to add a simple perturbation that is already defined, nothing will happen.</p>
 </div>
 <h5 id="multiple-perturbations">Multiple Perturbations<a class="headerlink" href="#multiple-perturbations" title="Permanent link">&para;</a></h5>
 <p>The bottom part of the panel lists multiple perturbations.
@@ -896,7 +896,7 @@ Model booleanization allows to convert multi-valued models into Boolean models
 by mapping each multivalued component on a group of Boolean variables. The
 resulting Boolean model generates the same dynamical behaviour as the original
 multivalued model.</p>
-<p>bioLQM uses the mapping originaly proposed by van Ham, in which a component
+<p>bioLQM uses the mapping originally proposed by van Ham, in which a component
 associated with the maximal value <code>m</code> will be mapped on <code>m</code> Boolean components.
 For example, a component taking the values <code>0`,</code>1<code>,</code>2<code>, and</code>3<code>will be
 encoded as</code>000<code>,</code>100<code>,</code>110<code>, and</code>111``.</p>
@@ -915,7 +915,7 @@ The backend is implemented in the
 enabling its programmatic use.</p>
 <h4 id="model-reversal">Model reversal<a class="headerlink" href="#model-reversal" title="Permanent link">&para;</a></h4>
 <p>The model reversal tool constructs a model in which the asynchronous successors of a state
-correspond to it's predecessors in the original model.</p>
+correspond to its predecessors in the original model.</p>
 <p>Multivalued models are supported through model booleanization,
 with some further transformations to prevent the introduction
 of non-admissible successor states.</p>
@@ -941,12 +941,12 @@ configuration dialog in which the user can select the components
 that will be hidden. Several configuration strategies can be defined.
 Running the tool leads to the construction of a reduced model where
 the selected components have been removed.</p>
-<p>Some reductions are not possible (an auto-regulated component can not
+<p>Some reductions are not possible (an auto-regulated component cannot
 be hidden using this method), if a reduction fails, GINsim will show
 an error message, listing the components that could not be hidden and
 proposing to continue with the result of the partial reduction.</p>
 <p>Note that in some cases, the reduction may only be possible in a precise
-order (but the result does not not change with the order). When blocked,
+order (but the result does not change with the order). When blocked,
 GINsim will try alternate orders for the remaining components, but not 
 for the components which have already been succesfully reduced. In such
 cases, it may be necessary to provide the list of components to reduce in
@@ -1042,10 +1042,10 @@ The support for output stripping was added in GINsim 3.0 (see <sup id="fnref:Nal
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.sections"], "search": "../../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.sections"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
       
         <script src="../../assets/numbered-documentation.js"></script>
       

@@ -15,7 +15,7 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
     
     
       
@@ -23,7 +23,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.618322db.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -622,9 +622,9 @@
 <h3 id="strongly-connected-components-graph">Strongly Connected Components graph<a class="headerlink" href="#strongly-connected-components-graph" title="Permanent link">&para;</a></h3>
 <p>A <a href="http://en.wikipedia.org/wiki/Strongly_connected_component">Strongly Connected Component (SCC)</a>
 in a graph is a maximal subgraph such that all its components are strongly
-connected. Each SCC can either a single node or a set of intertwined cycles
+connected. Each SCC can be either a single node or a set of intertwined cycles
 of the original graph.
-The SCC graph is a derived graph in which each node represent one of the SCC
+The SCC graph is a derived graph in which each node represents one of the SCC
 of the original graph.  This acyclic graph provides a simplified representation
 of the organisation of the original graph. This graph is thus often much more compact.</p>
 <p>In GINsim, the graph of the Strongly Connected Components (SCC graph) is often
@@ -636,14 +636,14 @@ option of the <code>Tools</code> menu.
 Note that GINsim also provides the <a href="./#hierarchical-transition-graphs">Hierarchical Transition Graph</a> dedicated to this problem.</p>
 <div class="admonition example">
 <p class="admonition-title">Strongly Connected Components graph</p>
-<p><img alt="Strongly Connected Components graph" src="analyses/scc.png" /></p>
+<p><img alt="Strongly Connected Components graph" src="/documentation/analyses/scc.png" /></p>
 <p>Example of Strongly Connected Component Graph (bottom right) and the corresponding state transition graph (top left).
 The <code>Selection Attribute</code> tab in the bottom panel shows the content of the selected SCC (i.e. the list of nodes in the original graph).</p>
 </div>
 <p>Note that while the <code>Construct SCC Graph</code> tool is often applied to <a href="./#state-transition-graphs">State Transition Graph</a>, it can
 also be applied to Regulatory Graphs (or more formally to any type of graphs).</p>
 <h4 id="extract-from-scc-graph">Extract from SCC graph<a class="headerlink" href="#extract-from-scc-graph" title="Permanent link">&para;</a></h4>
-<p>After computing the SCC graph, another tool enables to recover the subgraph
+<p>After computing the SCC graph, another tool allows to recover the subgraph
 of the original graph corresponding to the selected nodes in the SCC graph.</p>
 <p>To use it, select some nodes in a SCC graph and run the <code>Extract subgraph</code>
 action from the <code>Graph</code> menu.</p>
@@ -665,7 +665,7 @@ selection of a perturbation. The result is shown in a table in the same dialog b
 A "*" in the table denotes that each of the values of this component gives rise to a stable state (or several if another "*" appears in the same row).</p>
 <div class="admonition example">
 <p class="admonition-title">Stable states search</p>
-<p><img alt="" src="analyses/fixedpoints.png" /></p>
+<p><img alt="" src="/documentation/analyses/fixedpoints.png" /></p>
 <p>The stable states dialog box, showing the result of the analysis.</p>
 </div>
 <h4 id="availability">Availability<a class="headerlink" href="#availability" title="Permanent link">&para;</a></h4>
@@ -680,7 +680,7 @@ approximation for complex attractors <strong>cite Klarner2014</strong>.</p>
 <p>This tool is available from the <code>Trapspace identification</code> option of the <code>Tools</code> menu.</p>
 <div class="admonition example">
 <p class="admonition-title">The trapspace dialog box</p>
-<p><img alt="" src="analyses/trapspaces.png" /></p>
+<p><img alt="" src="/documentation/analyses/trapspaces.png" /></p>
 <p>The trapspace dialog box, showing the result of the analysis.</p>
 </div>
 <h4 id="availability_1">Availability<a class="headerlink" href="#availability_1" title="Permanent link">&para;</a></h4>
@@ -701,19 +701,19 @@ conditions may be impossible to maintain according to the dynamical rules of
 the model, especially in the case of model perturbations.</p>
 <h4 id="usage_2">Usage<a class="headerlink" href="#usage_2" title="Permanent link">&para;</a></h4>
 <p>The <code>Circuits Functionality</code> entry of the <code>Action</code> menu opens the circuit
-analysis dialog. This dialog provides a interface to lookup all circuits in the
+analysis dialog. This dialog provides an interface to lookup all circuits in the
 regulatory graph or a subset of circuits matching some filtering rules (length,
 involved components).</p>
 <div class="admonition example">
 <p class="admonition-title">Select regulatory circuits for analysis</p>
-<p><img alt="Select regulatory circuits for analysis" src="analyses/circuitsConfig.png" /></p>
-<p>A first dialog enables to select which circuits will be analysed, by specifying constraints on the length of the circuits or on the involved actors. By default all circuits are considered.</p>
+<p><img alt="Select regulatory circuits for analysis" src="/documentation/analyses/circuitsConfig.png" /></p>
+<p>A first dialog allows to select which circuits will be analysed, by specifying constraints on the length of the circuits or on the involved actors. By default all circuits are considered.</p>
 </div>
 <p>The dialog then allows to analyse the selected circuits, it will then show the circuit for which a <strong>functionality context</strong> was found.
 The analysis can be repeated for various perturbations.</p>
 <div class="admonition example">
 <p class="admonition-title">Result of the functionality analysis</p>
-<p><img alt="Result of the functionality analysis" src="analyses/circuits.png" /></p>
+<p><img alt="Result of the functionality analysis" src="/documentation/analyses/circuits.png" /></p>
 <p>When the analysis is completed, the dialog classifies the selected circuits, according to their computed sign.
 When a circuit is selected, its functionality context is shown at the bottom of the dialog box.</p>
 </div>
@@ -795,10 +795,10 @@ When a circuit is selected, its functionality context is shown at the bottom of 
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.sections"], "search": "../../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.sections"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
       
         <script src="../../assets/numbered-documentation.js"></script>
       

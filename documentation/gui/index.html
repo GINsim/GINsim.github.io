@@ -15,7 +15,7 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
     
     
       
@@ -23,7 +23,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.618322db.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -537,6 +537,28 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#edit-toolbar" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Edit toolbar
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ginsim-menu" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GINsim menu
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#file-menu" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -548,10 +570,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#edit-menu" class="md-nav__link">
+  <a href="#view-menu" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Edit menu
+        View menu
       
     </span>
   </a>
@@ -559,10 +581,21 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#actions-menu" class="md-nav__link">
+  <a href="#graph-menu" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Actions menu
+        Graph menu
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tools-menu" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tools menu
       
     </span>
   </a>
@@ -609,7 +642,7 @@
 
 <h3 id="welcome-dialog">Welcome dialog<a class="headerlink" href="#welcome-dialog" title="Permanent link">&para;</a></h3>
 <p>Upon launch, GINsim will present the <code>Welcome</code> dialog box below.</p>
-<p><img alt="Welcome" src="gui/welcome.png" /></p>
+<p><img alt="Welcome" src="/documentation/gui/welcome2026.png" /></p>
 <p>The <code>New model</code> action will create a new <a href="./#logical-regulatory-graph">Regulatory Graph</a>,
 while the <code>Open</code> and <code>Import</code> buttons allow to select an existing file
 in a <a href="./#formats-importsexports">supported format</a>.
@@ -622,18 +655,18 @@ For all these actions, the selected graph will be opened in a <a href="./#main-w
 </div>
 <div class="admonition info">
 <p class="admonition-title">Info</p>
-<p>When running GINsim on the command line, it is possible to provide a file to open or to ask for a new model. In this case, the welcome dialog will not be shown. See the <a href="../install/index.md">run options</a>.</p>
+<p>When running GINsim on the command line, it is possible to provide a file to open or to ask for a new model. In this case, the welcome dialog will not be shown. See the <a href="/install/">run options</a>.</p>
 </div>
 <h3 id="common-quirks">Common quirks<a class="headerlink" href="#common-quirks" title="Permanent link">&para;</a></h3>
 <h4 id="input-nodes">Input nodes<a class="headerlink" href="#input-nodes" title="Permanent link">&para;</a></h4>
-<p>In GINsim, some nodes can be defined as input nodes using a checkbox in the node property panel. These input nodes can not have any incoming interaction or dynamical rule as they have an implicit rule allowing them to always maintain their current activity level. Before setting a node as input, the modeller must thus remove all existing regulator or rule. Likewise, the input status must be removed before adding any new regulator or rule. To delete a logical formula, select it (without editing it) and use the delete key or the contextual menu.</p>
+<p>In GINsim, some nodes can be defined as input nodes using a checkbox in the node property panel. These input nodes cannot have any incoming interaction or dynamical rule as they have an implicit rule allowing them to always maintain their current activity level. Before setting a node as input, the modeller must thus remove all existing regulators or rules. Likewise, the input status must be removed before adding any new regulator or rule. To delete a logical formula, select it (without editing it) and use the delete key or the contextual menu.</p>
 <h4 id="unexpected-dynamical-results">Unexpected dynamical results<a class="headerlink" href="#unexpected-dynamical-results" title="Permanent link">&para;</a></h4>
 <p>If you obtain unexpected dynamical results (stable states or simulations results), verify successively the structure of the regulatory graph, the maximal activity levels of all components, the thresholds of interactions coming out of multi-valued components and then the dynamical rules. GINsim further provides a tool to compute interaction functionality, which facilitates the identification of inconsistencies between the structure of the regulatory graph and the dynamical rules.</p>
 <h4 id="gui-refresh-issues">GUI refresh issues<a class="headerlink" href="#gui-refresh-issues" title="Permanent link">&para;</a></h4>
 <p>Some refreshing problems may appear after long or complex modeling sessions, saving and restarting GINsim can solve some issues.</p>
 <h3 id="main-window">Main window<a class="headerlink" href="#main-window" title="Permanent link">&para;</a></h3>
 <h4 id="the-ginsim-window">The GINsim window<a class="headerlink" href="#the-ginsim-window" title="Permanent link">&para;</a></h4>
-<p>The main window allows to view a graph, edit its appareance and access to GINsim's main features. This window is divided into three parts:</p>
+<p>The main window allows to view a graph, edit its appearance and access to GINsim's main features. This window is divided into three parts:</p>
 <ul>
 <li>the menu and toolbar on the top;</li>
 <li>the graph panel, as the main central part; </li>
@@ -641,15 +674,30 @@ For all these actions, the selected graph will be opened in a <a href="./#main-w
 </ul>
 <div class="admonition example">
 <p class="admonition-title">The main window of GINsim</p>
-<p><img alt="The main window of GINsim" src="gui/mainWindow.png" /></p>
+<p><img alt="The main window of GINsim" src="/documentation/gui/mainWindow2026.png" /></p>
 <p>The main window of GINsim, featuring an empty model.</p>
 </div>
 <h4 id="graph-view">Graph view<a class="headerlink" href="#graph-view" title="Permanent link">&para;</a></h4>
 <p>see the <a href="./#state-transition-graphs">graph page</a> or merge its content here?</p>
+<h4 id="edit-toolbar">Edit toolbar<a class="headerlink" href="#edit-toolbar" title="Permanent link">&para;</a></h4>
+<div class="admonition example">
+<p class="admonition-title">The Edit toolbar</p>
+<p><img alt="The Edit menu" src="/documentation/gui/editToolbar2026.png" /></p>
+<p>The edit toolbar is composed of a few buttons enabling the user to create a new model.</p>
+</div>
+<h4 id="ginsim-menu">GINsim menu<a class="headerlink" href="#ginsim-menu" title="Permanent link">&para;</a></h4>
+<div class="admonition example">
+<p class="admonition-title">GINsim menu</p>
+<p><img alt="File menu" src="/documentation/gui/GINsimMenu2026.png" /></p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>TODO: check and complete    </p>
+</div>
 <h4 id="file-menu">File menu<a class="headerlink" href="#file-menu" title="Permanent link">&para;</a></h4>
 <div class="admonition example">
 <p class="admonition-title">File menu</p>
-<p><img alt="File menu" src="gui/fileMenu.png" /></p>
+<p><img alt="File menu" src="/documentation/gui/fileMenu2026.png" /></p>
 <p>The File menu offers all the classical options to open/save a file, to open/close a window, and to quit the application.</p>
 </div>
 <p>The File menu provides the following options:</p>
@@ -658,66 +706,101 @@ For all these actions, the selected graph will be opened in a <a href="./#main-w
 <li><strong>Open</strong> to load a graph from a file. This opens a new window unless the current graph is empty.</li>
 <li><strong>Recent Files</strong> to open a recently used graph. This submenu lists the last opened graphs.</li>
 <li><strong>Merge graph</strong> to open a graph and merge it with the current one. This option works only for regulatory graphs.</li>
-<li><strong>Close</strong> to close the current graph. If other windows are opened, it will simply close the current one, otherwise it will last with an empty window.</li>
+<li><strong>Close</strong> to close the current graph. If other windows are opened, it will simply close the current one, otherwise it will leave you with an empty window.</li>
 <li><strong>Save/Save as</strong> to save the current graph. If the file is new or if the <strong>Save as</strong> option has been selected, a file selection dialog appears which allows to choose the graphical attributes to save: it is possible to save only the structure of the graph, ignoring all graphical attributes, or to save only the position of nodes. The default is to save all graphical attributes (position, size, color, shape...). The graph is saved in the (XML-based) <a href="./#ginsim-format">GINML</a>.</li>
-<li><strong>Save Subgraph</strong> save the current selection as a new graph.</li>
-<li><strong>Export</strong> save the current graph in another format. GINsim can export regulatory and state transition graphs using several generic visualisation formats. These exports only retain the graph structure and visual appearance. The following export formats are available under the File/export submenu: TODO
+<li><strong>Save Subgraph</strong> to save the current selection as a new graph.</li>
+<li><strong>Export</strong> to save the current graph in another format. GINsim can export regulatory and state transition graphs using several generic visualisation formats. These exports only retain the graph structure and visual appearance. The following export formats are available under the File/export submenu: TODO
 The regulatory graph can additionally be exported into different formats.</li>
-<li><strong>Quit</strong> close all graphs and exit the GINsim application.</li>
+<li><strong>Quit</strong> to close all graphs and exit the GINsim application.</li>
 </ul>
 <p>Some of these actions <strong>New</strong>, <strong>Open</strong> and <strong>Save</strong> are also available from the toolbar.</p>
 <div class="admonition example">
 <p class="admonition-title">The Save dialog</p>
-<p><img alt="The save dialog" src="gui/saving.png" /></p>
+<p><img alt="The save dialog" src="/documentation/gui/saving2026.png" /></p>
 <p>The Java <strong>Save</strong> dialog allows to browse and create folders, as well as to choose their location.
 By default, only folders and GINML files are shown; other files can be seen by removing the <strong>GINML Files</strong> filter.
 The drop-down list on the right side allows to select the graphical attributes to save. The <strong>ExtendedSave</strong> checkbox allows to enable or disable extended save (which generates an archive containing the graph and related data).</p>
 </div>
 <div class="admonition info">
 <p class="admonition-title">Info</p>
-<p>If the <strong>extended save</strong> option is selected, the file is saved in an archive (zip file with a .zginml extension) instead of a xml file (with a .ginml extension). This allows to save related data, such as simulation parameters or mutant definitions, along with the model. These files need GINsim 2.3 or later to be opened.</p>
+<p>If the <strong>extended save</strong> option is selected, the file is saved in an archive (zip file with a .zginml extension) instead of a XML file (with a .ginml extension). This allows to save related data, such as simulation parameters or mutant definitions, along with the model. These files need GINsim 2.3 or later to be opened.</p>
 </div>
-<h4 id="edit-menu">Edit menu<a class="headerlink" href="#edit-menu" title="Permanent link">&para;</a></h4>
+<h4 id="view-menu">View menu<a class="headerlink" href="#view-menu" title="Permanent link">&para;</a></h4>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>TODO: check and complete</p>
+</div>
 <div class="admonition example">
-<p class="admonition-title">The Edit menu</p>
-<p><img alt="The Edit menu" src="gui/editMenu.png" /></p>
-<p>The Edit menu allows the selection of some editing options. It is composed of three sections: copy/paste, graph editing tools and selection management.</p>
+<p class="admonition-title">The View menu</p>
+<p><img alt="The View menu" src="/documentation/gui/viewMenu2026.png" /></p>
 </div>
-<h5 id="copypaste">Copy/paste<a class="headerlink" href="#copypaste" title="Permanent link">&para;</a></h5>
+<p>Different actions can be performed from this menu on all types of graph.
+- <a href="./#graph-layouts">Graph layouts</a>;
+    - Level Layout (with or without inversion)
+    - Ring Layout (with or without inversion)
+- Zoom in/out/reset/fit in window</p>
+<h4 id="graph-menu">Graph menu<a class="headerlink" href="#graph-menu" title="Permanent link">&para;</a></h4>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>TODO: check and complete</p>
+</div>
+<div class="admonition example">
+<p class="admonition-title">The Graph menu</p>
+<p><img alt="The Edit menu" src="/documentation/gui/graphMenu2026.png" /></p>
+<p>The Graph menu allows --the selection of some editing options-- (NOT ACCURATE ANYMORE). It is composed of three sections: copy/paste, selection management and other actions on the logical regulatory graph.</p>
+</div>
+<h5 id="copypaste-menu-section">Copy/paste menu section<a class="headerlink" href="#copypaste-menu-section" title="Permanent link">&para;</a></h5>
 <p>The edit menu offers classical <strong>Copy</strong>/<strong>Paste</strong> entries.</p>
 <ul>
 <li>Regulatory graph elements can be copied and pasted from one GINsim window to another.</li>
-<li>Pasted elements are automatically selected to ease their move.</li>
+<li>Pasted elements are automatically selected to ease their movement.</li>
 <li>The <strong>Copy</strong> action does not test selected interactions, it will automatically select ALL interactions between selected genes.</li>
 <li>The identifiers of pasted genes are postfixed to avoid naming conflicts.</li>
-<li>Logical parameters are also copied and cleaned up: logical parameters involving not-copied nodes are suppressed. The resulting graph is consistent but the new parameters may need to be checked.</li>
+<li>Logical parameters are also copied and cleaned up: logical parameters involving non-copied nodes are suppressed. The resulting graph is consistent but the new parameters may need to be checked.</li>
 </ul>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p><strong>Copy</strong>/<strong>Paste</strong> actions are specific to GINsim: copying the graph and pasting it into an external application is not supported. These actions are only available for regulatory graphs.</p>
 </div>
-<h4 id="actions-menu">Actions menu<a class="headerlink" href="#actions-menu" title="Permanent link">&para;</a></h4>
+<h5 id="selection-and-search-menu-section">Selection and search menu section<a class="headerlink" href="#selection-and-search-menu-section" title="Permanent link">&para;</a></h5>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>TODO: check and complete</p>
+</div>
+<h5 id="actions-menu-section">Actions menu section<a class="headerlink" href="#actions-menu-section" title="Permanent link">&para;</a></h5>
+<p>Different actions can be performed from this menu, depending on the type of graph.
+Individual actions are detailed in the relevant part of this manual.
+Currently available actions are:</p>
+<ul>
+<li>for all graphs:<ul>
+<li>determination of the <a href="./#strongly-connected-components-graph">Strongly Connected Components (SCC)</a> of a graph;</li>
+<li>computation of the local graph; (MISMATCH between tooltip "Compute the local graphs" and menu item "Highlight local graph")</li>
+<li>colouring the regulatory graph, depending on the state of each regulator;</li>
+<li>colouring of the Strongly Connected Components graph.</li>
+</ul>
+</li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>TODO: check and complete, is it true for all graphs ?</p>
+</div>
+<h4 id="tools-menu">Tools menu<a class="headerlink" href="#tools-menu" title="Permanent link">&para;</a></h4>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>TODO: replace this all with a short note and point to the relevant index pages?</p>
 </div>
 <div class="admonition example">
 <p class="admonition-title">The Actions menu</p>
-<p><img alt="The Actions menu" src="gui/actionMenu.png" /></p>
+<p><img alt="The Actions menu" src="/documentation/gui/toolsMenu2026.png" /></p>
 <p>The Action menu for a regulatory graph.</p>
 </div>
 <p>Different actions can be performed from this menu, depending on the type of graph.
 Individual actions are detailed in the relevant part of this manual.
 Currently available actions are:</p>
 <ul>
-<li>for all graphs:<ul>
-<li><a href="./#graph-layouts">Graph layouts</a>;</li>
-<li>determination of the <a href="./#strongly-connected-components-graph">Strongly Connected Components (SCC)</a> of a graph;</li>
-</ul>
-</li>
 <li>for regulatory graphs:<ul>
-<li><a href="./#simulation">The simulation</a> (i.e. computation of a state transition graph);</li>
-<li>analyse of the <a href="./#circuit-analysis">Circuit analysis</a>;</li>
+<li><a href="./#simulation">The simulation</a> (i.e., computation of a state transition graph);</li>
+<li>analysis of the <a href="./#circuit-analysis">Circuit analysis</a>;</li>
 <li>determination of <a href="./#stable-state-search">Stable states</a>;</li>
 </ul>
 </li>
@@ -727,6 +810,10 @@ Currently available actions are:</p>
 </ul>
 </li>
 </ul>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>TODO: check and complete</p>
+</div>
 <h4 id="the-secondary-panel">The secondary panel<a class="headerlink" href="#the-secondary-panel" title="Permanent link">&para;</a></h4>
 <p>The bottom panel allows to edit the items selected in the graph view. It contains two tabs:</p>
 <ul>
@@ -800,10 +887,10 @@ It is described in the <a href="./#graph-view">graph view page</a>.</li>
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.sections"], "search": "../../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.sections"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
       
         <script src="../../assets/numbered-documentation.js"></script>
       

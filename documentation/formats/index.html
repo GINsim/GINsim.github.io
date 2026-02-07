@@ -15,7 +15,7 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
     
     
       
@@ -23,7 +23,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.618322db.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -561,7 +561,7 @@
 <p>The Z-GINML format (also denoted <strong>extended save</strong>), is a zip archive containing a ginml file along with companion files to store associated data, especially initial states, perturbations, and simulation parameters. More generally, each plugin can provide a parser and file writer to store its associated data in a Z-GINML file.</p>
 <p>The <strong>GINML</strong> format is an extension of the <a href="http://www.gupro.de/GXL">GXL (Graph eXchange Language)</a> format. This extension comprises new attributes and subelements for elements node and edge, and an additional element called parameter.</p>
 <p>element node
-a new attribute basevalue corresponds to the "based level of expression" of the corresponding component (default value 0). In other words, it is the value of the logical parameter corresponding to the case where none of the incoming interactions if functional. New subelements within a node:</p>
+a new attribute basevalue corresponds to the "base level of expression" of the corresponding component (default value 0). In other words, it is the value of the logical parameter corresponding to the case where none of the incoming interactions is functional. New subelements within a node:</p>
 <p>a list of elements parameter corresponding to the user defined logical parameters for this node</p>
 <p>an element intdefining the maximum level of expression of this node</p>
 <p>element edge
@@ -574,7 +574,7 @@ Some of this extra data can be shared between several tools.
 This extra data is stored in its own entry inside ZGINML files.</p>
 <h3 id="export-graph-view">Export graph view<a class="headerlink" href="#export-graph-view" title="Permanent link">&para;</a></h3>
 <p>The graph view can be exported as an image in the PNG format.
-This export considers only the visual appareance of the graph,
+This export considers only the visual appearance of the graph,
 and can thus be applied to all types of graph in GINsim.</p>
 <p>The view can also be exported in the 
 <a href="http://www.w3.org/Graphics/SVG/">Scalable Vector Graphic (SVG)</a> format.
@@ -717,12 +717,12 @@ properties are added, as comments, at the end of each file.</p>
 <h4 id="petri-net-export">Petri net export<a class="headerlink" href="#petri-net-export" title="Permanent link">&para;</a></h4>
 <p>Regulatory graphs can be exported into discrete <!-- TODO: check nomenclature with claudine -->
 Petri net using the rewriting method described in <sup id="fnref:Chaouiya2006"><a class="footnote-ref" href="#fn:Chaouiya2006">2</a></sup>.</p>
-<p>In the "File -&gt; Export" menu, a "Petri Net" submenu permits to choose one of three supported Petri net representations: INA, PNML and APNN.
+<p>In the "File -&gt; Export" menu, a "Petri Net" submenu allows to choose one of three supported Petri net representations: INA, PNML and APNN.
 Choosing any of these representations, opens a configuration dialog box which presents a list of options to be considered in the export.
 These include modifications such as model perturbations or reductions, or the definition of a set of initial states.</p>
 <div class="admonition example">
 <p class="admonition-title">The Petri Net export dialog</p>
-<p><img alt="The Petri Net export dialog" src="formats/pnexport.png" /></p>
+<p><img alt="The Petri Net export dialog" src="/documentation/formats/pnexport.png" /></p>
 <p>The Petri Net export dialog box allows to select the export format, the initial markup and the mutant to apply before exporting. The initial markup can be generated from an existing initial state of the model  (modifications made in this dialog are also applied to the simulation settings); only the first selected state is used.</p>
 </div>
 <p>TODO: update figure!</p>
@@ -802,10 +802,10 @@ These include modifications such as model perturbations or reductions, or the de
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.sections"], "search": "../../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.sections"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
       
         <script src="../../assets/numbered-documentation.js"></script>
       
