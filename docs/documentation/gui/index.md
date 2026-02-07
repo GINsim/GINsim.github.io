@@ -132,7 +132,7 @@ Different actions can be performed from this menu on all types of graph.
 !!! example "The Graph menu"
 	![The Edit menu](/documentation/gui/graphMenu2026.png)
 	
-	The Graph menu allows --the selection of some editing options-- (NOT ACCURATE ANYMORE). It is composed of three sections: copy/paste, selection management and other actions on the logical regulatory graph.
+	The Graph menu is composed of three sections: copy/paste, selection management, other actions on the logical regulatory graph.
 
 ##### Copy/paste menu section
 
