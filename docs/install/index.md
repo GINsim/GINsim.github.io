@@ -18,7 +18,7 @@ The GINsim website [https://ginsim.github.io](https://ginsim.github.io) provides
 
 GINsim 3.1 requires Java >=11 to run.
 
-You can obtain Java for Linux, Windows, and Mac OSX, you can download it at [https://adoptium.net/temurin/releases](https://adoptium.net/temurin/releases). If you have an Oracle account, you can also use Java from Oracle.
+To obtain Java for Linux, Windows, and Mac OSX, you can download it at [https://adoptium.net/temurin/releases](https://adoptium.net/temurin/releases). If you have an Oracle account, you can also use Java from Oracle.
 
 
 ### Running GINsim
