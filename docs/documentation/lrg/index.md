@@ -109,7 +109,7 @@ The interaction becomes **active** when the activity level of its source compone
 However, this is only a visual hint, as the real effects of interactions are defined through [Dynamical rules](#dynamical-rules).
 
 
-#### Model integrity
+### Model integrity
 
 GINsim keeps the definition of regulatory graphs consistent, which means that:
 
