@@ -54,7 +54,7 @@ Initial states can be reordered, deleted and duplicated using the buttons on top
 
 The top part of the simulation dialog enables the selection of a perturbation
 to be applied to the regulatory graph before running the simulation. The associated ``Configure``
-button will show the :doc:`perturbation definition panel </modify/perturbation>`.
+button will show the :doc:`perturbation definition panel`.
 
 The bottom part of the dialog box is dedicated to the definition of
 :doc:`initial_states` of the simulation.
@@ -171,7 +171,7 @@ single updating of one gene level.
 
 In this mode, the graph transition state can be generated "depth first" or
 "breadth first". The same state transition graph will be built, except if
-interrupted (for illustration, see :doc:`depth and size limitation <simulation>`).
+interrupted (for illustration, see :doc:`depth and size limitation`).
 
 
 !!! example "Construction strategy: synchronous versus asynchronous"
