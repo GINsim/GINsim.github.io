@@ -100,7 +100,7 @@ Some of these actions **New**, **Open** and **Save** are also available from the
 
 
 !!! example "The Save dialog"
-	![The save dialog](/documentation/gui/saving2026.png)
+	![The save dialog](/documentation/gui/saveAs2026.png)
 
 	The Java **Save** dialog allows to browse and create folders, as well as to choose their location.
 	By default, only folders and GINML files are shown; other files can be seen by removing the **GINML Files** filter.
