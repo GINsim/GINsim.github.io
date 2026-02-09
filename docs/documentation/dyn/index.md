@@ -10,18 +10,29 @@ one state to another (i.e. change of value for one or several components).
 For a more formal definition see [@Naldi2011].
 
 
+### Simulation
+
+Once a regulatory model has been defined, a simulation can be launched
+through the ``Run Simulation`` option of the ``Tools`` menu.
+This option triggers a dialog box allowing to choose simulation settings.
+
+
+!!! example "Simulation settings"
+    ![Simulation settings](/documentation/dyn/simulation_config2026.png)
+
+    This dialog box allows to configure and run the simulation.
+
+This dialog box allows to define simulation settings.
+The top part of the dialog box enables the definition of transformations to apply to
+the regulatory graph before the simulation.
+The left part of the dialog box enables to manage (select, add or remove) simulations settings.
+The right part of the dialog box enables the definition of the current simulation setting.
+
+
 ### Initial states
 
 Named groups of states can be defined for the regulatory graph and used
 for example as starting point for the [Simulation](index.md#simulation).
-
-
-!!! example "Initial state definition panel"
-    ![Initial state definition panel](/documentation/dyn/initial_states.png)
-
-    Each line in the table of intial states has a name and provides a value or a range for one or more components. Components which are not restricted are denoted by stars ("*") in the table.
-
-
 
 Each row of the table corresponds to a set of states, where activity
 levels are specified for each component in the corresponding table cell.
@@ -37,25 +48,6 @@ Initial states can be reordered, deleted and duplicated using the buttons on top
 
 !!! hint
     A value can be entered in many cells at once using multiple selection.
-
-
-### Simulation
-
-Once a regulatory model has been defined, a simulation can be launched
-through the ``Run Simulation`` option of the ``Action`` menu.
-This option triggers a dialog box allowing to choose simulation settings.
-
-
-!!! example "Simulation settings"
-    ![Simulation settings](/documentation/dyn/simulation_config.png)
-
-    This dialog box allows to configure and run the simulation.
-
-This dialog box allows to define simulation settings.
-The top part of the dialog box enables the definition of transformations to apply to
-the regulatory graph before the simulation.
-The left part of the dialog box enables to manage (select, add or remove) simulations settings.
-The right part of the dialog box enables the definition of the current simulation setting.
 
 
 ##### Configure the simulation
@@ -82,6 +74,10 @@ These updating modes are described in detail in <link xref="tool-simulation-upda
 Simulation settings are saved and restored as associated data in <link xref="format-zginml">ZGINML files</link>.
 
 ##### Running simulations with perturbation
+
+
+!!! warning
+    I cannot reproduce the same graphics. The legend of the figure below seems not sufficient for me to reproduce. 
 
 
 !!! example "Perturbation simulation result"
