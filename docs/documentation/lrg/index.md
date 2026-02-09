@@ -280,7 +280,7 @@ or completely fixed if the range corresponds to a single value.
 
 
 !!! example "Perturbation creation panels"
-    ![Perturbation creation panels](/documentation/lrg/booleanperturbation2026.png)
+    ![Perturbation creation panels](/documentation/lrg/booleanPerturbation2026.png)
 
     TODO: add multivalued figure figures/mvaluedperturbation.png
 

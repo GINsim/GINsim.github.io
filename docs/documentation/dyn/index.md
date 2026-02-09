@@ -18,7 +18,7 @@ This option triggers a dialog box allowing to choose simulation settings.
 
 
 !!! example "Simulation settings"
-    ![Simulation settings](/documentation/dyn/simulation_config2026.png)
+    ![Simulation settings](/documentation/dyn/simulationConfig2026.png)
 
     This dialog box allows to configure and run the simulation.
 
