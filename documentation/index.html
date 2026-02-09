@@ -808,17 +808,6 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#initial-states" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Initial states
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#simulation" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -827,7 +816,18 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Simulation">
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#initial-states" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Initial states
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Initial states">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1740,17 +1740,6 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#initial-states" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Initial states
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#simulation" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1759,7 +1748,18 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Simulation">
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#initial-states" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Initial states
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Initial states">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -2668,14 +2668,23 @@ Nodes of this graph represent possible states of the model, assigning
 a value to each component. Arcs of the STG represent transitions from
 one state to another (i.e. change of value for one or several components).</p>
 <p>For a more formal definition see <sup id="fnref3:Naldi2011"><a class="footnote-ref" href="#fn:Naldi2011">3</a></sup>.</p>
+<h3 id="simulation">Simulation<a class="headerlink" href="#simulation" title="Permanent link">&para;</a></h3>
+<p>Once a regulatory model has been defined, a simulation can be launched
+through the <code>Run Simulation</code> option of the <code>Tools</code> menu.
+This option triggers a dialog box allowing to choose simulation settings.</p>
+<div class="admonition example">
+<p class="admonition-title">Simulation settings</p>
+<p><img alt="Simulation settings" src="/documentation/dyn/simulation_config2026.png" /></p>
+<p>This dialog box allows to configure and run the simulation.</p>
+</div>
+<p>This dialog box allows to define simulation settings.
+The top part of the dialog box enables the definition of transformations to apply to
+the regulatory graph before the simulation.
+The left part of the dialog box enables to manage (select, add or remove) simulations settings.
+The right part of the dialog box enables the definition of the current simulation setting.</p>
 <h3 id="initial-states">Initial states<a class="headerlink" href="#initial-states" title="Permanent link">&para;</a></h3>
 <p>Named groups of states can be defined for the regulatory graph and used
 for example as starting point for the <a href="./#simulation">Simulation</a>.</p>
-<div class="admonition example">
-<p class="admonition-title">Initial state definition panel</p>
-<p><img alt="Initial state definition panel" src="/documentation/dyn/initial_states.png" /></p>
-<p>Each line in the table of intial states has a name and provides a value or a range for one or more components. Components which are not restricted are denoted by stars ("*") in the table.</p>
-</div>
 <p>Each row of the table corresponds to a set of states, where activity
 levels are specified for each component in the corresponding table cell.
 Each component can use all of its possible levels (denoted by a star ("*")), a single level or any subset of levels, separated by semicolons (;).
@@ -2689,20 +2698,6 @@ The default, denoted by a "*", covers all possible values (it is thus the same a
 <p class="admonition-title">Hint</p>
 <p>A value can be entered in many cells at once using multiple selection.</p>
 </div>
-<h3 id="simulation">Simulation<a class="headerlink" href="#simulation" title="Permanent link">&para;</a></h3>
-<p>Once a regulatory model has been defined, a simulation can be launched
-through the <code>Run Simulation</code> option of the <code>Action</code> menu.
-This option triggers a dialog box allowing to choose simulation settings.</p>
-<div class="admonition example">
-<p class="admonition-title">Simulation settings</p>
-<p><img alt="Simulation settings" src="/documentation/dyn/simulation_config.png" /></p>
-<p>This dialog box allows to configure and run the simulation.</p>
-</div>
-<p>This dialog box allows to define simulation settings.
-The top part of the dialog box enables the definition of transformations to apply to
-the regulatory graph before the simulation.
-The left part of the dialog box enables to manage (select, add or remove) simulations settings.
-The right part of the dialog box enables the definition of the current simulation setting.</p>
 <h5 id="configure-the-simulation">Configure the simulation<a class="headerlink" href="#configure-the-simulation" title="Permanent link">&para;</a></h5>
 <p>The top part of the simulation dialog enables the selection of a perturbation
 to be applied to the regulatory graph before running the simulation. The associated <code>Configure</code>
@@ -2720,6 +2715,10 @@ updating, and enables the definition of ad hoc strategies using <em>priority cla
 These updating modes are described in detail in <link xref="tool-simulation-updating-mode">their documentation</link>.</p>
 <p>Simulation settings are saved and restored as associated data in <link xref="format-zginml">ZGINML files</link>.</p>
 <h5 id="running-simulations-with-perturbation">Running simulations with perturbation<a class="headerlink" href="#running-simulations-with-perturbation" title="Permanent link">&para;</a></h5>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>I cannot reproduce the same graphics. The legend of the figure below seems not sufficient for me to reproduce. </p>
+</div>
 <div class="admonition example">
 <p class="admonition-title">Perturbation simulation result</p>
 <p><img alt="Perturbation simulation result" src="/documentation/dyn/blocking.png" /></p>
