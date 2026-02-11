@@ -64,7 +64,7 @@ A "\*" in the table denotes that each of the values of this component gives rise
 
 
 !!! example "Stable states search"
-    ![](/documentation/analyses/fixedpoints.png)
+    ![](/documentation/analyses/fixedPoints2026.png)
 
     The stable states dialog box, showing the result of the analysis.
 
