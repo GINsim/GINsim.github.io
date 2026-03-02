@@ -111,9 +111,6 @@ Some of these actions **New**, **Open** and **Save** are also available from the
 
 
 #### View menu
-
-!!! warning
-	TODO: check and complete
 	
 !!! example "The View menu"
 	![The View menu](/documentation/gui/viewMenu2026.png)
@@ -125,9 +122,6 @@ Different actions can be performed from this menu on all types of graph.
 - Zoom in/out/reset/fit in window
 
 #### Graph menu
-
-!!! warning
-	TODO: check and complete
 	
 !!! example "The Graph menu"
 	![The Edit menu](/documentation/gui/graphMenu2026.png)
@@ -188,9 +182,6 @@ Currently available actions are:
 - for state transition graphs:
 	- [path search](index.md#find-path);
 	- [stg animator](index.md#the-stg-animator) graphical path construction (animation);
-
-!!! warning
-	TODO: check and complete
 
 #### The secondary panel
 
