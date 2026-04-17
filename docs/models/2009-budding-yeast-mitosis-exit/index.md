@@ -7,7 +7,7 @@ process:
 - Mitosis exit control
 - Cell cycle
 submitter: Adrien Fauré (C. Chaouiya)
-supporting_paper: "Faure2009b"
+supporting_paper: Faure2009b
 date: 2011-07-01T00:00:00Z
 files: 
 - exit.zginml
@@ -34,7 +34,7 @@ of Cdc14 activation.
 
 See also:
 
-- [Core engine](/node/25)
-- [Morphogenetic checkpoint](/node/26)
-- [Coupled model](/node/23) combining the budding yeast core cycling engine with the morphogenetic checkpoint and a detailed exit module.
+- [Core engine](models/2009-budding-yeast-core-cell-cycle/)
+- [Morphogenetic checkpoint](models/2009-budding-yeast-morphogenetic-checkpoint/)
+- Coupled model combining the budding yeast core cycling engine with the morphogenetic checkpoint and a detailed exit module [@Ciliberto2003].
 

@@ -21,9 +21,9 @@ controlling the exit from mitosis. Consistency with available data has been
 assessed through a systematic analysis of model behaviours for various genetic
 backgrounds and other perturbations.
 
-- Logical modelling of the [core engine](/node/25)
-- Logical modelling of the budding yeast [morphogenetic checkpoint](/node/25)
-- Logical modelling of the budding yeast [exit module](/node/26)
+- Logical modelling of the [core engine](models/2009-budding-yeast-core-cell-cycle/)
+- Logical modelling of the budding yeast [morphogenetic checkpoint](models/2009-budding-yeast-core-cell-cycle/)
+- Logical modelling of the budding yeast [exit module](models/2009-budding-yeast-morphogenetic-checkpoint/)
 
 TODO: verify links
 
@@ -78,7 +78,7 @@ their counterparts in the core model, so we kept the core model wiring and
 regulation in the coupled model for these components. Last but not least, we
 added regulation from Sic1 and Cdc6 towards Clb2 new targets to represent
 sequestration of the cyclins by the CKI (see the [core cycling engine
-model](/node/25) for more details). The resulting model fits the more recent
+model](models/2009-budding-yeast-core-cell-cycle/) for more details). The resulting model fits the more recent
 data used to built the exit module, and the behaviour of the core model is
 preserved. Still, one difficulty arose regarding mutant simulations for the
 exit module: the two mutants involving Cdk inhibition (see Queralt et

@@ -85,10 +85,27 @@ def on_post_page_macros(env):
       citation = f"{author} ({year}). *{title}*. {journal}."
       if doi: citation += f" [{doi}](https://doi.org/{doi})"
       elif url: citation += f" [Link]({url})"
-      meta_md += f"<small>**Supporting paper:** {citation}</small>\n\n"
+      meta_md += f"<small>**Supporting paper:**<br>- {citation}</small>\n\n"
     elif supporting_id:
       meta_md += f"<small>**Supporting paper:** Entry `{supporting_id}` not found in bibliography.\n\n"
     
+    # Related paper
+    related_id = meta.get("related_paper")
+    if related_id and related_id in bib_entries:
+        entry = bib_entries[related_id]
+        author = decode_latex(entry.get("author", "Unknown Author"))
+        title = decode_latex(entry.get("title", "Untitled"))
+        journal = decode_latex(entry.get("journal", ""))
+        year = entry.get("year", "")
+        doi = entry.get("doi", "")
+        url = entry.get("url", "")
+        citation = f"{author} ({year}). *{title}*. {journal}."
+        if doi: citation += f" [{doi}](https://doi.org/{doi})"
+        elif url: citation += f" [Link]({url})"
+        meta_md += f"<small>**Related reference:**<br>- {citation}</small>\n\n"
+    elif related_id:
+        meta_md += f"<small>**Related reference:** Entry `{related_id}` not found in bibliography.\n\n"
+
     # Model files
     modelfiles = meta.get("files", [])
     modeldesc = meta.get("file_descriptions", [])

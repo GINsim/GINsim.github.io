@@ -11,12 +11,12 @@ of the organisation of the original graph. This graph is thus often much more co
 
 In GINsim, the graph of the Strongly Connected Components (SCC graph) is often
 used to provide a better understanding of the organisation of the attractors in
-a [State Transition Graph](index.md#state-transition-graphs).
+a [State Transition Graph](#state-transition-graphs).
 
 #### Construct an SCC graph
 The computation of the SCC graph can be launched through the ``Construct SCC graph``
 option of the ``Tools`` menu.
-Note that GINsim also provides the [Hierarchical Transition Graph](index.md#hierarchical-transition-graphs) dedicated to this problem.
+Note that GINsim also provides the [Hierarchical Transition Graph](#hierarchical-transition-graphs) dedicated to this problem.
 
 
 !!! example "Strongly Connected Components graph"
@@ -26,7 +26,7 @@ Note that GINsim also provides the [Hierarchical Transition Graph](index.md#hier
     The ``Selection Attribute`` tab in the bottom panel shows the content of the selected SCC (i.e. the list of nodes in the original graph).
 
 
-Note that while the ``Construct SCC Graph`` tool is often applied to [State Transition Graph](index.md#state-transition-graphs), it can
+Note that while the ``Construct SCC Graph`` tool is often applied to [State Transition Graph](#state-transition-graphs), it can
 also be applied to Regulatory Graphs (or more formally to any type of graphs).
 
 

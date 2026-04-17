@@ -2,7 +2,7 @@
 
 
 A State Transition Graph (STG) is a directed graph representing the
-dynamical behaviour of a [Logical Regulatory Graph](index.md#logical-regulatory-graph).
+dynamical behaviour of a [Logical Regulatory Graph](#logical-regulatory-graph).
 Nodes of this graph represent possible states of the model, assigning
 a value to each component. Arcs of the STG represent transitions from
 one state to another (i.e. change of value for one or several components).
@@ -32,7 +32,7 @@ The right part of the dialog box enables the definition of the current simulatio
 ### Initial states
 
 Named groups of states can be defined for the regulatory graph and used
-for example as starting point for the [Simulation](index.md#simulation).
+for example as starting point for the [Simulation](#simulation).
 
 Each row of the table corresponds to a set of states, where activity
 levels are specified for each component in the corresponding table cell.
@@ -236,7 +236,7 @@ the definition of asynchronous update of multiple synchronous classes as well.
 
 The Hierarchical Transition Graphs (HTG) is an acyclic graph, which provides
 a compact representation of the State Transition Graph. It improves on
-the [graph of the Strongly Connected Components](index.md#strongly-connected-components-graph) by merging
+the [graph of the Strongly Connected Components](#strongly-connected-components-graph) by merging
 linear chains of states (in addition to cycles) into single nodes.
 
 More information on this graph is available in Berenguier _et al_[@Berenguier2013].

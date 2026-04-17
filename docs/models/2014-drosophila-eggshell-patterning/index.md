@@ -46,9 +46,10 @@ be generalized to other epithelia and developmental systems.
 
 Here, we provide the two single cell models (phenomenological and
 mechanistic).
+
+The Python prototype to simulate epithelial models together with all model files is provided here: [AllFiles.zip](AllFiles.zip).
+
 The multicellular model versions are further available in the
 [EpiLog model repository](http://epilog-tool.org/model/eggshell_patterning).
-The Python prototype to simulate epithelial models together with all model
-files are given on a [different page](http://ginsim.org/node/176/).
 
 

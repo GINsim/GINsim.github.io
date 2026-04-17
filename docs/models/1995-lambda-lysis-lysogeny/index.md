@@ -6,13 +6,12 @@ process:
 - Lysis-lysogeny decision
 submitter: C. Chaouiya
 supporting_paper: Thieffry1995
-related_references: /node/28
+related_paper: Chaouiya2012
 files: 
 - phageLambda4.zginml
 file_descriptions: 
 - Four components logical model
 ---
-
 
 A number of bacterial and viral genes take part in the decision between lysis
 and lysogenisation in temperate bacteriophages. In the case of the
