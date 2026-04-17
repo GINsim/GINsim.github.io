@@ -2161,11 +2161,11 @@ General information on modelling and analysis of genetic regulatory networks can
 <h3 id="welcome-dialog">Welcome dialog<a class="headerlink" href="#welcome-dialog" title="Permanent link">&para;</a></h3>
 <p>Upon launch, GINsim will present the <code>Welcome</code> dialog box below.</p>
 <p><img alt="Welcome" src="/documentation/gui/welcome2026.png" /></p>
-<p>The <code>New model</code> action will create a new <a href="./#logical-regulatory-graph">Regulatory Graph</a>,
+<p>The <code>New model</code> action will create a new <a href="#logical-regulatory-graph">Regulatory Graph</a>,
 while the <code>Open</code> and <code>Import</code> buttons allow to select an existing file
-in a <a href="./#formats-importsexports">supported format</a>.
+in a <a href="#formats-importsexports">supported format</a>.
 The <code>Recent files</code> section allows the quick selection of a previously opened file.
-For all these actions, the selected graph will be opened in a <a href="./#main-window">Main Window</a>.</p>
+For all these actions, the selected graph will be opened in a <a href="#main-window">Main Window</a>.</p>
 <p>Closing this dialog or activating the <code>quit</code> button will stop GINsim.</p>
 <div class="admonition info">
 <p class="admonition-title">Info</p>
@@ -2196,7 +2196,7 @@ For all these actions, the selected graph will be opened in a <a href="./#main-w
 <p>The main window of GINsim, featuring an empty model.</p>
 </div>
 <h4 id="graph-view">Graph view<a class="headerlink" href="#graph-view" title="Permanent link">&para;</a></h4>
-<p>see the <a href="./#state-transition-graphs">graph page</a> or merge its content here?</p>
+<p>see the <a href="#state-transition-graphs">graph page</a> or merge its content here?</p>
 <h4 id="edit-toolbar">Edit toolbar<a class="headerlink" href="#edit-toolbar" title="Permanent link">&para;</a></h4>
 <div class="admonition example">
 <p class="admonition-title">The Edit toolbar</p>
@@ -2225,7 +2225,7 @@ For all these actions, the selected graph will be opened in a <a href="./#main-w
 <li><strong>Recent Files</strong> to open a recently used graph. This submenu lists the last opened graphs.</li>
 <li><strong>Merge graph</strong> to open a graph and merge it with the current one. This option works only for regulatory graphs.</li>
 <li><strong>Close</strong> to close the current graph. If other windows are opened, it will simply close the current one, otherwise it will leave you with an empty window.</li>
-<li><strong>Save/Save as</strong> to save the current graph. If the file is new or if the <strong>Save as</strong> option has been selected, a file selection dialog appears which allows to choose the graphical attributes to save: it is possible to save only the structure of the graph, ignoring all graphical attributes, or to save only the position of nodes. The default is to save all graphical attributes (position, size, color, shape...). The graph is saved in the (XML-based) <a href="./#ginsim-format">GINML</a>.</li>
+<li><strong>Save/Save as</strong> to save the current graph. If the file is new or if the <strong>Save as</strong> option has been selected, a file selection dialog appears which allows to choose the graphical attributes to save: it is possible to save only the structure of the graph, ignoring all graphical attributes, or to save only the position of nodes. The default is to save all graphical attributes (position, size, color, shape...). The graph is saved in the (XML-based) <a href="#ginsim-format">GINML</a>.</li>
 <li><strong>Save Subgraph</strong> to save the current selection as a new graph.</li>
 <li><strong>Export</strong> to save the current graph in another format. GINsim can export regulatory and state transition graphs using several generic visualisation formats. These exports only retain the graph structure and visual appearance. The following export formats are available under the File/export submenu: TODO
 The regulatory graph can additionally be exported into different formats.</li>
@@ -2249,7 +2249,7 @@ The drop-down list on the right side allows to select the graphical attributes t
 <p><img alt="The View menu" src="/documentation/gui/viewMenu2026.png" /></p>
 </div>
 <p>Different actions can be performed from this menu on all types of graph.
-- <a href="./#graph-layouts">Graph layouts</a>;
+- <a href="#graph-layouts">Graph layouts</a>;
     - Level Layout (with or without inversion)
     - Ring Layout (with or without inversion)
 - Zoom in/out/reset/fit in window</p>
@@ -2283,7 +2283,7 @@ Individual actions are detailed in the relevant part of this manual.
 Currently available actions are:</p>
 <ul>
 <li>for all graphs:<ul>
-<li>determination of the <a href="./#strongly-connected-components-graph">Strongly Connected Components (SCC)</a> of a graph;</li>
+<li>determination of the <a href="#strongly-connected-components-graph">Strongly Connected Components (SCC)</a> of a graph;</li>
 <li>computation of the local graph; (MISMATCH between tooltip "Compute the local graphs" and menu item "Highlight local graph")</li>
 <li>colouring the regulatory graph, depending on the state of each regulator;</li>
 <li>colouring of the Strongly Connected Components graph.</li>
@@ -2309,14 +2309,14 @@ Individual actions are detailed in the relevant part of this manual.
 Currently available actions are:</p>
 <ul>
 <li>for regulatory graphs:<ul>
-<li><a href="./#simulation">The simulation</a> (i.e., computation of a state transition graph);</li>
-<li>analysis of the <a href="./#circuit-analysis">Circuit analysis</a>;</li>
-<li>determination of <a href="./#stable-state-search">Stable states</a>;</li>
+<li><a href="#simulation">The simulation</a> (i.e., computation of a state transition graph);</li>
+<li>analysis of the <a href="#circuit-analysis">Circuit analysis</a>;</li>
+<li>determination of <a href="#stable-state-search">Stable states</a>;</li>
 </ul>
 </li>
 <li>for state transition graphs:<ul>
-<li><a href="./#find-path">path search</a>;</li>
-<li><a href="./#the-stg-animator">stg animator</a> graphical path construction (animation);</li>
+<li><a href="#find-path">path search</a>;</li>
+<li><a href="#the-stg-animator">stg animator</a> graphical path construction (animation);</li>
 </ul>
 </li>
 </ul>
@@ -2326,7 +2326,7 @@ Currently available actions are:</p>
 <li>The first tab (called <code>Modelling Attributes</code> for regulatory graphs) will change with the type of graph.
 Panels for the various graph types are described in the corresponding sections.</li>
 <li>The <code>Graphical Attributes</code> tab allows to edit the appareance of the selected items.
-It is described in the <a href="./#graph-view">graph view page</a>.</li>
+It is described in the <a href="#graph-view">graph view page</a>.</li>
 </ul>
 <hr />
 <h2 id="logical-regulatory-graph">Logical Regulatory Graph<a class="headerlink" href="#logical-regulatory-graph" title="Permanent link">&para;</a></h2>
@@ -2651,7 +2651,7 @@ The support for output stripping was added in GINsim 3.0 (see <sup id="fnref:Nal
 <h2 id="model-dynamics-and-properties">Model dynamics and properties<a class="headerlink" href="#model-dynamics-and-properties" title="Permanent link">&para;</a></h2>
 <h3 id="state-transition-graphs">State transition graphs<a class="headerlink" href="#state-transition-graphs" title="Permanent link">&para;</a></h3>
 <p>A State Transition Graph (STG) is a directed graph representing the
-dynamical behaviour of a <a href="./#logical-regulatory-graph">Logical Regulatory Graph</a>.
+dynamical behaviour of a <a href="#logical-regulatory-graph">Logical Regulatory Graph</a>.
 Nodes of this graph represent possible states of the model, assigning
 a value to each component. Arcs of the STG represent transitions from
 one state to another (i.e. change of value for one or several components).</p>
@@ -2672,7 +2672,7 @@ The left part of the dialog box enables to manage (select, add or remove) simula
 The right part of the dialog box enables the definition of the current simulation setting.</p>
 <h3 id="initial-states">Initial states<a class="headerlink" href="#initial-states" title="Permanent link">&para;</a></h3>
 <p>Named groups of states can be defined for the regulatory graph and used
-for example as starting point for the <a href="./#simulation">Simulation</a>.</p>
+for example as starting point for the <a href="#simulation">Simulation</a>.</p>
 <p>Each row of the table corresponds to a set of states, where activity
 levels are specified for each component in the corresponding table cell.
 Each component can use all of its possible levels (denoted by a star ("*")), a single level or any subset of levels, separated by semicolons (;).
@@ -2822,7 +2822,7 @@ The resulting state transition graph is splited into two parts: N expressed <em>
 <h4 id="hierarchical-transition-graphs">Hierarchical Transition Graphs<a class="headerlink" href="#hierarchical-transition-graphs" title="Permanent link">&para;</a></h4>
 <p>The Hierarchical Transition Graphs (HTG) is an acyclic graph, which provides
 a compact representation of the State Transition Graph. It improves on
-the <a href="./#strongly-connected-components-graph">graph of the Strongly Connected Components</a> by merging
+the <a href="#strongly-connected-components-graph">graph of the Strongly Connected Components</a> by merging
 linear chains of states (in addition to cycles) into single nodes.</p>
 <p>More information on this graph is available in Berenguier <em>et al</em><sup id="fnref:Berenguier2013"><a class="footnote-ref" href="#fn:Berenguier2013">6</a></sup>.</p>
 <hr />
@@ -2837,18 +2837,18 @@ of the original graph.  This acyclic graph provides a simplified representation
 of the organisation of the original graph. This graph is thus often much more compact.</p>
 <p>In GINsim, the graph of the Strongly Connected Components (SCC graph) is often
 used to provide a better understanding of the organisation of the attractors in
-a <a href="./#state-transition-graphs">State Transition Graph</a>.</p>
+a <a href="#state-transition-graphs">State Transition Graph</a>.</p>
 <h4 id="construct-an-scc-graph">Construct an SCC graph<a class="headerlink" href="#construct-an-scc-graph" title="Permanent link">&para;</a></h4>
 <p>The computation of the SCC graph can be launched through the <code>Construct SCC graph</code>
 option of the <code>Tools</code> menu.
-Note that GINsim also provides the <a href="./#hierarchical-transition-graphs">Hierarchical Transition Graph</a> dedicated to this problem.</p>
+Note that GINsim also provides the <a href="#hierarchical-transition-graphs">Hierarchical Transition Graph</a> dedicated to this problem.</p>
 <div class="admonition example">
 <p class="admonition-title">Strongly Connected Components graph</p>
 <p><img alt="Strongly Connected Components graph" src="/documentation/analyses/scc.png" /></p>
 <p>Example of Strongly Connected Component Graph (bottom right) and the corresponding state transition graph (top left).
 The <code>Selection Attribute</code> tab in the bottom panel shows the content of the selected SCC (i.e. the list of nodes in the original graph).</p>
 </div>
-<p>Note that while the <code>Construct SCC Graph</code> tool is often applied to <a href="./#state-transition-graphs">State Transition Graph</a>, it can
+<p>Note that while the <code>Construct SCC Graph</code> tool is often applied to <a href="#state-transition-graphs">State Transition Graph</a>, it can
 also be applied to Regulatory Graphs (or more formally to any type of graphs).</p>
 <h4 id="extract-from-scc-graph">Extract from SCC graph<a class="headerlink" href="#extract-from-scc-graph" title="Permanent link">&para;</a></h4>
 <p>After computing the SCC graph, another tool allows to recover the subgraph
