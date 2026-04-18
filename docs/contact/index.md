@@ -39,15 +39,16 @@ Specific questions can also be adressed to the GINsim team at [support@ginsim.or
 
 - Prototype development: Frederic Cordeil, Thomas Marcq, Cecile Menahem, Romain Muti
 - Biological applications: Adrien Fauré, Aitor Gonzalez
-- Software development: Duncan Berenguier, Fabrice Lopez, Kevin Mathieu, Rui Henriques, Nuno Mendes, Lionel Spinelli
+- Software development: Duncan Berenguier, Fabrice Lopez, Kevin Mathieu, Rui Henriques, Nuno Mendes, Lionel Spinelli, Dominique Benielli
 
 The GINsim logo was designed by [Mauricio Guzman](http://www.altamirastudio.com.mx/).
 
 ---
-GINsim is currently hosted at [GitHub Pages](https://pages.github.com/).
-It was previously hosted at:
+GINsim was previously hosted at:
 
 - TAGC, Université de la Méditerranée, FR, under `http://gin.univ-mrs.fr/GINsim`
 - IGC, Oeiras, PT, under `http://ginsim.org`
 - INESC-ID, Lisbon, PT, under `http://ginsim.org`
 
+It is currently hosted at [GitHub Pages](https://pages.github.com/), under:
+[https://ginsim.github.io/](https://ginsim.github.io/)
