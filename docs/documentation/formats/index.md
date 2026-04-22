@@ -15,9 +15,7 @@ This extension comprises new attributes and sub-elements for elements `node` and
 	- attribute `maxvalue`: "maximum level of expression" of the corresponding component (default value `1`);
 	- attribute `input`: is this node an input of the system? (default value `false`).
 
-	Sub-elements within a node:
-	
-		- a list of elements `parameter` corresponding to the user defined logical parameters for this node.
+	Sub-elements within a node: a list of elements `parameter` corresponding to the user defined logical parameters for this node.
 
 - Element `parameter`:
 	- attribute `idActiveInteractions`: list of the `edge` IDs which are the functional interactions exerted upon the considered node.
