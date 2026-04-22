@@ -24,8 +24,13 @@ GINsim further includes:
 - the possibility to reduce a model, by removing specific components;
 - the conversion of a multivalued model into a Boolean one;
 - the reversion of a model resulting in a model that produces a reverse (asynchronous) dynamics;
-- the functionalities to import models encoded in a variety of formats, primarily _sbml-qual_, ensuring interoperability with other logical modelling tools (truth tables, [BoolNet](https://cran.r-project.org/web/packages/BoolNet/index.html), [BoolSim](https://www.sib.swiss/vital-it/research-software) and [Bnet](https://www.cs.rice.edu/~lm30/RSynth/CUDD/nanotrav/doc/bnetExtDet.html) formats);
-- the functionalities to export models in different formats used by complementary tools (e.g. the model checker [NuSMV](https://nusmv.fbk.eu/) or the stochastic simulation tool [MaBoSS](https://maboss.curie.fr/)), including [_sbml-qual_](https://colomoto.github.io/formats/sbml-qual/).
+- the functionalities to import models encoded in a variety of formats, primarily [_sbml-qual_](https://colomoto.github.io/formats/sbml-qual/),
+ensuring interoperability with other logical modelling tools (truth tables, [BoolNet](https://cran.r-project.org/web/packages/BoolNet/index.html), 
+[BoolSim](https://www.sib.swiss/vital-it/research-software),
+[Bnet](https://www.cs.rice.edu/~lm30/RSynth/CUDD/nanotrav/doc/bnetExtDet.html) and [cnet (BNS tool)](https://people.kth.se/~dubrova/bns.html) formats);
+- the functionalities to export models in different formats used by complementary tools
+(e.g. the model checker [NuSMV](https://nusmv.fbk.eu/) or the stochastic simulation tool [MaBoSS](https://maboss.curie.fr/)),
+including [_sbml-qual_](https://colomoto.github.io/formats/sbml-qual/).
 
 
 ## Model simulation
@@ -57,8 +62,10 @@ GINsim offers various operations on graphs (LRG, STG, SCC or HTG):
 
 ![CoLoMoTo](colomoto.png){: style="float: right; margin-right: 5px;"}
 
-GINsim can load and export models from the [SBML qual](https://sbml.org/documents/specifications/level-3/version-1/qual/) format, easing their sharing with other software tools.
-Its integration in the [CoLoMoTo notebook](https://colomoto.github.io/colomoto-docker/) enables the definition of complex, reproducible analysis workflows, for example:
+GINsim can load and export models from the [SBML qual](https://sbml.org/documents/specifications/level-3/version-1/qual/) format,
+easing their sharing with other software tools.
+Its integration in the [CoLoMoTo notebook](https://colomoto.github.io/colomoto-docker/) enables the definition of complex, reproducible analysis workflows,
+for example:
 
 - Efficient reachability analysis using [pint](http://loicpauleve.name/pint);
 - Complex reachability analysis using the [NuSMV model checker](https://nusmv.fbk.eu);
