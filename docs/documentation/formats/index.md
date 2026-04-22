@@ -15,10 +15,8 @@ This extension comprises new attributes and sub-elements for elements `node` and
 	- attribute `maxvalue`: "maximum level of expression" of the corresponding component (default value `1`);
 	- attribute `input`: is this node an input of the system? (default value `false`).
 
-Sub-elements within a node:
-
-	- a list of elements `parameter` corresponding to the user defined logical parameters for this node.
-  
+	Sub-elements within a node:
+		- a list of elements `parameter` corresponding to the user defined logical parameters for this node.
 
 - Element `parameter`:
 	- attribute `idActiveInteractions`: list of the `edge` IDs which are the functional interactions exerted upon the considered node.
@@ -28,7 +26,7 @@ Sub-elements within a node:
 	- attribute `id`: edge identifier (usual format "source_node_id:target_node_id");
 	- attributes `from` and `to`: source and target nodes of this edge;
 	- attribute `sign`: gives the sign of the interaction (positive for an activation, negative for a repression, otherwise unknown);
-	- one or two sub-elements `int` (level or interval letting the interaction functional) 
+	- attributes `minvalue` and `maxvalue` (default value `1`) (level or interval letting the interaction functional) 
 	
 See the GINML's dtd or in pdf format. More information on [CoLoMoto web site](https://colomoto.github.io/formats/ginml/).
 
