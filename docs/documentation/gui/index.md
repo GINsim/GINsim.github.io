@@ -99,8 +99,7 @@ The File menu provides the following options:
 - **Close** to close the current graph. If other windows are opened, it will simply close the current one, otherwise it will leave you with an empty window.
 - **Save/Save as** to save the current graph. If the file is new or if the **Save as** option has been selected, a file selection dialog appears which allows to choose the graphical attributes to save: it is possible to save only the structure of the graph, ignoring all graphical attributes, or to save only the position of nodes. The default is to save all graphical attributes (position, size, color, shape...). The graph is saved in the (XML-based) [GINML](#ginsim-format).
 - **Save Subgraph** to save the current selection as a new graph.
-- **Export** to save the current graph in another format. GINsim can export regulatory and state transition graphs using several generic visualisation formats. These exports only retain the graph structure and visual appearance. The following export formats are available under the File/export submenu: TODO
-The regulatory graph can additionally be exported into different formats.
+- **Export** to save the current graph in another format. GINsim can export regulatory and state transition graphs using several generic visualisation formats. These exports only retain the graph structure and visual appearance. Several export formats are available under the File/export submenu, see [supported format](#formats-importsexports).
 - **Quit** to close all graphs and exit the GINsim application.
 
 Some of these actions **New**, **Open** and **Save** are also available from the Welcome dialog window.
