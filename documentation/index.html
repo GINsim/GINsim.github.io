@@ -2983,10 +2983,20 @@ In other words, it is the value of the logical parameter corresponding to the ca
 </ul>
 </li>
 </ul>
-<p>Sub-elements within a node:
-    - a list of elements <code>parameter</code> corresponding to the user defined logical parameters for this node.</p>
+<p>Sub-elements within a node:</p>
+<pre><code>- a list of elements `parameter` corresponding to the user defined logical parameters for this node.
+</code></pre>
 <ul>
-<li>Element <code>edge</code>:<ul>
+<li>
+<p>Element <code>parameter</code>:</p>
+<ul>
+<li>attribute <code>idActiveInteractions</code>: list of the <code>edge</code> IDs which are the functional interactions exerted upon the considered node.</li>
+<li>attribute <code>val</code>: value of the logical parameter.</li>
+</ul>
+</li>
+<li>
+<p>Element <code>edge</code>:</p>
+<ul>
 <li>attribute <code>id</code>: edge identifier (usual format "source_node_id:target_node_id");</li>
 <li>attributes <code>from</code> and <code>to</code>: source and target nodes of this edge;</li>
 <li>attribute <code>sign</code>: gives the sign of the interaction (positive for an activation, negative for a repression, otherwise unknown);</li>
@@ -2994,9 +3004,6 @@ In other words, it is the value of the logical parameter corresponding to the ca
 </ul>
 </li>
 </ul>
-<p>Element <code>parameter</code>:
-    - attribute <code>idActiveInteractions</code>: list of the <code>edge</code> IDs which are the functional interactions exerted upon the considered node.
-    - attribute <code>val</code>: value of the logical parameter.</p>
 <p>See the GINML's dtd or in pdf format. More information on <a href="https://colomoto.github.io/formats/ginml/">CoLoMoto web site</a>.</p>
 <p>See also the GINML description of the gap-gene network case A, or in PDF format.</p>
 <p>(TODO: described stored associated data)</p>
