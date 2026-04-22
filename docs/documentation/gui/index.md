@@ -81,9 +81,7 @@ see the [graph page](#state-transition-graphs) or merge its content here?
 !!! example "GINsim menu"
 	![File menu](/documentation/gui/GINsimMenu2026.png)
 
-!!! warning
-	TODO: check and complete
-
+Alongside **Help**, **About**, and **Quit**, **Logging** lets users save runtime logs to a file and toggle it on or off.
 
 #### File menu
 
