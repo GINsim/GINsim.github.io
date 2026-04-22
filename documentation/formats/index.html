@@ -564,19 +564,18 @@ each plugin can provide a parser and file writer to store its associated data in
 <p>The <strong>GINML</strong> format is an extension of the <a href="http://www.gupro.de/GXL">GXL (Graph eXchange Language)</a> format.
 This extension comprises new attributes and sub-elements for elements <code>node</code> and <code>edge</code>, and an additional element called <code>parameter</code>.</p>
 <ul>
-<li>Element <code>node</code>:<ul>
+<li>
+<p>Element <code>node</code>:</p>
+<ul>
 <li>attribute <code>id</code>: node identifier (name of the component);</li>
 <li>attribute <code>basevalue</code>: "base level of expression" of the corresponding component (default value <code>0</code>); 
 In other words, it is the value of the logical parameter corresponding to the case where none of the incoming interactions is functional;</li>
 <li>attribute <code>maxvalue</code>: "maximum level of expression" of the corresponding component (default value <code>1</code>);</li>
 <li>attribute <code>input</code>: is this node an input of the system? (default value <code>false</code>).</li>
 </ul>
+<p>Sub-elements within a node:
+    - a list of elements <code>parameter</code> corresponding to the user defined logical parameters for this node.</p>
 </li>
-</ul>
-<p>Sub-elements within a node:</p>
-<pre><code>- a list of elements `parameter` corresponding to the user defined logical parameters for this node.
-</code></pre>
-<ul>
 <li>
 <p>Element <code>parameter</code>:</p>
 <ul>
@@ -590,7 +589,7 @@ In other words, it is the value of the logical parameter corresponding to the ca
 <li>attribute <code>id</code>: edge identifier (usual format "source_node_id:target_node_id");</li>
 <li>attributes <code>from</code> and <code>to</code>: source and target nodes of this edge;</li>
 <li>attribute <code>sign</code>: gives the sign of the interaction (positive for an activation, negative for a repression, otherwise unknown);</li>
-<li>one or two sub-elements <code>int</code> (level or interval letting the interaction functional) </li>
+<li>attributes <code>minvalue</code> and <code>maxvalue</code> (default value <code>1</code>) (level or interval letting the interaction functional) </li>
 </ul>
 </li>
 </ul>
