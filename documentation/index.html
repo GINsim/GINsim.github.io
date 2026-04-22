@@ -2169,7 +2169,7 @@ and to simulate and/or analyse its qualitative dynamical behaviour <sup id="fnre
 <p><img alt="Welcome" src="/documentation/gui/welcome2026.png" /></p>
 <p>The <code>New model</code> action will create a new <a href="#logical-regulatory-graph">Regulatory Graph</a>,
 while the <code>Open</code> and <code>Import</code> buttons allow to select an existing file
-in a <a href="#formats-importsexports">supported format</a>.
+in a <a href="documentation/formats/index.html">supported format</a>.
 The <code>Recent files</code> section allows the quick selection of a previously opened file.
 For all these actions, the selected graph will be opened in a <a href="#main-window">Main Window</a>.</p>
 <p>Closing this dialog or activating the <code>quit</code> button will stop GINsim.</p>
@@ -2183,9 +2183,17 @@ For all these actions, the selected graph will be opened in a <a href="#main-win
 </div>
 <h3 id="common-quirks">Common quirks<a class="headerlink" href="#common-quirks" title="Permanent link">&para;</a></h3>
 <h4 id="input-nodes">Input nodes<a class="headerlink" href="#input-nodes" title="Permanent link">&para;</a></h4>
-<p>In GINsim, some nodes can be defined as input nodes using a checkbox in the node property panel. These input nodes cannot have any incoming interaction or dynamical rule as they have an implicit rule allowing them to always maintain their current activity level. Before setting a node as input, the modeller must thus remove all existing regulators or rules. Likewise, the input status must be removed before adding any new regulator or rule. To delete a logical formula, select it (without editing it) and use the delete key or the contextual menu.</p>
+<p>In GINsim, some nodes can be defined as input nodes using a checkbox in the node property panel.
+These input nodes cannot have any incoming interaction or dynamical rule
+as they have an implicit rule allowing them to always maintain their current activity level.
+Before setting a node as input, the modeller must thus remove all existing regulators or rules. Likewise,
+the input status must be removed before adding any new regulator or rule.
+To delete a logical formula, select it (without editing it) and use the delete key or the contextual menu.</p>
 <h4 id="unexpected-dynamical-results">Unexpected dynamical results<a class="headerlink" href="#unexpected-dynamical-results" title="Permanent link">&para;</a></h4>
-<p>If you obtain unexpected dynamical results (stable states or simulations results), verify successively the structure of the regulatory graph, the maximal activity levels of all components, the thresholds of interactions coming out of multi-valued components and then the dynamical rules. GINsim further provides a tool to compute interaction functionality, which facilitates the identification of inconsistencies between the structure of the regulatory graph and the dynamical rules.</p>
+<p>If you obtain unexpected dynamical results (stable states or simulations results), verify successively the structure of the regulatory graph,
+the maximal activity levels of all components, the thresholds of interactions coming out of multi-valued components and then the dynamical rules.
+GINsim further provides a tool to compute interaction functionality,
+which facilitates the identification of inconsistencies between the structure of the regulatory graph and the dynamical rules.</p>
 <h4 id="gui-refresh-issues">GUI refresh issues<a class="headerlink" href="#gui-refresh-issues" title="Permanent link">&para;</a></h4>
 <p>Some refreshing problems may appear after long or complex modeling sessions, saving and restarting GINsim can solve some issues.</p>
 <h3 id="main-window">Main window<a class="headerlink" href="#main-window" title="Permanent link">&para;</a></h3>
