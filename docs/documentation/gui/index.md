@@ -7,7 +7,7 @@ Upon launch, GINsim will present the ``Welcome`` dialog box below.
 
 The ``New model`` action will create a new [Regulatory Graph](#logical-regulatory-graph),
 while the ``Open`` and ``Import`` buttons allow to select an existing file
-in a [supported format](#formats-importsexports).
+in a [supported format](documentation/formats/index.html).
 The ``Recent files`` section allows the quick selection of a previously opened file.
 For all these actions, the selected graph will be opened in a [Main Window](#main-window).
 
@@ -28,11 +28,19 @@ Closing this dialog or activating the ``quit`` button will stop GINsim.
 ### Common quirks
 
 #### Input nodes
-In GINsim, some nodes can be defined as input nodes using a checkbox in the node property panel. These input nodes cannot have any incoming interaction or dynamical rule as they have an implicit rule allowing them to always maintain their current activity level. Before setting a node as input, the modeller must thus remove all existing regulators or rules. Likewise, the input status must be removed before adding any new regulator or rule. To delete a logical formula, select it (without editing it) and use the delete key or the contextual menu.
+In GINsim, some nodes can be defined as input nodes using a checkbox in the node property panel.
+These input nodes cannot have any incoming interaction or dynamical rule
+as they have an implicit rule allowing them to always maintain their current activity level.
+Before setting a node as input, the modeller must thus remove all existing regulators or rules. Likewise,
+the input status must be removed before adding any new regulator or rule.
+To delete a logical formula, select it (without editing it) and use the delete key or the contextual menu.
 
 
 #### Unexpected dynamical results
-If you obtain unexpected dynamical results (stable states or simulations results), verify successively the structure of the regulatory graph, the maximal activity levels of all components, the thresholds of interactions coming out of multi-valued components and then the dynamical rules. GINsim further provides a tool to compute interaction functionality, which facilitates the identification of inconsistencies between the structure of the regulatory graph and the dynamical rules.
+If you obtain unexpected dynamical results (stable states or simulations results), verify successively the structure of the regulatory graph,
+the maximal activity levels of all components, the thresholds of interactions coming out of multi-valued components and then the dynamical rules.
+GINsim further provides a tool to compute interaction functionality,
+which facilitates the identification of inconsistencies between the structure of the regulatory graph and the dynamical rules.
 
 
 #### GUI refresh issues
