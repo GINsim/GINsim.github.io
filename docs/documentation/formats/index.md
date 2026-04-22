@@ -16,6 +16,7 @@ This extension comprises new attributes and sub-elements for elements `node` and
 	- attribute `input`: is this node an input of the system? (default value `false`).
 
 	Sub-elements within a node:
+	
 		- a list of elements `parameter` corresponding to the user defined logical parameters for this node.
 
 - Element `parameter`:
