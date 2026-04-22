@@ -7,7 +7,7 @@ Upon launch, GINsim will present the ``Welcome`` dialog box below.
 
 The ``New model`` action will create a new [Regulatory Graph](#logical-regulatory-graph),
 while the ``Open`` and ``Import`` buttons allow to select an existing file
-in a [supported format](documentation/formats/index.html).
+in a [supported format](#formats-importsexports).
 The ``Recent files`` section allows the quick selection of a previously opened file.
 For all these actions, the selected graph will be opened in a [Main Window](#main-window).
 
