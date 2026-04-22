@@ -39,7 +39,7 @@ Specific questions can also be adressed to the GINsim team at [support@ginsim.or
 
 - Prototype development: Frederic Cordeil, Thomas Marcq, Cecile Menahem, Romain Muti
 - Biological applications: Adrien Fauré, Aitor Gonzalez
-- Software development: Duncan Berenguier, Fabrice Lopez, Kevin Mathieu, Rui Henriques, Nuno Mendes, Lionel Spinelli, Dominique Benielli
+- Software development: Duncan Berenguier, Fabrice Lopez, Kevin Mathieu, Rui Henriques, Nuno Mendes, Lionel Spinelli, Olivier Chabrol, Dominique Benielli, Laurent Tichit
 
 The GINsim logo was designed by [Mauricio Guzman](http://www.altamirastudio.com.mx/).
 
