@@ -605,8 +605,8 @@
 <p><em>GINsim</em> (<strong>G</strong>ene <strong>I</strong>nteraction <strong>N</strong>etwork <strong>sim</strong>ulation) is a graphical application to ease the design and the dynamical analysis of Boolean and multilevel logical models of cellular regulatory networks.</p>
 <p>GINsim relies on a graph-based representation of regulatory networks, called <em>logical regulatory graph</em>, as well as on a graph-based representation of the dynamics, called <em>state transition graph</em>.</p>
 <h2 id="model-definition-alteration-and-analysis">Model definition, alteration and analysis<a class="headerlink" href="#model-definition-alteration-and-analysis" title="Permanent link">&para;</a></h2>
-<p>The <em>GINsim</em> graphical interface facilitates the definition of a <em>logical regulatory graph</em> (LRG) with the insertion and deletion of nodes, as well as of various kinds of directed arcs (activations, inhibitions, dual or unknown arcs). The user can further associate textual and hyperlink annotations to keep track of supporting data. </p>
-<p>The logical rules defining the responses of a target node to the levels of their regulators can be encoded as classical Boolean expressions (using the AND, OR and Not operators), or in terms of combinations of interactions enabling the activation of the target node to a specified level (equivalent to Snoussi &amp; Thomas’ logical parameters). Internally, these logical rules are encoded as multilevel decision diagrams, which are used for the computation of various dynamical properties.</p>
+<p>The <em>GINsim</em> graphical interface facilitates the definition of a <em>logical regulatory graph</em> (LRG) with the insertion and deletion of nodes, as well as of various kinds of directed arcs (activations, inhibitions, dual or unknown arcs). The user can further associate textual and hyperlink annotations to keep track of supporting data.</p>
+<p>The logical rules defining the responses of a target node to the levels of their regulators can be encoded as classical Boolean expressions (using the AND, OR and NOT operators), or in terms of combinations of interactions enabling the activation of the target node to a specified level (equivalent to Snoussi &amp; Thomas' logical parameters). Internally, these logical rules are encoded as multilevel decision diagrams, which are used for the computation of various dynamical properties.</p>
 <p>A <em>GINsim</em> model can be associated with a series of perturbations (e.g. loss-of-function or ectopic activity of a node, or any combination thereof), as well as with a set of reference states (e.g. initial states), which can all be defined through graphical panels.</p>
 <p>GINsim further includes:</p>
 <ul>
@@ -618,8 +618,8 @@
 <li>the possibility to reduce a model, by removing specific components;</li>
 <li>the conversion of a multivalued model into a Boolean one;</li>
 <li>the reversion of a model resulting in a model that produces a reverse (asynchronous) dynamics;</li>
-<li>the functionalities to import models encoded in a variety of formats, primarily <em>sbml-qual</em>, ensuring interoperability with other logical modelling tools (truth tables, BoolNet, BoolSim and Bnet formats);</li>
-<li>the functionalities to export models in different formats used by complementary tools (e.g. the model checker NuSMV or the stochastic simulation tool MaBoSS), including <em>sbml-qual</em>.</li>
+<li>the functionalities to import models encoded in a variety of formats, primarily <em>sbml-qual</em>, ensuring interoperability with other logical modelling tools (truth tables, <a href="https://cran.r-project.org/web/packages/BoolNet/index.html">BoolNet</a>, <a href="https://www.sib.swiss/vital-it/research-software">BoolSim</a> and <a href="https://www.cs.rice.edu/~lm30/RSynth/CUDD/nanotrav/doc/bnetExtDet.html">Bnet</a> formats);</li>
+<li>the functionalities to export models in different formats used by complementary tools (e.g. the model checker <a href="https://nusmv.fbk.eu/">NuSMV</a> or the stochastic simulation tool <a href="https://maboss.curie.fr/">MaBoSS</a>), including <a href="https://colomoto.github.io/formats/sbml-qual/"><em>sbml-qual</em></a>.</li>
 </ul>
 <h2 id="model-simulation">Model simulation<a class="headerlink" href="#model-simulation" title="Permanent link">&para;</a></h2>
 <p><img alt="STG" src="simulation.svg" style="float: right; margin-right: 5px;" /></p>
@@ -627,7 +627,7 @@
 <ul>
 <li>several simulation tools using different state updating policies (synchronous, asynchronous, sequential, ...);</li>
 <li>simulation settings for model perturbations (constraining components values as well as interactions functionalities);</li>
-<li>construction of the dynamics in terms of State Transition Graphs (STG) or compacted form of the STGs (Strongly Connected Components graph (SCC) and Hierarchical Transition Graph (HTG));</li>
+<li>construction of the dynamics in terms of State Transition Graph (STG) or compacted form of the STG (Strongly Connected Components (SCC) graph  and Hierarchical Transition Graph (HTG));</li>
 <li>estimation of attractors reachability;</li>
 <li>an algorithm to compute the trap spaces of a model, which encompass stable states and subspace approximations of cyclic attractors.</li>
 </ul>
@@ -648,20 +648,8 @@ Its integration in the <a href="https://colomoto.github.io/colomoto-docker/">CoL
 <li>Efficient reachability analysis using <a href="http://loicpauleve.name/pint">pint</a>;</li>
 <li>Complex reachability analysis using the <a href="https://nusmv.fbk.eu">NuSMV model checker</a>;</li>
 <li>Quantification of reachability probabilities using <a href="https://maboss.curie.fr">MaBoSS</a>;</li>
-<li>2D modelling of a cellular tissue using <a href="http://epilog-tool.org">Epilog</a>. </li>
+<li>2D modelling of a cellular tissue using <a href="http://epilog-tool.org">Epilog</a>.</li>
 </ul>
-<!--
-## Availability and terms of use
-
-_GINsim_ is encoded in the cross-platform programming language Java and is distributed as Jar files (see [Install page](install/)), while its source code is shared on [GitHub](https://github.com/GINsim/GINsim), under the licence GPL v3.0.
-
-By browsing this web site, you acknowledge and accept its general terms of use described below.
-
-**Personal data**: GINsim and this web site do not collect any personal data beyond access logs.
-
-**Content**: The content of this website is available under [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International](https://creativecommons.org/licenses/by-nc-sa/4.0/), unless stated otherwise on specific pages.
-
--->
 
 
 
