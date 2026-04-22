@@ -618,8 +618,13 @@
 <li>the possibility to reduce a model, by removing specific components;</li>
 <li>the conversion of a multivalued model into a Boolean one;</li>
 <li>the reversion of a model resulting in a model that produces a reverse (asynchronous) dynamics;</li>
-<li>the functionalities to import models encoded in a variety of formats, primarily <em>sbml-qual</em>, ensuring interoperability with other logical modelling tools (truth tables, <a href="https://cran.r-project.org/web/packages/BoolNet/index.html">BoolNet</a>, <a href="https://www.sib.swiss/vital-it/research-software">BoolSim</a> and <a href="https://www.cs.rice.edu/~lm30/RSynth/CUDD/nanotrav/doc/bnetExtDet.html">Bnet</a> formats);</li>
-<li>the functionalities to export models in different formats used by complementary tools (e.g. the model checker <a href="https://nusmv.fbk.eu/">NuSMV</a> or the stochastic simulation tool <a href="https://maboss.curie.fr/">MaBoSS</a>), including <a href="https://colomoto.github.io/formats/sbml-qual/"><em>sbml-qual</em></a>.</li>
+<li>the functionalities to import models encoded in a variety of formats, primarily <a href="https://colomoto.github.io/formats/sbml-qual/"><em>sbml-qual</em></a>,
+ensuring interoperability with other logical modelling tools (truth tables, <a href="https://cran.r-project.org/web/packages/BoolNet/index.html">BoolNet</a>, 
+<a href="https://www.sib.swiss/vital-it/research-software">BoolSim</a>,
+<a href="https://www.cs.rice.edu/~lm30/RSynth/CUDD/nanotrav/doc/bnetExtDet.html">Bnet</a> and <a href="https://people.kth.se/~dubrova/bns.html">cnet (BNS tool)</a> formats);</li>
+<li>the functionalities to export models in different formats used by complementary tools
+(e.g. the model checker <a href="https://nusmv.fbk.eu/">NuSMV</a> or the stochastic simulation tool <a href="https://maboss.curie.fr/">MaBoSS</a>),
+including <a href="https://colomoto.github.io/formats/sbml-qual/"><em>sbml-qual</em></a>.</li>
 </ul>
 <h2 id="model-simulation">Model simulation<a class="headerlink" href="#model-simulation" title="Permanent link">&para;</a></h2>
 <p><img alt="STG" src="simulation.svg" style="float: right; margin-right: 5px;" /></p>
@@ -642,8 +647,10 @@
 </ul>
 <h2 id="interoperability-and-colomoto">Interoperability and CoLoMoTo<a class="headerlink" href="#interoperability-and-colomoto" title="Permanent link">&para;</a></h2>
 <p><img alt="CoLoMoTo" src="colomoto.png" style="float: right; margin-right: 5px;" /></p>
-<p>GINsim can load and export models from the <a href="https://sbml.org/documents/specifications/level-3/version-1/qual/">SBML qual</a> format, easing their sharing with other software tools.
-Its integration in the <a href="https://colomoto.github.io/colomoto-docker/">CoLoMoTo notebook</a> enables the definition of complex, reproducible analysis workflows, for example:</p>
+<p>GINsim can load and export models from the <a href="https://sbml.org/documents/specifications/level-3/version-1/qual/">SBML qual</a> format,
+easing their sharing with other software tools.
+Its integration in the <a href="https://colomoto.github.io/colomoto-docker/">CoLoMoTo notebook</a> enables the definition of complex, reproducible analysis workflows,
+for example:</p>
 <ul>
 <li>Efficient reachability analysis using <a href="http://loicpauleve.name/pint">pint</a>;</li>
 <li>Complex reachability analysis using the <a href="https://nusmv.fbk.eu">NuSMV model checker</a>;</li>
