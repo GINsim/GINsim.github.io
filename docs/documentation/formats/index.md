@@ -10,7 +10,7 @@ This extension comprises new attributes and sub-elements for elements `node` and
 
 - Element `node`:
 	- attribute `id`: node identifier (name of the component);
-	- attribute `basevalue`: "base level of expression" of the corresponding component (default value `0`); 
+	- attribute `basevalue`: "base level of expression" of the corresponding component (default value `0`);
 	In other words, it is the value of the logical parameter corresponding to the case where none of the incoming interactions is functional;
 	- attribute `maxvalue`: "maximum level of expression" of the corresponding component (default value `1`);
 	- attribute `input`: is this node an input of the system? (default value `false`).
@@ -25,13 +25,9 @@ This extension comprises new attributes and sub-elements for elements `node` and
 	- attribute `id`: edge identifier (usual format "source_node_id:target_node_id");
 	- attributes `from` and `to`: source and target nodes of this edge;
 	- attribute `sign`: gives the sign of the interaction (positive for an activation, negative for a repression, otherwise unknown);
-	- attributes `minvalue` and `maxvalue` (default value `1`) (level or interval letting the interaction functional) 
-	
-See the GINML's dtd or in pdf format. More information on [CoLoMoto web site](https://colomoto.github.io/formats/ginml/).
+	- attributes `minvalue` and `maxvalue` (default value `1`) (level or interval letting the interaction functional)
 
-See also the GINML description of the gap-gene network case A, or in PDF format.
-
-(TODO: described stored associated data)
+See the GINML's [DTD](http://ginsim.org/GINML_2_2.dtd). More information on [CoLoMoto web site](https://colomoto.github.io/formats/ginml/).
 
 Some companion data can be associated to the graphs to store the configuration of various tools.
 Some of this extra data can be shared between several tools.
