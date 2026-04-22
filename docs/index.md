@@ -41,7 +41,7 @@ GINsim includes a comprehensive panel of functionalities to simulate logical mod
 
 - several simulation tools using different state updating policies (synchronous, asynchronous, sequential, ...);
 - simulation settings for model perturbations (constraining components values as well as interactions functionalities);
-- construction of the dynamics in terms of State Transition Graph (STG) or compacted form of the STG (Strongly Connected Components (SCC) graph  and Hierarchical Transition Graph (HTG));
+- construction of the dynamics in terms of State Transition Graph (STG) or compacted form of the STG (Strongly Connected Components (SCC) graph and Hierarchical Transition Graph (HTG);
 - estimation of attractors reachability;
 - an algorithm to compute the trap spaces of a model, which encompass stable states and subspace approximations of cyclic attractors.
 
