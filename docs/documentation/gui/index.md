@@ -1,6 +1,7 @@
 
 ### Welcome dialog
-Upon launch, GINsim will present the ``Welcome`` dialog box below.
+
+Upon launch, GINsim will present the ``Welcome`` dialog window below.
 
 ![Welcome](/documentation/gui/welcome2026.png)
 
@@ -53,7 +54,7 @@ Some refreshing problems may appear after long or complex modeling sessions, sav
 The main window allows to view a graph, edit its appearance and access to GINsim's main features. This window is divided into three parts:
 
 - the menu and toolbar on the top;
-- the graph panel, as the main central part; 
+- the graph panel, as the main central part;
 - the secondary panel on the bottom.
 
 !!! example "The main window of GINsim"
@@ -71,7 +72,7 @@ see the [graph page](#state-transition-graphs) or merge its content here?
 
 !!! example "The Edit toolbar"
 	![The Edit menu](/documentation/gui/editToolbar2026.png)
-	
+
 	The edit toolbar is composed of a few buttons enabling the user to create a new model.
 
 
@@ -79,9 +80,9 @@ see the [graph page](#state-transition-graphs) or merge its content here?
 
 !!! example "GINsim menu"
 	![File menu](/documentation/gui/GINsimMenu2026.png)
-	
+
 !!! warning
-	TODO: check and complete	
+	TODO: check and complete
 
 
 #### File menu
@@ -104,7 +105,7 @@ The File menu provides the following options:
 The regulatory graph can additionally be exported into different formats.
 - **Quit** to close all graphs and exit the GINsim application.
 
-Some of these actions **New**, **Open** and **Save** are also available from the toolbar.
+Some of these actions **New**, **Open** and **Save** are also available from the Welcome dialog window.
 
 
 !!! example "The Save dialog"
@@ -119,21 +120,22 @@ Some of these actions **New**, **Open** and **Save** are also available from the
 
 
 #### View menu
-	
+
 !!! example "The View menu"
 	![The View menu](/documentation/gui/viewMenu2026.png)
 
-Different actions can be performed from this menu on all types of graph.
-- [Graph layouts](#graph-layouts);
+Different actions can be performed from this menu on all types of graph:
+
+- [Graph layouts](#graph-layouts):
 	- Level Layout (with or without inversion)
 	- Ring Layout (with or without inversion)
 - Zoom in/out/reset/fit in window
 
 #### Graph menu
-	
+
 !!! example "The Graph menu"
 	![The Edit menu](/documentation/gui/graphMenu2026.png)
-	
+
 	The Graph menu is composed of three sections: copy/paste, selection management, other actions on the logical regulatory graph.
 
 ##### Copy/paste menu section
@@ -148,7 +150,7 @@ The edit menu offers classical **Copy**/**Paste** entries.
 
 !!! warning
 	**Copy**/**Paste** actions are specific to GINsim: copying the graph and pasting it into an external application is not supported. These actions are only available for regulatory graphs.
-	
+
 ##### Selection and search menu section
 
 !!! warning
@@ -178,7 +180,7 @@ Currently available actions are:
 	![The Actions menu](/documentation/gui/toolsMenu2026.png)
 
 	The Action menu for a regulatory graph.
-	
+
 Different actions can be performed from this menu, depending on the type of graph.
 Individual actions are detailed in the relevant part of this manual.
 Currently available actions are:
