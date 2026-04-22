@@ -1,21 +1,34 @@
 
 ### GINsim format
 
-The Z-GINML format (also denoted **extended save**), is a zip archive containing a ginml file along with companion files to store associated data, especially initial states, perturbations, and simulation parameters. More generally, each plugin can provide a parser and file writer to store its associated data in a Z-GINML file.
+The Z-GINML format (also denoted **extended save**), is a zip archive containing a ginml file along with companion files to store associated data,
+especially initial states, perturbations, and simulation parameters. More generally,
+each plugin can provide a parser and file writer to store its associated data in a Z-GINML file.
 
-The **GINML** format is an extension of the [GXL (Graph eXchange Language)](http://www.gupro.de/GXL) format. This extension comprises new attributes and sub-elements for elements `node` and `edge`, and an additional element called `parameter`.
+The **GINML** format is an extension of the [GXL (Graph eXchange Language)](http://www.gupro.de/GXL) format.
+This extension comprises new attributes and sub-elements for elements `node` and `edge`, and an additional element called `parameter`.
 
-- element `node`:
-a new attribute `basevalue` corresponds to the "base level of expression" of the corresponding component (default value 0). In other words, it is the value of the logical parameter corresponding to the case where none of the incoming interactions is functional. New sub-elements within a node:
+- Element `node`:
+	- attribute `id`: node identifier (name of the component);
+	- attribute `basevalue`: "base level of expression" of the corresponding component (default value `0`); 
+	In other words, it is the value of the logical parameter corresponding to the case where none of the incoming interactions is functional;
+	- attribute `maxvalue`: "maximum level of expression" of the corresponding component (default value `1`);
+	- attribute `input`: is this node an input of the system? (default value `false`).
 
-    - a list of elements `parameter` corresponding to the user defined logical parameters for this node
+Sub-elements within a node:
+	- a list of elements `parameter` corresponding to the user defined logical parameters for this node.
+  
+- Element `edge`:
+	- attribute `id`: edge identifier (usual format "source_node_id:target_node_id");
+	- attributes `from` and `to`: source and target nodes of this edge;
+	- attribute `sign`: gives the sign of the interaction (positive for an activation, negative for a repression, otherwise unknown);
+	- one or two sub-elements `int` (level or interval letting the interaction functional) 
+	
+Element `parameter`:
+	- attribute `idActiveInteractions`: list of the `edge` IDs which are the functional interactions exerted upon the considered node.
+	- attribute `val`: value of the logical parameter.
 
-    - an element `int` defining the maximum level of expression of this node
-
-- element `edge`:
-a new attribute `sign` which gives the sign of the interaction (positive for an activation, negative for a repression, otherwise unknown) one or two sub-elements `int` (level or interval letting the interaction functional) element parameter, is empty and has two attributes : attribute `idActiveInteractions` gives the "name" of the parameter: it is the list of the functional interactions exerted upon the considered node. Attribute `val` is the value of the logical parameter.
-
-See the GINML's dtd or in pdf format.
+See the GINML's dtd or in pdf format. More information on [CoLoMoto web site](https://colomoto.github.io/formats/ginml/).
 
 See also the GINML description of the gap-gene network case A, or in PDF format.
 
