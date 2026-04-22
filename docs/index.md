@@ -8,9 +8,9 @@ GINsim relies on a graph-based representation of regulatory networks, called _lo
 
 ## Model definition, alteration and analysis
 
-The _GINsim_ graphical interface facilitates the definition of a _logical regulatory graph_ (LRG) with the insertion and deletion of nodes, as well as of various kinds of directed arcs (activations, inhibitions, dual or unknown arcs). The user can further associate textual and hyperlink annotations to keep track of supporting data. 
+The _GINsim_ graphical interface facilitates the definition of a _logical regulatory graph_ (LRG) with the insertion and deletion of nodes, as well as of various kinds of directed arcs (activations, inhibitions, dual or unknown arcs). The user can further associate textual and hyperlink annotations to keep track of supporting data.
 
-The logical rules defining the responses of a target node to the levels of their regulators can be encoded as classical Boolean expressions (using the AND, OR and Not operators), or in terms of combinations of interactions enabling the activation of the target node to a specified level (equivalent to Snoussi & Thomas’ logical parameters). Internally, these logical rules are encoded as multilevel decision diagrams, which are used for the computation of various dynamical properties.
+The logical rules defining the responses of a target node to the levels of their regulators can be encoded as classical Boolean expressions (using the AND, OR and NOT operators), or in terms of combinations of interactions enabling the activation of the target node to a specified level (equivalent to Snoussi & Thomas' logical parameters). Internally, these logical rules are encoded as multilevel decision diagrams, which are used for the computation of various dynamical properties.
 
 A _GINsim_ model can be associated with a series of perturbations (e.g. loss-of-function or ectopic activity of a node, or any combination thereof), as well as with a set of reference states (e.g. initial states), which can all be defined through graphical panels.
 
@@ -24,8 +24,8 @@ GINsim further includes:
 - the possibility to reduce a model, by removing specific components;
 - the conversion of a multivalued model into a Boolean one;
 - the reversion of a model resulting in a model that produces a reverse (asynchronous) dynamics;
-- the functionalities to import models encoded in a variety of formats, primarily _sbml-qual_, ensuring interoperability with other logical modelling tools (truth tables, BoolNet, BoolSim and Bnet formats);
-- the functionalities to export models in different formats used by complementary tools (e.g. the model checker NuSMV or the stochastic simulation tool MaBoSS), including _sbml-qual_.
+- the functionalities to import models encoded in a variety of formats, primarily _sbml-qual_, ensuring interoperability with other logical modelling tools (truth tables, [BoolNet](https://cran.r-project.org/web/packages/BoolNet/index.html), [BoolSim](https://www.sib.swiss/vital-it/research-software) and [Bnet](https://www.cs.rice.edu/~lm30/RSynth/CUDD/nanotrav/doc/bnetExtDet.html) formats);
+- the functionalities to export models in different formats used by complementary tools (e.g. the model checker [NuSMV](https://nusmv.fbk.eu/) or the stochastic simulation tool [MaBoSS](https://maboss.curie.fr/)), including [_sbml-qual_](https://colomoto.github.io/formats/sbml-qual/).
 
 
 ## Model simulation
@@ -36,7 +36,7 @@ GINsim includes a comprehensive panel of functionalities to simulate logical mod
 
 - several simulation tools using different state updating policies (synchronous, asynchronous, sequential, ...);
 - simulation settings for model perturbations (constraining components values as well as interactions functionalities);
-- construction of the dynamics in terms of State Transition Graphs (STG) or compacted form of the STGs (Strongly Connected Components graph (SCC) and Hierarchical Transition Graph (HTG));
+- construction of the dynamics in terms of State Transition Graph (STG) or compacted form of the STG (Strongly Connected Components (SCC) graph  and Hierarchical Transition Graph (HTG));
 - estimation of attractors reachability;
 - an algorithm to compute the trap spaces of a model, which encompass stable states and subspace approximations of cyclic attractors.
 
@@ -63,17 +63,6 @@ Its integration in the [CoLoMoTo notebook](https://colomoto.github.io/colomoto-d
 - Efficient reachability analysis using [pint](http://loicpauleve.name/pint);
 - Complex reachability analysis using the [NuSMV model checker](https://nusmv.fbk.eu);
 - Quantification of reachability probabilities using [MaBoSS](https://maboss.curie.fr);
-- 2D modelling of a cellular tissue using [Epilog](http://epilog-tool.org). 
-<!--
-## Availability and terms of use
+- 2D modelling of a cellular tissue using [Epilog](http://epilog-tool.org).
 
-_GINsim_ is encoded in the cross-platform programming language Java and is distributed as Jar files (see [Install page](install/)), while its source code is shared on [GitHub](https://github.com/GINsim/GINsim), under the licence GPL v3.0.
-
-By browsing this web site, you acknowledge and accept its general terms of use described below.
-
-**Personal data**: GINsim and this web site do not collect any personal data beyond access logs.
-
-**Content**: The content of this website is available under [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International](https://creativecommons.org/licenses/by-nc-sa/4.0/), unless stated otherwise on specific pages.
-
--->
 
