@@ -50,6 +50,20 @@ and the original graph (maintained by GINsim transparently) is still valid.
 
     The attractors'reachbility dialog box, showing the configuration of the analysis.
 
+!!! warning
+	TODO: complete
+
+### Interactions functionality
+
+!!! example "Interactions functionality"
+    ![](/documentation/analyses/interactionsFunctionality2026.png)
+
+    The interactions functionality dialog box, showing the configuration of the analysis.
+
+
+!!! warning
+	TODO: complete
+
 
 ### Stable state search
 

@@ -147,18 +147,12 @@ Individual actions are detailed in the relevant part of this manual.
 Currently available actions are:
 
 - for all graphs:
+	- colouring of local graphs, depending on the state of target regulators;
+	- colouring of the regulatory graph, depending on the state of each regulator;
+	- colouring of the strongly connected components in the graph.
 	- determination of the [Strongly Connected Components (SCC)](#strongly-connected-components-graph) of a graph;
-	- computation of the local graph; (MISMATCH between tooltip "Compute the local graphs" and menu item "Highlight local graph")
-	- colouring the regulatory graph, depending on the state of each regulator;
-	- colouring of the Strongly Connected Components graph.
-
-!!! warning
-	TODO: check and complete, is it true for all graphs ?
 
 ##### Tools menu
-
-!!! warning
-	TODO: replace this all with a short note and point to the relevant index pages?
 
 !!! example "The Actions menu"
 	![The Actions menu](/documentation/gui/toolsMenu2026.png)
@@ -174,6 +168,7 @@ Currently available actions are:
 	- determine [Attractors reachability](#attractors-reachability);
 	- analysis of the [Circuit analysis](#circuit-analysis);
 	- determination of [Stable states](#stable-state-search);
+	- determination of [Interactions functionality](#interactions-functionality);
 - for state transition graphs:
 	- [path search](#find-path);
 	- [stg animator](#the-stg-animator) graphical path construction (animation);
