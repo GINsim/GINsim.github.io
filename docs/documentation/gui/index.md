@@ -171,7 +171,7 @@ Currently available actions are:
 
 - for regulatory graphs:
 	- [The simulation](#simulation) (i.e., computation of a state transition graph);
-	- determine [Attractors reachability](#reachbility);
+	- determine [Attractors reachability](#attractors-reachability);
 	- analysis of the [Circuit analysis](#circuit-analysis);
 	- determination of [Stable states](#stable-state-search);
 - for state transition graphs:
