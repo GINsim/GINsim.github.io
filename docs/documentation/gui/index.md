@@ -109,7 +109,7 @@ Some of these actions **New**, **Open** and **Save** are also available from the
 !!! example "The View menu"
 	![The View menu](/documentation/gui/viewMenu2026.png)
 
-Different actions can be performed from this menu on all types of graph:
+Different actions can be performed from this menu on all types of graphs:
 
 - [Graph layouts](#graph-layouts):
 	- Level Layout (with or without inversion)
@@ -138,8 +138,7 @@ The edit menu offers classical **Copy**/**Paste** entries.
 
 ###### Selection and search menu section
 
-!!! warning
-	TODO: check and complete
+This subpart of the menu is meant to deal with selection of nodes and edges and search of nodes and paths in the graph.
 
 ###### Actions menu section
 
