@@ -83,8 +83,8 @@ Simulation settings are saved and restored as associated data in <link xref="for
 !!! example "Perturbation simulation result"
     ![Perturbation simulation result](/documentation/dyn/blocking.png)
 
-    Result of an asynchronous simulation, where the expression level for Cro has been blocked at 1.
-    The state transition graph is the same as the original asynchronous one, but all transitions where Cro leaves this value have been suppressed.
+    Result of an asynchronous simulation, where the expression level for `Cro` has been blocked at 1.
+    The state transition graph is the same as the original asynchronous one, but all transitions where `Cro` leaves this value have been suppressed.
     This state transition graph is now composed of two disconnected parts, with a new stable state.
 
 
