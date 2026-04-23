@@ -62,28 +62,16 @@ The main window allows to view a graph, edit its appearance and access to GINsim
 
 	The main window of GINsim, featuring an empty model.
 
+#### Main Menu
 
-#### Graph view
-
-see the [graph page](#state-transition-graphs) or merge its content here?
-
-
-#### Edit toolbar
-
-!!! example "The Edit toolbar"
-	![The Edit menu](/documentation/gui/editToolbar2026.png)
-
-	The edit toolbar is composed of a few buttons enabling the user to create a new model.
-
-
-#### GINsim menu
+##### GINsim menu
 
 !!! example "GINsim menu"
 	![File menu](/documentation/gui/GINsimMenu2026.png)
 
 Alongside **Help**, **About**, and **Quit**, **Logging** lets users save runtime logs to a file and toggle it on or off.
 
-#### File menu
+##### File menu
 
 !!! example "File menu"
 	![File menu](/documentation/gui/fileMenu2026.png)
@@ -116,7 +104,7 @@ Some of these actions **New**, **Open** and **Save** are also available from the
 	If the **extended save** option is selected, the file is saved in an archive (zip file with a .zginml extension) instead of a XML file (with a .ginml extension). This allows to save related data, such as simulation parameters or mutant definitions, along with the model. These files need GINsim 2.3 or later to be opened.
 
 
-#### View menu
+##### View menu
 
 !!! example "The View menu"
 	![The View menu](/documentation/gui/viewMenu2026.png)
@@ -128,14 +116,14 @@ Different actions can be performed from this menu on all types of graph:
 	- Ring Layout (with or without inversion)
 - Zoom in/out/reset/fit in window
 
-#### Graph menu
+##### Graph menu
 
 !!! example "The Graph menu"
 	![The Edit menu](/documentation/gui/graphMenu2026.png)
 
 	The Graph menu is composed of three sections: copy/paste, selection management, other actions on the logical regulatory graph.
 
-##### Copy/paste menu section
+###### Copy/paste menu section
 
 The edit menu offers classical **Copy**/**Paste** entries.
 
@@ -148,12 +136,12 @@ The edit menu offers classical **Copy**/**Paste** entries.
 !!! warning
 	**Copy**/**Paste** actions are specific to GINsim: copying the graph and pasting it into an external application is not supported. These actions are only available for regulatory graphs.
 
-##### Selection and search menu section
+###### Selection and search menu section
 
 !!! warning
 	TODO: check and complete
 
-##### Actions menu section
+###### Actions menu section
 
 Different actions can be performed from this menu, depending on the type of graph.
 Individual actions are detailed in the relevant part of this manual.
@@ -168,7 +156,7 @@ Currently available actions are:
 !!! warning
 	TODO: check and complete, is it true for all graphs ?
 
-#### Tools menu
+##### Tools menu
 
 !!! warning
 	TODO: replace this all with a short note and point to the relevant index pages?
@@ -189,6 +177,22 @@ Currently available actions are:
 - for state transition graphs:
 	- [path search](#find-path);
 	- [stg animator](#the-stg-animator) graphical path construction (animation);
+
+
+
+#### Edit toolbar
+
+!!! example "The Edit toolbar"
+	![The Edit menu](/documentation/gui/editToolbar2026.png)
+
+	The edit toolbar is composed of a few buttons enabling the user to create a new model.
+
+
+
+#### Main panel (graph view)
+
+This panel displays the Logical Regulatory Graph. See the [logical regulatory graph section](#logical-regulatory-graph) for more information about it.
+
 
 #### The secondary panel
 
