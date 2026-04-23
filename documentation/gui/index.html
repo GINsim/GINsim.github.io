@@ -526,10 +526,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#graph-view" class="md-nav__link">
+  <a href="#main-menu" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Graph view
+        Main Menu
       
     </span>
   </a>
@@ -548,54 +548,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#ginsim-menu" class="md-nav__link">
+  <a href="#main-panel-graph-view" class="md-nav__link">
     <span class="md-ellipsis">
       
-        GINsim menu
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#file-menu" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        File menu
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#view-menu" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        View menu
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#graph-menu" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Graph menu
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#tools-menu" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Tools menu
+        Main panel (graph view)
       
     </span>
   </a>
@@ -685,21 +641,14 @@ which facilitates the identification of inconsistencies between the structure of
 <p><img alt="The main window of GINsim" src="/documentation/gui/mainWindow2026.png" /></p>
 <p>The main window of GINsim, featuring an empty model.</p>
 </div>
-<h4 id="graph-view">Graph view<a class="headerlink" href="#graph-view" title="Permanent link">&para;</a></h4>
-<p>see the <a href="#state-transition-graphs">graph page</a> or merge its content here?</p>
-<h4 id="edit-toolbar">Edit toolbar<a class="headerlink" href="#edit-toolbar" title="Permanent link">&para;</a></h4>
-<div class="admonition example">
-<p class="admonition-title">The Edit toolbar</p>
-<p><img alt="The Edit menu" src="/documentation/gui/editToolbar2026.png" /></p>
-<p>The edit toolbar is composed of a few buttons enabling the user to create a new model.</p>
-</div>
-<h4 id="ginsim-menu">GINsim menu<a class="headerlink" href="#ginsim-menu" title="Permanent link">&para;</a></h4>
+<h4 id="main-menu">Main Menu<a class="headerlink" href="#main-menu" title="Permanent link">&para;</a></h4>
+<h5 id="ginsim-menu">GINsim menu<a class="headerlink" href="#ginsim-menu" title="Permanent link">&para;</a></h5>
 <div class="admonition example">
 <p class="admonition-title">GINsim menu</p>
 <p><img alt="File menu" src="/documentation/gui/GINsimMenu2026.png" /></p>
 </div>
 <p>Alongside <strong>Help</strong>, <strong>About</strong>, and <strong>Quit</strong>, <strong>Logging</strong> lets users save runtime logs to a file and toggle it on or off.</p>
-<h4 id="file-menu">File menu<a class="headerlink" href="#file-menu" title="Permanent link">&para;</a></h4>
+<h5 id="file-menu">File menu<a class="headerlink" href="#file-menu" title="Permanent link">&para;</a></h5>
 <div class="admonition example">
 <p class="admonition-title">File menu</p>
 <p><img alt="File menu" src="/documentation/gui/fileMenu2026.png" /></p>
@@ -729,7 +678,7 @@ The drop-down list on the right side allows to select the graphical attributes t
 <p class="admonition-title">Info</p>
 <p>If the <strong>extended save</strong> option is selected, the file is saved in an archive (zip file with a .zginml extension) instead of a XML file (with a .ginml extension). This allows to save related data, such as simulation parameters or mutant definitions, along with the model. These files need GINsim 2.3 or later to be opened.</p>
 </div>
-<h4 id="view-menu">View menu<a class="headerlink" href="#view-menu" title="Permanent link">&para;</a></h4>
+<h5 id="view-menu">View menu<a class="headerlink" href="#view-menu" title="Permanent link">&para;</a></h5>
 <div class="admonition example">
 <p class="admonition-title">The View menu</p>
 <p><img alt="The View menu" src="/documentation/gui/viewMenu2026.png" /></p>
@@ -743,13 +692,13 @@ The drop-down list on the right side allows to select the graphical attributes t
 </li>
 <li>Zoom in/out/reset/fit in window</li>
 </ul>
-<h4 id="graph-menu">Graph menu<a class="headerlink" href="#graph-menu" title="Permanent link">&para;</a></h4>
+<h5 id="graph-menu">Graph menu<a class="headerlink" href="#graph-menu" title="Permanent link">&para;</a></h5>
 <div class="admonition example">
 <p class="admonition-title">The Graph menu</p>
 <p><img alt="The Edit menu" src="/documentation/gui/graphMenu2026.png" /></p>
 <p>The Graph menu is composed of three sections: copy/paste, selection management, other actions on the logical regulatory graph.</p>
 </div>
-<h5 id="copypaste-menu-section">Copy/paste menu section<a class="headerlink" href="#copypaste-menu-section" title="Permanent link">&para;</a></h5>
+<h6 id="copypaste-menu-section">Copy/paste menu section<a class="headerlink" href="#copypaste-menu-section" title="Permanent link">&para;</a></h6>
 <p>The edit menu offers classical <strong>Copy</strong>/<strong>Paste</strong> entries.</p>
 <ul>
 <li>Regulatory graph elements can be copied and pasted from one GINsim window to another.</li>
@@ -762,12 +711,12 @@ The drop-down list on the right side allows to select the graphical attributes t
 <p class="admonition-title">Warning</p>
 <p><strong>Copy</strong>/<strong>Paste</strong> actions are specific to GINsim: copying the graph and pasting it into an external application is not supported. These actions are only available for regulatory graphs.</p>
 </div>
-<h5 id="selection-and-search-menu-section">Selection and search menu section<a class="headerlink" href="#selection-and-search-menu-section" title="Permanent link">&para;</a></h5>
+<h6 id="selection-and-search-menu-section">Selection and search menu section<a class="headerlink" href="#selection-and-search-menu-section" title="Permanent link">&para;</a></h6>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>TODO: check and complete</p>
 </div>
-<h5 id="actions-menu-section">Actions menu section<a class="headerlink" href="#actions-menu-section" title="Permanent link">&para;</a></h5>
+<h6 id="actions-menu-section">Actions menu section<a class="headerlink" href="#actions-menu-section" title="Permanent link">&para;</a></h6>
 <p>Different actions can be performed from this menu, depending on the type of graph.
 Individual actions are detailed in the relevant part of this manual.
 Currently available actions are:</p>
@@ -784,7 +733,7 @@ Currently available actions are:</p>
 <p class="admonition-title">Warning</p>
 <p>TODO: check and complete, is it true for all graphs ?</p>
 </div>
-<h4 id="tools-menu">Tools menu<a class="headerlink" href="#tools-menu" title="Permanent link">&para;</a></h4>
+<h5 id="tools-menu">Tools menu<a class="headerlink" href="#tools-menu" title="Permanent link">&para;</a></h5>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>TODO: replace this all with a short note and point to the relevant index pages?</p>
@@ -810,6 +759,14 @@ Currently available actions are:</p>
 </ul>
 </li>
 </ul>
+<h4 id="edit-toolbar">Edit toolbar<a class="headerlink" href="#edit-toolbar" title="Permanent link">&para;</a></h4>
+<div class="admonition example">
+<p class="admonition-title">The Edit toolbar</p>
+<p><img alt="The Edit menu" src="/documentation/gui/editToolbar2026.png" /></p>
+<p>The edit toolbar is composed of a few buttons enabling the user to create a new model.</p>
+</div>
+<h4 id="main-panel-graph-view">Main panel (graph view)<a class="headerlink" href="#main-panel-graph-view" title="Permanent link">&para;</a></h4>
+<p>This panel displays the Logical Regulatory Graph. See the <a href="#logical-regulatory-graph">logical regulatory graph section</a> for more information about it.</p>
 <h4 id="the-secondary-panel">The secondary panel<a class="headerlink" href="#the-secondary-panel" title="Permanent link">&para;</a></h4>
 <p>The bottom panel allows to edit the items selected in the graph view. It contains two tabs:</p>
 <ul>
