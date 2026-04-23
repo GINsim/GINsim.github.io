@@ -224,7 +224,7 @@ This export was implemented in GINsim 3.0. Further information is available in [
 
 
 #### Petri net export
-Regulatory graphs can be exported into discrete <!-- TODO: check nomenclature with claudine -->
+Regulatory graphs can be exported into discrete
 Petri net using the rewriting method described in [@Chaouiya2006].
 
 In the "File -> Export" menu, a "Petri Net" submenu allows to choose one of three supported Petri net representations: INA, PNML and APNN.
