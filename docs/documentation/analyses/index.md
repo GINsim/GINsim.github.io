@@ -43,6 +43,13 @@ selected parts. To work properly it thus requires that the original graph
 had been saved to a file, and that the association between the SCC graph
 and the original graph (maintained by GINsim transparently) is still valid.
 
+### Attractors reachability
+
+!!! example "Attractors reachability"
+    ![](/documentation/analyses/attractorsReachability2026.png)
+
+    The attractors'reachbility dialog box, showing the configuration of the analysis.
+
 
 ### Stable state search
 
