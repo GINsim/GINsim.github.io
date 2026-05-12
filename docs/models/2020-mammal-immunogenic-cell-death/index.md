@@ -5,7 +5,7 @@ taxon:
 process: 
 - Cancer
 submitter: Aurelien Naldi
-supporting_paper: "241"
+supporting_paper: "Checcoli2020"
 files: 
 - ICD_phenomenological.bnd
 - ICD_phenomenological.cfg
@@ -16,14 +16,14 @@ files:
 - ICD_extend.upp
 - ICD_extend.ipynb
 file_descriptions: 
-- Phenomenological model: MaBoSS network description
-- Phenomenological model: MaBoSS configuration
-- Phenomenological model: UPMaBoSS population definition
-- Phenomenological model: Analysis notebook
-- Extended model: MaBoSS network description
-- Extended model: MaBoSS configuration
-- Extended model: UPMaBoSS population definition
-- Extended model: Analysis notebook
+- Phenomenological model MaBoSS network description
+- Phenomenological model MaBoSS configuration
+- Phenomenological model UPMaBoSS population definition
+- Phenomenological model Analysis notebook
+- Extended model MaBoSS network description
+- Extended model MaBoSS configuration
+- Extended model UPMaBoSS population definition
+- Extended model Analysis notebook
 ---
 
 

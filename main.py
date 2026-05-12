@@ -27,7 +27,7 @@ def define_env(env):
     @env.macro
     def model_table():
         model_root = os.path.join(env.project_dir, "docs", "models")
-        table = "| Model name | Taxon - all terms | Process - all terms |\n|-------|-------|---------|\n"
+        table = "| Model name | Taxon - all terms | Process - all terms | Year | Author(s) |\n|-------|-------|---------|-------|-------|\n"
 
         for model_name in sorted(os.listdir(model_root)):
             model_dir = os.path.join(model_root, model_name)
@@ -46,9 +46,14 @@ def define_env(env):
                 title = meta.get("title", model_name)
                 taxon = ", ".join(meta.get("taxon", []))
                 process = ", ".join(meta.get("process", []))
-
+                supporting_id = meta.get("supporting_paper")
+                year, author = "", ""
+                if (supporting_id and supporting_id in bib_entries):
+                    entry = bib_entries[supporting_id]
+                    year = entry.get("year", "")
+                    author = decode_latex(entry.get("author", "Unknown Author"))
                 link = f"{model_name}/"
-                table += f"| [{title}]({link}) | {taxon} | {process} |\n"
+                table += f"| [{title}]({link}) | {taxon} | {process} | {year} | {author} |\n"
 
         return table
 
@@ -63,14 +68,14 @@ def on_post_page_macros(env):
     # Taxon
     taxon = meta.get("taxon", [])
     taxon_str = " | ".join(taxon) if isinstance(taxon, list) else str(taxon)
-    if taxon_str: meta_md += f"<small><b>Taxon:</b> {taxon_str}</small>  \n"
+    if taxon_str: meta_md += f"<small><b>Taxon:</b> {taxon_str}</small> &emsp;"
     # Process
     process = meta.get("process", [])
     process_str = " | ".join(process) if isinstance(process, list) else str(process)
     if process_str: meta_md += f"<small><b>Process:</b> {process_str}</small>  \n"
     # Submitter
-    submitter = meta.get("submitter", [])
-    if submitter: meta_md += f"<small><b>Submitter:</b> {submitter}</small>\n\n"
+    #submitter = meta.get("submitter", [])
+    #if submitter: meta_md += f"<small><b>Submitter:</b> {submitter}</small>\n\n"
 
     # Supporting paper
     supporting_id = meta.get("supporting_paper")
@@ -85,10 +90,24 @@ def on_post_page_macros(env):
       citation = f"{author} ({year}). *{title}*. {journal}."
       if doi: citation += f" [{doi}](https://doi.org/{doi})"
       elif url: citation += f" [Link]({url})"
-      meta_md += f"<small>**Supporting paper:**<br>- {citation}</small>\n\n"
+      #meta_md += f"<small>**Supporting paper:** {citation}</small><br>\n"
+      meta_md += f"<small>**Title:** {title}</small><br>\n"
+      meta_md += f"<small>**Author(s):** {author}</small><br>\n"
+      meta_md += f"<small>**Journal:** {journal}</small><br>\n"
+      meta_md += f"<small>**Year:** {year}</small><br>\n"
+      if doi: meta_md += f"<small>**DOI:** [{doi}](https://doi.org/{doi})</small>\n\n"
+      elif url: meta_md += f"<small>**URL:** [Link]({url})</small>\n\n"
     elif supporting_id:
       meta_md += f"<small>**Supporting paper:** Entry `{supporting_id}` not found in bibliography.\n\n"
     
+    # Model files
+    modelfiles = meta.get("files", [])
+    modeldesc = meta.get("file_descriptions", [])
+    meta_md += "| Model file(s) | Description(s) |\n|--|--|\n"
+    for i, f in enumerate(modelfiles):
+        meta_md += f"| [{f}]({f}) | {modeldesc[i]} |\n"
+    meta_md += "\n"
+
     # Related paper
     related_id = meta.get("related_paper")
     if related_id and related_id in bib_entries:
@@ -102,16 +121,9 @@ def on_post_page_macros(env):
         citation = f"{author} ({year}). *{title}*. {journal}."
         if doi: citation += f" [{doi}](https://doi.org/{doi})"
         elif url: citation += f" [Link]({url})"
-        meta_md += f"<small>**Related reference:**<br>- {citation}</small>\n\n"
+        meta_md += f"<br><small>**Related reference:** {citation}</small>\n\n"
     elif related_id:
-        meta_md += f"<small>**Related reference:** Entry `{related_id}` not found in bibliography.\n\n"
-
-    # Model files
-    modelfiles = meta.get("files", [])
-    modeldesc = meta.get("file_descriptions", [])
-    meta_md += "| Model file(s) | Description(s) |\n|--|--|\n"
-    for i, f in enumerate(modelfiles):
-        meta_md += f"| [{f}]({f}) | {modeldesc[i]} |\n"
+        meta_md += f"<br><small>**Related reference:** Entry `{related_id}` not found in bibliography.\n\n"
 
     meta_md += "\n**Summary:**  \n"
     env.markdown = meta_md + env.markdown
