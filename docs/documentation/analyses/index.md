@@ -26,7 +26,7 @@ Note that GINsim also provides the [Hierarchical Transition Graph](#hierarchical
     The ``Selection Attribute`` tab in the bottom panel shows the content of the selected SCC (i.e. the list of nodes in the original graph).
 
 
-Note that while the ``Construct SCC Graph`` tool is often applied to [State Transition Graph](#state-transition-graphs), it can
+Note that while the ``Construct SCC graph`` tool is often applied to [State Transition Graph](#state-transition-graphs), it can
 also be applied to Regulatory Graphs (or more formally to any type of graphs).
 
 
@@ -39,9 +39,30 @@ To use it, select some nodes in a SCC graph and run the ``Extract subgraph``
 action from the ``Graph`` menu.
 
 This tool will open the original graph, and apply a filter to only keep the
-selected parts. To work properly it thus requires that the original graph 
-had been saved to a file, and that the association between the SCC graph 
+selected parts. To work properly it thus requires that the original graph
+had been saved to a file, and that the association between the SCC graph
 and the original graph (maintained by GINsim transparently) is still valid.
+
+### Attractors reachability
+
+!!! example "Attractors reachability"
+    ![](/documentation/analyses/attractorsReachability2026.png)
+
+    The attractors'reachbility dialog box, showing the configuration of the analysis.
+
+!!! warning
+	TODO: complete
+
+### Interactions functionality
+
+!!! example "Interactions functionality"
+    ![](/documentation/analyses/interactionsFunctionality2026.png)
+
+    The interactions functionality dialog box, showing the configuration of the analysis.
+
+
+!!! warning
+	TODO: complete
 
 
 ### Stable state search
@@ -59,7 +80,7 @@ approximation for complex attractors.
 
 The stable state identification tool is available from the ``Compute stable states`` option of the ``Tools`` menu.
 The stable states dialog box allows to run the analysis after the optional
-selection of a perturbation. The result is shown in a table in the same dialog box, allowing to launch a novel analysis for another perturbation. 
+selection of a perturbation. The result is shown in a table in the same dialog box, allowing to launch a novel analysis for another perturbation.
 A "\*" in the table denotes that each of the values of this component gives rise to a stable state (or several if another "\*" appears in the same row).
 
 
@@ -72,7 +93,7 @@ A "\*" in the table denotes that each of the values of this component gives rise
 #### Availability
 
 Stable state search was first implemented in GINsim 2.3.
-The implementation is now part of the 
+The implementation is now part of the
 [bioLQM toolkit](https://colomoto.org/biolqm).
 
 
@@ -91,13 +112,13 @@ This tool is available from the ``Trapspace identification`` option of the ``Too
 
 !!! example "The trapspace dialog box"
     ![](/documentation/analyses/trapspaces.png)
-    
+
     The trapspace dialog box, showing the result of the analysis.
 
 
 #### Availability
 
-Trapspace identification was first implemented in GINsim 3.0, relying on 
+Trapspace identification was first implemented in GINsim 3.0, relying on
 the [bioLQM toolkit](http://www.colomoto.org/biolqm).
 
 

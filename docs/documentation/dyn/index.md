@@ -36,7 +36,7 @@ for example as starting point for the [Simulation](#simulation).
 
 Each row of the table corresponds to a set of states, where activity
 levels are specified for each component in the corresponding table cell.
-Each component can use all of its possible levels (denoted by a star ("\*")), a single level or any subset of levels, separated by semicolons (;).
+Each component can use all of its possible levels (denoted by a star "\*"), a single level or any subset of levels, separated by semicolons (;).
 Intervals can also be defined using a dash ("0-2" denotes all levels from 0 to 2, included).
 The special value "m" denotes the maximal level of the component.
 For example, "0;2-4" means "0 or values between 2 and 4" and is identical to "0;2;3;4".
@@ -83,8 +83,8 @@ Simulation settings are saved and restored as associated data in <link xref="for
 !!! example "Perturbation simulation result"
     ![Perturbation simulation result](/documentation/dyn/blocking.png)
 
-    Result of an asynchronous simulation, where the expression level for Cro has been blocked at 1.
-    The state transition graph is the same as the original asynchronous one, but all transitions where Cro leaves this value have been suppressed.
+    Result of an asynchronous simulation, where the expression level for `Cro` has been blocked at 1.
+    The state transition graph is the same as the original asynchronous one, but all transitions where `Cro` leaves this value have been suppressed.
     This state transition graph is now composed of two disconnected parts, with a new stable state.
 
 

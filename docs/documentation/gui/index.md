@@ -1,6 +1,7 @@
 
 ### Welcome dialog
-Upon launch, GINsim will present the ``Welcome`` dialog box below.
+
+Upon launch, GINsim will present the ``Welcome`` dialog window below.
 
 ![Welcome](/documentation/gui/welcome2026.png)
 
@@ -28,11 +29,19 @@ Closing this dialog or activating the ``quit`` button will stop GINsim.
 ### Common quirks
 
 #### Input nodes
-In GINsim, some nodes can be defined as input nodes using a checkbox in the node property panel. These input nodes cannot have any incoming interaction or dynamical rule as they have an implicit rule allowing them to always maintain their current activity level. Before setting a node as input, the modeller must thus remove all existing regulators or rules. Likewise, the input status must be removed before adding any new regulator or rule. To delete a logical formula, select it (without editing it) and use the delete key or the contextual menu.
+In GINsim, some nodes can be defined as input nodes using a checkbox in the node property panel.
+These input nodes cannot have any incoming interaction or dynamical rule
+as they have an implicit rule allowing them to always maintain their current activity level.
+Before setting a node as input, the modeller must thus remove all existing regulators or rules. Likewise,
+the input status must be removed before adding any new regulator or rule.
+To delete a logical formula, select it (without editing it) and use the delete key or the contextual menu.
 
 
 #### Unexpected dynamical results
-If you obtain unexpected dynamical results (stable states or simulations results), verify successively the structure of the regulatory graph, the maximal activity levels of all components, the thresholds of interactions coming out of multi-valued components and then the dynamical rules. GINsim further provides a tool to compute interaction functionality, which facilitates the identification of inconsistencies between the structure of the regulatory graph and the dynamical rules.
+If you obtain unexpected dynamical results (stable states or simulations results), verify successively the structure of the regulatory graph,
+the maximal activity levels of all components, the thresholds of interactions coming out of multi-valued components and then the dynamical rules.
+GINsim further provides a tool to compute interaction functionality,
+which facilitates the identification of inconsistencies between the structure of the regulatory graph and the dynamical rules.
 
 
 #### GUI refresh issues
@@ -45,7 +54,7 @@ Some refreshing problems may appear after long or complex modeling sessions, sav
 The main window allows to view a graph, edit its appearance and access to GINsim's main features. This window is divided into three parts:
 
 - the menu and toolbar on the top;
-- the graph panel, as the main central part; 
+- the graph panel, as the main central part;
 - the secondary panel on the bottom.
 
 !!! example "The main window of GINsim"
@@ -53,30 +62,16 @@ The main window allows to view a graph, edit its appearance and access to GINsim
 
 	The main window of GINsim, featuring an empty model.
 
+#### Main Menu
 
-#### Graph view
-
-see the [graph page](#state-transition-graphs) or merge its content here?
-
-
-#### Edit toolbar
-
-!!! example "The Edit toolbar"
-	![The Edit menu](/documentation/gui/editToolbar2026.png)
-	
-	The edit toolbar is composed of a few buttons enabling the user to create a new model.
-
-
-#### GINsim menu
+##### GINsim menu
 
 !!! example "GINsim menu"
 	![File menu](/documentation/gui/GINsimMenu2026.png)
-	
-!!! warning
-	TODO: check and complete	
 
+Alongside **Help**, **About**, and **Quit**, **Logging** lets users save runtime logs to a file and toggle it on or off.
 
-#### File menu
+##### File menu
 
 !!! example "File menu"
 	![File menu](/documentation/gui/fileMenu2026.png)
@@ -92,11 +87,10 @@ The File menu provides the following options:
 - **Close** to close the current graph. If other windows are opened, it will simply close the current one, otherwise it will leave you with an empty window.
 - **Save/Save as** to save the current graph. If the file is new or if the **Save as** option has been selected, a file selection dialog appears which allows to choose the graphical attributes to save: it is possible to save only the structure of the graph, ignoring all graphical attributes, or to save only the position of nodes. The default is to save all graphical attributes (position, size, color, shape...). The graph is saved in the (XML-based) [GINML](#ginsim-format).
 - **Save Subgraph** to save the current selection as a new graph.
-- **Export** to save the current graph in another format. GINsim can export regulatory and state transition graphs using several generic visualisation formats. These exports only retain the graph structure and visual appearance. The following export formats are available under the File/export submenu: TODO
-The regulatory graph can additionally be exported into different formats.
+- **Export** to save the current graph in another format. GINsim can export regulatory and state transition graphs using several generic visualisation formats. These exports only retain the graph structure and visual appearance. Several export formats are available under the File/export submenu, see [supported format](#formats-importsexports).
 - **Quit** to close all graphs and exit the GINsim application.
 
-Some of these actions **New**, **Open** and **Save** are also available from the toolbar.
+Some of these actions **New**, **Open** and **Save** are also available from the Welcome dialog window.
 
 
 !!! example "The Save dialog"
@@ -110,25 +104,26 @@ Some of these actions **New**, **Open** and **Save** are also available from the
 	If the **extended save** option is selected, the file is saved in an archive (zip file with a .zginml extension) instead of a XML file (with a .ginml extension). This allows to save related data, such as simulation parameters or mutant definitions, along with the model. These files need GINsim 2.3 or later to be opened.
 
 
-#### View menu
-	
+##### View menu
+
 !!! example "The View menu"
 	![The View menu](/documentation/gui/viewMenu2026.png)
 
-Different actions can be performed from this menu on all types of graph.
-- [Graph layouts](#graph-layouts);
+Different actions can be performed from this menu on all types of graphs:
+
+- [Graph layouts](#graph-layouts):
 	- Level Layout (with or without inversion)
 	- Ring Layout (with or without inversion)
 - Zoom in/out/reset/fit in window
 
-#### Graph menu
-	
+##### Graph menu
+
 !!! example "The Graph menu"
 	![The Edit menu](/documentation/gui/graphMenu2026.png)
-	
+
 	The Graph menu is composed of three sections: copy/paste, selection management, other actions on the logical regulatory graph.
 
-##### Copy/paste menu section
+###### Copy/paste menu section
 
 The edit menu offers classical **Copy**/**Paste** entries.
 
@@ -140,48 +135,59 @@ The edit menu offers classical **Copy**/**Paste** entries.
 
 !!! warning
 	**Copy**/**Paste** actions are specific to GINsim: copying the graph and pasting it into an external application is not supported. These actions are only available for regulatory graphs.
-	
-##### Selection and search menu section
 
-!!! warning
-	TODO: check and complete
+###### Selection and search menu section
 
-##### Actions menu section
+This subpart of the menu is meant to deal with selection of nodes and edges and search of nodes and paths in the graph.
+
+###### Actions menu section
 
 Different actions can be performed from this menu, depending on the type of graph.
 Individual actions are detailed in the relevant part of this manual.
 Currently available actions are:
 
 - for all graphs:
+	- colouring of local graphs, depending on the state of target regulators;
+	- colouring of the regulatory graph, depending on the state of each regulator;
+	- colouring of the strongly connected components in the graph.
 	- determination of the [Strongly Connected Components (SCC)](#strongly-connected-components-graph) of a graph;
-	- computation of the local graph; (MISMATCH between tooltip "Compute the local graphs" and menu item "Highlight local graph")
-	- colouring the regulatory graph, depending on the state of each regulator;
-	- colouring of the Strongly Connected Components graph.
 
-!!! warning
-	TODO: check and complete, is it true for all graphs ?
-
-#### Tools menu
-
-!!! warning
-	TODO: replace this all with a short note and point to the relevant index pages?
+##### Tools menu
 
 !!! example "The Actions menu"
 	![The Actions menu](/documentation/gui/toolsMenu2026.png)
 
 	The Action menu for a regulatory graph.
-	
+
 Different actions can be performed from this menu, depending on the type of graph.
 Individual actions are detailed in the relevant part of this manual.
 Currently available actions are:
 
 - for regulatory graphs:
 	- [The simulation](#simulation) (i.e., computation of a state transition graph);
+	- determine [Attractors reachability](#attractors-reachability);
 	- analysis of the [Circuit analysis](#circuit-analysis);
 	- determination of [Stable states](#stable-state-search);
+	- determination of [Interactions functionality](#interactions-functionality);
 - for state transition graphs:
 	- [path search](#find-path);
 	- [stg animator](#the-stg-animator) graphical path construction (animation);
+
+
+
+#### Edit toolbar
+
+!!! example "The Edit toolbar"
+	![The Edit menu](/documentation/gui/editToolbar2026.png)
+
+	The edit toolbar is composed of a few buttons enabling the user to create a new model.
+
+
+
+#### Main panel (graph view)
+
+This panel displays the Logical Regulatory Graph. See the [logical regulatory graph section](#logical-regulatory-graph) for more information about it.
+
 
 #### The secondary panel
 
