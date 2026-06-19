@@ -34,6 +34,11 @@ Some of this extra data can be shared between several tools.
 This extra data is stored in its own entry inside ZGINML files.
 
 
+#### CNET import
+
+It is possible to import from the CNET format. It has been developed for the
+[Boolean Networks with Synchronous update (BNS)](https://people.kth.se/~dubrova/bns.html) tool.
+
 
 ### Export graph view
 
@@ -90,6 +95,9 @@ annotating the information regarding the input variables on edges instead of sta
 (making use of ARCTL),
 and by (optionally) defining output variables as simple macro functions.
 
+#### signed edge list export
+
+It is also possible to export to a simple signed and directed edge list.
 
 ###### Symbolic representation
 
