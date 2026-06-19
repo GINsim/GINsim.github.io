@@ -1084,6 +1084,23 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="GINsim format">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cnet-import" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CNET import
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
           <li class="md-nav__item">
@@ -1147,6 +1164,17 @@
     <span class="md-ellipsis">
       
         NuSMV export
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#signed-edge-list-export" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        signed edge list export
       
     </span>
   </a>
@@ -1994,6 +2022,23 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="GINsim format">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cnet-import" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CNET import
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
           <li class="md-nav__item">
@@ -2057,6 +2102,17 @@
     <span class="md-ellipsis">
       
         NuSMV export
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#signed-edge-list-export" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        signed edge list export
       
     </span>
   </a>
@@ -2974,6 +3030,9 @@ In other words, it is the value of the logical parameter corresponding to the ca
 <p>Some companion data can be associated to the graphs to store the configuration of various tools.
 Some of this extra data can be shared between several tools.
 This extra data is stored in its own entry inside ZGINML files.</p>
+<h4 id="cnet-import">CNET import<a class="headerlink" href="#cnet-import" title="Permanent link">&para;</a></h4>
+<p>It is possible to import from the CNET format. It has been developed for the
+<a href="https://people.kth.se/~dubrova/bns.html">Boolean Networks with Synchronous update (BNS)</a> tool.</p>
 <h3 id="export-graph-view">Export graph view<a class="headerlink" href="#export-graph-view" title="Permanent link">&para;</a></h3>
 <p>The graph view can be exported as an image in the PNG format.
 This export considers only the visual appearance of the graph,
@@ -3010,6 +3069,8 @@ generation of the successors, such as synchronous, asynchronous and priority cla
 annotating the information regarding the input variables on edges instead of states
 (making use of ARCTL),
 and by (optionally) defining output variables as simple macro functions.</p>
+<h4 id="signed-edge-list-export">signed edge list export<a class="headerlink" href="#signed-edge-list-export" title="Permanent link">&para;</a></h4>
+<p>It is also possible to export to a simple signed and directed edge list.</p>
 <h6 id="symbolic-representation">Symbolic representation<a class="headerlink" href="#symbolic-representation" title="Permanent link">&para;</a></h6>
 <p>Each variable is declared under the <code>VAR</code> section together with
 the corresponding range of values (domain). The order of the declaration of
