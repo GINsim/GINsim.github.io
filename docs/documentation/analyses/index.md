@@ -71,11 +71,6 @@ This tool allows the analytic (i.e. without running a simulation) determination
 of stable states of the model. All stable states are determined, regardless of
 their reachability[@Naldi2007].
 
-This tool allows the analytic (i.e. without running a simulation) determination of
-trapspaces of the model. These trapspaces contain the stable states, as well as an
-approximation for complex attractors.
-
-
 #### Usage
 
 The stable state identification tool is available from the ``Compute stable states`` option of the ``Tools`` menu.
@@ -97,8 +92,7 @@ The implementation is now part of the
 [bioLQM toolkit](https://colomoto.org/biolqm).
 
 
-### Trapspace search
-
+### Trap-spaces identification
 
 This tool allows the analytic (i.e. without running a simulation) determination of
 trapspaces of the model. These trapspaces contain the stable states, as well as an
