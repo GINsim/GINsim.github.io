@@ -144,7 +144,7 @@ the model, especially in the case of model perturbations.
 
 #### Usage
 
-The ``Circuits Functionality`` entry of the ``Action`` menu opens the circuit
+The ``Analyze circuits`` entry of the ``Tools`` menu opens the circuit
 analysis dialog. This dialog provides an interface to lookup all circuits in the
 regulatory graph or a subset of circuits matching some filtering rules (length,
 involved components).
