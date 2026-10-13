@@ -1,22 +1,19 @@
 
 ## Availability and Requirements
 
-GINsim 3.1 is freely available without guarantees.
+GINsim is freely available without guarantees.
 Please contact us for training, other support or dedicated development.
-The GINsim website [https://ginsim.github.io](https://ginsim.github.io) provides the latest official version of the software, [documentation](../documentation/index.md), as well as a [model library](../models/index.md).
+The GINsim website [https://ginsim.github.io/install/](../install/) provides the latest official version of the software, [documentation](../documentation/index.md), as well as a [model library](../models/index.md).
 
 !!! info "Download"
-    | Version   | Date        | Download file     | See changelog |
-    |-----------|-------------|---------------|-----------|
-    | 3.1    | Jan 2026    | [GINsim-3.1-with-deps.jar](GINsim-3.1-with-deps.jar) | [ChangeLog-3.1.txt](ChangeLog-3.1.txt) |
-    | 3.0.0b    | Mar 2018    | [GINsim-3.0.0b-with-deps.jar](GINsim-3.0.0b-with-deps.jar) | [ChangeLog-3.0.0b.txt](ChangeLog-3.0.0b.txt) |
-    | 2.4alpha  | Mar 2010    | [GINsim-2.4.jar](GINsim-2.4.jar) | [ChangeLog-2.4.txt](ChangeLog-2.4.txt) |
-    | 2.3.1     | Sep 2010    | [GINsim-2.3.1.jar](GINsim-2.3.1.jar) | [ChangeLog-2.3.1.txt](ChangeLog-2.3.1.txt) |
+    | Version   | Date        | Download file     | Java version | See changelog |
+    |-----------|-------------|---------------|-----------|---------------|
+    | 3.1    | Oct 2026    | [GINsim-3.1-with-deps-java25.jar](GINsim-3.1-with-deps-java25.jar)<br>[GINsim-3.1-with-deps-java21.jar](GINsim-3.1-with-deps-java21.jar)<br>[GINsim-3.1-with-deps-java17.jar](GINsim-3.1-with-deps-java17.jar)<br>[GINsim-3.1-with-deps-java11.jar](GINsim-3.1-with-deps-java11.jar)<br>| 25<br>21<br>17<br>11<br> | [ChangeLog-3.1.txt](ChangeLog-3.1.txt) |
+    | 3.0.0b    | Mar 2018    | [GINsim-3.0.0b-with-deps.jar](GINsim-3.0.0b-with-deps.jar) | 11 | [ChangeLog-3.0.0b.txt](ChangeLog-3.0.0b.txt) |
+    | 2.4alpha  | Mar 2010    | [GINsim-2.4.jar](GINsim-2.4.jar) | 11 | [ChangeLog-2.4.txt](ChangeLog-2.4.txt) |
+    | 2.3.1     | Sep 2010    | [GINsim-2.3.1.jar](GINsim-2.3.1.jar) | 11 | [ChangeLog-2.3.1.txt](ChangeLog-2.3.1.txt) |
 
-    Or grab the **development version** on GitHub: [GINsim-SNAPSHOT-jar-with-dependencies.jar](https://github.com/GINsim/GINsim/releases/tag/latest)
-
-
-GINsim 3.1 requires Java >=11 to run.
+    Or grab the **development version** on GitHub: [https://github.com/GINsim/GINsim/releases/tag/latest](https://github.com/GINsim/GINsim/releases/tag/latest)
 
 To obtain Java for Linux, Windows, and Mac OSX, you can download it at [https://adoptium.net/temurin/releases](https://adoptium.net/temurin/releases). If you have an Oracle account, you can also use Java from Oracle.
 

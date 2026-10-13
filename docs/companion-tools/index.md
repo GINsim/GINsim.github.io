@@ -6,7 +6,7 @@
 
 !!! tip "EpiLog"
     EpiLog is a tool which makes use of LogicalModel to implement a cellular automata, defining a convenient framework for the qualitative modelling of epithelium pattern formation.
-    You can obtain more information at [http://epilog-tool.org](http://epilog-tool.org).
+    You can obtain more information at [https://github.com/ptgm/EpiLog/](https://github.com/ptgm/EpiLog/).
 
 
 !!! tip "MDDlib"

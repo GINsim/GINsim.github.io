@@ -22,15 +22,17 @@ File Format and I/O:
 * Improved annotation loading from XML files
 
 Simulation and Analysis:
-* Fixed output node values computation on MDD leaves using PathSearcher
 * Hidden sequential updater from interface (experimental feature)
 * Refactored simulation strategy selection
+* Added controls to pause and resume simulations
+* Promoted trap-space analysis to the release build (without inclusion diagrams)
+* Added trap-space visualization to the Colour LRG menu
+* Limited simulation successors now remain within the selected subspace
 * Animation fixes for state transition graphs
 * Model reversion now checks for boolean models before execution
-* Temporary fix for output node value display issues
 
 Bug Fixes:
-* Fixed issue #17: Output nodes on MDD leaves now correctly computed
+* Fixed issue #17: Output-node values on MDD leaves are now computed using PathSearcher
 * Fixed issue #23: Graph display and interaction improvements
 * Fixed issue #37: File handling corrections
 * Fixed issue #38: Export functionality fixes
@@ -43,6 +45,8 @@ Other:
 * General code refactoring and cleanup
 * Improved error handling and validation
 * Enhanced Maven build configuration
+* Updated the bioLQM dependency to version 0.8
+* Added release builds for multiple Java versions
 * Multiple performance and stability improvements
 
 
