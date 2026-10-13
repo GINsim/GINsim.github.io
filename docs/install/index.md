@@ -8,7 +8,7 @@ The GINsim website [https://ginsim.github.io/install/](../install/) provides the
 !!! info "Download"
     | Version   | Date        | Download file     | Java version | See changelog |
     |-----------|-------------|---------------|-----------|---------------|
-    | 3.1    | Oct 2026    | [GINsim-3.1-with-deps-java25.jar](GINsim-3.1-with-deps-java25.jar)<br>[GINsim-3.1-with-deps-java21.jar](GINsim-3.1-with-deps-java21.jar)<br>[GINsim-3.1-with-deps-java17.jar](GINsim-3.1-with-deps-java17.jar)<br>[GINsim-3.1-with-deps-java11.jar](GINsim-3.1-with-deps-java11.jar)<br>| 25<br>21<br>17<br>11<br> | [ChangeLog-3.1.txt](ChangeLog-3.1.txt) |
+    | 3.1    | Oct 2026    | <a href="GINsim-3.1-with-deps-java25.jar" style="white-space: nowrap">GINsim-3.1-with-deps-java25.jar</a><br><a href="GINsim-3.1-with-deps-java21.jar" style="white-space: nowrap">GINsim-3.1-with-deps-java21.jar</a><br><a href="GINsim-3.1-with-deps-java17.jar" style="white-space: nowrap">GINsim-3.1-with-deps-java17.jar</a><br><a href="GINsim-3.1-with-deps-java11.jar" style="white-space: nowrap">GINsim-3.1-with-deps-java11.jar</a><br>| 25<br>21<br>17<br>11<br> | [ChangeLog-3.1.txt](ChangeLog-3.1.txt) |
     | 3.0.0b    | Mar 2018    | [GINsim-3.0.0b-with-deps.jar](GINsim-3.0.0b-with-deps.jar) | 11 | [ChangeLog-3.0.0b.txt](ChangeLog-3.0.0b.txt) |
     | 2.4alpha  | Mar 2010    | [GINsim-2.4.jar](GINsim-2.4.jar) | 11 | [ChangeLog-2.4.txt](ChangeLog-2.4.txt) |
     | 2.3.1     | Sep 2010    | [GINsim-2.3.1.jar](GINsim-2.3.1.jar) | 11 | [ChangeLog-2.3.1.txt](ChangeLog-2.3.1.txt) |
