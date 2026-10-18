@@ -8,7 +8,7 @@ User Interface Improvements:
 * Enhanced menu organization for better usability
 * Improved File Export menu with clearer labels
 * Upgraded Graph menu structure
-* Removed non-functional Annotation Tab
+* Annotation Tab replaces the annotation combobox
 * Refactored simulation strategy combobox
 
 File Format and I/O:
