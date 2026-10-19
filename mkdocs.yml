@@ -148,8 +148,9 @@ nav:
   - Home: index.md
   - Model Repository: models/index.md
   - Documentation: documentation/index.md
-  - Companion Tools: companion-tools/index.md
+  - Tutorial: tutorial/index.md
   - Installation: install/index.md
+  - Companion Tools: companion-tools/index.md
   - How to cite: howtocite/index.md
   - Contact: contact/index.md
 
