@@ -374,13 +374,16 @@ estimating the reachability of the attractors), to a larger model.
 
 ---
 
-## Part II: analysing a published model, the mammalian cell cycle
+## Part II: analysing the mammalian cell cycle model
 
-The model of Traynard *et al.* [^traynard] describes the core engine of the mammalian cell cycle with eleven components, among which
-the cyclins A, B, D and E, and the inhibitors Rb, p27 and the APC/C co-activators Cdh1 and Cdc20.
+The model of Traynard *et al.* [^traynard] describes the core engine of the mammalian cell cycle with eleven components, among which the cyclins A, B, D and E, and the inhibitors Rb, p27 and the APC/C co-activators Cdh1 and Cdc20.
 CycD is an input (the growth factor signal); Rb and p27 are ternary components. It extends the model of Fauré *et al.* [^faure].
-Open **File → Open** and select the downloaded file `Traynard_MultiLevel_MamCC_Apr2016.zginml`
+
+Go to the [models/2016-mammal-cell-cycle/](../models/2016-mammal-cell-cycle/) in the model repository and download the `Traynard_MultiLevel_MamCC_Apr2016.zginml` model file.
+Then in GINsim, **Open** and select the downloaded file 
 (or click it in the *Recent files* of the Welcome dialog).
+
+Here, we follow the analysis described in the GINsim 3.1 paper [^ginsim2026].
 
 ### Explore the model
 
@@ -399,7 +402,7 @@ rectangles are the multilevel components (Rb and p27), ellipses the Boolean ones
     Two non-overlapping Boolean functions define the target values of the ternary component p27:
     the first enables the value 2 and the second the value 1.
 
-The complete rules are listed in the supplementary table of the article. Use **View → Layout** if you want to rearrange the graph, and
+The complete rules are listed in a table in the GINsim 3.1 article [^ginsim2026]. Use **View → Layout** if you want to rearrange the graph, and
 **Graph → Find path** or **Graph → Highlight local graph** to explore the neighbourhood of a component.
 
 ### Check the interaction signs
@@ -651,3 +654,4 @@ If you use GINsim 3.1, please cite the article indicated in the [how to cite pag
 
 [^faure]: Fauré A, Naldi A, Chaouiya C, Thieffry D. Dynamical analysis of a generic Boolean model for the control of the mammalian cell cycle. *Bioinformatics* 22(14):e124–e131 (2006). [doi:10.1093/bioinformatics/btl210](https://doi.org/10.1093/bioinformatics/btl210)
 
+[^ginsim2026]: Tichit L, Benielli D, Chabrol O, Thieffry D, Chaouiya C, Monteiro PT. GINsim 3.1: Qualitative modelling and dynamical analysis of logical regulatory networks. *in preparation*
