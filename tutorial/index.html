@@ -1,0 +1,2138 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../documentation/">
+      
+      
+        <link rel="next" href="../install/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Tutorial - Gene Interaction Network simulation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../css/custom.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#tutorial-from-a-regulatory-graph-to-dynamical-analysis-with-ginsim-31" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Gene Interaction Network simulation" class="md-header__button md-logo" aria-label="Gene Interaction Network simulation" data-md-component="logo">
+      
+  <img src="../ginsim.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Gene Interaction Network simulation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Tutorial
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14.3 16-.7-2h-3.2l-.7 2H7.8L11 7h2l3.2 9zM20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12zm-9.15 3.96h2.3L12 9z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to system preference"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Switch to system preference" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/GINsim/GINsim" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GINsim @ GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Gene Interaction Network simulation" class="md-nav__button md-logo" aria-label="Gene Interaction Network simulation" data-md-component="logo">
+      
+  <img src="../ginsim.svg" alt="logo">
+
+    </a>
+    Gene Interaction Network simulation
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/GINsim/GINsim" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GINsim @ GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../models/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Model Repository
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../documentation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Documentation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tutorial
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tutorial
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#getting-started" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Getting started
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Getting started">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#launching-ginsim" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Launching GINsim
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-main-window" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The main window
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-i-building-a-model-from-scratch-the-p53mdm2-network" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part I: building a model from scratch, the p53–Mdm2 network
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Part I: building a model from scratch, the p53–Mdm2 network">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-biological-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The biological system
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The model
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-the-components" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Create the components
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#add-the-interactions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Add the interactions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#define-the-logical-rules" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Define the logical rules
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#annotate-and-save-the-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Annotate and save the model
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#check-the-consistency-of-the-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Check the consistency of the model
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stable-states" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Stable states
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#asynchronous-dynamics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Asynchronous dynamics
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#synchronous-dynamics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Synchronous dynamics
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#compress-the-graph-the-hierarchical-transition-graph" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Compress the graph: the hierarchical transition graph
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#perturbations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Perturbations
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#trap-spaces" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Trap-spaces
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#regulatory-circuits" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Regulatory circuits
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#model-reduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Model reduction
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-you-have-learnt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What you have learnt
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-ii-analysing-the-mammalian-cell-cycle-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part II: analysing the mammalian cell cycle model
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Part II: analysing the mammalian cell cycle model">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#explore-the-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Explore the model
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#check-the-interaction-signs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Check the interaction signs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#compute-the-attractors" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Compute the attractors
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#display-a-state-on-the-regulatory-graph" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Display a state on the regulatory graph
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#explore-the-dynamics-state-transition-graphs-and-their-compressions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Explore the dynamics: state transition graphs and their compressions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#estimate-which-attractor-is-reached-and-with-which-probability" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Estimate which attractor is reached, and with which probability
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#identify-the-regulatory-circuits-that-matter" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Identify the regulatory circuits that matter
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#other-tools" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Other tools
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#going-further" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Going further
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Going further">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-scripting-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A scripting example
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#troubleshooting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Troubleshooting
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-cite" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How to cite
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        References
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../install/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Installation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../companion-tools/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Companion Tools
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../howtocite/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    How to cite
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../contact/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Contact
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#getting-started" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Getting started
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Getting started">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#launching-ginsim" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Launching GINsim
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-main-window" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The main window
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-i-building-a-model-from-scratch-the-p53mdm2-network" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part I: building a model from scratch, the p53–Mdm2 network
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Part I: building a model from scratch, the p53–Mdm2 network">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-biological-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The biological system
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The model
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-the-components" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Create the components
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#add-the-interactions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Add the interactions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#define-the-logical-rules" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Define the logical rules
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#annotate-and-save-the-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Annotate and save the model
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#check-the-consistency-of-the-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Check the consistency of the model
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stable-states" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Stable states
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#asynchronous-dynamics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Asynchronous dynamics
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#synchronous-dynamics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Synchronous dynamics
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#compress-the-graph-the-hierarchical-transition-graph" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Compress the graph: the hierarchical transition graph
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#perturbations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Perturbations
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#trap-spaces" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Trap-spaces
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#regulatory-circuits" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Regulatory circuits
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#model-reduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Model reduction
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-you-have-learnt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What you have learnt
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-ii-analysing-the-mammalian-cell-cycle-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part II: analysing the mammalian cell cycle model
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Part II: analysing the mammalian cell cycle model">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#explore-the-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Explore the model
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#check-the-interaction-signs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Check the interaction signs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#compute-the-attractors" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Compute the attractors
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#display-a-state-on-the-regulatory-graph" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Display a state on the regulatory graph
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#explore-the-dynamics-state-transition-graphs-and-their-compressions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Explore the dynamics: state transition graphs and their compressions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#estimate-which-attractor-is-reached-and-with-which-probability" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Estimate which attractor is reached, and with which probability
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#identify-the-regulatory-circuits-that-matter" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Identify the regulatory circuits that matter
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#other-tools" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Other tools
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#going-further" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Going further
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Going further">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-scripting-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A scripting example
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#troubleshooting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Troubleshooting
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-cite" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How to cite
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        References
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="tutorial-from-a-regulatory-graph-to-dynamical-analysis-with-ginsim-31">Tutorial: from a regulatory graph to dynamical analysis with GINsim 3.1<a class="headerlink" href="#tutorial-from-a-regulatory-graph-to-dynamical-analysis-with-ginsim-31" title="Permanent link">&para;</a></h1>
+<p>This tutorial walks you through the main steps of a logical modelling project with GINsim 3.1:
+defining a regulatory graph and its logical rules, checking them, computing attractors,
+exploring the dynamics, estimating attractor reachability and analysing regulatory circuits.</p>
+<p>It has two parts:</p>
+<ul>
+<li><strong>Part I</strong> builds a small model <em>from scratch</em>, the p53–Mdm2 network (four components, two of them multilevel), following the
+  protocol of Naldi <em>et al.</em> <sup id="fnref2:naldi2018"><a class="footnote-ref" href="#fn:naldi2018">1</a></sup>, so that you can practise the editing tools and the main analyses on something
+  small whose behaviour you can fully predict.</li>
+<li><strong>Part II</strong> applies the analysis tools to a published model, the multilevel model of the mammalian
+  cell cycle by Traynard <em>et al.</em> <sup id="fnref2:traynard"><a class="footnote-ref" href="#fn:traynard">2</a></sup>, which is the case study of the GINsim 3.1 article.
+  The screenshots of Part II are the figures of that article.</li>
+</ul>
+<div class="admonition info">
+<p class="admonition-title">Before you start</p>
+<ul>
+<li><strong>Software:</strong> GINsim 3.1, which needs a Java Virtual Machine (version 11 or later). See the <a href="/install/">installation page</a>.</li>
+<li><strong>File for Part I:</strong> <code>tutorial_p53Mdm2.zginml</code>, the complete p53–Mdm2 model (to check your work, or to start from).</li>
+<li><strong>Files for Part II:</strong> the multilevel cell cycle model, available from the
+  <a href="/models/2016-mammal-cell-cycle/">model repository</a> (file <code>Traynard_MultiLevel_MamCC_Apr2016.zginml</code>).</li>
+<li><strong>Reference documentation:</strong> this tutorial is task-oriented. The full description of every
+  functionality is in the <a href="/documentation/">Documentation</a>.</li>
+</ul>
+</div>
+<hr />
+<h2 id="getting-started">Getting started<a class="headerlink" href="#getting-started" title="Permanent link">&para;</a></h2>
+<h3 id="launching-ginsim">Launching GINsim<a class="headerlink" href="#launching-ginsim" title="Permanent link">&para;</a></h3>
+<p>Start GINsim from your file browser (double-click on the JAR file) or from a terminal:</p>
+<pre><code>java -jar GINsim-&lt;version&gt;.jar
+</code></pre>
+<p>GINsim opens the <em>Welcome</em> dialog, from which you can create a <strong>New model</strong>, <strong>Open</strong> a saved model,
+or <strong>Import</strong> a model from another format. The recently used files are listed below.</p>
+<div class="admonition example">
+<p class="admonition-title">The Welcome dialog</p>
+<p><img alt="The Welcome dialog" src="part1_welcome.png" width="420" /></p>
+<p>Closing this dialog stops GINsim.</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Opening a file from the command line</p>
+<p>A model file (or a request for a new model) can be given as an argument on the command line,
+in which case the Welcome dialog is skipped. For example, from the directory containing both files:</p>
+<p><code>bash
+java -jar GINsim-3.1-with-deps-java11.jar Traynard_MultiLevel_MamCC_Apr2016.zginml</code></p>
+<p>Use the JAR matching your Java version and replace the model filename with the path to the file you want to open.
+See the run options on the <a href="/install/">installation page</a>.</p>
+</div>
+<h3 id="the-main-window">The main window<a class="headerlink" href="#the-main-window" title="Permanent link">&para;</a></h3>
+<p>Every model opens in a <em>main window</em>. From top to bottom you find the menus
+(<code>GINsim</code>, <code>File</code>, <code>View</code>, <code>Graph</code>, <code>Tools</code>), the editing toolbar, the graph canvas,
+and the bottom area with the three tabs (whose content depends on the selected element)
+<strong>Modelling Attributes</strong>, <strong>Style</strong>, and <strong>Annotation</strong>.</p>
+<div class="admonition example">
+<p class="admonition-title">The main window of a new model</p>
+<p><img alt="The main window" src="part1_mainWindow.png" width="560" /></p>
+</div>
+<p>The functionalities used in this tutorial are located as follows.</p>
+<table>
+<thead>
+<tr>
+<th>Menu</th>
+<th>Entries used in this tutorial</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Tools</code></td>
+<td><em>Run simulation</em>, <em>Attractor reachability</em>, <em>Compute stable states</em>, <em>Trap-spaces identification</em>, <em>Analyse circuits</em>, <em>Interactions functionality</em>, <em>Reduce model</em>, <em>Booleanize model</em>, <em>Reverse model</em></td>
+</tr>
+<tr>
+<td><code>Graph</code></td>
+<td><em>Colour LRG</em>, <em>Colour SCC</em>, <em>Construct SCC Graph</em>, <em>Find path</em></td>
+</tr>
+<tr>
+<td><code>File</code></td>
+<td><em>New model</em>, <em>Open</em>, <em>Import</em>, <em>Save</em>, <em>Save as…</em>, <em>Export</em>, <em>Close</em></td>
+</tr>
+<tr>
+<td><code>View</code></td>
+<td><em>Layout</em>, zoom commands</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition example">
+<p class="admonition-title">The Tools and Graph menus</p>
+<p><img alt="The Tools menu" src="part1_toolsMenu.png" width="360" />
+<img alt="The Graph menu" src="part1_graphMenu.png" width="360" /></p>
+</div>
+<hr />
+<h2 id="part-i-building-a-model-from-scratch-the-p53mdm2-network">Part I: building a model from scratch, the p53–Mdm2 network<a class="headerlink" href="#part-i-building-a-model-from-scratch-the-p53mdm2-network" title="Permanent link">&para;</a></h2>
+<p>In this first part we build, step by step, a small logical model of the <strong>p53–Mdm2 network</strong> and analyse it
+with the main GINsim tools. We follow the protocol of Naldi <em>et al.</em> <sup id="fnref:naldi2018"><a class="footnote-ref" href="#fn:naldi2018">1</a></sup>, which uses
+the same example, and which you can read for more biological and methodological background.</p>
+<h3 id="the-biological-system">The biological system<a class="headerlink" href="#the-biological-system" title="Permanent link">&para;</a></h3>
+<p>The transcription factor p53 controls cell proliferation and the response to DNA damage. Its level is tightly regulated
+by the ubiquitin ligase Mdm2: nuclear Mdm2 accelerates the degradation of p53 and blocks its transcriptional activity.
+In turn, p53 activates the transcription of Mdm2 and, by inhibiting the translocation of Mdm2 from the cytoplasm to the nucleus,
+decreases the level of nuclear Mdm2. DNA damage promotes the degradation of Mdm2, so that p53 can increase and
+trigger DNA repair; high levels of p53 in turn favour the repair of the damage.</p>
+<div class="admonition example">
+<p class="admonition-title">The p53–Mdm2 network</p>
+<p><img alt="The p53-Mdm2 network" src="part1_p53_network.png" width="400" /></p>
+</div>
+<h3 id="the-model">The model<a class="headerlink" href="#the-model" title="Permanent link">&para;</a></h3>
+<p>The model has four components, whose maximal levels are given below. <strong>Please create them in this order</strong>
+(p53, Mdm2cyt, Mdm2nuc, DNAdam), which makes your results easier to compare with the figures.</p>
+<table>
+<thead>
+<tr>
+<th>Component</th>
+<th>Meaning</th>
+<th>Levels</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>p53</code></td>
+<td>the protein p53</td>
+<td>0, 1, 2</td>
+</tr>
+<tr>
+<td><code>Mdm2cyt</code></td>
+<td>Mdm2 in the cytoplasm</td>
+<td>0, 1, 2</td>
+</tr>
+<tr>
+<td><code>Mdm2nuc</code></td>
+<td>Mdm2 in the nucleus</td>
+<td>0, 1</td>
+</tr>
+<tr>
+<td><code>DNAdam</code></td>
+<td>DNA damage</td>
+<td>0, 1</td>
+</tr>
+</tbody>
+</table>
+<p>The regulatory interactions are listed below. When a source acts on a target at several levels (here Mdm2cyt on Mdm2nuc),
+the interaction has several <em>thresholds</em>, each of them with its own sign. An interaction is active when the level of its source
+is at least its threshold, and below the threshold of the next interaction of the same source.</p>
+<table>
+<thead>
+<tr>
+<th>Source</th>
+<th>Target</th>
+<th>Threshold</th>
+<th>Sign</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>p53</td>
+<td>Mdm2nuc</td>
+<td>1</td>
+<td>−</td>
+</tr>
+<tr>
+<td>p53</td>
+<td>Mdm2cyt</td>
+<td><strong>2</strong></td>
+<td>+</td>
+</tr>
+<tr>
+<td>p53</td>
+<td>DNAdam</td>
+<td><strong>2</strong></td>
+<td>−</td>
+</tr>
+<tr>
+<td>Mdm2cyt</td>
+<td>Mdm2nuc</td>
+<td>1</td>
+<td>+</td>
+</tr>
+<tr>
+<td>Mdm2cyt</td>
+<td>Mdm2nuc</td>
+<td><strong>2</strong></td>
+<td>+</td>
+</tr>
+<tr>
+<td>Mdm2nuc</td>
+<td>p53</td>
+<td>1</td>
+<td>−</td>
+</tr>
+<tr>
+<td>DNAdam</td>
+<td>DNAdam</td>
+<td>1</td>
+<td>+</td>
+</tr>
+<tr>
+<td>DNAdam</td>
+<td>Mdm2nuc</td>
+<td>1</td>
+<td>−</td>
+</tr>
+</tbody>
+</table>
+<p>Finally, the logical rules give the conditions under which each component is called to reach a target level.</p>
+<ul>
+<li><code>p53</code>, target level 2: <code>!Mdm2nuc</code></li>
+<li><code>Mdm2cyt</code>, target level 2: <code>p53</code></li>
+<li><code>Mdm2cyt</code>, target level 1: <code>!p53</code></li>
+<li><code>Mdm2nuc</code>, target level 1: <code>Mdm2cyt:2 | (Mdm2cyt:1 &amp; !p53 &amp; !DNAdam)</code></li>
+<li><code>DNAdam</code>, target level 1: <code>DNAdam &amp; !p53</code></li>
+</ul>
+<p>Rules combine regulators with <code>!</code> (NOT), <code>&amp;</code> (AND), <code>|</code> (OR) and parentheses. A regulator name refers to
+an interaction, and is true when the level of the regulator is at least the threshold of this interaction. When there are
+several thresholds, <code>Mdm2cyt:2</code> explicitly designates the one at level 2. Hence, in the rule of <code>Mdm2cyt</code>, <code>p53</code> means
+"p53 at level 2" (threshold 2 of the interaction p53 → Mdm2cyt), and <code>!p53</code> means "p53 below level 2", whereas in the rule of
+<code>Mdm2nuc</code>, <code>!p53</code> means "p53 absent" (threshold 1).</p>
+<p>In words:</p>
+<ul>
+<li>p53 is called to its highest level when there is no nuclear Mdm2, and to 0 otherwise;</li>
+<li>Mdm2cyt has a basal level of 1, and is called to level 2 when p53 is at level 2;</li>
+<li>Mdm2nuc is active when Mdm2cyt is at level 2, or when Mdm2cyt is at least at level 1 in the absence of p53 and of DNA damage;</li>
+<li>DNAdam maintains itself, unless p53 reaches level 2 (DNA repair).</li>
+</ul>
+<p>A level not covered by any rule is called to 0.</p>
+<h3 id="create-the-components">Create the components<a class="headerlink" href="#create-the-components" title="Permanent link">&para;</a></h3>
+<ol>
+<li>In the <em>Welcome</em> dialog, click <strong>New model</strong>.</li>
+<li>Use the <em>component insertion</em> tool of the toolbar (a square with a plus sign). To create several nodes in a row,
+   <strong>double-click</strong> the tool to lock the mode, then click four times on the canvas. Click the <strong>E</strong> button (default mode) to stop adding nodes.</li>
+<li>Select each node and use the bottom panel (<em>Modelling Attributes</em> tab) to set its <code>Id</code> and its maximal level <code>Max</code>
+   (2 for p53 and Mdm2cyt, 1 for the others), as in the table above. Leave the <code>Input</code> box unticked: this model has no input.</li>
+<li>Check the order of the components: with nothing selected, the <em>Modelling Attributes</em> tab lists the components. Use the green arrows to obtain the order:
+   p53, Mdm2cyt, Mdm2nuc, DNAdam.</li>
+</ol>
+<div class="admonition example">
+<p class="admonition-title">Defining the components</p>
+<p><img alt="The components of the p53-Mdm2 model" src="part1_p53_nodes.png" width="640" /></p>
+<p>The four nodes created; here p53 is selected, and the bottom panel shows its identifier, its maximal level (2), and its annotations.
+The <em>Style</em> tab lets you change colours and shapes.</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Editing tools</p>
+<p>Pass the mouse over a tool to display its function. Clicking once on a tool selects it for a single use; clicking twice locks it.
+<img alt="The editing toolbar" src="part1_editToolbar.png" width="380" /></p>
+</div>
+<h3 id="add-the-interactions">Add the interactions<a class="headerlink" href="#add-the-interactions" title="Permanent link">&para;</a></h3>
+<p>Select the type of interaction in the toolbar (positive, negative, dual or unknown), click on the source node and drag to
+the target node. A node can be its own target (DNAdam). For each interaction, the sign is only a visual hint: the effect of an interaction
+is defined by the logical rules.</p>
+<p>For the arc from Mdm2cyt to Mdm2nuc, <strong>there are two thresholds</strong>: draw one arc, select it (default mode <strong>E</strong>), and, in the bottom panel, click the <strong>+</strong> button to
+add a second interaction with threshold 2 (both are positive). Likewise, select the arcs from p53 to Mdm2cyt and from p53 to DNAdam and set
+their <strong>threshold to 2</strong>.</p>
+<div class="admonition example">
+<p class="admonition-title">Defining the interactions</p>
+<p><img alt="Interactions of the p53-Mdm2 model" src="part1_p53_interaction.png" width="640" /></p>
+<p>The regulatory graph and, in the bottom panel, the two interactions (thresholds 1 and 2) of the arc from Mdm2cyt to Mdm2nuc.</p>
+</div>
+<h3 id="define-the-logical-rules">Define the logical rules<a class="headerlink" href="#define-the-logical-rules" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Select a node (for instance DNAdam) and choose <strong>Formulae</strong> in the drop-down list at the bottom left of the <em>Modelling Attributes</em> tab.</li>
+<li>Click the little arrow in the main bottom panel to expand the tree, and add a function for the target level (1 by default; change it for the multilevel nodes).</li>
+<li>Click the <strong>E</strong> button to start editing (the line is highlighted), type the formula, and press <strong>Enter</strong> to validate it.</li>
+<li>Repeat for the other components and target levels of the table of rules.</li>
+</ol>
+<p>Several rows can be given for the same target level; they are combined with OR. The literals must exactly match the identifiers of the
+regulators of the selected node. A component with no rule for a level stays at the value 0 for this level.</p>
+<div class="admonition example">
+<p class="admonition-title">Defining a rule</p>
+<p><img alt="Defining a logical rule" src="part1_p53_rules.png" width="640" /></p>
+<p>The rule <code>DNAdam &amp; !p53</code> for the target level 1 of DNAdam: DNAdam is maintained at level 1 if already present, but only in the absence of p53.</p>
+</div>
+<h3 id="annotate-and-save-the-model">Annotate and save the model<a class="headerlink" href="#annotate-and-save-the-model" title="Permanent link">&para;</a></h3>
+<p>Annotations (free text and links to databases such as <code>pubmed:19426782</code>) can be attached to the model, to each component and to each interaction.
+Select an element and use the annotation panel (select the <strong>Annotation</strong> tab below).</p>
+<p><img alt="The annotation panel" src="part1_annotation.png" width="480" /></p>
+<p>Use <strong>File → Save as…</strong> to save your model in a <code>.zginml</code> archive: this keeps, together with the model, its perturbations, initial states and
+simulation settings.</p>
+<div class="admonition tip">
+<p class="admonition-title">Save regularly</p>
+<p>There is no undo functionality.</p>
+</div>
+<p><img alt="The Save as dialog" src="part1_saveAs.png" width="420" /></p>
+<h3 id="check-the-consistency-of-the-model">Check the consistency of the model<a class="headerlink" href="#check-the-consistency-of-the-model" title="Permanent link">&para;</a></h3>
+<p>Before computing anything, check that the signs of the interactions you drew agree with what your rules really do.
+Open <strong>Tools → Interactions functionality</strong> and click <strong>Run</strong>: GINsim recomputes, from the logical rules, the effect of each interaction in each
+regulatory context, and compares it with the declared sign. For the model above, <strong>all interactions are consistent</strong> (they kept the original color).</p>
+<p>Select a perturbation (optional), click <strong>Run</strong>, <strong>Save a report</strong>, and tick <strong>Change/Restore LRG edge colours</strong> to display the result on the graph.</p>
+<p><img alt="The interaction functionality dialog" src="part1_interactionsFunctionality.png" width="400" /></p>
+<div class="admonition example">
+<p class="admonition-title">Exercise: find the typos</p>
+<p>Introduce each of the following errors, run the tool again, and undo the change.</p>
+<ol>
+<li>In the rule of <code>Mdm2nuc</code>, delete <code>&amp; !p53</code>. The interaction p53 → Mdm2nuc, declared as an inhibition, is now reported as <strong>non-functional</strong>: p53 no longer has any effect on Mdm2nuc.</li>
+<li>In the rule of <code>p53</code>, replace <code>!Mdm2nuc</code> by <code>Mdm2nuc</code>. The interaction Mdm2nuc → p53, declared as an inhibition, is now reported as a <strong>positive</strong> interaction.</li>
+</ol>
+<p>In both cases, the other interactions are not flagged.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Inconsistencies do not prevent simulation</p>
+<p>GINsim does not forbid inconsistent models: they simulate normally. The tool is there to help you find mistakes. Remember also that a
+wrong threshold on a multilevel source is not an inconsistency of sign, so it may <em>not</em> be detected by this tool: check the thresholds
+of the interactions leaving multilevel components first when a result looks wrong.</p>
+</div>
+<h3 id="stable-states">Stable states<a class="headerlink" href="#stable-states" title="Permanent link">&para;</a></h3>
+<p>A <em>stable state</em> is a state in which every component is already at its target level. Open <strong>Tools → Compute stable states</strong>
+and click <strong>Run</strong>. GINsim searches all the stable states with an efficient algorithm that does not build the state transition graph.
+You should find a <strong>unique stable state</strong>: <code>p53 = 0, Mdm2cyt = 1, Mdm2nuc = 1, DNAdam = 0</code> (written <code>0110</code> below, in the order of the components),
+corresponding to the <em>rest state</em> of the cell: no p53, medium levels of cytoplasmic and nuclear Mdm2, no DNA damage.</p>
+<p>If you obtain another stable state, or none, check carefully the maximal level of each node, the threshold of each interaction and each rule.</p>
+<div class="admonition example">
+<p class="admonition-title">Stable states</p>
+<p><img alt="Stable states of the p53-Mdm2 model" src="part1_p53_stable-states.png" width="460" /></p>
+<p>Yellow and grey cells denote the levels 0 and 1.</p>
+</div>
+<h3 id="asynchronous-dynamics">Asynchronous dynamics<a class="headerlink" href="#asynchronous-dynamics" title="Permanent link">&para;</a></h3>
+<p>The state of the model is the vector of the levels of its components. In a given state, a component whose level differs from its target level is <em>called to update</em>,
+by one unit toward its target. Under the <strong>asynchronous</strong> updating, each call gives a different transition: a state with <em>k</em> calls can originate <em>k</em> successors.</p>
+<p>Open <strong>Tools → Run simulation</strong>. The default settings are those we want: <em>State Transition Graph</em>, <em>Asynchronous</em> updating, no perturbation, and
+<strong>no selected initial state</strong>, which means that <em>all</em> the (3 × 3 × 2 × 2) 36 states are considered.</p>
+<div class="admonition example">
+<p class="admonition-title">Configuration of the simulation</p>
+<p><img alt="Simulation dialog" src="part1_p53_simulation.png" width="640" /></p>
+<p>The panel shows, from top to bottom, the perturbation and the reduction (none here), the <em>Construction strategy</em>
+(state transition graph), the <em>Updating mode</em> (asynchronous) and the table of <em>Initial States</em>. One initial state <code>damage</code>
+(<code>0111</code>: p53 at 0, the others at their maximum, written <code>M1</code> for the nodes with a maximal level 1) has been defined but is not selected.
+The <code>+</code> button on the left stores several parameter settings.</p>
+</div>
+<p>Click <strong>Run</strong>, then display the graph in the new window. The stable state <code>0110</code> is at the bottom, and the states without incoming arcs are at the top. Select the
+state <code>0200</code> (high Mdm2cyt, the three others at 0): its three successors are listed in the bottom panel, <code>1200</code> (p53 increases),
+<code>0100</code> (Mdm2cyt decreases) and <code>0210</code> (Mdm2nuc increases). Click the arrows in the bottom panel to follow a path.</p>
+<div class="admonition example">
+<p class="admonition-title">The asynchronous state transition graph</p>
+<p><img alt="Asynchronous STG" src="part1_p53_stg-async.png" width="640" /></p>
+<p>The unique stable state <code>0110</code> is at the bottom. The selected state <code>0200</code> is shown in the <em>STG</em> tab with its successors.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">State space explosion</p>
+<p>The number of states doubles with each additional Boolean node. Building the complete state transition graph is discouraged for more than about 15 nodes; for larger models, use the other tools and/or compressed graphs.</p>
+</div>
+<h3 id="synchronous-dynamics">Synchronous dynamics<a class="headerlink" href="#synchronous-dynamics" title="Permanent link">&para;</a></h3>
+<p>Under the <strong>synchronous</strong> updating, all the components called to update change their levels simultaneously, in a single transition.
+Run the simulation again, selecting <em>Synchronous</em> in the <em>Updating mode</em> menu.</p>
+<div class="admonition example">
+<p class="admonition-title">The synchronous state transition graph</p>
+<p><img alt="Synchronous STG" src="part1_p53_stg-sync.png" width="560" /></p>
+<p>The layout was manually rearranged.</p>
+</div>
+<p>You should obtain <strong>three disconnected graphs</strong>: the stable state <code>0110</code>, which can be reached from 26 other states, and two <strong>cyclic attractors of two states</strong>
+each, which did not exist under the asynchronous updating: <code>0100</code>↔<code>1110</code> (reached from 3 other states) and <code>1200</code>↔<code>2110</code> (reached from 2 other states).
+This difference shows that the choice of the updating scheme matters.</p>
+<h3 id="compress-the-graph-the-hierarchical-transition-graph">Compress the graph: the hierarchical transition graph<a class="headerlink" href="#compress-the-graph-the-hierarchical-transition-graph" title="Permanent link">&para;</a></h3>
+<p>Go back and choose <strong>Hierarchical Transition Graph</strong> in the <em>Construction strategy</em> menu before running the simulation, selecting <em>Asynchronous</em> in the <em>Updating mode</em> menu.
+The HTG has <strong>6 nodes instead of 36</strong>: groups of states are merged, while the attractors and the main dynamical properties are preserved.</p>
+<div class="admonition example">
+<p class="admonition-title">The hierarchical transition graph</p>
+<p><img alt="Hierarchical transition graph" src="part1_p53_htg.png" width="520" /></p>
+<p>The stable state <code>ss-0110</code> is at the bottom (red). The two blue nodes, <code>ct#9</code> and <code>ct#6</code>, are <em>cyclic transient</em> components.</p>
+</div>
+<p>Click the node <code>ct#9</code>: the bottom panel lists the 9 states of this component, written as patterns where <code>*</code> stands for all the values of a component.
+In all of them DNAdam = 1, while p53 oscillates between 0 and 2, Mdm2cyt between 1 and 2 and Mdm2nuc between 0 and 1:
+this is the <strong>large oscillations of p53 in the presence of DNA damage</strong>. The node <code>ct#6</code> (6 states, DNAdam = 0, p53 and Mdm2cyt oscillating between 1 and 2)
+corresponds to <strong>smaller transient oscillations of p53 after DNA repair</strong>. The other nodes (<code>i#9</code>, <code>i#10</code>, <code>i-0210</code>) are irreversible transient groups of states.</p>
+<p>So, starting with DNA damage, the system first goes through large p53 oscillations, then the damage is repaired
+along with smaller oscillations, and finally the cell returns to its rest state.</p>
+<h3 id="perturbations">Perturbations<a class="headerlink" href="#perturbations" title="Permanent link">&para;</a></h3>
+<p><em>Gene knock-out</em> is modelled by fixing the level of a component to 0, and <em>ectopic expression</em> by fixing it to its highest level
+(or to a range of levels for a multilevel component). Also, perturbations can be combined. Click the <strong>Configure</strong> button of any <em>Select a perturbation</em> panel
+(simulation, stable states, circuits…) to open the perturbation editor, select the component <strong>DNAdam</strong>, the type <em>RANGE</em>, and <em>1 – Ectopic activity</em>, then click <strong>Create</strong>:
+the perturbation <code>DNAdam E1</code> is now defined, and can be selected in the tools.</p>
+<div class="admonition example">
+<p class="admonition-title">Defining a perturbation</p>
+<p><img alt="Perturbation definition" src="part1_p53_perturbation.png" width="520" /></p>
+<p>Ectopic expression of DNAdam: its level is blocked to 1.</p>
+</div>
+<p>Select <code>DNAdam E1</code> and compute the stable states again: there is <strong>none</strong>, the rest state <code>0110</code> is no longer a stable state.
+Now run the simulation again with hierarchical transition graph: the attractor corresponds to <strong>large oscillations of p53</strong>, together with oscillations of the nuclear and cytoplasmic forms of Mdm2, in the presence of DNA damage.
+It is made of the 9 states of the component <code>ct#9</code>.</p>
+<h3 id="trap-spaces">Trap-spaces<a class="headerlink" href="#trap-spaces" title="Permanent link">&para;</a></h3>
+<p>The <em>Trap-spaces identification</em> tool (<strong>Tools</strong> menu) gives a compact description of the attractors. Without perturbation, it returns a single trap-space, the stable state <code>0110</code>.
+With the perturbation <code>DNAdam E1</code>, it returns the sub-space where DNAdam = 1 and Mdm2cyt ≥ 1, the other components being free.
+Because trap-spaces approximate the attractors, this sub-space contains the 9 states of the oscillation.
+This tool is specific to Boolean variables, so the multilevel components are split into Boolean variables (<code>p53_b1</code>, <code>p53_b2</code>, <code>Mdm2cyt_b1</code>, <code>Mdm2cyt_b2</code>) in the result table.</p>
+<h3 id="regulatory-circuits">Regulatory circuits<a class="headerlink" href="#regulatory-circuits" title="Permanent link">&para;</a></h3>
+<p>Regulatory circuits are responsible for the emergence of dynamical properties such as multistability (positive circuits) or sustained oscillations (negative circuits)
+<sup id="fnref:Thieffry2007"><a class="footnote-ref" href="#fn:Thieffry2007">5</a></sup>. But a circuit may be blocked by the other regulators of its components, rendering it not <em>functional</em>. Open <strong>Tools → Analyse circuits</strong> and click
+<strong>Search Circuits</strong>, the regulatory graph contains <strong>four circuits</strong>. Then click <strong>Functionality Analysis</strong>: three of them are functional (one negative and two positive).
+Select a circuit to display its sign and its <em>functionality context</em>, i.e. the conditions on the other regulators under which it operates <sup id="fnref:Naldi2007"><a class="footnote-ref" href="#fn:Naldi2007">6</a></sup>.</p>
+<div class="admonition example">
+<p class="admonition-title">Circuit analysis</p>
+<p><img alt="Circuit analysis" src="part1_p53_circuits.png" width="460" /></p>
+<p>Among the four circuits, the negative circuit (p53, Mdm2cyt, Mdm2nuc), the positive self-loop of DNAdam and the positive circuit between p53 and Mdm2nuc are functional.
+The selected positive circuit, the cross-inhibition between p53 and Mdm2nuc, is functional when Mdm2cyt = 1 and DNAdam = 0.</p>
+</div>
+<p>Indeed, the inhibition of Mdm2nuc by p53 has no effect when there is DNA damage, when Mdm2cyt is at its highest level (Mdm2nuc is then active whatever the value of p53), or
+when Mdm2cyt is absent. Circuits that differ only by the threshold of one interaction (here, level 1 or 2 of Mdm2cyt acting on Mdm2nuc) are grouped, and indicated with a tag such as <code>[1]</code> or <code>(1/2)</code>.</p>
+<h3 id="model-reduction">Model reduction<a class="headerlink" href="#model-reduction" title="Permanent link">&para;</a></h3>
+<p>When models grow, their state transition graph quickly becomes too large. A <em>reduction</em> hides some components and recomputes the rules of their targets, so that their indirect effects are kept, which
+preserves the stable states and the more complex attractors <sup id="fnref:Naldi2011"><a class="footnote-ref" href="#fn:Naldi2011">7</a></sup>.
+Open <strong>Tools → Reduce model</strong>, click <strong>+</strong> to define a reduction, select the node <strong>Mdm2cyt</strong>, and click <strong>Run</strong>.</p>
+<div class="admonition example">
+<p class="admonition-title">Reduction of Mdm2cyt</p>
+<p><img alt="Model reduction" src="part1_p53_reduction.png" width="520" /></p>
+<p>Only Mdm2cyt is selected for reduction. A reduction can also be defined here and then selected and applied directly by the other tools (<em>Select a reduction</em> panels).</p>
+</div>
+<p>The reduced model has three components. Mdm2nuc is now the target of a <strong>dual interaction</strong> from p53, which captures the indirect effect of p53 through Mdm2cyt:
+Mdm2nuc is called to 1 if p53 is at level 2, or if p53 is absent and there is no DNA damage, and to 0 otherwise.
+Select this reduction in the simulation dialog and run the asynchronous simulation: the graph has <strong>12 states instead of 36</strong>,
+the rest state is kept, and the two kinds of p53 oscillations (large with damage, smaller after repair) are still there.</p>
+<h3 id="what-you-have-learnt">What you have learnt<a class="headerlink" href="#what-you-have-learnt" title="Permanent link">&para;</a></h3>
+<p>You defined a multilevel logical model, checked it, computed its stable states, explored its asynchronous and synchronous dynamics and compressed it,
+applied a perturbation, analysed its regulatory circuits and reduced it. Part II applies the same tools, and others (colouring a state on the graph,
+estimating the reachability of the attractors), to a larger model.</p>
+<hr />
+<h2 id="part-ii-analysing-the-mammalian-cell-cycle-model">Part II: analysing the mammalian cell cycle model<a class="headerlink" href="#part-ii-analysing-the-mammalian-cell-cycle-model" title="Permanent link">&para;</a></h2>
+<p>The model of Traynard <em>et al.</em> <sup id="fnref:traynard"><a class="footnote-ref" href="#fn:traynard">2</a></sup> describes the core engine of the mammalian cell cycle with eleven components, among which the cyclins A, B, D and E, and the inhibitors Rb, p27 and the APC/C co-activators Cdh1 and Cdc20.
+CycD is an input (the growth factor signal); Rb and p27 are ternary components. It extends the model of Fauré <em>et al.</em> <sup id="fnref:faure"><a class="footnote-ref" href="#fn:faure">3</a></sup>.</p>
+<p>Go to the <a href="../models/2016-mammal-cell-cycle/">models/2016-mammal-cell-cycle/</a> in the model repository and download the <code>Traynard_MultiLevel_MamCC_Apr2016.zginml</code> model file.
+Then in GINsim, <strong>Open</strong> and select the downloaded file 
+(or click it in the <em>Recent files</em> of the Welcome dialog).</p>
+<p>Here, we follow the analysis described in the GINsim 3.1 paper <sup id="fnref:ginsim2026"><a class="footnote-ref" href="#fn:ginsim2026">4</a></sup>.</p>
+<h3 id="explore-the-model">Explore the model<a class="headerlink" href="#explore-the-model" title="Permanent link">&para;</a></h3>
+<p>The regulatory graph appears in the main window. Green arcs are activations and red arcs inhibitions;
+rectangles are the multilevel components (Rb and p27), ellipses the Boolean ones. Select the component p27: the
+<em>Modelling Attributes</em> tab shows its maximal level (2) and its logical functions, one per target value.</p>
+<div class="admonition example">
+<p class="admonition-title">The regulatory graph of the cell cycle model</p>
+<p><img alt="The regulatory graph" src="fig1A_regulatory-graph.png" width="640" /></p>
+<p>The model attributes and annotations (name, components, references) are shown below the graph.</p>
+</div>
+<div class="admonition example">
+<p class="admonition-title">The logical rules of p27</p>
+<p><img alt="The rules of p27" src="fig1B_node-rules.png" width="640" /></p>
+<p>Two non-overlapping Boolean functions define the target values of the ternary component p27:
+the first enables the value 2 and the second the value 1.</p>
+</div>
+<p>The complete rules are listed in a table in the GINsim 3.1 article <sup id="fnref2:ginsim2026"><a class="footnote-ref" href="#fn:ginsim2026">4</a></sup>. Use <strong>View → Layout</strong> if you want to rearrange the graph, and
+<strong>Graph → Find path</strong> or <strong>Graph → Highlight local graph</strong> to explore the neighbourhood of a component.</p>
+<h3 id="check-the-interaction-signs">Check the interaction signs<a class="headerlink" href="#check-the-interaction-signs" title="Permanent link">&para;</a></h3>
+<p>As in Part I, run <strong>Tools → Compute interaction functionality</strong>. For this model, the 40 interactions of the graph
+are consistent with the logical rules: nothing is flagged. The two ternary components deserve a closer look at their rules:
+the five regulators CycA, CycB, CycD, CycE and Skp2 inhibit p27, which activates itself at both of its levels, while CycA, CycB, CycD and CycE inhibit Rb,
+which is activated by p27 at its first level only (going from level 1 to level 2 of p27 changes nothing for Rb).</p>
+<div class="admonition example">
+<p class="admonition-title">Exercises</p>
+<p>Introduce one of the following errors, run the tool again, and undo the change (<strong>do not save</strong> the modified model).</p>
+<ol>
+<li>In the rule of <code>CycB</code>, replace <code>!Cdh1</code> by <code>Cdh1</code>. Only the interaction <code>Cdh1 → CycB</code> is flagged: declared as an inhibition,
+   it is now reported as a <strong>positive</strong> interaction.</li>
+<li>In the rule of <code>CycE</code>, delete <code>&amp; !Rb</code>. Only the interaction <code>Rb → CycE</code> is flagged, as <strong>non-functional</strong>.</li>
+</ol>
+<p>A mistake in a multilevel rule can have a larger footprint: if, in the rule of <code>p27</code> for the target value 2, you replace <code>!CycD</code> by <code>CycD</code>, the two rules of p27
+overlap, and all the interactions targeting p27 are reported as non-functional.</p>
+</div>
+<h3 id="compute-the-attractors">Compute the attractors<a class="headerlink" href="#compute-the-attractors" title="Permanent link">&para;</a></h3>
+<p>Open <strong>Tools → Trap-spaces identification</strong>. <strong>Trap-spaces</strong> are sub-spaces of the state space
+that the dynamics cannot leave; the <em>minimal</em> ones contain the stable states and give an approximation of the other attractors
+(see the <a href="/documentation/">documentation</a> and <sup id="fnref:Klarner2014"><a class="footnote-ref" href="#fn:Klarner2014">8</a></sup>). The dialog proposes, as most tools, a <em>perturbation</em>,
+a <em>model reduction</em> and an <em>input restriction</em>. Click <strong>Run</strong> with the default settings.</p>
+<p>The result table contains one line per trap-space; the columns are the Boolean variables of the model
+(the ternary components Rb and p27 are split in two variables, <code>_b1</code> and <code>_b2</code>, because the algorithm works on Boolean models: GINsim
+converts the model transparently, see <a href="#other-tools">Booleanisation</a>).
+Empty yellow cells are variables fixed to 0, grey cells fixed to 1, and blue cells marked <code>*</code> are free.</p>
+<div class="admonition example">
+<p class="admonition-title">Trap-spaces of the wild-type model</p>
+<p><img alt="Trap-spaces of the wild-type model" src="fig2A_trapspaces-wt.png" width="640" /></p>
+<p>Three trap-spaces. The first two lines are stable states with all the cyclins inactive (CycD absent),
+which differ by the activity of CycA: the first is the quiescent state, the second is a spurious stable state
+pointing to incomplete knowledge on the regulation of cyclin A. The third line is a cyclic attractor, with CycD active and nine oscillating components.</p>
+</div>
+<p>Now select the perturbation <code>Rb KO, E2F E1</code> (Rb knocked out, E2F ectopically activated) and run again: the
+quiescent state disappears and there remain two cyclic attractors, which differ by the value of CycD:
+the model predicts cell cycle oscillations even without growth factors.</p>
+<div class="admonition example">
+<p class="admonition-title">Trap-spaces with a double perturbation</p>
+<p><img alt="Trap-spaces of Rb KO, E2F E1" src="fig2B_trapspaces-rbko-e2fe1.png" width="640" /></p>
+</div>
+<h3 id="display-a-state-on-the-regulatory-graph">Display a state on the regulatory graph<a class="headerlink" href="#display-a-state-on-the-regulatory-graph" title="Permanent link">&para;</a></h3>
+<p>Open <strong>Graph → Colour LRG</strong>. Select the perturbation <code>p27 KO, Skp2 KO</code>, click the <strong>By stable states</strong> tab,
+then <strong>Get the stable states</strong>, select the stable state returned (Rb = 2, Cdh1 = 1, all others inactive) and
+<strong>Run</strong>. With <em>Change/Restore LRG edge colours</em> ticked, the active components are coloured in the graph and the interactions
+they exert are highlighted: this is very handy to read a state on a large network.</p>
+<div class="admonition example">
+<p class="admonition-title">Colour LRG</p>
+<p><img alt="The Colour LRG dialog" src="fig2C_colour-lrg-dialog.png" width="640" /></p>
+<p><img alt="The coloured regulatory graph" src="fig2D_colour-lrg-result.png" width="560" /></p>
+<p>Active nodes (Rb and Cdh1) in dark blue; the interactions they exert (all inhibitions) in red.</p>
+</div>
+<h3 id="explore-the-dynamics-state-transition-graphs-and-their-compressions">Explore the dynamics: state transition graphs and their compressions<a class="headerlink" href="#explore-the-dynamics-state-transition-graphs-and-their-compressions" title="Permanent link">&para;</a></h3>
+<p>Open <strong>Tools → Run simulation</strong>. This dialog lets you choose</p>
+<ul>
+<li>a perturbation, a model reduction and an input restriction;</li>
+<li>the <strong>updating mode</strong> (here <em>Asynchronous</em>; other modes are synchronous, complete, or based on priority classes);</li>
+<li>the <strong>type of graph</strong>: the full <em>State Transition Graph</em> (STG), the <em>Strongly Connected Components Graph</em> (SCCG)
+  or the <em>Hierarchical Transition Graph</em> (HTG), these last two being compressed during the computation, which allows to
+  handle much larger models;</li>
+<li>the exploration strategy (depth-first or breadth-first) and limits on the depth or the number of visited states;</li>
+<li>the <strong>initial states</strong> and the values of the <strong>inputs</strong>. Rows can be added, removed and reordered with the buttons
+  above each table. A row can fix some components and leave the others free.</li>
+</ul>
+<div class="admonition example">
+<p class="admonition-title">Configuration of a simulation</p>
+<p><img alt="Simulation dialog" src="fig3A_simulation-dialog.png" width="640" /></p>
+<p>HTG, asynchronous updating, initial state <em>Quiescence</em> combined with the input configuration <em>CycD_ON</em> (a quiescent
+cell exposed to growth factors). Several named configurations can be stored in the <em>parameter</em> list on the left.</p>
+</div>
+<p>Click <strong>Run</strong>. The result is a new window with the compressed graph. The upper node groups the 11 transient states
+(including the initial one, <code>i</code> is for "irreversible"), which all lead to the lower node: a complex cyclic attractor of <strong>270 states</strong>,
+the proliferating cell cycle. Click a node: the bottom panel lists its states as a series of patterns, where <code>*</code> denotes a free component.
+The functionalities of the contextual <strong>Tools</strong> menu (for instance <em>Expand SCC&amp;HTG nodes</em>) expand a node into the corresponding STG, or compute the transitions between nodes.</p>
+<div class="admonition example">
+<p class="admonition-title">The hierarchical transition graph</p>
+<p><img alt="Hierarchical transition graph" src="fig3B_htg.png" width="560" /></p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">SCC graph and path tools</p>
+<p>Compressed graphs can also be obtained for any existing graph with <strong>Graph → Construct SCC Graph</strong>
+(and <em>Colour SCC</em> colours the components without building it), and <strong>Graph → Find path</strong>, or the
+animation of a path in an STG, help to follow one specific trajectory.</p>
+</div>
+<h3 id="estimate-which-attractor-is-reached-and-with-which-probability">Estimate which attractor is reached, and with which probability<a class="headerlink" href="#estimate-which-attractor-is-reached-and-with-which-probability" title="Permanent link">&para;</a></h3>
+<p>State transition graphs of large models cannot always be built. The <strong>Assess attractor reachability</strong> tool
+(Tools menu) estimates by sampling asynchronous trajectories how likely each attractor is to be reached from a set of initial conditions,
+without building the whole graph. Two algorithms are proposed: plain Monte Carlo sampling and <strong>Avatar</strong> , which handles better the
+trajectories trapped in large cyclic attractors.</p>
+<p>In the dialog, choose the algorithm (here Avatar), the number of runs (1000), the limits on the number of states expanded and
+rewired, the rewiring mode (<em>exact exit probabilities</em>), and the model modifications and initial conditions. Here, no
+constraint is put on the components, and CycD is switched either OFF or ON (the fixed inputs <em>CycD_OFF</em> and <em>CycD_ON</em> are both
+selected), which means that its value is sampled for each run.</p>
+<div class="admonition example">
+<p class="admonition-title">Configuration of the attractor reachability analysis</p>
+<p><img alt="Reachability dialog" src="fig4A_reachability-dialog.png" width="640" /></p>
+</div>
+<p>When the computation ends, an output window reports the parameters, the initial conditions and the estimated probabilities.
+The results can be saved as HTML or CSV files, and the button <strong>Plot: convergence of probability estimates</strong> displays how
+the estimates stabilise during the runs.</p>
+<div class="admonition example">
+<p class="admonition-title">Results</p>
+<p><img alt="Reachability output" src="fig4B_reachability-output.png" width="500" />
+<img alt="Convergence" src="fig4C_reachability-convergence.png" width="500" /></p>
+<p>The two stable states SS1 and SS2 (the first two lines of the trap-space table) are reached with probabilities of about
+0.42 and 0.05, and the cyclic attractor CA1 (270 states) with a probability of about 0.53.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Read the probabilities with the input in mind</p>
+<p>CycD is an input: its value never changes during a run, and it decides which attractors can be reached
+(stable states for CycD = 0, the cyclic attractor for CycD = 1). The 0.53 / 0.47 split between the cyclic attractor and the stable states
+thus mostly reflects how CycD was sampled. The informative quantity is the probability <strong>conditional on the value of the input</strong>.</p>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Exercise: condition on the input</p>
+<p>Select only the input configuration <em>CycD_OFF</em> and run Avatar again. All the trajectories now end in the two stable states.
+You should find that around 90 % reach the quiescent state (SS1) and around 10 % the spurious state with CycA active (SS2).
+With only <em>CycD_ON</em>, all the trajectories reach the cyclic attractor.</p>
+</div>
+<h3 id="identify-the-regulatory-circuits-that-matter">Identify the regulatory circuits that matter<a class="headerlink" href="#identify-the-regulatory-circuits-that-matter" title="Permanent link">&para;</a></h3>
+<p><strong>Regulatory circuits</strong> are closed paths of interactions; they are <em>positive</em> or <em>negative</em> depending on the parity of the number of
+inhibitions. Positive circuits are required for multistability, negative circuits for sustained oscillations <sup id="fnref2:Thieffry2007"><a class="footnote-ref" href="#fn:Thieffry2007">5</a></sup>.
+Large graphs have many circuits, but only some of them are <em>functional</em>, i.e. can operate in some context given the logical rules.
+GINsim computes, for each circuit, its <strong>functionality context</strong> <sup id="fnref2:Naldi2007"><a class="footnote-ref" href="#fn:Naldi2007">6</a></sup>.</p>
+<p>Open <strong>Tools → Analyse circuits</strong>. The first dialog allows to restrict the search to circuits of a given length range or involving
+required or excluded components (all circuits are considered by default). Click <strong>Search Circuits</strong>.</p>
+<div class="admonition example">
+<p class="admonition-title">Search of circuits</p>
+<p><img alt="Search of circuits" src="fig5A_circuits-search.png" width="400" /></p>
+</div>
+<p>The next window lists the circuits found (264 for this model). Select a perturbation, for example <strong>CycD E1</strong> (growth factor present), tick
+<em>Strict mode</em> if you want constraints on the members of the circuits, and click <strong>Functionality analysis</strong>. The
+circuits are then classified by sign and the functionality context of the selected circuit is displayed at the bottom
+(for instance, the negative circuit between CycB and Cdc20 is functional when Cdh1 = 0 and UbcH10 = 1).</p>
+<div class="admonition example">
+<p class="admonition-title">Functional circuits</p>
+<p><img alt="Functional circuits" src="fig5B_circuits-functionality.png" width="460" /></p>
+<p>Two functional negative circuits (CycB–Cdc20, and p27–E2F–CycE) and ten functional positive circuits.</p>
+</div>
+<p>Selecting circuits in the list highlights them on the regulatory graph, as below.</p>
+<div class="admonition example">
+<p class="admonition-title">Circuits on the regulatory graph</p>
+<p><img alt="Negative circuits" src="fig5C_negative-circuits.png" width="500" />
+<img alt="Positive circuits" src="fig5D_positive-circuits.png" width="500" /></p>
+<p>Functional negative circuits (left, thick arcs) are those that can generate the oscillations of the cell cycle; functional
+positive circuits (right) presumably support irreversible decisions along the cycle.</p>
+</div>
+<hr />
+<h2 id="other-tools">Other tools<a class="headerlink" href="#other-tools" title="Permanent link">&para;</a></h2>
+<p>These tools are not needed for the examples above, but you will often use them on larger models.</p>
+<p><strong>Booleanisation</strong> (<em>Tools → Booleanize model</em>). Converts a multilevel model into an equivalent Boolean model,
+by mapping a component of maximal level <em>m</em> onto <em>m</em> Boolean variables. It is applied implicitly when a
+Boolean-only tool, such as the trap-space identification, or a Boolean-only export format is used on a multilevel model.</p>
+<p><strong>Model reversal</strong> (<em>Tools → Compute reversed model</em>). Builds a model whose asynchronous successors are the predecessors of the
+original model, which allows to compute the states leading to an attractor by exploring its forward dynamics in the reversed model.</p>
+<p><strong>Strongly connected components</strong> (<em>Graph → Construct SCC Graph</em>, <em>Colour SCC</em>, and <em>Tools → Expand SCC&amp;HTG nodes</em>). Compute or just colour
+the strongly connected components of a graph (regulatory graph or state transition graph); the SCC graph is acyclic and gives a compact view of
+its organisation. <em>Expand SCC&amp;HTG nodes</em> recovers the original graph for a selection of nodes of an SCC graph or of an HTG, by launching a new simulation
+limited to the corresponding sub-space.</p>
+<hr />
+<h2 id="going-further">Going further<a class="headerlink" href="#going-further" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Exports.</strong> Export your model to other tools from <em>File → Export</em> (see the table of formats in the <a href="/documentation/">Documentation</a>).</li>
+<li><strong>Scripts and notebooks.</strong> The core algorithms are implemented in the bioLQM library  and are available, with
+  many other tools, in the <a href="https://colomoto.github.io/">CoLoMoTo Interactive Notebook</a> environment, which lets you
+  chain GINsim analyses with other tools in reproducible Jupyter notebooks. A short example is given below.</li>
+<li><strong>More models.</strong> The <a href="/models/">model repository</a> gathers published logical models, each with its model file(s), ready to open in GINsim.</li>
+<li><strong>Questions and bugs.</strong> See the <a href="/contact/">contact page</a> and the <a href="https://github.com/GINsim/GINsim">GitHub repository</a>.</li>
+</ul>
+<h3 id="a-scripting-example">A scripting example<a class="headerlink" href="#a-scripting-example" title="Permanent link">&para;</a></h3>
+<p>The following Python commands reproduce some results of Part I (stable state, then ectopic expression of DNAdam):</p>
+<pre><code class="language-python">import ginsim, biolqm
+
+lrg = ginsim.load(&quot;tutorial_p53Mdm2.zginml&quot;)     # the model of Part I
+lqm = ginsim.to_biolqm(lrg)
+
+biolqm.fixpoints(lqm)
+# [{'p53': 0, 'Mdm2cyt': 1, 'Mdm2nuc': 1, 'DNAdam': 0}]   (the rest state)
+
+pert = biolqm.perturbation(lqm, &quot;DNAdam%1&quot;)     # ectopic expression of DNAdam
+biolqm.fixpoints(pert)
+# []                                             (no stable state)
+
+biolqm.trapspace(pert, &quot;terminal bdd&quot;)
+# a single trap-space: DNAdam = 1, Mdm2cyt &gt;= 1, the other components free
+</code></pre>
+<hr />
+<h2 id="troubleshooting">Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permanent link">&para;</a></h2>
+<p>If you obtain unexpected dynamical results (stable states or simulations), check successively:</p>
+<ol>
+<li>the structure of the regulatory graph (missing or wrong interactions);</li>
+<li>the maximal levels of all components;</li>
+<li>the thresholds of the interactions leaving multilevel components;</li>
+<li>the logical rules, and the signs of the interactions with <strong>Compute interaction functionality</strong>.</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>Symptom</th>
+<th>Likely cause</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>The <em>Input</em> box of a component is disabled</td>
+<td>The component has incoming interactions or rules: remove them first</td>
+</tr>
+<tr>
+<td>A rule is highlighted</td>
+<td>The rule uses interactions that are not defined for this regulator or that have disjoint ranges</td>
+</tr>
+<tr>
+<td>A multilevel regulator seems to be ignored</td>
+<td>The interaction threshold does not match the level used in the rule (<code>X</code> vs <code>X:2</code>)</td>
+</tr>
+<tr>
+<td>The trap-space table has more columns than components</td>
+<td>Multilevel components are split into Boolean variables (<code>_b1</code>, <code>_b2</code>)</td>
+</tr>
+<tr>
+<td>Probabilities of reachability depend on the input</td>
+<td>The input is sampled: condition on the value of the input</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="how-to-cite">How to cite<a class="headerlink" href="#how-to-cite" title="Permanent link">&para;</a></h2>
+<p>If you use GINsim 3.1, please cite the article indicated in the <a href="../howtocite/">how to cite page</a>.</p>
+<ul>
+<li>
+<p>The p53–Mdm2 example of Part I is adapted from Naldi <em>et al.</em> <sup id="fnref3:naldi2018"><a class="footnote-ref" href="#fn:naldi2018">1</a></sup>.</p>
+</li>
+<li>
+<p>The mammalian cell cycle core engine of Part II is adapted from Traynard <em>et al.</em> <sup id="fnref3:traynard"><a class="footnote-ref" href="#fn:traynard">2</a></sup>.</p>
+</li>
+</ul>
+<h2 id="references">References<a class="headerlink" href="#references" title="Permanent link">&para;</a></h2>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:naldi2018">
+<p>Naldi A, Hernandez C, Abou-Jaoudé W, Monteiro PT, Chaouiya C, Thieffry D. Logical modeling and analysis of cellular regulatory networks with GINsim 3.0. <em>Front. Physiol.</em> 9:646 (2018). <a href="https://doi.org/10.3389/fphys.2018.00646">doi:10.3389/fphys.2018.00646</a>&#160;<a class="footnote-backref" href="#fnref:naldi2018" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:naldi2018" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:naldi2018" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn:traynard">
+<p>Traynard P, Fauré A, Fages F, Thieffry D. Logical model specification aided by model-checking techniques: application to the mammalian cell cycle regulation. <em>Bioinformatics</em> 32(17):i772–i780 (2016). <a href="https://doi.org/10.1093/bioinformatics/btw457">doi:10.1093/bioinformatics/btw457</a>&#160;<a class="footnote-backref" href="#fnref:traynard" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:traynard" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:traynard" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
+<li id="fn:faure">
+<p>Fauré A, Naldi A, Chaouiya C, Thieffry D. Dynamical analysis of a generic Boolean model for the control of the mammalian cell cycle. <em>Bioinformatics</em> 22(14):e124–e131 (2006). <a href="https://doi.org/10.1093/bioinformatics/btl210">doi:10.1093/bioinformatics/btl210</a>&#160;<a class="footnote-backref" href="#fnref:faure" title="Jump back to footnote 3 in the text">&#8617;</a></p>
+</li>
+<li id="fn:ginsim2026">
+<p>Tichit L, Benielli D, Chabrol O, Thieffry D, Chaouiya C, Monteiro PT. GINsim 3.1: Qualitative modelling and dynamical analysis of logical regulatory networks. <em>in preparation</em>&#160;<a class="footnote-backref" href="#fnref:ginsim2026" title="Jump back to footnote 4 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:ginsim2026" title="Jump back to footnote 4 in the text">&#8617;</a></p>
+</li>
+<li id="fn:Thieffry2007">
+<p>D. Thieffry. Dynamical roles of biological regulatory circuits. <em>Briefings in Bioinformatics</em>, 8(4):220–225, March 2007. <a href="https://doi.org/10.1093/bib/bbm028">doi:10.1093/bib/bbm028</a>.&#160;<a class="footnote-backref" href="#fnref:Thieffry2007" title="Jump back to footnote 5 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:Thieffry2007" title="Jump back to footnote 5 in the text">&#8617;</a></p>
+</li>
+<li id="fn:Naldi2007">
+<p>Aurélien Naldi, Denis Thieffry, and Claudine Chaouiya. <em>Decision Diagrams for the Representation and Analysis of Logical Models of Genetic Networks</em>, pages 233–247. Springer Berlin Heidelberg, 2007. <a href="https://doi.org/10.1007/978-3-540-75140-3_16">doi:10.1007/978-3-540-75140-3_16</a>.&#160;<a class="footnote-backref" href="#fnref:Naldi2007" title="Jump back to footnote 6 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:Naldi2007" title="Jump back to footnote 6 in the text">&#8617;</a></p>
+</li>
+<li id="fn:Naldi2011">
+<p>Aurélien Naldi, Elisabeth Remy, Denis Thieffry, and Claudine Chaouiya. Dynamically consistent reduction of logical regulatory graphs. <em>Theoretical Computer Science</em>, 412(21):2207–2218, May 2011. <a href="https://doi.org/10.1016/j.tcs.2010.10.021">doi:10.1016/j.tcs.2010.10.021</a>.&#160;<a class="footnote-backref" href="#fnref:Naldi2011" title="Jump back to footnote 7 in the text">&#8617;</a></p>
+</li>
+<li id="fn:Klarner2014">
+<p>Hannes Klarner, Alexander Bockmayr, and Heike Siebert. <em>Computing Symbolic Steady States of Boolean Networks</em>, pages 561–570. Springer International Publishing, 2014. URL: <a href="http://dx.doi.org/10.1007/978-3-319-11520-7_59">http://dx.doi.org/10.1007/978-3-319-11520-7_59</a>, <a href="https://doi.org/10.1007/978-3-319-11520-7_59">doi:10.1007/978-3-319-11520-7_59</a>.&#160;<a class="footnote-backref" href="#fnref:Klarner2014" title="Jump back to footnote 8 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/GINsim" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.sections"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../assets/numbered-documentation.js"></script>
+      
+    
+  </body>
+</html>
