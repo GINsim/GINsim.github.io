@@ -1780,18 +1780,24 @@ CycD is an input (the growth factor signal); Rb and p27 are ternary components. 
 Then in GINsim, <strong>Open</strong> and select the downloaded file 
 (or click it in the <em>Recent files</em> of the Welcome dialog).</p>
 <p>Here, we follow the analysis described in the GINsim 3.1 paper <sup id="fnref:ginsim2026"><a class="footnote-ref" href="#fn:ginsim2026">4</a></sup>.</p>
+<!-- VERIFY: Figures 3A and 4A show an initial state "Quiescence" together with the fixed-input configurations "CycD_ON" and "CycD_OFF".
+     The Apr 2016 file of the repository only contains the initial states "Quiescence", "Cycle" and "Quiescence2" and no fixed inputs:
+     update the file in the repository, or keep the tip given in the section on the dynamics. -->
+
 <h3 id="explore-the-model">Explore the model<a class="headerlink" href="#explore-the-model" title="Permanent link">&para;</a></h3>
 <p>The regulatory graph appears in the main window. Green arcs are activations and red arcs inhibitions;
-rectangles are the multilevel components (Rb and p27), ellipses the Boolean ones. Select the component p27: the
-<em>Modelling Attributes</em> tab shows its maximal level (2) and its logical functions, one per target value.</p>
+rectangles are the multilevel components (Rb and p27), ellipses the Boolean ones, and the input CycD is shown in blue.
+The bottom area has three tabs: <strong>Modelling attributes</strong>, <strong>Annotations</strong> and <strong>Style</strong>. With nothing selected, the <em>Annotations</em> tab
+displays the annotation of the model itself.</p>
 <div class="admonition example">
 <p class="admonition-title">The regulatory graph of the cell cycle model</p>
-<p><img alt="The regulatory graph" src="fig1A_regulatory-graph.png" width="640" /></p>
-<p>The model attributes and annotations (name, components, references) are shown below the graph.</p>
+<p><img alt="The regulatory graph" src="GINsim-Fig1-A.png" width="480" /></p>
+<p>The <em>Annotations</em> tab of the model: a numbered list of two links, to the publications the model derives from, and a free text that cites them.</p>
 </div>
+<p>Select the component p27: the <em>Modelling attributes</em> tab shows its identifier, its maximal level (2) and, in the <em>Formulae</em> view, its logical functions, one per target value.</p>
 <div class="admonition example">
 <p class="admonition-title">The logical rules of p27</p>
-<p><img alt="The rules of p27" src="fig1B_node-rules.png" width="640" /></p>
+<p><img alt="The rules of p27" src="GINsim-Fig1-B.png" width="560" /></p>
 <p>Two non-overlapping Boolean functions define the target values of the ternary component p27:
 the first enables the value 2 and the second the value 1.</p>
 </div>
@@ -1821,31 +1827,39 @@ a <em>model reduction</em> and an <em>input restriction</em>. Click <strong>Run<
 <p>The result table contains one line per trap-space; the columns are the Boolean variables of the model
 (the ternary components Rb and p27 are split in two variables, <code>_b1</code> and <code>_b2</code>, because the algorithm works on Boolean models: GINsim
 converts the model transparently, see <a href="#other-tools">Booleanisation</a>).
-Empty yellow cells are variables fixed to 0, grey cells fixed to 1, and blue cells marked <code>*</code> are free.</p>
+Empty yellow cells are variables fixed to 0, grey cells with a <code>1</code> are fixed to 1, and blue cells marked <code>*</code> are free.</p>
 <div class="admonition example">
 <p class="admonition-title">Trap-spaces of the wild-type model</p>
-<p><img alt="Trap-spaces of the wild-type model" src="fig2A_trapspaces-wt.png" width="640" /></p>
+<p><img alt="Trap-spaces of the wild-type model" src="GINsim-Fig2-A.png" width="460" /></p>
 <p>Three trap-spaces. The first two lines are stable states with all the cyclins inactive (CycD absent),
 which differ by the activity of CycA: the first is the quiescent state, the second is a spurious stable state
-pointing to incomplete knowledge on the regulation of cyclin A. The third line is a cyclic attractor, with CycD active and nine oscillating components.</p>
+pointing to incomplete knowledge on the regulation of cyclin A. In the third line, CycD and Skp2 are fixed to 1, and nine variables are free:
+this is a cyclic attractor, with CycD active and nine oscillating components.</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Trap-spaces approximate the attractors</p>
+<p>The cyclic trap-space of the third line has nine free variables, hence 2^9 = 512 states, whereas the cyclic attractor itself has
+270 states (see the simulation below): a trap-space contains the attractor, but can be larger.</p>
 </div>
 <p>Now select the perturbation <code>Rb KO, E2F E1</code> (Rb knocked out, E2F ectopically activated) and run again: the
 quiescent state disappears and there remain two cyclic attractors, which differ by the value of CycD:
 the model predicts cell cycle oscillations even without growth factors.</p>
 <div class="admonition example">
 <p class="admonition-title">Trap-spaces with a double perturbation</p>
-<p><img alt="Trap-spaces of Rb KO, E2F E1" src="fig2B_trapspaces-rbko-e2fe1.png" width="640" /></p>
+<p><img alt="Trap-spaces of Rb KO, E2F E1" src="GINsim-Fig2-B.png" width="460" /></p>
 </div>
 <h3 id="display-a-state-on-the-regulatory-graph">Display a state on the regulatory graph<a class="headerlink" href="#display-a-state-on-the-regulatory-graph" title="Permanent link">&para;</a></h3>
-<p>Open <strong>Graph → Colour LRG</strong>. Select the perturbation <code>p27 KO, Skp2 KO</code>, click the <strong>By stable states</strong> tab,
-then <strong>Get the stable states</strong>, select the stable state returned (Rb = 2, Cdh1 = 1, all others inactive) and
-<strong>Run</strong>. With <em>Change/Restore LRG edge colours</em> ticked, the active components are coloured in the graph and the interactions
-they exert are highlighted: this is very handy to read a state on a large network.</p>
+<p>Open <strong>Graph → Colour LRG</strong>. This tool has four tabs (<em>By state</em>, <em>By stable states</em>, <em>By trap spaces</em> and <em>By max values</em>) to colour the regulatory graph
+depending on the state of each regulator. Select the perturbation <code>p27 KO, Skp2 KO</code>, click the <strong>By stable states</strong> tab,
+then <strong>Get the stable states</strong>: the table shows the stable state returned (Rb = 2, Cdh1 = 1, all the other components inactive).
+Select it and click <strong>Run</strong>. With <em>Change/Restore LRG edge colours</em> ticked, the active components are coloured in the graph and the interactions
+they exert are highlighted: this is very handy to read a state on a large network. Untick the box and run again to restore the original colours.</p>
 <div class="admonition example">
 <p class="admonition-title">Colour LRG</p>
-<p><img alt="The Colour LRG dialog" src="fig2C_colour-lrg-dialog.png" width="640" /></p>
-<p><img alt="The coloured regulatory graph" src="fig2D_colour-lrg-result.png" width="560" /></p>
-<p>Active nodes (Rb and Cdh1) in dark blue; the interactions they exert (all inhibitions) in red.</p>
+<p><img alt="The Colour LRG dialog" src="GINsim-Fig2-C.png" width="640" /></p>
+<p><img alt="The coloured regulatory graph" src="GINsim-Fig2-D.png" width="520" /></p>
+<p>Active nodes (Rb and Cdh1) in dark blue and inactive nodes in white; the interactions exerted by the active nodes (all inhibitions) are in thick red,
+the others in grey.</p>
 </div>
 <h3 id="explore-the-dynamics-state-transition-graphs-and-their-compressions">Explore the dynamics: state transition graphs and their compressions<a class="headerlink" href="#explore-the-dynamics-state-transition-graphs-and-their-compressions" title="Permanent link">&para;</a></h3>
 <p>Open <strong>Tools → Run simulation</strong>. This dialog lets you choose</p>
@@ -1859,19 +1873,29 @@ they exert are highlighted: this is very handy to read a state on a large networ
 <li>the <strong>initial states</strong> and the values of the <strong>inputs</strong>. Rows can be added, removed and reordered with the buttons
   above each table. A row can fix some components and leave the others free.</li>
 </ul>
+<p>The list on the left stores named configurations of the dialog (here, one per perturbation or updating mode), so that a simulation can be reproduced with a single click.</p>
 <div class="admonition example">
 <p class="admonition-title">Configuration of a simulation</p>
-<p><img alt="Simulation dialog" src="fig3A_simulation-dialog.png" width="640" /></p>
-<p>HTG, asynchronous updating, initial state <em>Quiescence</em> combined with the input configuration <em>CycD_ON</em> (a quiescent
-cell exposed to growth factors). Several named configurations can be stored in the <em>parameter</em> list on the left.</p>
+<p><img alt="Simulation dialog" src="GINsim-Fig3-A.png" width="700" /></p>
+<p>HTG, asynchronous updating, initial state <em>Quiescence</em> (ticked) combined with the input configuration <em>CycD_ON</em> (ticked; CycD = 1): a quiescent
+cell exposed to growth factors. The other initial state (<em>CC1</em>) and the input configuration <em>CycD_OFF</em> are not used.</p>
 </div>
+<div class="admonition tip">
+<p class="admonition-title">If the model you opened has no CycD_ON / CycD_OFF</p>
+<p>The configurations <em>CycD_ON</em> and <em>CycD_OFF</em> are rows of the <em>Fixed inputs</em> table: one row per configuration, with the value of the input CycD
+(1 for <em>CycD_ON</em>, 0 for <em>CycD_OFF</em>). Add rows with the buttons above the table, give them these names, and tick the one to be used.</p>
+</div>
+<!-- VERIFY: exact buttons (add / duplicate / remove / reorder) of the "Initial states" and "Fixed inputs" tables and how a new row is created. -->
+
 <p>Click <strong>Run</strong>. The result is a new window with the compressed graph. The upper node groups the 11 transient states
 (including the initial one, <code>i</code> is for "irreversible"), which all lead to the lower node: a complex cyclic attractor of <strong>270 states</strong>,
-the proliferating cell cycle. Click a node: the bottom panel lists its states as a series of patterns, where <code>*</code> denotes a free component.
+the proliferating cell cycle. Click a node: the bottom panel (<em>HTG</em> tab) gives its name, its type (here <em>Terminal complex strongly connected component (cycle)</em>)
+and the list of its states as a series of patterns, where <code>*</code> denotes a free component.
 The functionalities of the contextual <strong>Tools</strong> menu (for instance <em>Expand SCC&amp;HTG nodes</em>) expand a node into the corresponding STG, or compute the transitions between nodes.</p>
 <div class="admonition example">
 <p class="admonition-title">The hierarchical transition graph</p>
-<p><img alt="Hierarchical transition graph" src="fig3B_htg.png" width="560" /></p>
+<p><img alt="Hierarchical transition graph" src="GINsim-Fig3-B.png" width="440" /></p>
+<p>The node <code>ca#270</code> is selected. The asterisk in the title of the window indicates a graph that has not been saved.</p>
 </div>
 <div class="admonition tip">
 <p class="admonition-title">SCC graph and path tools</p>
@@ -1884,46 +1908,60 @@ animation of a path in an STG, help to follow one specific trajectory.</p>
 (Tools menu) estimates by sampling asynchronous trajectories how likely each attractor is to be reached from a set of initial conditions,
 without building the whole graph. Two algorithms are proposed: plain Monte Carlo sampling and <strong>Avatar</strong> , which handles better the
 trajectories trapped in large cyclic attractors.</p>
-<p>In the dialog, choose the algorithm (here Avatar), the number of runs (1000), the limits on the number of states expanded and
-rewired, the rewiring mode (<em>exact exit probabilities</em>), and the model modifications and initial conditions. Here, no
-constraint is put on the components, and CycD is switched either OFF or ON (the fixed inputs <em>CycD_OFF</em> and <em>CycD_ON</em> are both
-selected), which means that its value is sampled for each run.</p>
+<p>The window (titled <em>Attractors reachability</em>) is organised as follows:</p>
+<ul>
+<li><strong>Simulation</strong>: the algorithm (here Avatar) and, for Avatar, its parameters: the number of runs (1000), the limits on the number of states expanded (<code>1E4</code>) and
+  rewired (<code>1E3</code>), and the rewiring mode (<em>Exact exit probabilities</em>). The <em>Expert parameters</em> are left to their default values;</li>
+<li><strong>Model modifications</strong>: the perturbation, the reduction and the input restriction (none here);</li>
+<li><strong>Initial states</strong> and <strong>Fixed inputs</strong>: no initial state is ticked, so the internal components are left free, and both input configurations <em>CycD_ON</em> and
+  <em>CycD_OFF</em> are ticked, which means that CycD is switched ON or OFF, its value being sampled for each run.</li>
+</ul>
 <div class="admonition example">
 <p class="admonition-title">Configuration of the attractor reachability analysis</p>
-<p><img alt="Reachability dialog" src="fig4A_reachability-dialog.png" width="640" /></p>
+<p><img alt="Reachability dialog" src="GINsim-Fig4-A.png" width="700" /></p>
 </div>
-<p>When the computation ends, an output window reports the parameters, the initial conditions and the estimated probabilities.
+<p>Click <strong>Run</strong>. When the computation ends, an output window reports the parameters, the initial conditions and the estimated probabilities.
 The results can be saved as HTML or CSV files, and the button <strong>Plot: convergence of probability estimates</strong> displays how
 the estimates stabilise during the runs.</p>
 <div class="admonition example">
 <p class="admonition-title">Results</p>
-<p><img alt="Reachability output" src="fig4B_reachability-output.png" width="500" />
-<img alt="Convergence" src="fig4C_reachability-convergence.png" width="500" /></p>
-<p>The two stable states SS1 and SS2 (the first two lines of the trap-space table) are reached with probabilities of about
-0.42 and 0.05, and the cyclic attractor CA1 (270 states) with a probability of about 0.53.</p>
+<p><img alt="Reachability output" src="GINsim-Fig4-B.png" width="400" />
+<img alt="Convergence" src="GINsim-Fig4-C.png" width="420" /></p>
+<p>The initial conditions are <code>[1**********]</code> and <code>[0**********]</code>: CycD ON or OFF, all the other components free.
+The two stable states SS1 and SS2 (the first two lines of the trap-space table) are reached with probabilities of about
+0.45 and 0.05, and the cyclic attractor CA1 (270 states) with a probability of about 0.50.</p>
 </div>
+<p>The states are written as vectors, in the order given by <em>Nodes</em> (CycD, Rb, E2F, CycE, CycA, CycB, Cdh1, Cdc20, UbcH10, p27, Skp2). For instance, <code>SS1 = [02000010020]</code>
+is the quiescent state (Rb = 2, Cdh1 = 1, p27 = 2, all the others at 0), and <code>SS2</code> is the same state with CycA = 1. Each probability is reported as an interval (<code>prob=[0.452,0.452]</code>), reduced here to a single value.</p>
+<!-- VERIFY: "reported as an interval": the two numbers of prob=[..,..] look like lower and upper bounds of the estimate (to be confirmed with the Avatar paper). -->
+
 <div class="admonition warning">
 <p class="admonition-title">Read the probabilities with the input in mind</p>
 <p>CycD is an input: its value never changes during a run, and it decides which attractors can be reached
-(stable states for CycD = 0, the cyclic attractor for CycD = 1). The 0.53 / 0.47 split between the cyclic attractor and the stable states
-thus mostly reflects how CycD was sampled. The informative quantity is the probability <strong>conditional on the value of the input</strong>.</p>
+(stable states for CycD = 0, the cyclic attractor for CycD = 1). The 0.50 / 0.50 split between the cyclic attractor (0.496) and the stable states
+(0.452 + 0.052) thus mostly reflects how CycD was sampled. The informative quantity is the probability <strong>conditional on the value of the input</strong>.</p>
 </div>
 <div class="admonition example">
 <p class="admonition-title">Exercise: condition on the input</p>
-<p>Select only the input configuration <em>CycD_OFF</em> and run Avatar again. All the trajectories now end in the two stable states.
-You should find that around 90 % reach the quiescent state (SS1) and around 10 % the spurious state with CycA active (SS2).
+<p>Untick <em>CycD_ON</em> so that only <em>CycD_OFF</em> is used, and run Avatar again. All the trajectories now end in the two stable states.
+You should find that around 90 % reach the quiescent state (SS1) and around 10 % the spurious state with CycA active (SS2)
+(from the figure above: 0.452 / (0.452 + 0.052) ≈ 0.90).
 With only <em>CycD_ON</em>, all the trajectories reach the cyclic attractor.</p>
 </div>
+<!-- VERIFY: the conditional values were also obtained by an exact computation (absorption probabilities of the asynchronous dynamics, uniform choice among the enabled updates,
+     uniform distribution of the initial states): CycD = 0, SS1 0.906, SS2 0.094; CycD = 1, a unique attractor of 270 states reached with probability 1.
+     Re-run Avatar with CycD_OFF only (and more runs) to confirm. -->
+
 <h3 id="identify-the-regulatory-circuits-that-matter">Identify the regulatory circuits that matter<a class="headerlink" href="#identify-the-regulatory-circuits-that-matter" title="Permanent link">&para;</a></h3>
 <p><strong>Regulatory circuits</strong> are closed paths of interactions; they are <em>positive</em> or <em>negative</em> depending on the parity of the number of
 inhibitions. Positive circuits are required for multistability, negative circuits for sustained oscillations <sup id="fnref2:Thieffry2007"><a class="footnote-ref" href="#fn:Thieffry2007">5</a></sup>.
 Large graphs have many circuits, but only some of them are <em>functional</em>, i.e. can operate in some context given the logical rules.
 GINsim computes, for each circuit, its <strong>functionality context</strong> <sup id="fnref2:Naldi2007"><a class="footnote-ref" href="#fn:Naldi2007">6</a></sup>.</p>
-<p>Open <strong>Tools → Analyse circuits</strong>. The first dialog allows to restrict the search to circuits of a given length range or involving
+<p>Open <strong>Tools → Analyse circuits</strong>. The first dialog allows to restrict the search to circuits of a given length range (here from 1 to 11 components, the number of components of the model) or involving
 required or excluded components (all circuits are considered by default). Click <strong>Search Circuits</strong>.</p>
 <div class="admonition example">
 <p class="admonition-title">Search of circuits</p>
-<p><img alt="Search of circuits" src="fig5A_circuits-search.png" width="400" /></p>
+<p><img alt="Search of circuits" src="GINsim-Fig5-A.png" width="360" /></p>
 </div>
 <p>The next window lists the circuits found (264 for this model). Select a perturbation, for example <strong>CycD E1</strong> (growth factor present), tick
 <em>Strict mode</em> if you want constraints on the members of the circuits, and click <strong>Functionality analysis</strong>. The
@@ -1931,14 +1969,22 @@ circuits are then classified by sign and the functionality context of the select
 (for instance, the negative circuit between CycB and Cdc20 is functional when Cdh1 = 0 and UbcH10 = 1).</p>
 <div class="admonition example">
 <p class="admonition-title">Functional circuits</p>
-<p><img alt="Functional circuits" src="fig5B_circuits-functionality.png" width="460" /></p>
-<p>Two functional negative circuits (CycB–Cdc20, and p27–E2F–CycE) and ten functional positive circuits.</p>
+<p><img alt="Functional circuits" src="GINsim-Fig5-B.png" width="300" /></p>
+<p>Two functional negative circuits (CycB–Cdc20, and p27–E2F–CycE) and ten functional positive circuits.
+The circuit <code>CycB Cdc20</code> is selected, and its context (<code>- : Cdh1=0 &amp; UbcH10=1</code>) is displayed below the list.</p>
 </div>
-<p>Selecting circuits in the list highlights them on the regulatory graph, as below.</p>
+<p>Entries such as <code>Cdh1 CycB p27[1] (1/2)</code> and the folder <code>p27 (2)</code> (<em>2 sub-circuits</em>) group circuits that differ only by the threshold of one interaction.</p>
+<!-- VERIFY: description of the tags [1], (1/2) and "n sub-circuits" (circuits differing by an interaction threshold), inferred from the lists of circuits. -->
+
+<p>To emphasise circuits in the regulatory graph, as in the figure below, define <strong>edge styles</strong> in the <em>Style</em> tab (<em>Edges</em>): here <em>Thick Negative</em> (red, <code>#c80000</code>, line width 4)
+and <em>Thick Positive</em> (green, <code>#00c800</code>, line width 4), and apply them to the arcs of the circuits.</p>
+<!-- VERIFY: the screenshots of Figure 5C-D show these two custom edge styles in the Style tab. Check whether selecting a circuit in the list also selects or highlights its arcs
+     in the graph, and adapt the sentence above. -->
+
 <div class="admonition example">
 <p class="admonition-title">Circuits on the regulatory graph</p>
-<p><img alt="Negative circuits" src="fig5C_negative-circuits.png" width="500" />
-<img alt="Positive circuits" src="fig5D_positive-circuits.png" width="500" /></p>
+<p><img alt="Negative circuits" src="GINsim-Fig5-C.png" width="420" />
+<img alt="Positive circuits" src="GINsim-Fig5-D.png" width="420" /></p>
 <p>Functional negative circuits (left, thick arcs) are those that can generate the oscillations of the cell cycle; functional
 positive circuits (right) presumably support irreversible decisions along the cycle.</p>
 </div>
