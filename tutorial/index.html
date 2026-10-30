@@ -1381,7 +1381,7 @@ exploring the dynamics, estimating attractor reachability and analysing regulato
 <p class="admonition-title">Before you start</p>
 <ul>
 <li><strong>Software:</strong> GINsim 3.1, which needs a Java Virtual Machine (version 11 or later). See the <a href="/install/">installation page</a>.</li>
-<li><strong>File for Part I:</strong> <code>tutorial_p53Mdm2.zginml</code>, the complete p53–Mdm2 model (to check your work, or to start from).</li>
+<li><strong>File for Part I:</strong> the complete p53–Mdm2 model (to check your work, or to start from), available from the <a href="/models/2009-mammal-p53-mdm2/">model repository</a> (file <code>p53Mdm2_tutorial_5march2018.zginml</code>).</li>
 <li><strong>Files for Part II:</strong> the multilevel cell cycle model, available from the
   <a href="/models/2016-mammal-cell-cycle/">model repository</a> (file <code>Traynard_MultiLevel_MamCC_Apr2016.zginml</code>).</li>
 <li><strong>Reference documentation:</strong> this tutorial is task-oriented. The full description of every
@@ -1667,7 +1667,7 @@ of the interactions leaving multilevel components first when a result looks wron
 <p>A <em>stable state</em> is a state in which every component is already at its target level. Open <strong>Tools → Compute stable states</strong>
 and click <strong>Run</strong>. GINsim searches all the stable states with an efficient algorithm that does not build the state transition graph.
 You should find a <strong>unique stable state</strong>: <code>p53 = 0, Mdm2cyt = 1, Mdm2nuc = 1, DNAdam = 0</code> (written <code>0110</code> below, in the order of the components),
-corresponding to the <em>rest state</em> of the cell: no p53, medium levels of cytoplasmic and nuclear Mdm2, no DNA damage.</p>
+corresponding to the <em>rest state</em> of the cell: no p53, medium levels of cytoplasmic Mdm2, presence of nuclear Mdm2, no DNA damage.</p>
 <p>If you obtain another stable state, or none, check carefully the maximal level of each node, the threshold of each interaction and each rule.</p>
 <div class="admonition example">
 <p class="admonition-title">Stable states</p>
