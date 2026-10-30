@@ -15,7 +15,7 @@ It has two parts:
 
 !!! info "Before you start"
     * **Software:** GINsim 3.1, which needs a Java Virtual Machine (version 11 or later). See the [installation page](/install/).
-    * **File for Part I:** `tutorial_p53Mdm2.zginml`, the complete p53–Mdm2 model (to check your work, or to start from).
+    * **File for Part I:** the complete p53–Mdm2 model (to check your work, or to start from), available from the [model repository](/models/2009-mammal-p53-mdm2/) (file `p53Mdm2_tutorial_5march2018.zginml`).
     * **Files for Part II:** the multilevel cell cycle model, available from the
       [model repository](/models/2016-mammal-cell-cycle/) (file `Traynard_MultiLevel_MamCC_Apr2016.zginml`).
     * **Reference documentation:** this tutorial is task-oriented. The full description of every
@@ -241,7 +241,7 @@ Select a perturbation (optional), click **Run**, **Save a report**, and tick **C
 A *stable state* is a state in which every component is already at its target level. Open **Tools → Compute stable states**
 and click **Run**. GINsim searches all the stable states with an efficient algorithm that does not build the state transition graph.
 You should find a **unique stable state**: `p53 = 0, Mdm2cyt = 1, Mdm2nuc = 1, DNAdam = 0` (written `0110` below, in the order of the components),
-corresponding to the *rest state* of the cell: no p53, medium levels of cytoplasmic and nuclear Mdm2, no DNA damage.
+corresponding to the *rest state* of the cell: no p53, medium levels of cytoplasmic Mdm2, presence of nuclear Mdm2, no DNA damage.
 
 If you obtain another stable state, or none, check carefully the maximal level of each node, the threshold of each interaction and each rule.
 
